@@ -8,7 +8,6 @@ import Contact from './pages/Contact/Contact';
 import Work from './pages/Work/Work';
 import Photo from './pages/Photo/Photo';
 import Info from './pages/Info/Info';
-import CollectionPage from './pages/CollectionPage/CollectionPage';
 
 const AnimatedPage = ({ children }: { children: React.ReactNode }) => {
   // Автоматичне прокручування до верху при монтажі компонента
@@ -66,10 +65,7 @@ export const App: React.FC = () => {
           <Route path="/info" element={<AnimatedPage><Info /></AnimatedPage>} />
           <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
           <Route path="/about" element={<AnimatedPage><AboutUs /></AnimatedPage>} />
-          <Route 
-            path="/collections/:id" 
-            element={<AnimatedPage><CollectionPage /></AnimatedPage>} 
-          />
+         
           <Route path="*" element={<AnimatedPage><Home /></AnimatedPage>} />
         </Route>
       </Routes>

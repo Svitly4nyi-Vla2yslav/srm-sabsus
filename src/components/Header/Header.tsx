@@ -10,7 +10,6 @@ import {
 import { useMediaQuery } from 'react-responsive';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import LogoIcon from '../../assets/icons/logo-portfolio.svg';
 import BurgerMenu from '../MobileMenu/MobileMenu';
 
 const Header: React.FC = () => {
@@ -33,16 +32,13 @@ const Header: React.FC = () => {
     <NavbarContainer $isScrolled={isScrolled}>
     <HeaderWrapper>
       <Logo to="/home">
-        <img src={LogoIcon} alt="Logo" />
+        <img src={""} alt="Logo" />
       </Logo>
       <NavList>
         {isMobile ? (
           <BurgerMenu />
         ) : (
           <>
-            {/* <NavItem>
-              <StyledNavLink to="/home">WELCOME</StyledNavLink>
-            </NavItem> */}
             <NavItem>
               <StyledNavLink to="/work">WORK</StyledNavLink>
             </NavItem>{' '}
