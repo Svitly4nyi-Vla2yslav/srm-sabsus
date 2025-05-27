@@ -1,0 +1,27 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://logistic-sito.netlify.app/home</loc>
+    <lastmod>2024-12-19</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!-- About Us Page -->
+  <url>
+    <loc>https://logistic-sito.netlify.app/about</loc>
+    <lastmod>2024-12-19</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!-- Order Form Page -->
+  <url>
+    <loc>https://logistic-sito.netlify.app/order-form</loc>
+    <lastmod>2024-12-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <!-- Contact Page -->
+  <url>
+    <loc>https://logistic-sito.netlify.app/contact</loc>
+    <lastmod>2024-12-19</lastmod>
+    <priority>1.0</priority>
+  </url>
+</urlset> -->

@@ -1,0 +1,12 @@
+// vite.config.ts
+import { defineConfig } from "file:///C:/Users/Vladyslav/OneDrive/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8/GitHub/logistic-sito/node_modules/vite/dist/node/index.js";
+import react from "file:///C:/Users/Vladyslav/OneDrive/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8/GitHub/logistic-sito/node_modules/@vitejs/plugin-react/dist/index.mjs";
+import svgr from "file:///C:/Users/Vladyslav/OneDrive/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8/GitHub/logistic-sito/node_modules/vite-plugin-svgr/dist/index.js";
+var vite_config_default = defineConfig({
+  plugins: [react(), svgr()],
+  base: "/"
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcudHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCJDOlxcXFxVc2Vyc1xcXFxWbGFkeXNsYXZcXFxcT25lRHJpdmVcXFxcXHUwNDE0XHUwNDNFXHUwNDNBXHUwNDQzXHUwNDNDXHUwNDM1XHUwNDNEXHUwNDQyXHUwNDM4XFxcXEdpdEh1YlxcXFxsb2dpc3RpYy1zaXRvXCI7Y29uc3QgX192aXRlX2luamVjdGVkX29yaWdpbmFsX2ZpbGVuYW1lID0gXCJDOlxcXFxVc2Vyc1xcXFxWbGFkeXNsYXZcXFxcT25lRHJpdmVcXFxcXHUwNDE0XHUwNDNFXHUwNDNBXHUwNDQzXHUwNDNDXHUwNDM1XHUwNDNEXHUwNDQyXHUwNDM4XFxcXEdpdEh1YlxcXFxsb2dpc3RpYy1zaXRvXFxcXHZpdGUuY29uZmlnLnRzXCI7Y29uc3QgX192aXRlX2luamVjdGVkX29yaWdpbmFsX2ltcG9ydF9tZXRhX3VybCA9IFwiZmlsZTovLy9DOi9Vc2Vycy9WbGFkeXNsYXYvT25lRHJpdmUvJUQwJTk0JUQwJUJFJUQwJUJBJUQxJTgzJUQwJUJDJUQwJUI1JUQwJUJEJUQxJTgyJUQwJUI4L0dpdEh1Yi9sb2dpc3RpYy1zaXRvL3ZpdGUuY29uZmlnLnRzXCI7aW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSAndml0ZSc7XHJcbmltcG9ydCByZWFjdCBmcm9tICdAdml0ZWpzL3BsdWdpbi1yZWFjdCc7XHJcbmltcG9ydCBzdmdyIGZyb20gJ3ZpdGUtcGx1Z2luLXN2Z3InO1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcclxuICBwbHVnaW5zOiBbcmVhY3QoKSwgc3ZncigpXSxcclxuICBiYXNlOiAnLycsXHJcbn0pOyJdLAogICJtYXBwaW5ncyI6ICI7QUFBMlosU0FBUyxvQkFBb0I7QUFDeGIsT0FBTyxXQUFXO0FBQ2xCLE9BQU8sVUFBVTtBQUVqQixJQUFPLHNCQUFRLGFBQWE7QUFBQSxFQUMxQixTQUFTLENBQUMsTUFBTSxHQUFHLEtBQUssQ0FBQztBQUFBLEVBQ3pCLE1BQU07QUFDUixDQUFDOyIsCiAgIm5hbWVzIjogW10KfQo=
