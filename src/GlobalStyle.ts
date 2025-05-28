@@ -1,9 +1,9 @@
 import "modern-normalize";
-import "@fontsource/jetbrains-mono/400.css";
-import "@fontsource/jetbrains-mono/500.css";
-import "@fontsource/geist-sans/400.css"; // Geist Regular
-import "@fontsource/geist-sans/600.css"; // Geist SemiBold
-import "@fontsource/geist-mono/600.css"; // Geist Mono SemiBold
+// import "@fontsource/jetbrains-mono/400.css";
+// import "@fontsource/jetbrains-mono/500.css";
+// import "@fontsource/geist-sans/400.css"; // Geist Regular
+// import "@fontsource/geist-sans/600.css"; // Geist SemiBold
+// import "@fontsource/geist-mono/600.css"; // Geist Mono SemiBold
 import { css } from "@emotion/react";
 // import GeistRegular from "../public/fonts/Geist/Geist-Regular.ttf";
 // import GeistSemiBold from "../public/fonts/Geist/Geist-SemiBold.ttf"
@@ -41,11 +41,33 @@ export const GlobalStyle = css`
   //   font-style: normal;
   // }
 
+ 
   :root {
-    --font-family: "Geist", sans-serif;
-    --second-family: "JetBrains Mono", sans-serif;
-    --third-family: "Geist Mono", sans-serif;
-  }
+	--black: #000;
+	--purple-800: #1a1f37;
+	--gray-500: #c4c4c4;
+	--purple-400: #8082ff;
+	--purple-500: #4c4eec;
+	--white-50: rgba(255, 255, 255, 0.5);
+	--white-75: rgba(255, 255, 255, 0.75);
+	--white-80: rgba(255, 255, 255, 0.8);
+	--white-60: rgba(255, 255, 255, 0.6);
+	--white-25: rgba(255, 255, 255, 0.25);
+	--white-70: rgba(255, 255, 255, 0.7);
+	--white-6: rgba(255, 255, 255, 0.06);
+	--white-24: rgba(255, 255, 255, 0.24);
+	--white-30: rgba(255, 255, 255, 0.3);
+	--white-100: #fff;
+  // !  fonts
+    --font-family: "Inter", sans-serif;
+  --second-family: "Plus Jakarta Display", sans-serif;
+  --third-family: "Helvetica", sans-serif;
+  --font3: "Font Awesome 5 Free", sans-serif;
+  --font4: "Helvetica Neue", sans-serif;
+  --font5: "SF Pro", sans-serif;
+}
+
+
 
   * {
     margin: 0;
