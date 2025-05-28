@@ -8,7 +8,6 @@ import Inter_18ptMedium from "../src/assets/fonts/Inter_18pt-Medium.ttf"
 import Inter_18ptSemiBold from "../src/assets/fonts/Inter_18pt-SemiBold.ttf"
 import Inter_24ptRegular from "../src/assets/fonts/Inter_24pt-Regular.ttf"
 import PlusJakartaSans from "../src/assets/fonts/PlusJakartaSans[wght].ttf"
-import SFPRODISPLAYSEMIBOLDITALIC from "../src/assets/fonts/SFPRODISPLAYSEMIBOLDITALIC.OTF"
 
 export const GlobalStyle = css`
   /* Font Awesome */
