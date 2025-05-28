@@ -75,7 +75,7 @@ export const GlobalStyle = css`
   /* SF Pro */
   @font-face {
     font-family: 'SF Pro';
-    src: url(${SFPRODISPLAYSEMIBOLDITALIC}) format('opentype');
+    src: url('../src/assets/fonts/SFPRODISPLAYSEMIBOLDITALIC.OTF') format('opentype');
     font-weight: 600;
     font-style: italic;
   }
