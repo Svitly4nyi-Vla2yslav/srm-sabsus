@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import { Link } from 'react-router-dom';
 
 export const LayoutWrap = styled.div`
  min-width: 320px;
@@ -40,19 +39,6 @@ export const NavList = styled.ul`
   align-items: center;
 `;
 
-export const NavLinkLogo = styled(Link)`
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: ${({ theme }) => theme.primaryBlack};
-  align-items: center;
-
-  &:hover {
-    scale: 1.1;
-   color:  ${({ theme }) => theme.primaryYellow}
-  }
-`;
 
 export const Line = styled.div`
 // border-bottom : 1px solid #8080804f;
