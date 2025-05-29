@@ -11,6 +11,9 @@ import { useMediaQuery } from 'react-responsive';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import BurgerMenu from '../MobileMenu/MobileMenu';
+import logo from "../../assets/icons/logo-srm.svg"
+import ButtonTryForFree from '../ButtonTryForFree/ButtonTryForFree';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,33 +33,36 @@ const Header: React.FC = () => {
 
   return (
     <NavbarContainer $isScrolled={isScrolled}>
-    <HeaderWrapper>
-      <Logo to="/home">
-        <img src={""} alt="Logo" />
-      </Logo>
-      <NavList>
-        {isMobile ? (
-          <BurgerMenu />
-        ) : (
-          <>
-            <NavItem>
-              <StyledNavLink to="/work">WORK</StyledNavLink>
-            </NavItem>{' '}
-            <NavItem>
-              <StyledNavLink to="/photo">PHOTOGRAPHY</StyledNavLink>
-            </NavItem>{' '}
-            <NavItem>
-              <StyledNavLink to="/info">INFO</StyledNavLink>
-            </NavItem>{' '}
-            <NavItem>
-              <StyledNavLink to="/contact">CONTACTS</StyledNavLink>
-            </NavItem>{' '}
-            <NavItem>
-              <StyledNavLink to="/about">ABOUT ME</StyledNavLink>
-            </NavItem>
-          </>
-        )}
-      </NavList></HeaderWrapper>
+      <HeaderWrapper>
+        <Logo to="/home">
+          <img src={logo} alt="Logo" />
+        </Logo>
+        <LanguageSwitcher/>
+        <ButtonTryForFree/>
+        <NavList>
+          {isMobile ? (
+            <BurgerMenu />
+          ) : (
+            <>
+              <NavItem>
+                <StyledNavLink to="/home">Home</StyledNavLink>
+              </NavItem>{' '}
+              <NavItem>
+                <StyledNavLink to="/service">Service</StyledNavLink>
+              </NavItem>{' '}
+              <NavItem>
+                <StyledNavLink to="/about">About Us</StyledNavLink>
+              </NavItem>
+              <NavItem>
+                <StyledNavLink to="/pricing">Pricing</StyledNavLink>
+              </NavItem>{' '}
+              <NavItem>
+                <StyledNavLink to="/contact">Contacts</StyledNavLink>
+              </NavItem>{' '}
+            </>
+          )}
+        </NavList>
+      </HeaderWrapper>
     </NavbarContainer>
   );
 };

@@ -45,17 +45,20 @@ export const Logo = styled(NavLink)`
   font-weight: bold;
   color: #00d1ff;
   text-decoration: none;
-  
+  z-index: 10;
   img {
-  height: 50px;
+ width: 142px;
+height: 19px;
   overflov: hidden;
 
-  }
+  
   &:hover,
   &:focus,
   &.active {
     color: #00ffe7;
+    fill: #00ffe7;
   }
+    }
 `;
 
 
@@ -89,10 +92,10 @@ text-align: center;
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
 font-family: var(--font-family);
-font-weight: 600;
-font-size: 14px;
-text-align: center;
-color: #fff;
+font-weight: 500;
+font-size: 56px;
+line-height: 100%;
+color: var(--white-50);
   transition: all 0.4s ease-in-out;
   position: relative;
 

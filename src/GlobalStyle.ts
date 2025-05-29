@@ -112,6 +112,8 @@ export const GlobalStyle = css`
     --v1: calc(max(9vw, 11vh));
     scrollbar-width: none;
     word-wrap: break-word;
+        z-index: 1;
+
   }
 
   body {

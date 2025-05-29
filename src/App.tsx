@@ -6,8 +6,8 @@ import Home from './pages/HomePage/HomePage';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Contact from './pages/Contact/Contact';
 import Work from './pages/Work/Work';
-import Photo from './pages/Photo/Photo';
 import Info from './pages/Info/Info';
+import ParticlesBackground from './components/Background/StarrySky';
 
 const AnimatedPage = ({ children }: { children: React.ReactNode }) => {
   // Автоматичне прокручування до верху при монтажі компонента
@@ -44,6 +44,7 @@ export const App: React.FC = () => {
 
   return (
     <AnimatePresence mode="wait">
+      <ParticlesBackground />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route 
@@ -60,11 +61,11 @@ export const App: React.FC = () => {
         >
           <Route index element={<AnimatedPage><Home /></AnimatedPage>} />
           <Route path="/home" element={<AnimatedPage><Home /></AnimatedPage>} />
-          <Route path="/work" element={<AnimatedPage><Work /></AnimatedPage>} />
-          <Route path="/photo" element={<AnimatedPage><Photo /></AnimatedPage>} />
-          <Route path="/info" element={<AnimatedPage><Info /></AnimatedPage>} />
-          <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
+          <Route path="/service" element={<AnimatedPage><Work /></AnimatedPage>} />
           <Route path="/about" element={<AnimatedPage><AboutUs /></AnimatedPage>} />
+          <Route path="/pricing" element={<AnimatedPage><Info /></AnimatedPage>} />
+          <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
+          
          
           <Route path="*" element={<AnimatedPage><Home /></AnimatedPage>} />
         </Route>

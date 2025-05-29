@@ -10,7 +10,7 @@ width: 100%;
 margin: 0 auto;
 // position: fixed;
 bottom: 0; 
-z-index: 10;
+z-index: 1;
 @media screen and (min-width: 744px){
 
 
@@ -26,11 +26,12 @@ max-width: 1440px;
 
 export const Border = styled.p`
   padding: 0px auto 50px auto;
-  width: 100%;
+  width: 92%;
   height: 2px; /* Збільшуємо висоту для еліпса */
   margin: 0 auto;
-background: #d9d9d9;
-
+background:  var(--white-24);
+position: relative;
+z-index: 10;
 @media screen and (min-width: 744px){
 
 

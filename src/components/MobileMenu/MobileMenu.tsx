@@ -36,11 +36,12 @@ const BurgerMenu = () => {
 
   const navLinks = [
     // { to: '/home', label: 'WELCOME' },
-    { to: '/work', label: 'WORK' },
-    { to: '/photo', label: 'PHOTOGRAPHY' },
-    { to: '/info', label: 'INFO' },
-    { to: '/contact', label: 'CONTACTS' },
-    { to: '/about', label: 'ABOUT ME' },
+    { to: '/home', label: 'Home' },
+    { to: '/service', label: 'Service' },
+    { to: '/about', label: 'About Us' },
+    { to: '/pricing', label: 'Pricing' },
+    { to: '/contact', label: 'Contacts' },
+    
   ];
 
   return (

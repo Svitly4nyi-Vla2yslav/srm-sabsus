@@ -5,12 +5,17 @@ import { GlobalStyle } from './GlobalStyle.ts';
 import { App } from './App.tsx';
 import { Global } from '@emotion/react';
 import React from 'react';
+import 'modern-normalize/modern-normalize.css';
+import './i18n';
+import { LanguageProvider } from './components/LanguageSwitcher/LanguageContext';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Global styles={GlobalStyle} />
     <BrowserRouter basename="/">
-      <App />
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
