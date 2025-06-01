@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 // Анімація пульсації
-const pulse = keyframes`
+export const pulse = keyframes`
   0% {
     box-shadow: 0 0 0 0 rgba(73, 75, 236, 0.7);
   }
@@ -15,7 +15,7 @@ const pulse = keyframes`
 `;
 
 // Анімація натискання
-const clickEffect = keyframes`
+export const clickEffect = keyframes`
   0% {
     transform: scale(1);
   }
@@ -28,7 +28,7 @@ const clickEffect = keyframes`
 `;
 
 // Анімація градієнта
-const gradientFlow = keyframes`
+export const gradientFlow = keyframes`
   0% {
     background-position: 0% 50%;
   }

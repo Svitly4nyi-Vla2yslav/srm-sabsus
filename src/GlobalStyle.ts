@@ -42,19 +42,21 @@ export const GlobalStyle = css`
   }
 
   /* Inter */
-  @font-face {
-    font-family: 'Inter';
-    src: url(${Inter_18ptMedium}) format('truetype');
-    font-weight: 500;
-    font-style: normal;
-  }
 
-  @font-face {
-    font-family: 'Inter';
-    src: url(${Inter_18ptSemiBold}) format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
+
+  // @font-face {
+  //   font-family: 'Inter';
+  //   src: url(${Inter_18ptSemiBold}) format('truetype');
+  //   font-weight: 600;
+  //   font-style: normal;
+  // }
+
+  //   @font-face {
+  //   font-family: 'Inter';
+  //   src: url(${Inter_18ptMedium}) format('truetype');
+  //   font-weight: 500;
+  //   font-style: normal;
+  // }
 
   @font-face {
     font-family: 'Inter';
@@ -62,6 +64,8 @@ export const GlobalStyle = css`
     font-weight: normal;
     font-style: normal;
   }
+
+
 
   /* Plus Jakarta Sans */
   @font-face {
