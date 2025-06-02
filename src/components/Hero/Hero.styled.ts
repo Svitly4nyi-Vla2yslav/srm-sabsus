@@ -1,6 +1,25 @@
 import styled, { keyframes } from "styled-components";
 import { clickEffect, gradientFlow, pulse } from "../ButtonTryForFree/ButtonTryForFree";
 
+export const Container = styled.div`
+position: absolute;
+top: 20%;
+  overflow: hidden;
+  z-index: 1;
+width: 100vh;
+height: 80%;
+transition: transform 0.6s ease-out;
+  @media (max-width: 768px) {
+    height: 70vh;
+  }
+
+  iframe, canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+`;
+
 export const HeroWrapper = styled.div`
 margin : 0 auto;
 margin-top: 100px;
