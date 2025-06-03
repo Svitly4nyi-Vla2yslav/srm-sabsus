@@ -21,7 +21,7 @@ import Avatar2 from '../../assets/icons/avatar/Image-36-2.svg';
 import Avatar3 from '../../assets/icons/avatar/Image-36-3.svg';
 import Avatar4 from '../../assets/icons/avatar/Image-36-4.svg';
 import Spline from '@splinetool/react-spline';
-// import Swipper from './Swipper';
+import Swipper from './Swipper';
 
 const Hero: React.FC = () => {
   return (
@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
             <HeroButtonGrey>View demo</HeroButtonGrey>
           </ButtonContainer>
         </HeroContainerContent>
-        {/* <Swipper /> */}
+        <Swipper />
       </HeroWrapper>
     </>
   );
