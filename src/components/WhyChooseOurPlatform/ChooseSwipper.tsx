@@ -2,10 +2,11 @@ import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { Swiper as SwiperCore } from 'swiper/types';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import point from "../../assets/icons/Traffic Lights (Big Sur).svg"
 
 interface StatValueProps {
   $large?: boolean;
@@ -14,13 +15,13 @@ interface StatValueProps {
 
 // Styled Components for the Header
 const HeaderContainer = styled.div`
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-align-content: center;
-align-items: center;
-justify-content: center;
-gap: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 `;
 
 const FeatureCard = styled.div`
@@ -35,14 +36,17 @@ const FeatureCard = styled.div`
 const BadgeWrapper = styled.div`
   position: relative;
   width: 127px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 `;
 
 const AbsoluteBadge = styled.div`
-  position: absolute;
-  width: 127px;
+display: flex;
+  max-width: 127px;
   height: 28px;
-  top: 0;
-  left: 0;
+
 `;
 
 interface BadgeOutlineProps {
@@ -53,10 +57,9 @@ const BadgeOutline = styled.div<BadgeOutlineProps>`
   position: absolute;
   width: 127px;
   height: 28px;
-  border: 1px solid #fff;
   border-radius: 24px;
-  
-  opacity: ${props => props.opacity || 1};
+display: flex;
+  opacity: ${props => props.opacity || 0};
 `;
 
 const BadgeContent = styled.div`
@@ -70,27 +73,37 @@ const BadgeContent = styled.div`
 
 const IconWrapper = styled.div`
   position: absolute;
-  right: 3px;
+  left: 80%;
   top: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 20px;
+  height: 20px;
+
+  border-radius: 25px;
+  padding: 4px;
   width: 22px;
   height: 22px;
-  border-radius: 16px;
-  border-radius: 25px;
-    padding: 4px;
-    width: 22px;
-    height: 22px;
-    font-size: 13px;
-    box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.18), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08), 0 0px 20px rgba(464, 367, 391, 0.99);
-    background: linear-gradient(315deg, rgba(245, 228, 253, 0.58) 7%, rgb(207 121 250) 86%) rgba(255, 255, 255, 0.03);
+  font-size: 13px;
+  box-shadow:
+    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
+    0 8px 16px -8px rgba(0, 0, 0, 0.03),
+    0 2px 4px -2px rgba(0, 0, 0, 0.08),
+    0 0px 20px rgba(464, 367, 391, 0.99);
+  background: linear-gradient(
+      315deg,
+      rgba(141, 136, 143, 0.58) 7%,
+      rgba(79, 74, 82, 0.86)
+    )
+    rgba(255, 255, 255, 0.03);
 `;
 
 const BadgeButton = styled.button`
   cursor: pointer;
   display: flex;
-  padding: 4px 4px 4px 8px;
+  padding: 4px 4px 4px 18px;
   justify-content: center;
   align-items: center;
   gap: 4px;
@@ -106,9 +119,11 @@ const BadgeButton = styled.button`
     0px 8px 16px -8px rgba(0, 0, 0, 0.03),
     0px -5px 6px 0px rgba(255, 255, 255, 0.03) inset,
     0px -8px 24px 0px rgba(255, 255, 255, 0.03) inset;
-  width: 100%;
+width: 136px;
+height: 28px;
   border: none;
   outline: none;
+  justify-content: space-between;
 `;
 
 const BadgeText = styled.p`
@@ -119,28 +134,6 @@ const BadgeText = styled.p`
   line-height: 1.2em;
 `;
 
-const IconContainer = styled.div`
-  display: flex;
-  padding: 4px;
-  align-items: center;
-  gap: 8px;
-  border-radius: 1000px;
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.12) 7%,
-      rgba(255, 255, 255, 0) 86%
-    ),
-    rgba(255, 255, 255, 0.03);
-  overflow: hidden;
-`;
-
-const SmallIcon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 12px;
-  height: 12px;
-`;
 
 const Title = styled.p`
   color: #fff;
@@ -153,29 +146,45 @@ const Title = styled.p`
 `;
 
 const Subtitle = styled.p`
-  color: rgba(255, 255, 255, 0.6);
-  font-family: Inter, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.2em;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 15px;
+text-align: center;
+color: var(--white-60);
   text-align: center;
   width: 100%;
 `;
 
 const Divider = styled.div`
-  background: rgba(240, 37, 37, 0.25);
+  background: rgba(245, 228, 228, 0.25);
   width: 34px;
   height: 1px;
-transform: rotate(90deg);
+  transform: rotate(90deg);
 `;
 
 // Styled Components for the Swiper Slides
 const SlideContainer = styled.div`
   width: 343px;
   height: 545px;
-  filter: blur(17.806726455688477px);
   position: relative;
   overflow: hidden;
+    backdrop-filter: blur(11.129203796386719px);
+box-shadow: 0 6px 11px -6px rgba(0, 0, 0, 0.03), 0 1px 3px -1px rgba(0, 0, 0, 0.08), inset 0 -6px 17px 0 rgba(255, 255, 255, 0.03), inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
+background: rgba(255, 255, 255, 0.03);
+ border-radius: 28px 28px 0 0; 
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+     box-shadow: inset 0 -100px 50px -30px rgba(0, 0, 0, 0.65);
+    // backdrop-filter: blur(12px);
+    z-index: 1;
+   
+    pointer-events: none;
+  }
 `;
 
 const SlideHeader = styled.div`
@@ -185,6 +194,16 @@ const SlideHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top: 0.35px solid #212121;
+  
+  backdrop-filter: blur(11.129203796386719px);
+box-shadow: 0 6px 11px -6px rgba(0, 0, 0, 0.03), 0 1px 3px -1px rgba(0, 0, 0, 0.08), inset 0 -6px 17px 0 rgba(255, 255, 255, 0.03), inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
+background: rgba(255, 255, 255, 0.03);
+`;
+
+const SlideLogo = styled.img`
+width: 37px;
+height: 9px;
 `;
 
 const SlideContent = styled.div`
@@ -333,10 +352,10 @@ const FeatureSwiper = () => {
 
   const features = [
     {
-      id: 'custom-identity',
+      id: 'Custom Identity',
       title: 'White-label Branding',
       subtitle: 'Custom app, site & receipts',
-      icon: '/Fireworks.png',
+      icon: '🎆',
       smallIcon: '/Fireworks(1).png',
       active: activeSlide === 0,
     },
@@ -344,23 +363,23 @@ const FeatureSwiper = () => {
       id: 'role-access',
       title: 'Smart Permissions',
       subtitle: 'Access for cashiers and chefs',
-      icon: '/ManOfficeWorker.png',
+      icon: '👨‍💼',
       smallIcon: '/ManOfficeWorker(1).png',
       active: activeSlide === 1,
     },
     {
       id: 'dynamic-offers',
-      title: 'AI & Automation',
+      title: 'Dynamic Offers',
       subtitle: 'Dynamic offers & upsells',
-      icon: '/Robot.png',
+      icon: '🤖',
       smallIcon: '/Robot(1).png',
       active: activeSlide === 2,
     },
     {
-      id: 'expandability',
+      id: 'Expandability',
       title: 'Open API Integration',
       subtitle: 'Connect tools, terminals & more',
-      icon: '/ElectricPlug.png',
+      icon: '🔌',
       smallIcon: '/ElectricPlug(1).png',
       active: activeSlide === 3,
     },
@@ -396,17 +415,14 @@ const FeatureSwiper = () => {
             <FeatureCard onClick={() => navigateToSlide(index)}>
               <BadgeWrapper>
                 <AbsoluteBadge>
-                  <BadgeOutline opacity="0.66" />
+                  <BadgeOutline opacity="0.06" />
                   <BadgeOutline />
                 </AbsoluteBadge>
                 <BadgeContent>
                   <IconWrapper>
-                    <img
-                      src={feature.icon}
-                      alt={feature.title}
-                      width={22}
-                      height={22}
-                    />
+                    <p>
+                      {feature.icon}
+                    </p>
                   </IconWrapper>
                   <BadgeButton
                     style={{
@@ -415,17 +431,7 @@ const FeatureSwiper = () => {
                         : 'none',
                     }}
                   >
-                    <BadgeText>{feature.title.split(' ')[0]}</BadgeText>
-                    <IconContainer>
-                      <SmallIcon>
-                        <img
-                          src={feature.smallIcon}
-                          alt={feature.title}
-                          width={12}
-                          height={12}
-                        />
-                      </SmallIcon>
-                    </IconContainer>
+                    <BadgeText>{feature.id}</BadgeText>
                   </BadgeButton>
                 </BadgeContent>
                 <AbsoluteBadge>
@@ -448,7 +454,7 @@ const FeatureSwiper = () => {
           onSwiper={swiper => {
             swiperRef.current = swiper;
           }}
-          spaceBetween={30}
+          spaceBetween={0}
           slidesPerView={1}
           autoplay={{
             delay: 5000,
@@ -457,8 +463,8 @@ const FeatureSwiper = () => {
           pagination={{
             clickable: true,
           }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
+          navigation={false}
+          modules={[Autoplay, Navigation]}
           onSlideChange={handleSlideChange}
           initialSlide={activeSlide}
         >
@@ -466,7 +472,7 @@ const FeatureSwiper = () => {
             <SwiperSlide key={index}>
               <SlideContainer>
                 <SlideHeader>
-                  {/* Header content with logo and icons */}
+              <SlideLogo src={point} alt="Logo" />
                   <div>Logo</div>
                   <div>Icons</div>
                 </SlideHeader>
