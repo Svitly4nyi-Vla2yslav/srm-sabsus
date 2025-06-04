@@ -25,17 +25,18 @@ import Swipper from './Swipper';
 
 const Hero: React.FC = () => {
   return (
-    <>
-      <Container>
-        <Spline
-          scene="https://prod.spline.design/xDMwKEPv7aTOBHEg/scene.splinecode"
-          style={{
-            transition: 'transform 0.5s ease-out',
-            filter: 'blur(0.5px)',
-          }}
-        />
-      </Container>
+    <> {' '}
+       
       <HeroWrapper>
+        <Container>
+          <Spline
+            scene="https://prod.spline.design/xDMwKEPv7aTOBHEg/scene.splinecode"
+            style={{
+              transition: 'transform 0.5s ease-out',
+              filter: 'blur(0.5px)',
+            }}
+          />
+        </Container>
         <HeroInnovative>
           Innovative Solutions <SpanUnicorn>🦄</SpanUnicorn>
         </HeroInnovative>
@@ -62,8 +63,8 @@ const Hero: React.FC = () => {
             <HeroButtonGrey>View demo</HeroButtonGrey>
           </ButtonContainer>
         </HeroContainerContent>
-        <Swipper />
       </HeroWrapper>
+      <Swipper />
     </>
   );
 };

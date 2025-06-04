@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const SwiperContainer = styled.div`
-  width: 100vh;
+position: relative;
+  width: 100vw;
   height: 100%;
   background-color: transparent; /* півпрозорий фон */
   
@@ -38,7 +39,8 @@ export const CardContainer = styled.a`
     0 2px 4px -2px rgba(0, 0, 0, 0.08);
   background: rgba(255, 255, 255, 0.03);
   width: 389px;
-  height: 198px;
+ height: 198px;
+ margin-top: 100px;
   overflow: hidden;
   position: relative;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -59,6 +61,35 @@ export const CardContainer = styled.a`
     border: 1px solid rgba(191, 123, 246, 0.3);
   }
 `;
+
+export const floatAnimation = keyframes`
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5px, -5px); /* Рух вправо-вверх */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+`;
+
+export const ArrowIcon = styled.img`
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: none;
+  animation: ${floatAnimation} 2s ease-in-out infinite;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    animation-play-state: paused; /* Пауза при наведенні */
+    transform: translate(3px, -3px); /* Фіксуємо в кінцевій позиції */
+  }
+`;
+
 
 export const ContentWrapper = styled.div`
   display: flex;

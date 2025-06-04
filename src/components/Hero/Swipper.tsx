@@ -7,6 +7,7 @@ import 'swiper/css/bundle';
 import { useMediaQuery } from 'react-responsive';
 // import { useTranslation } from 'react-i18next';
 import {
+  ArrowIcon,
   CardContainer,
   ContentWrapper,
   DescriptionText,
@@ -16,49 +17,50 @@ import {
   SwiperContainer,
 } from './Swipper.styled';
 
+import Arrow from '../../assets/icons/arrow-narrow-up-right.svg';
+
 const partners = [
   {
     id: 1,
     procent: '2M+',
     link: '#',
-    text: "users daily",
+    text: 'users daily',
   },
   {
     id: 2,
     procent: '$1B+',
     link: '#',
-    text: "in processed transactions",
+    text: 'in processed transactions',
   },
   {
     id: 3,
     procent: '99%',
     link: '#',
-    text: "Acceleration of business processes",
+    text: 'Acceleration of business processes',
   },
   {
     id: 4,
     procent: ' 4+',
     link: '#',
-    text:  "Languages Fully Multilingual Interface"
+    text: 'Languages Fully Multilingual Interface',
   },
   {
     id: 5,
-     procent: '2M+',
+    procent: '2M+',
     link: '#',
-    text: "users daily",
-
+    text: 'users daily',
   },
   {
     id: 6,
-   procent: '$1B+',
+    procent: '$1B+',
     link: '#',
-    text: "in processed transactions",
+    text: 'in processed transactions',
   },
   {
     id: 7,
     procent: '99%',
     link: '#',
-    text: "Acceleration of business processes",
+    text: 'Acceleration of business processes',
   },
 ];
 
@@ -76,7 +78,7 @@ const Swipper: React.FC = () => {
     // getPartners().then(setPartners);
   }, []);
 
-  const slidesPerView = isMobile ? 2 : isTablet ? 3 : isDesktop ? 4 : 4;
+  const slidesPerView = isMobile ? 1 : isTablet ? 2 : isDesktop ? 4 : 4;
   const shouldLoop = partners.length > slidesPerView;
 
   return (
@@ -84,9 +86,8 @@ const Swipper: React.FC = () => {
       <Swiper
         loop={shouldLoop}
         slidesPerView={slidesPerView}
-        spaceBetween={20}
-        autoplay=
-        {{
+        spaceBetween={1}
+        autoplay={{
           delay: 2000, // Збільшено затримку для нормальної прокрутки
           disableOnInteraction: false,
           waitForTransition: true, // Додано для плавності
@@ -114,25 +115,18 @@ const Swipper: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <ArrowIcon src={Arrow} alt="↗️" />
                 <ContentWrapper>
-                  <DescriptionText>
-                    {partner.text}
-                  </DescriptionText>
+                  <DescriptionText>{partner.text}</DescriptionText>
                   <PercentageText>{partner.procent}</PercentageText>
                 </ContentWrapper>
                 <GradientLine />
                 <SmallLine />
               </CardContainer>
             ) : (
-              <CardContainer
-                href={partner.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <CardContainer>
                 <ContentWrapper>
-                  <DescriptionText>
-                   {partner.text}
-                  </DescriptionText>
+                  <DescriptionText>{partner.text}</DescriptionText>
                   <PercentageText>{partner.procent}</PercentageText>
                 </ContentWrapper>
                 <GradientLine />
@@ -148,7 +142,7 @@ const Swipper: React.FC = () => {
         <Swiper
           loop={shouldLoop}
           slidesPerView={slidesPerView}
-          spaceBetween={20}
+          spaceBetween={10}
           autoplay={{
             delay: 0, // Збільшено затримку для нормальної прокрутки
             disableOnInteraction: false,
@@ -158,7 +152,7 @@ const Swipper: React.FC = () => {
           speed={4000} // Зменшено швидкість для плавності
           modules={[Autoplay]}
           className="mySwiper"
-          style={{ width: '100%' }}
+          style={{ width: '100vh' }}
         ></Swiper>
       )}
     </SwiperContainer>

@@ -2,30 +2,79 @@ import styled, { keyframes } from "styled-components";
 import { clickEffect, gradientFlow, pulse } from "../ButtonTryForFree/ButtonTryForFree";
 
 export const Container = styled.div`
-position: absolute;
-top: 20%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  z-index: 1;
-width: 100vh;
-height: 80%;
-transition: transform 0.6s ease-out;
-  @media (max-width: 768px) {
-    height: 70vh;
+  z-index: -1;
+
+  /* Тіні */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgb(0, 0, 0) 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
   }
 
   iframe, canvas {
     width: 100% !important;
     height: 100% !important;
     display: block;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
   }
+
+  /* Мобільні пристрої */
+  @media (max-width: 768px) {
+    height: 100vh;
+    
+    &::before,
+    &::after {
+      height: 50px;
+    }
+  }
+
+  // /* Великі екрани */
+  // @media screen and (min-width: 1440px) {
+  //   width: 100%;
+  //   height: 100vh;
+  // }
+
+  // /* Дуже широкі екрани */
+  // @media screen and (min-width: 2000px) {
+  //   width: 100%;
+  //   height: 100vh;
+  // }
 `;
 
 export const HeroWrapper = styled.div`
 margin : 0 auto;
 margin-top: 100px;
-width: 343px;
-height: 331px;
+width: 100%;
+height: 100%;
 margin-bottom: 100px;
+position: relative;
 `;
 
 export const HeroInnovative = styled.p`
