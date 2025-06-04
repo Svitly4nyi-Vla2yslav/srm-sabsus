@@ -7,6 +7,7 @@ import {
   WhyText,
 } from './WhyChooseOurPlatform.styled';
 import puzzle from "../../assets/icons/stars-01puzzle.svg"
+import FeatureSwiper from './ChooseSwipper';
 
 const WhyChooseOurPlatform: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const WhyChooseOurPlatform: React.FC = () => {
         We built an ecosystem that removes vendor lock-ins, works on any device,
         and adapts to any business — from corner cafés to international chains.
       </MainText>
+      <FeatureSwiper/>
     </GeneralContainer>
   );
 };
