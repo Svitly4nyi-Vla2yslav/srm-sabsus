@@ -270,7 +270,7 @@ z-index: 10;
   color: var(--white-100);
   
   box-shadow: inset 0 0 6px 0 rgba(255, 255, 255, 0.54);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%), rgba(255, 255, 255, 0.03) ;
+  background: linear-gradient(180deg, rgb(255, 255, 255) 7%, rgba(255, 255, 255, 0) 86%), rgba(255, 255, 255, 0.03) ;
   background-size: 300% 300%;
   
   transition: all 0.4s ease;
@@ -312,6 +312,6 @@ height: 43px;
 
 backdrop-filter: blur(16px);
 box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
-background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%),  rgba(255, 255, 255, 0.03);
+background: linear-gradient(180deg, rgba(2, 2, 2, 0.12) 7%, rgba(255, 255, 255, 0) 86%),  rgba(255, 255, 255, 0.03);
 `;
 

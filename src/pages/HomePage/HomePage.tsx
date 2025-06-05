@@ -1,3 +1,4 @@
+import AllinOneSRM from '../../components/AllinOneSRM/AllinOneSRM';
 import Hero from '../../components/Hero/Hero';
 import WhyChooseOurPlatform from '../../components/WhyChooseOurPlatform/WhyChooseOurPlatform';
 import { HomeContainer } from './HomePage.styled';
@@ -9,6 +10,7 @@ const Home: React.FC = () => {
       <HomeContainer>
         <Hero/>
         <WhyChooseOurPlatform/>
+        <AllinOneSRM/>
       </HomeContainer>
     </>
   );
