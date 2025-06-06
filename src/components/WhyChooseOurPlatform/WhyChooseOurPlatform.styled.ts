@@ -2,8 +2,7 @@ import { styled } from "styled-components";
 
 
 export const GeneralContainer = styled.div`
-padding: 0px 16px;
-width: 375px;
+ width: 100%;
 margin: 0 auto;
 margin-top: 50px;
 `;
