@@ -36,7 +36,7 @@ import icon15 from '../../assets/icons/cards3/Package.svg';
 import icon16 from '../../assets/icons/cards3/CardFileBox.svg';
 import icon17 from '../../assets/icons/cards3/CannedFood.svg';
 import icon18 from '../../assets/icons/cards4/Chart Increasing.svg';
-import icon19 from '../../assets/icons/cards4/Money Bag.svg'; 
+import icon19 from '../../assets/icons/cards4/Money Bag.svg';
 import icon20 from '../../assets/icons/cards4/CardIndexDividers.svg';
 import icon21 from '../../assets/icons/cards4/Brain.svg';
 import card5 from '../../assets/icons/cards/card5.png';
@@ -53,16 +53,12 @@ import icon29 from '../../assets/icons/cards6/Satellite Antenna.svg';
 import icon30 from '../../assets/icons/cards6/dnk.svg';
 import icon31 from '../../assets/icons/cards6/MobilePhoneOff.svg';
 
-
-
-
-
 const AllinOneSRM: React.FC = () => {
   return (
     <AllinOneSRMContainer>
       <MainText>
         All-in-one CRM, POS & APP platform
-        <CardButtonText src={icon5} alt="Laptop" />{' '}
+        <CardButtonText src={icon5} alt="Laptop" />
       </MainText>
       <MainTitle>
         Everything your store, café, or delivery business needs — in one
@@ -192,7 +188,20 @@ const AllinOneSRM: React.FC = () => {
           <CardText>
             Finance, reports, performance metrics — visually and smart.
           </CardText>
-          <CardIcon style={{position: "absolute", top: "13%", left: "0", borderRadius: 24, height: "82%", width: "100%", objectFit: "cover", overflow: "hidden"}} src={card5} alt="Customer Experience Suite" />    
+          <CardIcon
+            style={{
+              position: 'absolute',
+              top: '13%',
+              left: '0',
+              borderRadius: 24,
+              height: '82%',
+              width: '100%',
+              objectFit: 'cover',
+              overflow: 'hidden',
+            }}
+            src={card5}
+            alt="Customer Experience Suite"
+          />
           <CardButtonContainer>
             <CardButton>
               Analytics
@@ -214,9 +223,7 @@ const AllinOneSRM: React.FC = () => {
         </Card>
         <Card>
           <CardTitle>Marketing & Customization</CardTitle>
-          <CardText>
-         Push your brand forward with full control.
-          </CardText>
+          <CardText>Push your brand forward with full control.</CardText>
           <CardIcon src={card6} alt="Customer Experience Suite" />
           <CardButtonContainer>
             <CardButton>
@@ -232,32 +239,30 @@ const AllinOneSRM: React.FC = () => {
               <CardButtonText src={icon24} alt="White-label" />
             </CardButton>
             <CardButton>
-             Multilingual
+              Multilingual
               <CardButtonText src={icon25} alt="Multilingual" />
             </CardButton>
             <CardButton>
-             Promos
+              Promos
               <CardButtonText src={icon26} alt="Promos" />
             </CardButton>
           </CardButtonContainer>
         </Card>
         <Card>
           <CardTitle>Integration & Scaling</CardTitle>
-          <CardText>
-           Open infrastructure. Grow as you go.
-          </CardText>
+          <CardText>Open infrastructure. Grow as you go.</CardText>
           <CardIcon src={card7} alt="Customer Experience Suite" />
           <CardButtonContainer>
             <CardButton>
-            API
+              API
               <CardButtonText src={icon27} alt="API" />
             </CardButton>
             <CardButton>
-             Integration
+              Integration
               <CardButtonText src={icon28} alt="Integration" />
             </CardButton>
             <CardButton>
-           Scaling
+              Scaling
               <CardButtonText src={icon29} alt="Scaling" />
             </CardButton>
             <CardButton>

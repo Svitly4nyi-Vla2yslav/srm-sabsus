@@ -36,7 +36,7 @@ const FeatureSwiper = () => {
       active: activeSlide === 0,
     },
     {
-      id: 'role-access',
+      id: 'Role Access',
       title: 'Smart Permissions',
       subtitle: 'Access for cashiers and chefs',
       icon: '👨‍💼',
@@ -45,8 +45,8 @@ const FeatureSwiper = () => {
       active: activeSlide === 1,
     },
     {
-      id: 'dynamic-offers',
-      title: 'Dynamic Offers',
+      id: 'Dynamic Offers',
+      title: 'AI & Automation',
       subtitle: 'Dynamic offers & upsells',
       icon: '🤖',
       smallIcon: '/Robot(1).png',

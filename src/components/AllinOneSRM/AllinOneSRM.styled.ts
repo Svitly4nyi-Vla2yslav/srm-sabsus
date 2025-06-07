@@ -5,17 +5,23 @@ margin-top: 150px;
     margin: 0 auto;
 `
 export const MainText = styled.p`
+   margin: 0 auto;
 border-radius: 24px;
 padding: 4px 4px 4px 14px;
-width: auto;
+width: 243px;
 height: 28px;
 display: flex;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 12px;
+color: var(--white-100);
 justify-content: space-between;
 margin-bottom: 16px;
 margin-top: 50px;
 backdrop-filter: blur(16px);
 box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%);
+align-items: center;
 `;
 
 export const MainTitle = styled.h2`
