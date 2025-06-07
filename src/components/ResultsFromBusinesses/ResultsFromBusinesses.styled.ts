@@ -5,6 +5,7 @@ export const ResultsFromBusinessesWrapper = styled.div`
  width: 100%;
 margin: 0 auto;
 margin-top: 50px;
+margin-bottom: 88px;
 `;
 
 export const ResultMainText = styled.p`
