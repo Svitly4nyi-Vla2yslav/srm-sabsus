@@ -9,7 +9,7 @@ import {
 } from './Feedback.styled';
 import star from "../../assets/icons/star.svg"
 
-const feedback = [
+export const feedback = [
   {
     id: 1,
     icon: '2M+',
