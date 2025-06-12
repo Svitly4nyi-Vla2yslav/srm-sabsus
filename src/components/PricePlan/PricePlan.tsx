@@ -14,8 +14,15 @@ import {
   Price,
   PriceCash,
   Span,
+  CardH3,
+  CardSpan,
+  CardDiv,
+  PriceP,
+  NoteList,
+  IconCheck,
 } from './PricePlan.styled';
 import price from '../../assets/icons/price/Money Bag.svg';
+import check from '../../assets/icons/price/IconCheck.svg';
 
 const PricePlan: React.FC = () => {
   const [isMonthly, setIsMonthly] = useState(true);
@@ -32,8 +39,12 @@ const PricePlan: React.FC = () => {
         money1: '$149',
         money2: '$289',
         features: ['1 project', 'Basic support', 'Community access'],
-        buttonLink: 'https://example.com/starter',
-        note: 'Best for individuals getting started.',
+        buttonLink: 'https://sabsus.app/',
+        note: 'Includes core features:',
+        noteList:
+          'POS, CRM, delivery, inventory, finance, analytics, support, and updates.',
+        noteList1:
+          'Suitable for those who want to quickly start using our platform without launching their own application.',
         button: 'Get Started',
       },
       {
@@ -46,8 +57,12 @@ const PricePlan: React.FC = () => {
         money1: '$499',
         money2: '$899',
         features: ['5 projects', 'Priority support', 'Team access'],
-        buttonLink: 'https://example.com/pro',
-        note: 'Ideal for small teams scaling up.',
+        buttonLink: 'https://sabsus.app/',
+        note: 'Everything in SaaS, plus:',
+        noteList: 'Mobile app for iOS/Android and website under your brand.',
+        noteList1:
+          'Ideal for restaurants and chains looking to develop their own brand and customer base.',
+
         button: 'Try 14 Days Free',
       },
       {
@@ -60,8 +75,13 @@ const PricePlan: React.FC = () => {
         money1: '$25,000',
         money2: '$35,000',
         features: ['Unlimited projects', '24/7 support', 'Custom solutions'],
-        buttonLink: 'https://example.com/enterprise',
-        note: 'Tailored for large companies and agencies.',
+        buttonLink: 'https://sabsus.app/',
+        note: 'Everything in White-label, plus:',
+        noteList:
+          'You receive a lifetime right to use the app and website under your brand. Included: publishing, connecting all modules, databases, CRM, delivery, POS, etc. Hosting, databases, and integrations come under your control. The source code is not transferred.',
+        noteList1:
+          'Updates are available with an active maintenance subscription. One year of maintenance is free, then $50 per month for updates.',
+
         highlight: true,
         button: 'Request Demo',
       },
@@ -77,8 +97,12 @@ const PricePlan: React.FC = () => {
         money1: '$149',
         money2: '$289',
         features: ['1 project', 'Basic support', 'Community access'],
-        buttonLink: 'https://example.com/starter-annual',
-        note: 'Save 20% by paying annually.',
+        buttonLink: 'https://sabsus.app/',
+        note: 'Includes core features:',
+        noteList:
+          'POS, CRM, delivery, inventory, finance, analytics, support, and updates.',
+        noteList1:
+          'Suitable for those who want to quickly start using our platform without launching their own application.',
         button: 'Get Started',
       },
       {
@@ -91,8 +115,12 @@ const PricePlan: React.FC = () => {
         money1: '$499',
         money2: '$899',
         features: ['5 projects', 'Priority support', 'Team access'],
-        buttonLink: 'https://example.com/pro-annual',
-        note: 'Most popular plan for small teams.',
+        buttonLink: 'https://sabsus.app/',
+        note: 'Everything in SaaS, plus:',
+        noteList: 'Mobile app for iOS/Android and website under your brand.',
+        noteList1:
+          'Ideal for restaurants and chains looking to develop their own brand and customer base.',
+
         button: 'Try 14 Days Free',
       },
       {
@@ -105,8 +133,12 @@ const PricePlan: React.FC = () => {
         money1: '$25,000',
         money2: '$35,000',
         features: ['Unlimited projects', '24/7 support', 'Custom solutions'],
-        buttonLink: 'https://example.com/enterprise-annual',
-        note: 'Designed for enterprise-scale use.',
+        buttonLink: 'https://sabsus.app/',
+        note: 'Everything in White-label, plus:',
+        noteList:
+          'You receive a lifetime right to use the app and website under your brand. Included: publishing, connecting all modules, databases, CRM, delivery, POS, etc. Hosting, databases, and integrations come under your control. The source code is not transferred.',
+        noteList1:
+          'Updates are available with an active maintenance subscription. One year of maintenance is free, then $50 per month for updates.',
         highlight: true,
         button: 'Request Demo',
       },
@@ -144,24 +176,25 @@ const PricePlan: React.FC = () => {
           {currentData.map((plan, index) => (
             <div key={index}>
               <Card key={index} highlight={plan.highlight}>
-                <div>
-                  <h3>{plan.title}</h3> <span>{plan.procent}</span>
-                </div>
+                <CardDiv>
+                  <CardH3>{plan.title}</CardH3>{' '}
+                  <CardSpan>{plan.procent}</CardSpan>
+                </CardDiv>
 
                 <Price>
-                  <p>{plan.price}</p>{' '}
+                  <PriceP>{plan.price}</PriceP>{' '}
                   <PriceCash>
                     {plan.money} <Span> /Month </Span>
                   </PriceCash>
                 </Price>
                 <Price>
-                  <p>{plan.price1}</p>{' '}
+                  <PriceP>{plan.price1}</PriceP>{' '}
                   <PriceCash>
                     {plan.money1} <Span> /Month </Span>
                   </PriceCash>
                 </Price>
                 <Price>
-                  <p>{plan.price2}</p>{' '}
+                  <PriceP>{plan.price2}</PriceP>{' '}
                   <PriceCash>
                     {plan.money2} <Span> /Month </Span>
                   </PriceCash>
@@ -176,6 +209,12 @@ const PricePlan: React.FC = () => {
                 </a>
               </Card>{' '}
               <Note>{plan.note}</Note>
+              <NoteList>
+                <IconCheck src={check} alt="✔️" /> {plan.noteList}
+              </NoteList>
+              <NoteList>
+                <IconCheck src={check} alt="✔️" /> {plan.noteList1}
+              </NoteList>
             </div>
           ))}
         </CardsContainer>

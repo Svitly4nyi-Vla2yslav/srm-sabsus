@@ -25,8 +25,8 @@ import Swipper from './Swipper';
 
 const Hero: React.FC = () => {
   return (
-    <> {' '}
-       
+    <>
+      {' '}
       <HeroWrapper>
         <Container>
           <Spline
@@ -59,8 +59,15 @@ const Hero: React.FC = () => {
             </TextImageAvatar>
           </AvatarContainer>
           <ButtonContainer>
-            <HeroButton>Try For Free</HeroButton>
-            <HeroButtonGrey>View demo</HeroButtonGrey>
+            <a href="https://sabsus.app/"   target="_blank"
+                  rel="noopener noreferrer">
+              {' '}
+              <HeroButton>Try For Free</HeroButton>
+            </a>
+            <a href="https://sabsus.app/"   target="_blank"
+                  rel="noopener noreferrer">
+              <HeroButtonGrey>View demo</HeroButtonGrey>
+            </a>
           </ButtonContainer>
         </HeroContainerContent>
       </HeroWrapper>

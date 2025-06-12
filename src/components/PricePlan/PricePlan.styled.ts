@@ -188,16 +188,26 @@ backdrop-filter: blur(16px);
       ? '2px solid white'
       : '1px solid #333'};
 
-h3 {
+`;
+
+export const CardDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+`;
+
+export const CardH3 = styled.h3`
 font-family: var(--font-family);
 font-weight: 400;
 font-size: 16px;
 line-height: 130%;
 color: #494bec;
 
-}
+`;
 
-span{
+export const CardSpan = styled.span`
 font-family: var(--font-family);
 font-weight: 400;
 font-size: 16px;
@@ -209,15 +219,6 @@ border: 1px solid  #494bec;
 box-shadow:   0 0 5px 1px rgba(117, 118, 203, 0.44),
         0 0 10px 0px rgb(100, 102, 215),
         inset 0 0 16px 3px #6567EF;
-}
-
-div{
-    display: flex
-;
-    flex-direction: row;
-    justify-content: space-between;
-
-}
 `;
 
 
@@ -235,17 +236,21 @@ display: flex;
 align-items: baseline;
 border-bottom: 1px solid  var(--white-25);
 padding-bottom: 16px;
+justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
 
+`;
 
-p{
+export const PriceP = styled.p`
 font-family: var(--font-family);
 font-weight: 500;
 font-size: 22px;
 line-height: 130%;
 color: var(--white-100);
-
-};
+width: 50%;
 `;
+
 
 export const PriceCash = styled.h4`
 font-family: var(--font-family);
@@ -264,6 +269,16 @@ font-size: 14px;
 line-height: 130%;
 color: var(--white-100);
 `;
+
+export const TitleNote = styled.div`
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 18px;
+line-height: 130%;
+color: var(--white-100);
+`;
+
+
 
 export const Button = styled.button.withConfig({
   shouldForwardProp: (prop) => prop !== 'highlight',
@@ -323,6 +338,26 @@ export const Button = styled.button.withConfig({
 
 export const Note = styled.p`
   margin-top: 16px;
-  font-size: 14px;
-  color: #ccc;
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 18px;
+line-height: 130%;
+color: var(--white-100);
+margin-bottom: 12px;
+`;
+
+export const NoteList = styled.p`
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 15px;
+color: var(--white-60);
+margin-bottom: 12px;
+display: flex;
+gap: 6px;
+align-items: baseline;
+`;
+
+export const IconCheck = styled.img`
+width: 13px;
+height: 13px;
 `;

@@ -104,7 +104,12 @@ z-index: 10;
 `;
 
 const ButtonTryForFree: React.FC = () => {
-  return <ButtonFree>Try For Free</ButtonFree>;
+  return (
+    <a href='https://sabsus.app/'   target="_blank"
+                  rel="noopener noreferrer">
+      <ButtonFree>Try For Free</ButtonFree>
+    </a>
+  );
 };
 
 export default ButtonTryForFree;
