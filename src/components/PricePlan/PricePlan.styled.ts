@@ -110,44 +110,80 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
-export const SwitchContainer = styled.div`
+
+
+export const SwitchContainer = styled.div<{ $isMonthly: boolean }>`
   display: flex;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-border: 1px solid #212121;
-border-radius: 24px;
+  border: 1px solid #212121;
+  border-radius: 24px;
   width: 100%;
+  max-width: 308px;
+  height: 64px;
+  backdrop-filter: blur(16px);
+  box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), 
+              inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 
+              0 8px 16px -8px rgba(0, 0, 0, 0.03), 
+              0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 24px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--white-100);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #212121;
+border-radius: 24px;
+padding: 12px;
 width: 308px;
 height: 64px;
-backdrop-filter: blur(16px);
-box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
-background: rgba(255, 255, 255, 0.03);
-margin-bottom: 24px;
-font-family: var(--font-family);
-font-weight: 500;
-font-size: 20px;
-color: var(--white-100);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 4px;
+    left: 6px;
+       width: 141px;
+height: 40px;
+    background: white;
+    border-radius: 10px;
+    z-index: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translateX(${({ $isMonthly }) => $isMonthly ? '0' : 'calc(100% + 8px)'});
+  }
+
   button {
-  font-family: var(--font-family);
-font-weight: 400;
-font-size: 20px;
-color: var(--white);
-      cursor: pointer;
-  white-space: nowrap;
-  display: flex;
-  padding: 8px 12px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  border: none;
-  background: transparent;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--white);
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+   width: 141px;
+height: 40px;
+border-radius: 12px;
+padding: 8px 12px;
+    border: none;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
 
     &.active {
-      background: white;
       color: black;
-        border-radius: 12px;
+      font-weight: 500;
     }
   }
 `;
@@ -187,7 +223,24 @@ backdrop-filter: blur(16px);
     highlight
       ? '2px solid white'
       : '1px solid #333'};
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: ${({ highlight }) => 
+      highlight 
+        ? `0 0 20px 8px #494BEC, 0 0 40px 0px #4F51ED, inset 0 0 16px 6px #6567EF`
+        : `0 4px 20px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1)`};
+    background: ${({ highlight }) => 
+      highlight 
+        ? 'rgba(255, 255, 255, 0.12)' 
+        : 'rgba(255, 255, 255, 0.06)'};
+    border-color: ${({ highlight }) => highlight ? '#fff' : '#555'};
+  }
 
+  &:active {
+    transform: translateY(-2px);
+  }
 `;
 
 export const CardDiv = styled.div`
@@ -333,6 +386,32 @@ export const Button = styled.button.withConfig({
       z-index: -1;
     }
   `}
+
+   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: ${({ highlight }) =>
+      highlight
+        ? `0 0 30px rgba(101, 103, 239, 0.7), inset 0 0 15px rgba(73, 75, 236, 0.6)`
+        : `0 4px 12px rgba(0, 0, 0, 0.1), inset 0 -4px 8px rgba(255, 255, 255, 0.05)`};
+    background: ${({ highlight }) =>
+      highlight
+        ? `linear-gradient(180deg, rgb(82, 37, 189) 0%, rgba(255, 255, 255, 0.05) 100%)`
+        : `linear-gradient(180deg, rgba(255, 255, 255, 0.16) 7%, rgba(255, 255, 255, 0.02) 86%)`};
+  }
+
+  &:active {
+    transform: translateY(0);
+    transition-duration: 0.1s;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+  }
 `;
 
 

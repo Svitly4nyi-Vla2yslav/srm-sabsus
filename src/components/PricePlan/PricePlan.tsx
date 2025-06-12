@@ -157,7 +157,7 @@ const PricePlan: React.FC = () => {
         or fully own your ecosystem under your brand.
       </PriceText>
       <Container>
-        <SwitchContainer>
+        <SwitchContainer $isMonthly={isMonthly}>
           <button
             onClick={() => setIsMonthly(true)}
             className={isMonthly ? 'active' : ''}
