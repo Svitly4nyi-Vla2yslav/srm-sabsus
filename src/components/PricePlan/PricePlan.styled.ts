@@ -340,7 +340,6 @@ export const Button = styled.button.withConfig({
   padding: 12px 20px;
   width: 303px;
   height: 43px;
-  margin: 20px 0;
 
   font-family: var(--font-family);
   font-weight: 400;
