@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const SwiperContainer = styled.div`
   width: 100vw;
 //   height: 80%;
-  background-color: rgba(0, 0, 0, 0.83); /* півпрозорий фон */
+  background-color: rgba(0, 0, 0, 0); /* півпрозорий фон */
   backdrop-filter: blur(1px); /* ефект blur */
     // margin: 10px 0;
     padding: 60px 0px;
   overflow: visible;
-
+z-index: 1;
 img{
 
 

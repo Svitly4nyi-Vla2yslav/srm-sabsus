@@ -4,6 +4,7 @@ import Hero from '../../components/Hero/Hero';
 import PartnersBanner from '../../components/PartnersBanner/PartnersBanner';
 import PricingTable from '../../components/PricePlan/PricePlan';
 import ResultsFromBusinesses from '../../components/ResultsFromBusinesses/ResultsFromBusinesses';
+import StartSmall from '../../components/StartSmall/StartSmall';
 import WhyChooseOurPlatform from '../../components/WhyChooseOurPlatform/WhyChooseOurPlatform';
 import { HomeContainer } from './HomePage.styled';
 import React from 'react';
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
         <Feedback/>
         <PricingTable/>
         <PartnersBanner/>
+        <StartSmall/>
       </HomeContainer>
     </>
   );
