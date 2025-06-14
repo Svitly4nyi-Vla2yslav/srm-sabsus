@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link as ScrollLink, Element, scroller } from 'react-scroll';
+import { scroller } from 'react-scroll';
 import {
   Border,
   Cookie,
