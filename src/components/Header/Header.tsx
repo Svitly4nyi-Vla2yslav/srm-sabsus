@@ -33,7 +33,7 @@ const Header: React.FC = () => {
 
   return (
     <NavbarContainer $isScrolled={isScrolled}>
-      <HeaderWrapper>
+      <HeaderWrapper id="header">
         <Logo to="/home">
           <img src={logo} alt="Logo" />
         </Logo>

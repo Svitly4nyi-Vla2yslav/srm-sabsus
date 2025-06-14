@@ -20,8 +20,13 @@ const StartSmall: React.FC = () => {
         scale with you.
       </StartText>
       <ButtonContainer>
-        <HeroButton>Get started</HeroButton>
-        <HeroButtonGrey>View demo</HeroButtonGrey>
+        <a href="https://sabsus.app/" target="_blank" rel="noopener noreferrer">
+          <HeroButton>Get started</HeroButton>
+        </a>
+        <a href="https://sabsus.app/" target="_blank" rel="noopener noreferrer">
+          {' '}
+          <HeroButtonGrey>View demo</HeroButtonGrey>
+        </a>
       </ButtonContainer>
       <BackroundGradient />
     </ContainerStart>

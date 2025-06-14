@@ -18,6 +18,7 @@ import {
 } from './Swipper.styled';
 
 import Arrow from '../../assets/icons/arrow-narrow-up-right.svg';
+// import { ShadowLeft, ShadowRight } from '../Feedback/Feedback.styled';
 
 const partners = [
   {
@@ -83,6 +84,7 @@ const Swipper: React.FC = () => {
 
   return (
     <SwiperContainer>
+       {/* <ShadowLeft /> */}
       <Swiper
         loop={shouldLoop}
         slidesPerView={slidesPerView}
@@ -136,7 +138,7 @@ const Swipper: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
+ {/* <ShadowRight /> */}
       {/* Другий слайдер - відображається тільки на мобільних */}
       {isMobile && (
         <Swiper

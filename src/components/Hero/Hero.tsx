@@ -59,13 +59,19 @@ const Hero: React.FC = () => {
             </TextImageAvatar>
           </AvatarContainer>
           <ButtonContainer>
-            <a href="https://sabsus.app/"   target="_blank"
-                  rel="noopener noreferrer">
+            <a
+              href="https://sabsus.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {' '}
               <HeroButton>Try For Free</HeroButton>
             </a>
-            <a href="https://sabsus.app/"   target="_blank"
-                  rel="noopener noreferrer">
+            <a
+              href="https://sabsus.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <HeroButtonGrey>View demo</HeroButtonGrey>
             </a>
           </ButtonContainer>

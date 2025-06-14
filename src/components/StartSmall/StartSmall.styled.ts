@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const BackroundGradient = styled.div`
+&::after{
+content: "";
   position: absolute; // або absolute, якщо потрібно відносно батьківського контейнера
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100vh;
-  height: 180vw;
+  height: 200vw;
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
@@ -17,7 +19,7 @@ export const BackroundGradient = styled.div`
   filter: blur(180px);
   z-index: -5000; // щоб був під основним контентом
   opacity: 0.5;
-`;
+}`;
 
 export const ContainerStart = styled.div`
 position: relative;

@@ -8,7 +8,7 @@ export const SwiperContainer = styled.div`
     // margin: 10px 0;
     padding: 60px 0px;
   overflow: visible;
-z-index: 1;
+z-index: 6;
 img{
 
 
