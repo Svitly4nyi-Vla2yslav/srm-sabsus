@@ -113,9 +113,11 @@ margin-bottom: 16px;
 `;
 
 export const Licens = styled.div`
-dispay: flex;
+display: flex;
 justify-content: space-between;
-
+margin: 0 auto;
+width: 100%;
+flex-wrap: wrap;
 `;
 
 export const Cookie = styled.div`
@@ -211,6 +213,7 @@ background:rgba(0, 0, 0, 0.86);
 // opacity: 0.2;/
   color: #fff;
   position: relative;
+  padding: 16px;
 overflow: visible;
 height: auto;
       @media screen and (min-width: 744px){
@@ -226,7 +229,7 @@ margin-top:15% ;
 
 export const PolicySection = styled.section`
   max-width: 800px;
-  margin: 0 auto 60px;
+  margin: 0 auto ;
   padding: 20px;
 
       @media screen and (min-width: 744px){
@@ -259,18 +262,16 @@ export const LockIconContainer = styled.div`
 
 
 export const PolicyTitle = styled.h2`
-  font-family: var(--second-family);
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 115%;
-  letter-spacing: -0.04em;
-  color: var(--white);
-  margin-bottom: 20px;
-  text-align: center;
-      display: flex
-;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 18px;
+line-height: 130%;
+color: var(--white-100);
+display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    margin-bottom: 20px;
+   
 
         @media screen and (min-width: 744px){
 
@@ -283,27 +284,34 @@ export const PolicyTitle = styled.h2`
 }
 `;
 
-export const PolicyText = styled.div`
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 137%;
-  color: var(--white);
+export const BorderLicens = styled.p`
+  padding: 0px auto 50px auto;
+  width: 98%;
+  height: 2px; 
+  margin: 40px auto;
+background:  var(--white-24);
+position: relative;
+z-index: 10;
+@media screen and (min-width: 744px){
 
-  h3 {
-  font-family: var(--font-family);
-font-weight: 400;
-font-size: 17px;
-line-height: 137%;
-color: var(--white);
-  }
+
+}
+
+@media screen and (min-width: 1440px){
+max-width: 1440px;
+
+}
+`;
+
+export const PolicyText = styled.div`
+ 
 
   p {
-  font-family: var(--font-family);
+font-family: var(--font-family);
 font-weight: 400;
-font-size: 17px;
-line-height: 137%;
-color: var(--white);
+font-size: 16px;
+color: var(--white-75);
+margin-bottom: 10px;
   }
 
       @media screen and (min-width: 744px){
