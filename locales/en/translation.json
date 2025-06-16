@@ -1,0 +1,451 @@
+{
+  "header": {
+    "logoAlt": "Company Logo",
+    "nav": {
+      "home": "Home",
+      "service": "Service",
+      "about": "About Us",
+      "pricing": "Pricing",
+      "contacts": "Contacts"
+    }
+  },
+  "hero": {
+    "innovative": "Innovative Solutions",
+    "title": "You're building your own system",
+    "description": "A complete ecosystem of CRM, POS, mobile apps (iOS & Android) and web to manage cafés, restaurants, and retail stores — anytime, anywhere.",
+    "trustText": "Over 1200 businesses already trust us",
+    "buttons": {
+      "tryFree": "Try For Free",
+      "viewDemo": "View demo"
+    }
+  },
+  "swipper": {
+    "stats": [
+      {
+        "value": "2M+",
+        "description": "users daily"
+      },
+      {
+        "value": "$1B+",
+        "description": "in processed transactions"
+      },
+      {
+        "value": "99%",
+        "description": "Acceleration of business processes"
+      },
+      {
+        "value": "4+",
+        "description": "Languages Fully Multilingual Interface"
+      }
+    ]
+  },
+  "whyChoosePlatform": {
+    "title": "Why choose our platform",
+    "mainTitle": "Beyond POS<br />A system that grows with you",
+    "description": "We built an ecosystem that removes vendor lock-ins, works on any device, and adapts to any business — from corner cafés to international chains."
+  },
+  "featureSwiper": {
+    "features": [
+      {
+        "id": "Custom Identity",
+        "title": "White-label Branding",
+        "subtitle": "Custom app, site & receipts",
+        "overlay": {
+          "title": "Explore our CRM system!",
+          "text": "Access available for cashiers and chefs alike."
+        }
+      },
+      {
+        "id": "Role Access",
+        "title": "Smart Permissions",
+        "subtitle": "Access for cashiers and chefs",
+        "overlay": {
+          "title": "Explore our CRM system!",
+          "text": "Access available for cashiers and chefs alike."
+        }
+      },
+      {
+        "id": "Dynamic Offers",
+        "title": "AI & Automation",
+        "subtitle": "Dynamic offers & upsells",
+        "overlay": {
+          "title": "Explore our CRM system!",
+          "text": "Access available for cashiers and chefs alike."
+        }
+      },
+      {
+        "id": "Expandability",
+        "title": "Open API Integration",
+        "subtitle": "Connect tools, terminals & more",
+        "overlay": {
+          "title": "Explore our CRM system!",
+          "text": "Access available for cashiers and chefs alike."
+        }
+      }
+    ],
+    "buttons": {
+      "tryFree": "Try For Free",
+      "viewDemo": "View demo"
+    }
+  },
+  "allInOne": {
+    "mainText": "All-in-one CRM, POS & APP platform",
+    "mainTitle": "Everything your store, café, or delivery business needs — in one ecosystem",
+    "description": "Our platform connects orders, payments, inventory, staff, loyalty, and marketing in one place. No extra integrations, just growth.",
+    "cards": [
+      {
+        "title": "Customer Experience Suite",
+        "text": "Mobile app, CRM, loyalty & user comfort in one place.",
+        "buttons": [
+          "Mobile app",
+          "Delivery",
+          "Loyalty",
+          "CRM",
+          "UX"
+        ]
+      },
+      {
+        "title": "POS & Staff Operations",
+        "text": "Smart cashier system + team control + flexible flows.",
+        "buttons": [
+          "POS",
+          "Staff",
+          "QR",
+          "Orders",
+          "Shifts"
+        ]
+      },
+      {
+        "title": "Kitchen & Fulfillment",
+        "text": "Streamlined kitchen workflows and real-time cooking status.",
+        "buttons": [
+          "Kitchen",
+          "Assembly",
+          "Timers",
+          "Recipes"
+        ]
+      },
+      {
+        "title": "Inventory & Warehousing",
+        "text": "Full control over ingredients, supplies, and stock flow.",
+        "buttons": [
+          "Stock",
+          "Inventory",
+          "Ingredients"
+        ]
+      },
+      {
+        "title": "Analytics & Management",
+        "text": "Finance, reports, performance metrics — visually and smart.",
+        "buttons": [
+          "Analytics",
+          "Finance",
+          "Reports",
+          "AI"
+        ]
+      },
+      {
+        "title": "Marketing & Customization",
+        "text": "Push your brand forward with full control.",
+        "buttons": [
+          "Marketing",
+          "Branding",
+          "White-label",
+          "Multilingual",
+          "Promos"
+        ]
+      },
+      {
+        "title": "Integration & Scaling",
+        "text": "Open infrastructure. Grow as you go.",
+        "buttons": [
+          "API",
+          "Integration",
+          "Scaling",
+          "Multiformat",
+          "Offline"
+        ]
+      }
+    ]
+  },
+  "results": {
+    "mainText": "Results from Businesses",
+    "mainTitle": "How teams grow faster with our CRM ecosystem",
+    "description": "No hidden fees. No hardware lock-ins. Launch for free, scale on demand, or fully own your ecosystem under your brand.",
+    "cards": [
+      {
+        "title": "430%",
+        "text": "ROI after 3 years"
+      },
+      {
+        "title": "+37%",
+        "text": "Average revenue growth"
+      }
+    ]
+  },
+  "feedback": {
+    "title": "Trusted by 2000+ award-winning agencies and firms",
+    "ratings": [
+      {
+        "value": "4,8",
+        "source": "TechRadar CRM"
+      },
+      {
+        "value": "5,0",
+        "source": "ChroStartupTools"
+      },
+      {
+        "value": "4,9",
+        "source": "SaaS Advisor"
+      }
+    ],
+    "testimonials": [
+      {
+        "text": "Switching was easy thanks to outstanding support and clear onboarding. We now have a better overview of finances and staff management than ever before.",
+        "name": "Lucas Nguyen",
+        "position": "Operations Manager at Pizzario"
+      }
+    ]
+  },
+  "pricePlan": {
+    "mainText": "Pricing Plans",
+    "title": "Flexible for startups. Scalable for enterprise",
+    "description": "No hidden fees. No hardware lock-ins. Launch for free, scale on demand, or fully own your ecosystem under your brand.",
+    "switch": {
+      "monthly": "Pay Monthly",
+      "annually": "Pay Annually"
+    },
+    "plans": {
+      "monthly": [
+        {
+          "title": "SaaS model",
+          "discount": "-40%",
+          "tiers": [
+            {
+              "name": "Start 1",
+              "price": "$89"
+            },
+            {
+              "name": "Standard up to 3",
+              "price": "$149"
+            },
+            {
+              "name": "Business up to 10",
+              "price": "$289"
+            }
+          ],
+          "features": [
+            "1 project",
+            "Basic support",
+            "Community access"
+          ],
+          "button": "Get Started",
+          "note": "Includes core features:",
+          "noteList": [
+            "POS, CRM, delivery, inventory, finance, analytics, support, and updates.",
+            "Suitable for those who want to quickly start using our platform without launching their own application."
+          ]
+        },
+        {
+          "title": "White-label",
+          "discount": "-40%",
+          "tiers": [
+            {
+              "name": "White Start 1",
+              "price": "$249"
+            },
+            {
+              "name": "White Standard",
+              "price": "$499"
+            },
+            {
+              "name": "White Business",
+              "price": "$899"
+            }
+          ],
+          "features": [
+            "5 projects",
+            "Priority support",
+            "Team access"
+          ],
+          "button": "Try 14 Days Free",
+          "note": "Everything in SaaS, plus:",
+          "noteList": [
+            "Mobile app for iOS/Android and website under your brand.",
+            "Ideal for restaurants and chains looking to develop their own brand and customer base."
+          ]
+        },
+        {
+          "title": "White-label buyout",
+          "discount": "-32%",
+          "tiers": [
+            {
+              "name": "1 firm",
+              "price": "$14,000"
+            },
+            {
+              "name": "Up to 3 firms",
+              "price": "$25,000"
+            },
+            {
+              "name": "Up to 5–10 firms",
+              "price": "$35,000"
+            }
+          ],
+          "features": [
+            "Unlimited projects",
+            "24/7 support",
+            "Custom solutions"
+          ],
+          "button": "Request Demo",
+          "note": "Everything in White-label, plus:",
+          "noteList": [
+            "You receive a lifetime right to use the app and website under your brand. Included: publishing, connecting all modules, databases, CRM, delivery, POS, etc. Hosting, databases, and integrations come under your control. The source code is not transferred.",
+            "Updates are available with an active maintenance subscription. One year of maintenance is free, then $50 per month for updates."
+          ],
+          "highlight": true
+        }
+      ],
+      "annually": [
+        {
+          "title": "SaaS model",
+          "discount": "-30%",
+          "tiers": [
+            {
+              "name": "Start 1",
+              "price": "$89"
+            },
+            {
+              "name": "Standard up to 3",
+              "price": "$149"
+            },
+            {
+              "name": "Business up to 10",
+              "price": "$289"
+            }
+          ],
+          "features": [
+            "1 project",
+            "Basic support",
+            "Community access"
+          ],
+          "button": "Get Started",
+          "note": "Includes core features:",
+          "noteList": [
+            "POS, CRM, delivery, inventory, finance, analytics, support, and updates.",
+            "Suitable for those who want to quickly start using our platform without launching their own application."
+          ]
+        },
+        {
+          "title": "White-label",
+          "discount": "-30%",
+          "tiers": [
+            {
+              "name": "White Start 1",
+              "price": "$249"
+            },
+            {
+              "name": "White Standard",
+              "price": "$499"
+            },
+            {
+              "name": "White Business",
+              "price": "$899"
+            }
+          ],
+          "features": [
+            "5 projects",
+            "Priority support",
+            "Team access"
+          ],
+          "button": "Try 14 Days Free",
+          "note": "Everything in SaaS, plus:",
+          "noteList": [
+            "Mobile app for iOS/Android and website under your brand.",
+            "Ideal for restaurants and chains looking to develop their own brand and customer base."
+          ]
+        },
+        {
+          "title": "White-label buyout",
+          "discount": "-22%",
+          "tiers": [
+            {
+              "name": "1 firm",
+              "price": "$14,000"
+            },
+            {
+              "name": "Up to 3 firms",
+              "price": "$25,000"
+            },
+            {
+              "name": "Up to 5–10 firms",
+              "price": "$35,000"
+            }
+          ],
+          "features": [
+            "Unlimited projects",
+            "24/7 support",
+            "Custom solutions"
+          ],
+          "button": "Request Demo",
+          "note": "Everything in White-label, plus:",
+          "noteList": [
+            "You receive a lifetime right to use the app and website under your brand. Included: publishing, connecting all modules, databases, CRM, delivery, POS, etc. Hosting, databases, and integrations come under your control. The source code is not transferred.",
+            "Updates are available with an active maintenance subscription. One year of maintenance is free, then $50 per month for updates."
+          ],
+          "highlight": true
+        }
+      ]
+    }
+  },
+  "startSmall": {
+    "title": "Start small, grow without limits",
+    "text": "Launch your CRM and App platform in minutes — no code, no stress. We scale with you.",
+    "buttons": {
+      "getStarted": "Get started",
+      "viewDemo": "View demo"
+    }
+  },
+    "partnersBanner": {
+    "trustedText": "Trusted by 1200+ businesses and entrepreneurs"
+  },
+    "footer": {
+    "sections": {
+      "home": "Home",
+      "product": "Product",
+      "company": "Company",
+      "demo": "Watch the live demo"
+    },
+    "links": {
+      "benefits": "Benefits",
+      "service": "Service",
+      "prices": "Prices",
+      "customerExperience": "Customer Experience Suite",
+      "posStaff": "POS & Staff Operations",
+      "kitchen": "Kitchen & Fulfillment",
+      "inventory": "Inventory & Warehousing",
+      "analytics": "Analytics & Management",
+      "marketing": "Marketing & Customization",
+      "integration": "Integration & Scaling",
+      "ourServices": "Our Services",
+      "aboutUs": "About Us",
+      "contactUs": "Contact Us"
+    },
+    "buttons": {
+      "viewDemo": "View demo"
+    },
+    "legal": {
+      "cookiePolicy": "Cookie Policy",
+      "privacyStatement": "Privacy Statement",
+      "termsOfUse": "Terms of Use",
+      "copyright": "© 2023 CRM Solutions, Inc. All rights reserved."
+    }
+  },
+    "languageSwitcher": {
+    "english": "English",
+    "spanish": "Spanish",
+    "russian": "Russian",
+    "ukrainian": "Ukrainian",
+    "selectLanguage": "🌎{{language}} ⌄"
+  }
+}
