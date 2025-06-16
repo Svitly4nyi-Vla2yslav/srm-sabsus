@@ -104,7 +104,7 @@ export const GlobalStyle = css`
     --safe-area-inset-right: env(safe-area-inset-right, 0px);
   }
 
-  * {
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -112,7 +112,8 @@ export const GlobalStyle = css`
     scrollbar-width: none;
     word-wrap: break-word;
     z-index: 1;
-    -webkit-tap-highlight-color: transparent; /* Видаляє синій highlight при тапі на мобільних */
+    
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -200,10 +201,22 @@ export const GlobalStyle = css`
     font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
     touch-action: manipulation; /* Покращує відгук на тач-події */
+        width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   body::-webkit-scrollbar {
     display: none;
+  }
+
+    body {
+    position: relative;
+  }
+
+    main, .container, #root {
+    overflow-x: hidden;
+    width: 100%;
   }
 
   input, textarea, button {
