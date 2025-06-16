@@ -175,6 +175,7 @@ export const GlobalStyle = css`
     background: transparent;
     border: 0;
     border-radius: 0;
+    height: auto;
   }
   
   video {
@@ -220,6 +221,7 @@ export const GlobalStyle = css`
   }
 
   input, textarea, button {
+  height: auto;
     font-size: 16px;
     font-family: inherit;
     border-radius: 0; /* Фікс для iOS */
@@ -276,4 +278,9 @@ export const GlobalStyle = css`
       /* Специфічні стилі для Safari */
     }
   }
+
+
+
+
+  
 `;

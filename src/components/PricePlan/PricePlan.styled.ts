@@ -12,7 +12,7 @@ export const MainTextPrice = styled.p`
 margin: 0 auto;
 border-radius: 24px;
 padding: 4px 4px 4px 8px;
-width: 109px;
+    width: max-content;
 height: 28px;
 
 display: flex;
@@ -33,6 +33,7 @@ export const CardButtonText = styled.img`
   border-radius: 25px;
   margin: 0 auto;
   padding: 4px;
+  margin-left: 5px;
   overflow: visible;
   font-size: 13px;
   width: 20px;
@@ -117,65 +118,62 @@ export const SwitchContainer = styled.div<{ $isMonthly: boolean }>`
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  border: 1px solid #212121;
   border-radius: 24px;
   width: 100%;
-  max-width: 308px;
-  height: 64px;
+  max-width: 350px; /* Збільшено максимальну ширину */
+  min-height: 64px; /* Змінено height на min-height */
   backdrop-filter: blur(16px);
-  box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), 
-              inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 
-              0 8px 16px -8px rgba(0, 0, 0, 0.03), 
-              0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), 
+    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 
+    0 8px 16px -8px rgba(0, 0, 0, 0.03), 
+    0 2px 4px -2px rgba(0, 0, 0, 0.08);
   background: rgba(255, 255, 255, 0.03);
   margin-bottom: 24px;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px; /* Зменшено розмір шрифту */
   color: var(--white-100);
   position: relative;
   overflow: hidden;
   border: 1px solid #212121;
-border-radius: 24px;
-padding: 12px;
-width: 308px;
-height: 64px;
+  padding: 8px; /* Зменшено padding */
   
   &::before {
     content: '';
     position: absolute;
-    top: 10px;
-    bottom: 4px;
-    left: 6px;
-       width: 141px;
-height: 40px;
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    width: calc(50% - 16px); /* Гнучкий розмір фону */
     background: white;
-    border-radius: 10px;
+    border-radius: 16px;
     z-index: 0;
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transform: translateX(${({ $isMonthly }) => $isMonthly ? '0' : 'calc(100% + 8px)'});
+    transform: translateX(${({ $isMonthly }) => $isMonthly ? '0' : 'calc(100% + 8px)'});
   }
 
   button {
+    flex: 1; /* Кнопки займають рівну ширину */
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px); /* Гнучкий розмір шрифту */
     color: var(--white);
     cursor: pointer;
-    white-space: nowrap;
+    white-space: normal; /* Дозволяємо перенос слів */
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-   width: 141px;
-height: 40px;
-border-radius: 12px;
-padding: 8px 12px;
+    padding: 8px 12px;
     border: none;
     background: transparent;
     position: relative;
     z-index: 1;
     transition: color 0.3s ease;
+    word-break: break-word; /* Перенос довгих слів */
+    hyphens: auto; /* Автоматичні переноси */
+    min-width: 0; /* Дозволяє тексту стискатися */
 
     &:hover {
       color: rgba(255, 255, 255, 0.8);
@@ -187,7 +185,6 @@ padding: 8px 12px;
     }
   }
 `;
-
 export const CardsContainer = styled.div`
   display: flex;
   margin: 0 auto;

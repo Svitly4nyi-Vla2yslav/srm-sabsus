@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { scroller } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 import {
   Border,
   Cookie,
@@ -19,12 +20,12 @@ import logo from '../../assets/icons/logo-srm.svg';
 import { PoliciesContent } from './PoliciesContent';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const [showPolicies, setShowPolicies] = useState(false);
   const [activePolicy, setActivePolicy] = useState<string | null>(null);
 
   useEffect(() => {
     if (showPolicies && activePolicy) {
-      // Додаємо невелику затримку для гарантії рендеру
       const timer = setTimeout(() => {
         scroller.scrollTo(activePolicy, {
           duration: 800,
@@ -50,39 +51,44 @@ const Footer: React.FC = () => {
           <Logo style={{ marginBottom: 16 }}>
             <img src={logo} alt="Logo" />
           </Logo>
-          <WraperLink>Home</WraperLink>
-          <Link href="#">Benefits</Link>
-          <Link href="#">Service</Link>
-          <Link href="#">Prices</Link>
-          <WraperLink>Product</WraperLink>
-          <Link href="#">Customer Experience Suite</Link>
-          <Link href="#">POS & Staff Operations</Link>
-          <Link href="#">Kitchen & Fulfillment</Link>
-          <Link href="#">Inventory & Warehousing</Link>{' '}
-          <Link href="#">Analytics & Management</Link>
-          <Link href="#">Marketing & Customization</Link>
-          <Link href="#">Integration & Scaling </Link>
-          <WraperLink>Company</WraperLink>
-          <Link href="#">Our Services</Link>
-          <Link href="#">About Us</Link>
-          <Link href="#">Contact Us</Link>
-          <WraperLink>Watch the live demo</WraperLink>
-          <HeroButtonGrey>View demo</HeroButtonGrey>
+          
+          <WraperLink>{t('footer.sections.home')}</WraperLink>
+          <Link href="#">{t('footer.links.benefits')}</Link>
+          <Link href="#">{t('footer.links.service')}</Link>
+          <Link href="#">{t('footer.links.prices')}</Link>
+          
+          <WraperLink>{t('footer.sections.product')}</WraperLink>
+          <Link href="#">{t('footer.links.customerExperience')}</Link>
+          <Link href="#">{t('footer.links.posStaff')}</Link>
+          <Link href="#">{t('footer.links.kitchen')}</Link>
+          <Link href="#">{t('footer.links.inventory')}</Link>
+          <Link href="#">{t('footer.links.analytics')}</Link>
+          <Link href="#">{t('footer.links.marketing')}</Link>
+          <Link href="#">{t('footer.links.integration')}</Link>
+          
+          <WraperLink>{t('footer.sections.company')}</WraperLink>
+          <Link href="#">{t('footer.links.ourServices')}</Link>
+          <Link href="#">{t('footer.links.aboutUs')}</Link>
+          <Link href="#">{t('footer.links.contactUs')}</Link>
+          
+          <WraperLink>{t('footer.sections.demo')}</WraperLink>
+          <HeroButtonGrey>{t('footer.buttons.viewDemo')}</HeroButtonGrey>
+          
           <Border />
           <Licens>
             <CookieContainer>
               <Cookie onClick={() => handlePolicyClick('privacy')}>
-                Cookie Policy <Point />{' '}
+                {t('footer.legal.cookiePolicy')} <Point />{' '}
               </Cookie>
               <Cookie onClick={() => handlePolicyClick('cookie')}>
-                Privacy Statement <Point />{' '}
+                {t('footer.legal.privacyStatement')} <Point />{' '}
               </Cookie>
               <Cookie onClick={() => handlePolicyClick('terms')}>
-                Terms of Use
+                {t('footer.legal.termsOfUse')}
               </Cookie>
             </CookieContainer>
             <CookieContainer>
-              <Cookie>© 2023 CRM Solutions, Inc. All rights reserved.</Cookie>
+              <Cookie>{t('footer.legal.copyright')}</Cookie>
             </CookieContainer>
           </Licens>
         </FooterWrapp>

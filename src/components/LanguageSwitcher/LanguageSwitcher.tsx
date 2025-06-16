@@ -3,57 +3,46 @@ import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
-// Дані мов
-const languages = [
-  { code: 'en', label: 'Eng' },
-  { code: 'es', label: 'Esp' },
-  { code: 'ru', label: 'Rus' },
-  { code: 'ua', label: 'Ukr' },
-];
-
 // Styled Components
 const Wrapper = styled.div`
   position: relative;
-  left: 0px;
   display: flex;
   z-index: 100;
+  margin-right: 20px;
 
-  @media screen and (min-width: 744px) {
-    margin-right: 20px;
-    left: 0;
-  }
-
-  @media screen and (min-width: 1440px) {
+  @media (max-width: 743px) {
+    margin-right: 10px;
   }
 `;
 
 const Button = styled.button`
   border-radius: 12px;
-  padding:2px;
-  max-width: 101px;
+  padding: 8px 12px;
+  min-width: 100px;
   height: 36px;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   text-align: center;
   color: var(--white-100);
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px);
-  box-shadow:
-    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03),
-    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
-    0 8px 16px -8px rgba(0, 0, 0, 0.03),
-    0 2px 4px -2px rgba(0, 0, 0, 0.08);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.12) 7%,
-    rgba(255, 255, 255, 0) 86%
-  );
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
 
   &:hover {
-    background: #444;
-    background-color: rgba(249, 249, 249, 0.28);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 743px) {
+    min-width: 80px;
+    font-size: 13px;
+    padding: 6px 10px;
   }
 `;
 
@@ -62,73 +51,69 @@ const Dropdown = styled(motion.ul)`
   top: 100%;
   left: 0;
   margin-top: 8px;
-  width: 60px;
-  background-color: rgba(249, 249, 249, 0.28);
+  min-width: 120px;
+  background: rgba(30, 30, 30, 0.9);
   backdrop-filter: blur(10px);
   color: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   z-index: 11;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
 const DropdownItem = styled(motion.li)`
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 15px;
-  text-align: center;
-  color: var(--white-100);
+  font-size: 14px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px;
-  cursor: pointer;
-  transition: background 0.2s;
+
   &:hover {
-    background: #444;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 `;
 
-const Icons = styled.p`
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 15px;
-  text-align: center;
-  color: var(--white-100);
-  width: 0px;
-`;
-
-const IconsArrow = styled.p`
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 15px;
-  text-align: center;
-  color: var(--white-100);
-  //   width: 10px;
+const FlagIcon = styled.span`
+  font-size: 16px;
 `;
 
 const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const selectedLang =
-    languages.find(lang => lang.code === i18n.language) || languages[0];
+
+  const languages = [
+    { code: 'en', label: t('languageSwitcher.english'), flag: '🇬🇧' },
+    { code: 'es', label: t('languageSwitcher.spanish'), flag: '🇪🇸' },
+    { code: 'ru', label: t('languageSwitcher.russian'), flag: '🇷🇺' },
+    { code: 'uk', label: t('languageSwitcher.ukrainian'), flag: '🇺🇦' }
+  ];
+
+  const selectedLang = languages.find(lang => lang.code === i18n.language) || languages[0];
 
   const toggleMenu = () => setIsOpen(prev => !prev);
 
-  const handleLanguageChange = (langCode: string) => {
-    i18n.changeLanguage(langCode).then(() => {
-      // Перезавантажуємо сторінку після зміни мови
-      window.location.reload();
-    });
+  const handleLanguageChange = async (langCode: string) => {
+    await i18n.changeLanguage(langCode);
     setIsOpen(false);
+    // Оновлюємо сторінку для застосування змін
+    window.location.reload();
   };
 
   return (
     <Wrapper>
-      <Button onClick={toggleMenu}>
-        <span>🌎{selectedLang.label} ⌄ </span>
-        <Icons></Icons>
-        <IconsArrow></IconsArrow>
+      <Button onClick={toggleMenu} aria-label="Change language">
+        <FlagIcon>🌎</FlagIcon>
+        {selectedLang.label}
+        <span>⌄</span>
       </Button>
 
       <AnimatePresence>
@@ -143,9 +128,11 @@ const LanguageSwitcher = () => {
               <DropdownItem
                 key={lang.code}
                 onClick={() => handleLanguageChange(lang.code)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
+                <FlagIcon>{lang.flag}</FlagIcon>
                 {lang.label}
-                <Icons></Icons>
               </DropdownItem>
             ))}
           </Dropdown>

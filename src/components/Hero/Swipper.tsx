@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-// import { getPartners, Partner } from '../../firabase';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/bundle';
 import { useMediaQuery } from 'react-responsive';
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import {
   ArrowIcon,
   CardContainer,
@@ -16,64 +15,23 @@ import {
   SmallLine,
   SwiperContainer,
 } from './Swipper.styled';
-
 import Arrow from '../../assets/icons/arrow-narrow-up-right.svg';
-// import { ShadowLeft, ShadowRight } from '../Feedback/Feedback.styled';
-
-const partners = [
-  {
-    id: 1,
-    procent: '2M+',
-    link: '#',
-    text: 'users daily',
-  },
-  {
-    id: 2,
-    procent: '$1B+',
-    link: '#',
-    text: 'in processed transactions',
-  },
-  {
-    id: 3,
-    procent: '99%',
-    link: '#',
-    text: 'Acceleration of business processes',
-  },
-  {
-    id: 4,
-    procent: ' 4+',
-    link: '#',
-    text: 'Languages Fully Multilingual Interface',
-  },
-  {
-    id: 5,
-    procent: '2M+',
-    link: '#',
-    text: 'users daily',
-  },
-  {
-    id: 6,
-    procent: '$1B+',
-    link: '#',
-    text: 'in processed transactions',
-  },
-  {
-    id: 7,
-    procent: '99%',
-    link: '#',
-    text: 'Acceleration of business processes',
-  },
-];
 
 const Swipper: React.FC = () => {
-  //   const { t } = useTranslation();
+  const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 743px)' });
   const isTablet = useMediaQuery({
     query: '(min-width: 744px) and (max-width: 1023px)',
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
 
-  //   const [partners, setPartners] = useState<Partner[]>([]);
+  const stats = t('swipper.stats', { returnObjects: true }) as Array<{
+    value: string;
+    description: string;
+  }>;
+
+  // Дублюємо дані для безперервного циклу
+  const partners = [...stats, ...stats.slice(0, 3)];
 
   useEffect(() => {
     // getPartners().then(setPartners);
@@ -84,25 +42,24 @@ const Swipper: React.FC = () => {
 
   return (
     <SwiperContainer>
-       {/* <ShadowLeft /> */}
       <Swiper
         loop={shouldLoop}
         slidesPerView={slidesPerView}
         spaceBetween={1}
         autoplay={{
-          delay: 2000, // Збільшено затримку для нормальної прокрутки
+          delay: 2000,
           disableOnInteraction: false,
-          waitForTransition: true, // Додано для плавності
-          pauseOnMouseEnter: true, // Додано для зупинки при наведенні
+          waitForTransition: true,
+          pauseOnMouseEnter: true,
         }}
-        speed={4000} // Зменшено швидкість для плавності
+        speed={4000}
         modules={[Autoplay]}
         className="mySwiper"
         style={{ width: '100%' }}
       >
-        {partners.map(partner => (
+        {partners.map((partner, index) => (
           <SwiperSlide
-            key={partner.id}
+            key={index}
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -111,34 +68,19 @@ const Swipper: React.FC = () => {
               padding: 20,
             }}
           >
-            {partner.link ? (
-              <CardContainer
-                href={partner.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ArrowIcon src={Arrow} alt="↗️" />
-                <ContentWrapper>
-                  <DescriptionText>{partner.text}</DescriptionText>
-                  <PercentageText>{partner.procent}</PercentageText>
-                </ContentWrapper>
-                <GradientLine />
-                <SmallLine />
-              </CardContainer>
-            ) : (
-              <CardContainer>
-                <ContentWrapper>
-                  <DescriptionText>{partner.text}</DescriptionText>
-                  <PercentageText>{partner.procent}</PercentageText>
-                </ContentWrapper>
-                <GradientLine />
-                <SmallLine />
-              </CardContainer>
-            )}
+            <CardContainer>
+              <ArrowIcon src={Arrow} alt="↗️" />
+              <ContentWrapper>
+                <DescriptionText>{partner.description}</DescriptionText>
+                <PercentageText>{partner.value}</PercentageText>
+              </ContentWrapper>
+              <GradientLine />
+              <SmallLine />
+            </CardContainer>
           </SwiperSlide>
         ))}
       </Swiper>
- {/* <ShadowRight /> */}
+
       {/* Другий слайдер - відображається тільки на мобільних */}
       {isMobile && (
         <Swiper
@@ -146,12 +88,12 @@ const Swipper: React.FC = () => {
           slidesPerView={slidesPerView}
           spaceBetween={10}
           autoplay={{
-            delay: 0, // Збільшено затримку для нормальної прокрутки
+            delay: 0,
             disableOnInteraction: false,
-            waitForTransition: true, // Додано для плавності
-            pauseOnMouseEnter: true, // Додано для зупинки при наведенні
+            waitForTransition: true,
+            pauseOnMouseEnter: true,
           }}
-          speed={4000} // Зменшено швидкість для плавності
+          speed={4000}
           modules={[Autoplay]}
           className="mySwiper"
           style={{ width: '100vh' }}

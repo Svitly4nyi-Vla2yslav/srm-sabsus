@@ -82,8 +82,8 @@ display: flex;
 justify-content: space-around;
 border-radius: 24px;
 padding: 4px 0px 4px 8px;
-width: 150px;
-height: 28px;
+    width: fit-content;
+height: auto;
 align-items: center;
 
 
@@ -102,6 +102,7 @@ background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255,
 
 export const SpanUnicorn = styled.span`
     border-radius: 25px;
+    margin-left: 10px;
     padding: 4px;
     width: 22px;
     height: 22px;
@@ -169,18 +170,18 @@ color: var(--white-100);
 
 export const ButtonContainer = styled.div`
 margin: 0 auto;
-width: 273px;
-height: 43px;
+width: 285px;
+// height: 43px;
 margin-top: 20px;
 display: flex;
-
+gap: 16px;
+justify-content: center;
 `;
 
 export const HeroButton = styled.button`
 z-index: 10;
   border-radius: 12px;
-  width: 110px;
-  height: 38px;
+width: 100%;
   position: relative;
   overflow: hidden;
 
@@ -239,9 +240,9 @@ z-index: 10;
     }
   }
 border-radius: 12px;
-padding: 12px 20px;
-width: 136px;
-height: 43px;
+padding: 12px 12px;
+width: 100%;
+height: auto;
 `;
 
 export const pulseGrey = keyframes`
@@ -260,7 +261,6 @@ export const HeroButtonGrey = styled.button`
 z-index: 10;
   border-radius: 12px;
   width: 110px;
-  height: 38px;
   position: relative;
   overflow: hidden;
   
@@ -306,9 +306,8 @@ z-index: 10;
   }
 border: 1px solid #212121;
 border-radius: 12px;
-padding: 12px 20px;
-width: 125px;
-height: 43px;
+padding: 12px 12px;
+width: 100%;
 
 backdrop-filter: blur(168px);
 box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);

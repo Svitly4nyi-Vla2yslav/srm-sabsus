@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-
+import { useTranslation } from 'react-i18next';
 // Анімація пульсації
 export const pulse = keyframes`
   0% {
@@ -104,10 +104,11 @@ z-index: 10;
 `;
 
 const ButtonTryForFree: React.FC = () => {
+    const { t } = useTranslation();
   return (
     <a href='https://sabsus.app/'   target="_blank"
                   rel="noopener noreferrer">
-      <ButtonFree>Try For Free</ButtonFree>
+      <ButtonFree>{t('hero.buttons.tryFree')}</ButtonFree>
     </a>
   );
 };

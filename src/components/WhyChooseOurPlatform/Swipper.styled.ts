@@ -52,8 +52,8 @@ export const BadgeContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  width: 100%;
+   width: fit-content;
+   gap: 6px;
 `;
 
 export const IconWrapper = styled.div`
@@ -83,6 +83,7 @@ export const IconWrapper = styled.div`
       rgba(79, 74, 82, 0.86)
     )
     rgba(255, 255, 255, 0.03);
+
 `;
 
 export const BadgeButton = styled.button`
@@ -104,7 +105,7 @@ export const BadgeButton = styled.button`
     0px 8px 16px -8px rgba(0, 0, 0, 0.03),
     0px -5px 6px 0px rgba(255, 255, 255, 0.03) inset,
     0px -8px 24px 0px rgba(255, 255, 255, 0.03) inset;
-  width: 136px;
+      width: 140px;
   height: 28px;
   border: none;
   outline: none;
@@ -117,6 +118,7 @@ export const BadgeText = styled.p`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.2em;
+ padding-right: 10px;
 `;
 
 export const Title = styled.p`

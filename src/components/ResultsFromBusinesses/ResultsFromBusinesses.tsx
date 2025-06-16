@@ -18,7 +18,6 @@ import {
   ResultTitleWrapper,
 } from './ResultsFromBusinesses.styled';
 import { CardButtonText } from '../AllinOneSRM/AllinOneSRM.styled';
-
 import icon18 from '../../assets/icons/cards4/Chart Increasing.svg';
 import IconPazzario from '../../assets/icons/pizzario/pizzarioIcon.png';
 import Image1 from '../../assets/icons/pizzario/image1.svg';
@@ -27,28 +26,35 @@ import Image3 from '../../assets/icons/pizzario/image3.png';
 import Image4 from '../../assets/icons/pizzario/image4.png';
 import Iphone from '../../assets/icons/pizzario/iPhone16ProMax.png';
 import burban from '../../assets/icons/pizzario/burbanIcons.png';
+import { useTranslation } from 'react-i18next';
 
 const ResultsFromBusinesses: React.FC = () => {
+  const { t } = useTranslation();
+  const data = t('results', { returnObjects: true }) as {
+    mainText: string;
+    mainTitle: string;
+    description: string;
+    cards: Array<{
+      title: string;
+      text: string;
+    }>;
+  };
+
   return (
     <ResultsFromBusinessesWrapper>
       <ResultMainText>
-        Results from Businesses <CardButtonText src={icon18} alt="💹" />{' '}
+        {data.mainText} <CardButtonText src={icon18} alt="💹" />
       </ResultMainText>
-      <ResultMainTitle>
-        How teams grow faster with our CRM ecosystem
-      </ResultMainTitle>
-      <ResultMainTextDescription>
-        No hidden fees. No hardware lock-ins. Launch for free, scale on demand,
-        or fully own your ecosystem under your brand.
-      </ResultMainTextDescription>
+      <ResultMainTitle>{data.mainTitle}</ResultMainTitle>
+      <ResultMainTextDescription>{data.description}</ResultMainTextDescription>
       <ResultDisplayGrid>
         <ResultMasterImage src={Iphone} alt="Main Image" />
 
         <ResultCard>
           <ResultIconCard src={IconPazzario} alt="Icon" />
           <ResultTitleWrapper>
-            <ResultTitle>430%</ResultTitle>
-            <ResultText>ROI after 3 years</ResultText>
+            <ResultTitle>{data.cards[0].title}</ResultTitle>
+            <ResultText>{data.cards[0].text}</ResultText>
           </ResultTitleWrapper>
         </ResultCard>
 
@@ -59,8 +65,8 @@ const ResultsFromBusinesses: React.FC = () => {
         <ResultCard1>
           <ResultIconCard src={burban} alt="Icon" />
           <ResultTitleWrapper>
-            <ResultTitle>+37%</ResultTitle>
-            <ResultText>Card Text</ResultText>
+            <ResultTitle>{data.cards[1].title}</ResultTitle>
+            <ResultText>{data.cards[1].text}</ResultText>
           </ResultTitleWrapper>
         </ResultCard1>
 

@@ -11,7 +11,7 @@ export const MainText = styled.p`
   margin: 0 auto;
   border-radius: 24px;
   padding: 4px 4px 4px 14px;
-  width: 243px;
+      width: max-content;
   height: 28px;
   display: flex;
   font-family: var(--font-family);
@@ -74,7 +74,8 @@ export const Card = styled.div`
   border-radius: 24px;
   padding: 16px;
   width: 343px;
-  height: 332px;
+  min-height: 332px;
+  height: auto;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -180,6 +181,7 @@ export const CardButtonText = styled.img`
   overflow: visible;
   font-size: 13px;
   width: 20px;
+  margin-left: 6px;
   box-shadow: 
     inset 0 -8px 24px 0 rgba(255, 255, 255, 0.18), 
     inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 

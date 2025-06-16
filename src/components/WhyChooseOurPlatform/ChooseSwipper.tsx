@@ -17,56 +17,59 @@ import {
   HeroButton,
   HeroButtonGrey,
 } from '../Hero/Hero.styled';
-import { HeaderContainer, Divider, FeatureCard, BadgeWrapper, AbsoluteBadge, BadgeOutline, BadgeContent, IconWrapper, BadgeButton, BadgeText, Title, Subtitle, SlideContainer, SlideHeader, SlideLogo, LogoImage, ToolGroup, SlideContent, SlideImage, ContentOverlay, OverlayTitle, OverlayText } from './Swipper.styled';
-
-// Styled Components for the Header
+import { 
+  HeaderContainer, 
+  Divider, 
+  FeatureCard, 
+  BadgeWrapper, 
+  AbsoluteBadge, 
+  BadgeOutline, 
+  BadgeContent, 
+  IconWrapper, 
+  BadgeButton, 
+  BadgeText, 
+  Title, 
+  Subtitle, 
+  SlideContainer, 
+  SlideHeader, 
+  SlideLogo, 
+  LogoImage, 
+  ToolGroup, 
+  SlideContent, 
+  SlideImage, 
+  ContentOverlay, 
+  OverlayTitle, 
+  OverlayText 
+} from './Swipper.styled';
+import { useTranslation } from 'react-i18next';
 
 const FeatureSwiper = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const swiperRef = useRef<SwiperCore | null>(null);
+  const { t } = useTranslation();
 
-  const features = [
-    {
-      id: 'Custom Identity',
-      title: 'White-label Branding',
-      subtitle: 'Custom app, site & receipts',
-      icon: '🎆',
-      smallIcon: '/Fireworks(1).png',
-      image: slide1,
-      active: activeSlide === 0,
-    },
-    {
-      id: 'Role Access',
-      title: 'Smart Permissions',
-      subtitle: 'Access for cashiers and chefs',
-      icon: '👨‍💼',
-      smallIcon: '/ManOfficeWorker(1).png',
-      image: slide2,
-      active: activeSlide === 1,
-    },
-    {
-      id: 'Dynamic Offers',
-      title: 'AI & Automation',
-      subtitle: 'Dynamic offers & upsells',
-      icon: '🤖',
-      smallIcon: '/Robot(1).png',
-      image: slide3,
-      active: activeSlide === 2,
-    },
-    {
-      id: 'Expandability',
-      title: 'Open API Integration',
-      subtitle: 'Connect tools, terminals & more',
-      icon: '🔌',
-      smallIcon: '/ElectricPlug(1).png',
-      image: slide4,
-      active: activeSlide === 3,
-    },
-  ];
+  const featuresData = t('featureSwiper.features', { returnObjects: true }) as Array<{
+    id: string;
+    title: string;
+    subtitle: string;
+    overlay: {
+      title: string;
+      text: string;
+    };
+  }>;
+
+  const features = featuresData.map((feature, index) => ({
+    ...feature,
+    icon: ['🎆', '👨‍💼', '🤖', '🔌'][index],
+    smallIcon: ['/Fireworks(1).png', '/ManOfficeWorker(1).png', '/Robot(1).png', '/ElectricPlug(1).png'][index],
+    image: [slide1, slide2, slide3, slide4][index],
+    active: activeSlide === index
+  }));
 
   const handleSlideChange = (swiper: SwiperCore) => {
     setActiveSlide(swiper.activeIndex);
   };
+
   const navigateToSlide = (index: number) => {
     setActiveSlide(index);
     if (swiperRef.current) {
@@ -76,7 +79,6 @@ const FeatureSwiper = () => {
 
   return (
     <div className="flex flex-col items-center">
-      {/* Header with anchor links */}
       <HeaderContainer>
         {features.map((feature, index) => (
           <React.Fragment key={feature.id}>
@@ -94,7 +96,7 @@ const FeatureSwiper = () => {
                   <BadgeButton
                     style={{
                       boxShadow: feature.active
-                        ? ' inset 0 0 20px 0 rgba(191, 123, 246, 0.7), inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15), inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1), 0 0 10px 6px rgba(191, 123, 246, 0.4) , 0 15px 30px -10px rgba(0, 0, 0, 0.25), 0 5px 10px -5px rgba(0, 0, 0, 0.2)'
+                        ? 'inset 0 0 20px 0 rgba(191, 123, 246, 0.7), inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15), inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1), 0 0 10px 6px rgba(191, 123, 246, 0.4), 0 15px 30px -10px rgba(0, 0, 0, 0.25), 0 5px 10px -5px rgba(0, 0, 0, 0.2)'
                         : 'none',
                     }}
                   >
@@ -115,7 +117,6 @@ const FeatureSwiper = () => {
         ))}
       </HeaderContainer>
 
-      {/* Swiper component */}
       <div style={{ width: '100%', maxWidth: '800px', margin: '40px auto' }}>
         <Swiper
           onSwiper={swiper => {
@@ -146,11 +147,11 @@ const FeatureSwiper = () => {
                 <SlideContent>
                   <SlideImage $image={feature.image} />
                   <ContentOverlay>
-                    <OverlayTitle>Explore our CRM system!</OverlayTitle>
-                    <OverlayText>Access available for cashiers and chefs alike.</OverlayText>
+                    <OverlayTitle>{feature.overlay.title}</OverlayTitle>
+                    <OverlayText>{feature.overlay.text}</OverlayText>
                     <ButtonContainer>
-                      <HeroButton>Try For Free</HeroButton>
-                      <HeroButtonGrey>View demo</HeroButtonGrey>
+                      <HeroButton>{t('featureSwiper.buttons.tryFree')}</HeroButton>
+                      <HeroButtonGrey>{t('featureSwiper.buttons.viewDemo')}</HeroButtonGrey>
                     </ButtonContainer>
                   </ContentOverlay>
                 </SlideContent>

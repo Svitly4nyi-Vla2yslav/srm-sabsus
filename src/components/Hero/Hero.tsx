@@ -22,11 +22,13 @@ import Avatar3 from '../../assets/icons/avatar/Image-36-3.svg';
 import Avatar4 from '../../assets/icons/avatar/Image-36-4.svg';
 import Spline from '@splinetool/react-spline';
 import Swipper from './Swipper';
+import { useTranslation } from 'react-i18next';
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      {' '}
       <HeroWrapper>
         <Container>
           <Spline
@@ -38,13 +40,10 @@ const Hero: React.FC = () => {
           />
         </Container>
         <HeroInnovative>
-          Innovative Solutions <SpanUnicorn>🦄</SpanUnicorn>
+          {t('hero.innovative')}  <SpanUnicorn> 🦄</SpanUnicorn>
         </HeroInnovative>
-        <HeroTitle>You’re building your own system</HeroTitle>
-        <HeroText>
-          A complete ecosystem of CRM, POS, mobile apps (iOS & Android) and web
-          to manage cafés, restaurants, and retail stores — anytime, anywhere.
-        </HeroText>
+        <HeroTitle>{t('hero.title')}</HeroTitle>
+        <HeroText>{t('hero.description')}</HeroText>
         <HeroContainerContent>
           <AvatarContainer>
             <ImageContainer>
@@ -54,9 +53,7 @@ const Hero: React.FC = () => {
               <ImageAvatar src={Avatar3} alt="😶‍🌫️" />
               <ImageAvatar src={Avatar4} alt="😨" />
             </ImageContainer>
-            <TextImageAvatar>
-              Over 1200 businesses already trust us
-            </TextImageAvatar>
+            <TextImageAvatar>{t('hero.trustText')}</TextImageAvatar>
           </AvatarContainer>
           <ButtonContainer>
             <a
@@ -64,15 +61,14 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {' '}
-              <HeroButton>Try For Free</HeroButton>
+              <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
             </a>
             <a
               href="https://sabsus.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>View demo</HeroButtonGrey>
+              <HeroButtonGrey>{t('hero.buttons.viewDemo')}</HeroButtonGrey>
             </a>
           </ButtonContainer>
         </HeroContainerContent>

@@ -14,9 +14,11 @@ import BurgerMenu from '../MobileMenu/MobileMenu';
 import logo from "../../assets/icons/logo-srm.svg"
 import ButtonTryForFree from '../ButtonTryForFree/ButtonTryForFree';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     AOS.init({ duration: 3000 });
@@ -35,30 +37,30 @@ const Header: React.FC = () => {
     <NavbarContainer $isScrolled={isScrolled}>
       <HeaderWrapper id="header">
         <Logo to="/home">
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt={t('header.logoAlt')} />
         </Logo>
         <LanguageSwitcher/>
-        <ButtonTryForFree/>
+       
         <NavList>
           {isMobile ? (
             <BurgerMenu />
           ) : (
-            <>
+            <> <ButtonTryForFree/>
               <NavItem>
-                <StyledNavLink to="/home">Home</StyledNavLink>
-              </NavItem>{' '}
-              <NavItem>
-                <StyledNavLink to="/service">Service</StyledNavLink>
-              </NavItem>{' '}
-              <NavItem>
-                <StyledNavLink to="/about">About Us</StyledNavLink>
+                <StyledNavLink to="/home">{t('header.nav.home')}</StyledNavLink>
               </NavItem>
               <NavItem>
-                <StyledNavLink to="/pricing">Pricing</StyledNavLink>
-              </NavItem>{' '}
+                <StyledNavLink to="/service">{t('header.nav.service')}</StyledNavLink>
+              </NavItem>
               <NavItem>
-                <StyledNavLink to="/contact">Contacts</StyledNavLink>
-              </NavItem>{' '}
+                <StyledNavLink to="/about">{t('header.nav.about')}</StyledNavLink>
+              </NavItem>
+              <NavItem>
+                <StyledNavLink to="/pricing">{t('header.nav.pricing')}</StyledNavLink>
+              </NavItem>
+              <NavItem>
+                <StyledNavLink to="/contact">{t('header.nav.contacts')}</StyledNavLink>
+              </NavItem>
             </>
           )}
         </NavList>
