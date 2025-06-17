@@ -326,10 +326,10 @@
     }
   },
     "languageSwitcher": {
-    "english": "Inglés",
-    "spanish": "Español",
-    "russian": "Ruso",
-    "ukrainian": "Ucraniano",
+    "english": "Ing",
+    "spanish": "Esp",
+    "russian": "Rus",
+    "ukrainian": "Ucr",
     "selectLanguage": "🌎{{language}} ⌄"
   }
 }

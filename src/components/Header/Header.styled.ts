@@ -6,7 +6,7 @@ export const NavbarContainer = styled.header<{ $isScrolled: boolean }>`
   justify-content: space-between;
   align-items: center;
    background: rgb(0, 0, 0);
-  padding: 1rem 2rem;
+  padding: 0.5rem ;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@ export const NavbarContainer = styled.header<{ $isScrolled: boolean }>`
   transition: all 0.3s ease;
   z-index: 99;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     padding: 1rem;
     max-width: 768px;
   }
@@ -32,14 +32,56 @@ margin: 0 auto;
   }
 `;
 
-export const HeaderWrapper = styled.div`
-      display: flex;
-    width: 1440px;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
 
+export const HeaderWrapper = styled.div`
+  display: flex;
+  width: 1440px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2px;
 `;
+
+export const LangButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media screen and (min-width: 1440px) {
+    justify-content: flex-end;
+    width: auto;
+
+    div{
+    display: flex;
+    }
+  }
+`;
+
+export const NavList = styled.ul`
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  @media screen and (min-width: 1440px) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 24px;
+    padding: 12px 20px;
+    width: auto;
+    height: 42px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.03), 
+                0 2px 4px -2px rgba(0, 0, 0, 0.08), 
+                inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), 
+                inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%), 
+                rgba(255, 255, 255, 0.03);
+  }
+`;
+
 export const Logo = styled(NavLink)`
   font-size: 1.5rem;
   font-weight: bold;
@@ -48,7 +90,7 @@ export const Logo = styled(NavLink)`
   z-index: 10;
   img {
  width: 142px;
-height: 19px;
+height: auto;
   overflov: hidden;
 
   
@@ -63,16 +105,27 @@ height: 19px;
 
 
 
-export const NavList = styled.ul`
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-`;
+// export const NavList = styled.ul`
+//   display: flex;
+//   gap: 2rem;
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+//    @media screen and (min-width: 1440px){
+//     border-radius: 24px;
+// padding: 12px 20px;
+// width: 404px;
+// height: 42px;
+
+// backdrop-filter: blur(16px);
+// box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08), inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03);
+// background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%), rgba(255, 255, 255, 0.03);
+
+// }`;
 
 export const NavItem = styled.li`
 color:rgb(49, 46, 46);
+
   a {
     text-decoration: none;
    color: #808080;

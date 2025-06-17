@@ -55,26 +55,28 @@ export const Container = styled.div`
     }
   }
 
-  // /* Великі екрани */
-  // @media screen and (min-width: 1440px) {
-  //   width: 100%;
-  //   height: 100vh;
-  // }
-
-  // /* Дуже широкі екрани */
-  // @media screen and (min-width: 2000px) {
-  //   width: 100%;
-  //   height: 100vh;
-  // }
 `;
 
 export const HeroWrapper = styled.div`
-margin : 0 auto;
-margin-top: 100px;
-width: 100%;
-height: 100%;
-margin-bottom: 100px;
-position: relative;
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
 `;
 
 export const HeroInnovative = styled.p`
@@ -98,6 +100,11 @@ box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rg
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%) backdrop-filter: blur(16px);
 box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%);;
+
+@media screen and (min-width: 1440px) {
+
+
+}
 `;
 
 export const SpanUnicorn = styled.span`
@@ -112,16 +119,23 @@ export const SpanUnicorn = styled.span`
 `;
 
 export const HeroTitle = styled.h1`
-font-family: var(--font-family);
-font-weight: 600;
-font-size: 36px;
-line-height: 110%;
-text-align: center;
-background: linear-gradient(142deg, #fff 0%, #f7f8fd 28.77%, #b6b8ee 86.41%, #6a82fc 100%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-margin-bottom: 16px;
+  margin: 0 auto;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 110%;
+  text-align: center;
+  background: linear-gradient(142deg, #fff 0%, #f7f8fd 28.77%, #b6b8ee 86.41%, #6a82fc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 36px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 72px;
+    line-height: 112%;
+    max-width: 835px;
+  }
 `;
 
 export const HeroText = styled.p`
@@ -130,27 +144,66 @@ font-weight: 400;
 font-size: 16px;
 text-align: center;
 color: var(--white-80);
+
+@media screen and (min-width: 1440px) {
+width: 100%;
+width: 835px;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 17px;
+line-height: 130%;
+text-align: center;
+color: var(--white-75);
+margin-bottom: 36px;
+}
 `;
 
 export const HeroContainerContent = styled.div`
-width: 343px;
-height: 99px;
+  width: 100%;
+  max-width: 830px;
+  margin: 0 auto; // Це важливо для центрування
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+  margin: 0 auto;
+    padding: 0 16px;
+     display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 36px;
+  }
 `;
 
+
 export const AvatarContainer = styled.div`
-width: 343px;
-height: 36px;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-margin-top: 24px;
+  width: 100%;
+  max-width: 343px;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+
+  @media screen and (min-width: 1440px) {
+    margin: 0 auto;
+    margin-bottom: 36px;
+  }
 `;
 
 export const ImageContainer = styled.div`
-display: flex;
-width: 100px;
-height: 36px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 36px;
+
+  @media screen and (min-width: 1440px) {
+    width: auto;
+    margin: 0 auto;
+  }
 `;
 
 export const ImageAvatar = styled.img`
@@ -176,6 +229,11 @@ margin-top: 20px;
 display: flex;
 gap: 16px;
 justify-content: center;
+
+@media screen and (min-width: 1440px) {
+
+
+}
 `;
 
 export const HeroButton = styled.button`

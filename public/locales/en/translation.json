@@ -442,10 +442,10 @@
     }
   },
     "languageSwitcher": {
-    "english": "English",
-    "spanish": "Spanish",
-    "russian": "Russian",
-    "ukrainian": "Ukrainian",
+    "english": "Eng",
+    "spanish": "Spa",
+    "russian": "Rus",
+    "ukrainian": "Ukr",
     "selectLanguage": "🌎{{language}} ⌄"
   }
 }

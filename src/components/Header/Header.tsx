@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   HeaderWrapper,
+  LangButtonContainer,
   Logo,
   NavbarContainer,
   NavItem,
@@ -11,7 +12,7 @@ import { useMediaQuery } from 'react-responsive';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import BurgerMenu from '../MobileMenu/MobileMenu';
-import logo from "../../assets/icons/logo-srm.svg"
+import logo from '../../assets/icons/logo-srm.svg';
 import ButtonTryForFree from '../ButtonTryForFree/ButtonTryForFree';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
@@ -31,39 +32,42 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isMobile = useMediaQuery({ query: '(max-width: 773px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1439px)' });
 
-  return (
+ return (
     <NavbarContainer $isScrolled={isScrolled}>
       <HeaderWrapper id="header">
         <Logo to="/home">
           <img src={logo} alt={t('header.logoAlt')} />
         </Logo>
-        <LanguageSwitcher/>
-       
-        <NavList>
-          {isMobile ? (
-            <BurgerMenu />
-          ) : (
-            <> <ButtonTryForFree/>
-              <NavItem>
-                <StyledNavLink to="/home">{t('header.nav.home')}</StyledNavLink>
-              </NavItem>
-              <NavItem>
-                <StyledNavLink to="/service">{t('header.nav.service')}</StyledNavLink>
-              </NavItem>
-              <NavItem>
-                <StyledNavLink to="/about">{t('header.nav.about')}</StyledNavLink>
-              </NavItem>
-              <NavItem>
-                <StyledNavLink to="/pricing">{t('header.nav.pricing')}</StyledNavLink>
-              </NavItem>
-              <NavItem>
-                <StyledNavLink to="/contact">{t('header.nav.contacts')}</StyledNavLink>
-              </NavItem>
-            </>
-          )}
-        </NavList>
+        
+        {!isMobile && (
+          <NavList>
+            <NavItem>
+              <StyledNavLink to="/home">{t('header.nav.home')}</StyledNavLink>
+            </NavItem>
+            <NavItem>
+              <StyledNavLink to="/service">{t('header.nav.service')}</StyledNavLink>
+            </NavItem>
+            <NavItem>
+              <StyledNavLink to="/about">{t('header.nav.about')}</StyledNavLink>
+            </NavItem>
+            <NavItem>
+              <StyledNavLink to="/pricing">{t('header.nav.pricing')}</StyledNavLink>
+            </NavItem>
+            <NavItem>
+              <StyledNavLink to="/contact">{t('header.nav.contacts')}</StyledNavLink>
+            </NavItem>
+          </NavList>
+        )}
+        
+        <LangButtonContainer>
+          <div style={{display: "flex"}}>
+            <LanguageSwitcher />
+            <ButtonTryForFree />
+          </div>
+          {isMobile && <BurgerMenu />}
+        </LangButtonContainer>
       </HeaderWrapper>
     </NavbarContainer>
   );

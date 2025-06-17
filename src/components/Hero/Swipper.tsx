@@ -21,9 +21,9 @@ const Swipper: React.FC = () => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 743px)' });
   const isTablet = useMediaQuery({
-    query: '(min-width: 744px) and (max-width: 1023px)',
+    query: '(min-width: 744px) and (max-width: 1439px)',
   });
-  const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   const stats = t('swipper.stats', { returnObjects: true }) as Array<{
     value: string;

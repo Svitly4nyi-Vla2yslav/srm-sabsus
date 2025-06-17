@@ -12,5 +12,9 @@ width: 345px;
     align-items: center;
     justify-content: center;
 
+@media screen and (min-width: 835px) {
+min-width: 345px;
+width: 1000px;
+};
 `;
 
