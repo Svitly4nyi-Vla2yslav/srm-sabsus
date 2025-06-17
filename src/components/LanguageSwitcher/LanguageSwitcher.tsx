@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 const Button = styled.button`
   border-radius: 12px;
   padding: 8px 8px;
-  width: 70px;
+  width: 80px;
   height: 36px;
   font-family: var(--font-family);
   font-weight: 400;
