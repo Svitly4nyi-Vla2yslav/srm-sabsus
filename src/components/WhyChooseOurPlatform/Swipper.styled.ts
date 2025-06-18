@@ -8,6 +8,21 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 40px;
+
+    @media screen and (min-width: 768px) {
+    border-top: 1px solid var(--white-60);
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  @media screen and (min-width: 1440px) {
+
+  }
 `;
 
 export const FeatureCard = styled.div`
@@ -17,6 +32,14 @@ export const FeatureCard = styled.div`
   align-items: center;
   gap: 12px;
   width: 100%;
+
+    @media screen and (min-width: 768px) {
+
+  }
+
+  @media screen and (min-width: 1440px) {
+
+  }
 `;
 
 export const BadgeWrapper = styled.div`
@@ -26,12 +49,28 @@ export const BadgeWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+
+  }
+
+  @media screen and (min-width: 1440px) {
+
+  }
 `;
 
 export const AbsoluteBadge = styled.div`
   display: flex;
   max-width: 127px;
   height: 28px;
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export interface BadgeOutlineProps {
@@ -45,6 +84,14 @@ export const BadgeOutline = styled.div<BadgeOutlineProps>`
   border-radius: 24px;
   display: flex;
   opacity: ${props => props.opacity || 0};
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const BadgeContent = styled.div`
@@ -54,6 +101,14 @@ export const BadgeContent = styled.div`
   align-items: center;
    width: fit-content;
    gap: 6px;
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const IconWrapper = styled.div`
@@ -83,7 +138,13 @@ export const IconWrapper = styled.div`
       rgba(79, 74, 82, 0.86)
     )
     rgba(255, 255, 255, 0.03);
+@media screen and (min-width: 768px) {
 
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const BadgeButton = styled.button`
@@ -110,6 +171,15 @@ export const BadgeButton = styled.button`
   border: none;
   outline: none;
   justify-content: space-between;
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
+
 `;
 
 export const BadgeText = styled.p`
@@ -119,6 +189,14 @@ export const BadgeText = styled.p`
   font-weight: 400;
   line-height: 1.2em;
  padding-right: 10px;
+
+ @media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const Title = styled.p`
@@ -129,6 +207,14 @@ export const Title = styled.p`
   line-height: 1.3em;
   text-align: center;
   width: 100%;
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const Subtitle = styled.p`
@@ -139,6 +225,13 @@ export const Subtitle = styled.p`
   color: var(--white-60);
   text-align: center;
   width: 100%;
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const Divider = styled.div`
@@ -146,6 +239,15 @@ export const Divider = styled.div`
   width: 34px;
   height: 1px;
   transform: rotate(90deg);
+
+  @media screen and (min-width: 768px) {
+width: 501px;
+    height: 2px;
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 // Styled Components for the Swiper Slides
@@ -175,6 +277,14 @@ export const SlideContainer = styled.div`
 
     pointer-events: none;
   }
+
+ @media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+} 
 `;
 
 export const SlideHeader = styled.div`
@@ -194,11 +304,27 @@ export const SlideHeader = styled.div`
     inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.03);
   margin-bottom: 6px;
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const SlideLogo = styled.img`
   width: 37px;
   height: 9px;
+
+  @media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const SlideContent = styled.div`
@@ -208,6 +334,14 @@ export const SlideContent = styled.div`
   position: relative; /* Додаємо для позиціонування дочірніх елементів */
   overflow: hidden; /* Щоб обрізати картинку за межами контейнера */
   border-radius: 0 0 28px 0; /* Закруглення лише знизу */
+
+  @media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 export const SlideImage = styled.div<{ $image: string }>`
   position: absolute;
@@ -219,15 +353,38 @@ export const SlideImage = styled.div<{ $image: string }>`
   background-size: cover;
   background-position: start;
   background-repeat: no-repeat;
+
+  @media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const LogoImage = styled.img`
   width: 82px;
   height: 11px;
+
+  @media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 export const ToolGroup = styled.img`
   width: 79px;
   height: 19px;
+  @media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const ContentOverlay = styled.div`
@@ -245,6 +402,13 @@ export const ContentOverlay = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 2;
+  @media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const OverlayTitle = styled.h3`
@@ -255,6 +419,13 @@ export const OverlayTitle = styled.h3`
   text-align: center;
   color: var(--white-100);
   margin-bottom: 12px;
+  @media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const OverlayText = styled.p`
@@ -264,4 +435,11 @@ export const OverlayText = styled.p`
   text-align: center;
   color: var(--white-80);
   margin-bottom: 20px;
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
