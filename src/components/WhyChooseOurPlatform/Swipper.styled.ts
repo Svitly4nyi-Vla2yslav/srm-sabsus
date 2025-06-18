@@ -346,7 +346,7 @@ export const SlideHeader = styled.div`
 
   /* Виправлення для Safari */
   @supports (-webkit-touch-callout: none) {
-    background-color: rgba(0, 0, 0, 0.5); /* Фолбек для iOS */
+    background-color: rgba(0, 0, 0, 0.86); /* Фолбек для iOS */
     -webkit-backdrop-filter: saturate(180%) blur(11px);
   }
 
