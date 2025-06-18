@@ -147,32 +147,78 @@ export const CardButtonContainer = styled.div`
 
 export const CardButton = styled.p`
   border-radius: 24px;
-  padding: 4px 4px 4px 8px;
+  padding: 4px 8px 4px 8px; /* Уніфіковані відступи */
   width: auto;
   gap: 8px;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 12px;
-  color: var(--white-100);
+  color: #ffffff; /* Використовуємо явний колір замість змінної для iOS */
   align-items: center;
   display: flex;
   height: 28px;
-  /* backdrop-filter з підтримкою для Safari */
+  position: relative; /* Для псевдоелементів */
+  
+  /* Оптимізований блюр для всіх браузерів */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  
+  /* Виправлені тіні для iOS */
   box-shadow: 
     inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), 
     inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 
     0 8px 16px -8px rgba(0, 0, 0, 0.03), 
     0 2px 4px -2px rgba(0, 0, 0, 0.08);
-  background: 
-    linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%),
-    rgba(255, 255, 255, 0.03);
   
-  /* Фікс для плавності анімацій на iOS */
+  /* Покращений градієнт з фолбеками */
+  background-color: rgba(30, 30, 30, 0.5); /* Фон для браузерів без підтримки backdrop-filter */
+  
+  @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    background: 
+      linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%),
+      rgba(255, 255, 255, 0.03);
+  }
+  
+  /* Виправлення для Safari */
+  @supports (-webkit-touch-callout: none) {
+    background-color: rgba(40, 40, 40, 0.7);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+  }
+  
+  /* Виправлення анімацій та інтерактивності */
   -webkit-transform: translateZ(0);
-  /* Запобігає "липкому" стану при натисканні */
   -webkit-tap-highlight-color: transparent;
+  transition: all 0.3s ease;
+  
+  /* Псевдоелемент для покращення відображення градієнта */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%);
+    z-index: -1;
+    opacity: 0.5;
+  }
+  
+  /* Стан при наведенні */
+  &:hover {
+    background-color: rgba(50, 50, 50, 0.7);
+    box-shadow: 
+      inset 0 -8px 24px 0 rgba(255, 255, 255, 0.05), 
+      inset 0 -5px 6px 0 rgba(255, 255, 255, 0.05), 
+      0 8px 20px -8px rgba(0, 0, 0, 0.1), 
+      0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Стан при натисканні */
+  &:active {
+    background-color: rgba(60, 60, 60, 0.7);
+    transform: scale(0.98);
+  }
 `;
 
 export const CardButtonText = styled.img`
