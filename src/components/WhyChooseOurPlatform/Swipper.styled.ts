@@ -18,10 +18,14 @@ export const HeaderContainer = styled.div`
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: baseline;
+    margin: 0 auto: 
+    max-width: 740px;
+    width: 100%;
   }
 
   @media screen and (min-width: 1440px) {
-
+max-width: 1130px;
+margin: 0 auto;
   }
 `;
 
@@ -166,20 +170,38 @@ export const BadgeButton = styled.button`
     0px 8px 16px -8px rgba(0, 0, 0, 0.03),
     0px -5px 6px 0px rgba(255, 255, 255, 0.03) inset,
     0px -8px 24px 0px rgba(255, 255, 255, 0.03) inset;
-      width: 140px;
+  width: 140px;
   height: 28px;
   border: none;
   outline: none;
   justify-content: space-between;
+  position: relative; // Додаємо для псевдоелемента
 
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 67px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      box-shadow: inset 0 0 20px 0 rgba(191, 123, 246, 0.7), inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15), inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1), 0 0 10px 6px rgba(191, 123, 246, 0.4), 0 15px 30px -10px rgba(0, 0, 0, 0.25), 0 5px 10px -5px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(90deg, #BF7BF6 0%, #6A6BFF 100%);
+      transition: width 0.3s ease;
+    }
 
-}
+    &.active::after,
+    &[aria-selected="true"]::after {
+      width: 100%;
+    }
+  }
 
-@media screen and (min-width: 1440px) {
-
-}
-
+  @media screen and (min-width: 1440px) {
+    &::after {
+    // bottom: 67px;
+    }
+  }
 `;
 
 export const BadgeText = styled.p`
@@ -252,6 +274,7 @@ width: 501px;
 
 // Styled Components for the Swiper Slides
 export const SlideContainer = styled.div`
+margin: 0 auto;
   width: 343px;
   height: 545px;
   position: relative;
@@ -279,39 +302,65 @@ export const SlideContainer = styled.div`
   }
 
  @media screen and (min-width: 768px) {
+max-width: 740px;
+width: 100%;
+margin: 0 auto;
 
 }
 
 @media screen and (min-width: 1440px) {
-
+max-width: 1130px;
 } 
 `;
 
 export const SlideHeader = styled.div`
-  padding: 16px 22px 16px 22px;
-  width: 343px;
+  padding: 16px 22px;
+  width: 100%;
+  max-width: 343px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 0.35px solid #212121;
+  border-top: 0.35px solid rgba(33, 33, 33, 0.7); /* Прозорість для iOS */
 
-  backdrop-filter: blur(11.129203796386719px);
+  /* Оптимізовані стилі для iOS */
+  -webkit-backdrop-filter: blur(11px); /* Префікс для Safari */
+  backdrop-filter: blur(11px);
+  
+  /* Оптимізовані тіні для iOS */
   box-shadow:
     0 6px 11px -6px rgba(0, 0, 0, 0.03),
     0 1px 3px -1px rgba(0, 0, 0, 0.08),
     inset 0 -6px 17px 0 rgba(255, 255, 255, 0.03),
     inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
-  background: rgba(255, 255, 255, 0.03);
+  
+  /* Оптимізований фон для iOS */
+  background-color: rgba(255, 255, 255, 0.03);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  
   margin-bottom: 6px;
 
-@media screen and (min-width: 768px) {
+  /* Виправлення для Safari */
+  @supports (-webkit-touch-callout: none) {
+    background-color: rgba(0, 0, 0, 0.5); /* Фолбек для iOS */
+    -webkit-backdrop-filter: saturate(180%) blur(11px);
+  }
 
-}
+  @media screen and (min-width: 768px) {
+    max-width: 740px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 24px;
+  }
 
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+    max-width: 1130px;
+    padding: 16px 32px;
+  }
 `;
 
 export const SlideLogo = styled.img`
@@ -335,13 +384,17 @@ export const SlideContent = styled.div`
   overflow: hidden; /* Щоб обрізати картинку за межами контейнера */
   border-radius: 0 0 28px 0; /* Закруглення лише знизу */
 
-  @media screen and (min-width: 768px) {
+
+ @media screen and (min-width: 768px) {
+max-width: 740px;
+width: 100%;
+margin: 0 auto;
 
 }
 
 @media screen and (min-width: 1440px) {
-
-}
+max-width: 1130px;
+} 
 `;
 export const SlideImage = styled.div<{ $image: string }>`
   position: absolute;
@@ -354,13 +407,16 @@ export const SlideImage = styled.div<{ $image: string }>`
   background-position: start;
   background-repeat: no-repeat;
 
-  @media screen and (min-width: 768px) {
+ @media screen and (min-width: 768px) {
+max-width: 740px;
+width: 100%;
+margin: 0 auto;
 
 }
 
 @media screen and (min-width: 1440px) {
-
-}
+max-width: 1130px;
+} 
 `;
 
 export const LogoImage = styled.img`
@@ -411,6 +467,15 @@ export const ContentOverlay = styled.div`
 }
 `;
 
+export const Overlay = styled.div`
+    backdrop-filter: blur(1px);
+    border-radius: 14px;
+  padding: 40px;
+   background: linear-gradient(360deg,
+    rgba(0, 0, 0, 0.08) 10%, rgba(0, 0, 0, 0) 100%);
+ 
+`;
+
 export const OverlayTitle = styled.h3`
   font-family: var(--font-family);
   font-weight: 600;
@@ -419,7 +484,7 @@ export const OverlayTitle = styled.h3`
   text-align: center;
   color: var(--white-100);
   margin-bottom: 12px;
-  @media screen and (min-width: 768px) {
+ @media screen and (min-width: 768px) {
 
 }
 

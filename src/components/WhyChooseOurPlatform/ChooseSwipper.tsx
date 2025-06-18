@@ -17,29 +17,30 @@ import {
   HeroButton,
   HeroButtonGrey,
 } from '../Hero/Hero.styled';
-import { 
-  HeaderContainer, 
-  Divider, 
-  FeatureCard, 
-  BadgeWrapper, 
-  AbsoluteBadge, 
-  BadgeOutline, 
-  BadgeContent, 
-  IconWrapper, 
-  BadgeButton, 
-  BadgeText, 
-  Title, 
-  Subtitle, 
-  SlideContainer, 
-  SlideHeader, 
-  SlideLogo, 
-  LogoImage, 
-  ToolGroup, 
-  SlideContent, 
-  SlideImage, 
-  ContentOverlay, 
-  OverlayTitle, 
-  OverlayText 
+import {
+  HeaderContainer,
+  Divider,
+  FeatureCard,
+  BadgeWrapper,
+  AbsoluteBadge,
+  BadgeOutline,
+  BadgeContent,
+  IconWrapper,
+  BadgeButton,
+  BadgeText,
+  Title,
+  Subtitle,
+  SlideContainer,
+  SlideHeader,
+  SlideLogo,
+  LogoImage,
+  ToolGroup,
+  SlideContent,
+  SlideImage,
+  ContentOverlay,
+  OverlayTitle,
+  OverlayText,
+  Overlay,
 } from './Swipper.styled';
 import { useTranslation } from 'react-i18next';
 
@@ -48,7 +49,9 @@ const FeatureSwiper = () => {
   const swiperRef = useRef<SwiperCore | null>(null);
   const { t } = useTranslation();
 
-  const featuresData = t('featureSwiper.features', { returnObjects: true }) as Array<{
+  const featuresData = t('featureSwiper.features', {
+    returnObjects: true,
+  }) as Array<{
     id: string;
     title: string;
     subtitle: string;
@@ -61,9 +64,14 @@ const FeatureSwiper = () => {
   const features = featuresData.map((feature, index) => ({
     ...feature,
     icon: ['🎆', '👨‍💼', '🤖', '🔌'][index],
-    smallIcon: ['/Fireworks(1).png', '/ManOfficeWorker(1).png', '/Robot(1).png', '/ElectricPlug(1).png'][index],
+    smallIcon: [
+      '/Fireworks(1).png',
+      '/ManOfficeWorker(1).png',
+      '/Robot(1).png',
+      '/ElectricPlug(1).png',
+    ][index],
     image: [slide1, slide2, slide3, slide4][index],
-    active: activeSlide === index
+    active: activeSlide === index,
   }));
 
   const handleSlideChange = (swiper: SwiperCore) => {
@@ -94,6 +102,8 @@ const FeatureSwiper = () => {
                     <p>{feature.icon}</p>
                   </IconWrapper>
                   <BadgeButton
+                    className={feature.active ? 'active' : ''}
+                    aria-selected={feature.active}
                     style={{
                       boxShadow: feature.active
                         ? 'inset 0 0 20px 0 rgba(191, 123, 246, 0.7), inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15), inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1), 0 0 10px 6px rgba(191, 123, 246, 0.4), 0 15px 30px -10px rgba(0, 0, 0, 0.25), 0 5px 10px -5px rgba(0, 0, 0, 0.2)'
@@ -117,7 +127,8 @@ const FeatureSwiper = () => {
         ))}
       </HeaderContainer>
 
-      <div style={{ width: '100%', maxWidth: '800px', margin: '40px auto' }}>
+      <div style={{ width: '100%',
+         margin: '40px auto' }}>
         <Swiper
           onSwiper={swiper => {
             swiperRef.current = swiper;
@@ -147,12 +158,17 @@ const FeatureSwiper = () => {
                 <SlideContent>
                   <SlideImage $image={feature.image} />
                   <ContentOverlay>
+                    <Overlay>
                     <OverlayTitle>{feature.overlay.title}</OverlayTitle>
                     <OverlayText>{feature.overlay.text}</OverlayText>
                     <ButtonContainer>
-                      <HeroButton>{t('featureSwiper.buttons.tryFree')}</HeroButton>
-                      <HeroButtonGrey>{t('featureSwiper.buttons.viewDemo')}</HeroButtonGrey>
-                    </ButtonContainer>
+                      <HeroButton>
+                        {t('featureSwiper.buttons.tryFree')}
+                      </HeroButton>
+                      <HeroButtonGrey>
+                        {t('featureSwiper.buttons.viewDemo')}
+                      </HeroButtonGrey>
+                    </ButtonContainer></Overlay>
                   </ContentOverlay>
                 </SlideContent>
               </SlideContainer>
