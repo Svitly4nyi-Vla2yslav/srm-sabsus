@@ -5,6 +5,14 @@ export const AllinOneSRMContainer = styled.div`
   margin: 0 auto;
   /* Фікс для Safari - запобігає зламу верстки при скролі */
   -webkit-overflow-scrolling: touch;
+
+    @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `
 
 export const MainText = styled.p`
@@ -34,6 +42,14 @@ export const MainText = styled.p`
   
   /* Запобігає "липкому" стану при натисканні на iOS */
   -webkit-tap-highlight-color: transparent;
+
+    @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const MainTitle = styled.h2`
@@ -47,6 +63,13 @@ export const MainTitle = styled.h2`
   /* Фікс для автоматичного масштабування тексту на iOS */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+    @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const MainTextDescription = styled.p`
@@ -58,6 +81,13 @@ export const MainTextDescription = styled.p`
   margin-bottom: 56px;
   /* Покращує рендеринг шрифтів на iOS */
   -webkit-font-smoothing: antialiased;
+    @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -67,6 +97,57 @@ export const CardContainer = styled.div`
   /* Фікс для Safari - запобігає зламу flex-контейнера */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+
+  @media screen and (min-width: 768px) {
+    /* Стилі для планшетів (якщо потрібно) */
+  }
+  
+  @media screen and (min-width: 1440px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    
+    /* Перший ряд - 2 картки */
+    & > :nth-child(1) {
+      grid-column: 1;
+      width: 151% ;
+    }
+    & > :nth-child(2) {
+      grid-column: 2;
+      width: 151% ;
+       margin-left: 53%;
+    }
+    
+    /* Другий ряд - 3 картки */
+    & > :nth-child(3) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    & > :nth-child(4) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    & > :nth-child(5) {
+      grid-column: 3;
+      grid-row: 2;
+    }
+    
+    /* Третій ряд - 2 картки */
+    & > :nth-child(6) {
+      grid-column: 1;
+      grid-row: 3;
+       width: 151% ;
+    }
+    & > :nth-child(7) {
+      grid-column: 2;
+      grid-row: 3;
+        width: 151% ;
+       margin-left: 53%;
+    }
+  }
 `;
 
 export const Card = styled.div`
@@ -93,6 +174,19 @@ export const Card = styled.div`
   
   /* Фікс для рендерингу тіней на iOS */
   transform: translateZ(0);
+
+  @media screen and (min-width: 768px) {
+    min-width: 343px;
+    width: 100%;
+    max-width: 740px;
+    height: 388px; 
+  }
+  
+  @media screen and (min-width: 1440px) {
+    width: 100%;
+    height: 388px; 
+    margin: 0;
+  }
 `;
 
 export const CardTitle = styled.h3`
@@ -104,6 +198,13 @@ export const CardTitle = styled.h3`
   margin-bottom: 8px;
   /* Покращує рендеринг тексту на Retina дисплеях */
   -webkit-font-smoothing: subpixel-antialiased;
+    @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const CardText = styled.p`
@@ -112,8 +213,17 @@ export const CardText = styled.p`
   font-size: 16px;
   color: var(--white-80);
   margin-bottom: 20px;
+  z-index: 10;
+-webkit-backdrop-filter: blur(6px);
   /* Запобігає "підскакуванню" тексту при завантаженні на iOS */
   -webkit-transform: translate3d(0,0,0);
+    @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const CardIcon = styled.img`
@@ -159,6 +269,14 @@ export const CardIcon = styled.img`
     }
     return '';
   }}
+
+    @media screen and (min-width: 768px) {
+  height: 212px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+    height: 160px;
+  }
 `;
 
 export const CardButtonContainer = styled.div`
@@ -171,6 +289,14 @@ export const CardButtonContainer = styled.div`
   margin-top: auto;
   /* Фікс для Safari flex-wrap багу */
   -webkit-box-pack: start;
+
+    @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const CardButton = styled.p`
@@ -247,6 +373,14 @@ export const CardButton = styled.p`
     background-color: rgba(60, 60, 60, 0.7);
     transform: scale(0.98);
   }
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
 `;
 
 export const CardButtonText = styled.img`
@@ -268,4 +402,12 @@ export const CardButtonText = styled.img`
   
   /* Фікс для рендерингу тіней на iOS */
   -webkit-transform: translateZ(0);
+
+    @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;

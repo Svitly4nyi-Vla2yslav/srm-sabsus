@@ -108,7 +108,7 @@ const AllinOneSRM: React.FC = () => {
                 top: '13%',
                 left: '0',
                 borderRadius: 24,
-                height: '82%',
+                height: '84%',
                 width: '100%',
                 objectFit: 'cover',
                 overflow: 'hidden',

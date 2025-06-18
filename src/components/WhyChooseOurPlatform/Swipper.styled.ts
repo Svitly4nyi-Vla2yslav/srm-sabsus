@@ -423,13 +423,7 @@ export const LogoImage = styled.img`
   width: 82px;
   height: 11px;
 
-  @media screen and (min-width: 768px) {
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
 `;
 export const ToolGroup = styled.img`
   width: 79px;
