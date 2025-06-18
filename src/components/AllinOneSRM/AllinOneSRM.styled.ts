@@ -145,7 +145,7 @@ export const CardIcon = styled.img`
   ${({ src }) => {
     if (src?.includes('card3') || src?.includes('card4') || src?.includes('card7')) {
       return `
-        object-fit: cover;
+        object-fit: contain;
         overflow: visible;
         padding: 0;
         -webkit-transform: translateZ(0) scale(0.95);
