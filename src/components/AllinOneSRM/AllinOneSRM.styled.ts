@@ -118,19 +118,47 @@ export const CardText = styled.p`
 
 export const CardIcon = styled.img`
   width: 100%;
-  overflow: visible;
   height: 109px;
-  margin: 0 auto;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin: 15px auto 30px;
   border-radius: 12px;
+  
+  /* Оптимізовані стилі для фону */
   background: 
-    rgba(255, 255, 255, 0.03), 
+    rgba(255, 255, 255, 0.03),
     radial-gradient(156.48% 245.47% at 14.29% -16.72%, rgba(0, 0, 0, 0) 0%, #000 87.76%);
   
-  /* Фікс для рендерингу зображень на iOS */
+  /* Виправлення для iOS */
   -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
   image-rendering: -webkit-optimize-contrast;
+  
+  /* Оптимальне відображення зображення */
+  object-fit: contain;
+  object-position: center;
+  
+  /* Фікс для Retina-дисплеїв */
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    image-rendering: crisp-edges;
+  }
+  
+  /* Специфічні стилі для проблемних карток (3, 4, 7) */
+  ${({ src }) => {
+    if (src?.includes('card3') || src?.includes('card4') || src?.includes('card7')) {
+      return `
+        object-fit: cover;
+        overflow: visible;
+        padding: 0;
+        -webkit-transform: translateZ(0) scale(0.95);
+        transform: translateZ(0) scale(0.95);
+        
+        @media (max-width: 767px) {
+          height: auto;
+          max-height: 109px;
+        }
+      `;
+    }
+    return '';
+  }}
 `;
 
 export const CardButtonContainer = styled.div`

@@ -468,12 +468,7 @@ export const ContentOverlay = styled.div`
 `;
 
 export const Overlay = styled.div`
-    backdrop-filter: blur(1px);
-    border-radius: 14px;
-  padding: 40px;
-   background: linear-gradient(360deg,
-    rgba(0, 0, 0, 0.08) 10%, rgba(0, 0, 0, 0) 100%);
- 
+
 `;
 
 export const OverlayTitle = styled.h3`
