@@ -2,17 +2,24 @@ import { styled } from "styled-components";
 
 
 export const ResultsFromBusinessesWrapper = styled.div`
- width: 100%;
+ width: 343px;
 margin: 0 auto;
 margin-top: 50px;
 margin-bottom: 88px;
+ @media screen and (min-width: 768px) {
+  width: 768px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultMainText = styled.p`
 margin: 0 auto;
 border-radius: 24px;
 padding: 4px 4px 4px 14px;
-width: 50%;
+width: max-content;
 height: 28px;
 display: flex;
 justify-content: space-between;
@@ -26,6 +33,13 @@ backdrop-filter: blur(16px);
 box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%);
 align-items: center;
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultMainTitle = styled.h2`
@@ -36,6 +50,18 @@ line-height: 110%;
 text-align: center;
 color: var(--white-100);
 margin-bottom: 16px;
+ @media screen and (min-width: 768px) {
+  font-family: var(--font-family);
+font-weight: 600;
+font-size: 44px;
+line-height: 110%;
+text-align: center;
+color: var(--white-100);
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultMainTextDescription = styled.p`
@@ -45,6 +71,20 @@ font-size: 16px;
 text-align: center;
 color: var(--white-80);
 margin-bottom: 56px;
+
+ @media screen and (min-width: 768px) {
+
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 17px;
+line-height: 130%;
+text-align: center;
+color: var(--white-80);
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultDisplayGrid = styled.div`
@@ -59,6 +99,13 @@ width: 100%;
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-between;
+     @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultCard = styled.div`
@@ -78,6 +125,13 @@ height: 186px;
               inset 0 -5px 14px 0 rgba(255, 255, 255, 0.03), 
               inset 0 -3px 3px 0 rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.03);
+   @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultCard1 = styled.div`
@@ -97,16 +151,37 @@ height: 186px;
               inset 0 -5px 14px 0 rgba(255, 255, 255, 0.03), 
               inset 0 -3px 3px 0 rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.03);
+   @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultIconCard = styled.img`
 width: 115px;
 height: 60px;
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultTitleWrapper = styled.div`
 width: 163px;
 height: 66px;
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultTitle = styled.p`
@@ -115,6 +190,13 @@ font-weight: 600;
 font-size: 46px;
 line-height: 100%;
 color: var(--white-100);
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultText = styled.p`
@@ -123,6 +205,13 @@ font-weight: 400;
 font-size: 10px;
 line-height: 130%;
 color: var(--white-60);
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultImage = styled.img`
@@ -130,18 +219,42 @@ export const ResultImage = styled.img`
 width: 151px;
 height: 186px;
   object-fit: cover;
+   @media screen and (min-width: 768px) {
+  width: 186px;
+height: 186px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultImage1 = styled.img`
 border-radius: 14px;
 width: 150px;
 height: 231px;
+ @media screen and (min-width: 768px) {
+  width: 186px;
+height: 186px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultImage2 = styled.img`
 border-radius: 14px;
 width: 150px;
 height: 142px;
+ @media screen and (min-width: 768px) {
+  width: 186px;
+height: 186px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ResultImage3 = styled.img`
@@ -149,6 +262,14 @@ border-radius: 14px;
 width: 187px;
 height: 186px;
 margin-top: -45px;
+ @media screen and (min-width: 768px) {
+  width: 186px;
+height: 186px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 
 `;
 
@@ -161,5 +282,13 @@ export const ResultMasterImage = styled.img`
   width: 203px;
   height: 429px;
   pointer-events: none; /* Щоб не заважало клікам */
+   @media screen and (min-width: 768px) {
+  width: 152px;
+height: 322px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
