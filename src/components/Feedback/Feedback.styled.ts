@@ -110,7 +110,7 @@ export const FeedbackSlide = styled.div`
   border-radius: 24px;
   padding: 20px;
   width: 311px;
-  height: 317px;
+  height: auto;
   backdrop-filter: blur(16px);
   box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.03), 
               0 2px 4px -2px rgba(0, 0, 0, 0.08), 

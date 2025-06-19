@@ -53,7 +53,6 @@ const ResultsFromBusinesses: React.FC = () => {
       <ResultMainTextDescription>{data.description}</ResultMainTextDescription>
       <ResultDisplayGrid>
         <ResultMasterImage src={Iphone} alt="Main Image" />
-
         <ResultCard>
           <ResultIconCard src={IconPazzario} alt="Icon" />
           <ResultTitleWrapper>
@@ -61,11 +60,16 @@ const ResultsFromBusinesses: React.FC = () => {
             <ResultText>{data.cards[0].text}</ResultText>
           </ResultTitleWrapper>
         </ResultCard>
-
-        <ResultImage src={Image1} alt="Image 1" />
-
+        <ResultImage src={Image1} alt="Image 1" />{' '}
+        <ResultImage4 src={image5} alt="Image 5" />{' '}
+        <ResultCard2>
+          <ResultIconCard src={sweets} alt="Icon" />
+          <ResultTitleWrapper>
+            <ResultTitle>{data.cards[2].title}</ResultTitle>
+            <ResultText>{data.cards[2].text}</ResultText>
+          </ResultTitleWrapper>
+        </ResultCard2>
         <ResultImage1 src={Image2} alt="Image 2" />
-
         <ResultCard1>
           <ResultIconCard src={burban} alt="Icon" />
           <ResultTitleWrapper>
@@ -73,17 +77,8 @@ const ResultsFromBusinesses: React.FC = () => {
             <ResultText>{data.cards[1].text}</ResultText>
           </ResultTitleWrapper>
         </ResultCard1>
-        <ResultCard2>
-          <ResultIconCard src={sweets} alt="Icon" />
-          <ResultTitleWrapper>
-            <ResultTitle>{data.cards[1].title}</ResultTitle>
-            <ResultText>{data.cards[1].text}</ResultText>
-          </ResultTitleWrapper>
-        </ResultCard2>
-        <ResultImage2 src={Image3} alt="Image 3" />
-
-        <ResultImage3 src={Image4} alt="Image 4" />
-        <ResultImage4 src={image5} alt="Image 5" />
+        <ResultImage3 src={Image4} alt="Image 4" />{' '}
+        <ResultImage2 src={Image3} alt="Image 3" />{' '}
       </ResultDisplayGrid>
     </ResultsFromBusinessesWrapper>
   );

@@ -180,6 +180,10 @@
       {
         "title": "+37%",
         "text": "Average revenue growth"
+      },
+      {
+        "title": "510%",
+        "text": "Conversion rate monthly average"
       }
     ]
   },
@@ -187,15 +191,15 @@
     "title": "Trusted by 2000+ award-winning agencies and firms",
     "ratings": [
       {
-        "value": "4,8",
+        "value": "4.8",
         "source": "TechRadar CRM"
       },
       {
-        "value": "5,0",
+        "value": "5.0",
         "source": "ChroStartupTools"
       },
       {
-        "value": "4,9",
+        "value": "4.9",
         "source": "SaaS Advisor"
       }
     ],
@@ -204,6 +208,51 @@
         "text": "Switching was easy thanks to outstanding support and clear onboarding. We now have a better overview of finances and staff management than ever before.",
         "name": "Lucas Nguyen",
         "position": "Operations Manager at Pizzario"
+      },
+      {
+        "text": "The platform has transformed how we manage our restaurant chain. Inventory tracking is now 3 times faster!",
+        "name": "Sarah Johnson",
+        "position": "CEO of BurgerHouse"
+      },
+      {
+        "text": "Customer support is exceptional. They helped us migrate all our data seamlessly during the transition.",
+        "name": "Michael Chen",
+        "position": "CFO at SushiTime"
+      },
+      {
+        "text": "Reporting features saved us dozens of hours each month. Highly recommend to any food business!",
+        "name": "Emma Wilson",
+        "position": "Marketing Director at CafeDelight"
+      },
+      {
+        "text": "We reduced food waste by 22% in the first month thanks to better inventory management tools.",
+        "name": "David Kim",
+        "position": "Operations Director at NoodleBar"
+      },
+      {
+        "text": "The mobile app allows me to check business performance anytime, anywhere. Game changer!",
+        "name": "Olivia Martinez",
+        "position": "Owner of TacoFiesta"
+      },
+      {
+        "text": "Integration with our accounting software was flawless. No more manual data entry!",
+        "name": "James Wilson",
+        "position": "Finance Manager at PizzaHeaven"
+      },
+      {
+        "text": "Staff scheduling became so much easier with the drag-and-drop interface. Saved us countless hours.",
+        "name": "Sophia Lee",
+        "position": "HR Manager at WokExpress"
+      },
+      {
+        "text": "Real-time sales analytics helped us optimize our menu and increase profits by 18%.",
+        "name": "Robert Taylor",
+        "position": "Owner of SteakMaster"
+      },
+      {
+        "text": "The loyalty program integration boosted our repeat customers by 35%. Amazing results!",
+        "name": "Jennifer Brown",
+        "position": "Marketing at CoffeeBreak"
       }
     ]
   },
@@ -406,10 +455,10 @@
       "viewDemo": "View demo"
     }
   },
-    "partnersBanner": {
+  "partnersBanner": {
     "trustedText": "Trusted by 1200+ businesses and entrepreneurs"
   },
-    "footer": {
+  "footer": {
     "sections": {
       "home": "Home",
       "product": "Product",
@@ -441,7 +490,7 @@
       "copyright": "© 2023 CRM Solutions, Inc. All rights reserved."
     }
   },
-    "languageSwitcher": {
+  "languageSwitcher": {
     "english": "Eng",
     "spanish": "Spa",
     "russian": "Rus",

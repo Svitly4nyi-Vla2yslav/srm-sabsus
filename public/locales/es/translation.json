@@ -1,25 +1,25 @@
 {
-    "header": {
-        "logoAlt": "Logo de la empresa",
-        "nav": {
-            "home": "Inicio",
-            "service": "Servicio",
-            "about": "Sobre nosotros",
-            "pricing": "Precios",
-            "contacts": "Contactos"
-        }
-    },
-    "hero": {
-        "innovative": "Soluciones innovadoras",
-        "title": "Estás construyendo tu propio sistema",
-        "description": "Un ecosistema completo de CRM, POS, aplicaciones móviles (iOS y Android) y web para gestionar cafés, restaurantes y tiendas minoristas en cualquier momento y lugar.",
-        "trustText": "Más de 1200 empresas ya confían en nosotros",
-        "buttons": {
-            "tryFree": "Probar gratis",
-            "viewDemo": "Ver demo"
-        }
-    },
-    "swipper": {
+  "header": {
+    "logoAlt": "Logo de la empresa",
+    "nav": {
+      "home": "Inicio",
+      "service": "Servicio",
+      "about": "Sobre nosotros",
+      "pricing": "Precios",
+      "contacts": "Contactos"
+    }
+  },
+  "hero": {
+    "innovative": "Soluciones innovadoras",
+    "title": "Estás construyendo tu propio sistema",
+    "description": "Un ecosistema completo de CRM, POS, aplicaciones móviles (iOS y Android) y web para gestionar cafés, restaurantes y tiendas minoristas en cualquier momento y lugar.",
+    "trustText": "Más de 1200 empresas ya confían en nosotros",
+    "buttons": {
+      "tryFree": "Probar gratis",
+      "viewDemo": "Ver demo"
+    }
+  },
+  "swipper": {
     "stats": [
       {
         "value": "2M+",
@@ -39,12 +39,12 @@
       }
     ]
   },
-    "whyChoosePlatform": {
+  "whyChoosePlatform": {
     "title": "Por qué elegir nuestra plataforma",
     "mainTitle": "Más allá de POS<br />Un sistema que crece contigo",
     "description": "Hemos construido un ecosistema que elimina la dependencia de proveedores, funciona en cualquier dispositivo y se adapta a cualquier negocio, desde pequeños cafés hasta cadenas internacionales."
   },
-   "featureSwiper": {
+  "featureSwiper": {
     "features": [
       {
         "id": "Identidad",
@@ -88,7 +88,7 @@
       "viewDemo": "Ver demo"
     }
   },
-    "allInOne": {
+  "allInOne": {
     "mainText": "Todo en uno: CRM, POS y aplicación",
     "mainTitle": "Todo lo que necesita tu tienda, cafetería o negocio de entrega — en un solo ecosistema",
     "description": "Nuestra plataforma conecta pedidos, pagos, inventario, personal, lealtad y marketing en un solo lugar. Sin integraciones adicionales, solo crecimiento.",
@@ -96,41 +96,79 @@
       {
         "title": "Suite de Experiencia del Cliente",
         "text": "Aplicación móvil, CRM, lealtad y comodidad del usuario en un solo lugar.",
-        "buttons": ["Aplicación móvil", "Entrega", "Lealtad", "CRM", "UX"]
+        "buttons": [
+          "Aplicación móvil",
+          "Entrega",
+          "Lealtad",
+          "CRM",
+          "UX"
+        ]
       },
       {
         "title": "POS y Operaciones del Personal",
         "text": "Sistema de caja inteligente + control de equipo + flujos flexibles.",
-        "buttons": ["POS", "Personal", "QR", "Pedidos", "Turnos"]
+        "buttons": [
+          "POS",
+          "Personal",
+          "QR",
+          "Pedidos",
+          "Turnos"
+        ]
       },
       {
         "title": "Cocina y Cumplimiento",
         "text": "Flujos de trabajo optimizados en cocina y estado de cocción en tiempo real.",
-        "buttons": ["Cocina", "Ensamblaje", "Temporizadores", "Recetas"]
+        "buttons": [
+          "Cocina",
+          "Ensamblaje",
+          "Temporizadores",
+          "Recetas"
+        ]
       },
       {
         "title": "Inventario y Almacenamiento",
         "text": "Control total sobre ingredientes, suministros y flujo de stock.",
-        "buttons": ["Stock", "Inventario", "Ingredientes"]
+        "buttons": [
+          "Stock",
+          "Inventario",
+          "Ingredientes"
+        ]
       },
       {
         "title": "Análisis y Gestión",
         "text": "Finanzas, informes, métricas de rendimiento — visuales e inteligentes.",
-        "buttons": ["Análisis", "Finanzas", "Informes", "IA"]
+        "buttons": [
+          "Análisis",
+          "Finanzas",
+          "Informes",
+          "IA"
+        ]
       },
       {
         "title": "Marketing y Personalización",
         "text": "Impulsa tu marca con control total.",
-        "buttons": ["Marketing", "Branding", "White-label", "Multilingüe", "Promociones"]
+        "buttons": [
+          "Marketing",
+          "Branding",
+          "White-label",
+          "Multilingüe",
+          "Promociones"
+        ]
       },
       {
         "title": "Integración y Escalabilidad",
         "text": "Infraestructura abierta. Crece a tu ritmo.",
-        "buttons": ["API", "Integración", "Escalabilidad", "Multiformato", "Sin conexión"]
+        "buttons": [
+          "API",
+          "Integración",
+          "Escalabilidad",
+          "Multiformato",
+          "Sin conexión"
+        ]
       }
     ]
   },
-    "results": {
+  "results": {
     "mainText": "Resultados de negocios",
     "mainTitle": "Cómo los equipos crecen más rápido con nuestro ecosistema CRM",
     "description": "Sin tarifas ocultas. Sin bloqueos de hardware. Lanza gratis, escala bajo demanda o posee completamente tu ecosistema bajo tu marca.",
@@ -142,34 +180,83 @@
       {
         "title": "+37%",
         "text": "Crecimiento promedio de ingresos"
+      },
+      {
+        "title": "510%",
+        "text": "Tasa de conversión mensual promedio"
       }
     ]
   },
-   "feedback": {
+  "feedback": {
     "title": "Confían en nosotros más de 2000 agencias y empresas galardonadas",
     "ratings": [
       {
-        "value": "4,8",
+        "value": "4.8",
         "source": "TechRadar CRM"
       },
       {
-        "value": "5,0",
+        "value": "5.0",
         "source": "ChroStartupTools"
       },
       {
-        "value": "4,9",
+        "value": "4.9",
         "source": "SaaS Advisor"
       }
     ],
     "testimonials": [
       {
-        "text": "El cambio fue fácil gracias al excelente soporte y una incorporación clara. Ahora tenemos una mejor visión de las finanzas y la gestión del personal que nunca antes.",
+        "text": "El cambio fue fácil gracias al excelente soporte y la incorporación clara. Ahora tenemos una mejor visión de las finanzas y la gestión del personal que nunca.",
         "name": "Lucas Nguyen",
         "position": "Gerente de Operaciones en Pizzario"
+      },
+      {
+        "text": "La plataforma ha transformado cómo gestionamos nuestra cadena de restaurantes. ¡El seguimiento de inventario es ahora 3 veces más rápido!",
+        "name": "Sarah Johnson",
+        "position": "CEO de BurgerHouse"
+      },
+      {
+        "text": "El soporte al cliente es excepcional. Nos ayudaron a migrar todos nuestros datos sin problemas durante la transición.",
+        "name": "Michael Chen",
+        "position": "CFO en SushiTime"
+      },
+      {
+        "text": "Las funciones de informes nos ahorraron docenas de horas cada mes. ¡Lo recomiendo encarecidamente a cualquier negocio de alimentos!",
+        "name": "Emma Wilson",
+        "position": "Directora de Marketing en CafeDelight"
+      },
+      {
+        "text": "Redujimos el desperdicio de alimentos en un 22% en el primer mes gracias a mejores herramientas de gestión de inventario.",
+        "name": "David Kim",
+        "position": "Director de Operaciones en NoodleBar"
+      },
+      {
+        "text": "La aplicación móvil me permite ver el rendimiento del negocio en cualquier momento y lugar. ¡Un cambio radical!",
+        "name": "Olivia Martinez",
+        "position": "Propietaria de TacoFiesta"
+      },
+      {
+        "text": "La integración con nuestro software de contabilidad fue perfecta. ¡No más entrada manual de datos!",
+        "name": "James Wilson",
+        "position": "Gerente Financiero en PizzaHeaven"
+      },
+      {
+        "text": "La programación del personal se volvió mucho más fácil con la interfaz de arrastrar y soltar. Nos ahorró incontables horas.",
+        "name": "Sophia Lee",
+        "position": "Gerente de RRHH en WokExpress"
+      },
+      {
+        "text": "El análisis de ventas en tiempo real nos ayudó a optimizar nuestro menú y aumentar las ganancias en un 18%.",
+        "name": "Robert Taylor",
+        "position": "Propietario de SteakMaster"
+      },
+      {
+        "text": "La integración del programa de fidelización aumentó nuestros clientes recurrentes en un 35%. ¡Resultados increíbles!",
+        "name": "Jennifer Brown",
+        "position": "Marketing en CoffeeBreak"
       }
     ]
   },
-    "pricePlan": {
+  "pricePlan": {
     "mainText": "Planes de precios",
     "title": "Flexible para startups. Escalable para empresas",
     "description": "Sin tarifas ocultas. Sin bloqueos de hardware. Lanza gratis, escala bajo demanda o posee completamente tu ecosistema bajo tu marca.",
@@ -183,11 +270,24 @@
           "title": "Modelo SaaS",
           "discount": "-40%",
           "tiers": [
-            { "name": "Inicio 1", "price": "$89" },
-            { "name": "Estándar hasta 3", "price": "$149" },
-            { "name": "Negocios hasta 10", "price": "$289" }
+            {
+              "name": "Inicio 1",
+              "price": "$89"
+            },
+            {
+              "name": "Estándar hasta 3",
+              "price": "$149"
+            },
+            {
+              "name": "Negocios hasta 10",
+              "price": "$289"
+            }
           ],
-          "features": ["1 proyecto", "Soporte básico", "Acceso a la comunidad"],
+          "features": [
+            "1 proyecto",
+            "Soporte básico",
+            "Acceso a la comunidad"
+          ],
           "button": "Empezar",
           "note": "Incluye funciones principales:",
           "noteList": [
@@ -199,11 +299,24 @@
           "title": "White-label",
           "discount": "-40%",
           "tiers": [
-            { "name": "White Inicio 1", "price": "$249" },
-            { "name": "White Estándar", "price": "$499" },
-            { "name": "White Negocios", "price": "$899" }
+            {
+              "name": "White Inicio 1",
+              "price": "$249"
+            },
+            {
+              "name": "White Estándar",
+              "price": "$499"
+            },
+            {
+              "name": "White Negocios",
+              "price": "$899"
+            }
           ],
-          "features": ["5 proyectos", "Soporte prioritario", "Acceso para equipos"],
+          "features": [
+            "5 proyectos",
+            "Soporte prioritario",
+            "Acceso para equipos"
+          ],
           "button": "Prueba 14 días gratis",
           "note": "Todo en SaaS, más:",
           "noteList": [
@@ -215,11 +328,24 @@
           "title": "Adquisición White-label",
           "discount": "-32%",
           "tiers": [
-            { "name": "1 empresa", "price": "$14,000" },
-            { "name": "Hasta 3 empresas", "price": "$25,000" },
-            { "name": "Hasta 5-10 empresas", "price": "$35,000" }
+            {
+              "name": "1 empresa",
+              "price": "$14,000"
+            },
+            {
+              "name": "Hasta 3 empresas",
+              "price": "$25,000"
+            },
+            {
+              "name": "Hasta 5-10 empresas",
+              "price": "$35,000"
+            }
           ],
-          "features": ["Proyectos ilimitados", "Soporte 24/7", "Soluciones personalizadas"],
+          "features": [
+            "Proyectos ilimitados",
+            "Soporte 24/7",
+            "Soluciones personalizadas"
+          ],
           "button": "Solicitar demo",
           "note": "Todo en White-label, más:",
           "noteList": [
@@ -234,11 +360,24 @@
           "title": "Modelo SaaS",
           "discount": "-30%",
           "tiers": [
-            { "name": "Inicio 1", "price": "$89" },
-            { "name": "Estándar hasta 3", "price": "$149" },
-            { "name": "Negocios hasta 10", "price": "$289" }
+            {
+              "name": "Inicio 1",
+              "price": "$89"
+            },
+            {
+              "name": "Estándar hasta 3",
+              "price": "$149"
+            },
+            {
+              "name": "Negocios hasta 10",
+              "price": "$289"
+            }
           ],
-          "features": ["1 proyecto", "Soporte básico", "Acceso a la comunidad"],
+          "features": [
+            "1 proyecto",
+            "Soporte básico",
+            "Acceso a la comunidad"
+          ],
           "button": "Empezar",
           "note": "Incluye funciones principales:",
           "noteList": [
@@ -250,11 +389,24 @@
           "title": "White-label",
           "discount": "-30%",
           "tiers": [
-            { "name": "White Inicio 1", "price": "$249" },
-            { "name": "White Estándar", "price": "$499" },
-            { "name": "White Negocios", "price": "$899" }
+            {
+              "name": "White Inicio 1",
+              "price": "$249"
+            },
+            {
+              "name": "White Estándar",
+              "price": "$499"
+            },
+            {
+              "name": "White Negocios",
+              "price": "$899"
+            }
           ],
-          "features": ["5 proyectos", "Soporte prioritario", "Acceso para equipos"],
+          "features": [
+            "5 proyectos",
+            "Soporte prioritario",
+            "Acceso para equipos"
+          ],
           "button": "Prueba 14 días gratis",
           "note": "Todo en SaaS, más:",
           "noteList": [
@@ -266,11 +418,24 @@
           "title": "Adquisición White-label",
           "discount": "-22%",
           "tiers": [
-            { "name": "1 empresa", "price": "$14,000" },
-            { "name": "Hasta 3 empresas", "price": "$25,000" },
-            { "name": "Hasta 5-10 empresas", "price": "$35,000" }
+            {
+              "name": "1 empresa",
+              "price": "$14,000"
+            },
+            {
+              "name": "Hasta 3 empresas",
+              "price": "$25,000"
+            },
+            {
+              "name": "Hasta 5-10 empresas",
+              "price": "$35,000"
+            }
           ],
-          "features": ["Proyectos ilimitados", "Soporte 24/7", "Soluciones personalizadas"],
+          "features": [
+            "Proyectos ilimitados",
+            "Soporte 24/7",
+            "Soluciones personalizadas"
+          ],
           "button": "Solicitar demo",
           "note": "Todo en White-label, más:",
           "noteList": [
@@ -282,7 +447,7 @@
       ]
     }
   },
-    "startSmall": {
+  "startSmall": {
     "title": "Empieza pequeño, crece sin límites",
     "text": "Lanza tu plataforma CRM y de aplicaciones en minutos — sin código, sin estrés. Escalamos contigo.",
     "buttons": {
@@ -290,10 +455,10 @@
       "viewDemo": "Ver demo"
     }
   },
-   "partnersBanner": {
+  "partnersBanner": {
     "trustedText": "Confían en nosotros más de 1200 empresas y emprendedores"
   },
-    "footer": {
+  "footer": {
     "sections": {
       "home": "Inicio",
       "product": "Producto",
@@ -325,7 +490,7 @@
       "copyright": "© 2023 CRM Solutions, Inc. Todos los derechos reservados."
     }
   },
-    "languageSwitcher": {
+  "languageSwitcher": {
     "english": "Ing",
     "spanish": "Esp",
     "russian": "Rus",
