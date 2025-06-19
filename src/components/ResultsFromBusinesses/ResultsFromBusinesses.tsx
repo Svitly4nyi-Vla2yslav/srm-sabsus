@@ -2,12 +2,14 @@ import React from 'react';
 import {
   ResultCard,
   ResultCard1,
+  ResultCard2,
   ResultDisplayGrid,
   ResultIconCard,
   ResultImage,
   ResultImage1,
   ResultImage2,
   ResultImage3,
+  ResultImage4,
   ResultMainText,
   ResultMainTextDescription,
   ResultMainTitle,
@@ -19,13 +21,15 @@ import {
 } from './ResultsFromBusinesses.styled';
 import { CardButtonText } from '../AllinOneSRM/AllinOneSRM.styled';
 import icon18 from '../../assets/icons/cards4/Chart Increasing.svg';
-import IconPazzario from '../../assets/icons/pizzario/pizzarioIcon.png';
-import Image1 from '../../assets/icons/pizzario/image1.svg';
-import Image2 from '../../assets/icons/pizzario/image2.png';
-import Image3 from '../../assets/icons/pizzario/image3.png';
+import IconPazzario from '../../assets/icons/pizzario/pizzario.png';
+import Image1 from '../../assets/icons/pizzario/image1(2).png';
+import Image2 from '../../assets/icons/pizzario/image2(10).png';
+import Image3 from '../../assets/icons/pizzario/image3().png';
 import Image4 from '../../assets/icons/pizzario/image4.png';
 import Iphone from '../../assets/icons/pizzario/iPhone16ProMax.png';
-import burban from '../../assets/icons/pizzario/burbanIcons.png';
+import burban from '../../assets/icons/pizzario/burbanBites.png';
+import image5 from '../../assets/icons/pizzario/image5.png';
+import sweets from '../../assets/icons/pizzario/sweetTreats.png';
 import { useTranslation } from 'react-i18next';
 
 const ResultsFromBusinesses: React.FC = () => {
@@ -69,10 +73,17 @@ const ResultsFromBusinesses: React.FC = () => {
             <ResultText>{data.cards[1].text}</ResultText>
           </ResultTitleWrapper>
         </ResultCard1>
-
+        <ResultCard2>
+          <ResultIconCard src={sweets} alt="Icon" />
+          <ResultTitleWrapper>
+            <ResultTitle>{data.cards[1].title}</ResultTitle>
+            <ResultText>{data.cards[1].text}</ResultText>
+          </ResultTitleWrapper>
+        </ResultCard2>
         <ResultImage2 src={Image3} alt="Image 3" />
 
         <ResultImage3 src={Image4} alt="Image 4" />
+        <ResultImage4 src={image5} alt="Image 5" />
       </ResultDisplayGrid>
     </ResultsFromBusinessesWrapper>
   );

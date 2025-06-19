@@ -292,3 +292,46 @@ height: 322px;
   }
 `;
 
+
+export const ResultImage4 = styled.img`
+display: none;
+ @media screen and (min-width: 768px) {
+  border-radius: 14px;
+width: 187px;
+height: 186px;
+margin-top: -45px;
+ width: 186px;
+height: 186px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
+
+`;
+
+export const ResultCard2 = styled.div`
+display: none;
+   @media screen and (min-width: 768px) {
+    border: 0.58px solid #212121;
+  border-radius: 14px;
+  padding: 11px;
+width: 186px;
+height: 186px;
+  min-height: 186px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  backdrop-filter: blur(9.247057914733887px);
+  box-shadow: 0 5px 9px -5px rgba(0, 0, 0, 0.03), 
+              0 1px 2px -1px rgba(0, 0, 0, 0.08), 
+              inset 0 -5px 14px 0 rgba(255, 255, 255, 0.03), 
+              inset 0 -3px 3px 0 rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.03);
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
+`;

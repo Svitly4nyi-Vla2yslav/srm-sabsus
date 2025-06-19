@@ -23,7 +23,7 @@ import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useMediaQuery } from 'react-responsive';
-import pizza from '../../assets/icons/pizzario/pizzarioIcon.png';
+import pizza from '../../assets/icons/pizzario/pizzario.png';
 import Avatar from '../../assets/icons/avatar/Image-36-1.svg';
 import Avatar1 from '../../assets/icons/avatar/Image-36.svg';
 import Avatar2 from '../../assets/icons/avatar/Image-36-2.svg';
