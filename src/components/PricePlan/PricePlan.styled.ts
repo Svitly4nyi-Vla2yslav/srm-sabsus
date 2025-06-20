@@ -6,7 +6,14 @@ export const MasterContainer = styled.div`
   width: 100%;
   max-width: 1200px; // або інше значення, яке вам потрібно
   padding: 0 16px; // додайте відступи по бокам для малих екранів
-`;
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
+  `;
 
 export const MainTextPrice = styled.p`
 margin: 0 auto;
@@ -27,6 +34,14 @@ backdrop-filter: blur(16px);
 box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%);
 align-items: center;
+ 
+@media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const CardButtonText = styled.img`
@@ -49,6 +64,14 @@ export const CardButtonText = styled.img`
   
   /* Фікс для рендерингу тіней на iOS */
   -webkit-transform: translateZ(0);
+
+   @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const PriceTitle = styled.h2`
@@ -60,6 +83,14 @@ line-height: 110%;
 text-align: center;
 color: var(--white-100);
 margin-bottom: 16px;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const PriceText = styled.p`
@@ -70,6 +101,14 @@ font-size: 16px;
 text-align: center;
 color: var(--white-80);
 margin-bottom: 56px;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 
@@ -84,7 +123,15 @@ export const PriceButton = styled.button`
   gap: 8px;
   width: fit-content;
   border: none;
-     color: white;
+color: white;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const PriceButtonTextDefault = styled.p`
@@ -92,23 +139,55 @@ font-family: var(--font-family);
 font-weight: 400;
 font-size: 20px;
 color: var(--black);
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ActiveButton = styled(PriceButton)`
   border-radius: 12px;
   background: #FFF;
 
+   @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
+
 `;
 
 export const ActiveText = styled(ActiveButton)`
    color: #000;
     font-weight: 400;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const Container = styled.div`
   // padding: 40px 24px;
   color: white;
   margin: 0 auto;
+
+   @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 
@@ -184,6 +263,14 @@ export const SwitchContainer = styled.div<{ $isMonthly: boolean }>`
       font-weight: 500;
     }
   }
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 export const CardsContainer = styled.div`
   display: flex;
@@ -194,6 +281,18 @@ export const CardsContainer = styled.div`
   width: 100%;
  
   padding: 0 16px;
+
+   @media screen and (min-width: 768px) {
+  width: 100%;
+  margin: 0 auto;
+width: 656px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+  }
 `;
 
 export const Card = styled.div.withConfig({
@@ -238,6 +337,16 @@ backdrop-filter: blur(16px);
   &:active {
     transform: translateY(-2px);
   }
+
+ @media screen and (min-width: 768px) {
+  width: 100%;
+  margin: 0 auto;
+  width: 656px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  width: 440px;
+  }
 `;
 
 export const CardDiv = styled.div`
@@ -246,6 +355,14 @@ export const CardDiv = styled.div`
    justify-content: space-between;
     flex-wrap: nowrap;
     flex-direction: row;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const CardH3 = styled.h3`
@@ -255,6 +372,13 @@ font-size: 16px;
 line-height: 130%;
 color: #494bec;
 
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const CardSpan = styled.span`
@@ -269,6 +393,14 @@ border: 1px solid  #494bec;
 box-shadow:   0 0 5px 1px rgba(117, 118, 203, 0.44),
         0 0 10px 0px rgb(100, 102, 215),
         inset 0 0 16px 3px #6567EF;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 
@@ -290,6 +422,13 @@ justify-content: space-between;
     flex-wrap: nowrap;
     flex-direction: row;
 
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const PriceP = styled.p`
@@ -299,6 +438,14 @@ font-size: 22px;
 line-height: 130%;
 color: var(--white-100);
 width: 50%;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 
@@ -310,6 +457,14 @@ line-height: 130%;
 color: var(--white-100);
 display: flex;
 align-items: baseline;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const Span = styled.div`
@@ -318,6 +473,14 @@ font-weight: 400;
 font-size: 14px;
 line-height: 130%;
 color: var(--white-100);
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const TitleNote = styled.div`
@@ -326,6 +489,14 @@ font-weight: 400;
 font-size: 18px;
 line-height: 130%;
 color: var(--white-100);
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 
@@ -408,6 +579,15 @@ export const Button = styled.button.withConfig({
     cursor: not-allowed;
     transform: none !important;
   }
+
+ @media screen and (min-width: 768px) {
+width: 100%;
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 
@@ -419,6 +599,14 @@ font-size: 18px;
 line-height: 130%;
 color: var(--white-100);
 margin-bottom: 12px;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const NoteList = styled.p`
@@ -430,9 +618,25 @@ margin-bottom: 12px;
 display: flex;
 gap: 6px;
 align-items: baseline;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const IconCheck = styled.img`
 width: 13px;
 height: 13px;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;

@@ -68,7 +68,10 @@ export const MainTitle = styled.h2`
   }
   
   @media screen and (min-width: 1440px) {
-  
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 26px;
   }
 `;
 
@@ -86,7 +89,10 @@ export const MainTextDescription = styled.p`
   }
   
   @media screen and (min-width: 1440px) {
-  
+   max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 26px;
   }
 `;
 

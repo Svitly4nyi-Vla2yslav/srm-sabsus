@@ -62,7 +62,10 @@ color: var(--white-100);
   }
   
   @media screen and (min-width: 1440px) {
-  
+   max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 26px;
   }
 `;
 
@@ -85,7 +88,10 @@ color: var(--white-80);
   }
   
   @media screen and (min-width: 1440px) {
-  
+   max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 26px;
   }
 `;
 

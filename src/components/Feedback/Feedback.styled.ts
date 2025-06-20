@@ -125,6 +125,7 @@ export const FeedbackSlide = styled.div`
 export const FeedbackSlideIcon = styled.img`
 width: 123px;
 height: 64px;
+margin-bottom: 16px;
 `;
 
 export const FeedbackSlideText = styled.p`

@@ -79,7 +79,7 @@ const PartnersBanner: React.FC = () => {
   const isTablet = useMediaQuery({ query: '(min-width: 744px) and (max-width: 1023px)' });
   const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
 
-  const slidesPerView = isMobile ? 3 : isTablet ? 5 : isDesktop ? 6 : 7;
+  const slidesPerView = isMobile ? 3 : isTablet ? 5 : isDesktop ? 10 : 10;
   const shouldLoop = partners.length > slidesPerView;
   const slidesToShow = isMobile ? 3 : isTablet ? 6 : isDesktop ? 14 : 15;
 
