@@ -51,6 +51,18 @@ height: 62px;
 backdrop-filter: blur(9.684210777282715px);
 box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.08), inset 0 -5px 15px 0 rgba(255, 255, 255, 0.03), inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
 background: rgba(255, 255, 255, 0.03);
+
+@media screen and (min-width: 768px) {
+  border: 1px solid #212121;
+border-radius: 48px;
+padding: 20px 48px;
+width: 219px;
+height: 104px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 
@@ -85,6 +97,17 @@ position: relative;
   &:active {
     transform: translateY(-2px);
   }
+
+   @media screen and (min-width: 768px) {
+  border: 1px solid #212121;
+border-radius: 48px;
+width: 219px;
+height: 104px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -92,7 +115,7 @@ height : auto;
 width: 100%;
 padding: 0 auto;
 margin: 0 auto;
-@media screen and (min-width: 744px){
+@media screen and (min-width: 768px){
 
 
 }
@@ -107,7 +130,15 @@ export const IconPartners = styled.div`
 margin: 0 auto;
 margin-top: 32px;
 display: flex;
-    justify-content: center;
+justify-content: center;
+
+@media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const AvatarIcon = styled.img`
@@ -116,7 +147,14 @@ export const AvatarIcon = styled.img`
     stroke: #212121;
     margin-left: 0px;
     margin-right: -15px;
-    
+  
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const UserText = styled.p`
@@ -135,5 +173,13 @@ display: flex;
     background: rgba(255, 255, 255, 0.03);
     align-items: center;
     justify-content: center;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 

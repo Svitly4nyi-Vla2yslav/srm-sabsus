@@ -13,18 +13,14 @@ margin: 0 auto;
 // position: fixed;
 bottom: 0; 
 z-index: 1;
-@media screen and (min-width: 744px){
 
-
-}
-
-@media screen and (min-width: 1440px){
-max-width: 1440px;
-
-}
-
-
-`;
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }`;
 
 export const Border = styled.p`
   padding: 0px auto 50px auto;
@@ -35,15 +31,14 @@ background:  var(--white-24);
 position: relative;
 z-index: 10;
 margin-bottom: 16px;
-@media screen and (min-width: 744px){
 
-
-}
-
-@media screen and (min-width: 1440px){
-max-width: 1440px;
-
-}
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const FooterWrapp = styled.div`
@@ -56,12 +51,10 @@ export const FooterWrapp = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    @media screen and (min-width: 744px){
-
+ @media screen and (min-width: 768px) {
   
-
-}
-
+  }
+  
 @media screen and (min-width: 1440px){
   margin: 0 auto;
    padding: 50px 0px;
@@ -86,7 +79,15 @@ height: 19px;
     color: #00ffe7;
     fill: #00ffe7;
   }
-    }
+  }
+
+   @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const WraperLink = styled.div`
@@ -97,6 +98,14 @@ line-height: 130%;
 color: var(--white-100);
 margin-bottom: 16px;
 margin-top: 16px;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const Link = styled.a`
@@ -105,11 +114,27 @@ font-weight: 400;
 font-size: 15px;
 color: var(--white-50);
 margin-bottom: 10px;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const CookieContainer = styled.div`
 display: flex;
 margin-bottom: 16px;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const Licens = styled.div`
@@ -118,6 +143,14 @@ justify-content: space-between;
 margin: 0 auto;
 width: 100%;
 flex-wrap: wrap;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const Cookie = styled.div`
@@ -130,6 +163,14 @@ display: flex;
 align-items: center;
 gap: 7px;
 margin-left: 7px;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const Point = styled.div`
@@ -141,6 +182,14 @@ color: var(--white-50);
 border: 1px solid  var(--white-50);
 width: 1px;
     height: 1px;
+
+     @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const HeroButtonGrey = styled.button`
@@ -202,6 +251,13 @@ height: 34px;
 backdrop-filter: blur(168px);
 box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%) , rgba(255, 255, 255, 0.03);
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 // !""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

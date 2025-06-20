@@ -19,6 +19,14 @@ content: "";
   filter: blur(180px);
   z-index: -5000; // щоб був під основним контентом
   opacity: 0.5;
+
+   @media screen and (min-width: 768px) {
+  height: 100vh;
+  }
+  
+  @media screen and (min-width: 1440px) {
+
+  }
 }`;
 
 export const ContainerStart = styled.div`
@@ -29,11 +37,19 @@ position: relative;
 margin-top: 100px;
 margin-bottom: 154px;
 z-index: 1;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const StartTitle = styled.h2`
 width: 343px;
-height: 80px;
+height: auto;
 margin: 0 auto;
 font-family: var(--font-family);
 font-weight: 600;
@@ -45,6 +61,14 @@ background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 margin-bottom: 24px;
+
+ @media screen and (min-width: 768px) {
+  font-size: 48px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
 export const StartText =  styled.p`
@@ -57,5 +81,7 @@ font-size: 16px;
 text-align: center;
 color: var(--white-75);
 margin-bottom: 24px;
+
+
 `;
 

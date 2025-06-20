@@ -48,32 +48,40 @@ const Footer: React.FC = () => {
     <>
       <FooterContainer>
         <FooterWrapp>
-          <Logo style={{ marginBottom: 16 }}>
-            <img src={logo} alt="Logo" />
-          </Logo>
-          
-          <WraperLink>{t('footer.sections.home')}</WraperLink>
-          <Link href="#">{t('footer.links.benefits')}</Link>
-          <Link href="#">{t('footer.links.service')}</Link>
-          <Link href="#">{t('footer.links.prices')}</Link>
-          
-          <WraperLink>{t('footer.sections.product')}</WraperLink>
-          <Link href="#">{t('footer.links.customerExperience')}</Link>
-          <Link href="#">{t('footer.links.posStaff')}</Link>
-          <Link href="#">{t('footer.links.kitchen')}</Link>
-          <Link href="#">{t('footer.links.inventory')}</Link>
-          <Link href="#">{t('footer.links.analytics')}</Link>
-          <Link href="#">{t('footer.links.marketing')}</Link>
-          <Link href="#">{t('footer.links.integration')}</Link>
-          
-          <WraperLink>{t('footer.sections.company')}</WraperLink>
-          <Link href="#">{t('footer.links.ourServices')}</Link>
-          <Link href="#">{t('footer.links.aboutUs')}</Link>
-          <Link href="#">{t('footer.links.contactUs')}</Link>
-          
-          <WraperLink>{t('footer.sections.demo')}</WraperLink>
-          <HeroButtonGrey>{t('footer.buttons.viewDemo')}</HeroButtonGrey>
-          
+          <div>
+            <Logo style={{ marginBottom: 16 }}>
+              <img src={logo} alt="Logo" />
+            </Logo>
+          </div>
+          <div>
+            <WraperLink>{t('footer.sections.home')}</WraperLink>
+            <Link href="#">{t('footer.links.benefits')}</Link>
+            <Link href="#">{t('footer.links.service')}</Link>
+            <Link href="#">{t('footer.links.prices')}</Link>
+          </div>
+          <div>
+            <WraperLink>{t('footer.sections.product')}</WraperLink>
+            <Link href="#">{t('footer.links.customerExperience')}</Link>
+            <Link href="#">{t('footer.links.posStaff')}</Link>
+            <Link href="#">{t('footer.links.kitchen')}</Link>
+            <Link href="#">{t('footer.links.inventory')}</Link>
+            <Link href="#">{t('footer.links.analytics')}</Link>
+            <Link href="#">{t('footer.links.marketing')}</Link>
+            <Link href="#">{t('footer.links.integration')}</Link>
+          </div>
+
+          <div>
+            {' '}
+            <WraperLink>{t('footer.sections.company')}</WraperLink>
+            <Link href="#">{t('footer.links.ourServices')}</Link>
+            <Link href="#">{t('footer.links.aboutUs')}</Link>
+            <Link href="#">{t('footer.links.contactUs')}</Link>
+          </div>
+          <div>
+            <WraperLink>{t('footer.sections.demo')}</WraperLink>
+            <HeroButtonGrey>{t('footer.buttons.viewDemo')}</HeroButtonGrey>
+          </div>
+
           <Border />
           <Licens>
             <CookieContainer>

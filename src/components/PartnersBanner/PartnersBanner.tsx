@@ -76,12 +76,12 @@ const partners = [
 const PartnersBanner: React.FC = () => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 743px)' });
-  const isTablet = useMediaQuery({ query: '(min-width: 744px) and (max-width: 1023px)' });
-  const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
+  const isTablet = useMediaQuery({ query: '(min-width: 744px) and (max-width: 1223px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' });
 
-  const slidesPerView = isMobile ? 3 : isTablet ? 5 : isDesktop ? 10 : 10;
+  const slidesPerView = isMobile ? 2 : isTablet ? 3 : isDesktop ? 6 : 6;
   const shouldLoop = partners.length > slidesPerView;
-  const slidesToShow = isMobile ? 3 : isTablet ? 6 : isDesktop ? 14 : 15;
+  const slidesToShow = isMobile ? 3 : isTablet ? 6 : isDesktop ? 15 : 15;
 
   const displayedPartners = partnersImages.slice(0, slidesToShow);
 
