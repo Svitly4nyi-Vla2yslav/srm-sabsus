@@ -80,7 +80,7 @@ const Feedback: React.FC = () => {
     };
   });
 
-  const slidesPerView = isMobile ? 1 : isTablet ? 2 : isDesktop ? 3 : 4;
+  const slidesPerView = isMobile ? 1 : isTablet ? 2 : isDesktop ? 4 : 5;
   const shouldLoop = feedbackItems.length > slidesPerView;
 
   return (
