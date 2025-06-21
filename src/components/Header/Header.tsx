@@ -47,16 +47,18 @@ const Header: React.FC = () => {
               <StyledNavLink to="/home">{t('header.nav.home')}</StyledNavLink>
             </NavItem>
             <NavItem>
-              <StyledNavLink to="/service">{t('header.nav.service')}</StyledNavLink>
+              <StyledNavLink to="/service" style={{ pointerEvents: "none", opacity: 0.5 }}>
+                {t('header.nav.service')}
+              </StyledNavLink>
             </NavItem>
             <NavItem>
-              <StyledNavLink to="/about">{t('header.nav.about')}</StyledNavLink>
+              <StyledNavLink to="/about"  style={{ pointerEvents: "none", opacity: 0.5 }}>{t('header.nav.about')}</StyledNavLink>
             </NavItem>
             <NavItem>
-              <StyledNavLink to="/pricing">{t('header.nav.pricing')}</StyledNavLink>
+              <StyledNavLink to="/pricing" style={{ pointerEvents: "none", opacity: 0.5 }}>{t('header.nav.pricing')}</StyledNavLink>
             </NavItem>
             <NavItem>
-              <StyledNavLink to="/contact">{t('header.nav.contacts')}</StyledNavLink>
+              <StyledNavLink to="/contact" style={{ pointerEvents: "none", opacity: 0.5 }}>{t('header.nav.contacts')}</StyledNavLink>
             </NavItem>
           </NavList>
         )}

@@ -405,29 +405,36 @@ box-shadow:   0 0 5px 1px rgba(117, 118, 203, 0.44),
 
 
 
-export const Price = styled.div`
+export const Price = styled.div<{ $isSelected?: boolean }>`
   font-size: 24px;
   font-weight: bold;
   margin: 16px 0;
   font-family: var(--font-family);
-font-weight: 500;
-font-size: 22px;
-line-height: 130%;
-color: var(--white-100);
-display: flex;
-align-items: baseline;
-border-bottom: 1px solid  var(--white-25);
-padding-bottom: 16px;
-justify-content: space-between;
-    flex-wrap: nowrap;
-    flex-direction: row;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 130%;
+  color: var(--white-100);
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid var(--white-25);
+  padding-bottom: 16px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
- @media screen and (min-width: 768px) {
-  
+  ${({ $isSelected }) => 
+    $isSelected && `
+      background: rgba(73, 75, 236, 0.1);
+      border-radius: 8px;
+      padding: 12px;
+      border-bottom: 1px solid #494BEC;
+    `
   }
-  
-  @media screen and (min-width: 1440px) {
-  
+
+  &:hover {
+    background: rgba(73, 75, 236, 0.05);
   }
 `;
 

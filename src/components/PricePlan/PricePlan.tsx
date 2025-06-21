@@ -28,6 +28,10 @@ import check from '../../assets/icons/price/IconCheck.svg';
 const PricePlan: React.FC = () => {
   const { t } = useTranslation();
   const [isMonthly, setIsMonthly] = useState(true);
+ const [selectedTier, setSelectedTier] = useState<{
+    planIndex: number;
+    tierIndex: number;
+  } | null>(null);
 
   const data = t('pricePlan', { returnObjects: true }) as {
     mainText: string;
@@ -37,32 +41,39 @@ const PricePlan: React.FC = () => {
       monthly: string;
       annually: string;
     };
-    plans: {
-      monthly: Array<{
-        title: string;
-        discount: string;
-        tiers: Array<{ name: string; price: string }>;
-        features: string[];
-        button: string;
-        note: string;
-        noteList: string[];
-        highlight?: boolean;
-      }>;
-      annually: Array<{
-        title: string;
-        discount: string;
-        tiers: Array<{ name: string; price: string }>;
-        features: string[];
-        button: string;
-        note: string;
-        noteList: string[];
-        highlight?: boolean;
-      }>;
-    };
+  plans: {
+  monthly: Array<{
+    title: string;
+    discount: string;
+    tiers: Array<{ name: string; price: string; discount: string }>; // Оновлено
+    features: string[];
+    button: string;
+    note: string;
+    noteList: string[];
+    highlight?: boolean;
+  }>;
+  annually: Array<{
+    title: string;
+    discount: string;
+    tiers: Array<{ name: string; price: string; discount: string }>; // Оновлено
+    features: string[];
+    button: string;
+    note: string;
+    noteList: string[];
+    highlight?: boolean;
+  }>;
+};
   };
 
   const currentData = isMonthly ? data.plans.monthly : data.plans.annually;
   const buttonLink = 'https://sabsus.app/';
+
+  const handleTierClick = (planIndex: number, tierIndex: number) => {
+    setSelectedTier({
+      planIndex,
+      tierIndex,
+    });
+  };
 
   return (
     <MasterContainer>
@@ -87,28 +98,42 @@ const PricePlan: React.FC = () => {
           </button>
         </SwitchContainer>
 
-        <CardsContainer>
-          {currentData.map((plan, index) => (
-            <div key={index}>
-              <Card highlight={plan.highlight}>
-                <CardDiv>
-                  <CardH3>{plan.title}</CardH3>
-                  <CardSpan>{plan.discount}</CardSpan>
-                </CardDiv>
+          <CardsContainer>
+        {currentData.map((plan, planIndex) => (
+          <div key={planIndex}>
+            <Card highlight={plan.highlight}>
+              <CardDiv>
+                <CardH3>{plan.title}</CardH3>
+              </CardDiv>
 
-                {plan.tiers.map((tier, tierIndex) => (
-                  <Price key={tierIndex}>
-                    <PriceP>{tier.name}</PriceP>
-                    <PriceCash>
-                      {tier.price} <Span>/Month</Span>
-                    </PriceCash>
-                  </Price>
-                ))}
+              {plan.tiers.map((tier, tierIndex) => (
+                <Price 
+                  key={tierIndex}
+                  onClick={() => handleTierClick(planIndex, tierIndex)}
+                  $isSelected={
+                    selectedTier?.planIndex === planIndex && 
+                    selectedTier?.tierIndex === tierIndex
+                  }
+                >
+                  <PriceP>{tier.name}</PriceP>
+                  <PriceCash>
+                    <CardSpan>{tier.discount}</CardSpan>
+                    {tier.price} <Span>/Month</Span>
+                  </PriceCash>
+                </Price>
+              ))}
 
-                <a href={buttonLink} target="_blank" rel="noopener noreferrer">
-                  <Button highlight={plan.highlight}>{plan.button}</Button>
-                </a>
-              </Card>
+              <a href={buttonLink} target="_blank" rel="noopener noreferrer">
+                <Button 
+                  highlight={
+                    plan.highlight || 
+                    (selectedTier?.planIndex === planIndex)
+                  }
+                >
+                  {plan.button}
+                </Button>
+              </a>
+            </Card>
               <Note>{plan.note}</Note>
               {plan.noteList.map((note, noteIndex) => (
                 <NoteList key={noteIndex}>

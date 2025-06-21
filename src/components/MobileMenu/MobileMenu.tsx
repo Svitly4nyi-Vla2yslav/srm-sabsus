@@ -62,7 +62,7 @@ const BurgerMenu = () => {
           >
             {navLinks.map((link, index) => (
               <MenuLink key={index} onClick={() => setIsOpen(false)}>
-                <StyledNavLink to={link.to}>{t(link.labelKey)}</StyledNavLink>
+                <StyledNavLink style={{ pointerEvents: "none", opacity: 0.5 }} to={link.to}>{t(link.labelKey)}</StyledNavLink>
               </MenuLink>
             ))}
           </MenuOverlay>
