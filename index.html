@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SRM SABSUS</title>
+  <title>SABSUS — POS System for Restaurants, Cafes, Dark Kitchens</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="/src/assets/icons/logo-white.svg" type="image/x-icon" />
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="SRM SABSUS" />
-  <meta property="og:description"
-    content="Pavlo Troph is a multidisciplinary artist: Graphic Design, CGI, Photography, Cinematography, Art Direction." />
-  <meta property="og:image"
-    content="https://raw.githubusercontent.com/Svitly4nyi-Vla2yslav/portfolio-photography/main/src/assets/icons/logo-portfolio.svg" />
-  <meta property="og:url" content="https://portfolio-photography-1.netlify.app/work" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Pavlo Troph - Portfolio" />
-  <meta name="twitter:description"
-    content="Multidisciplinary artist based in Toronto specializing in CGI, Graphic Design & Cinematography." />
-  <meta name="twitter:image"
-    content="https://raw.githubusercontent.com/Svitly4nyi-Vla2yslav/portfolio-photography/main/src/assets/icons/logo-portfolio.svg" />
+  <link rel="icon" href="/src/assets/icons/logo-white.svg" type="image/svg+xml" />
 
   <!-- SEO Meta -->
-  <meta name="keywords"
-    content="Pavlo Troph, Graphic Design, CGI, Cinematography, Art Direction, Portfolio, Toronto artist, Photography, Blender, Adobe Suite, Figma" />
-  <meta name="author" content="Pavlo Troph" />
+  <meta name="description" content="SABSUS is a next-generation POS system for restaurants, cafes, bakeries, dark kitchens, and retail. All-in-one platform with CRM, delivery, loyalty, payroll, white-label app and more." />
+  <meta name="keywords" content="POS system, SaaS POS, restaurant software, CRM for cafes, delivery system, loyalty program, white-label app, restaurant automation" />
+  <meta name="author" content="SABSUS Technologies" />
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="SABSUS — All-in-One POS Platform" />
+  <meta property="og:description" content="Automate your restaurant with POS, CRM, delivery, kitchen, staff, analytics, and branded mobile app — all in one platform." />
+  <meta property="og:image" content="https://sabsus.com/images/og-preview.jpg" />
+  <meta property="og:url" content="https://sabsus.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SABSUS — POS System for Restaurants" />
+  <meta name="twitter:description" content="SaaS and White-label POS platform. Run your restaurant, bakery, or delivery business from any device." />
+  <meta name="twitter:image" content="https://sabsus.com/images/twitter-preview.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://sabsus.com" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/plus-jakarta-display.min.css"> 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/inter.min.css"> 
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/inter.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/plus-jakarta-display.min.css" />
 
-
-<!-- Structured Data for SEO -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Pavlo Troph",
-      "jobTitle": "Multidisciplinary Artist",
-      "image": "https://raw.githubusercontent.com/Svitly4nyi-Vla2yslav/portfolio-photography/main/src/assets/icons/logo-portfolio.svg",
-      "url": "https://portfolio-photography-1.netlify.app/work",
-      "email": "info@pavlotroph.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Toronto",
-        "addressRegion": "ON",
-        "addressCountry": "CA"
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SABSUS POS",
+    "url": "https://sabsus.com",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "89",
+        "priceCurrency": "USD",
+        "description": "SaaS plan for 1 location, no branding"
       },
-      "description": "Pavlo Troph is a multidisciplinary artist dedicated to creating impactful and emotionally resonant experiences by blending visuals, sound, and storytelling.",
-      "knowsAbout": ["Graphic Design", "CGI", "Photography", "Cinematography", "Art Direction"],
-      "alumniOf": ["FiveMods", "Network Graphics", "Meta Network"],
-      "knowsLanguage": "English",
-      "hasCredential": ["Blender 3D", "Adobe Suite", "Figma"]
-    }
+      {
+        "@type": "Offer",
+        "price": "249",
+        "priceCurrency": "USD",
+        "description": "White-label plan for 1 location with your branding"
+      }
+    ],
+    "creator": {
+      "@type": "Organization",
+      "name": "SABSUS Technologies",
+      "url": "https://sabsus.com"
+    },
+    "description": "SABSUS is an all-in-one cloud POS platform for cafes, restaurants, dark kitchens, and retail. Includes CRM, inventory, delivery, staff payroll, loyalty, analytics, and branded apps."
+  }
   </script>
 </head>
 
@@ -70,5 +73,4 @@
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
-
 </html>
