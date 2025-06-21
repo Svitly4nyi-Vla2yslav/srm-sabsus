@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 const Button = styled.button`
   border-radius: 12px;
   padding: 8px 8px;
-  width: 80px;
+  width: 70px;
   height: 36px;
   font-family: var(--font-family);
   font-weight: 400;
@@ -28,7 +28,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 2px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -40,7 +40,7 @@ const Button = styled.button`
   }
 
   @media (max-width: 743px) {
-    min-width: 80px;
+    // min-width: 80px;
     font-size: 13px;
     padding: 6px 10px;
   }

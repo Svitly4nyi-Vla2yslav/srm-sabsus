@@ -11,7 +11,7 @@ import {
 import { useMediaQuery } from 'react-responsive';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import BurgerMenu from '../MobileMenu/MobileMenu';
+// import BurgerMenu from '../MobileMenu/MobileMenu';
 import logo from '../../assets/icons/logo-srm.svg';
 import ButtonTryForFree from '../ButtonTryForFree/ButtonTryForFree';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
             <LanguageSwitcher />
             <ButtonTryForFree />
           </div>
-          {isMobile && <BurgerMenu />}
+          {/* {isMobile && <BurgerMenu />} */}
         </LangButtonContainer>
       </HeaderWrapper>
     </NavbarContainer>
