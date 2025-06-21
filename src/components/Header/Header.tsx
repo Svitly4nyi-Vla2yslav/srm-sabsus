@@ -16,10 +16,27 @@ import logo from '../../assets/icons/logo-srm.svg';
 import ButtonTryForFree from '../ButtonTryForFree/ButtonTryForFree';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
-
+import { useNavigate } from 'react-router-dom';
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Скрол до верху незалежно від поточної сторінки
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
+    // Якщо не на головній сторінці - перехід на головну
+    if (window.location.pathname !== '/home') {
+      navigate('/home');
+    }
+  };
+
 
   useEffect(() => {
     AOS.init({ duration: 3000 });
@@ -35,9 +52,9 @@ const Header: React.FC = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 1439px)' });
 
  return (
-    <NavbarContainer $isScrolled={isScrolled}>
+        <NavbarContainer $isScrolled={isScrolled}>
       <HeaderWrapper id="header">
-        <Logo to="/home">
+        <Logo to="/home" onClick={handleLogoClick}>
           <img src={logo} alt={t('header.logoAlt')} />
         </Logo>
         
