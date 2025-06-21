@@ -256,197 +256,211 @@
       }
     ]
   },
-  "pricePlan": {
-    "mainText": "Planes de precios",
-    "title": "Flexible para startups. Escalable para empresas",
-    "description": "Sin tarifas ocultas. Sin bloqueos de hardware. Lanza gratis, escala bajo demanda o posee completamente tu ecosistema bajo tu marca.",
-    "switch": {
-      "monthly": "Pago mensual",
-      "annually": "Pago anual"
-    },
-    "plans": {
-      "monthly": [
-        {
-          "title": "Modelo SaaS",
-          "discount": "-40%",
-          "tiers": [
-            {
-              "name": "Inicio 1",
-              "price": "$89"
-            },
-            {
-              "name": "Estándar hasta 3",
-              "price": "$149"
-            },
-            {
-              "name": "Negocios hasta 10",
-              "price": "$289"
-            }
-          ],
-          "features": [
-            "1 proyecto",
-            "Soporte básico",
-            "Acceso a la comunidad"
-          ],
-          "button": "Empezar",
-          "note": "Incluye funciones principales:",
-          "noteList": [
-            "POS, CRM, entrega, inventario, finanzas, análisis, soporte y actualizaciones.",
-            "Ideal para aquellos que quieren comenzar rápidamente a usar nuestra plataforma sin lanzar su propia aplicación."
-          ]
-        },
-        {
-          "title": "White-label",
-          "discount": "-40%",
-          "tiers": [
-            {
-              "name": "White Inicio 1",
-              "price": "$249"
-            },
-            {
-              "name": "White Estándar",
-              "price": "$499"
-            },
-            {
-              "name": "White Negocios",
-              "price": "$899"
-            }
-          ],
-          "features": [
-            "5 proyectos",
-            "Soporte prioritario",
-            "Acceso para equipos"
-          ],
-          "button": "Prueba 14 días gratis",
-          "note": "Todo en SaaS, más:",
-          "noteList": [
-            "Aplicación móvil para iOS/Android y sitio web bajo tu marca.",
-            "Ideal para restaurantes y cadenas que buscan desarrollar su propia marca y base de clientes."
-          ]
-        },
-        {
-          "title": "Adquisición White-label",
-          "discount": "-32%",
-          "tiers": [
-            {
-              "name": "1 empresa",
-              "price": "$14,000"
-            },
-            {
-              "name": "Hasta 3 empresas",
-              "price": "$25,000"
-            },
-            {
-              "name": "Hasta 5-10 empresas",
-              "price": "$35,000"
-            }
-          ],
-          "features": [
-            "Proyectos ilimitados",
-            "Soporte 24/7",
-            "Soluciones personalizadas"
-          ],
-          "button": "Solicitar demo",
-          "note": "Todo en White-label, más:",
-          "noteList": [
-            "Recibes el derecho de por vida de usar la aplicación y el sitio web bajo tu marca. Incluye: publicación, conexión de todos los módulos, bases de datos, CRM, entrega, POS, etc. El alojamiento, las bases de datos y las integraciones pasan a tu control. El código fuente no se transfiere.",
-            "Las actualizaciones están disponibles con una suscripción de mantenimiento activa. Un año de mantenimiento es gratis, luego $50 por mes por actualizaciones."
-          ],
-          "highlight": true
-        }
-      ],
-      "annually": [
-        {
-          "title": "Modelo SaaS",
-          "discount": "-30%",
-          "tiers": [
-            {
-              "name": "Inicio 1",
-              "price": "$89"
-            },
-            {
-              "name": "Estándar hasta 3",
-              "price": "$149"
-            },
-            {
-              "name": "Negocios hasta 10",
-              "price": "$289"
-            }
-          ],
-          "features": [
-            "1 proyecto",
-            "Soporte básico",
-            "Acceso a la comunidad"
-          ],
-          "button": "Empezar",
-          "note": "Incluye funciones principales:",
-          "noteList": [
-            "POS, CRM, entrega, inventario, finanzas, análisis, soporte y actualizaciones.",
-            "Ideal para aquellos que quieren comenzar rápidamente a usar nuestra plataforma sin lanzar su propia aplicación."
-          ]
-        },
-        {
-          "title": "White-label",
-          "discount": "-30%",
-          "tiers": [
-            {
-              "name": "White Inicio 1",
-              "price": "$249"
-            },
-            {
-              "name": "White Estándar",
-              "price": "$499"
-            },
-            {
-              "name": "White Negocios",
-              "price": "$899"
-            }
-          ],
-          "features": [
-            "5 proyectos",
-            "Soporte prioritario",
-            "Acceso para equipos"
-          ],
-          "button": "Prueba 14 días gratis",
-          "note": "Todo en SaaS, más:",
-          "noteList": [
-            "Aplicación móvil para iOS/Android y sitio web bajo tu marca.",
-            "Ideal para restaurantes y cadenas que buscan desarrollar su propia marca y base de clientes."
-          ]
-        },
-        {
-          "title": "Adquisición White-label",
-          "discount": "-22%",
-          "tiers": [
-            {
-              "name": "1 empresa",
-              "price": "$14,000"
-            },
-            {
-              "name": "Hasta 3 empresas",
-              "price": "$25,000"
-            },
-            {
-              "name": "Hasta 5-10 empresas",
-              "price": "$35,000"
-            }
-          ],
-          "features": [
-            "Proyectos ilimitados",
-            "Soporte 24/7",
-            "Soluciones personalizadas"
-          ],
-          "button": "Solicitar demo",
-          "note": "Todo en White-label, más:",
-          "noteList": [
-            "Recibes el derecho de por vida de usar la aplicación y el sitio web bajo tu marca. Incluye: publicación, conexión de todos los módulos, bases de datos, CRM, entrega, POS, etc. El alojamiento, las bases de datos y las integraciones pasan a tu control. El código fuente no se transfiere.",
-            "Las actualizaciones están disponibles con una suscripción de mantenimiento activa. Un año de mantenimiento es gratis, luego $50 por mes por actualizaciones."
-          ],
-          "highlight": true
-        }
-      ]
-    }
+ "pricePlan": {
+  "mainText": "Planes de precios",
+  "title": "Flexible para startups. Escalable para empresas",
+  "description": "Sin tarifas ocultas. Sin restricciones de hardware. Comience gratis, escale según la demanda o posea completamente su ecosistema bajo su marca.",
+  "switch": {
+    "monthly": "Pago mensual",
+    "annually": "Pago anual"
   },
+  "plans": {
+    "monthly": [
+      {
+        "title": "Modelo SaaS",
+        "tiers": [
+          {
+            "name": "Inicio 1",
+            "discount": "-43%",
+            "price": "$50"
+          },
+          {
+            "name": "Estándar hasta 3",
+            "discount": "-32%",
+            "price": "$100"
+          },
+          {
+            "name": "Negocios hasta 10",
+            "discount": "-51%",
+            "price": "$140"
+          }
+        ],
+        "features": [
+          "1 proyecto",
+          "Soporte básico",
+          "Acceso a la comunidad"
+        ],
+        "button": "Comenzar",
+        "note": "Incluye características principales:",
+        "noteList": [
+          "POS, CRM, entrega, inventario, finanzas, análisis, soporte y actualizaciones.",
+          "Ideal para aquellos que desean comenzar rápidamente a usar nuestra plataforma sin lanzar su propia aplicación."
+        ]
+      },
+      {
+        "title": "White-label",
+        "tiers": [
+          {
+            "name": "White Inicio 1",
+            "discount": "-39%",
+            "price": "$150"
+          },
+          {
+            "name": "White Estándar",
+            "discount": "-59%",
+            "price": "$200"
+          },
+          {
+            "name": "White Negocios",
+            "discount": "-44%",
+            "price": "$500"
+          }
+        ],
+        "features": [
+          "5 proyectos",
+          "Soporte prioritario",
+          "Acceso para equipos"
+        ],
+        "button": "Prueba 14 días gratis",
+        "note": "Todo en SaaS, más:",
+        "noteList": [
+          "Aplicación móvil para iOS/Android y sitio web bajo su marca.",
+          "Ideal para restaurantes y cadenas que buscan desarrollar su propia marca y base de clientes."
+        ]
+      },
+      {
+        "title": "White-label buyout",
+        "discount": "-32%",
+        "tiers": [
+          {
+            "name": "1 empresa",
+            "discount": "-64%",
+            "price": "$5,000"
+          },
+          {
+            "name": "Hasta 3 empresas",
+            "discount": "-60%",
+            "price": "$10,000"
+          },
+          {
+            "name": "Hasta 5–10 empresas",
+            "discount": "-57%",
+            "price": "$15,000"
+          }
+        ],
+        "features": [
+          "Proyectos ilimitados",
+          "Soporte 24/7",
+          "Soluciones personalizadas"
+        ],
+        "button": "Solicitar demo",
+        "note": "Todo en White-label, más:",
+        "noteList": [
+          "Obtienes el derecho de por vida para usar la aplicación y el sitio web bajo tu marca. Incluye: publicación, conexión de todos los módulos, bases de datos, CRM, entrega, POS, etc. El alojamiento, las bases de datos y las integraciones pasan a tu control. El código fuente no se transfiere.",
+          "Las actualizaciones están disponibles con una suscripción de mantenimiento activa. Un año de mantenimiento es gratis, luego $50 por mes por actualizaciones."
+        ],
+        "highlight": true
+      }
+    ],
+    "annually": [
+      {
+        "title": "Modelo SaaS",
+        "tiers": [
+          {
+            "name": "Inicio 1",
+            "discount": "-73%",
+            "price": "$35"
+          },
+          {
+            "name": "Estándar hasta 3",
+            "discount": "-62%",
+            "price": "$70"
+          },
+          {
+            "name": "Negocios hasta 10",
+            "discount": "-81%",
+            "price": "$98"
+          }
+        ],
+        "features": [
+          "1 proyecto",
+          "Soporte básico",
+          "Acceso a la comunidad"
+        ],
+        "button": "Comenzar",
+        "note": "Incluye características principales:",
+        "noteList": [
+          "POS, CRM, entrega, inventario, finanzas, análisis, soporte y actualizaciones.",
+          "Ideal para aquellos que desean comenzar rápidamente a usar nuestra plataforma sin lanzar su propia aplicación."
+        ]
+      },
+      {
+        "title": "White-label",
+        "tiers": [
+          {
+            "name": "White Inicio 1",
+            "discount": "-69%",
+            "price": "$105"
+          },
+          {
+            "name": "White Estándar",
+            "discount": "-89%",
+            "price": "$140"
+          },
+          {
+            "name": "White Negocios",
+            "discount": "-74%",
+            "price": "$350"
+          }
+        ],
+        "features": [
+          "5 proyectos",
+          "Soporte prioritario",
+          "Acceso para equipos"
+        ],
+        "button": "Prueba 14 días gratis",
+        "note": "Todo en SaaS, más:",
+        "noteList": [
+          "Aplicación móvil para iOS/Android y sitio web bajo su marca.",
+          "Ideal para restaurantes y cadenas que buscan desarrollar su propia marca y base de clientes."
+        ]
+      },
+      {
+        "title": "White-label buyout",
+        "discount": "-22%",
+        "tiers": [
+          {
+            "name": "1 empresa",
+            "discount": "-64%",
+            "price": "$5,000"
+          },
+          {
+            "name": "Hasta 3 empresas",
+            "discount": "-60%",
+            "price": "$10,000"
+          },
+          {
+            "name": "Hasta 5–10 empresas",
+            "discount": "-57%",
+            "price": "$15,000"
+          }
+        ],
+        "features": [
+          "Proyectos ilimitados",
+          "Soporte 24/7",
+          "Soluciones personalizadas"
+        ],
+        "button": "Solicitar demo",
+        "note": "Todo en White-label, más:",
+        "noteList": [
+          "Obtienes el derecho de por vida para usar la aplicación y el sitio web bajo tu marca. Incluye: publicación, conexión de todos los módulos, bases de datos, CRM, entrega, POS, etc. El alojamiento, las bases de datos y las integraciones pasan a tu control. El código fuente no se transfiere.",
+          "Las actualizaciones están disponibles con una suscripción de mantenimiento activa. Un año de mantenimiento es gratis, luego $50 por mes por actualizaciones."
+        ],
+        "highlight": true
+      }
+    ]
+  }
+},
   "startSmall": {
     "title": "Empieza pequeño, crece sin límites",
     "text": "Lanza tu plataforma CRM y de aplicaciones en minutos — sin código, sin estrés. Escalamos contigo.",
