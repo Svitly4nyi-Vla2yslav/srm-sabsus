@@ -268,19 +268,21 @@
       "monthly": [
         {
           "title": "SaaS model",
-          "discount": "-40%",
           "tiers": [
             {
               "name": "Start 1",
-              "price": "$89"
+              "discount": "-43%",
+              "price": "$50"
             },
             {
               "name": "Standard up to 3",
-              "price": "$149"
+              "discount": "-32%",
+              "price": "$100"
             },
             {
               "name": "Business up to 10",
-              "price": "$289"
+              "discount": "-51%",
+              "price": "$140"
             }
           ],
           "features": [
@@ -297,19 +299,21 @@
         },
         {
           "title": "White-label",
-          "discount": "-40%",
           "tiers": [
             {
               "name": "White Start 1",
-              "price": "$249"
+              "discount": "-39%",
+              "price": "$150"
             },
             {
               "name": "White Standard",
-              "price": "$499"
+              "discount": "-59%",
+              "price": "$200"
             },
             {
               "name": "White Business",
-              "price": "$899"
+              "discount": "-44%",
+              "price": "$500"
             }
           ],
           "features": [
@@ -330,15 +334,18 @@
           "tiers": [
             {
               "name": "1 firm",
-              "price": "$14,000"
+              "discount": "-64%",
+              "price": "$5,000"
             },
             {
               "name": "Up to 3 firms",
-              "price": "$25,000"
+              "discount": "-60%",
+              "price": "$10,000"
             },
             {
               "name": "Up to 5–10 firms",
-              "price": "$35,000"
+              "discount": "-57%",
+              "price": "$15,000"
             }
           ],
           "features": [
@@ -358,19 +365,21 @@
       "annually": [
         {
           "title": "SaaS model",
-          "discount": "-30%",
           "tiers": [
             {
               "name": "Start 1",
-              "price": "$89"
+              "discount": "-73%",
+              "price": "$35"
             },
             {
               "name": "Standard up to 3",
-              "price": "$149"
+              "discount": "-62%",
+              "price": "$70"
             },
             {
               "name": "Business up to 10",
-              "price": "$289"
+              "discount": "-81%",
+              "price": "$98"
             }
           ],
           "features": [
@@ -387,19 +396,22 @@
         },
         {
           "title": "White-label",
-          "discount": "-30%",
+         
           "tiers": [
             {
               "name": "White Start 1",
-              "price": "$249"
+               "discount": "-69%",
+              "price": "$105"
             },
             {
               "name": "White Standard",
-              "price": "$499"
+               "discount": "-89%",
+              "price": "$140"
             },
             {
               "name": "White Business",
-              "price": "$899"
+               "discount": "-74%",
+              "price": "$350"
             }
           ],
           "features": [
@@ -420,15 +432,18 @@
           "tiers": [
             {
               "name": "1 firm",
-              "price": "$14,000"
+              "discount": "-64%",
+              "price": "$5,000"
             },
             {
               "name": "Up to 3 firms",
-              "price": "$25,000"
+              "discount": "-60%",
+              "price": "$10,000"
             },
             {
               "name": "Up to 5–10 firms",
-              "price": "$35,000"
+              "discount": "-57%",
+              "price": "$15,000"
             }
           ],
           "features": [
