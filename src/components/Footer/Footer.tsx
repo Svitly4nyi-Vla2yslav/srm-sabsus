@@ -3,8 +3,11 @@ import { scroller } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import {
   Border,
+  Container,
+  ContainerSocialDemo,
   Cookie,
   CookieContainer,
+  Deckstop,
   FooterContainer,
   FooterWrapp,
   HeroButtonGrey,
@@ -12,11 +15,18 @@ import {
   Link,
   Logo,
   Point,
+  SocialIcon,
+  SocialLink,
+  SocialWrapper,
   WraperLink,
 } from './Footer.styled';
 
 import 'aos/dist/aos.css';
 import logo from '../../assets/icons/logo-srm.svg';
+import In from '../../assets/icons/social/in.svg';
+import Insta from '../../assets/icons/social/inst.svg';
+import Faceboock from '../../assets/icons/social/faceboock.svg';
+
 import { PoliciesContent } from './PoliciesContent';
 
 const Footer: React.FC = () => {
@@ -48,39 +58,82 @@ const Footer: React.FC = () => {
     <>
       <FooterContainer>
         <FooterWrapp>
-          <div>
+          <Container>
             <Logo style={{ marginBottom: 16 }}>
               <img src={logo} alt="Logo" />
             </Logo>
-          </div>
-          <div>
+          </Container>
+          <Deckstop>
+          <Container>
             <WraperLink>{t('footer.sections.home')}</WraperLink>
-            <Link href="#">{t('footer.links.benefits')}</Link>
-            <Link href="#">{t('footer.links.service')}</Link>
-            <Link href="#">{t('footer.links.prices')}</Link>
-          </div>
-          <div>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.benefits')}
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.service')}
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.prices')}
+            </Link>
+          </Container>
+          <Container>
             <WraperLink>{t('footer.sections.product')}</WraperLink>
-            <Link href="#">{t('footer.links.customerExperience')}</Link>
-            <Link href="#">{t('footer.links.posStaff')}</Link>
-            <Link href="#">{t('footer.links.kitchen')}</Link>
-            <Link href="#">{t('footer.links.inventory')}</Link>
-            <Link href="#">{t('footer.links.analytics')}</Link>
-            <Link href="#">{t('footer.links.marketing')}</Link>
-            <Link href="#">{t('footer.links.integration')}</Link>
-          </div>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.customerExperience')}
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.posStaff')}
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.kitchen')}
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.inventory')}
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.analytics')}
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.marketing')}
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.integration')}
+            </Link>
+          </Container>
 
-          <div>
+          <Container>
             {' '}
             <WraperLink>{t('footer.sections.company')}</WraperLink>
-            <Link href="#">{t('footer.links.ourServices')}</Link>
-            <Link href="#">{t('footer.links.aboutUs')}</Link>
-            <Link href="#">{t('footer.links.contactUs')}</Link>
-          </div>
-          <div>
-            <WraperLink>{t('footer.sections.demo')}</WraperLink>
-            <HeroButtonGrey>{t('footer.buttons.viewDemo')}</HeroButtonGrey>
-          </div>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.ourServices')}
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.aboutUs')}
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              {t('footer.links.contactUs')}
+            </Link>
+          </Container></Deckstop>
+          <ContainerSocialDemo>
+            {' '}
+            <Container>
+              <WraperLink>{t('footer.sections.demo')}</WraperLink>
+              <HeroButtonGrey>{t('footer.buttons.viewDemo')}</HeroButtonGrey>
+            </Container>
+            <SocialWrapper>
+              <SocialLink href=""  target="_blank"
+              rel="noopener noreferrer" >
+                <SocialIcon src={In} alt="🔗" />
+              </SocialLink>
+              <SocialLink href=""  target="_blank"
+              rel="noopener noreferrer" >
+                <SocialIcon src={Insta} alt="🔗" />
+              </SocialLink>
+              <SocialLink href="https://www.facebook.com">
+                <SocialIcon src={Faceboock} alt="🔗" />
+              </SocialLink>
+            </SocialWrapper>{' '}
+          </ContainerSocialDemo>
 
           <Border />
           <Licens>

@@ -19,8 +19,24 @@ z-index: 1;
   }
   
   @media screen and (min-width: 1440px) {
-  
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 auto;
   }`;
+
+  export const Deckstop = styled.div`
+   @media screen and (min-width: 768px) {
+  display: flex;
+ gap: 74px;
+  }
+    @media screen and (min-width: 1440px) {
+         display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 30px;
+        margin-right: 40px;
+  }
+  `;
 
 export const Border = styled.p`
   padding: 0px auto 50px auto;
@@ -42,23 +58,37 @@ margin-bottom: 16px;
 `;
 
 export const FooterWrapp = styled.div`
-     display: flex;
+  display: flex;
     width: 100%;
     margin: 0 auto;
     padding: 24px 16px;
     height: 100%;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: nowrap;
+
  @media screen and (min-width: 768px) {
-  
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 100%;
   }
   
 @media screen and (min-width: 1440px){
+display: flex;
   margin: 0 auto;
    padding: 50px 0px;
 }
+`;
+
+export const Container = styled.div`
+ display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
 `;
 
 export const Logo = styled.a`
@@ -86,7 +116,7 @@ height: 19px;
   }
   
   @media screen and (min-width: 1440px) {
-  
+  margin: 20px;
   }
 `;
 
@@ -251,6 +281,58 @@ height: 34px;
 backdrop-filter: blur(168px);
 box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%) , rgba(255, 255, 255, 0.03);
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
+`;
+
+export const ContainerSocialDemo = styled.div`
+    flex-flow: wrap;
+    align-items: flex-end;
+    align-content: space-between;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+ @media screen and (min-width: 768px) {
+  flex-direction: row-reverse;
+          margin: 0 20px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
+`;
+
+export const SocialWrapper = styled.div`
+display: flex;
+gap: 12px;
+flex-direction: row;
+margin: 16px;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
+;`
+
+export const SocialLink = styled.a`
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
+`;
+
+export const SocialIcon = styled.img`
  @media screen and (min-width: 768px) {
   
   }
