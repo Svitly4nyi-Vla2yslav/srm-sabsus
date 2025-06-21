@@ -64,56 +64,57 @@ const Footer: React.FC = () => {
             </Logo>
           </Container>
           <Deckstop>
-          <Container>
-            <WraperLink>{t('footer.sections.home')}</WraperLink>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.benefits')}
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.service')}
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.prices')}
-            </Link>
-          </Container>
-          <Container>
-            <WraperLink>{t('footer.sections.product')}</WraperLink>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.customerExperience')}
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.posStaff')}
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.kitchen')}
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.inventory')}
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.analytics')}
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.marketing')}
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.integration')}
-            </Link>
-          </Container>
+            <Container>
+              <WraperLink>{t('footer.sections.home')}</WraperLink>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.benefits')}
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.service')}
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.prices')}
+              </Link>
+            </Container>
+            <Container>
+              <WraperLink>{t('footer.sections.product')}</WraperLink>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.customerExperience')}
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.posStaff')}
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.kitchen')}
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.inventory')}
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.analytics')}
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.marketing')}
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.integration')}
+              </Link>
+            </Container>
 
-          <Container>
-            {' '}
-            <WraperLink>{t('footer.sections.company')}</WraperLink>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.ourServices')}
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.aboutUs')}
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              {t('footer.links.contactUs')}
-            </Link>
-          </Container></Deckstop>
+            <Container>
+              {' '}
+              <WraperLink>{t('footer.sections.company')}</WraperLink>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.ourServices')}
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.aboutUs')}
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                {t('footer.links.contactUs')}
+              </Link>
+            </Container>
+          </Deckstop>
           <ContainerSocialDemo>
             {' '}
             <Container>
@@ -121,12 +122,18 @@ const Footer: React.FC = () => {
               <HeroButtonGrey>{t('footer.buttons.viewDemo')}</HeroButtonGrey>
             </Container>
             <SocialWrapper>
-              <SocialLink href=""  target="_blank"
-              rel="noopener noreferrer" >
+              <SocialLink
+                href="https://www.linkedin.com/in/aleksei-sabitov-507030245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <SocialIcon src={In} alt="🔗" />
               </SocialLink>
-              <SocialLink href=""  target="_blank"
-              rel="noopener noreferrer" >
+              <SocialLink
+                href="https://www.instagram.com/sabsusapp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <SocialIcon src={Insta} alt="🔗" />
               </SocialLink>
               <SocialLink href="https://www.facebook.com">

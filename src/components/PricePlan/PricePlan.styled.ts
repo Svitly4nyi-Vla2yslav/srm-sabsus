@@ -323,14 +323,14 @@ backdrop-filter: blur(16px);
   
   &:hover {
     transform: translateY(-4px);
-    box-shadow: ${({ highlight }) => 
-      highlight 
-        ? `0 0 20px 8px #494BEC, 0 0 40px 0px #4F51ED, inset 0 0 16px 6px #6567EF`
-        : `0 4px 20px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1)`};
-    background: ${({ highlight }) => 
-      highlight 
-        ? 'rgba(255, 255, 255, 0.12)' 
-        : 'rgba(255, 255, 255, 0.06)'};
+    box-shadow: ${({ highlight }) =>
+    highlight
+      ? `0 0 20px 8px #494BEC, 0 0 40px 0px #4F51ED, inset 0 0 16px 6px #6567EF`
+      : `0 4px 20px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1)`};
+    background: ${({ highlight }) =>
+    highlight
+      ? 'rgba(255, 255, 255, 0.12)'
+      : 'rgba(255, 255, 255, 0.06)'};
     border-color: ${({ highlight }) => highlight ? '#fff' : '#555'};
   }
 
@@ -424,7 +424,7 @@ export const Price = styled.div<{ $isSelected?: boolean }>`
   cursor: pointer;
   transition: all 0.3s ease;
 
-  ${({ $isSelected }) => 
+  ${({ $isSelected }) =>
     $isSelected && `
       background: rgba(73, 75, 236, 0.1);
       border-radius: 8px;
@@ -567,13 +567,13 @@ export const Button = styled.button.withConfig({
   &:hover {
     transform: translateY(-2px);
     box-shadow: ${({ highlight }) =>
-      highlight
-        ? `0 0 30px rgba(101, 103, 239, 0.7), inset 0 0 15px rgba(73, 75, 236, 0.6)`
-        : `0 4px 12px rgba(0, 0, 0, 0.1), inset 0 -4px 8px rgba(255, 255, 255, 0.05)`};
+    highlight
+      ? `0 0 30px rgba(101, 103, 239, 0.7), inset 0 0 15px rgba(73, 75, 236, 0.6)`
+      : `0 4px 12px rgba(0, 0, 0, 0.1), inset 0 -4px 8px rgba(255, 255, 255, 0.05)`};
     background: ${({ highlight }) =>
-      highlight
-        ? `linear-gradient(180deg, rgb(82, 37, 189) 0%, rgba(255, 255, 255, 0.05) 100%)`
-        : `linear-gradient(180deg, rgba(255, 255, 255, 0.16) 7%, rgba(255, 255, 255, 0.02) 86%)`};
+    highlight
+      ? `linear-gradient(180deg, rgb(82, 37, 189) 0%, rgba(255, 255, 255, 0.05) 100%)`
+      : `linear-gradient(180deg, rgba(255, 255, 255, 0.16) 7%, rgba(255, 255, 255, 0.02) 86%)`};
   }
 
   &:active {
