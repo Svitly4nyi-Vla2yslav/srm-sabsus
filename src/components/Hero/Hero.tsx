@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
           </AvatarContainer>
           <ButtonContainer>
             <a
-              href="https://sabsus.app/"
+              href="https://sabsus.app/registrcompany/web"
               target="_blank"
               rel="noopener noreferrer"
             >

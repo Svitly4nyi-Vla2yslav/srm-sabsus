@@ -127,8 +127,7 @@ const FeatureSwiper = () => {
         ))}
       </HeaderContainer>
 
-      <div style={{ width: '100%',
-         margin: '40px auto' }}>
+      <div style={{ width: '100%', margin: '40px auto' }}>
         <Swiper
           onSwiper={swiper => {
             swiperRef.current = swiper;
@@ -159,16 +158,29 @@ const FeatureSwiper = () => {
                   <SlideImage $image={feature.image} />
                   <ContentOverlay>
                     <Overlay>
-                    <OverlayTitle>{feature.overlay.title}</OverlayTitle>
-                    <OverlayText>{feature.overlay.text}</OverlayText>
-                    <ButtonContainer>
-                      <HeroButton>
-                        {t('featureSwiper.buttons.tryFree')}
-                      </HeroButton>
-                      <HeroButtonGrey>
-                        {t('featureSwiper.buttons.viewDemo')}
-                      </HeroButtonGrey>
-                    </ButtonContainer></Overlay>
+                      <OverlayTitle>{feature.overlay.title}</OverlayTitle>
+                      <OverlayText>{feature.overlay.text}</OverlayText>
+                      <ButtonContainer>
+                        <a
+                          href="https://sabsus.app/registrcompany/web"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <HeroButton>
+                            {t('featureSwiper.buttons.tryFree')}
+                          </HeroButton>
+                        </a>{' '}
+                        <a
+                          href="https://sabsus.app/login/demo@sabsus.com/demo2025"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <HeroButtonGrey>
+                            {t('featureSwiper.buttons.viewDemo')}
+                          </HeroButtonGrey>
+                        </a>
+                      </ButtonContainer>
+                    </Overlay>
                   </ContentOverlay>
                 </SlideContent>
               </SlideContainer>

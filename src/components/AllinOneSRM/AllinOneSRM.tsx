@@ -53,6 +53,7 @@ import icon29 from '../../assets/icons/cards6/Satellite Antenna.svg';
 import icon30 from '../../assets/icons/cards6/dnk.svg';
 import icon31 from '../../assets/icons/cards6/MobilePhoneOff.svg';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
 const AllinOneSRM: React.FC = () => {
   const { t } = useTranslation();
@@ -75,8 +76,50 @@ const AllinOneSRM: React.FC = () => {
     [icon15, icon16, icon17],
     [icon18, icon19, icon21, icon20],
     [icon22, icon23, icon24, icon25, icon26],
-    [icon27, icon28, icon29, icon30, icon31]
+    [icon27, icon28, icon29, icon30, icon31],
   ];
+
+  const getCardAnimation = (index: number) => {
+    switch (index) {
+      case 0:
+        return {
+          initial: { x: -100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        }; // зліва
+      case 1:
+        return {
+          initial: { x: 100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        }; // справа
+      case 2:
+        return {
+          initial: { x: -100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        }; // зліва
+      case 3:
+        return {
+          initial: { scale: 0.5, opacity: 0 },
+          whileInView: { scale: 1, opacity: 1 },
+        }; // zoom-in
+      case 4:
+        return {
+          initial: { x: 100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        }; // справа
+      case 5:
+        return {
+          initial: { x: -100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        }; // зліва
+      case 6:
+        return {
+          initial: { x: 100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        }; // справа
+      default:
+        return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
+    }
+  };
 
   // Масиви зображень для карток
   const cardImages = [card1, card2, card3, card4, card5, card6, card7];
@@ -91,40 +134,93 @@ const AllinOneSRM: React.FC = () => {
       <MainTextDescription>{data.description}</MainTextDescription>
       <CardContainer>
         {data.cards.map((card, index) => (
-          <Card key={index}>
-            <CardTitle>{card.title}</CardTitle>
-            <CardText>{card.text}</CardText>
-            <CardIcon 
-              src={cardImages[index]} 
-              alt={card.title}
-              style={index === 2 ? {
-                border: 'none',
-                width: '100%',
-                background: 'transparent',
-                overflow: 'visible',
-                backdropFilter: 'none',
-              } : index === 4 ? {
-                position: 'absolute',
-                top: '13%',
-                left: '0',
-                borderRadius: 24,
-                height: '84%',
-                width: '100%',
-                objectFit: 'cover',
-                overflow: 'hidden',
-              } : {}}
-            />
-            <CardButtonContainer>
-              {card.buttons.map((button, btnIndex) => (
-                <CardButton key={btnIndex}>
-                  {button}
-                  <CardButtonText 
-                    src={buttonIcons[index][btnIndex]} 
-                    alt={button} 
-                  />
-                </CardButton>
-              ))}
-            </CardButtonContainer>
+          <Card
+            as={motion.div}
+            {...getCardAnimation(index)}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            key={index}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.15 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <CardTitle>{card.title}</CardTitle>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <CardText
+                style={
+                  index === 4
+                    ? {
+                        marginBottom: 240,
+                      }
+                    : {}
+                }
+              >
+                {card.text}
+              </CardText>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: index * 0.25 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <CardIcon
+                src={cardImages[index]}
+                alt={card.title}
+                style={
+                  index === 2
+                    ? {
+                        border: 'none',
+                        width: '100%',
+                        background: 'transparent',
+                        overflow: 'visible',
+                        backdropFilter: 'none',
+                      }
+                    : index === 4
+                    ? {
+                        position: 'absolute',
+                        top: '13%',
+                        left: '0',
+                        borderRadius: 24,
+                        height: '84%',
+                        width: '100%',
+                        objectFit: 'cover',
+                        overflow: 'hidden',
+                      }
+                    : {}
+                }
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <CardButtonContainer>
+                {card.buttons.map((button, btnIndex) => (
+                  <CardButton key={btnIndex}>
+                    {button}
+                    <CardButtonText
+                      src={buttonIcons[index][btnIndex]}
+                      alt={button}
+                    />
+                  </CardButton>
+                ))}
+              </CardButtonContainer>
+            </motion.div>
           </Card>
         ))}
       </CardContainer>

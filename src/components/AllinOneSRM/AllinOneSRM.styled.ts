@@ -167,7 +167,7 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  
+  justify-content: space-between;
   /* backdrop-filter з підтримкою для Safari */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -219,7 +219,8 @@ export const CardText = styled.p`
   font-size: 16px;
   color: var(--white-80);
   margin-bottom: 20px;
-  z-index: 10;
+position: relative;
+    z-index: 101;
 -webkit-backdrop-filter: blur(6px);
   /* Запобігає "підскакуванню" тексту при завантаженні на iOS */
   -webkit-transform: translate3d(0,0,0);

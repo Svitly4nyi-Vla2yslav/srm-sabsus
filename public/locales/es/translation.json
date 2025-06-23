@@ -23,11 +23,11 @@
     "stats": [
       {
         "value": "2M+",
-        "description": "usuarios diarios"
+        "description": "Usuarios diarios"
       },
       {
         "value": "$1B+",
-        "description": "en transacciones procesadas"
+        "description": "En transacciones procesadas"
       },
       {
         "value": "99%",
@@ -35,7 +35,7 @@
       },
       {
         "value": "4+",
-        "description": "Idiomas Interfaz completamente multilingüe"
+        "description": "Interfaz completamente multilingüe"
       }
     ]
   },
