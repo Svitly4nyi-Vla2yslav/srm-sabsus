@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
             </a>
             <a
-              href="https://sabsus.app/"
+              href="https://sabsus.app/login/demo@sabsus.com/demo2025"
               target="_blank"
               rel="noopener noreferrer"
             >
