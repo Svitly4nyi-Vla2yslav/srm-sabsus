@@ -23,11 +23,11 @@
     "stats": [
       {
         "value": "2M+",
-        "description": "users daily"
+        "description": "Users daily"
       },
       {
         "value": "$1B+",
-        "description": "in processed transactions"
+        "description": "In processed transactions"
       },
       {
         "value": "99%",
@@ -35,7 +35,7 @@
       },
       {
         "value": "4+",
-        "description": "Languages Fully Multilingual Interface"
+        "description": "Fully Multilingual Interface"
       }
     ]
   },
