@@ -38,7 +38,7 @@ export const CardContainer = styled.a`
     0 7px 14px -7px rgba(0, 0, 0, 0.03),
     0 2px 4px -2px rgba(0, 0, 0, 0.08);
   background: rgba(255, 255, 255, 0.03);
-  width: 389px;
+  width: 350px;
  height: 198px;
  margin-top: 100px;
   overflow: hidden;
@@ -91,7 +91,7 @@ export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   width: 100%;
   height: 100%;
   position: relative;
