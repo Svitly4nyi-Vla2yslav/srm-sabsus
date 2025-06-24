@@ -1,55 +1,50 @@
 import { styled } from "styled-components";
+import { motion } from 'framer-motion';
 
-
-
-export const FeedbackTitle = styled.h2`
-font-family: var(--font-family);
-font-weight: 500;
-font-size: 24px;
-line-height: 130%;
-text-align: center;
-color: var(--white-100);
-
+export const FeedbackTitle = styled(motion.h2)`
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  text-align: center;
+  color: var(--white-100);
 `;
 
-export const StarContainer = styled.div`
-    display: flex;
-    margin-top: 20px;
-    justify-content: space-evenly;
-    justify-items: column;
-    flex-direction: row;
-    gap: 4px;
-    width: 343px;
-    height: 117px;
-    flex-wrap: wrap;
-    align-content: space-between;
-    // margin-bottom: 56px;
+export const StarContainer = styled(motion.div)`
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-evenly;
+  justify-items: column;
+  flex-direction: row;
+  gap: 4px;
+  width: 343px;
+  height: 117px;
+  flex-wrap: wrap;
+  align-content: space-between;
 `;
 
-export const Star = styled.img`
-width: 104px;
-height: 16px;
-
+export const Star = styled(motion.img)`
+  width: 104px;
+  height: 16px;
 `;
 
-export const RatingNumber = styled.p`
-font-family: var(--font-family);
-font-weight: 500;
-font-size: 24px;
-line-height: 130%;
-text-align: center;
-color: var(--white-100);
+export const RatingNumber = styled(motion.p)`
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  text-align: center;
+  color: var(--white-100);
 `;
 
-export const RatingText = styled.p`
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 16px;
-color: var(--white-100);
+export const RatingText = styled(motion.p)`
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--white-100);
 `;
 
-
-export const ShadowLeft = styled.div`
+export const ShadowLeft = styled(motion.div)`
   position: absolute;
   left: 0;
   top: 0;
@@ -60,7 +55,7 @@ export const ShadowLeft = styled.div`
   pointer-events: none;
 `;
 
-export const ShadowRight = styled.div`
+export const ShadowRight = styled(motion.div)`
   position: absolute;
   right: 0;
   top: 0;
@@ -71,8 +66,7 @@ export const ShadowRight = styled.div`
   pointer-events: none;
 `;
 
-
-export const FeedbackContainer = styled.div`
+export const FeedbackContainer = styled(motion.div)`
   display: flex;
   padding: 0 16px;
   max-width: 1200px;
@@ -81,7 +75,7 @@ export const FeedbackContainer = styled.div`
   align-items: center;
 `;
 
-export const FeedbackSwiperContainer = styled.div`
+export const FeedbackSwiperContainer = styled(motion.div)`
   width: 100%;
   position: relative;
   margin: 0 auto;
@@ -90,7 +84,7 @@ export const FeedbackSwiperContainer = styled.div`
   
   .swiper {
     width: 100%;
-    padding: 0 10%; /* Додаємо відступи для центрування */
+    padding: 0 10%;
   }
   
   .swiper-slide {
@@ -100,9 +94,7 @@ export const FeedbackSwiperContainer = styled.div`
   }
 `;
 
-
-
-export const FeedbackSlide = styled.div`
+export const FeedbackSlide = styled(motion.div)`
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -118,53 +110,55 @@ export const FeedbackSlide = styled.div`
               inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.03);
   margin: 0 auto;
+  will-change: transform, box-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 `;
 
-// ... інші стилі залишаються без змін ...
-
-export const FeedbackSlideIcon = styled.img`
-width: 123px;
-height: 64px;
-margin-bottom: 16px;
+export const FeedbackSlideIcon = styled(motion.img)`
+  width: 123px;
+  height: 64px;
+  margin-bottom: 16px;
+  will-change: transform;
 `;
 
-export const FeedbackSlideText = styled.p`
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 16px;
-line-height: 130%;
-color: var(--white-100);
-margin-bottom: 40px;
+export const FeedbackSlideText = styled(motion.p)`
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: var(--white-100);
+  margin-bottom: 40px;
 `;
 
-export const UserWrapper = styled.div`
+export const UserWrapper = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 8px;
 `;
 
-export const AvatarWrapper = styled.div`
-
+export const AvatarWrapper = styled(motion.div)`
+  will-change: transform;
 `;
 
-export const AvatarIcon = styled.img`
-border-radius: 24px;
-width: 45px;
-height: 45px;
+export const AvatarIcon = styled(motion.img)`
+  border-radius: 24px;
+  width: 45px;
+  height: 45px;
+  will-change: transform;
+  transition: transform 0.3s ease;
 `;
 
-export const NameUser = styled.p`
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 14px;
-line-height: 130%;
-color: var(--white-100);
+export const NameUser = styled(motion.p)`
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: var(--white-100);
 `;
 
-export const Position = styled.p`
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 12px;
-color: var(--white-50);
+export const Position = styled(motion.p)`
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--white-50);
 `;
-

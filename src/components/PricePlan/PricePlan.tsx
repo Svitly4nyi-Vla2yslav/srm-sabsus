@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import {
   CardButtonText,
@@ -45,7 +46,7 @@ const PricePlan: React.FC = () => {
       monthly: Array<{
         title: string;
         discount: string;
-        tiers: Array<{ name: string; price: string; discount: string }>; // Оновлено
+        tiers: Array<{ name: string; price: string; discount: string }>;
         features: string[];
         button: string;
         note: string;
@@ -55,7 +56,7 @@ const PricePlan: React.FC = () => {
       annually: Array<{
         title: string;
         discount: string;
-        tiers: Array<{ name: string; price: string; discount: string }>; // Оновлено
+        tiers: Array<{ name: string; price: string; discount: string }>;
         features: string[];
         button: string;
         note: string;
@@ -68,7 +69,7 @@ const PricePlan: React.FC = () => {
   const currentData = isMonthly ? data.plans.monthly : data.plans.annually;
   const buttonLinks = {
     default: 'https://sabsus.app/registrcompany/web',
-    lastButton: 'https://sabsus.app/login/demo@sabsus.com/demo2025', // або інше посилання для останньої кнопки
+    lastButton: 'https://sabsus.app/login/demo@sabsus.com/demo2025',
   };
 
   const handleTierClick = (planIndex: number, tierIndex: number) => {
@@ -78,15 +79,55 @@ const PricePlan: React.FC = () => {
     });
   };
 
+  // Анімації
+  const containerAnimation = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
+  const switchAnimation = {
+    hidden: { opacity: 0, scale: 0.9 },
+    show: { opacity: 1, scale: 1 },
+  };
+
   return (
-    <MasterContainer>
-      <MainTextPrice>
-        {data.mainText} <CardButtonText src={price} alt="💰" />
-      </MainTextPrice>
-      <PriceTitle>{data.title}</PriceTitle>
-      <PriceText>{data.description}</PriceText>
+    <MasterContainer
+      as={motion.div}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.2 }}
+    >
+      <motion.div variants={itemAnimation}>
+        <MainTextPrice>
+          {data.mainText} <CardButtonText src={price} alt="💰" />
+        </MainTextPrice>
+      </motion.div>
+
+      <motion.div variants={itemAnimation}>
+        <PriceTitle>{data.title}</PriceTitle>
+      </motion.div>
+
+      <motion.div variants={itemAnimation}>
+        <PriceText>{data.description}</PriceText>
+      </motion.div>
+
       <Container>
-        <SwitchContainer $isMonthly={isMonthly}>
+        <SwitchContainer
+          $isMonthly={isMonthly}
+          as={motion.div}
+          variants={switchAnimation}
+          transition={{ duration: 0.5 }}
+        >
           <button
             onClick={() => setIsMonthly(true)}
             className={isMonthly ? 'active' : ''}
@@ -101,7 +142,10 @@ const PricePlan: React.FC = () => {
           </button>
         </SwitchContainer>
 
-        <CardsContainer>
+        <CardsContainer
+          as={motion.div}
+          variants={containerAnimation}
+        >
           {currentData.map((plan, planIndex) => {
             const isLastPlan = planIndex === currentData.length - 1;
             const link = isLastPlan
@@ -109,7 +153,12 @@ const PricePlan: React.FC = () => {
               : buttonLinks.default;
 
             return (
-              <div key={planIndex}>
+              <motion.div
+                key={planIndex}
+                variants={itemAnimation}
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 <Card highlight={plan.highlight}>
                   <CardDiv>
                     <CardH3>{plan.title}</CardH3>
@@ -118,11 +167,13 @@ const PricePlan: React.FC = () => {
                   {plan.tiers.map((tier, tierIndex) => (
                     <Price
                       key={tierIndex}
+                      as={motion.div}
                       onClick={() => handleTierClick(planIndex, tierIndex)}
                       $isSelected={
                         selectedTier?.planIndex === planIndex &&
                         selectedTier?.tierIndex === tierIndex
                       }
+                      whileTap={{ scale: 0.98 }}
                     >
                       <PriceP>{tier.name}</PriceP>
                       <PriceCash>
@@ -134,9 +185,12 @@ const PricePlan: React.FC = () => {
 
                   <a href={link} target="_blank" rel="noopener noreferrer">
                     <Button
+                      as={motion.button}
                       highlight={
                         plan.highlight || selectedTier?.planIndex === planIndex
                       }
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       {plan.button}
                     </Button>
@@ -148,7 +202,7 @@ const PricePlan: React.FC = () => {
                     <IconCheck src={check} alt="✔️" /> {note}
                   </NoteList>
                 ))}
-              </div>
+              </motion.div>
             );
           })}
         </CardsContainer>

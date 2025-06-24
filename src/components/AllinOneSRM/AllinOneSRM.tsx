@@ -126,12 +126,35 @@ const AllinOneSRM: React.FC = () => {
 
   return (
     <AllinOneSRMContainer>
-      <MainText>
-        {data.mainText}
-        <CardButtonText src={icon5} alt="Laptop" />
-      </MainText>
-      <MainTitle>{data.mainTitle}</MainTitle>
-      <MainTextDescription>{data.description}</MainTextDescription>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        {' '}
+        <MainText>
+          {data.mainText}
+          <CardButtonText src={icon5} alt="Laptop" />
+        </MainText>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        <MainTitle>{data.mainTitle}</MainTitle>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        {' '}
+        <MainTextDescription>{data.description}</MainTextDescription>
+      </motion.div>
       <CardContainer>
         {data.cards.map((card, index) => (
           <Card

@@ -23,6 +23,7 @@ import Avatar4 from '../../assets/icons/avatar/Image-36-4.svg';
 import Spline from '@splinetool/react-spline';
 import Swipper from './Swipper';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -39,38 +40,77 @@ const Hero: React.FC = () => {
             }}
           />
         </Container>
-        <HeroInnovative>
-          {t('hero.innovative')}  <SpanUnicorn> 🦄</SpanUnicorn>
-        </HeroInnovative>
-        <HeroTitle>{t('hero.title')}</HeroTitle>
-        <HeroText>{t('hero.description')}</HeroText>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <HeroInnovative>
+            {t('hero.innovative')} <SpanUnicorn> 🦄</SpanUnicorn>
+          </HeroInnovative>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          {' '}
+          <HeroTitle>{t('hero.title')}</HeroTitle>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.5 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          {' '}
+          <HeroText>{t('hero.description')}</HeroText>
+        </motion.div>
         <HeroContainerContent>
-          <AvatarContainer>
-            <ImageContainer>
-              <ImageAvatar src={Avatar} alt="😎" />
-              <ImageAvatar src={Avatar1} alt="😀" />
-              <ImageAvatar src={Avatar2} alt="😁" />
-              <ImageAvatar src={Avatar3} alt="😶‍🌫️" />
-              <ImageAvatar src={Avatar4} alt="😨" />
-            </ImageContainer>
-            <TextImageAvatar>{t('hero.trustText')}</TextImageAvatar>
-          </AvatarContainer>
-          <ButtonContainer>
-            <a
-              href="https://sabsus.app/registrcompany/web"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
-            </a>
-            <a
-              href="https://sabsus.app/login/demo@sabsus.com/demo2025"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <HeroButtonGrey>{t('hero.buttons.viewDemo')}</HeroButtonGrey>
-            </a>
-          </ButtonContainer>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.7 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            {' '}
+            <AvatarContainer>
+              <ImageContainer>
+                <ImageAvatar src={Avatar} alt="😎" />
+                <ImageAvatar src={Avatar1} alt="😀" />
+                <ImageAvatar src={Avatar2} alt="😁" />
+                <ImageAvatar src={Avatar3} alt="😶‍🌫️" />
+                <ImageAvatar src={Avatar4} alt="😨" />
+              </ImageContainer>
+              <TextImageAvatar>{t('hero.trustText')}</TextImageAvatar>
+            </AvatarContainer>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 0.9 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            {' '}
+            <ButtonContainer>
+              <a
+                href="https://sabsus.app/registrcompany/web"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
+              </a>
+              <a
+                href="https://sabsus.app/login/demo@sabsus.com/demo2025"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <HeroButtonGrey>{t('hero.buttons.viewDemo')}</HeroButtonGrey>
+              </a>
+            </ButtonContainer>
+          </motion.div>
         </HeroContainerContent>
       </HeroWrapper>
       <Swipper />

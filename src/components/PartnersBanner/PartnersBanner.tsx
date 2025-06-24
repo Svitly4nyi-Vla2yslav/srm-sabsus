@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -85,72 +86,123 @@ const PartnersBanner: React.FC = () => {
 
   const displayedPartners = partnersImages.slice(0, slidesToShow);
 
+  // Анімації
+  const containerAnimation = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
-    <SwiperContainer>
+    <SwiperContainer
+      as={motion.div}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.2 }}
+      variants={containerAnimation}
+    >
       {/* Swiper - рухається вправо */}
-      <Swiper
-        loop={shouldLoop}
-        slidesPerView={slidesPerView}
-        spaceBetween={10}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-          reverseDirection: false,
-        }}
-        speed={4000}
-        modules={[Autoplay]}
-        className="mySwiper"
-      >
-        {partners.map(partner => (
-          <SwiperSlide key={`right-${partner.id}`}>
-            <a href={partner.link} target="_blank" rel="noopener noreferrer">
-              <PartnersIcon 
-                src={partner.imageUrl} 
-                alt={`Partner ${partner.id}`} 
-                loading="lazy" 
-              />
-            </a>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <motion.div variants={itemAnimation}>
+        <Swiper
+          loop={shouldLoop}
+          slidesPerView={slidesPerView}
+          spaceBetween={10}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: false,
+          }}
+          speed={4000}
+          modules={[Autoplay]}
+          className="mySwiper"
+        >
+          {partners.map(partner => (
+            <SwiperSlide key={`right-${partner.id}`}>
+              <a href={partner.link} target="_blank" rel="noopener noreferrer">
+                <PartnersIcon 
+                  as={motion.img}
+                  src={partner.imageUrl} 
+                  alt={`Partner ${partner.id}`} 
+                  loading="lazy"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: '0 0 5px 4px #494BEC, 0 0 5px 0px #4F51ED, inset 0 0 16px 8px #6567EF',
+                  }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                />
+              </a>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </motion.div>
 
       {/* Swiper - рухається вліво */}
-      <Swiper
-        loop={shouldLoop}
-        slidesPerView={slidesPerView}
-        spaceBetween={10}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-          reverseDirection: true,
-        }}
-        speed={4000}
-        modules={[Autoplay]}
-        className="mySwiper reverse-swiper"
-      >
-        {[...partners].reverse().map(partner => (
-          <SwiperSlide key={`left-${partner.id}`}>
-            <a href={partner.link} target="_blank" rel="noopener noreferrer">
-              <PartnersIcon 
-                src={partner.imageUrl} 
-                alt={`Partner ${partner.id}`} 
-                loading="lazy" 
-              />
-            </a>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <motion.div variants={itemAnimation}>
+        <Swiper
+          loop={shouldLoop}
+          slidesPerView={slidesPerView}
+          spaceBetween={10}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: true,
+          }}
+          speed={4000}
+          modules={[Autoplay]}
+          className="mySwiper reverse-swiper"
+        >
+          {[...partners].reverse().map(partner => (
+            <SwiperSlide key={`left-${partner.id}`}>
+              <a href={partner.link} target="_blank" rel="noopener noreferrer">
+                <PartnersIcon 
+                  as={motion.img}
+                  src={partner.imageUrl} 
+                  alt={`Partner ${partner.id}`} 
+                  loading="lazy"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: '0 0 5px 4px #494BEC, 0 0 5px 0px #4F51ED, inset 0 0 16px 8px #6567EF',
+                  }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                />
+              </a>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </motion.div>
       
-      <IconPartners>
+      <IconPartners
+        as={motion.div}
+        variants={containerAnimation}
+      >
         {displayedPartners.map((image, index) => (
           <AvatarIcon 
+            as={motion.img}
             key={`partner-${index}`} 
             src={image} 
             alt={`Partner ${index}`}
             loading="lazy"
+            variants={itemAnimation}
+            whileHover={{ rotate: 10, scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
           />
         ))}
-        <UserText>{t('partnersBanner.trustedText')}</UserText>
+        <UserText
+          as={motion.p}
+          variants={itemAnimation}
+          whileHover={{ scale: 1.02 }}
+        >
+          {t('partnersBanner.trustedText')}
+        </UserText>
       </IconPartners>
     </SwiperContainer>
   );

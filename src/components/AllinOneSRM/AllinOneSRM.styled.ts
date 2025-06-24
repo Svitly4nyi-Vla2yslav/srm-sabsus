@@ -221,7 +221,8 @@ export const CardText = styled.p`
   margin-bottom: 20px;
 position: relative;
     z-index: 101;
--webkit-backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
   /* Запобігає "підскакуванню" тексту при завантаженні на iOS */
   -webkit-transform: translate3d(0,0,0);
     @media screen and (min-width: 768px) {

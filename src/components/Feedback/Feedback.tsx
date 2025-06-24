@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   FeedbackContainer,
   FeedbackTitle,
@@ -83,23 +84,70 @@ const Feedback: React.FC = () => {
   const slidesPerView = isMobile ? 1 : isTablet ? 2 : isDesktop ? 4 : 5;
   const shouldLoop = feedbackItems.length > slidesPerView;
 
+  // Анімації
+  const containerAnimation = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
+  const ratingAnimation = (index: number) => ({
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, delay: index * 0.1 }
+  });
+
   return (
-    <div style={{ width: '100vw', position: 'relative', overflow: 'hidden' }}>
-      <FeedbackContainer>
-        <FeedbackTitle>{data.title}</FeedbackTitle>
-        <StarContainer>
+    <motion.div 
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.2 }}
+      style={{ width: '100vw', position: 'relative', overflow: 'hidden' }}
+    >
+      <FeedbackContainer
+        as={motion.div}
+        variants={containerAnimation}
+      >
+        <motion.div variants={itemAnimation}>
+          <FeedbackTitle>{data.title}</FeedbackTitle>
+        </motion.div>
+        
+        <StarContainer
+          as={motion.div}
+          variants={containerAnimation}
+        >
           {data.ratings.map((rating, index) => (
-            <div key={index}>
+            <motion.div 
+              key={index}
+              variants={itemAnimation}
+              {...ratingAnimation(index)}
+            >
               <RatingNumber>{rating.value}</RatingNumber>
               <div>
                 <Star src={star} alt="⭐" />
                 <RatingText>{rating.source}</RatingText>
               </div>
-            </div>
+            </motion.div>
           ))}
         </StarContainer>
       </FeedbackContainer>
-      <FeedbackSwiperContainer>
+
+      <FeedbackSwiperContainer
+        as={motion.div}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.2 }}
+      >
         <ShadowLeft />
         <Swiper
           loop={shouldLoop}
@@ -114,14 +162,26 @@ const Feedback: React.FC = () => {
           modules={[Autoplay]}
           className="mySwiper"
         >
-          {feedbackItems.map(item => (
+          {feedbackItems.map((item, index) => (
             <SwiperSlide key={item.id}>
-              <FeedbackSlide>
+              <FeedbackSlide
+                as={motion.div}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                whileHover={{ y: -5, boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}
+              >
                 <FeedbackSlideIcon src={item.icon} alt="Company logo" />
                 <FeedbackSlideText>{item.text}</FeedbackSlideText>
                 <UserWrapper>
                   <AvatarWrapper>
-                    <AvatarIcon src={item.avatar} alt={`${item.name} avatar`} />
+                    <AvatarIcon 
+                      src={item.avatar} 
+                      alt={`${item.name} avatar`} 
+                      as={motion.img}
+                      whileHover={{ rotate: 5, scale: 1.05 }}
+                    />
                   </AvatarWrapper>
                   <div>
                     <NameUser>{item.name}</NameUser>
@@ -134,7 +194,7 @@ const Feedback: React.FC = () => {
         </Swiper>
         <ShadowRight />
       </FeedbackSwiperContainer>
-    </div>
+    </motion.div>
   );
 };
 
