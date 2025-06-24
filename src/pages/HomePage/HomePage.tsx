@@ -13,14 +13,14 @@ const Home: React.FC = () => {
   return (
     <>
       <HomeContainer>
-        <Hero/>
-        <WhyChooseOurPlatform/>
-        <AllinOneSRM/>
-        <ResultsFromBusinesses/>
-        <Feedback/>
-        <PricingTable/>
-        <PartnersBanner/>
-        <StartSmall/>
+        <Hero />
+        <AllinOneSRM />
+        <WhyChooseOurPlatform />
+        <ResultsFromBusinesses />
+        <Feedback />
+        <PricingTable />
+        <PartnersBanner />
+        <StartSmall />
       </HomeContainer>
     </>
   );

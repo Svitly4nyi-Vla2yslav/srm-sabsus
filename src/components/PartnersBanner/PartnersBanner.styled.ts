@@ -131,7 +131,7 @@ export const UserText = styled(motion.p)`
   border: 1px solid #212121;
   border-radius: 48px;
   padding: 4px 8px;
-  width: 291px;
+ width: max-content;
   height: 36px;
   font-family: var(--font-family);
   font-weight: 400;
