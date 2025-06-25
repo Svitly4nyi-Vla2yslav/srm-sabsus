@@ -68,7 +68,7 @@ const PricePlan: React.FC = () => {
 
   const currentData = isMonthly ? data.plans.monthly : data.plans.annually;
   const buttonLinks = {
-    default: 'https://sabsus.app/registrcompany/web',
+    default: 'https://sabsus.app/registrcompany/web/buy1',
     lastButton: 'https://sabsus.app/login/demo@sabsus.com/demo2025',
   };
 
