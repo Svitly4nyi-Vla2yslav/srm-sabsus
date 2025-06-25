@@ -276,10 +276,10 @@ export const ResultText = styled(motion.p)`
   line-height: 130%;
   color: var(--white-60);
   will-change: transform, opacity;
-  
+     width: fit-content;
+    height: max-content;
   @media screen and (min-width: 1440px) {
-    font-size: 18px;
-    width: max-content;
+    font-size: 14px;
   }
 `;
 
