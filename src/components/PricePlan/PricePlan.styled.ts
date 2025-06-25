@@ -18,8 +18,8 @@ export const MasterContainer = styled(motion.div)`
 export const MainTextPrice = styled(motion.p)`
   margin: 0 auto;
   border-radius: 24px;
-  padding: 4px 4px 4px 8px;
-  width: max-content;
+    padding: 4px 1px 4px 14px;
+    width: max-content;
   height: 28px;
   display: flex;
   justify-content: space-between;

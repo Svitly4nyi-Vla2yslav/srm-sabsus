@@ -18,8 +18,8 @@ color: var(--white-100);
 height: 28px;
 margin: 0 auto;
 border-radius: 24px;
-padding: 4px 4px 4px 8px;
-   width: fit-content;
+    padding: 4px 1px 4px 14px;
+    width: max-content;
 height: 28px;
 
 backdrop-filter: blur(16px);
