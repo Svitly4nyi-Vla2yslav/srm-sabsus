@@ -1,11 +1,11 @@
-import AllinOneSRM from '../../components/AllinOneSRM/AllinOneSRM';
-import Feedback from '../../components/Feedback/Feedback';
-import Hero from '../../components/Hero/Hero';
-import PartnersBanner from '../../components/PartnersBanner/PartnersBanner';
-import PricingTable from '../../components/PricePlan/PricePlan';
-import ResultsFromBusinesses from '../../components/ResultsFromBusinesses/ResultsFromBusinesses';
-import StartSmall from '../../components/StartSmall/StartSmall';
-import WhyChooseOurPlatform from '../../components/WhyChooseOurPlatform/WhyChooseOurPlatform';
+import AllinOneSRM from '../../components/ComponentsHome/AllinOneSRM/AllinOneSRM';
+import Feedback from '../../components/ComponentsHome/Feedback/Feedback';
+import Hero from '../../components/ComponentsHome/Hero/Hero';
+import PartnersBanner from '../../components/ComponentsHome/PartnersBanner/PartnersBanner';
+import PricingTable from '../../components/ComponentsHome/PricePlan/PricePlan';
+import ResultsFromBusinesses from '../../components/ComponentsHome/ResultsFromBusinesses/ResultsFromBusinesses';
+import StartSmall from '../../components/ComponentsHome/StartSmall/StartSmall';
+import WhyChooseOurPlatform from '../../components/ComponentsHome/WhyChooseOurPlatform/WhyChooseOurPlatform';
 import { HomeContainer } from './HomePage.styled';
 import React from 'react';
 
