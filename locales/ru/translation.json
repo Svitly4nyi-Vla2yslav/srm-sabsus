@@ -477,7 +477,7 @@
       "home": "Главная",
       "product": "Продукт",
       "company": "Компания",
-      "demo": "Посмотреть демо"
+      "demo": "Посмотреть живое демо"
     },
     "links": {
       "benefits": "Преимущества",
@@ -501,7 +501,7 @@
       "cookiePolicy": "Политика cookies",
       "privacyStatement": "Политика конфиденциальности",
       "termsOfUse": "Условия использования",
-      "copyright": "© 2023 CRM Solutions, Inc. Все права защищены."
+      "copyright": "© 2023  Sabsus LLC, Inc. Все права защищены."
     }
   },
   "languageSwitcher": {
