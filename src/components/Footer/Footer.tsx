@@ -119,7 +119,13 @@ const Footer: React.FC = () => {
             {' '}
             <Container>
               <WraperLink>{t('footer.sections.demo')}</WraperLink>
-              <HeroButtonGrey>{t('footer.buttons.viewDemo')}</HeroButtonGrey>
+              <a
+                href="https://sabsus.app/login/demo@sabsus.com/demo2025"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <HeroButtonGrey>{t('footer.buttons.viewDemo')}</HeroButtonGrey>
+              </a>
             </Container>
             <SocialWrapper>
               <SocialLink

@@ -43,18 +43,25 @@ export const Container = styled.div`
     position: relative;
     z-index: 1;
     object-fit: cover;
+    pointer-events: auto;
   }
 
   /* Мобільні пристрої */
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     height: 100vh;
+    z-index: -2; /* Поміщаємо під інші елементи */
     
     &::before,
     &::after {
       height: 50px;
     }
-  }
 
+    iframe, canvas {
+      pointer-events: none; /* Вимкнення клікабельності */
+      z-index: -1; /* Нижчий z-index для iframe/canvas */
+      opacity: 0.7; /* Додаткове затемнення для мобільних */
+    }
+  }
 `;
 
 export const HeroWrapper = styled.div`
