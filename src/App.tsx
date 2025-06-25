@@ -7,7 +7,7 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import Contact from './pages/Contact/Contact';
 import Work from './pages/Work/Work';
 import Info from './pages/Info/Info';
-import ParticlesBackground from './components/ComponentsHome/Background/StarrySky';
+import ParticlesBackground from './components/Background/StarrySky';
 
 const AnimatedPage = ({ children }: { children: React.ReactNode }) => {
   // Автоматичне прокручування до верху при монтажі компонента

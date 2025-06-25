@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { gradientFlow, clickEffect } from '../ComponentsHome/ButtonTryForFree/ButtonTryForFree';
-import { pulseGrey } from '../ComponentsHome/Hero/Hero.styled';
+import { gradientFlow, clickEffect } from '../ButtonTryForFree/ButtonTryForFree';
+import { pulseGrey } from '../Hero/Hero.styled';
 
 export const FooterContainer = styled.footer`
 

@@ -13,7 +13,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 // import BurgerMenu from '../MobileMenu/MobileMenu';
 import logo from '../../assets/icons/logo-srm.svg';
-import ButtonTryForFree from '../ComponentsHome/ButtonTryForFree/ButtonTryForFree';
+import ButtonTryForFree from '../ButtonTryForFree/ButtonTryForFree';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
