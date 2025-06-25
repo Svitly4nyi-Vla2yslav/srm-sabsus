@@ -1,11 +1,18 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import { motion } from 'framer-motion';
 
 export const MasterContainer = styled(motion.div)`
   margin: 0 auto;
   width: 100%;
-  max-width: 1200px;
+  width: 343px;
   padding: 0 16px;
+ @media screen and (min-width: 768px) {
+  width: 710px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+  max-width: 1440px;
+  }
 `;
 
 export const MainTextPrice = styled(motion.p)`
@@ -177,41 +184,80 @@ export const CardsContainer = styled(motion.div)`
 
 export const Card = styled(motion.div).withConfig({
   shouldForwardProp: (prop) => prop !== 'highlight',
-}) <{ highlight?: boolean }>`
-  background: ${({ highlight }) =>
-    highlight ? 'rgba(255, 255, 255, 0.08)' : 'rgba(255, 255, 255, 0.03)'};
+})<{ highlight?: boolean }>`
   padding: 20px;
   margin: 0 auto;
-  border-radius: 16px;
+  border-radius: 23px; /* Відповідає rx="23" з SVG */
   width: 100%;
-  width: 343px; 
+  width: 343px;
   backdrop-filter: blur(16px);
-  box-shadow: ${({ highlight }) =>
-    highlight
-      ? `
-        0 0 10px 4px #494BEC,
-        0 0 30px 0px #4F51ED,
-        inset 0 0 12px 4px #6567EF
-      `
-      : 'none'};
-  border: ${({ highlight }) =>
-    highlight
-      ? '2px solid white'
-      : '1px solid #333'};
   transition: all 0.3s ease;
   will-change: transform, box-shadow;
-  
+
+  /* Стилі для звичайних карток */
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #333;
+  box-shadow: none;
+
+  /* Стилі для підсвіченої картки (останньої) */
+  ${({ highlight }) =>
+    highlight &&
+    css`
+      background: rgba(10, 10, 30, 0.5);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      
+      /* Градієнтна обводка (як у SVG) */
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 23px;
+        padding: 2px;
+        background: linear-gradient(
+          135deg,
+          white 0%,
+          #6567EF 30%,
+          #4F51ED 50%,
+          #E4E5FC 100%
+        );
+        -webkit-mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      /* Тіні з розмиттям (як у filter0_f та filter1_f) */
+      box-shadow:
+        0 0 15px 5px rgba(101, 103, 239, 0.2),
+        0 0 30px 10px rgba(101, 103, 239, 0.15),
+        inset 0 0 20px 5px rgba(101, 103, 239, 0.3);
+    `}
+
   &:hover {
     transform: translateY(-4px);
-    box-shadow: ${({ highlight }) =>
-    highlight
-      ? `0 0 20px 8px #494BEC, 0 0 40px 0px #4F51ED, inset 0 0 16px 6px #6567EF`
-      : `0 4px 20px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1)`};
-    background: ${({ highlight }) =>
-    highlight
-      ? 'rgba(255, 255, 255, 0.12)'
-      : 'rgba(255, 255, 255, 0.06)'};
-    border-color: ${({ highlight }) => highlight ? '#fff' : '#555'};
+    
+    ${({ highlight }) =>
+      highlight
+        ? css`
+            box-shadow:
+              0 0 25px 10px rgba(101, 103, 239, 0.3),
+              0 0 40px 15px rgba(101, 103, 239, 0.25),
+              inset 0 0 25px 8px rgba(101, 103, 239, 0.4);
+            background: rgba(10, 10, 30, 0.6);
+          `
+        : css`
+            box-shadow: 
+              0 4px 20px rgba(0, 0, 0, 0.15),
+              0 2px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.06);
+          `}
   }
 
   &:active {
@@ -245,19 +291,24 @@ export const CardH3 = styled(motion.h3)`
 `;
 
 export const CardSpan = styled(motion.span)`
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 130%;
-  color: rgb(106, 108, 211);
-  border-radius: 54px;
-  padding: 1px 6px;
-  border: 1px solid #494bec;
-  box-shadow: 0 0 5px 1px rgba(117, 118, 203, 0.44),
-              0 0 10px 0px rgb(100, 102, 215),
-              inset 0 0 16px 3px #6567EF;
-  will-change: transform;
+ font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    color: rgba(146, 147, 240, 0.8);
+    text-shadow: 0 0 8px rgba(101, 103, 239, 0.8);
+    padding: 1px 5px;
+    border-radius: 12.5px;
+    border: 1px solid transparent;
+    background: linear-gradient(rgba(10, 10, 30, 0.5), rgba(10, 10, 30, 0.5)) padding-box, linear-gradient(135deg, white 0%, #6567EF 30%, #4F51ED 50%, #E4E5FC 100%) border-box;
+    box-shadow: 0 0 15px 5px rgba(101, 103, 239, 0.2), 0 0 30px 10px rgba(101, 103, 239, 0.15), inset 0 0 10px 2px rgba(101, 103, 239, 0.3);
+    backdrop-filter: blur(4px);
+    will-change: transform;
+    position: absolute;
+     left: 12%;
+    bottom: 100%;
 `;
+
 
 export const Price = styled(motion.div).withConfig({
   shouldForwardProp: (prop) => prop !== '$isSelected',
@@ -323,6 +374,8 @@ export const Span = styled(motion.div)`
   line-height: 130%;
   color: var(--white-100);
   will-change: transform;
+  position: relative;
+
 `;
 
 export const Button = styled(motion.button).withConfig({

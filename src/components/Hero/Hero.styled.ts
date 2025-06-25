@@ -47,7 +47,7 @@ export const Container = styled.div`
   }
 
   /* Мобільні пристрої */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     height: 100vh;
     z-index: -2; /* Поміщаємо під інші елементи */
     

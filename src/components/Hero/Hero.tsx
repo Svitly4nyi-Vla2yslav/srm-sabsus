@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  AvatarContainer,
+  // AvatarContainer,
   ButtonContainer,
   Container,
   HeroButton,
@@ -10,16 +10,16 @@ import {
   HeroText,
   HeroTitle,
   HeroWrapper,
-  ImageAvatar,
-  ImageContainer,
+  // ImageAvatar,
+  // ImageContainer,
   SpanUnicorn,
-  TextImageAvatar,
+  // TextImageAvatar,
 } from './Hero.styled';
-import Avatar from '../../assets/icons/avatar/Image-36-1.svg';
-import Avatar1 from '../../assets/icons/avatar/Image-36.svg';
-import Avatar2 from '../../assets/icons/avatar/Image-36-2.svg';
-import Avatar3 from '../../assets/icons/avatar/Image-36-3.svg';
-import Avatar4 from '../../assets/icons/avatar/Image-36-4.svg';
+// import Avatar from '../../assets/icons/avatar/Image-36-1.svg';
+// import Avatar1 from '../../assets/icons/avatar/Image-36.svg';
+// import Avatar2 from '../../assets/icons/avatar/Image-36-2.svg';
+// import Avatar3 from '../../assets/icons/avatar/Image-36-3.svg';
+// import Avatar4 from '../../assets/icons/avatar/Image-36-4.svg';
 import Spline from '@splinetool/react-spline';
 import Swipper from './Swipper';
 import { useTranslation } from 'react-i18next';
@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
           <HeroText>{t('hero.description')}</HeroText>
         </motion.div>
         <HeroContainerContent>
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.7 }}
@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
               </ImageContainer>
               <TextImageAvatar>{t('hero.trustText')}</TextImageAvatar>
             </AvatarContainer>
-          </motion.div>
+          </motion.div> */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}

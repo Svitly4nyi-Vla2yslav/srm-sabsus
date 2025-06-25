@@ -142,10 +142,7 @@ const PricePlan: React.FC = () => {
           </button>
         </SwitchContainer>
 
-        <CardsContainer
-          as={motion.div}
-          variants={containerAnimation}
-        >
+        <CardsContainer as={motion.div} variants={containerAnimation}>
           {currentData.map((plan, planIndex) => {
             const isLastPlan = planIndex === currentData.length - 1;
             const link = isLastPlan
@@ -157,7 +154,7 @@ const PricePlan: React.FC = () => {
                 key={planIndex}
                 variants={itemAnimation}
                 whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
               >
                 <Card highlight={plan.highlight}>
                   <CardDiv>
@@ -177,8 +174,8 @@ const PricePlan: React.FC = () => {
                     >
                       <PriceP>{tier.name}</PriceP>
                       <PriceCash>
-                        <CardSpan>{tier.discount}</CardSpan>
-                        {tier.price} <Span>/Month</Span>
+                        
+                        {tier.price} <Span>/Month<CardSpan>{tier.discount}</CardSpan></Span>
                       </PriceCash>
                     </Price>
                   ))}

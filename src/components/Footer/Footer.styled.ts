@@ -225,8 +225,6 @@ width: 1px;
 export const HeroButtonGrey = styled.button`
 z-index: 10;
   border-radius: 12px;
-  width: 110px;
-  height: 38px;
   position: relative;
   overflow: hidden;
   
@@ -275,7 +273,7 @@ margin-bottom: 16px;
 border: 1px solid #212121;
 border-radius: 12px;
 padding: 8px 16px;
-width: 106px;
+width: max-content;;
 height: 34px;
 
 backdrop-filter: blur(168px);
