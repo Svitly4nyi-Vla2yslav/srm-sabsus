@@ -3,7 +3,7 @@ import {
   WorkContainer,
   WorkTitel,
   WorkTitelContainer,
-} from '../Work/Work.styled';
+} from '../ServicePages/ServicePages.styled';
 import { Border } from '../../components/Footer/Footer.styled';
 
 

@@ -5,12 +5,18 @@ import { Layout } from './components/Layout/Layout';
 import Home from './pages/HomePage/HomePage';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Contact from './pages/Contact/Contact';
-import Work from './pages/Work/Work';
 import Info from './pages/Info/Info';
 import ParticlesBackground from './components/Background/StarrySky';
+import CustomerExperience from './pages/ServicePages/CustomerExperience';
+import PosStaffOperations from './pages/ServicePages/PosStaffOperations';
+import KitchenFulfillment from './pages/ServicePages/KitchenFulfillment';
+import InventoryWarehousing from './pages/ServicePages/InventoryWarehousing';
+import AnalyticsManagement from './pages/ServicePages/AnalyticsManagement';
+import MarketingCustomization from './pages/ServicePages/MarketingCustomization';
+import IntegrationScaling from './pages/ServicePages/IntegrationScaling';
+import ServicesMain from './pages/ServicePages/ServicesMain';
 
 const AnimatedPage = ({ children }: { children: React.ReactNode }) => {
-  // Автоматичне прокручування до верху при монтажі компонента
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -37,7 +43,6 @@ const AnimatedPage = ({ children }: { children: React.ReactNode }) => {
 export const App: React.FC = () => {
   const location = useLocation();
 
-  // Додаткове прокручування до верху при зміні маршруту
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -61,12 +66,21 @@ export const App: React.FC = () => {
         >
           <Route index element={<AnimatedPage><Home /></AnimatedPage>} />
           <Route path="/home" element={<AnimatedPage><Home /></AnimatedPage>} />
-          <Route path="/service" element={<AnimatedPage><Work /></AnimatedPage>} />
+          
+          {/* Сторінки сервісів */}
+          <Route path="/service" element={<AnimatedPage><ServicesMain /></AnimatedPage>} />
+          <Route path="/service/customer-experience" element={<AnimatedPage><CustomerExperience /></AnimatedPage>} />
+          <Route path="/service/pos-staff-operations" element={<AnimatedPage><PosStaffOperations /></AnimatedPage>} />
+          <Route path="/service/kitchen-fulfillment" element={<AnimatedPage><KitchenFulfillment /></AnimatedPage>} />
+          <Route path="/service/inventory-warehousing" element={<AnimatedPage><InventoryWarehousing /></AnimatedPage>} />
+          <Route path="/service/analytics-management" element={<AnimatedPage><AnalyticsManagement /></AnimatedPage>} />
+          <Route path="/service/marketing-customization" element={<AnimatedPage><MarketingCustomization /></AnimatedPage>} />
+          <Route path="/service/integration-scaling" element={<AnimatedPage><IntegrationScaling /></AnimatedPage>} />
+          
           <Route path="/about" element={<AnimatedPage><AboutUs /></AnimatedPage>} />
           <Route path="/pricing" element={<AnimatedPage><Info /></AnimatedPage>} />
           <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
           
-         
           <Route path="*" element={<AnimatedPage><Home /></AnimatedPage>} />
         </Route>
       </Routes>

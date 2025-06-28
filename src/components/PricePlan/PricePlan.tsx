@@ -174,8 +174,15 @@ const PricePlan: React.FC = () => {
                     >
                       <PriceP>{tier.name}</PriceP>
                       <PriceCash>
-                        
-                        {tier.price} <Span>/Month<CardSpan>{tier.discount}</CardSpan></Span>
+                        {tier.price}{' '}
+                        <Span>
+                          {!plan.highlight ? (
+                            '/Month'
+                          ) : (
+                            <span style={{ color: 'transparent' }}>/Month</span>
+                          )}
+                          <CardSpan>{tier.discount}</CardSpan>
+                        </Span>
                       </PriceCash>
                     </Price>
                   ))}

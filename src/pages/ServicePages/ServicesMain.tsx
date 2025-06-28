@@ -5,7 +5,7 @@ import {
   WorkPhotoWrapp,
   WorkTitel,
   WorkTitelContainer,
-} from './Work.styled';
+} from './ServicePages.styled';
 
 import { Border } from '../../components/Footer/Footer.styled';
 

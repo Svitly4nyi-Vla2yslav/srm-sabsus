@@ -1,11 +1,58 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const ServiceLink = styled.div`
+  position: relative;
+  cursor: pointer;
+   color: #808080;
+      font-family: var(--font-family);
+font-weight: 600;
+font-size: 14px;
+text-align: center;
+display: flex;
+     &:hover,
+    &.active {
+      color:rgb(255, 255, 255);
+    }
+`;
+
+export const DropdownMenu = styled.div`
+  position: absolute;
+ right: -112px;
+    top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.98);
+  padding: 10px 0;
+  min-width: 250px;
+  z-index: 1000;
+backdrop-filter: blur(168px);
+box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 186%) , rgb(0, 0, 0);
+
+`;
+
+export const DropdownItem = styled.div`
+  padding: 8px 20px;
+  transition: background-color 0.2s;
+
+  &:hover {
+  color: #f5f5f5;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+  }
+`;
+
 export const NavbarContainer = styled.header<{ $isScrolled: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-   background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(16px);
   padding: 1rem ;
   position: fixed;
   top: 0;
@@ -79,6 +126,8 @@ export const NavList = styled.ul`
                 inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%), 
                 rgba(255, 255, 255, 0.03);
+display: flex;
+align-items: baseline;
   }
 `;
 

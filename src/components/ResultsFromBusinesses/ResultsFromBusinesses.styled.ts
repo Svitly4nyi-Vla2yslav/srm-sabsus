@@ -280,6 +280,8 @@ export const ResultText = styled(motion.p)`
     height: max-content;
   @media screen and (min-width: 1440px) {
     font-size: 14px;
+            height: max-content;
+        width: max-content;
   }
 `;
 
