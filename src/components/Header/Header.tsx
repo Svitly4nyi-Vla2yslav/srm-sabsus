@@ -30,9 +30,9 @@ const Header: React.FC = () => {
     e.preventDefault();
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
-    
+
     if (window.location.pathname !== '/home') {
       navigate('/home');
     }
@@ -61,20 +61,22 @@ const Header: React.FC = () => {
         <Logo to="/home" onClick={handleLogoClick}>
           <img src={logo} alt={t('header.logoAlt')} />
         </Logo>
-        
+
         {!isMobile && (
           <NavList>
             <NavItem>
               <StyledNavLink to="/home">{t('header.nav.home')}</StyledNavLink>
             </NavItem>
-            
-            <NavItem 
+
+            <NavItem
+              style={{ pointerEvents: 'none', opacity: 0.5 }}
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
               onClick={toggleServicesMenu}
             >
-              <ServiceLink style={{ pointerEvents: "none", opacity: 0.5 }}>
-                {t('header.nav.service')} <span style={{textAlign: "revert"}}>⌄</span>
+              <ServiceLink style={{ pointerEvents: 'none', opacity: 0.5 }}>
+                {t('header.nav.service')}{' '}
+                <span style={{ textAlign: 'revert' }}>⌄</span>
                 {isServicesOpen && (
                   <DropdownMenu>
                     <DropdownItem>
@@ -116,21 +118,36 @@ const Header: React.FC = () => {
                 )}
               </ServiceLink>
             </NavItem>
-            
+
             <NavItem>
-              <StyledNavLink style={{ pointerEvents: "none", opacity: 0.5 }} to="/about">{t('header.nav.about')}</StyledNavLink>
+              <StyledNavLink
+                style={{ pointerEvents: 'none', opacity: 0.5 }}
+                to="/about"
+              >
+                {t('header.nav.about')}
+              </StyledNavLink>
             </NavItem>
             <NavItem>
-              <StyledNavLink style={{ pointerEvents: "none", opacity: 0.5 }} to="/pricing">{t('header.nav.pricing')}</StyledNavLink>
+              <StyledNavLink
+                style={{ pointerEvents: 'none', opacity: 0.5 }}
+                to="/pricing"
+              >
+                {t('header.nav.pricing')}
+              </StyledNavLink>
             </NavItem>
             <NavItem>
-              <StyledNavLink style={{ pointerEvents: "none", opacity: 0.5 }} to="/contact">{t('header.nav.contacts')}</StyledNavLink>
+              <StyledNavLink
+                style={{ pointerEvents: 'none', opacity: 0.5 }}
+                to="/contact"
+              >
+                {t('header.nav.contacts')}
+              </StyledNavLink>
             </NavItem>
           </NavList>
         )}
-        
+
         <LangButtonContainer>
-          <div style={{display: "flex"}}>
+          <div style={{ display: 'flex' }}>
             <LanguageSwitcher />
             <ButtonTryForFree />
           </div>
