@@ -79,7 +79,7 @@ const AllinOneSRM: React.FC = () => {
     [icon27, icon28, icon29, icon30, icon31],
   ];
 
-  const getCardAnimation = (index: number) => {
+ const getCardAnimation = (index: number) => {
     switch (index) {
       case 0:
         return {

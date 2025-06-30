@@ -1,8 +1,14 @@
 import React from 'react'
+import { HomeContainer } from '../HomePage/HomePage.styled'
+import Hero from '../../components/ComponentsService/ServiceHero/Hero'
+import Key from '../../components/ComponentsService/KeyCapabilities/Key'
 
 const CustomerExperience: React.FC = () => {
   return (
-    <div>CustomerExperience</div>
+    <HomeContainer>
+      <Hero/>
+      <Key/>
+    </HomeContainer>
   )
 }
 

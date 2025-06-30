@@ -12,8 +12,12 @@ text-align: center;
 display: flex;
      &:hover,
     &.active {
-      color:rgb(255, 255, 255);
+    color: var(--purple-400);
     }
+`;
+
+export const ArrowDown = styled.img`
+
 `;
 
 export const DropdownMenu = styled.div`
@@ -36,7 +40,7 @@ export const DropdownItem = styled.div`
   transition: background-color 0.2s;
 
   &:hover {
-  color: #f5f5f5;
+  color: var(--purple-400);
   }
 
   a {
@@ -186,7 +190,7 @@ text-align: center;
 
     &:hover,
     &.active {
-      color:rgb(255, 255, 255);
+    color: var(--purple-400);
     }
   }
 `;
@@ -208,7 +212,7 @@ color: var(--white-50);
   position: relative;
 
   &:hover {
-    color:rgb(255, 255, 255);
+     color: var(--purple-400);
   }
 
   &::bevore {
@@ -231,6 +235,6 @@ color: var(--white-50);
 
   &:hover::after {
     width: 100%;
-    color:rgb(255, 255, 255);
+     color: var(--purple-400);
   }
 `;

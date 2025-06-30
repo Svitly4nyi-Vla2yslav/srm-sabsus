@@ -10,6 +10,7 @@ import {
   DropdownMenu,
   DropdownItem,
   ServiceLink,
+  ArrowDown,
 } from './Header.styled';
 import { useMediaQuery } from 'react-responsive';
 import AOS from 'aos';
@@ -19,6 +20,7 @@ import ButtonTryForFree from '../ButtonTryForFree/ButtonTryForFree';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import Down from "../../assets/icons/chevron-down.svg"
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,14 +71,17 @@ const Header: React.FC = () => {
             </NavItem>
 
             <NavItem
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
               style={{ pointerEvents: 'none', opacity: 0.5 }}
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
               onClick={toggleServicesMenu}
             >
-              <ServiceLink style={{ pointerEvents: 'none', opacity: 0.5 }}>
+              <ServiceLink
+              //  style={{ pointerEvents: 'none', opacity: 0.5 }}
+               >
                 {t('header.nav.service')}{' '}
-                <span style={{ textAlign: 'revert' }}>⌄</span>
+              <ArrowDown src={Down} alt="⬇️" />
                 {isServicesOpen && (
                   <DropdownMenu>
                     <DropdownItem>
