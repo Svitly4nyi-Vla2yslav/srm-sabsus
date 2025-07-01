@@ -111,7 +111,7 @@ const Feedback: React.FC = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.2 }}
-      style={{ width: '100vw', position: 'relative', overflow: 'hidden' }}
+      style={{ position: 'relative', overflow: 'hidden',  width: '100vw' }}
     >
       <FeedbackContainer
         as={motion.div}
