@@ -28,76 +28,30 @@ import check from '../../assets/icons/price/IconCheck.svg';
 
 const PricePlan: React.FC = () => {
   const { t } = useTranslation();
-  const [isMonthly, setIsMonthly] = useState(true);
+  const [isMonthly, setIsMonthly] = useState(false); // за замовчуванням річна підписка
   const [selectedTier, setSelectedTier] = useState<{
     planIndex: number;
     tierIndex: number;
   } | null>(null);
 
-  const data = t('pricePlan', { returnObjects: true }) as {
-    mainText: string;
-    title: string;
-    description: string;
-    switch: {
-      monthly: string;
-      annually: string;
-    };
-    plans: {
-      monthly: Array<{
-        title: string;
-        discount: string;
-        tiers: Array<{ name: string; price: string; discount: string }>;
-        features: string[];
-        button: string;
-        note: string;
-        noteList: string[];
-        highlight?: boolean;
-      }>;
-      annually: Array<{
-        title: string;
-        discount: string;
-        tiers: Array<{ name: string; price: string; discount: string }>;
-        features: string[];
-        button: string;
-        note: string;
-        noteList: string[];
-        highlight?: boolean;
-      }>;
-    };
-  };
-
+  const data = t('pricePlan', { returnObjects: true }) as any;
   const currentData = isMonthly ? data.plans.monthly : data.plans.annually;
-  const buttonLinks = {
-    default: 'https://sabsus.app/registrcompany/web/buy1',
-    lastButton: 'https://sabsus.app/login/demo@sabsus.com/demo2025',
+
+  const generateLink = (planIndex: number, tierIndex: number): string => {
+    if (planIndex === 2)
+      return 'https://sabsus.app/login/demo@sabsus.com/demo2025';
+
+    const isWhite = planIndex === 1;
+    const whiteNames = ['whitestart', 'whitestandart', 'whitebusiness'];
+    const saasNames = ['saasstart', 'saasstandart', 'saasbusiness'];
+    const nameArray = isWhite ? whiteNames : saasNames;
+
+    const base = 'https://sabsus.app/registrcompany/web/';
+    return base + nameArray[tierIndex];
   };
 
   const handleTierClick = (planIndex: number, tierIndex: number) => {
-    setSelectedTier({
-      planIndex,
-      tierIndex,
-    });
-  };
-
-  // Анімації
-  const containerAnimation = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemAnimation = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
-  const switchAnimation = {
-    hidden: { opacity: 0, scale: 0.9 },
-    show: { opacity: 1, scale: 1 },
+    setSelectedTier({ planIndex, tierIndex });
   };
 
   return (
@@ -107,27 +61,22 @@ const PricePlan: React.FC = () => {
       whileInView="show"
       viewport={{ once: false, amount: 0.2 }}
     >
-      <motion.div variants={itemAnimation}>
+      <motion.div>
         <MainTextPrice>
           {data.mainText} <CardButtonText src={price} alt="💰" />
         </MainTextPrice>
       </motion.div>
 
-      <motion.div variants={itemAnimation}>
+      <motion.div>
         <PriceTitle>{data.title}</PriceTitle>
       </motion.div>
 
-      <motion.div variants={itemAnimation}>
+      <motion.div>
         <PriceText>{data.description}</PriceText>
       </motion.div>
 
       <Container>
-        <SwitchContainer
-          $isMonthly={isMonthly}
-          as={motion.div}
-          variants={switchAnimation}
-          transition={{ duration: 0.5 }}
-        >
+        <SwitchContainer $isMonthly={isMonthly}>
           <button
             onClick={() => setIsMonthly(true)}
             className={isMonthly ? 'active' : ''}
@@ -142,73 +91,69 @@ const PricePlan: React.FC = () => {
           </button>
         </SwitchContainer>
 
-        <CardsContainer as={motion.div} variants={containerAnimation}>
-          {currentData.map((plan, planIndex) => {
-            const isLastPlan = planIndex === currentData.length - 1;
-            const link = isLastPlan
-              ? buttonLinks.lastButton
-              : buttonLinks.default;
+        <CardsContainer>
+          {currentData.map((plan: any, planIndex: number) => (
+            <motion.div
+              key={planIndex}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+            >
+              <Card highlight={plan.highlight}>
+                <CardDiv>
+                  <CardH3>{plan.title}</CardH3>
+                </CardDiv>
 
-            return (
-              <motion.div
-                key={planIndex}
-                variants={itemAnimation}
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-              >
-                <Card highlight={plan.highlight}>
-                  <CardDiv>
-                    <CardH3>{plan.title}</CardH3>
-                  </CardDiv>
-
-                  {plan.tiers.map((tier, tierIndex) => (
-                    <Price
-                      key={tierIndex}
-                      as={motion.div}
-                      onClick={() => handleTierClick(planIndex, tierIndex)}
-                      $isSelected={
-                        selectedTier?.planIndex === planIndex &&
-                        selectedTier?.tierIndex === tierIndex
-                      }
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <PriceP>{tier.name}</PriceP>
-                      <PriceCash>
-                        {tier.price}{' '}
-                        <Span>
-                          {!plan.highlight ? (
-                            '/Month'
-                          ) : (
-                            <span style={{ color: 'transparent' }}>/Month</span>
-                          )}
-                          <CardSpan>{tier.discount}</CardSpan>
-                        </Span>
-                      </PriceCash>
-                    </Price>
-                  ))}
-
-                  <a href={link} target="_blank" rel="noopener noreferrer">
-                    <Button
-                      as={motion.button}
-                      highlight={
-                        plan.highlight || selectedTier?.planIndex === planIndex
-                      }
-                      whileHover={{ y: -2 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      {plan.button}
-                    </Button>
-                  </a>
-                </Card>
-                <Note>{plan.note}</Note>
-                {plan.noteList.map((note, noteIndex) => (
-                  <NoteList key={noteIndex}>
-                    <IconCheck src={check} alt="✔️" /> {note}
-                  </NoteList>
+                {plan.tiers.map((tier: any, tierIndex: number) => (
+                  <Price
+                    key={tierIndex}
+                    as={motion.div}
+                    onClick={() => handleTierClick(planIndex, tierIndex)}
+                    $isSelected={
+                      selectedTier?.planIndex === planIndex &&
+                      selectedTier?.tierIndex === tierIndex
+                    }
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <PriceP>{tier.name}</PriceP>
+                    <PriceCash>
+                      {tier.price}{' '}
+                      <Span>
+                        {!plan.highlight ? (
+                          '/Month'
+                        ) : (
+                          <span style={{ color: 'transparent' }}>/Month</span>
+                        )}
+                        <CardSpan>{tier.discount}</CardSpan>
+                      </Span>
+                    </PriceCash>
+                  </Price>
                 ))}
-              </motion.div>
-            );
-          })}
+
+                <a
+                  href={generateLink(planIndex, selectedTier?.tierIndex ?? 0)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    as={motion.button}
+                    highlight={
+                      plan.highlight || selectedTier?.planIndex === planIndex
+                    }
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {plan.button}
+                  </Button>
+                </a>
+              </Card>
+              <Note>{plan.note}</Note>
+              {plan.noteList.map((note: string, noteIndex: number) => (
+                <NoteList key={noteIndex}>
+                  <IconCheck src={check} alt="✔️" /> {note}
+                </NoteList>
+              ))}
+            </motion.div>
+          ))}
         </CardsContainer>
       </Container>
     </MasterContainer>

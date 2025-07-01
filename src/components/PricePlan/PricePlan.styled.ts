@@ -42,23 +42,28 @@ export const MainTextPrice = styled(motion.p)`
 export const CardButtonText = styled(motion.img)`
   border-radius: 25px;
   margin: 0 auto;
-  padding: 4px;
   margin-left: 5px;
-  overflow: visible;
-  font-size: 13px;
+  padding: 4px;
   width: 20px;
+  font-size: 13px;
+  overflow: visible;
+
   box-shadow: 
-    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.18), 
-    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 
-    0 8px 16px -8px rgba(0, 0, 0, 0.03), 
-    0 2px 4px -2px rgba(0, 0, 0, 0.08), 
-    0 0px 20px rgba(464, 367, 391, 0.99);
-  background: 
-    linear-gradient(315deg, rgba(122, 121, 122, 0.58) 7%, rgb(172 172 172 / 22%) 86%) 
-    rgba(255, 255, 255, 0.03);
+    inset 0 -8px 24px rgba(255, 255, 255, 0.18),
+    inset 0 -5px 6px rgba(255, 255, 255, 0.03),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06); /* дуже легка зовнішня тінь */
+
+  background: linear-gradient(
+    315deg,
+    rgba(122, 121, 122, 0.58) 7%,
+    rgba(172, 172, 172, 0.22) 86%
+  );
+
   -webkit-transform: translateZ(0);
   will-change: transform;
 `;
+
 
 export const PriceTitle = styled(motion.h2)`
   font-family: var(--font-family);

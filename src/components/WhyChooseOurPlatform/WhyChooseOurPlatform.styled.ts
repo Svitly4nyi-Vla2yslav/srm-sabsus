@@ -29,15 +29,26 @@ margin-bottom: 8px;
 `;
 
 export const PuzzleIcon = styled.img`
-    border-radius: 25px;
-    padding: 4px;
-    width: 22px;
-    height: 22px;
-margin-left: 10px;
-    font-size: 13px;
-    box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.18), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08), 0 0px 20px rgba(464, 367, 391, 0.99);
-    background: linear-gradient(315deg, rgba(245, 228, 253, 0.58) 7%, rgb(207 121 250) 86%) rgba(255, 255, 255, 0.03);
+  border-radius: 25px;
+  padding: 0px;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  font-size: 13px;
 
+  box-shadow: 
+    inset 0 -8px 24px rgba(255, 255, 255, 0.18),
+    inset 0 -5px 6px rgba(255, 255, 255, 0.03),
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+
+  background: linear-gradient(
+    315deg,
+    rgba(176, 253, 161, 0.68) 7%,
+    rgb(142, 250, 121) 86%
+  );
+
+  -webkit-transform: translateZ(0);
 `;
 
 export const MainTitel = styled.h2`

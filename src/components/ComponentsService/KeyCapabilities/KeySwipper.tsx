@@ -12,15 +12,17 @@ import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import styled from 'styled-components';
-import { ShadowLeft, ShadowRight } from '../../Feedback/Feedback.styled';
 import { useMediaQuery } from 'react-responsive';
 
 export const SwiperContainer = styled(motion.div)`
-  max-width: 1400px;
-
-  position: relative;
   margin: 0 auto;
-  padding: 80px 0;
+  margin-top: 100px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow: hidden;
 
   .swiper {
@@ -30,10 +32,13 @@ export const SwiperContainer = styled(motion.div)`
   }
 
   .swiper-slide {
+  margin: 0 auto;
     display: flex;
     justify-content: center;
     transition: transform 0.3s ease;
   }
+
+
 `;
 
 export const CardContainer = styled(motion.div)`
@@ -213,7 +218,7 @@ const KeySwipper: React.FC = () => {
     >
       {isMobile && (
         <motion.div>
-          <ShadowLeft />
+          {/* <ShadowLeft /> */}
           <Swiper
             loop={shouldLoop}
             slidesPerView={slidesPerView}
@@ -237,7 +242,7 @@ const KeySwipper: React.FC = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <ShadowRight />
+          {/* <ShadowRight /> */}
         </motion.div>
       )}
       {!isMobile && (

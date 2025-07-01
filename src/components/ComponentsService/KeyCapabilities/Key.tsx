@@ -11,10 +11,13 @@ import KeySwipper from './KeySwipper';
 import { styled } from 'styled-components';
 
 export const KeyWrapper = styled(motion.div)`
-  display: flex;
-  padding: 0 0px;
-  max-width: 1200px;
   margin: 0 auto;
+  margin-top: 100px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 100px;
+  position: relative;
+  display: flex;
   flex-direction: column;
   align-items: center;
 
@@ -53,7 +56,6 @@ const Key: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <ResultMainTextDescription>
-          {' '}
           Instant processing, QR payments, team roles, shift tracking — designed
           for smooth in-store flow.
         </ResultMainTextDescription>

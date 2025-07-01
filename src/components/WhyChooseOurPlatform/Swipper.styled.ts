@@ -122,34 +122,29 @@ export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 
   border-radius: 25px;
   padding: 4px;
-  width: 22px;
-  height: 22px;
   font-size: 13px;
+
   box-shadow:
-    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.18),
-    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
-    0 8px 16px -8px rgba(0, 0, 0, 0.03),
-    0 2px 4px -2px rgba(0, 0, 0, 0.08),
-    0 0px 20px rgba(464, 367, 391, 0.99);
+    inset 0 -8px 24px rgba(255, 255, 255, 0.18),
+    inset 0 -5px 6px rgba(255, 255, 255, 0.03),
+    0 4px 8px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+
   background: linear-gradient(
       315deg,
       rgba(141, 136, 143, 0.58) 7%,
       rgba(79, 74, 82, 0.86)
-    )
+    ),
     rgba(255, 255, 255, 0.03);
-@media screen and (min-width: 768px) {
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  -webkit-transform: translateZ(0);
 `;
+
 
 export const BadgeButton = styled.button`
   cursor: pointer;
@@ -170,7 +165,7 @@ export const BadgeButton = styled.button`
     0px 8px 16px -8px rgba(0, 0, 0, 0.03),
     0px -5px 6px 0px rgba(255, 255, 255, 0.03) inset,
     0px -8px 24px 0px rgba(255, 255, 255, 0.03) inset;
-  width: 140px;
+  width: 165px;
   height: 28px;
   border: none;
   outline: none;
@@ -211,7 +206,7 @@ export const BadgeText = styled.p`
   font-weight: 400;
   line-height: 1.2em;
  padding-right: 10px;
-
+width: max-content;
  @media screen and (min-width: 768px) {
 
 }
