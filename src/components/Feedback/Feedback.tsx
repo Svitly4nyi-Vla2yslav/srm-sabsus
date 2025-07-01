@@ -46,6 +46,13 @@ import Avatar6 from "../../assets/icons/partners/userpartner5.svg";
 import Avatar7 from "../../assets/icons/partners/userpartner6.svg";
 import Avatar8 from "../../assets/icons/partners/userpartner7.svg";
 import Avatar9 from "../../assets/icons/partners/userpartner8.svg";
+import styled from 'styled-components';
+
+const MotionWrapper = styled(motion.div)`
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+`;
 
 const Feedback: React.FC = () => {
   const { t } = useTranslation();
@@ -107,12 +114,11 @@ const Feedback: React.FC = () => {
   });
 
   return (
-    <motion.div 
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.2 }}
-      style={{ position: 'relative', overflow: 'hidden',  width: '100vw' }}
-    >
+  <MotionWrapper 
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: false, amount: 0.2 }}
+  >
       <FeedbackContainer
         as={motion.div}
         variants={containerAnimation}
@@ -194,7 +200,7 @@ const Feedback: React.FC = () => {
         </Swiper>
         <ShadowRight />
       </FeedbackSwiperContainer>
-    </motion.div>
+    </MotionWrapper>
   );
 };
 
