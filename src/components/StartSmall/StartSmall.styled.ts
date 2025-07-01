@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from 'framer-motion';
 
-export const BackroundGradient = styled(motion.div)`
+export const BackroundGradient = styled.div`
   &::after {
     content: "";
     position: absolute;
@@ -19,7 +19,7 @@ export const BackroundGradient = styled(motion.div)`
     );
     filter: blur(180px);
     z-index: -5000;
-    opacity: 0;
+    opacity: 0.6;
     will-change: opacity;
   }
 

@@ -35,6 +35,7 @@ const StartSmall: React.FC = () => {
   };
 
   return (
+
     <ContainerStart
       as={motion.div}
       initial="hidden"
@@ -68,12 +69,7 @@ const StartSmall: React.FC = () => {
           </HeroButtonGrey>
         </a>
       </ButtonContainer>
-      <BackroundGradient
-        as={motion.div}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ duration: 1.5 }}
-      />
+      <BackroundGradient/>
     </ContainerStart>
   );
 };
