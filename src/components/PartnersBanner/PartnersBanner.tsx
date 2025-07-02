@@ -20,9 +20,9 @@ import banner5 from '../../assets/icons/banner/banner5.svg';
 import banner6 from '../../assets/icons/banner/banner6.svg';
 import banner7 from '../../assets/icons/banner/banner7.svg';
 import banner8 from '../../assets/icons/banner/banner8.svg';
-import banner9 from '../../assets/icons/banner/banner9.svg';
-import banner10 from '../../assets/icons/banner/banner10.svg';
-import banner11 from '../../assets/icons/banner/banner11.svg';
+import banner9 from '../../assets/icons/banner/banner.svg';
+import banner10 from '../../assets/icons/banner/banner1.svg';
+import banner11 from '../../assets/icons/banner/banner6.svg';
 
 import partner from "../../assets/icons/partners/userpartner.svg";
 import partner0 from "../../assets/icons/partners/userpartner0.svg";
@@ -69,7 +69,7 @@ const partners = [
   { id: 8, imageUrl: banner7, link: '#' },
   { id: 9, imageUrl: banner8, link: '#' },
   { id: 10, imageUrl: banner9, link: '#' },
-  { id: 11, imageUrl: banner10, link: '#' },
+  { id: 11, imageUrl: banner5, link: '#' },
   { id: 12, imageUrl: banner10, link: '#' },
   { id: 13, imageUrl: banner9, link: '#' },
 ];

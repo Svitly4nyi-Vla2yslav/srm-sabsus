@@ -56,14 +56,15 @@ export const PartnersIcon = styled(motion.img)`
   padding: 10px 29px;
   width: 132px;
   height: 62px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  backdrop-filter: blur(9.684210777282715px);
-  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.03),
-              0 1px 2px -1px rgba(0, 0, 0, 0.08),
-              inset 0 -5px 15px 0 rgba(255, 255, 255, 0.03),
-              inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
+  object-fit: contain; /* ⬅️ головне! */
+  object-position: center;
+  
+  backdrop-filter: blur(9.68px);
+  box-shadow: 
+    0 5px 10px -5px rgba(0, 0, 0, 0.03),
+    0 1px 2px -1px rgba(0, 0, 0, 0.08),
+    inset 0 -5px 15px rgba(255, 255, 255, 0.03),
+    inset 0 -3px 4px rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.03);
   transition: all 0.3s ease;
   z-index: 12;
@@ -71,7 +72,10 @@ export const PartnersIcon = styled(motion.img)`
   will-change: transform, box-shadow;
 
   &:hover {
-    box-shadow: 0 0 5px 4px #494BEC, 0 0 5px 0px #4F51ED, inset 0 0 16px 8px #6567EF;
+    box-shadow: 
+      0 0 5px 4px #494BEC, 
+      0 0 5px 0px #4F51ED, 
+      inset 0 0 16px 8px #6567EF;
     background: rgba(255, 255, 255, 0.06);
     border-color: white;
   }
@@ -87,6 +91,7 @@ export const PartnersIcon = styled(motion.img)`
     height: 104px;
   }
 `;
+
 
 export const ImageContainer = styled(motion.div)`
   height: auto;
