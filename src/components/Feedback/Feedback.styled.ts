@@ -119,6 +119,8 @@ export const FeedbackSlideIcon = styled(motion.img)`
   height: 64px;
   margin-bottom: 16px;
   will-change: transform;
+  object-fit: contain;
+  object-position: center ;
 `;
 
 export const FeedbackSlideText = styled(motion.p)`
