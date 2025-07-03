@@ -5,16 +5,22 @@ import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
 import LinieBackground from '../../../assets/icons/Costomer/Iphone/Frame 3577-background.png';
 import Phone from '../../../assets/icons/Costomer/Iphone/Frame 35771-iphon.png';
-import Phone1 from "../../../assets/icons/Costomer/Iphone/black titanium2-iphon.png";
-import Linie1 from "../../../assets/icons/Costomer/Iphone/Lightpered-linie.png";
+import Phone1 from '../../../assets/icons/Costomer/Iphone/black titanium2-iphon.png';
+import Linie1 from '../../../assets/icons/Costomer/Iphone/Lightpered-linie.png';
 
 export const LifeWrapper = styled(motion.div)`
   display: flex;
   padding: 0 0px;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const LifeMainText = styled(motion.p)`
@@ -44,6 +50,11 @@ export const LifeMainText = styled(motion.p)`
   );
   align-items: center;
   will-change: transform, opacity;
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const LifeMainTitle = styled(motion.h2)`
@@ -61,10 +72,11 @@ export const LifeMainTitle = styled(motion.h2)`
   }
 
   @media screen and (min-width: 1440px) {
-    max-width: 800px;
+   max-width: 630px;
     width: 100%;
     margin: 0 auto 26px;
-  }
+    display: flex;
+text-align: start;
 `;
 
 export const LifeMainTextDescription = styled(motion.p)`
@@ -82,27 +94,103 @@ export const LifeMainTextDescription = styled(motion.p)`
   }
 
   @media screen and (min-width: 1440px) {
-    max-width: 800px;
+    max-width: 630px;
     width: 100%;
     margin: 0 auto 26px;
+    display: flex;
+    text-align: start;
   }
 `;
 
-export const LifeContainer = styled.div``;
+export const LifeMainTextDescriptionDown = styled(motion.p)`
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: var(--white-80);
+  margin-bottom: 56px;
+  will-change: transform, opacity;
+
+  @media screen and (min-width: 768px) {
+    font-size: 17px;
+    line-height: 130%;
+  }
+
+  @media screen and (min-width: 1440px) {
+    position: absolute;
+    max-width: 630px;
+    width: 100%;
+    margin: 0 auto 26px;
+    top: 80%;
+    right: 64%;
+    text-align: start;
+  }
+`;
+
+export const LifeContainer = styled.div`
+  margin-bottom: 374px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 700px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 609px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+`;
 
 export const ImageAnimationWrapp = styled.div`
-  position: relative;
+  position: absolute;
+  top: 65%;
+  left: 50%;
   width: 375px;
   height: 354px;
-  margin: 0 auto;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  @media screen and (min-width: 768px) {
+    top: 60%;
+    width: 700px;
+    height: 633px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    left: 70%;
+    top: 50%;
+    height: 660px;
+  }
 `;
 
 export const PhoneImage = styled(motion.img)`
   position: absolute;
-  top: 0;
+  bottom: 22%;
   left: 0;
   width: 100%;
   height: 100%;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
+  // z-index: -123;
+`;
+
+export const PhoneImage1 = styled(motion.img)`
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  width: 100%;
+  height: 100%;
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const Linie = styled(motion.img)`
@@ -111,6 +199,27 @@ export const Linie = styled(motion.img)`
   left: 0;
   width: 100%;
   height: 100%;
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
+`;
+
+export const LinieP = styled(motion.img)`
+  position: absolute;
+  top: 9%;
+  left: 16%;
+  width: 77%;
+  height: 77%;
+  overflow: hidden;
+  @media screen and (min-width: 768px) {
+    left: 15%;
+  }
+
+  @media screen and (min-width: 1440px) {
+  left: 16%;
+  }
 `;
 
 export const GlowEffect = styled(motion.div)`
@@ -119,10 +228,20 @@ export const GlowEffect = styled(motion.div)`
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
   opacity: 0;
   border-radius: 50%;
   pointer-events: none;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 const LivePrepInsights: React.FC = () => {
@@ -161,59 +280,59 @@ const LivePrepInsights: React.FC = () => {
           </LifeMainTextDescription>
         </motion.div>
       </LifeContainer>
-      
+
       <ImageAnimationWrapp>
         {/* Фонові лінії */}
-        <Linie 
-          src={LinieBackground} 
+        <Linie
+          src={LinieBackground}
           alt="background lines"
           initial={{ opacity: 0.8 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
         />
-        
+
         {/* Перший телефон */}
-        <PhoneImage 
-          src={Phone} 
+        <PhoneImage
+          src={Phone}
           alt="phone"
           initial={{ y: -10 }}
           animate={{ y: 0 }}
-          transition={{ 
+          transition={{
             duration: 3,
             repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
+            repeatType: 'reverse',
+            ease: 'easeInOut',
           }}
         />
-        
+
         {/* Другий телефон */}
-        <PhoneImage 
-          src={Phone1} 
+        <PhoneImage1
+          src={Phone1}
           alt="phone"
           initial={{ y: 0 }}
           animate={{ y: -10 }}
-          transition={{ 
+          transition={{
             duration: 3,
             repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
-            delay: 0.5
+            repeatType: 'reverse',
+            ease: 'easeInOut',
+            delay: 0.5,
           }}
         />
-        
+
         {/* Лінії з анімацією світіння */}
-        <Linie 
-          src={Linie1} 
+        <LinieP
+          src={Linie1}
           alt="glowing lines"
           initial={{ opacity: 0.5 }}
           animate={{ opacity: 1 }}
-          transition={{ 
+          transition={{
             duration: 2,
             repeat: Infinity,
-            repeatType: "reverse"
+            repeatType: 'reverse',
           }}
         />
-        
+
         {/* Додатковий ефект світіння */}
         <GlowEffect
           initial={{ scale: 0.8, opacity: 0 }}
@@ -221,17 +340,17 @@ const LivePrepInsights: React.FC = () => {
           transition={{
             duration: 3,
             repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
+            repeatType: 'reverse',
+            ease: 'easeInOut',
           }}
         />
       </ImageAnimationWrapp>
-      
-      <LifeMainTextDescription>
+
+      <LifeMainTextDescriptionDown>
         Your brand, your flow. Customize touchpoints with full control over
         visuals, behavior, and engagement logic — all while delivering delight
         across the customer journey.
-      </LifeMainTextDescription>
+      </LifeMainTextDescriptionDown>
     </LifeWrapper>
   );
 };

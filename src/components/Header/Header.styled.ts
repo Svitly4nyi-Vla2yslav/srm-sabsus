@@ -62,6 +62,7 @@ export const NavbarContainer = styled.header<{ $isScrolled: boolean }>`
   top: 0;
   left: 0;
  width: 100%;
+ 
   margin: 0 auto;
   transition: all 0.3s ease;
   z-index: 99;

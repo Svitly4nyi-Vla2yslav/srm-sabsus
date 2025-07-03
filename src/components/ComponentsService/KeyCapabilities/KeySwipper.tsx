@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/autoplay';
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
@@ -34,6 +35,7 @@ export const SwiperContainer = styled(motion.div)`
   .swiper-slide {
   margin: 0 auto;
     display: flex;
+     width: 100% !important;
     justify-content: center;
     transition: transform 0.3s ease;
   }
@@ -222,7 +224,7 @@ const KeySwipper: React.FC = () => {
           <Swiper
             loop={shouldLoop}
             slidesPerView={slidesPerView}
-            spaceBetween={10}
+            spaceBetween={0}
             autoplay={{
               delay: 1000,
               disableOnInteraction: false,

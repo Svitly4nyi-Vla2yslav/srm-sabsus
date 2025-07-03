@@ -6,6 +6,7 @@ export const Container = styled.div`
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
+  max-width: 1400px;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -60,6 +61,53 @@ export const Container = styled.div`
       pointer-events: none; /* Вимкнення клікабельності */
       z-index: -1; /* Нижчий z-index для iframe/canvas */
       opacity: 0.7; /* Додаткове затемнення для мобільних */
+    }
+  }
+`;
+
+export const HeroImage = styled.img`
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1400px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 100;
+
+    /* Тіні */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgb(0, 0, 0) 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+    @media screen and (max-width: 767px) {
+    height: 100vh;
+    z-index: -2; /* Поміщаємо під інші елементи */
+    
+    &::before,
+    &::after {
+      height: 50px;
     }
   }
 `;
