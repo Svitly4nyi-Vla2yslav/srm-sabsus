@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
             <Container>
               {' '}
               <WraperLink>{t('footer.sections.company')}</WraperLink>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://srm-sabsus.netlify.app/service/customer-experience" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.ourServices')}
               </Link>
               <Link href="#" target="_blank" rel="noopener noreferrer">
