@@ -1,11 +1,18 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import Cassette from '../../../assets/icons/Costomer/Videocassette.svg';
+import logo from '../../../assets/icons/logo-srm.svg';
+import Tools from '../../../assets/icons/Toolbar Group.svg';
+import point from '../../../assets/icons/Traffic Lights (Big Sur).svg';
+import video from '../../../assets/icons/Costomer/66309272b77efe8e45161878_66505b355becabec00a9e7ca_done_homepage_map-transcode (1).mp4';
+import BackgroundImage from '../../../assets/icons/Costomer/VideoBackground.png';
+import ControlFast from '../../../assets/icons/Costomer/Seconadry Buttons copy.svg';
+import ControlRewind from '../../../assets/icons/Costomer/Seconadry Buttons.svg';
 
 export const StepWrapp = styled.div`
   margin: 0 auto;
-  margin-top: 100px;
+  // margin-top: 100px;
   width: 100%;
   height: 100%;
   margin-bottom: 100px;
@@ -118,18 +125,296 @@ export const StepSpanIcon = styled.img`
   -webkit-transform: translateZ(0);
 `;
 
+export const HeaderContainer = styled.div`
+  margin: 0 auto;
+  width: 343px;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(11.129203796386719px);
+  box-shadow:
+    0 6px 11px -6px rgba(0, 0, 0, 0.03),
+    0 1px 3px -1px rgba(0, 0, 0, 0.08),
+    inset 0 -6px 17px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border-left: 0.15px solid #212121;
+  border-right: 0.15px solid #212121;
+  border-top: 0.15px solid #212121;
+
+  @media screen and (min-width: 768px) {
+    max-width: 740px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1130px;
+  }
+`;
+
+export const SlideHeader = styled.div`
+  padding: 16px 22px;
+  width: 100%;
+  max-width: 343px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.35px solid rgba(33, 33, 33, 0.7); /* Прозорість для iOS */
+
+  /* Оптимізовані стилі для iOS */
+  -webkit-backdrop-filter: blur(11px); /* Префікс для Safari */
+  backdrop-filter: blur(11px);
+
+  /* Оптимізовані тіні для iOS */
+  box-shadow:
+    0 6px 11px -6px rgba(0, 0, 0, 0.03),
+    0 1px 3px -1px rgba(0, 0, 0, 0.08),
+    inset 0 -6px 17px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
+
+  /* Оптимізований фон для iOS */
+  background: rgba(255, 255, 255, 0.03);
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+
+  /* Виправлення для Safari */
+  @supports (-webkit-touch-callout: none) {
+    background-color: rgba(85, 85, 85, 0.86); /* Фолбек для iOS */
+    -webkit-backdrop-filter: saturate(180%) blur(11px);
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 740px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1130px;
+    padding: 16px 32px;
+  }
+`;
+
+export const SlideLogo = styled.img`
+  width: 37px;
+  height: 9px;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
+`;
+
+export const LogoImage = styled.img`
+  width: 82px;
+  height: 11px;
+`;
+
+export const ToolGroup = styled.img`
+  width: 79px;
+  height: 19px;
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
+`;
+
+const VideoWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.03);
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
+`;
+
+const StyledVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.03);
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
+`;
+
+const VideoControls = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 16px;
+  z-index: 2;
+  flex-direction: row;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
+`;
+
+const ControlButton = styled.button`
+  border: none;
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Базовий розмір
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 48px;
+    height: 48px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 54px;
+    height: 54px;
+  }
+`;
+
+const ControlButtonPlay = styled(ControlButton)`
+  background-color: rgba(255, 255, 255, 0.12);
+
+  // збільшено на 30%
+  width: 62px;
+  height: 62px;
+
+  @media screen and (min-width: 768px) {
+    width: 72px;
+    height: 72px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 80px;
+    height: 80px;
+  }
+`;
+
+export const ControlIcon = styled.img`
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 28px;
+    height: 28px;
+  }
+`;
+
 const StepByStepGuidance: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const seek = (seconds: number) => {
+    if (videoRef.current) {
+      videoRef.current.currentTime += seconds;
+    }
+  };
+
   return (
     <StepWrapp>
-      <StepMainText>
-        Step-by-step guidance <StepSpanIcon src={Cassette} alt="⏺️" />
-      </StepMainText>
-      <StepMainTitle>Master your CRM in minutes</StepMainTitle>
-      <StepMainTextDescription>
-        Watch a walkthrough of our CRM system — from setting up profiles to
-        managing your pipeline. This guide shows how to maximize every feature.
-      </StepMainTextDescription>
-      
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        <StepMainText>
+          Step-by-step guidance <StepSpanIcon src={Cassette} alt="⏺️" />
+        </StepMainText>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        <StepMainTitle>Master your CRM in minutes</StepMainTitle>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        <StepMainTextDescription>
+          Watch a walkthrough of our CRM system — from setting up profiles to
+          managing your pipeline. This guide shows how to maximize every
+          feature.
+        </StepMainTextDescription>
+      </motion.div>
+      <HeaderContainer>
+        <SlideHeader>
+          <SlideLogo src={point} alt="Logo" />
+          <LogoImage src={logo} alt="Logo" />
+          <ToolGroup src={Tools} alt="Tools" />
+        </SlideHeader>
+        <VideoWrapper>
+          <StyledVideo ref={videoRef} poster={BackgroundImage} controls>
+            <source src={video} type="video/mp4" />
+            Ваш браузер не підтримує відео.
+          </StyledVideo>
+          <VideoControls>
+            <ControlButton onClick={() => seek(-15)}>
+              <ControlIcon src={ControlRewind} />
+            </ControlButton>
+            <ControlButtonPlay onClick={togglePlay}>
+              {isPlaying ? '⏸' : '▶'}
+            </ControlButtonPlay>
+            <ControlButton onClick={() => seek(15)}>
+              <ControlIcon src={ControlFast} />
+            </ControlButton>
+          </VideoControls>
+        </VideoWrapper>
+      </HeaderContainer>
     </StepWrapp>
   );
 };

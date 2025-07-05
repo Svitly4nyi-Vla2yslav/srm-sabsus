@@ -20,7 +20,6 @@ export const KeyWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-
 `;
 
 const Key: React.FC = () => {
@@ -60,7 +59,7 @@ const Key: React.FC = () => {
           for smooth in-store flow.
         </ResultMainTextDescription>
       </motion.div>
-      <KeySwipper/>
+      <KeySwipper />
     </KeyWrapper>
   );
 };
