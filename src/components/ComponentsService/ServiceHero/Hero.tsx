@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <HeroWrapper style={{ marginTop: 450, marginBottom: 400 }}>
+    <HeroWrapper style={{ marginTop: 450, marginBottom: 250 }}>
       <Container style={{ display: 'flex', justifyContent: 'center' }}>
         <PerspectiveWrapper>
           <Image3DBox>

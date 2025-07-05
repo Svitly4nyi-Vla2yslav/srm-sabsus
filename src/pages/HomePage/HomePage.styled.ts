@@ -10,11 +10,11 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 80px; /* Відступи між компонентами */
+  gap: 50px; /* Відступи між компонентами */
 
   /* Мобільні пристрої (до 768px) */
   @media (max-width: 767px) {
-    gap: 60px;
+    gap: 40px;
     padding: 0 12px;
   }
 

@@ -17,7 +17,6 @@ import { useMediaQuery } from 'react-responsive';
 
 export const SwiperContainer = styled(motion.div)`
   margin: 0 auto;
-  margin-top: 100px;
   width: 100%;
   height: 100%;
   position: relative;
@@ -28,19 +27,17 @@ export const SwiperContainer = styled(motion.div)`
 
   .swiper {
     width: 100%;
-    padding: 0 0%;
+    padding: 0 0;
     margin: 0 auto;
   }
 
   .swiper-slide {
-  margin: 0 auto;
+    width: 100% !important;
     display: flex;
-     width: 100% !important;
     justify-content: center;
     transition: transform 0.3s ease;
+  
   }
-
-
 `;
 
 export const CardContainer = styled(motion.div)`
@@ -58,13 +55,14 @@ export const CardContainer = styled(motion.div)`
 `;
 
 export const Card = styled.div`
-  overflow: hidden;
+   overflow: hidden;
   display: flex;
   flex-direction: column;
   border: 1px solid #212121;
   border-radius: 24px;
   padding: 20px;
-  width: 311px;
+  width: 100%; /* Змінюємо фіксовану ширину на 100% */
+  max-width: 311px; /* Додаємо максимальну ширину */
   height: 350px;
   backdrop-filter: blur(16px);
   box-shadow:
@@ -79,6 +77,7 @@ export const Card = styled.div`
     box-shadow 0.3s ease;
   gap: 10px;
   align-items: flex-start;
+  margin: 0 auto; /* Центруємо картку */
 
   @media screen and (min-width: 1440px) {
     width: 280px;
@@ -224,7 +223,8 @@ const KeySwipper: React.FC = () => {
           <Swiper
             loop={shouldLoop}
             slidesPerView={slidesPerView}
-            spaceBetween={0}
+            spaceBetween={16}
+             centeredSlides={true} // Центрування активного слайда
             autoplay={{
               delay: 1000,
               disableOnInteraction: false,
