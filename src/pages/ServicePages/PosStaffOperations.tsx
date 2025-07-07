@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { HomeContainer } from '../HomePage/HomePage.styled';
+import Hero from '../../components/POS&StaffOperations/Hero/Hero';
 
 const PosStaffOperations: React.FC = () => {
   return (
-    <div>PosStaffOperations</div>
-  )
-}
+    <HomeContainer>
+      <Hero />
+    </HomeContainer>
+  );
+};
 
-export default PosStaffOperations
+export default PosStaffOperations;

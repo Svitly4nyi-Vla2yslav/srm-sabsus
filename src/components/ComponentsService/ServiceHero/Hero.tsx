@@ -15,6 +15,8 @@ import costomer from '../../../assets/icons/costomer.png';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { CardButtonText } from '../../PricePlan/PricePlan.styled';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Spline from '@splinetool/react-spline';
 // Анімація обертання навколо осі Y
 const rotateY = keyframes`
   from {
@@ -65,17 +67,33 @@ export const CostomerWrapp = styled.div`
 `;
 
 const Hero: React.FC = () => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
   const { t } = useTranslation();
-
+  //  scene="https://prod.spline.design/3w8hjidF10j958os/scene.splinecode"
   return (
-    <HeroWrapper style={{ marginTop: 450, marginBottom: 250 }}>
+    <HeroWrapper style={{ marginTop: 350, marginBottom: 250 }}>
       <Container style={{ display: 'flex', justifyContent: 'center' }}>
-        <PerspectiveWrapper>
-          <Image3DBox>
-            <Front src={costomer} />
-            <Back src={costomer} />
-          </Image3DBox>
-        </PerspectiveWrapper>
+        {isMobile ? (
+          <PerspectiveWrapper>
+            <Image3DBox>
+              <Front src={costomer} />
+              <Back src={costomer} />
+            </Image3DBox>
+          </PerspectiveWrapper>
+        ) : (
+          <Spline
+            scene="https://prod.spline.design/3w8hjidF10j958os/scene.splinecode"
+            style={{
+              transform: 'scale(0.7)', // зменшує модель до 70%
+              transformOrigin: 'center', // щоб не зсувало
+              transition: 'transform 0.5s ease-out',
+              filter: 'blur(0.5px)',
+              width: '70%',
+              height: '70%',
+              overflow: 'visible',
+            }}
+          />
+        )}
       </Container>
       <CostomerWrapp>
         <motion.div
