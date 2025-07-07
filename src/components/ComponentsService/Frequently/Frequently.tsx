@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import X from '../../../assets/icons/Costomer/Icon-X.svg';
+import { motion } from 'framer-motion';
 
 const FrequentlyWrapper = styled.div`
   display: flex;
@@ -14,9 +15,9 @@ const FrequentlyWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   @media screen and (min-width: 1440px) {
-  width: 100%;
-    max-width: 1400px; 
-    
+    width: 100%;
+    max-width: 1400px;
+
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -76,9 +77,8 @@ const QuestionItem = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-  width: 100%;
-  max-width: 650px; 
-
+    width: 100%;
+    max-width: 650px;
   }
 `;
 
@@ -181,11 +181,9 @@ const Container = styled.div`
 `;
 
 const ContentContainer = styled.div`
-
-
   @media screen and (min-width: 1440px) {
-  width: 100%;
-  max-width: 650px; 
+    width: 100%;
+    max-width: 650px;
 
     flex-shrink: 0; /* Забороняємо звуження */
   }
@@ -199,54 +197,142 @@ const Frequently: React.FC = () => {
 
   const frequentlyQuestions = [
     {
-      question: 'What is the return policy?',
-      answer: 'You can return any item within 30 days for a full refund.',
+      question: 'What is SABSUS and what does it include?',
+      answer:
+        'SABSUS is an all-in-one ecosystem for restaurants, cafés, bakeries, dark kitchens, and retail.Included in every plan:\n\n POS system \n\n CRM & loyalty \n\n Warehouse & ingredients management \n\n Delivery with zone pricing \n\n Finances, tips, salaries \n\n Real-time analytics & reports \n\n Order tracking & table layout \n\n Cloud infrastructure + multilingual support \n\n Web and mobile apps',
     },
     {
-      question: 'How long does shipping take?',
-      answer: 'Shipping usually takes 5-7 business days.',
+      question: 'Do I need to install any hardware?',
+      answer:
+        'No. SABSUS runs in any browser and on any device:\n\nTablets (Android/iOS) \n\n Desktops, POS terminals \n\n Smartphones:\n\n All interfaces are responsive and touch-optimized.',
     },
     {
-      question: 'Do you offer international shipping?',
-      answer: 'Yes, we ship to over 100 countries worldwide.',
+      question: 'How is SABSUS different from other POS/CRM solutions?',
+      answer:
+        'Most systems give you 1–2 modules. We give you everything:\n\n Full cycle from order to delivery \n\n Loyalty, feedback, barcode scanner \n\n Promotions, staff salaries, table maps \n\n Multi-language interfaces + AI-translations \n\n App + website under your brand (white-label option) \n\n No hidden fees, no commissions (unless you choose them).',
     },
     {
-      question: 'Do you offer international shipping?',
-      answer: 'Yes, we ship to over 100 countries worldwide.',
+      question: 'What’s the difference between SaaS and White-label plans?',
+      answer:
+        'SaaS Subscription  White-label Subscription \n\n Works under SABSUS brand  Branded app & website \n\n $89–289/mo  $249–899/mo \n\n No app store presence  Published on App Store & Google Play \n\n Common server  Separate server & database',
     },
     {
-      question: 'Do you offer international shipping?',
-      answer: 'Yes, we ship to over 100 countries worldwide.',
+      question: 'Can I buy the app instead of subscribing?',
+      answer:
+        'Yes. You can fully buy out the white-label app without any subscription.\n\n What you get: \n\n Lifetime license \n\n 1 year of updates and support \n\n Full control of your database & integrations \n\n $50/month optional maintenance after 1 year \n\n Prices start from: \n\n $14,000 (1 venue, 1 language) \n\n $25,000 (up to 3 venues, 2 languages)\n\n$35,000 (up to 10 venues, all languages)',
     },
     {
-      question: 'Do you offer international shipping?',
-      answer: 'Yes, we ship to over 100 countries worldwide.',
+      question: 'Are future updates included in the lifetime model?',
+      answer:
+        'Yes — the first year is included.\n\n After that, updates and support are available at a fixed price of $50/month.\n\n You are not forced to update if you don’t want to.',
+    },
+    {
+      question: 'Can I migrate my existing data from other POS/CRM systems?',
+      answer:
+        'Yes. We provide data import tools or help you migrate from systems like Square, Toast, Loyverse, Poster, iiko, and others.',
+    },
+    {
+      question: 'What languages are supported?',
+      answer:
+        'Currently: \n\n ✅ English \n\n ✅ Spanish \n\n ✅ Russian \n\n ✅ Ukrainian \n\n The system auto-switches based on user preference. White-label apps can be locked to 1–4 languages depending on plan.',
+    },
+    {
+      question: 'How do I manage multiple locations or brands?',
+      answer:
+        'SABSUS is built for this: \n\nCentralized dashboards \n\nCustom tax & menu per location \n\nAnalytics and staff per venue \n\n Inventory sync with separate warehouse settings \n\n You can manage 1 to 100+ venues easily.',
+    },
+    {
+      question: 'What is the refund policy?',
+      answer:
+        'Monthly subscriptions can be canceled anytime. \n\nApp buyout and branding fees are non-refundable (as they include custom development, publication, and assets). \n\nWe recommend starting with a demo or 1-month subscription first.',
+    },
+    {
+      question: 'How secure is my data?',
+      answer:
+        'Hosted on Google Cloud / Supabase \n\nEncrypted backups \n\nStaff logs & permission controls \n\nGDPR/SOC2-ready infrastructure \n\nYou control your database (in white-label or buyout mode)',
+    },
+    {
+      question: 'What if my internet goes down?',
+      answer:
+        'SABSUS supports offline mode for POS operations. \n\nOrders and receipts sync automatically when the network is restored.',
+    },
+    {
+      question: 'Do you offer custom development or API access?',
+      answer:
+        'Yes: \n\nAPI available in white-label & buyout plans \n\nIntegration with Stripe, Telegram, Uber Eats, Google Maps, etc. \n\nYou can request features or pay for custom modules',
+    },
+    {
+      question:
+        'Can I connect external printers, card readers, or delivery aggregators?',
+      answer:
+        'Yes.\n\n Supported: \n\nStar, Epson, Sunmi, Payoneer, Stripe Terminals \n\nUber Eats (ready), Doordash (coming) \n\nSMS, email, and push integrations built-in',
+    },
+    {
+      question: 'How do I get started?',
+      answer:
+        'Choose your model: \n\n SaaS? → Start your subscription now \n\nWhite-label? → Submit brand + logo \n\nWant to buy it all? → Contact sales for one-time payment & ownership \n\nWe’ll take care of setup, publication, and onboarding.',
     },
   ];
 
   return (
     <FrequentlyWrapper>
       <Container>
-        <FrequentlyTitle>Frequently asked questions</FrequentlyTitle>
-        <FrequentlyText>
-          You’ve got questions. We’ve got honest answers.
-        </FrequentlyText>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <FrequentlyTitle>Frequently asked questions</FrequentlyTitle>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <FrequentlyText>
+            You’ve got questions. We’ve got honest answers.
+          </FrequentlyText>
+        </motion.div>
       </Container>
+
       <ContentContainer>
         {frequentlyQuestions.map((item, index) => (
-          <QuestionItem key={index}>
-            <QuestionButton onClick={() => toggleAnswer(index)}>
-              {item.question}
-              <XIcon
-                src={X}
-                alt="Toggle answer"
-                $rotate={activeIndex === index}
-              />
-            </QuestionButton>
-            <AnswerText $isOpen={activeIndex === index}>
-              {item.answer}
-            </AnswerText>
-          </QuestionItem>
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: index % 2 === 0 ? 40 : -40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <QuestionItem>
+              <QuestionButton onClick={() => toggleAnswer(index)}>
+                {item.question}
+                <XIcon
+                  src={X}
+                  alt="Toggle answer"
+                  $rotate={activeIndex === index}
+                />
+              </QuestionButton>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={
+                  activeIndex === index
+                    ? { opacity: 1, scale: 1 }
+                    : { opacity: 0, scale: 0.9 }
+                }
+                transition={{ duration: 0.4 }}
+                style={{ overflow: 'hidden' }}
+              >
+                <AnswerText $isOpen={activeIndex === index}>
+                  {item.answer}
+                </AnswerText>
+              </motion.div>
+            </QuestionItem>
+          </motion.div>
         ))}
       </ContentContainer>
     </FrequentlyWrapper>

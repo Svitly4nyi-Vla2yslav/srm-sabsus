@@ -191,7 +191,10 @@ export const HowWeWorkContainer = styled.div`
 
   @media screen and (min-width: 1440px) {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Додано minmax для правильного розподілу простору */
+    grid-template-columns: repeat(
+      3,
+      minmax(0, 1fr)
+    ); /* Додано minmax для правильного розподілу простору */
     grid-template-rows: auto auto auto;
     max-width: 1400px;
     width: 100%;
@@ -200,7 +203,8 @@ export const HowWeWorkContainer = styled.div`
     box-sizing: border-box; /* Щоб падінги враховувались у загальній ширині */
 
     /* Прибираємо бордери для десктопу */
-    &::before, &::after {
+    &::before,
+    &::after {
       // display: none;
     }
 
@@ -210,10 +214,10 @@ export const HowWeWorkContainer = styled.div`
       margin-left: 0 !important;
     }
 
-     /* Розміщення карток для десктопу з бордерами */
+    /* Розміщення карток для десктопу з бордерами */
     & > :nth-child(1) {
       grid-column: 1;
-      border-right:  1px solid rgba(255, 255, 255, 0.25)!important; /* Бордер праворуч */
+      border-right: 1px solid rgba(255, 255, 255, 0.25) !important; /* Бордер праворуч */
     }
     & > :nth-child(2) {
       grid-column: 2;
@@ -224,15 +228,15 @@ export const HowWeWorkContainer = styled.div`
       /* Без бордера праворуч (остання в рядку) */
     }
     & > :nth-child(4) {
-      grid-column: 1 ;
-       width: 151%!important; /* Широка картка */
+      grid-column: 1;
+      width: 151% !important; /* Широка картка */
       //?  margin-left: 53%!important; /* Зсуваємо для вирівнювання */
-      border-right:  1px solid rgba(255, 255, 255, 0.25)!important; /* Прибираємо бордер для широкої картки */
+      border-right: 1px solid rgba(255, 255, 255, 0.25) !important; /* Прибираємо бордер для широкої картки */
     }
     & > :nth-child(5) {
       grid-column: 2;
-       width: 151% !important; /* Широка картка */
-            margin-left: 51%!important; /* Зсуваємо для вирівнювання */
+      width: 151% !important; /* Широка картка */
+      margin-left: 51% !important; /* Зсуваємо для вирівнювання */
       border: none; /* Бордер праворуч */
     }
     & > :nth-child(6) {
@@ -241,7 +245,7 @@ export const HowWeWorkContainer = styled.div`
     }
     & > :nth-child(7) {
       grid-column: 2;
-      border-right: 1px solid rgba(255, 255, 255, 0.25)!important; /* Бордер праворуч */
+      border-right: 1px solid rgba(255, 255, 255, 0.25) !important; /* Бордер праворуч */
     }
     & > :nth-child(8) {
       grid-column: 3;
@@ -276,7 +280,7 @@ export const Card = styled(motion.div)`
 
     /* Прибираємо бордери між картками для планшета */
     &::after {
-    top: 0%;
+      top: 0%;
       // display: none;
     }
 
@@ -286,17 +290,15 @@ export const Card = styled(motion.div)`
     }
     &:nth-child(even) {
       border-left: 1px solid rgba(255, 255, 255, 0.25);
-      
     }
   }
 
   @media screen and (min-width: 1440px) {
-   &:nth-child(odd) {
+    &:nth-child(odd) {
       border-right: none;
     }
     &:nth-child(even) {
       border-left: none;
-      
     }
   }
 `;
@@ -306,7 +308,7 @@ export const CardNumber = styled(motion.p)`
   padding: 6px 13px;
   width: 36px;
   height: 36px;
-  margin:  10px 0px;
+  margin: 10px 0px;
   backdrop-filter: blur(16px);
   box-shadow:
     0 8px 16px -8px rgba(0, 0, 0, 0.03),
@@ -516,13 +518,14 @@ const HowWeWork: React.FC = () => {
       <HowWeWorkContainer>
         {cards.map((card, index) => (
           <React.Fragment key={index}>
-           
             <Card
               as={motion.div}
               {...getCardAnimation(index)}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
-            > <MobileDivider />
+            >
+              {' '}
+              <MobileDivider />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -546,9 +549,9 @@ const HowWeWork: React.FC = () => {
                 viewport={{ once: false, amount: 0.3 }}
               >
                 <CardDescription>{card.description}</CardDescription>
-              </motion.div>  <MobileDivider />
+              </motion.div>{' '}
+              <MobileDivider />
             </Card>
-           
           </React.Fragment>
         ))}
         <VerticalDivider />
