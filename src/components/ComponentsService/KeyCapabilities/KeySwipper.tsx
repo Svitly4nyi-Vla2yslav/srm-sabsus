@@ -32,13 +32,12 @@ export const SwiperContainer = styled(motion.div)`
   }
 
   .swiper-slide {
-     padding: 0 0;
+    padding: 0 0;
     margin: 0 auto;
     width: 100vw !important;
     display: flex;
     justify-content: center;
     transition: transform 0.3s ease;
-  
   }
 `;
 
@@ -57,7 +56,7 @@ export const CardContainer = styled(motion.div)`
 `;
 
 export const Card = styled.div`
-   overflow: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   border: 1px solid #212121;
@@ -159,50 +158,50 @@ const KeySwipper: React.FC = () => {
     {
       id: 1,
       imageUrl: keys,
-      title: 'Branded Mobile App',
-      text: "Get a custom app with your brand's logo and colors. Great for user engagement and repeat orders.",
+      title: 'Order Management',
+      text: 'Manage orders in real-time with a sleek interface. Keep your workflow organized.',
     },
     {
       id: 2,
       imageUrl: keys1,
-      title: 'Loyalty Programs',
-      text: 'Set up bonuses, cashback or discounts based on user activity.Build habits and retain your best.',
+      title: 'Shift Tracking',
+      text: 'Monitor employee hours, breaks, and turnover. Shift data is logged and visualized.',
     },
     {
       id: 3,
       imageUrl: keys2,
-      title: 'Smart Delivery Options',
-      text: 'Choose from delivery, pickup, or dine-in. Auto-location and saved addresses included.',
+      title: 'Table Layout',
+      text: 'Edit interactive seating maps for efficient service. Tables link to live order status and guest count.',
     },
     {
       id: 4,
       imageUrl: keys3,
-      title: 'Push Notifications',
-      text: 'Send timely updates about orders, promos or new arrivals. Drive engagement and reduce no-shows.',
+      title: 'QR Payments',
+      text: 'Customers can pay quickly and securely with QR codes linked to each order.',
     },
     {
       id: 5,
       imageUrl: keys4,
-      title: 'Order History & Repeats',
-      text: 'Let users reorder in seconds from their past purchases. Track preferences for experience.',
+      title: 'Access Control',
+      text: 'Assign permissions by role. PIN access ensures security at every point.',
     },
     {
       id: 6,
       imageUrl: keys5,
-      title: 'Table Reservations',
-      text: 'Book tables in advance with time slots and guest count. Reduce queues and optimize floor space.',
+      title: 'Receipt Printing',
+      text: 'Print receipts and orders instantly. Customize formats and languages for your brand.',
     },
     {
       id: 7,
       imageUrl: keys6,
-      title: 'Customer Feedback',
-      text: 'Collect reviews and ratings per order.Show you listen, and build trust.',
+      title: 'Deposit & Tips',
+      text: 'Track prepaid deposits and digital tips with full transparency. Tied directly into each customer profile and order.',
     },
     {
       id: 8,
       imageUrl: keys7,
-      title: 'Personal Account Area',
-      text: 'Manage orders, loyalty status, saved data, and preferences. A seamless all-in-one experience for users.',
+      title: 'Role Management',
+      text: 'Control visibility in the system with role templates. Suitable for cafes, bakeries, restaurants, and retail.',
     },
   ];
 
@@ -223,7 +222,7 @@ const KeySwipper: React.FC = () => {
             loop={shouldLoop}
             slidesPerView={slidesPerView}
             spaceBetween={6}
-             centeredSlides={false} // Центрування активного слайда
+            centeredSlides={false} // Центрування активного слайда
             autoplay={{
               delay: 1000,
               disableOnInteraction: false,

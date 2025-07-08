@@ -3,15 +3,12 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
-import LinieBackground from '../../../assets/icons/Costomer/Iphone/Frame 3577-background.png';
-import Phone from '../../../assets/icons/Costomer/Iphone/Frame 35771-iphon.png';
-import Phone1 from '../../../assets/icons/Costomer/Iphone/black titanium2-iphon.png';
-import Linie1 from '../../../assets/icons/Costomer/Iphone/Lightpered-linie.png';
+import LinieBackground from '../../../assets/icons/POS&Staf/iPadPro2020.png';
 
 export const LifeWrapper = styled(motion.div)`
   display: flex;
-  padding: 0 0px;
-  max-width: 1400px;
+  padding: 0 16px; /* або 24px — на твій смак */
+  max-width: 1440px;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
@@ -20,6 +17,8 @@ export const LifeWrapper = styled(motion.div)`
   }
 
   @media screen and (min-width: 1440px) {
+    width: 1440px;
+    margin: 0 auto;
   }
 `;
 
@@ -118,37 +117,36 @@ export const LifeMainTextDescriptionDown = styled(motion.p)`
 
   @media screen and (min-width: 1440px) {
     position: absolute;
-    max-width: 630px;
+    max-width: 530px;
     width: 100%;
     margin: 0 auto 26px;
     top: 80%;
-    right: 64%;
+    right: 62%;
     text-align: start;
   }
 `;
 
 export const LifeContainer = styled.div`
   margin-bottom: 374px;
+
   @media screen and (min-width: 768px) {
     margin-bottom: 700px;
   }
 
   @media screen and (min-width: 1440px) {
     margin-bottom: 609px;
-    width: 100vw;
+    width: 100%; // ✅ НЕ 100vw
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
-    flex-wrap: nowrap;
     align-items: flex-start;
   }
 `;
 
 export const ImageAnimationWrapp = styled.div`
   position: absolute;
-  top: 65%;
+  top: 60%;
   left: 50%;
-  width: 375px;
+  width: 365px;
   height: 354px;
   transform: translate(-50%, -50%);
   overflow: visible;
@@ -165,34 +163,6 @@ export const ImageAnimationWrapp = styled.div`
   }
 `;
 
-export const PhoneImage = styled(motion.img)`
-  position: absolute;
-  bottom: 22%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
-  // z-index: -123;
-`;
-
-export const PhoneImage1 = styled(motion.img)`
-  position: absolute;
-  top: 10%;
-  left: 6%;
-  width: 100%;
-  height: 100%;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
-`;
-
 export const Linie = styled(motion.img)`
   position: absolute;
   top: 0;
@@ -203,22 +173,6 @@ export const Linie = styled(motion.img)`
   }
 
   @media screen and (min-width: 1440px) {
-  }
-`;
-
-export const LinieP = styled(motion.img)`
-  position: absolute;
-  top: 9%;
-  left: 16%;
-  width: 77%;
-  height: 77%;
-  overflow: hidden;
-  @media screen and (min-width: 768px) {
-    left: 15%;
-  }
-
-  @media screen and (min-width: 1440px) {
-    left: 16%;
   }
 `;
 
@@ -265,7 +219,7 @@ const LivePrepInsights: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <LifeMainTitle>All-in-one engagement platform</LifeMainTitle>
+          <LifeMainTitle>Precision and speed from prep to plate</LifeMainTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -274,9 +228,9 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainTextDescription>
-            Unify every user-facing channel into one seamless experience. From
-            mobile orders to loyalty rewards — everything is built to feel
-            intuitive and fast.
+            Track real-time cooking progress across all stations with synced
+            kitchen displays. Each order flows through clear stages — prep,
+            cook, serve — with glowing indicators.
           </LifeMainTextDescription>
         </motion.div>
       </LifeContainer>
@@ -286,33 +240,10 @@ const LivePrepInsights: React.FC = () => {
         <Linie
           src={LinieBackground}
           alt="background lines"
-          initial={{ opacity: 0.8 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
-        />
-
-        {/* Перший телефон */}
-        <PhoneImage
-          src={Phone}
-          alt="phone"
-          initial={{ y: -10 }}
-          animate={{ y: 0 }}
+          initial={{ y: 0, opacity: 0.5 }}
+          animate={{ y: -10, opacity: 1 }}
           transition={{
-            duration: 3,
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'easeInOut',
-          }}
-        />
-
-        {/* Другий телефон */}
-        <PhoneImage1
-          src={Phone1}
-          alt="phone"
-          initial={{ y: 0 }}
-          animate={{ y: -10 }}
-          transition={{
-            duration: 3,
+            duration: 2,
             repeat: Infinity,
             repeatType: 'reverse',
             ease: 'easeInOut',
@@ -320,18 +251,7 @@ const LivePrepInsights: React.FC = () => {
           }}
         />
 
-        {/* Лінії з анімацією світіння */}
-        <LinieP
-          src={Linie1}
-          alt="glowing lines"
-          initial={{ opacity: 0.5 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-        />
+        {/* Перший телефон */}
 
         {/* Додатковий ефект світіння */}
         <GlowEffect
@@ -347,9 +267,9 @@ const LivePrepInsights: React.FC = () => {
       </ImageAnimationWrapp>
 
       <LifeMainTextDescriptionDown>
-        Your brand, your flow. Customize touchpoints with full control over
-        visuals, behavior, and engagement logic — all while delivering delight
-        across the customer journey.
+        Timers, alerts, and zone assignments make sure every dish is ready
+        exactly when it should be. Designed to reduce chaos and maximize
+        performance.
       </LifeMainTextDescriptionDown>
     </LifeWrapper>
   );

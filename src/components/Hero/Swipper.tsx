@@ -89,7 +89,7 @@ const Swipper: React.FC = () => {
                   >
                     <ArrowIcon src={Arrow} alt="↗️" />
                   </motion.div>
-                  
+
                   <ContentWrapper>
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
@@ -99,7 +99,7 @@ const Swipper: React.FC = () => {
                     >
                       <DescriptionText>{partner.description}</DescriptionText>
                     </motion.div>
-                    
+
                     <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -109,7 +109,7 @@ const Swipper: React.FC = () => {
                       <PercentageText>{partner.value}</PercentageText>
                     </motion.div>
                   </ContentWrapper>
-                  
+
                   <motion.div
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
@@ -118,7 +118,7 @@ const Swipper: React.FC = () => {
                   >
                     <GradientLine />
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}

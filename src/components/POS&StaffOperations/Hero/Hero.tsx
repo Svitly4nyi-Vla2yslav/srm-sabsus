@@ -14,20 +14,18 @@ import Spline from '@splinetool/react-spline';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
-import { CostomerWrapp } from '../../ComponentsService/ServiceHero/Hero';
 
 export const HeroWrapper = styled.div`
   margin: 0 auto;
-  //   margin-top: 100px;
-  width: 100vh;
+  width: 100%;
   height: 100%;
-  //   margin-bottom: 100px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media screen and (min-width: 768px) {
+    width: 100vh;
     margin-top: 100px;
     margin-bottom: 100px;
   }
@@ -41,28 +39,39 @@ export const HeroWrapper = styled.div`
 export const Container = styled.div`
   position: absolute;
   top: 100%;
-  left: 40%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 900px;
+  width: 140vw;
+  height: 340px;
   max-width: 1440px;
   overflow: visible;
   z-index: -1;
 
-  iframe,
-  canvas {
-    width: 115% !important;
-    height: 100vh !important;
-    display: block;
-    position: relative;
-    z-index: 1;
-    object-fit: cover;
-    pointer-events: auto;
-    // filter: blur(0.5px);
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 900px;
+    max-width: 1440px;
     overflow: visible;
-  }
+    z-index: -1;
 
-  @media screen and (max-width: 767px) {
+    iframe,
+    canvas {
+      width: 115% !important;
+      height: 100vh !important;
+      display: block;
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+      pointer-events: auto;
+      // filter: blur(0.5px);
+      overflow: visible;
+    }
+  }
+  @media screen and (min-width: 767px) {
     z-index: -2;
 
     iframe,
@@ -93,6 +102,11 @@ const SparkleLayer = styled.div`
   height: 100%;
   pointer-events: none;
   z-index: 2;
+`;
+
+export const CostomerWrapp = styled.div`
+  position: absolute;
+  top: 107px;
 `;
 
 const FallbackImage = () => {
@@ -135,7 +149,7 @@ const FallbackImage = () => {
   );
 };
 const Hero: React.FC = () => {
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 767px)');
   const { t } = useTranslation();
   return (
     <HeroWrapper style={{ marginTop: 250 }}>
@@ -178,7 +192,7 @@ const Hero: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           {' '}
-          <HeroTitle>Create personalized customer journeys</HeroTitle>
+          <HeroTitle>Simplify shifts with smarter POS and role tools</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}

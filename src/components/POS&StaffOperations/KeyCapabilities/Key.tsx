@@ -12,7 +12,7 @@ import { styled } from 'styled-components';
 
 export const KeyWrapper = styled(motion.div)`
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 300px;
   width: 100%;
   height: 100%;
   // margin-bottom: 100px;
@@ -20,6 +20,16 @@ export const KeyWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    // width: 100vh;
+    // margin-top: 100px;
+    // margin-bottom: 100px;
+  }
+  @media screen and (min-width: 1440px) {
+    // margin-top: 100px;
+    // margin-bottom: 150px;
+  }
 `;
 
 const Key: React.FC = () => {
@@ -43,8 +53,7 @@ const Key: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <ResultMainTitle>
-          {' '}
-          Speed up orders, streamline every shift
+          From screen to service, without delays
         </ResultMainTitle>
       </motion.div>
 
@@ -55,8 +64,8 @@ const Key: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <ResultMainTextDescription>
-          Instant processing, QR payments, team roles, shift tracking — designed
-          for smooth in-store flow.
+          Live order statuses, recipe breakdowns, timers and pickup coordination
+          built for your kitchen crew.
         </ResultMainTextDescription>
       </motion.div>
       <KeySwipper />

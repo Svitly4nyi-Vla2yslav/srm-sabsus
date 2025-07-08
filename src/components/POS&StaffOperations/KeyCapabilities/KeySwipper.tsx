@@ -1,12 +1,12 @@
 import React from 'react';
-import keys from '../../../assets/icons/Costomer/key.png';
-import keys1 from '../../../assets/icons/Costomer/key1.png';
-import keys2 from '../../../assets/icons/Costomer/key2.png';
-import keys3 from '../../../assets/icons/Costomer/key3.png';
-import keys4 from '../../../assets/icons/Costomer/key4.png';
-import keys5 from '../../../assets/icons/Costomer/key5.png';
-import keys6 from '../../../assets/icons/Costomer/key6.png';
-import keys7 from '../../../assets/icons/Costomer/key7.png';
+import keys from '../../../assets/icons/POS&Staf/key.png';
+import keys1 from '../../../assets/icons/POS&Staf/key1.png';
+import keys2 from '../../../assets/icons/POS&Staf/key2.png';
+import keys3 from '../../../assets/icons/POS&Staf/key3.png';
+import keys4 from '../../../assets/icons/POS&Staf/key4.png';
+import keys5 from '../../../assets/icons/POS&Staf/key5.png';
+import keys6 from '../../../assets/icons/POS&Staf/key6.png';
+import keys7 from '../../../assets/icons/POS&Staf/key7.png';
 import { motion } from 'framer-motion';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -80,6 +80,7 @@ export const Card = styled.div`
   gap: 10px;
   align-items: flex-start;
   margin: 0 auto; /* Центруємо картку */
+      justify-content: center;
 
   @media screen and (min-width: 1440px) {
     width: 280px;
@@ -89,6 +90,8 @@ export const Card = styled.div`
 export const Icon = styled.img`
   filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.7));
   transition: filter 0.3s ease;
+  width: 199px;
+height: 199px;
   
   &:hover {
     filter: drop-shadow(0 0 30px rgba(138, 43, 226, 1.7));
