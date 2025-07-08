@@ -20,7 +20,7 @@ import ButtonTryForFree from '../ButtonTryForFree/ButtonTryForFree';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import Down from "../../assets/icons/chevron-down.svg"
+import Down from '../../assets/icons/chevron-down.svg';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
             </NavItem>
 
             <NavItem
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+              // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
               style={{ pointerEvents: 'none', opacity: 0.5 }}
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
@@ -79,9 +79,8 @@ const Header: React.FC = () => {
             >
               <ServiceLink
               //  style={{ pointerEvents: 'none', opacity: 0.5 }}
-               >
-                {t('header.nav.service')}{' '}
-              <ArrowDown src={Down} alt="⬇️" />
+              >
+                {t('header.nav.service')} <ArrowDown src={Down} alt="⬇️" />
                 {isServicesOpen && (
                   <DropdownMenu>
                     <DropdownItem>
