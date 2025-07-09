@@ -38,7 +38,7 @@ const HeroWrapper = styled.div`
   width: 100%;
   height: 400px;
   overflow: visible;
-  margin-top: 100px;
+  margin-top: 78px;
 `;
 
 const SwiperLayer = styled(Swiper)<{ $position: 'top' | 'middle' | 'bottom' }>`
@@ -73,8 +73,15 @@ const FloatingImage = styled.img<{
 `;
 
 export const CostomerWrapp = styled.div`
-  position: absolute;
-  top: 330px;
+   position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+  z-index: 3;
 `;
 const Hero: React.FC = () => {
   const { t } = useTranslation();

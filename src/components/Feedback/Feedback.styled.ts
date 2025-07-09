@@ -18,7 +18,7 @@ export const StarContainer = styled(motion.div)`
   flex-direction: row;
   gap: 4px;
   width: 343px;
-  height: 117px;
+     height: max-content;
   flex-wrap: wrap;
   align-content: space-between;
 `;
