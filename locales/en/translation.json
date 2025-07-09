@@ -294,7 +294,10 @@
           "note": "Includes core features:",
           "noteList": [
             "POS, CRM, delivery, inventory, finance, analytics, support, and updates.",
-            "Suitable for those who want to quickly start using our platform without launching their own application."
+            "Suitable for those who want to quickly start using our platform without launching their own application.",
+            "Start - 1 establishment",
+            "Standard - up to 3 establishments",
+            "Business - up to 10 establishments"
           ]
         },
         {
@@ -333,17 +336,17 @@
           "discount": "-32%",
           "tiers": [
             {
-              "name": "1 firm",
+              "name": "1 Establishment",
               "discount": "-64%",
               "price": "$5,000"
             },
             {
-              "name": "Up to 3 firms",
+              "name": "Up to 3 Establishments",
               "discount": "-60%",
               "price": "$10,000"
             },
             {
-              "name": "Up to 5–10 firms",
+              "name": "Up to 5–10 Establishments",
               "discount": "-57%",
               "price": "$15,000"
             }
@@ -391,26 +394,28 @@
           "note": "Includes core features:",
           "noteList": [
             "POS, CRM, delivery, inventory, finance, analytics, support, and updates.",
-            "Suitable for those who want to quickly start using our platform without launching their own application."
+            "Suitable for those who want to quickly start using our platform without launching their own application.",
+            "Start - 1 establishment",
+            "Standard - up to 3 establishments",
+            "Business - up to 10 establishments"
           ]
         },
         {
           "title": "White-label",
-         
           "tiers": [
             {
               "name": "White Start 1",
-               "discount": "-69%",
+              "discount": "-69%",
               "price": "$105"
             },
             {
               "name": "White Standard",
-               "discount": "-89%",
+              "discount": "-89%",
               "price": "$140"
             },
             {
               "name": "White Business",
-               "discount": "-74%",
+              "discount": "-74%",
               "price": "$350"
             }
           ],
@@ -431,17 +436,17 @@
           "discount": "-22%",
           "tiers": [
             {
-              "name": "1 firm",
+              "name": "1 Establishment",
               "discount": "-64%",
               "price": "$5,000"
             },
             {
-              "name": "Up to 3 firms",
+              "name": "Up to 3 Establishments",
               "discount": "-60%",
               "price": "$10,000"
             },
             {
-              "name": "Up to 5–10 firms",
+              "name": "Up to 5–10 Establishments",
               "discount": "-57%",
               "price": "$15,000"
             }
