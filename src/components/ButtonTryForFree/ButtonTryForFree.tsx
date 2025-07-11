@@ -106,7 +106,7 @@ z-index: 10;
 const ButtonTryForFree: React.FC = () => {
     const { t } = useTranslation();
   return (
-    <a href='https://sabsus.app/registrcompany/web'   target="_blank"
+    <a href='https://sabsus.app/registrcompany/web/PRO'   target="_blank"
                   rel="noopener noreferrer">
       <ButtonFree>{t('hero.buttons.tryFree')}</ButtonFree>
     </a>

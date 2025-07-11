@@ -78,7 +78,7 @@ const Header: React.FC = () => {
               onClick={toggleServicesMenu}
             >
               <ServiceLink
-              //  style={{ pointerEvents: 'none', opacity: 0.5 }}
+              //  style={{ pointerEvents: 'none', opacity: 0 }}
               >
                 {t('header.nav.service')} <ArrowDown src={Down} alt="⬇️" />
                 {isServicesOpen && (

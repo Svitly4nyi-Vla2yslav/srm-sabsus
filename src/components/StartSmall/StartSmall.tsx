@@ -16,7 +16,7 @@ import {
 const StartSmall: React.FC = () => {
   const { t } = useTranslation();
   const buttonDemo = 'https://sabsus.app/login/demo@sabsus.com/demo2025';
-  const buttonStarted = 'https://sabsus.app/registrcompany/web';
+  const buttonStarted = 'https://sabsus.app/registrcompany/web/PRO';
 
   // Анімації
   const containerAnimation = {

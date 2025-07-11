@@ -234,7 +234,7 @@ const Hero: React.FC = () => {
           {' '}
           <ButtonContainer>
             <a
-              href="https://sabsus.app/registrcompany/web"
+              href="https://sabsus.app/registrcompany/web/PRO"
               target="_blank"
               rel="noopener noreferrer"
             >
