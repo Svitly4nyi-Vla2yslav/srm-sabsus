@@ -83,6 +83,7 @@ export const CostomerWrapp = styled.div`
   text-align: center;
   z-index: 3;
 `;
+
 const Hero: React.FC = () => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 743px)' });
