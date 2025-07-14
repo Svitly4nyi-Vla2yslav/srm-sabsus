@@ -81,6 +81,12 @@ export const Container = styled.div`
       opacity: 0.7;
     }
   }
+
+    @media screen and (min-width: 1440px) {
+   top: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 `;
 
 const Sparkle = styled(motion.div)`
@@ -105,7 +111,7 @@ const SparkleLayer = styled.div`
 `;
 
 export const CostomerWrapp = styled.div`
-   position: absolute;
+  position: absolute;
   top: 400px;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -113,6 +119,9 @@ export const CostomerWrapp = styled.div`
   max-width: 1200px;
   padding: 0 20px;
   text-align: center;
+    @media screen and (min-width: 1440px) {
+   top: 500px;
+  }
 `;
 
 const FallbackImage = () => {
@@ -124,7 +133,7 @@ const FallbackImage = () => {
   }));
 
   return (
-    <div style={{ position: 'relative', width: '100%', top: "-20%" }}>
+    <div style={{ position: 'relative', width: '100%', top: '-20%' }}>
       <img
         src={HeroIcon}
         alt="3D Scene"
@@ -133,7 +142,7 @@ const FallbackImage = () => {
           height: '778px',
           filter: 'blur(0.5px)',
           display: 'block',
-          margin: "0 auto"
+          margin: '0 auto',
         }}
       />
       <SparkleLayer>
@@ -165,7 +174,7 @@ const Hero: React.FC = () => {
         ) : (
           <Suspense fallback={<FallbackImage />}>
             <Spline
-              scene="https://prod.spline.design/weK184EAiAKpQ3YI/scene.splinecode"
+              scene="https://prod.spline.design/IIeYQXryqhaB5TjD/scene.splinecode"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -188,7 +197,7 @@ const Hero: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            Terminal Control <CardButtonText src={Control} alt="💰" />
+           Performance Hub<CardButtonText src={Control} alt="💰" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -198,7 +207,7 @@ const Hero: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           {' '}
-          <HeroTitle>Simplify shifts with smarter POS and role tools</HeroTitle>
+          <HeroTitle>Make confident decisions with real-time insights.</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
