@@ -193,7 +193,6 @@ const Hero: React.FC = () => {
               style={{
                 width: '100%',
                 transition: 'transform 0.5s ease-out',
-                filter: 'blur(0.5px)',
                 transform: 'rotate(180deg)',
               }}
             />
@@ -232,7 +231,6 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.5, delay: 0.9 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
           <ButtonContainer>
             <a
               href="https://sabsus.app/registrcompany/web"

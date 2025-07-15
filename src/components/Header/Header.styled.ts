@@ -23,7 +23,7 @@ export const ArrowDown = styled.img`
 export const DropdownMenu = styled.div`
   position: absolute;
  right: -112px;
-    top: 20px;
+    top: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.98);
   padding: 10px 0;
@@ -132,7 +132,7 @@ export const NavList = styled.ul`
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%), 
                 rgba(255, 255, 255, 0.03);
 display: flex;
-align-items: baseline;
+        align-items: center;
   }
 `;
 
@@ -197,6 +197,7 @@ text-align: center;
 `;
 
 export const StyledNavLink = styled(NavLink)`
+display: flex;
   text-decoration: none;
 font-family: var(--font-family);
 font-weight: 500;
@@ -211,7 +212,6 @@ color: var(--white-50);
 
   transition: all 0.4s ease-in-out;
   position: relative;
-
   &:hover {
      color: var(--purple-400);
   }

@@ -1,13 +1,31 @@
-import React from 'react'
-import { HomeContainer } from '../HomePage/HomePage.styled'
-import Hero from '../../components/ComponentMarketing/Hero/Hero'
+import React from 'react';
+import { HomeContainer } from '../HomePage/HomePage.styled';
+import Hero from '../../components/ComponentMarketing/Hero/Hero';
+import Key from '../../components/ComponentMarketing/KeyCapabilities/Key';
+import LivePrepInsights from '../../components/ComponentMarketing/LivePrepInsights/LivePrepInsights';
+import StepByStepGuidance from '../../components/ComponentsService/StepByStepGuidance/StepByStepGuidance';
+import HowWeWork from '../../components/ComponentMarketing/HowWeWork/HowWeWork';
+import Frequently from '../../components/ComponentsService/Frequently/Frequently';
+import Feedback from '../../components/Feedback/Feedback';
+import ResultsFromBusinesses from '../../components/ResultsFromBusinesses/ResultsFromBusinesses';
+import StartSmall from '../../components/StartSmall/StartSmall';
+import WhyChooseOurPlatform from '../../components/WhyChooseOurPlatform/WhyChooseOurPlatform';
 
 const MarketingCustomization: React.FC = () => {
   return (
     <HomeContainer>
-      <Hero/>
+      <Hero />
+      <Key />
+      <LivePrepInsights />
+      <StepByStepGuidance />
+      <HowWeWork />
+      <WhyChooseOurPlatform />
+      <ResultsFromBusinesses />
+      <Feedback />
+      <Frequently />
+      <StartSmall />
     </HomeContainer>
-  )
-}
+  );
+};
 
-export default MarketingCustomization
+export default MarketingCustomization;

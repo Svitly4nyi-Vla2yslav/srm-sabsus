@@ -80,7 +80,10 @@ const Header: React.FC = () => {
               <ServiceLink
               //  style={{ pointerEvents: 'none', opacity: 0 }}
               >
-                {t('header.nav.service')} <ArrowDown src={Down} alt="⬇️" />
+                {' '}
+                <StyledNavLink to="/service" style={{padding: "10px 0px"}}>
+                  {t('header.nav.service')} <ArrowDown src={Down} alt="⬇️" />
+                </StyledNavLink>
                 {isServicesOpen && (
                   <DropdownMenu>
                     <DropdownItem>

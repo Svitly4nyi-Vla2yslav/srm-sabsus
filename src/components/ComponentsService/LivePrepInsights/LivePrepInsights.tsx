@@ -10,8 +10,8 @@ import Linie1 from '../../../assets/icons/Costomer/Iphone/Lightpered-linie.png';
 
 export const LifeWrapper = styled(motion.div)`
   display: flex;
-  padding: 0 0px;
-  max-width: 1400px;
+  padding: 0 16px; /* або 24px — на твій смак */
+  max-width: 1440px;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
@@ -20,6 +20,8 @@ export const LifeWrapper = styled(motion.div)`
   }
 
   @media screen and (min-width: 1440px) {
+    width: 1440px;
+    margin: 0 auto;
   }
 `;
 
@@ -118,37 +120,36 @@ export const LifeMainTextDescriptionDown = styled(motion.p)`
 
   @media screen and (min-width: 1440px) {
     position: absolute;
-    max-width: 630px;
+    max-width: 530px;
     width: 100%;
     margin: 0 auto 26px;
     top: 80%;
-    right: 64%;
+    right: 62%;
     text-align: start;
   }
 `;
 
 export const LifeContainer = styled.div`
   margin-bottom: 374px;
+
   @media screen and (min-width: 768px) {
     margin-bottom: 700px;
   }
 
   @media screen and (min-width: 1440px) {
     margin-bottom: 609px;
-    width: 100vw;
+    width: 100%; // ✅ НЕ 100vw
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
-    flex-wrap: nowrap;
     align-items: flex-start;
   }
 `;
 
 export const ImageAnimationWrapp = styled.div`
   position: absolute;
-  top: 65%;
+  top: 60%;
   left: 50%;
-  width: 375px;
+  width: 365px;
   height: 354px;
   transform: translate(-50%, -50%);
   overflow: visible;

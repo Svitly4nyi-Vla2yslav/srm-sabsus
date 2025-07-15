@@ -1,8 +1,9 @@
 import { styled } from "styled-components";
 
 export const AllinOneSRMContainer = styled.div`
-  margin-top: 150px;
-  margin: 0 auto;
+ margin: 0 auto;
+  margin-top: 100px;
+ 
   /* Фікс для Safari - запобігає зламу верстки при скролі */
   -webkit-overflow-scrolling: touch;
 

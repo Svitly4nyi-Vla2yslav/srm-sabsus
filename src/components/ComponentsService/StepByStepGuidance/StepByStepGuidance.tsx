@@ -5,7 +5,7 @@ import Cassette from '../../../assets/icons/Costomer/Videocassette.svg';
 import logo from '../../../assets/icons/logo-srm.svg';
 import Tools from '../../../assets/icons/Toolbar Group.svg';
 import point from '../../../assets/icons/Traffic Lights (Big Sur).svg';
-import video from '../../../assets/icons/Costomer/66309272b77efe8e45161878_66505b355becabec00a9e7ca_done_homepage_map-transcode (1).mp4';
+import video from '../../../assets/video/GloryToUkraine.webm';
 import BackgroundImage from '../../../assets/icons/Costomer/VideoBackground.png';
 import ControlFast from '../../../assets/icons/Costomer/Seconadry Buttons copy.svg';
 import ControlRewind from '../../../assets/icons/Costomer/Seconadry Buttons.svg';
@@ -338,9 +338,15 @@ export const ControlIcon = styled.img`
   }
 `;
 
+const VideoHoverWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
 const StepByStepGuidance: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isHovered, setIsHovered] = useState(false); // Додаємо стан для відстеження hover
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -397,23 +403,36 @@ const StepByStepGuidance: React.FC = () => {
           <LogoImage src={logo} alt="Logo" />
           <ToolGroup src={Tools} alt="Tools" />
         </SlideHeader>
-        <VideoWrapper>
-          <StyledVideo ref={videoRef} poster={BackgroundImage} controls>
-            <source src={video} type="video/mp4" />
-            Ваш браузер не підтримує відео.
-          </StyledVideo>
-          <VideoControls>
-            <ControlButton onClick={() => seek(-15)}>
-              <ControlIcon src={ControlRewind} />
-            </ControlButton>
-            <ControlButtonPlay onClick={togglePlay}>
-              {isPlaying ? '⏸' : '▶'}
-            </ControlButtonPlay>
-            <ControlButton onClick={() => seek(15)}>
-              <ControlIcon src={ControlFast} />
-            </ControlButton>
-          </VideoControls>
-        </VideoWrapper>
+        <VideoHoverWrapper
+          onMouseEnter={() => setIsHovered(true)} // Встановлюємо стан при наведенні
+          onMouseLeave={() => setIsHovered(false)} // Скидаємо стан при відведенні
+        >
+          <VideoWrapper>
+            <StyledVideo 
+              ref={videoRef} 
+              poster={BackgroundImage} 
+              controls={true} // Вимкнути стандартні елементи керування
+            >
+              <source src={video} type="video/mp4" />
+              Ваш браузер не підтримує відео.
+            </StyledVideo>
+            
+            {/* Умовний рендеринг елементів керування */}
+            {isHovered && (
+              <VideoControls>
+                <ControlButton onClick={() => seek(-15)}>
+                  <ControlIcon src={ControlRewind} />
+                </ControlButton>
+                <ControlButtonPlay onClick={togglePlay}>
+                  {isPlaying ? '⏸' : '▶'}
+                </ControlButtonPlay>
+                <ControlButton onClick={() => seek(15)}>
+                  <ControlIcon src={ControlFast} />
+                </ControlButton>
+              </VideoControls>
+            )}
+          </VideoWrapper>
+        </VideoHoverWrapper>
       </HeaderContainer>
     </StepWrapp>
   );

@@ -1,26 +1,19 @@
 import React from 'react';
 
-import {
-  WorkContainer,
-  WorkPhotoWrapp,
-  WorkTitel,
-  WorkTitelContainer,
-} from './ServicePages.styled';
-
-import { Border } from '../../components/Footer/Footer.styled';
-
-
+import { HomeContainer } from '../HomePage/HomePage.styled';
+import AllinOneSRM from '../../components/AllinOneSRM/AllinOneSRM';
+import Frequently from '../../components/ComponentsService/Frequently/Frequently';
+import Feedback from '../../components/Feedback/Feedback';
+import StartSmall from '../../components/StartSmall/StartSmall';
 
 const Work: React.FC = () => {
   return (
-    <WorkContainer>
-      <WorkTitelContainer>
-        <WorkTitel>WORK</WorkTitel>
-      </WorkTitelContainer>
-
-      <WorkPhotoWrapp></WorkPhotoWrapp>
-      <Border />
-    </WorkContainer>
+    <HomeContainer>
+      <AllinOneSRM />
+      <Frequently />
+      <Feedback />
+      <StartSmall />
+    </HomeContainer>
   );
 };
 
