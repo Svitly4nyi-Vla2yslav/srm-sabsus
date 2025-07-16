@@ -72,7 +72,7 @@ const Header: React.FC = () => {
 
             <NavItem
               // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-              // style={{ pointerEvents: 'none', opacity: 0.5 }}
+              style={{ pointerEvents: 'none', opacity: 0.5 }}
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
               onClick={toggleServicesMenu}
