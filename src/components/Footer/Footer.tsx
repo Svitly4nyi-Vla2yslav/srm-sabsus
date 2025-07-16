@@ -78,25 +78,25 @@ const Footer: React.FC = () => {
             </Container>
             <Container>
               <WraperLink>{t('footer.sections.product')}</WraperLink>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://srm-sabsus.netlify.app/service/customer-experience" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.customerExperience')}
               </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://srm-sabsus.netlify.app/service/pos-staff-operations" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.posStaff')}
               </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://srm-sabsus.netlify.app/service/kitchen-fulfillment" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.kitchen')}
               </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://srm-sabsus.netlify.app/service/inventory-warehousing" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.inventory')}
               </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://srm-sabsus.netlify.app/service/analytics-management" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.analytics')}
               </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://srm-sabsus.netlify.app/service/marketing-customization" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.marketing')}
               </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://srm-sabsus.netlify.app/service/integration-scaling" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.integration')}
               </Link>
             </Container>
@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
             <Container>
               {' '}
               <WraperLink>{t('footer.sections.company')}</WraperLink>
-              <Link href="https://srm-sabsus.netlify.app/service/customer-experience" target="_blank" rel="noopener noreferrer">
+              <Link href="https://srm-sabsus.netlify.app/service" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.ourServices')}
               </Link>
               <Link href="#" target="_blank" rel="noopener noreferrer">
