@@ -67,7 +67,6 @@ export const Container = styled.div`
       z-index: 1;
       object-fit: cover;
       pointer-events: auto;
-      // filter: blur(0.5px);
       overflow: visible;
     }
   }
@@ -148,9 +147,11 @@ const FallbackImage = () => {
     </div>
   );
 };
+
 const Hero: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 767px)');
   const { t } = useTranslation();
+
   return (
     <HeroWrapper style={{ marginTop: 250 }}>
       <Container>
@@ -182,7 +183,8 @@ const Hero: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            Terminal Control <CardButtonText src={Control} alt="💰" />
+            {t('terminalControlSection.title')}{' '}
+            <CardButtonText src={Control} alt="💰" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -191,8 +193,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
-          <HeroTitle>Simplify shifts with smarter POS and role tools</HeroTitle>
+          <HeroTitle>{t('terminalControlSection.heading')}</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -200,21 +201,24 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.5, delay: 0.9 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
           <ButtonContainer>
             <a
               href="https://sabsus.app/registrcompany/web"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
+              <HeroButton>
+                {t('terminalControlSection.buttons.tryFree')}
+              </HeroButton>
             </a>
             <a
               href="https://sabsus.app/login/demo@sabsus.com/demo2025"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>{t('hero.buttons.viewDemo')}</HeroButtonGrey>
+              <HeroButtonGrey>
+                {t('terminalControlSection.buttons.viewDemo')}
+              </HeroButtonGrey>
             </a>
           </ButtonContainer>
         </motion.div>

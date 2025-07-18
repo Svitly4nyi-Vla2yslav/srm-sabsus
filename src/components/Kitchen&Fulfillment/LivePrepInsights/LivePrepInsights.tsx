@@ -4,10 +4,11 @@ import { styled } from 'styled-components';
 import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
 import LinieBackground from '../../../assets/icons/Kitchen/iPadMini.png';
+import { useTranslation } from 'react-i18next';
 
 export const LifeWrapper = styled(motion.div)`
   display: flex;
-  padding: 0 16px; /* або 24px — на твій смак */
+  padding: 0 16px;
   max-width: 1440px;
   margin: 0 auto;
   flex-direction: column;
@@ -49,11 +50,6 @@ export const LifeMainText = styled(motion.p)`
   );
   align-items: center;
   will-change: transform, opacity;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const LifeMainTitle = styled(motion.h2)`
@@ -71,11 +67,12 @@ export const LifeMainTitle = styled(motion.h2)`
   }
 
   @media screen and (min-width: 1440px) {
-   max-width: 630px;
+    max-width: 630px;
     width: 100%;
     margin: 0 auto 26px;
     display: flex;
-text-align: start;
+    text-align: start;
+  }
 `;
 
 export const LifeMainTextDescription = styled(motion.p)`
@@ -135,7 +132,7 @@ export const LifeContainer = styled.div`
 
   @media screen and (min-width: 1440px) {
     margin-bottom: 609px;
-    width: 100%; // ✅ НЕ 100vw
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -150,6 +147,7 @@ export const ImageAnimationWrapp = styled.div`
   height: 354px;
   transform: translate(-50%, -50%);
   overflow: visible;
+
   @media screen and (min-width: 768px) {
     top: 60%;
     width: 700px;
@@ -170,11 +168,6 @@ export const Linie = styled(motion.img)`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const GlowEffect = styled(motion.div)`
@@ -191,15 +184,11 @@ export const GlowEffect = styled(motion.div)`
   opacity: 0;
   border-radius: 50%;
   pointer-events: none;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const LivePrepInsights: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <LifeWrapper>
       <LifeContainer>
@@ -210,7 +199,7 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainText>
-            Live Prep Insights
+            {t('kitchenPrepInsights1.title')}
             <CardButtonText src={rocket} alt="🚀" />
           </LifeMainText>
         </motion.div>
@@ -220,7 +209,7 @@ const LivePrepInsights: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <LifeMainTitle>Precision and speed from prep to plate</LifeMainTitle>
+          <LifeMainTitle>{t('kitchenPrepInsights1.heading')}</LifeMainTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -229,15 +218,12 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainTextDescription>
-            Track real-time cooking progress across all stations with synced
-            kitchen displays. Each order flows through clear stages — prep,
-            cook, serve — with glowing indicators.
+            {t('kitchenPrepInsights1.description')}
           </LifeMainTextDescription>
         </motion.div>
       </LifeContainer>
 
       <ImageAnimationWrapp>
-        {/* Фонові лінії */}
         <Linie
           src={LinieBackground}
           alt="background lines"
@@ -252,9 +238,6 @@ const LivePrepInsights: React.FC = () => {
           }}
         />
 
-        {/* Перший телефон */}
-
-        {/* Додатковий ефект світіння */}
         <GlowEffect
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1.2, opacity: 0.3 }}
@@ -268,9 +251,7 @@ const LivePrepInsights: React.FC = () => {
       </ImageAnimationWrapp>
 
       <LifeMainTextDescriptionDown>
-        Timers, alerts, and zone assignments make sure every dish is ready
-        exactly when it should be. Designed to reduce chaos and maximize
-        performance.
+        {t('kitchenPrepInsights1.footerText')}
       </LifeMainTextDescriptionDown>
     </LifeWrapper>
   );

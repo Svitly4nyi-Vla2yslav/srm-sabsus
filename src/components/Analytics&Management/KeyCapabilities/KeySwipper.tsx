@@ -14,6 +14,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
 
 export const SwiperContainer = styled(motion.div)`
   margin: 0 auto;
@@ -114,6 +115,7 @@ export const TextCard = styled.p`
 
 const KeySwipper: React.FC = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const { t } = useTranslation();
 
   const getCardAnimation = (index: number) => {
     switch (index) {
@@ -161,50 +163,50 @@ const KeySwipper: React.FC = () => {
     {
       id: 1,
       imageUrl: keys,
-      title: 'Sales Overview',
-      text: 'Track daily sales performance by order type. Compare delivery, dine-in, and pickup at a glance.',
+      title: t('keyCapabilitiesSection.cards.card1.title'),
+      text: t('keyCapabilitiesSection.cards.card1.text'),
     },
     {
       id: 2,
       imageUrl: keys1,
-      title: 'Employee Performance',
-      text: 'Visual breakdown of staff productivity. Filter by role, time period, or venue.',
+      title: t('keyCapabilitiesSection.cards.card2.title'),
+      text: t('keyCapabilitiesSection.cards.card2.text'),
     },
     {
       id: 3,
       imageUrl: keys2,
-      title: 'Payment Method Insights',
-      text: 'Analyze how customers pay. Helps optimize processor choices and lower costs.',
+      title: t('keyCapabilitiesSection.cards.card3.title'),
+      text: t('keyCapabilitiesSection.cards.card3.text'),
     },
     {
       id: 4,
       imageUrl: keys3,
-      title: 'Shift Reports',
-      text: 'Each day ends with auto-generated reports. Includes cash counts, tips, and reconciliations.',
+      title: t('keyCapabilitiesSection.cards.card4.title'),
+      text: t('keyCapabilitiesSection.cards.card4.text'),
     },
     {
       id: 5,
       imageUrl: keys4,
-      title: 'Order Flow Analysis',
-      text: 'See how orders move through your system. Helps detect bottlenecks in prep or handoff.',
+      title: t('keyCapabilitiesSection.cards.card5.title'),
+      text: t('keyCapabilitiesSection.cards.card5.text'),
     },
     {
       id: 6,
       imageUrl: keys5,
-      title: 'Forecasting Tools',
-      text: 'Predict future demand using historical data. Adjust staffing and stock accordingly.',
+      title: t('keyCapabilitiesSection.cards.card6.title'),
+      text: t('keyCapabilitiesSection.cards.card6.text'),
     },
     {
       id: 7,
       imageUrl: keys6,
-      title: 'Tax & Legal',
-      text: 'Automatically generate reports for tax compliance. Set up VAT, tips, service charges.',
+      title: t('keyCapabilitiesSection.cards.card7.title'),
+      text: t('keyCapabilitiesSection.cards.card7.text'),
     },
     {
       id: 8,
       imageUrl: keys7,
-      title: 'AI Suggestions',
-      text: 'Get improvement tips based on customer behavior. From pricing to prep timing.',
+      title: t('keyCapabilitiesSection.cards.card8.title'),
+      text: t('keyCapabilitiesSection.cards.card8.text'),
     },
   ];
 

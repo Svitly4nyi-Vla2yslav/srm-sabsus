@@ -212,7 +212,7 @@ const Hero: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            Brand Engine
+            {t('brandEngineHero.innovativeText')}
             <CardButtonText src={Control} alt="💰" />
           </HeroInnovative>
         </motion.div>
@@ -222,8 +222,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
-          <HeroTitle>Manage campaigns and loyalty, control identity</HeroTitle>
+          <HeroTitle>{t('brandEngineHero.title')}</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -237,14 +236,14 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
+              <HeroButton>{t('brandEngineHero.buttons.tryFree')}</HeroButton>
             </a>
             <a
               href="https://sabsus.app/login/demo@sabsus.com/demo2025"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>{t('hero.buttons.viewDemo')}</HeroButtonGrey>
+              <HeroButtonGrey>{t('brandEngineHero.buttons.viewDemo')}</HeroButtonGrey>
             </a>
           </ButtonContainer>
         </motion.div>

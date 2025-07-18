@@ -14,6 +14,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
 
 export const SwiperContainer = styled(motion.div)`
   margin: 0 auto;
@@ -51,8 +52,6 @@ export const CardContainer = styled(motion.div)`
     margin: 0 auto;
     justify-content: center;
   }
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const Card = styled.div`
@@ -62,8 +61,8 @@ export const Card = styled.div`
   border: 1px solid #212121;
   border-radius: 24px;
   padding: 20px;
-  width: 100%; /* Змінюємо фіксовану ширину на 100% */
-  max-width: 311px; /* Додаємо максимальну ширину */
+  width: 100%;
+  max-width: 311px;
   height: 350px;
   backdrop-filter: blur(16px);
   box-shadow:
@@ -78,7 +77,7 @@ export const Card = styled.div`
     box-shadow 0.3s ease;
   gap: 10px;
   align-items: flex-start;
-  margin: 0 auto; /* Центруємо картку */
+  margin: 0 auto;
   justify-content: center;
 
   @media screen and (min-width: 1440px) {
@@ -90,7 +89,7 @@ export const Icon = styled.img`
   filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.7));
   transition: filter 0.3s ease;
   width: 199px;
-height: 199px;
+  height: 199px;
   
   &:hover {
     filter: drop-shadow(0 0 30px rgba(138, 43, 226, 1.7));
@@ -114,6 +113,7 @@ export const TextCard = styled.p`
 
 const KeySwipper: React.FC = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const { t } = useTranslation();
 
   const getCardAnimation = (index: number) => {
     switch (index) {
@@ -121,91 +121,51 @@ const KeySwipper: React.FC = () => {
         return {
           initial: { x: -100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        };
       case 1:
         return {
           initial: { x: 100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        };
       case 2:
         return {
           initial: { x: -100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        };
       case 3:
         return {
           initial: { scale: 0.5, opacity: 0 },
           whileInView: { scale: 1, opacity: 1 },
-        }; // zoom-in
+        };
       case 4:
         return {
           initial: { x: 100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        };
       case 5:
         return {
           initial: { x: -100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        };
       case 6:
         return {
           initial: { x: 100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        };
       default:
         return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
   };
 
   const keyItems = [
-    {
-      id: 1,
-      imageUrl: keys,
-      title: 'Ingredient Tracking',
-      text: "Monitor product from supplier to storage. Minimize spoilage and waste with automation.",
-    },
-    {
-      id: 2,
-      imageUrl: keys1,
-      title: 'Stock Levels',
-      text: 'Overview of inventory across locations for ingredients, packaging, and semi-finished goods.',
-    },
-    {
-      id: 3,
-      imageUrl: keys2,
-      title: 'Transfers Between Warehouses',
-      text: 'Move stock with full digital paperwork. Keep inventory balanced across venues.',
-    },
-    {
-      id: 4,
-      imageUrl: keys3,
-      title: 'Smart Categorization',
-      text: 'Tag items by category, supplier, expiration, and more. Fast filtering and search anytime.',
-    },
-    {
-      id: 5,
-      imageUrl: keys4,
-      title: 'Supply Deliveries',
-      text: 'Log new deliveries, match invoices, update quantities. Works seamlessly with purchase orders.',
-    },
-    {
-      id: 6,
-      imageUrl: keys5,
-      title: 'Waste Management',
-      text: 'Mark spoiled or expired items with reason codes. Improves analytics and ordering habits.',
-    },
-    {
-      id: 7,
-      imageUrl: keys6,
-      title: 'Cost of Goods Calculation',
-      text: 'Automatic COGS updates based on purchase prices. Helps determine accurate margins per item.',
-    },
-    {
-      id: 8,
-      imageUrl: keys7,
-      title: 'Ingredient Bundling',
-      text: 'Create prep kits and semi-finished components. Ideal for pizza doughs, sauces, etc.',
-    },
+    { id: 1, imageUrl: keys, key: 'ingredientTracking' },
+    { id: 2, imageUrl: keys1, key: 'stockLevels' },
+    { id: 3, imageUrl: keys2, key: 'warehouseTransfers' },
+    { id: 4, imageUrl: keys3, key: 'smartCategorization' },
+    { id: 5, imageUrl: keys4, key: 'supplyDeliveries' },
+    { id: 6, imageUrl: keys5, key: 'wasteManagement' },
+    { id: 7, imageUrl: keys6, key: 'costCalculation' },
+    { id: 8, imageUrl: keys7, key: 'ingredientBundling' },
   ];
 
   const shouldLoop = true;
@@ -218,14 +178,13 @@ const KeySwipper: React.FC = () => {
       whileInView="show"
       viewport={{ once: false, amount: 0.2 }}
     >
-      {isMobile && (
+      {isMobile ? (
         <motion.div>
-          {/* <ShadowLeft /> */}
           <Swiper
             loop={shouldLoop}
             slidesPerView={slidesPerView}
             spaceBetween={6}
-            centeredSlides={false} // Центрування активного слайда
+            centeredSlides={false}
             autoplay={{
               delay: 1000,
               disableOnInteraction: false,
@@ -238,17 +197,22 @@ const KeySwipper: React.FC = () => {
             {keyItems.map(item => (
               <SwiperSlide key={item.id}>
                 <Card>
-                  <Icon src={item.imageUrl} alt={item.title} />
-                  <TitleCard>{item.title}</TitleCard>
-                  <TextCard>{item.text}</TextCard>
+                  <Icon
+                    src={item.imageUrl}
+                    alt={t(`inventoryKeyFeatures.cards.${item.key}.title`)}
+                  />
+                  <TitleCard>
+                    {t(`inventoryKeyFeatures.cards.${item.key}.title`)}
+                  </TitleCard>
+                  <TextCard>
+                    {t(`inventoryKeyFeatures.cards.${item.key}.text`)}
+                  </TextCard>
                 </Card>
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* <ShadowRight /> */}
         </motion.div>
-      )}
-      {!isMobile && (
+      ) : (
         <CardContainer>
           {keyItems.map((item, index) => (
             <Card
@@ -258,24 +222,30 @@ const KeySwipper: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              {' '}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.25 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <Icon src={item.imageUrl} alt={item.title} />{' '}
-              </motion.div>{' '}
+                <Icon
+                  src={item.imageUrl}
+                  alt={t(`inventoryKeyFeatures.cards.${item.key}.title`)}
+                />
+              </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <TitleCard>{item.title}</TitleCard>{' '}
+                <TitleCard>
+                  {t(`inventoryKeyFeatures.cards.${item.key}.title`)}
+                </TitleCard>
               </motion.div>
-              <TextCard>{item.text}</TextCard>
+              <TextCard>
+                {t(`inventoryKeyFeatures.cards.${item.key}.text`)}
+              </TextCard>
             </Card>
           ))}
         </CardContainer>

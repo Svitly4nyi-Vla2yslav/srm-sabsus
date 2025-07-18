@@ -4,6 +4,7 @@ import { styled } from 'styled-components';
 import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
 import LinieBackground from '../../../assets/icons/Marketing&Customization/Galaxy Tab S8 Ultra.png';
+import { useTranslation } from 'react-i18next';
 
 export const LifeWrapper = styled(motion.div)`
   display: flex;
@@ -200,6 +201,8 @@ export const GlowEffect = styled(motion.div)`
 `;
 
 const LivePrepInsights: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <LifeWrapper>
       <LifeContainer>
@@ -210,7 +213,7 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainText>
-            Live Prep Insights
+            {t('marketingLivePrep.header.title')}
             <CardButtonText src={rocket} alt="🚀" />
           </LifeMainText>
         </motion.div>
@@ -220,7 +223,9 @@ const LivePrepInsights: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <LifeMainTitle>Create campaigns. Customize UX.</LifeMainTitle>
+          <LifeMainTitle>
+            {t('marketingLivePrep.header.mainHeading')}
+          </LifeMainTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -229,15 +234,12 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainTextDescription>
-            Reach your customers via push, email, SMS, and in-app banners.
-            Localize every detail — from text to currency — and match the entire
-            UI to your brand identity.
+            {t('marketingLivePrep.header.description')}
           </LifeMainTextDescription>
         </motion.div>
       </LifeContainer>
 
       <ImageAnimationWrapp>
-        {/* Фонові лінії */}
         <Linie
           src={LinieBackground}
           alt="background lines"
@@ -251,10 +253,6 @@ const LivePrepInsights: React.FC = () => {
             delay: 0.5,
           }}
         />
-
-        {/* Перший телефон */}
-
-        {/* Додатковий ефект світіння */}
         <GlowEffect
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1.2, opacity: 0.3 }}
@@ -268,8 +266,7 @@ const LivePrepInsights: React.FC = () => {
       </ImageAnimationWrapp>
 
       <LifeMainTextDescriptionDown>
-        Birthday rewards, promo automations, and banner editing boost retention
-        and brand consistency. One dashboard, full control.
+        {t('marketingLivePrep.header.additionalDescription')}
       </LifeMainTextDescriptionDown>
     </LifeWrapper>
   );

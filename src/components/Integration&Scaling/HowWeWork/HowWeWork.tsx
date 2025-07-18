@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
+import { useTranslation } from 'react-i18next';
 
 export const HowWeWorkWrapper = styled.div`
   display: flex;
@@ -389,55 +390,17 @@ export const MobileDivider = styled.div`
 `;
 
 const HowWeWork: React.FC = () => {
+  const { t } = useTranslation();
+
   const cards = [
-    {
-      id: '1',
-      text: 'One-click integrations',
-      description:
-        'Seamlessly connect with payment gateways, delivery platforms (like UberEats), printers, and more — no coding required.',
-    },
-    {
-      id: '2',
-      text: 'Open API access',
-      description:
-        'Build custom features, sync with external tools, or create new workflows — the platform is developer-ready.',
-    },
-    {
-      id: '3',
-      text: 'Multivenue management',
-      description:
-        'Add and manage multiple stores, restaurants, or warehouses under one dashboard — each with unique settings.',
-    },
-    {
-      id: '4',
-      text: 'Role-based access & permissions',
-      description:
-        'Create roles for staff, couriers, suppliers, or marketers — each with tailored permissions and visibility.',
-    },
-    {
-      id: '5',
-      text: 'Domain & SSL configuration',
-      description:
-        'Set up your own domain name and enable secure HTTPS with ease — ideal for branded web portals.',
-    },
-    {
-      id: '6',
-      text: 'Offline mode',
-      description:
-        'Run operations without internet — process payments, print receipts, and sync data when connection is restored.',
-    },
-    {
-      id: '7',
-      text: 'Responsive design',
-      description:
-        'Access everything from desktop, tablet, or mobile — built to work perfectly across all devices.',
-    },
-    {
-      id: '8',
-      text: 'Scalable infrastructure',
-      description:
-        'Whether it’s one venue or one hundred, the system adapts without performance drops or extra complexity.',
-    },
+    { id: '1', key: 'oneClick' },
+    { id: '2', key: 'openApi' },
+    { id: '3', key: 'multivenue' },
+    { id: '4', key: 'roleAccess' },
+    { id: '5', key: 'domainConfig' },
+    { id: '6', key: 'offlineMode' },
+    { id: '7', key: 'responsiveDesign' },
+    { id: '8', key: 'scalableInfra' },
   ];
 
   const getCardAnimation = (index: number) => {
@@ -446,37 +409,37 @@ const HowWeWork: React.FC = () => {
         return {
           initial: { x: -100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        };
       case 1:
         return {
           initial: { x: 100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        };
       case 2:
         return {
           initial: { x: -100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        };
       case 3:
         return {
           initial: { scale: 0.5, opacity: 0 },
           whileInView: { scale: 1, opacity: 1 },
-        }; // zoom-in
+        };
       case 4:
         return {
           initial: { x: 100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        };
       case 5:
         return {
           initial: { x: -100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        };
       case 6:
         return {
           initial: { x: 100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        };
       default:
         return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
@@ -484,7 +447,6 @@ const HowWeWork: React.FC = () => {
 
   return (
     <HowWeWorkWrapper>
-      {' '}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -492,7 +454,8 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainText>
-          How We Work <HowSpanIcon src={rocket} alt="Icon" />
+          {t('integrationScalingSection.title')}{' '}
+          <HowSpanIcon src={rocket} alt="Icon" />
         </HowWeWorkMainText>
       </motion.div>
       <HowWeWorkMainid
@@ -501,7 +464,7 @@ const HowWeWork: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        Expand without limits
+        {t('integrationScalingSection.heading')}
       </HowWeWorkMainid>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -510,8 +473,7 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainTextDescription>
-          Connect services, scale operations, and adapt the system to any size
-          or geography — all with zero friction.
+          {t('integrationScalingSection.description')}
         </HowWeWorkMainTextDescription>
       </motion.div>
       <HowWeWorkContainer>
@@ -523,7 +485,6 @@ const HowWeWork: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              {' '}
               <MobileDivider />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -539,7 +500,9 @@ const HowWeWork: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <CardText>{card.text}</CardText>
+                <CardText>
+                  {t(`integrationScalingSection.cards.${card.key}.title`)}
+                </CardText>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -547,8 +510,10 @@ const HowWeWork: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.25 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <CardDescription>{card.description}</CardDescription>
-              </motion.div>{' '}
+                <CardDescription>
+                  {t(`integrationScalingSection.cards.${card.key}.desc`)}
+                </CardDescription>
+              </motion.div>
               <MobileDivider />
             </Card>
           </React.Fragment>

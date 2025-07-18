@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
+import { useTranslation } from 'react-i18next';
 
 export const HowWeWorkWrapper = styled.div`
   display: flex;
@@ -389,57 +390,50 @@ export const MobileDivider = styled.div`
 `;
 
 const HowWeWork: React.FC = () => {
+  const { t } = useTranslation();
+
   const cards = [
     {
       id: '1',
-      text: 'Dashboard with real metrics',
-      description:
-        'Track revenue, active orders, customer counts, and employee performance — all in one customizable view.',
+      text: t('howWeWorkSection.cards.card1.title'),
+      description: t('howWeWorkSection.cards.card1.description'),
     },
     {
       id: '2',
-      text: 'Time-based analytics',
-      description:
-        'Break down results by hour, day, week, or custom date range. Spot peak hours and downtime.',
+      text: t('howWeWorkSection.cards.card2.title'),
+      description: t('howWeWorkSection.cards.card2.description'),
     },
     {
       id: '3',
-      text: 'Order insights',
-      description:
-        'Analyze average check size, top-selling items, conversion rates, and ordering behavior by platform or channel.',
+      text: t('howWeWorkSection.cards.card3.title'),
+      description: t('howWeWorkSection.cards.card3.description'),
     },
     {
       id: '4',
-      text: 'Cost & revenue structure',
-      description:
-        'Compare income vs expenses by source: dine-in, delivery, self-service, etc. Add manual inputs for cashflow tracking.',
+      text: t('howWeWorkSection.cards.card4.title'),
+      description: t('howWeWorkSection.cards.card4.description'),
     },
     {
       id: '5',
-      text: 'Staff productivity',
-      description:
-        'Measure employee output: orders handled, hours worked, speed of service, and customer feedback.',
+      text: t('howWeWorkSection.cards.card5.title'),
+      description: t('howWeWorkSection.cards.card5.description'),
     },
     {
       id: '6',
-      text: 'Location comparison',
-      description:
-        'Compare performance across multiple venues or kitchens. Spot weak spots and replicate success.',
+      text: t('howWeWorkSection.cards.card6.title'),
+      description: t('howWeWorkSection.cards.card6.description'),
     },
     {
       id: '7',
-      text: 'Automated reporting',
-      description:
-        'Receive scheduled reports by email or export data anytime. Share with stakeholders or accounting teams.',
+      text: t('howWeWorkSection.cards.card7.title'),
+      description: t('howWeWorkSection.cards.card7.description'),
     },
     {
       id: '8',
-      text: 'AI-powered forecasts',
-      description:
-        'Use AI to predict demand, recommend price adjustments, and spot emerging trends in customer behavior.',
+      text: t('howWeWorkSection.cards.card8.title'),
+      description: t('howWeWorkSection.cards.card8.description'),
     },
   ];
-
   const getCardAnimation = (index: number) => {
     switch (index) {
       case 0:
@@ -484,7 +478,6 @@ const HowWeWork: React.FC = () => {
 
   return (
     <HowWeWorkWrapper>
-      {' '}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -492,7 +485,8 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainText>
-          How We Work <HowSpanIcon src={rocket} alt="Icon" />
+          {t('howWeWorkSection.header.title')}{' '}
+          <HowSpanIcon src={rocket} alt="Icon" />
         </HowWeWorkMainText>
       </motion.div>
       <HowWeWorkMainid
@@ -501,7 +495,7 @@ const HowWeWork: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        From raw numbers to clear insights
+        {t('howWeWorkSection.header.mainHeading')}
       </HowWeWorkMainid>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -510,8 +504,7 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainTextDescription>
-          Monitor performance, improve decisions, and align your entire business
-          with what really moves the needle.
+          {t('howWeWorkSection.header.description')}
         </HowWeWorkMainTextDescription>
       </motion.div>
       <HowWeWorkContainer>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import X from '../../../assets/icons/Costomer/Icon-X.svg';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const FrequentlyWrapper = styled.div`
   display: flex;
@@ -191,86 +192,72 @@ const ContentContainer = styled.div`
 
 const Frequently: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const { t } = useTranslation();
+
   const toggleAnswer = (index: number) => {
     setActiveIndex(prev => (prev === index ? null : index));
   };
 
   const frequentlyQuestions = [
     {
-      question: 'What is SABSUS and what does it include?',
-      answer:
-        'SABSUS is an all-in-one ecosystem for restaurants, cafés, bakeries, dark kitchens, and retail.Included in every plan:\n\n POS system \n\n CRM & loyalty \n\n Warehouse & ingredients management \n\n Delivery with zone pricing \n\n Finances, tips, salaries \n\n Real-time analytics & reports \n\n Order tracking & table layout \n\n Cloud infrastructure + multilingual support \n\n Web and mobile apps',
+      question: t('faqSection.questions.q1.question'),
+      answer: t('faqSection.questions.q1.answer'),
     },
     {
-      question: 'Do I need to install any hardware?',
-      answer:
-        'No. SABSUS runs in any browser and on any device:\n\nTablets (Android/iOS) \n\n Desktops, POS terminals \n\n Smartphones:\n\n All interfaces are responsive and touch-optimized.',
+      question: t('faqSection.questions.q2.question'),
+      answer: t('faqSection.questions.q2.answer'),
     },
     {
-      question: 'How is SABSUS different from other POS/CRM solutions?',
-      answer:
-        'Most systems give you 1–2 modules. We give you everything:\n\n Full cycle from order to delivery \n\n Loyalty, feedback, barcode scanner \n\n Promotions, staff salaries, table maps \n\n Multi-language interfaces + AI-translations \n\n App + website under your brand (white-label option) \n\n No hidden fees, no commissions (unless you choose them).',
+      question: t('faqSection.questions.q3.question'),
+      answer: t('faqSection.questions.q3.answer'),
     },
     {
-      question: 'What’s the difference between SaaS and White-label plans?',
-      answer:
-        'SaaS Subscription  White-label Subscription \n\n Works under SABSUS brand  Branded app & website \n\n $89–289/mo  $249–899/mo \n\n No app store presence  Published on App Store & Google Play \n\n Common server  Separate server & database',
+      question: t('faqSection.questions.q4.question'),
+      answer: t('faqSection.questions.q4.answer'),
     },
     {
-      question: 'Can I buy the app instead of subscribing?',
-      answer:
-        'Yes. You can fully buy out the white-label app without any subscription.\n\n What you get: \n\n Lifetime license \n\n 1 year of updates and support \n\n Full control of your database & integrations \n\n $50/month optional maintenance after 1 year \n\n Prices start from: \n\n $14,000 (1 venue, 1 language) \n\n $25,000 (up to 3 venues, 2 languages)\n\n$35,000 (up to 10 venues, all languages)',
+      question: t('faqSection.questions.q5.question'),
+      answer: t('faqSection.questions.q5.answer'),
     },
     {
-      question: 'Are future updates included in the lifetime model?',
-      answer:
-        'Yes — the first year is included.\n\n After that, updates and support are available at a fixed price of $50/month.\n\n You are not forced to update if you don’t want to.',
+      question: t('faqSection.questions.q6.question'),
+      answer: t('faqSection.questions.q6.answer'),
     },
     {
-      question: 'Can I migrate my existing data from other POS/CRM systems?',
-      answer:
-        'Yes. We provide data import tools or help you migrate from systems like Square, Toast, Loyverse, Poster, iiko, and others.',
+      question: t('faqSection.questions.q7.question'),
+      answer: t('faqSection.questions.q7.answer'),
     },
     {
-      question: 'What languages are supported?',
-      answer:
-        'Currently: \n\n ✅ English \n\n ✅ Spanish \n\n ✅ Russian \n\n ✅ Ukrainian \n\n The system auto-switches based on user preference. White-label apps can be locked to 1–4 languages depending on plan.',
+      question: t('faqSection.questions.q8.question'),
+      answer: t('faqSection.questions.q8.answer'),
     },
     {
-      question: 'How do I manage multiple locations or brands?',
-      answer:
-        'SABSUS is built for this: \n\nCentralized dashboards \n\nCustom tax & menu per location \n\nAnalytics and staff per venue \n\n Inventory sync with separate warehouse settings \n\n You can manage 1 to 100+ venues easily.',
+      question: t('faqSection.questions.q9.question'),
+      answer: t('faqSection.questions.q9.answer'),
     },
     {
-      question: 'What is the refund policy?',
-      answer:
-        'Monthly subscriptions can be canceled anytime. \n\nApp buyout and branding fees are non-refundable (as they include custom development, publication, and assets). \n\nWe recommend starting with a demo or 1-month subscription first.',
+      question: t('faqSection.questions.q10.question'),
+      answer: t('faqSection.questions.q10.answer'),
     },
     {
-      question: 'How secure is my data?',
-      answer:
-        'Hosted on Google Cloud / Supabase \n\nEncrypted backups \n\nStaff logs & permission controls \n\nGDPR/SOC2-ready infrastructure \n\nYou control your database (in white-label or buyout mode)',
+      question: t('faqSection.questions.q11.question'),
+      answer: t('faqSection.questions.q11.answer'),
     },
     {
-      question: 'What if my internet goes down?',
-      answer:
-        'SABSUS supports offline mode for POS operations. \n\nOrders and receipts sync automatically when the network is restored.',
+      question: t('faqSection.questions.q12.question'),
+      answer: t('faqSection.questions.q12.answer'),
     },
     {
-      question: 'Do you offer custom development or API access?',
-      answer:
-        'Yes: \n\nAPI available in white-label & buyout plans \n\nIntegration with Stripe, Telegram, Uber Eats, Google Maps, etc. \n\nYou can request features or pay for custom modules',
+      question: t('faqSection.questions.q13.question'),
+      answer: t('faqSection.questions.q13.answer'),
     },
     {
-      question:
-        'Can I connect external printers, card readers, or delivery aggregators?',
-      answer:
-        'Yes.\n\n Supported: \n\nStar, Epson, Sunmi, Payoneer, Stripe Terminals \n\nUber Eats (ready), Doordash (coming) \n\nSMS, email, and push integrations built-in',
+      question: t('faqSection.questions.q14.question'),
+      answer: t('faqSection.questions.q14.answer'),
     },
     {
-      question: 'How do I get started?',
-      answer:
-        'Choose your model: \n\n SaaS? → Start your subscription now \n\nWhite-label? → Submit brand + logo \n\nWant to buy it all? → Contact sales for one-time payment & ownership \n\nWe’ll take care of setup, publication, and onboarding.',
+      question: t('faqSection.questions.q15.question'),
+      answer: t('faqSection.questions.q15.answer'),
     },
   ];
 
@@ -283,7 +270,7 @@ const Frequently: React.FC = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <FrequentlyTitle>Frequently asked questions</FrequentlyTitle>
+          <FrequentlyTitle>{t('faqSection.title')}</FrequentlyTitle>
         </motion.div>
 
         <motion.div
@@ -292,9 +279,7 @@ const Frequently: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <FrequentlyText>
-            You’ve got questions. We’ve got honest answers.
-          </FrequentlyText>
+          <FrequentlyText>{t('faqSection.subtitle')}</FrequentlyText>
         </motion.div>
       </Container>
 

@@ -9,6 +9,7 @@ import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import dvd from '../../../assets/icons/Costomer/Dvd.svg';
 import KeySwipper from './KeySwipper';
 import { styled } from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 export const KeyWrapper = styled(motion.div)`
   margin: 0 auto;
@@ -33,6 +34,8 @@ export const KeyWrapper = styled(motion.div)`
 `;
 
 const Key: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <KeyWrapper>
       <motion.div
@@ -42,7 +45,7 @@ const Key: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <ResultMainText>
-          Key Capabilities <CardButtonText src={dvd} alt="" />
+          {t('keyCapabilitiesSection.header.title')} <CardButtonText src={dvd} alt="" />
         </ResultMainText>
       </motion.div>
 
@@ -52,10 +55,7 @@ const Key: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        <ResultMainTitle>
-          See the big picture
-          <br /> And the small ones
-        </ResultMainTitle>
+        <ResultMainTitle dangerouslySetInnerHTML={{ __html: t('keyCapabilitiesSection.header.mainHeading') }} />
       </motion.div>
 
       <motion.div
@@ -64,10 +64,7 @@ const Key: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        <ResultMainTextDescription>
-          Smart reports by time, staff, category or order type. Real-time stats.{' '}
-          <br /> Tax-ready exports.
-        </ResultMainTextDescription>
+        <ResultMainTextDescription dangerouslySetInnerHTML={{ __html: t('keyCapabilitiesSection.header.description') }} />
       </motion.div>
       <KeySwipper />
     </KeyWrapper>

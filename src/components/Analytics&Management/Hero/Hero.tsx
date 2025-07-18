@@ -197,7 +197,8 @@ const Hero: React.FC = () => {
           }}
         >
           <HeroInnovative>
-           Performance Hub<CardButtonText src={Control} alt="💰" />
+            {t('performanceHubHero.innovativeText')}
+            <CardButtonText src={Control} alt="💰" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -206,8 +207,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
-          <HeroTitle>Make confident decisions with real-time insights.</HeroTitle>
+          <HeroTitle>{t('performanceHubHero.title')}</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -215,21 +215,20 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.5, delay: 0.9 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
           <ButtonContainer>
             <a
               href="https://sabsus.app/registrcompany/web"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
+              <HeroButton>{t('performanceHubHero.buttons.tryFree')}</HeroButton>
             </a>
             <a
               href="https://sabsus.app/login/demo@sabsus.com/demo2025"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>{t('hero.buttons.viewDemo')}</HeroButtonGrey>
+              <HeroButtonGrey>{t('performanceHubHero.buttons.viewDemo')}</HeroButtonGrey>
             </a>
           </ButtonContainer>
         </motion.div>

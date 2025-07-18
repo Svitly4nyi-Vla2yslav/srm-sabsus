@@ -9,7 +9,7 @@ import Feedback from '../../components/Feedback/Feedback';
 import ResultsFromBusinesses from '../../components/ResultsFromBusinesses/ResultsFromBusinesses';
 import StartSmall from '../../components/StartSmall/StartSmall';
 import WhyChooseOurPlatform from '../../components/WhyChooseOurPlatform/WhyChooseOurPlatform';
-import HowWeWork from '../../components/Inventory&Warehousing/HowWeWork/HowWeWork';
+import HowWeWork from '../../components/Analytics&Management/HowWeWork/HowWeWork';
 
 const AnalyticsManagement: React.FC = () => {
   return (

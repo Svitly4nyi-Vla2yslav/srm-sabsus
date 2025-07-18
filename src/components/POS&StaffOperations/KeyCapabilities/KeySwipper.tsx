@@ -14,6 +14,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
 
 export const SwiperContainer = styled(motion.div)`
   margin: 0 auto;
@@ -32,13 +33,12 @@ export const SwiperContainer = styled(motion.div)`
   }
 
   .swiper-slide {
-     padding: 0 0;
+    padding: 0 0;
     margin: 0 auto;
     width: 100vw !important;
     display: flex;
     justify-content: center;
     transition: transform 0.3s ease;
-  
   }
 `;
 
@@ -52,19 +52,17 @@ export const CardContainer = styled(motion.div)`
     margin: 0 auto;
     justify-content: center;
   }
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const Card = styled.div`
-   overflow: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   border: 1px solid #212121;
   border-radius: 24px;
   padding: 20px;
-  width: 100%; /* Змінюємо фіксовану ширину на 100% */
-  max-width: 311px; /* Додаємо максимальну ширину */
+  width: 100%;
+  max-width: 311px;
   height: 350px;
   backdrop-filter: blur(16px);
   box-shadow:
@@ -79,8 +77,8 @@ export const Card = styled.div`
     box-shadow 0.3s ease;
   gap: 10px;
   align-items: flex-start;
-  margin: 0 auto; /* Центруємо картку */
-      justify-content: center;
+  margin: 0 auto;
+  justify-content: center;
 
   @media screen and (min-width: 1440px) {
     width: 280px;
@@ -91,7 +89,7 @@ export const Icon = styled.img`
   filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.7));
   transition: filter 0.3s ease;
   width: 199px;
-height: 199px;
+  height: 199px;
   
   &:hover {
     filter: drop-shadow(0 0 30px rgba(138, 43, 226, 1.7));
@@ -115,98 +113,30 @@ export const TextCard = styled.p`
 
 const KeySwipper: React.FC = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const { t } = useTranslation();
 
   const getCardAnimation = (index: number) => {
     switch (index) {
-      case 0:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 1:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 2:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 3:
-        return {
-          initial: { scale: 0.5, opacity: 0 },
-          whileInView: { scale: 1, opacity: 1 },
-        }; // zoom-in
-      case 4:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 5:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 6:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      default:
-        return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
+      case 0: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 1: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 2: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 3: return { initial: { scale: 0.5, opacity: 0 }, whileInView: { scale: 1, opacity: 1 } };
+      case 4: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 5: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 6: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      default: return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
   };
 
   const keyItems = [
-    {
-      id: 1,
-      imageUrl: keys,
-      title: 'Branded Mobile App',
-      text: "Get a custom app with your brand's logo and colors. Great for user engagement and repeat orders.",
-    },
-    {
-      id: 2,
-      imageUrl: keys1,
-      title: 'Loyalty Programs',
-      text: 'Set up bonuses, cashback or discounts based on user activity.Build habits and retain your best.',
-    },
-    {
-      id: 3,
-      imageUrl: keys2,
-      title: 'Smart Delivery Options',
-      text: 'Choose from delivery, pickup, or dine-in. Auto-location and saved addresses included.',
-    },
-    {
-      id: 4,
-      imageUrl: keys3,
-      title: 'Push Notifications',
-      text: 'Send timely updates about orders, promos or new arrivals. Drive engagement and reduce no-shows.',
-    },
-    {
-      id: 5,
-      imageUrl: keys4,
-      title: 'Order History & Repeats',
-      text: 'Let users reorder in seconds from their past purchases. Track preferences for experience.',
-    },
-    {
-      id: 6,
-      imageUrl: keys5,
-      title: 'Table Reservations',
-      text: 'Book tables in advance with time slots and guest count. Reduce queues and optimize floor space.',
-    },
-    {
-      id: 7,
-      imageUrl: keys6,
-      title: 'Customer Feedback',
-      text: 'Collect reviews and ratings per order.Show you listen, and build trust.',
-    },
-    {
-      id: 8,
-      imageUrl: keys7,
-      title: 'Personal Account Area',
-      text: 'Manage orders, loyalty status, saved data, and preferences. A seamless all-in-one experience for users.',
-    },
+    { id: 1, imageUrl: keys, key: 'brandedMobileApp' },
+    { id: 2, imageUrl: keys1, key: 'loyaltyPrograms' },
+    { id: 3, imageUrl: keys2, key: 'smartDeliveryOptions' },
+    { id: 4, imageUrl: keys3, key: 'pushNotifications' },
+    { id: 5, imageUrl: keys4, key: 'orderHistoryRepeats' },
+    { id: 6, imageUrl: keys5, key: 'tableReservations' },
+    { id: 7, imageUrl: keys6, key: 'customerFeedback' },
+    { id: 8, imageUrl: keys7, key: 'personalAccountArea' },
   ];
 
   const shouldLoop = true;
@@ -219,14 +149,13 @@ const KeySwipper: React.FC = () => {
       whileInView="show"
       viewport={{ once: false, amount: 0.2 }}
     >
-      {isMobile && (
+      {isMobile ? (
         <motion.div>
-          {/* <ShadowLeft /> */}
           <Swiper
             loop={shouldLoop}
             slidesPerView={slidesPerView}
             spaceBetween={6}
-             centeredSlides={false} // Центрування активного слайда
+            centeredSlides={false}
             autoplay={{
               delay: 1000,
               disableOnInteraction: false,
@@ -239,17 +168,15 @@ const KeySwipper: React.FC = () => {
             {keyItems.map(item => (
               <SwiperSlide key={item.id}>
                 <Card>
-                  <Icon src={item.imageUrl} alt={item.title} />
-                  <TitleCard>{item.title}</TitleCard>
-                  <TextCard>{item.text}</TextCard>
+                  <Icon src={item.imageUrl} alt={t(`keyCapabilitiesSection3.cards.${item.key}.title`)} />
+                  <TitleCard>{t(`keyCapabilitiesSection3.cards.${item.key}.title`)}</TitleCard>
+                  <TextCard>{t(`keyCapabilitiesSection3.cards.${item.key}.desc`)}</TextCard>
                 </Card>
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* <ShadowRight /> */}
         </motion.div>
-      )}
-      {!isMobile && (
+      ) : (
         <CardContainer>
           {keyItems.map((item, index) => (
             <Card
@@ -259,24 +186,23 @@ const KeySwipper: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              {' '}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.25 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <Icon src={item.imageUrl} alt={item.title} />{' '}
-              </motion.div>{' '}
+                <Icon src={item.imageUrl} alt={t(`keyCapabilitiesSection3.cards.${item.key}.title`)} />
+              </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <TitleCard>{item.title}</TitleCard>{' '}
+                <TitleCard>{t(`keyCapabilitiesSection3.cards.${item.key}.title`)}</TitleCard>
               </motion.div>
-              <TextCard>{item.text}</TextCard>
+              <TextCard>{t(`keyCapabilitiesSection3.cards.${item.key}.desc`)}</TextCard>
             </Card>
           ))}
         </CardContainer>

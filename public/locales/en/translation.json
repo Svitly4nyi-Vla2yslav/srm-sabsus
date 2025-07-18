@@ -1,12 +1,21 @@
 {
   "header": {
-    "logoAlt": "Company Logo",
+    "logoAlt": "SRM Logo",
     "nav": {
       "home": "Home",
-      "service": "Service",
-      "about": "About Us",
+      "service": "Services",
+      "about": "About",
       "pricing": "Pricing",
       "contacts": "Contacts"
+    },
+    "services": {
+      "customerExperience": "Customer Experience Suite",
+      "posStaff": "POS & Staff Operations",
+      "kitchen": "Kitchen & Fulfillment",
+      "inventory": "Inventory & Warehousing",
+      "analytics": "Analytics & Management",
+      "marketing": "Marketing & Customization",
+      "integration": "Integration & Scaling"
     }
   },
   "hero": {
@@ -516,5 +525,736 @@
     "russian": "Rus",
     "ukrainian": "Ukr",
     "selectLanguage": "🌎{{language}} ⌄"
+  },
+  "performanceHubHero": {
+    "innovativeText": "Performance Hub",
+    "title": "Make confident decisions with real-time insights.",
+    "buttons": {
+      "tryFree": "Try for free",
+      "viewDemo": "View demo"
+    }
+  },
+  "howWeWorkSection": {
+    "header": {
+      "title": "How We Work",
+      "mainHeading": "From raw numbers to clear insights",
+      "description": "Monitor performance, improve decisions, and align your entire business with what really moves the needle."
+    },
+    "cards": {
+      "card1": {
+        "title": "Dashboard with real metrics",
+        "description": "Track revenue, active orders, customer counts, and employee performance — all in one customizable view."
+      },
+      "card2": {
+        "title": "Time-based analytics",
+        "description": "Break down results by hour, day, week, or custom date range. Spot peak hours and downtime."
+      },
+      "card3": {
+        "title": "Order insights",
+        "description": "Analyze average check size, top-selling items, conversion rates, and ordering behavior by platform or channel."
+      },
+      "card4": {
+        "title": "Cost & revenue structure",
+        "description": "Compare income vs expenses by source: dine-in, delivery, self-service, etc. Add manual inputs for cashflow tracking."
+      },
+      "card5": {
+        "title": "Staff productivity",
+        "description": "Measure employee output: orders handled, hours worked, speed of service, and customer feedback."
+      },
+      "card6": {
+        "title": "Location comparison",
+        "description": "Compare performance across multiple venues or kitchens. Spot weak spots and replicate success."
+      },
+      "card7": {
+        "title": "Automated reporting",
+        "description": "Receive scheduled reports by email or export data anytime. Share with stakeholders or accounting teams."
+      },
+      "card8": {
+        "title": "AI-powered forecasts",
+        "description": "Use AI to predict demand, recommend price adjustments, and spot emerging trends in customer behavior."
+      }
+    }
+  },
+  "keyCapabilitiesSection": {
+    "header": {
+      "title": "Key Capabilities",
+      "mainHeading": "See the big picture<br/>And the small ones",
+      "description": "Smart reports by time, staff, category or order type. Real-time stats.<br/>Tax-ready exports."
+    },
+    "cards": {
+      "card1": {
+        "title": "Sales Overview",
+        "text": "Track daily sales performance by order type. Compare delivery, dine-in, and pickup at a glance."
+      },
+      "card2": {
+        "title": "Employee Performance",
+        "text": "Visual breakdown of staff productivity. Filter by role, time period, or venue."
+      },
+      "card3": {
+        "title": "Payment Method Insights",
+        "text": "Analyze how customers pay. Helps optimize processor choices and lower costs."
+      },
+      "card4": {
+        "title": "Shift Reports",
+        "text": "Each day ends with auto-generated reports. Includes cash counts, tips, and reconciliations."
+      },
+      "card5": {
+        "title": "Order Flow Analysis",
+        "text": "See how orders move through your system. Helps detect bottlenecks in prep or handoff."
+      },
+      "card6": {
+        "title": "Forecasting Tools",
+        "text": "Predict future demand using historical data. Adjust staffing and stock accordingly."
+      },
+      "card7": {
+        "title": "Tax & Legal",
+        "text": "Automatically generate reports for tax compliance. Set up VAT, tips, service charges."
+      },
+      "card8": {
+        "title": "AI Suggestions",
+        "text": "Get improvement tips based on customer behavior. From pricing to prep timing."
+      }
+    }
+  },
+  "livePrepInsightsSection": {
+    "header": {
+      "title": "Live Prep Insights",
+      "mainHeading": "From warehouse to kitchen — always in sync",
+      "description": "Avoid shortages and waste with live inventory data. From back-of-house logistics to kitchen-ready visibility — everything flows seamlessly, saving time and reducing errors.",
+      "additionalDescription": "Timers, alerts, and zone assignments make sure every dish is ready exactly when it should be. Designed to reduce chaos and maximize performance."
+    }
+  },
+  "brandEngineHero": {
+    "innovativeText": "Brand Engine",
+    "title": "Manage campaigns and loyalty, control identity",
+    "buttons": {
+      "tryFree": "Try for free",
+      "viewDemo": "View demo"
+    }
+  },
+  "marketingHowWeWork": {
+    "header": {
+      "title": "How We Work",
+      "mainHeading": "Grow your brand and reach the right audience",
+      "description": "From branded interfaces to automated campaigns — marketing becomes effortless when it's built right into the system."
+    },
+    "cards": {
+      "card1": {
+        "title": "White-label everything",
+        "description": "Customize the app, website, emails, and even receipts — your logo, your colors, your brand everywhere."
+      },
+      "card2": {
+        "title": "Multilingual interface",
+        "description": "Handle dine-in, delivery, and pickup in one flow. Assign tables, print kitchen tickets, or send to the app with a tap."
+      },
+      "card3": {
+        "title": "Smart discounts & coupons",
+        "description": "Create offers by time, audience segment, purchase history, or special events like birthdays — automatically applied."
+      },
+      "card4": {
+        "title": "Loyalty programs",
+        "description": "Reward repeat customers with points, bonuses, or exclusive deals — fully automated and personalized."
+      },
+      "card5": {
+        "title": "Targeted push & SMS",
+        "description": "Send messages based on user behavior, location, or preferences. Works for promos, reminders, and reactivation."
+      },
+      "card6": {
+        "title": "Visual homepage editor",
+        "description": "Display banners and promos right in the app or website. Highlight new items or campaigns in real time."
+      },
+      "card7": {
+        "title": "Segmentation & analytics",
+        "description": "Group customers by behavior, value, or custom tags. Track the effectiveness of every campaign."
+      },
+      "card8": {
+        "title": "Promotional scheduling",
+        "description": "Plan future campaigns and set automatic activation times — run seasonal offers without lifting a finger."
+      }
+    }
+  },
+  "marketingKeySection": {
+    "header": {
+      "title": "Key Capabilities",
+      "mainHeading": "Promote smarter<br/>Customize deeper",
+      "description": "Automated discounts, personalized offers, multilingual UI, and full white-label design flexibility."
+    },
+    "cards": {
+      "card1": {
+        "title": "Multichannel Campaigns",
+        "text": "Launch marketing via push, SMS, email, and in-app banners. Schedule campaigns based on behavior."
+      },
+      "card2": {
+        "title": "Loyalty Programs",
+        "text": "Create rewarding experiences with automated points. Customize offers for customer groups."
+      },
+      "card3": {
+        "title": "Branded Interface",
+        "text": "Style the app and web with your visual identity. From logo to colors, everything is tailored."
+      },
+      "card4": {
+        "title": "Promo Automation",
+        "text": "Activate discounts based on cart size or customer tags. Set it once and let it run."
+      },
+      "card5": {
+        "title": "Multilingual & Localization",
+        "text": "Ensure seamless UX in RU, EN, ES, or UA. Customize formats for date, currency, and address."
+      },
+      "card6": {
+        "title": "Personalized Offers",
+        "text": "Use AI to recommend items based on preferences. Make customers feel understood."
+      },
+      "card7": {
+        "title": "Banner Designer",
+        "text": "Create visuals and banners for promos from your dashboard. No third-party tools needed."
+      },
+      "card8": {
+        "title": "Campaign Analytics",
+        "text": "See which campaign brought more clicks and visits. Fine-tune messaging based on numbers."
+      }
+    }
+  },
+  "marketingLivePrep": {
+    "header": {
+      "title": "Live Prep Insights",
+      "mainHeading": "Create campaigns. Customize UX.",
+      "description": "Reach your customers via push, email, SMS, and in-app banners. Localize every detail — from text to currency — and match the entire UI to your brand identity.",
+      "additionalDescription": "Birthday rewards, promo automations, and banner editing boost retention and brand consistency. One dashboard, full control."
+    }
+  },
+  "faqSection": {
+    "title": "Frequently asked questions",
+    "subtitle": "You've got questions. We've got honest answers.",
+    "questions": {
+      "q1": {
+        "question": "What is SABSUS and what does it include?",
+        "answer": "SABSUS is an all-in-one ecosystem for restaurants, cafés, bakeries, dark kitchens, and retail.\n\nIncluded in every plan:\n\n• POS system\n• CRM & loyalty\n• Warehouse & ingredients management\n• Delivery with zone pricing\n• Finances, tips, salaries\n• Real-time analytics & reports\n• Order tracking & table layout\n• Cloud infrastructure + multilingual support\n• Web and mobile apps"
+      },
+      "q2": {
+        "question": "Do I need to install any hardware?",
+        "answer": "No. SABSUS runs in any browser and on any device:\n\n• Tablets (Android/iOS)\n• Desktops, POS terminals\n• Smartphones\n\nAll interfaces are responsive and touch-optimized."
+      },
+      "q3": {
+        "question": "How is SABSUS different from other POS/CRM solutions?",
+        "answer": "Most systems give you 1–2 modules. We give you everything:\n\n• Full cycle from order to delivery\n• Loyalty, feedback, barcode scanner\n• Promotions, staff salaries, table maps\n• Multi-language interfaces + AI-translations\n• App + website under your brand (white-label option)\n• No hidden fees, no commissions (unless you choose them)."
+      },
+      "q4": {
+        "question": "What's the difference between SaaS and White-label plans?",
+        "answer": "SaaS Subscription vs White-label Subscription:\n\n• Works under SABSUS brand vs Branded app & website\n• $89–289/mo vs $249–899/mo\n• No app store presence vs Published on App Store & Google Play\n• Common server vs Separate server & database"
+      },
+      "q5": {
+        "question": "Can I buy the app instead of subscribing?",
+        "answer": "Yes. You can fully buy out the white-label app without any subscription.\n\nWhat you get:\n\n• Lifetime license\n• 1 year of updates and support\n• Full control of your database & integrations\n• $50/month optional maintenance after 1 year\n\nPrices start from:\n\n• $14,000 (1 venue, 1 language)\n• $25,000 (up to 3 venues, 2 languages)\n• $35,000 (up to 10 venues, all languages)"
+      },
+      "q6": {
+        "question": "Are future updates included in the lifetime model?",
+        "answer": "Yes — the first year is included.\n\nAfter that, updates and support are available at a fixed price of $50/month.\n\nYou are not forced to update if you don't want to."
+      },
+      "q7": {
+        "question": "Can I migrate my existing data from other POS/CRM systems?",
+        "answer": "Yes. We provide data import tools or help you migrate from systems like Square, Toast, Loyverse, Poster, iiko, and others."
+      },
+      "q8": {
+        "question": "What languages are supported?",
+        "answer": "Currently:\n\n• English\n• Spanish\n• Russian\n• Ukrainian\n\nThe system auto-switches based on user preference. White-label apps can be locked to 1–4 languages depending on plan."
+      },
+      "q9": {
+        "question": "How do I manage multiple locations or brands?",
+        "answer": "SABSUS is built for this:\n\n• Centralized dashboards\n• Custom tax & menu per location\n• Analytics and staff per venue\n• Inventory sync with separate warehouse settings\n\nYou can manage 1 to 100+ venues easily."
+      },
+      "q10": {
+        "question": "What is the refund policy?",
+        "answer": "Monthly subscriptions can be canceled anytime.\n\nApp buyout and branding fees are non-refundable (as they include custom development, publication, and assets).\n\nWe recommend starting with a demo or 1-month subscription first."
+      },
+      "q11": {
+        "question": "How secure is my data?",
+        "answer": "• Hosted on Google Cloud / Supabase\n• Encrypted backups\n• Staff logs & permission controls\n• GDPR/SOC2-ready infrastructure\n\nYou control your database (in white-label or buyout mode)"
+      },
+      "q12": {
+        "question": "What if my internet goes down?",
+        "answer": "SABSUS supports offline mode for POS operations.\n\nOrders and receipts sync automatically when the network is restored."
+      },
+      "q13": {
+        "question": "Do you offer custom development or API access?",
+        "answer": "Yes:\n\n• API available in white-label & buyout plans\n• Integration with Stripe, Telegram, Uber Eats, Google Maps, etc.\n\nYou can request features or pay for custom modules"
+      },
+      "q14": {
+        "question": "Can I connect external printers, card readers, or delivery aggregators?",
+        "answer": "Yes.\n\nSupported:\n\n• Star, Epson, Sunmi, Payoneer, Stripe Terminals\n• Uber Eats (ready), Doordash (coming)\n• SMS, email, and push integrations built-in"
+      },
+      "q15": {
+        "question": "How do I get started?",
+        "answer": "Choose your model:\n\n• SaaS? → Start your subscription now\n• White-label? → Submit brand + logo\n• Want to buy it all? → Contact sales for one-time payment & ownership\n\nWe'll take care of setup, publication, and onboarding."
+      }
+    }
+  },
+  "howWeWorkSection1": {
+    "title": "How We Work",
+    "heading": "We provide a step-by-step guide to help you understand our process.",
+    "description": "Our Customer Experience Suite creates seamless, branded interactions throughout the customer journey. Here’s how it works, from order to retention:",
+    "cards": {
+      "fastOrdering": {
+        "title": "Fast & intuitive ordering",
+        "desc": "Customers browse the menu, apply promos, and place orders in seconds through a sleek, branded mobile app. No logins, no friction — just smooth UX."
+      },
+      "loyaltyPrograms": {
+        "title": "Personalized loyalty programs",
+        "desc": "Automated bonuses, discounts, and birthday rewards are applied in real time. Every purchase strengthens customer connection."
+      },
+      "deliveryFlow": {
+        "title": "Smart delivery & pickup flow",
+        "desc": "Delivery, pickup, and table service options — all managed via one interface. Customers can reorder, track couriers, and save delivery addresses."
+      },
+      "reservationSystem": {
+        "title": "Reservation & waitlist system",
+        "desc": "Book a table, join a waitlist, or reschedule — all without calls. Instant confirmation and calendar integration included."
+      },
+      "notifications": {
+        "title": "Real-time notifications",
+        "desc": "Customers stay informed at every step — from order accepted to courier en route. Push, email, or SMS — it’s all covered."
+      },
+      "feedback": {
+        "title": "Track feedback",
+        "desc": "Built-in review flow and personal taste memory. Gather insights, spot regulars, and offer tailored experiences."
+      },
+      "selfService": {
+        "title": "Self-service & reorders",
+        "desc": "Repeat your last order in one tap, adjust items, and skip the line with table QR codes or app integration."
+      },
+      "customerProfile": {
+        "title": "Centralized customer profile",
+        "desc": "Every interaction feeds the CRM: purchase history, order preferences, bonuses, delivery zones — ready for support and upsell."
+      }
+    }
+  },
+  "keyCapabilitiesSection1": {
+    "title": "Key Capabilities",
+    "heading": "Speed up orders, streamline every shift",
+    "description": "Instant processing, QR payments, team roles, shift tracking — designed for smooth in-store flow.",
+    "cards": {
+      "orderManagement": {
+        "title": "Order Management",
+        "desc": "Manage orders in real-time with a sleek interface. Keep your workflow organized."
+      },
+      "shiftTracking": {
+        "title": "Shift Tracking",
+        "desc": "Monitor employee hours, breaks, and turnover. Shift data is logged and visualized."
+      },
+      "tableLayout": {
+        "title": "Table Layout",
+        "desc": "Edit interactive seating maps for efficient service. Tables link to live order status and guest count."
+      },
+      "qrPayments": {
+        "title": "QR Payments",
+        "desc": "Customers can pay quickly and securely with QR codes linked to each order."
+      },
+      "accessControl": {
+        "title": "Access Control",
+        "desc": "Assign permissions by role. PIN access ensures security at every point."
+      },
+      "receiptPrinting": {
+        "title": "Receipt Printing",
+        "desc": "Print receipts and orders instantly. Customize formats and languages for your brand."
+      },
+      "depositTips": {
+        "title": "Deposit & Tips",
+        "desc": "Track prepaid deposits and digital tips with full transparency. Tied directly into each customer profile and order."
+      },
+      "roleManagement": {
+        "title": "Role Management",
+        "desc": "Control visibility in the system with role templates. Suitable for cafes, bakeries, restaurants, and retail."
+      }
+    }
+  },
+  "livePrepInsights1": {
+    "title": "Live Prep Insights",
+    "heading": "All-in-one engagement platform",
+    "description": "Unify every user-facing channel into one seamless experience. From mobile orders to loyalty rewards — everything is built to feel intuitive and fast.",
+    "footerText": "Your brand, your flow. Customize touchpoints with full control over visuals, behavior, and engagement logic — all while delivering delight across the customer journey."
+  },
+  "mobileUXSection1": {
+    "title": "Mobile UX",
+    "heading": "Create personalized customer journeys",
+    "buttons": {
+      "tryFree": "Try for free",
+      "viewDemo": "View demo"
+    }
+  },
+  "stepByStepGuidance1": {
+    "title": "Step-by-step guidance",
+    "heading": "Master your CRM in minutes",
+    "description": "Watch a walkthrough of our CRM system — from setting up profiles to managing your pipeline. This guide shows how to maximize every feature."
+  },
+  "integrationScalingHero": {
+    "title": "Open Infra",
+    "heading": "Scale your operations — plug into anything, anytime",
+    "buttons": {
+      "tryFree": "Try for free",
+      "viewDemo": "View demo"
+    }
+  },
+  "integrationScalingSection": {
+    "title": "How We Work",
+    "heading": "Expand without limits",
+    "description": "Connect services, scale operations, and adapt the system to any size or geography — all with zero friction.",
+    "cards": {
+      "oneClick": {
+        "title": "One-click integrations",
+        "desc": "Seamlessly connect with payment gateways, delivery platforms (like UberEats), printers, and more — no coding required."
+      },
+      "openApi": {
+        "title": "Open API access",
+        "desc": "Build custom features, sync with external tools, or create new workflows — the platform is developer-ready."
+      },
+      "multivenue": {
+        "title": "Multivenue management",
+        "desc": "Add and manage multiple stores, restaurants, or warehouses under one dashboard — each with unique settings."
+      },
+      "roleAccess": {
+        "title": "Role-based access & permissions",
+        "desc": "Create roles for staff, couriers, suppliers, or marketers — each with tailored permissions and visibility."
+      },
+      "domainConfig": {
+        "title": "Domain & SSL configuration",
+        "desc": "Set up your own domain name and enable secure HTTPS with ease — ideal for branded web portals."
+      },
+      "offlineMode": {
+        "title": "Offline mode",
+        "desc": "Run operations without internet — process payments, print receipts, and sync data when connection is restored."
+      },
+      "responsiveDesign": {
+        "title": "Responsive design",
+        "desc": "Access everything from desktop, tablet, or mobile — built to work perfectly across all devices."
+      },
+      "scalableInfra": {
+        "title": "Scalable infrastructure",
+        "desc": "Whether it's one venue or one hundred, the system adapts without performance drops or extra complexity."
+      }
+    }
+  },
+  "integrationScalingCards": {
+    "apiFirst": {
+      "title": "API-First Approach",
+      "text": "Connect your ecosystem to external tools with a public API. It's open to partners and processors."
+    },
+    "scalableInfra": {
+      "title": "Scalable Infrastructure",
+      "text": "Add new venues, roles, or workflows without overhauls. Your growth doesn't require a redesign."
+    },
+    "deviceFlexibility": {
+      "title": "Device Flexibility",
+      "text": "Use the system on tablets, phones, desktops, or POS terminals. No proprietary hardware needed."
+    },
+    "offlineMode": {
+      "title": "Offline Mode",
+      "text": "Keep processing even if internet drops — data syncs automatically when you're back online."
+    },
+    "multiFormat": {
+      "title": "Multi-format Access",
+      "text": "Switch between delivery, dine-in, or pickup modes across interfaces. It adapts instantly."
+    },
+    "customDomains": {
+      "title": "Custom Domains & SSL",
+      "text": "Brand your web version with your domain and keep data secure. SSL certificates included by default."
+    },
+    "paymentIntegrations": {
+      "title": "Payment Integrations",
+      "text": "Easily connect Stripe, Apple Pay, or bank systems. Transactions go through without friction."
+    },
+    "deliveryAggregators": {
+      "title": "Delivery Aggregators",
+      "text": "Connect to UberEats, DoorDash and more — and manage orders from one place."
+    }
+  },
+  "keyCapabilitiesSection2": {
+    "title": "Key Capabilities",
+    "heading": "Connect, expand, repeat",
+    "description": "API access, terminal and delivery integrations, multi-venue scaling, and offline mode included."
+  },
+  "brandedGrowthTools": {
+    "title": "Branded Growth Tools",
+    "heading": "Create campaigns. Customize UX.",
+    "description": "Reach your customers via push, email, SMS, and in-app banners. Localize every detail — from text to currency — and match the entire UI to your brand identity.",
+    "footerText": "Birthday rewards, promo automations, and banner editing boost retention and brand consistency. One dashboard, full control."
+  },
+  "inventoryHero": {
+    "title": "Stock Logic",
+    "heading": "Track ingredients and metrics from source to plate",
+    "features": {
+      "inventorySync": "Inventory Sync",
+      "smartFlow": "Smart Flow"
+    },
+    "buttons": {
+      "tryFree": "Try for free",
+      "viewDemo": "View demo"
+    }
+  },
+  "inventoryManagementSection": {
+    "title": "How We Work",
+    "heading": "Total control over ingredients, stock, and supply chains",
+    "description": "Stay ahead of shortages, streamline logistics, and keep your operations smooth — from kitchen to warehouse.",
+    "cards": {
+      "realTimeTracking": {
+        "title": "Real-time stock tracking",
+        "desc": "Track ingredients, goods, and packaging across all storage locations. Get live counts as orders and supplies flow."
+      },
+      "smartWriteOffs": {
+        "title": "Smart write-offs",
+        "desc": "Auto-deduct ingredients based on dish recipes and portion sizes. Manual write-offs also supported for spoilage or breakage."
+      },
+      "inventoryByZones": {
+        "title": "Inventory by zones",
+        "desc": "Organize warehouses by storage zones (freezer, dry, cold prep). Filter and search by category, SKU, or custom tag."
+      },
+      "prepsProducts": {
+        "title": "Preps & semi-finished products",
+        "desc": "Track bulk items like dough or sauces. Define their shelf life, consumption rate, and production dependencies"
+      },
+      "transfersMovement": {
+        "title": "Transfers & movement",
+        "desc": "Move stock between locations in just a few taps. System records source, destination, and staff responsible."
+      },
+      "deliveriesSuppliers": {
+        "title": "Deliveries & suppliers",
+        "desc": "Add deliveries manually or via import. Link items to supplier profiles, invoices, and purchase histories."
+      },
+      "inventoryAudits": {
+        "title": "Inventory audits",
+        "desc": "Run full or partial stock takes with mobile devices. Track discrepancies, expiration dates, and overstock warnings."
+      },
+      "packagingBundles": {
+        "title": "Packaging & bundles",
+        "desc": "Set rules for packaging by order type (e.g. delivery vs dine-in). Link items to box types, napkins, or utensils."
+      }
+    }
+  },
+  "inventoryKeyFeatures": {
+    "title": "Key Capabilities",
+    "heading": "Know what's in stock Always",
+    "description": "Track supplies, move stock, auto-write-off ingredients, and simplify warehouse logistics.",
+    "cards": {
+      "ingredientTracking": {
+        "title": "Ingredient Tracking",
+        "text": "Monitor product from supplier to storage. Minimize spoilage and waste with automation."
+      },
+      "stockLevels": {
+        "title": "Stock Levels",
+        "text": "Overview of inventory across locations for ingredients, packaging, and semi-finished goods."
+      },
+      "warehouseTransfers": {
+        "title": "Transfers Between Warehouses",
+        "text": "Move stock with full digital paperwork. Keep inventory balanced across venues."
+      },
+      "smartCategorization": {
+        "title": "Smart Categorization",
+        "text": "Tag items by category, supplier, expiration, and more. Fast filtering and search anytime."
+      },
+      "supplyDeliveries": {
+        "title": "Supply Deliveries",
+        "text": "Log new deliveries, match invoices, update quantities. Works seamlessly with purchase orders."
+      },
+      "wasteManagement": {
+        "title": "Waste Management",
+        "text": "Mark spoiled or expired items with reason codes. Improves analytics and ordering habits."
+      },
+      "costCalculation": {
+        "title": "Cost of Goods Calculation",
+        "text": "Automatic COGS updates based on purchase prices. Helps determine accurate margins per item."
+      },
+      "ingredientBundling": {
+        "title": "Ingredient Bundling",
+        "text": "Create prep kits and semi-finished components. Ideal for pizza doughs, sauces, etc."
+      }
+    }
+  },
+  "inventoryHero1": {
+    "title": "Live Prep Insights",
+    "heading": "From warehouse to kitchen — always in sync",
+    "description": "Track stock, transfers, and supplies in one smart system. Monitor ingredients, packaging, and prep kits with instant updates across all venues.",
+    "footerText": "Timers, alerts, and zone assignments make sure every dish is ready exactly when it should be. Designed to reduce chaos and maximize performance."
+  },
+  "kitchenHero1": {
+    "title": "Mobile UX",
+    "heading": "Create personalized customer journeys",
+    "buttons": {
+      "tryFree": "Try for free",
+      "viewDemo": "View demo"
+    }
+  },
+  "howWeWorkSection2": {
+    "title": "How We Work",
+    "heading": "From order to ready light — organized, fast, and clear",
+    "description": "The kitchen and fulfillment system brings precision to your back-of-house flow. Here's how your team stays in sync:",
+    "cards": {
+      "instantOrderProcessing": {
+        "title": "Instant order processing",
+        "desc": "Take orders in seconds with smart presets, modifiers, and intuitive navigation. Works equally fast on tablets, terminals, or smartphones."
+      },
+      "multiModeOrderTypes": {
+        "title": "Multi-mode order types",
+        "desc": "Handle dine-in, delivery, and pickup in one flow. Assign tables, print kitchen tickets, or send to the app with a tap."
+      },
+      "dynamicTableManagement": {
+        "title": "Dynamic table management",
+        "desc": "Visual map of your venue with live updates. Move, merge, split checks — all in real time."
+      },
+      "shiftStaffTracking": {
+        "title": "Shift & staff tracking",
+        "desc": "Logins with PINs, auto time tracking, and per-role permissions. Built-in attendance, tips, and performance overview."
+      },
+      "qrPaymentsDeposits": {
+        "title": "QR payments & deposits",
+        "desc": "Print QR codes for instant checkout or deposits. Customers scan, pay, and go — no hardware required."
+      },
+      "kitchenPrinterRouting": {
+        "title": "Kitchen & printer routing",
+        "desc": "Orders are automatically sent to the right station — drinks to bar, mains to kitchen. Supports multilingual receipts and multiple printers."
+      },
+      "onTheFlyMenuUpdates": {
+        "title": "On-the-fly menu updates",
+        "desc": "Add, disable, or edit products in seconds. Changes sync instantly across POS, kitchen, and app."
+      },
+      "endOfShiftReports": {
+        "title": "End-of-shift reports",
+        "desc": "Close shifts with full financial breakdowns. Track card, cash, and delivery payments, plus tips and staff bonuses."
+      }
+    }
+  },
+  "kitchenManagement1": {
+    "title": "Key Capabilities",
+    "heading": "Manage the kitchen in real time — without delays.",
+    "description": "Increase team efficiency: order statuses, step-by-step recipes, timers, and task distribution — all synchronized from screen to delivery.",
+    "cards": {
+      "realTimeStatus": {
+        "title": "Real-Time Prep Status",
+        "desc": "Orders go to the kitchen with updates at every stage. Staff knows what's cooking."
+      },
+      "visualRecipes": {
+        "title": "Visual Recipes",
+        "desc": "Each dish has a digital card with ingredients and prep steps, ensuring quality."
+      },
+      "timersAlerts": {
+        "title": "Timers & Alerts",
+        "desc": "Set preparation timers and alerts for each item. Kitchen stays synced with front-of-house and delivery."
+      },
+      "zoneAssignment": {
+        "title": "Zone Assignment",
+        "desc": "Orders are routed to the right kitchen. This optimizes workload and reduces delays."
+      },
+      "frontNotifications": {
+        "title": "Notifications to Front",
+        "desc": "When dishes are ready, front-of-house is notified. This improves delivery speed and dining."
+      },
+      "displayScreens": {
+        "title": "Display Screens",
+        "desc": "Track orders on digital displays. Customers see when their order is ready."
+      },
+      "ingredientVisibility": {
+        "title": "Ingredient Visibility",
+        "desc": "See every component of a dish at a glance. From allergies to calorie counts, it's all mapped."
+      },
+      "stationAssignment": {
+        "title": "Station Assignment",
+        "desc": "Each kitchen team member sees only their relevant tasks. Boosts speed, reduces mistakes."
+      }
+    }
+  },
+  "kitchenPrepInsights1": {
+    "title": "Live Prep Insights",
+    "heading": "Precision and speed from prep to plate",
+    "description": "Track real-time cooking progress across all stations with synced kitchen displays. Each order flows through clear stages — prep, cook, serve — with glowing indicators.",
+    "footerText": "Timers, alerts, and zone assignments make sure every dish is ready exactly when it should be. Designed to reduce chaos and maximize performance."
+  },
+    "terminalControlSection": {
+    "title": "Terminal Control",
+    "heading": "Simplify shifts with smarter POS and role tools",
+    "buttons": {
+      "tryFree": "Try for free",
+      "viewDemo": "View demo"
+    }
+  },
+    "howWeWork1": {
+    "title": "How We Work",
+    "heading": "Your staff's new favorite tool",
+    "description": "From first tap to end-of-shift reporting — the POS & Staff system is built for speed, clarity, and flexibility. Here's how the workflow runs:",
+    "cards": {
+      "instantOrderProcessing": {
+        "title": "Instant order processing",
+        "desc": "Take orders in seconds with smart presets, modifiers, and intuitive navigation. Works equally fast on tablets, terminals, or smartphones."
+      },
+      "multiModeOrderTypes": {
+        "title": "Multi-mode order types",
+        "desc": "Handle dine-in, delivery, and pickup in one flow. Assign tables, print kitchen tickets, or send to the app with a tap."
+      },
+      "dynamicTableManagement": {
+        "title": "Dynamic table management",
+        "desc": "Visual map of your venue with live updates. Move, merge, split checks — all in real time."
+      },
+      "shiftStaffTracking": {
+        "title": "Shift & staff tracking",
+        "desc": "Logins with PINs, auto time tracking, and per-role permissions. Built-in attendance, tips, and performance overview."
+      },
+      "qrPaymentsDeposits": {
+        "title": "QR payments & deposits",
+        "desc": "Print QR codes for instant checkout or deposits. Customers scan, pay, and go — no hardware required."
+      },
+      "kitchenPrinterRouting": {
+        "title": "Kitchen & printer routing",
+        "desc": "Orders are automatically sent to the right station — drinks to bar, mains to kitchen. Supports multilingual receipts and multiple printers."
+      },
+      "onTheFlyMenuUpdates": {
+        "title": "On-the-fly menu updates",
+        "desc": "Add, disable, or edit products in seconds. Changes sync instantly across POS, kitchen, and app."
+      },
+      "endOfShiftReports": {
+        "title": "End-of-shift reports",
+        "desc": "Close shifts with full financial breakdowns. Track card, cash, and delivery payments, plus tips and staff bonuses."
+      }
+    }
+  },
+   "keyCapabilitiesSection3": {
+    "title": "Key Capabilities",
+    "heading": "From screen to service, without delays",
+    "description": "Live order statuses, recipe breakdowns, timers and pickup coordination built for your kitchen crew.",
+    "cards": {
+      "brandedMobileApp": {
+        "title": "Branded Mobile App",
+        "desc": "Get a custom app with your brand's logo and colors. Great for user engagement and repeat orders."
+      },
+      "loyaltyPrograms": {
+        "title": "Loyalty Programs",
+        "desc": "Set up bonuses, cashback or discounts based on user activity. Build habits and retain your best."
+      },
+      "smartDeliveryOptions": {
+        "title": "Smart Delivery Options",
+        "desc": "Choose from delivery, pickup, or dine-in. Auto-location and saved addresses included."
+      },
+      "pushNotifications": {
+        "title": "Push Notifications",
+        "desc": "Send timely updates about orders, promos or new arrivals. Drive engagement and reduce no-shows."
+      },
+      "orderHistoryRepeats": {
+        "title": "Order History & Repeats",
+        "desc": "Let users reorder in seconds from their past purchases. Track preferences for experience."
+      },
+      "tableReservations": {
+        "title": "Table Reservations",
+        "desc": "Book tables in advance with time slots and guest count. Reduce queues and optimize floor space."
+      },
+      "customerFeedback": {
+        "title": "Customer Feedback",
+        "desc": "Collect reviews and ratings per order. Show you listen, and build trust."
+      },
+      "personalAccountArea": {
+        "title": "Personal Account Area",
+        "desc": "Manage orders, loyalty status, saved data, and preferences. A seamless all-in-one experience for users."
+      }
+    }
+  },
+   "kitchenPrepInsights2": {
+    "title": "Live Prep Insights",
+    "heading": "Precision and speed from prep to plate",
+    "description": "Track real-time cooking progress across all stations with synced kitchen displays. Each order flows through clear stages — prep, cook, serve — with glowing indicators.",
+    "footerText": "Timers, alerts, and zone assignments make sure every dish is ready exactly when it should be. Designed to reduce chaos and maximize performance."
   }
 }

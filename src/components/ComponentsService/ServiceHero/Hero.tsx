@@ -6,7 +6,6 @@ import {
   HeroInnovative,
   HeroTitle,
 } from '../../Hero/Hero.styled';
-
 import phone from '../../../assets/icons/cards/Mobile Phone.svg';
 import styled, { keyframes } from 'styled-components';
 import costomer from '../../../assets/icons/costomer.png';
@@ -39,7 +38,7 @@ export const HeroWrapper = styled.div`
     margin-bottom: 450px;
   }
 `;
-// Анімація обертання навколо осі Y
+
 const rotateY = keyframes`
   from {
     transform: rotateY(0deg);
@@ -49,14 +48,12 @@ const rotateY = keyframes`
   }
 `;
 
-// Батьківський контейнер з перспективою
 const PerspectiveWrapper = styled.div`
   perspective: 1900px;
   display: flex;
   justify-content: center;
 `;
 
-// Зображення з 3D-ефектом
 const Image3DBox = styled.div`
   width: 100vh;
   height: 100vh;
@@ -86,9 +83,7 @@ const Back = styled.img`
 export const CostomerWrapp = styled.div`
   position: absolute;
   top: 127px;
-  @media screen and (min-width: 768px) {
-  }
-
+  
   @media screen and (min-width: 1440px) {
     margin-top: 100px;
   }
@@ -105,7 +100,6 @@ export const Container = styled.div`
   overflow: hidden;
   z-index: -1;
 
-  /* Тіні */
   &::before {
     content: '';
     position: absolute;
@@ -141,10 +135,9 @@ export const Container = styled.div`
     pointer-events: auto;
   }
 
-  /* Мобільні пристрої */
   @media screen and (max-width: 767px) {
     height: 100vh;
-    z-index: -2; /* Поміщаємо під інші елементи */
+    z-index: -2;
 
     &::before,
     &::after {
@@ -153,9 +146,9 @@ export const Container = styled.div`
 
     iframe,
     canvas {
-      pointer-events: none; /* Вимкнення клікабельності */
-      z-index: -1; /* Нижчий z-index для iframe/canvas */
-      opacity: 0.7; /* Додаткове затемнення для мобільних */
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.7;
     }
   }
 `;
@@ -163,14 +156,15 @@ export const Container = styled.div`
 const Hero: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const { t } = useTranslation();
+  
   return (
     <HeroWrapper>
       <Container style={{ display: 'flex', justifyContent: 'center' }}>
         {isMobile ? (
           <PerspectiveWrapper>
             <Image3DBox>
-              <Front src={costomer} />
-              <Back src={costomer} />
+              <Front src={costomer} alt="Customer illustration" />
+              <Back src={costomer} alt="Customer illustration back" />
             </Image3DBox>
           </PerspectiveWrapper>
         ) : (
@@ -178,17 +172,17 @@ const Hero: React.FC = () => {
             <Spline
               scene="https://prod.spline.design/IkvUuAcfU3TUW6Zw/scene.splinecode"
               style={{
-                position: 'absolute', // Абсолютне позиціонування
+                position: 'absolute',
                 top: 0,
                 left: 0,
-                width: '100%', // На всю ширину
-                height: '100vh', // На всю висоту
-                transform: 'scale(0.6)', // Можна регулювати масштаб
+                width: '100%',
+                height: '100vh',
+                transform: 'scale(0.6)',
                 transformOrigin: 'center',
                 transition: 'transform 0.5s ease-out',
                 filter: 'blur(0.5px)',
-                overflow: 'visible', // Щоб не обрізало
-                zIndex: 0, // Нижчий z-index, щоб контент був зверху
+                overflow: 'visible',
+                zIndex: 0,
               }}
             />
             <ShadowRight style={{ width: 400, backgroundColor: 'black' }} />
@@ -208,7 +202,7 @@ const Hero: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            Mobile UX <CardButtonText src={phone} alt="💰" />
+            {t('mobileUXSection1.title')} <CardButtonText src={phone} alt="Phone icon" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -217,8 +211,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
-          <HeroTitle>Create personalized customer journeys</HeroTitle>
+          <HeroTitle>{t('mobileUXSection1.heading')}</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -226,21 +219,20 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.5, delay: 0.9 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
           <ButtonContainer>
             <a
               href="https://sabsus.app/registrcompany/web"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
+              <HeroButton>{t('mobileUXSection1.buttons.tryFree')}</HeroButton>
             </a>
             <a
               href="https://sabsus.app/login/demo@sabsus.com/demo2025"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>{t('hero.buttons.viewDemo')}</HeroButtonGrey>
+              <HeroButtonGrey>{t('mobileUXSection1.buttons.viewDemo')}</HeroButtonGrey>
             </a>
           </ButtonContainer>
         </motion.div>

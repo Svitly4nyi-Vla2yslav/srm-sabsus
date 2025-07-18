@@ -59,21 +59,15 @@ export const Container = styled.div`
     pointer-events: auto;
   }
 
-  /* Мобільні пристрої */
   @media screen and (max-width: 767px) {
     height: 70vh;
-    z-index: -2; /* Поміщаємо під інші елементи */
-
-    &::before,
-    &::after {
-      height: 50px;
-    }
+    z-index: -2;
 
     iframe,
     canvas {
-      pointer-events: none; /* Вимкнення клікабельності */
-      z-index: -1; /* Нижчий z-index для iframe/canvas */
-      opacity: 0.7; /* Додаткове затемнення для мобільних */
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.7;
     }
   }
 
@@ -193,9 +187,11 @@ const FallbackImage = () => {
     </div>
   );
 };
+
 const Hero: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 767px)');
   const { t } = useTranslation();
+
   return (
     <HeroWrapper style={{ marginTop: 50 }}>
       <Container>
@@ -228,7 +224,8 @@ const Hero: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            Open Infra <CardButtonText src={Control} alt="💰" />
+            {t('integrationScalingHero.title')}{' '}
+            <CardButtonText src={Control} alt="Control icon" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -237,10 +234,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
-          <HeroTitle>
-            Scale your operations — plug into anything, anytime
-          </HeroTitle>
+          <HeroTitle>{t('integrationScalingHero.heading')}</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -248,21 +242,24 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.5, delay: 0.9 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
           <ButtonContainer>
             <a
               href="https://sabsus.app/registrcompany/web"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
+              <HeroButton>
+                {t('integrationScalingHero.buttons.tryFree')}
+              </HeroButton>
             </a>
             <a
               href="https://sabsus.app/login/demo@sabsus.com/demo2025"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>{t('hero.buttons.viewDemo')}</HeroButtonGrey>
+              <HeroButtonGrey>
+                {t('integrationScalingHero.buttons.viewDemo')}
+              </HeroButtonGrey>
             </a>
           </ButtonContainer>
         </motion.div>

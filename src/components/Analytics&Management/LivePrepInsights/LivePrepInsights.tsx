@@ -4,6 +4,7 @@ import { styled } from 'styled-components';
 import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
 import LinieBackground from '../../../assets/icons/Analytics&Management/iPadMini.png';
+import { useTranslation } from 'react-i18next';
 
 export const LifeWrapper = styled(motion.div)`
   display: flex;
@@ -200,6 +201,8 @@ export const GlowEffect = styled(motion.div)`
 `;
 
 const LivePrepInsights: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <LifeWrapper>
       <LifeContainer>
@@ -210,7 +213,7 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainText>
-            Live Prep Insights
+            {t('livePrepInsightsSection.header.title')}
             <CardButtonText src={rocket} alt="🚀" />
           </LifeMainText>
         </motion.div>
@@ -221,7 +224,7 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainTitle>
-            From warehouse to kitchen — always in sync
+            {t('livePrepInsightsSection.header.mainHeading')}
           </LifeMainTitle>
         </motion.div>
         <motion.div
@@ -231,15 +234,12 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainTextDescription>
-            Avoid shortages and waste with live inventory data. From
-            back-of-house logistics to kitchen-ready visibility — everything
-            flows seamlessly, saving time and reducing errors.
+            {t('livePrepInsightsSection.header.description')}
           </LifeMainTextDescription>
         </motion.div>
       </LifeContainer>
 
       <ImageAnimationWrapp>
-        {/* Фонові лінії */}
         <Linie
           src={LinieBackground}
           alt="background lines"
@@ -254,9 +254,6 @@ const LivePrepInsights: React.FC = () => {
           }}
         />
 
-        {/* Перший телефон */}
-
-        {/* Додатковий ефект світіння */}
         <GlowEffect
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1.2, opacity: 0.3 }}
@@ -270,9 +267,7 @@ const LivePrepInsights: React.FC = () => {
       </ImageAnimationWrapp>
 
       <LifeMainTextDescriptionDown>
-        Timers, alerts, and zone assignments make sure every dish is ready
-        exactly when it should be. Designed to reduce chaos and maximize
-        performance.
+        {t('livePrepInsightsSection.header.additionalDescription')}
       </LifeMainTextDescriptionDown>
     </LifeWrapper>
   );

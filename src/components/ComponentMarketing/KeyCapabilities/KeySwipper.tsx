@@ -14,6 +14,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
 
 export const SwiperContainer = styled(motion.div)`
   margin: 0 auto;
@@ -51,8 +52,6 @@ export const CardContainer = styled(motion.div)`
     margin: 0 auto;
     justify-content: center;
   }
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const Card = styled.div`
@@ -62,8 +61,8 @@ export const Card = styled.div`
   border: 1px solid #212121;
   border-radius: 24px;
   padding: 20px;
-  width: 100%; /* Змінюємо фіксовану ширину на 100% */
-  max-width: 311px; /* Додаємо максимальну ширину */
+  width: 100%;
+  max-width: 311px;
   height: 350px;
   backdrop-filter: blur(16px);
   box-shadow:
@@ -78,7 +77,7 @@ export const Card = styled.div`
     box-shadow 0.3s ease;
   gap: 10px;
   align-items: flex-start;
-  margin: 0 auto; /* Центруємо картку */
+  margin: 0 auto;
   justify-content: center;
 
   @media screen and (min-width: 1440px) {
@@ -90,10 +89,11 @@ export const Icon = styled.img`
   filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.7));
   transition: filter 0.3s ease;
   width: 199px;
-height: 199px;
+  height: 199px;
   
   &:hover {
     filter: drop-shadow(0 0 30px rgba(138, 43, 226, 1.7));
+  }
 `;
 
 export const TitleCard = styled.h3`
@@ -114,46 +114,18 @@ export const TextCard = styled.p`
 
 const KeySwipper: React.FC = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const { t } = useTranslation();
 
   const getCardAnimation = (index: number) => {
     switch (index) {
-      case 0:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 1:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 2:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 3:
-        return {
-          initial: { scale: 0.5, opacity: 0 },
-          whileInView: { scale: 1, opacity: 1 },
-        }; // zoom-in
-      case 4:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 5:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 6:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      default:
-        return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
+      case 0: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 1: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 2: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 3: return { initial: { scale: 0.5, opacity: 0 }, whileInView: { scale: 1, opacity: 1 } };
+      case 4: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 5: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 6: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      default: return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
   };
 
@@ -161,51 +133,51 @@ const KeySwipper: React.FC = () => {
     {
       id: 1,
       imageUrl: keys,
-      title: 'Multichannel Campaigns',
-      text: 'Launch marketing via push, SMS, email, and in-app banners. Schedule campaigns based on behavior.',
+      title: t('marketingKeySection.cards.card1.title'),
+      text: t('marketingKeySection.cards.card1.text')
     },
     {
       id: 2,
       imageUrl: keys1,
-      title: 'Loyalty Programs',
-      text: 'Create rewarding experiences with automated points. Customize offers for customer groups.',
+      title: t('marketingKeySection.cards.card2.title'),
+      text: t('marketingKeySection.cards.card2.text')
     },
     {
       id: 3,
       imageUrl: keys2,
-      title: 'Branded Interface',
-      text: 'Style the app and web with your visual identity. From logo to colors, everything is tailored.',
+      title: t('marketingKeySection.cards.card3.title'),
+      text: t('marketingKeySection.cards.card3.text')
     },
     {
       id: 4,
       imageUrl: keys3,
-      title: 'Promo Automation',
-      text: 'Activate discounts based on cart size or customer tags. Set it once and let it run.',
+      title: t('marketingKeySection.cards.card4.title'),
+      text: t('marketingKeySection.cards.card4.text')
     },
     {
       id: 5,
       imageUrl: keys4,
-      title: 'Multilingual & Localization',
-      text: 'Ensure seamless UX in RU, EN, ES, or UA. Customize formats for date, currency, and address.',
+      title: t('marketingKeySection.cards.card5.title'),
+      text: t('marketingKeySection.cards.card5.text')
     },
     {
       id: 6,
       imageUrl: keys5,
-      title: 'Personalized Offers',
-      text: 'Use AI to recommend items based on preferences. Make customers feel understood.',
+      title: t('marketingKeySection.cards.card6.title'),
+      text: t('marketingKeySection.cards.card6.text')
     },
     {
       id: 7,
       imageUrl: keys6,
-      title: 'Banner Designer',
-      text: 'Create visuals and banners for promos from your dashboard. No third-party tools needed.',
+      title: t('marketingKeySection.cards.card7.title'),
+      text: t('marketingKeySection.cards.card7.text')
     },
     {
       id: 8,
       imageUrl: keys7,
-      title: 'Campaign Analytics',
-      text: 'See which campaign brought more clicks and visits. Fine-tune messaging based on numbers.',
-    },
+      title: t('marketingKeySection.cards.card8.title'),
+      text: t('marketingKeySection.cards.card8.text')
+    }
   ];
 
   const shouldLoop = true;
@@ -218,14 +190,13 @@ const KeySwipper: React.FC = () => {
       whileInView="show"
       viewport={{ once: false, amount: 0.2 }}
     >
-      {isMobile && (
+      {isMobile ? (
         <motion.div>
-          {/* <ShadowLeft /> */}
           <Swiper
             loop={shouldLoop}
             slidesPerView={slidesPerView}
             spaceBetween={6}
-            centeredSlides={false} // Центрування активного слайда
+            centeredSlides={false}
             autoplay={{
               delay: 1000,
               disableOnInteraction: false,
@@ -245,10 +216,8 @@ const KeySwipper: React.FC = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* <ShadowRight /> */}
         </motion.div>
-      )}
-      {!isMobile && (
+      ) : (
         <CardContainer>
           {keyItems.map((item, index) => (
             <Card
@@ -258,22 +227,21 @@ const KeySwipper: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              {' '}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.25 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <Icon src={item.imageUrl} alt={item.title} />{' '}
-              </motion.div>{' '}
+                <Icon src={item.imageUrl} alt={item.title} />
+              </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <TitleCard>{item.title}</TitleCard>{' '}
+                <TitleCard>{item.title}</TitleCard>
               </motion.div>
               <TextCard>{item.text}</TextCard>
             </Card>

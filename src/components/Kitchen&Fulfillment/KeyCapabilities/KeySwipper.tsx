@@ -14,6 +14,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
 
 export const SwiperContainer = styled(motion.div)`
   margin: 0 auto;
@@ -51,8 +52,6 @@ export const CardContainer = styled(motion.div)`
     margin: 0 auto;
     justify-content: center;
   }
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const Card = styled.div`
@@ -62,8 +61,8 @@ export const Card = styled.div`
   border: 1px solid #212121;
   border-radius: 24px;
   padding: 20px;
-  width: 100%; /* Змінюємо фіксовану ширину на 100% */
-  max-width: 311px; /* Додаємо максимальну ширину */
+  width: 100%;
+  max-width: 311px;
   height: 350px;
   backdrop-filter: blur(16px);
   box-shadow:
@@ -78,7 +77,7 @@ export const Card = styled.div`
     box-shadow 0.3s ease;
   gap: 10px;
   align-items: flex-start;
-  margin: 0 auto; /* Центруємо картку */
+  margin: 0 auto;
   justify-content: center;
 
   @media screen and (min-width: 1440px) {
@@ -90,7 +89,7 @@ export const Icon = styled.img`
   filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.7));
   transition: filter 0.3s ease;
   width: 199px;
-height: 199px;
+  height: 199px;
   
   &:hover {
     filter: drop-shadow(0 0 30px rgba(138, 43, 226, 1.7));
@@ -114,98 +113,30 @@ export const TextCard = styled.p`
 
 const KeySwipper: React.FC = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const { t } = useTranslation();
 
   const getCardAnimation = (index: number) => {
     switch (index) {
-      case 0:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 1:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 2:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 3:
-        return {
-          initial: { scale: 0.5, opacity: 0 },
-          whileInView: { scale: 1, opacity: 1 },
-        }; // zoom-in
-      case 4:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 5:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 6:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      default:
-        return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
+      case 0: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 1: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 2: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 3: return { initial: { scale: 0.5, opacity: 0 }, whileInView: { scale: 1, opacity: 1 } };
+      case 4: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 5: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 6: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      default: return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
   };
 
   const keyItems = [
-    {
-      id: 1,
-      imageUrl: keys,
-      title: 'Real-Time Prep Status',
-      text: "Orders go to the kitchen with updates at every stage. Staff knows what’s cooking.",
-    },
-    {
-      id: 2,
-      imageUrl: keys1,
-      title: 'Visual Recipes',
-      text: 'Each dish has a digital card with ingredients and prep steps, ensuring quality.',
-    },
-    {
-      id: 3,
-      imageUrl: keys2,
-      title: 'Timers & Alerts',
-      text: 'Set preparation timers and alerts for each item. Kitchen stays synced with front-of-house and delivery.',
-    },
-    {
-      id: 4,
-      imageUrl: keys3,
-      title: 'Zone Assignment',
-      text: 'Orders are routed to the right kitchen. This optimizes workload and reduces delays.',
-    },
-    {
-      id: 5,
-      imageUrl: keys4,
-      title: 'Notifications to Front',
-      text: 'When dishes are ready, front-of-house is notified. This improves delivery speed and dining.',
-    },
-    {
-      id: 6,
-      imageUrl: keys5,
-      title: 'Display Screens',
-      text: 'Track orders on digital displays. Customers see when their order is ready.',
-    },
-    {
-      id: 7,
-      imageUrl: keys6,
-      title: 'Ingredient Visibility',
-      text: 'See every component of a dish at a glance. From allergies to calorie counts, it’s all mapped.',
-    },
-    {
-      id: 8,
-      imageUrl: keys7,
-      title: 'Station Assignment',
-      text: 'Each kitchen team member sees only their relevant tasks. Boosts speed, reduces mistakes.',
-    },
+    { id: 1, imageUrl: keys, key: 'realTimeStatus' },
+    { id: 2, imageUrl: keys1, key: 'visualRecipes' },
+    { id: 3, imageUrl: keys2, key: 'timersAlerts' },
+    { id: 4, imageUrl: keys3, key: 'zoneAssignment' },
+    { id: 5, imageUrl: keys4, key: 'frontNotifications' },
+    { id: 6, imageUrl: keys5, key: 'displayScreens' },
+    { id: 7, imageUrl: keys6, key: 'ingredientVisibility' },
+    { id: 8, imageUrl: keys7, key: 'stationAssignment' },
   ];
 
   const shouldLoop = true;
@@ -218,14 +149,13 @@ const KeySwipper: React.FC = () => {
       whileInView="show"
       viewport={{ once: false, amount: 0.2 }}
     >
-      {isMobile && (
+      {isMobile ? (
         <motion.div>
-          {/* <ShadowLeft /> */}
           <Swiper
             loop={shouldLoop}
             slidesPerView={slidesPerView}
             spaceBetween={6}
-            centeredSlides={false} // Центрування активного слайда
+            centeredSlides={false}
             autoplay={{
               delay: 1000,
               disableOnInteraction: false,
@@ -238,17 +168,15 @@ const KeySwipper: React.FC = () => {
             {keyItems.map(item => (
               <SwiperSlide key={item.id}>
                 <Card>
-                  <Icon src={item.imageUrl} alt={item.title} />
-                  <TitleCard>{item.title}</TitleCard>
-                  <TextCard>{item.text}</TextCard>
+                  <Icon src={item.imageUrl} alt={t(`kitchenManagement1.cards.${item.key}.title`)} />
+                  <TitleCard>{t(`kitchenManagement1.cards.${item.key}.title`)}</TitleCard>
+                  <TextCard>{t(`kitchenManagement1.cards.${item.key}.desc`)}</TextCard>
                 </Card>
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* <ShadowRight /> */}
         </motion.div>
-      )}
-      {!isMobile && (
+      ) : (
         <CardContainer>
           {keyItems.map((item, index) => (
             <Card
@@ -258,24 +186,23 @@ const KeySwipper: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              {' '}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.25 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <Icon src={item.imageUrl} alt={item.title} />{' '}
-              </motion.div>{' '}
+                <Icon src={item.imageUrl} alt={t(`kitchenManagement1.cards.${item.key}.title`)} />
+              </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <TitleCard>{item.title}</TitleCard>{' '}
+                <TitleCard>{t(`kitchenManagement1.cards.${item.key}.title`)}</TitleCard>
               </motion.div>
-              <TextCard>{item.text}</TextCard>
+              <TextCard>{t(`kitchenManagement1.cards.${item.key}.desc`)}</TextCard>
             </Card>
           ))}
         </CardContainer>

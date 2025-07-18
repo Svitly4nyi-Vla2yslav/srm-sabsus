@@ -9,10 +9,10 @@ import video from '../../../assets/icons/Costomer/66309272b77efe8e45161878_66505
 import BackgroundImage from '../../../assets/icons/Costomer/VideoBackground.png';
 import ControlFast from '../../../assets/icons/Costomer/Seconadry Buttons copy.svg';
 import ControlRewind from '../../../assets/icons/Costomer/Seconadry Buttons.svg';
+import { useTranslation } from 'react-i18next';
 
 export const StepWrapp = styled.div`
   margin: 0 auto;
-  // margin-top: 100px;
   width: 100%;
   height: 100%;
   margin-bottom: 100px;
@@ -48,15 +48,7 @@ export const StepMainText = styled(motion.p)`
     rgba(255, 255, 255, 0) 86%
   );
   align-items: center;
-  will-change: transform, opacity; /* Оптимізація анімації */
-
-  @media screen and (min-width: 768px) {
-    /* Додаткові стилі для планшетів */
-  }
-
-  @media screen and (min-width: 1440px) {
-    /* Додаткові стилі для десктопів */
-  }
+  will-change: transform, opacity;
 `;
 
 export const StepMainTitle = styled(motion.h2)`
@@ -108,20 +100,17 @@ export const StepSpanIcon = styled.img`
   font-size: 13px;
   width: 20px;
   margin-left: 6px;
-
   box-shadow:
     inset 0 -8px 24px 0 rgba(255, 255, 255, 0.18),
     inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
     0 4px 8px rgba(0, 0, 0, 0.08),
     0 1px 2px rgba(0, 0, 0, 0.06);
-
   background: linear-gradient(
       315deg,
       rgba(122, 121, 122, 0) 7%,
       rgba(172, 172, 172, 0) 86%
     )
     rgba(255, 255, 255, 0.03);
-
   -webkit-transform: translateZ(0);
 `;
 
@@ -162,31 +151,23 @@ export const SlideHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 0.35px solid rgba(33, 33, 33, 0.7); /* Прозорість для iOS */
-
-  /* Оптимізовані стилі для iOS */
-  -webkit-backdrop-filter: blur(11px); /* Префікс для Safari */
+  border-top: 0.35px solid rgba(33, 33, 33, 0.7);
+  -webkit-backdrop-filter: blur(11px);
   backdrop-filter: blur(11px);
-
-  /* Оптимізовані тіні для iOS */
   box-shadow:
     0 6px 11px -6px rgba(0, 0, 0, 0.03),
     0 1px 3px -1px rgba(0, 0, 0, 0.08),
     inset 0 -6px 17px 0 rgba(255, 255, 255, 0.03),
     inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
-
-  /* Оптимізований фон для iOS */
   background: rgba(255, 255, 255, 0.03);
-
   background-image: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0.03),
     rgba(255, 255, 255, 0.01)
   );
 
-  /* Виправлення для Safari */
   @supports (-webkit-touch-callout: none) {
-    background-color: rgba(85, 85, 85, 0.86); /* Фолбек для iOS */
+    background-color: rgba(85, 85, 85, 0.86);
     -webkit-backdrop-filter: saturate(180%) blur(11px);
   }
 
@@ -206,12 +187,6 @@ export const SlideHeader = styled.div`
 export const SlideLogo = styled.img`
   width: 37px;
   height: 9px;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const LogoImage = styled.img`
@@ -222,11 +197,6 @@ export const LogoImage = styled.img`
 export const ToolGroup = styled.img`
   width: 79px;
   height: 19px;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const VideoWrapper = styled.div`
@@ -235,12 +205,6 @@ const VideoWrapper = styled.div`
   height: 100%;
   padding: 5px;
   background: rgba(255, 255, 255, 0.03);
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const StyledVideo = styled.video`
@@ -249,12 +213,6 @@ const StyledVideo = styled.video`
   border-radius: 10px;
   object-fit: cover;
   background: rgba(255, 255, 255, 0.03);
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const VideoControls = styled.div`
@@ -267,11 +225,6 @@ const VideoControls = styled.div`
   z-index: 2;
   flex-direction: row;
   align-items: center;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const ControlButton = styled.button`
@@ -285,8 +238,6 @@ const ControlButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  // Базовий розмір
   width: 40px;
   height: 40px;
 
@@ -307,8 +258,6 @@ const ControlButton = styled.button`
 
 const ControlButtonPlay = styled(ControlButton)`
   background-color: rgba(255, 255, 255, 0.12);
-
-  // збільшено на 30%
   width: 62px;
   height: 62px;
 
@@ -338,9 +287,17 @@ export const ControlIcon = styled.img`
   }
 `;
 
+const VideoHoverWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
 const StepByStepGuidance: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const { t } = useTranslation();
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -368,7 +325,8 @@ const StepByStepGuidance: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <StepMainText>
-          Step-by-step guidance <StepSpanIcon src={Cassette} alt="⏺️" />
+          {t('stepByStepGuidance1.title')}{' '}
+          <StepSpanIcon src={Cassette} alt="⏺️" />
         </StepMainText>
       </motion.div>
       <motion.div
@@ -377,7 +335,7 @@ const StepByStepGuidance: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        <StepMainTitle>Master your CRM in minutes</StepMainTitle>
+        <StepMainTitle>{t('stepByStepGuidance1.heading')}</StepMainTitle>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -386,9 +344,7 @@ const StepByStepGuidance: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <StepMainTextDescription>
-          Watch a walkthrough of our CRM system — from setting up profiles to
-          managing your pipeline. This guide shows how to maximize every
-          feature.
+          {t('stepByStepGuidance1.description')}
         </StepMainTextDescription>
       </motion.div>
       <HeaderContainer>
@@ -397,23 +353,35 @@ const StepByStepGuidance: React.FC = () => {
           <LogoImage src={logo} alt="Logo" />
           <ToolGroup src={Tools} alt="Tools" />
         </SlideHeader>
-        <VideoWrapper>
-          <StyledVideo ref={videoRef} poster={BackgroundImage} controls>
-            <source src={video} type="video/mp4" />
-            Ваш браузер не підтримує відео.
-          </StyledVideo>
-          <VideoControls>
-            <ControlButton onClick={() => seek(-15)}>
-              <ControlIcon src={ControlRewind} />
-            </ControlButton>
-            <ControlButtonPlay onClick={togglePlay}>
-              {isPlaying ? '⏸' : '▶'}
-            </ControlButtonPlay>
-            <ControlButton onClick={() => seek(15)}>
-              <ControlIcon src={ControlFast} />
-            </ControlButton>
-          </VideoControls>
-        </VideoWrapper>
+        <VideoHoverWrapper
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <VideoWrapper>
+            <StyledVideo
+              ref={videoRef}
+              poster={BackgroundImage}
+              controls={true}
+            >
+              <source src={video} type="video/mp4" />
+              {t('videoNotSupported')}
+            </StyledVideo>
+
+            {isHovered && (
+              <VideoControls>
+                <ControlButton onClick={() => seek(-15)}>
+                  <ControlIcon src={ControlRewind} alt="Rewind" />
+                </ControlButton>
+                <ControlButtonPlay onClick={togglePlay}>
+                  {isPlaying ? '⏸' : '▶'}
+                </ControlButtonPlay>
+                <ControlButton onClick={() => seek(15)}>
+                  <ControlIcon src={ControlFast} alt="Fast forward" />
+                </ControlButton>
+              </VideoControls>
+            )}
+          </VideoWrapper>
+        </VideoHoverWrapper>
       </HeaderContainer>
     </StepWrapp>
   );

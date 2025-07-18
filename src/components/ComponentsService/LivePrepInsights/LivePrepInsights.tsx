@@ -7,10 +7,11 @@ import LinieBackground from '../../../assets/icons/Costomer/Iphone/Frame 3577-ba
 import Phone from '../../../assets/icons/Costomer/Iphone/Frame 35771-iphon.png';
 import Phone1 from '../../../assets/icons/Costomer/Iphone/black titanium2-iphon.png';
 import Linie1 from '../../../assets/icons/Costomer/Iphone/Lightpered-linie.png';
+import { useTranslation } from 'react-i18next';
 
 export const LifeWrapper = styled(motion.div)`
   display: flex;
-  padding: 0 16px; /* або 24px — на твій смак */
+  padding: 0 16px;
   max-width: 1440px;
   margin: 0 auto;
   flex-direction: column;
@@ -52,11 +53,6 @@ export const LifeMainText = styled(motion.p)`
   );
   align-items: center;
   will-change: transform, opacity;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const LifeMainTitle = styled(motion.h2)`
@@ -74,11 +70,12 @@ export const LifeMainTitle = styled(motion.h2)`
   }
 
   @media screen and (min-width: 1440px) {
-   max-width: 630px;
+    max-width: 630px;
     width: 100%;
     margin: 0 auto 26px;
     display: flex;
-text-align: start;
+    text-align: start;
+  }
 `;
 
 export const LifeMainTextDescription = styled(motion.p)`
@@ -138,7 +135,7 @@ export const LifeContainer = styled.div`
 
   @media screen and (min-width: 1440px) {
     margin-bottom: 609px;
-    width: 100%; // ✅ НЕ 100vw
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -153,6 +150,7 @@ export const ImageAnimationWrapp = styled.div`
   height: 354px;
   transform: translate(-50%, -50%);
   overflow: visible;
+
   @media screen and (min-width: 768px) {
     top: 60%;
     width: 700px;
@@ -172,13 +170,6 @@ export const PhoneImage = styled(motion.img)`
   left: 0;
   width: 100%;
   height: 100%;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
-  // z-index: -123;
 `;
 
 export const PhoneImage1 = styled(motion.img)`
@@ -187,11 +178,6 @@ export const PhoneImage1 = styled(motion.img)`
   left: 6%;
   width: 100%;
   height: 100%;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const Linie = styled(motion.img)`
@@ -200,11 +186,6 @@ export const Linie = styled(motion.img)`
   left: 0;
   width: 100%;
   height: 100%;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const LinieP = styled(motion.img)`
@@ -214,6 +195,7 @@ export const LinieP = styled(motion.img)`
   width: 77%;
   height: 77%;
   overflow: hidden;
+
   @media screen and (min-width: 768px) {
     left: 15%;
   }
@@ -237,15 +219,11 @@ export const GlowEffect = styled(motion.div)`
   opacity: 0;
   border-radius: 50%;
   pointer-events: none;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const LivePrepInsights: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <LifeWrapper>
       <LifeContainer>
@@ -256,7 +234,7 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainText>
-            Live Prep Insights
+            {t('livePrepInsights1.title')}
             <CardButtonText src={rocket} alt="🚀" />
           </LifeMainText>
         </motion.div>
@@ -266,7 +244,7 @@ const LivePrepInsights: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <LifeMainTitle>All-in-one engagement platform</LifeMainTitle>
+          <LifeMainTitle>{t('livePrepInsights1.heading')}</LifeMainTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -275,15 +253,12 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainTextDescription>
-            Unify every user-facing channel into one seamless experience. From
-            mobile orders to loyalty rewards — everything is built to feel
-            intuitive and fast.
+            {t('livePrepInsights1.description')}
           </LifeMainTextDescription>
         </motion.div>
       </LifeContainer>
 
       <ImageAnimationWrapp>
-        {/* Фонові лінії */}
         <Linie
           src={LinieBackground}
           alt="background lines"
@@ -292,7 +267,6 @@ const LivePrepInsights: React.FC = () => {
           transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
         />
 
-        {/* Перший телефон */}
         <PhoneImage
           src={Phone}
           alt="phone"
@@ -306,7 +280,6 @@ const LivePrepInsights: React.FC = () => {
           }}
         />
 
-        {/* Другий телефон */}
         <PhoneImage1
           src={Phone1}
           alt="phone"
@@ -321,7 +294,6 @@ const LivePrepInsights: React.FC = () => {
           }}
         />
 
-        {/* Лінії з анімацією світіння */}
         <LinieP
           src={Linie1}
           alt="glowing lines"
@@ -334,7 +306,6 @@ const LivePrepInsights: React.FC = () => {
           }}
         />
 
-        {/* Додатковий ефект світіння */}
         <GlowEffect
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1.2, opacity: 0.3 }}
@@ -348,9 +319,7 @@ const LivePrepInsights: React.FC = () => {
       </ImageAnimationWrapp>
 
       <LifeMainTextDescriptionDown>
-        Your brand, your flow. Customize touchpoints with full control over
-        visuals, behavior, and engagement logic — all while delivering delight
-        across the customer journey.
+        {t('livePrepInsights1.footerText')}
       </LifeMainTextDescriptionDown>
     </LifeWrapper>
   );

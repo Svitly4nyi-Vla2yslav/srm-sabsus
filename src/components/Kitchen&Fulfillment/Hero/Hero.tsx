@@ -24,6 +24,7 @@ import {
 } from '../../Hero/Hero.styled';
 import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import { useTranslation } from 'react-i18next';
+
 const getRandomAmplitude = () => Math.floor(Math.random() * 40 + 20);
 const getRandomDuration = () => Math.random() * 3 + 3;
 
@@ -73,7 +74,7 @@ const FloatingImage = styled.img<{
 `;
 
 export const CostomerWrapp = styled.div`
-   position: absolute;
+  position: absolute;
   top: 120%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -214,7 +215,7 @@ const Hero: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            Mobile UX <CardButtonText src={cooking} alt="💰" />
+            {t('kitchenHero1.title')} <CardButtonText src={cooking} alt="💰" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -223,8 +224,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
-          <HeroTitle>Create personalized customer journeys</HeroTitle>
+          <HeroTitle>{t('kitchenHero1.heading')}</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -232,21 +232,20 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.5, delay: 0.9 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
           <ButtonContainer>
             <a
               href="https://sabsus.app/registrcompany/web/PRO"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
+              <HeroButton>{t('kitchenHero1.buttons.tryFree')}</HeroButton>
             </a>
             <a
               href="https://sabsus.app/login/demo@sabsus.com/demo2025"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>{t('hero.buttons.viewDemo')}</HeroButtonGrey>
+              <HeroButtonGrey>{t('kitchenHero1.buttons.viewDemo')}</HeroButtonGrey>
             </a>
           </ButtonContainer>
         </motion.div>

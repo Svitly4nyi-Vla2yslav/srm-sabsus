@@ -21,7 +21,7 @@ import {
 import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import { useTranslation } from 'react-i18next';
 
-// Анімації
+// Animations
 const pulse = keyframes`
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.1); opacity: 0.8; }
@@ -106,7 +106,6 @@ export const TextContainer = styled.div`
   margin: 0 auto;
 `;
 
-// Спочатку виносимо анімацію для лінії (аналог borderGlow, але для background)
 const lineGlow = keyframes`
   0% { background-color: rgba(51, 51, 51, 0.55);  }
   50% { background-color: rgba(73, 75, 236, 0.8); }
@@ -172,7 +171,6 @@ export const IconsFoodsContainer = styled.div`
 export const IconFoods = styled.img`
   width: 80px;
   height: 80px;
-
   animation: ${pulse} 3s infinite ease-in-out;
 
   &:nth-child(1) {
@@ -206,18 +204,6 @@ const smoothRotate = keyframes`
     transform: rotate(0deg) scale(1);
     animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
-  // 25% {
-  //   transform: rotate(180deg) scale(1.03);
-  //   animation-timing-function: cubic-bezier(0.5, 0, 0.75, 1);
-  // }
-  // 50% {
-  //   transform: rotate(320deg) scale(1.07);
-  //   animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-  // }
-  // 75% {
-  //   transform: rotate(640deg) scale(1.03);
-  //   animation-timing-function: cubic-bezier(0.5, 0, 0.75, 1);
-  // }
   100% {
     transform: rotate(360deg) scale(1);
   }
@@ -229,7 +215,7 @@ export const LogoIcon = styled.img`
   animation: ${smoothRotate} 4s infinite;
   transform-origin: center center;
   will-change: transform;
-  backface-visibility: hidden; /* Покращує рендеринг анімації */
+  backface-visibility: hidden;
 `;
 
 export const BorderIcon = styled.div`
@@ -277,24 +263,25 @@ const Hero: React.FC = () => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 743px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 744px)' });
+
   return (
     <HeroWrapper>
       {isMobile && (
         <CostomerWrapp>
           <TextContainer>
-            <TextIcon>Inventory Sync</TextIcon>
-            <TextIcon>Smart Flow</TextIcon>
+            <TextIcon>{t('inventoryHero.features.inventorySync')}</TextIcon>
+            <TextIcon>{t('inventoryHero.features.smartFlow')}</TextIcon>
           </TextContainer>
 
           <IconsFoodsContainer>
             <BorderIcon>
-              <IconFoods src={Tomato} alt="🍅" />
+              <IconFoods src={Tomato} alt="Tomato" />
             </BorderIcon>
             <BorderIcon>
-              <IconFoods src={Brocoly} alt="🥦" />
+              <IconFoods src={Brocoly} alt="Broccoli" />
             </BorderIcon>
             <BorderIcon>
-              <IconFoods src={Salt} alt="🧂" />
+              <IconFoods src={Salt} alt="Salt" />
             </BorderIcon>
           </IconsFoodsContainer>
 
@@ -306,13 +293,8 @@ const Hero: React.FC = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Базовий шлях (фон) */}
               <PathBase d="M102.5 122V0M205 2.52766e-08V29C205 46.6731 190.673 61 173 61H135C117.327 61 103 75.3269 103 93M103 93V122M103 93C103 75.3269 88.6731 61 71 61H33C15.3269 61 1 46.6731 1 29V2.52766e-08" />
-
-              {/* Анімований шлях енергії */}
               <EnergyPath d="M102.5 122V0M205 2.52766e-08V29C205 46.6731 190.673 61 173 61H135C117.327 61 103 75.3269 103 93M103 93V122M103 93C103 75.3269 88.6731 61 71 61H33C15.3269 61 1 46.6731 1 29V2.52766e-08" />
-
-              {/* Пульсуючі точки енергії */}
               <EnergyPulse
                 cx="102.5"
                 cy="122"
@@ -360,31 +342,31 @@ const Hero: React.FC = () => {
       {isTablet && (
         <CostomerWrapp>
           <TextContainer>
-            <TextIcon>Inventory Sync</TextIcon>
-            <TextIcon>Smart Flow</TextIcon>
+            <TextIcon>{t('inventoryHero.features.inventorySync')}</TextIcon>
+            <TextIcon>{t('inventoryHero.features.smartFlow')}</TextIcon>
           </TextContainer>
 
           <IconsFoodsContainer>
             <BorderIcon>
-              <IconFoods src={Mais} alt="🌽" />
+              <IconFoods src={Mais} alt="Corn" />
             </BorderIcon>
             <BorderIcon>
-              <IconFoods src={Box} alt="📦" />
+              <IconFoods src={Box} alt="Box" />
             </BorderIcon>
             <BorderIcon>
-              <IconFoods src={Tomato} alt="🍅" />
+              <IconFoods src={Tomato} alt="Tomato" />
             </BorderIcon>
             <BorderIcon>
-              <IconFoods src={Brocoly} alt="🥦" />
+              <IconFoods src={Brocoly} alt="Broccoli" />
             </BorderIcon>
             <BorderIcon>
-              <IconFoods src={Salt} alt="🧂" />
+              <IconFoods src={Salt} alt="Salt" />
             </BorderIcon>
             <BorderIcon>
-              <IconFoods src={Orang} alt="🍊" />
+              <IconFoods src={Orang} alt="Orange" />
             </BorderIcon>
             <BorderIcon>
-              <IconFoods src={HotDog} alt="🫔" />
+              <IconFoods src={HotDog} alt="Hot Dog" />
             </BorderIcon>
           </IconsFoodsContainer>
 
@@ -396,13 +378,8 @@ const Hero: React.FC = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Базовий шлях (фон) */}
               <PathBase d="M306.5 122V0M409 2.52766e-08V29C409 46.6731 394.673 61 377 61H339M339 61C321.327 61 307 75.3269 307 93M339 61H479C496.673 61 511 46.6731 511 29V2.52766e-08M339 61H581C598.673 61 613 46.6731 613 29V2.52766e-08M307 93V122M307 93C307 75.3269 292.673 61 275 61M205 2.52766e-08V29C205 46.6731 219.327 61 237 61H275M275 61H135C117.327 61 103 46.6731 103 29V2.52766e-08M275 61H33C15.3269 61 1 46.6731 1 29V2.52766e-08" />
-
-              {/* Анімований шлях енергії */}
               <EnergyPath d="M306.5 122V0M409 2.52766e-08V29C409 46.6731 394.673 61 377 61H339M339 61C321.327 61 307 75.3269 307 93M339 61H479C496.673 61 511 46.6731 511 29V2.52766e-08M339 61H581C598.673 61 613 46.6731 613 29V2.52766e-08M307 93V122M307 93C307 75.3269 292.673 61 275 61M205 2.52766e-08V29C205 46.6731 219.327 61 237 61H275M275 61H135C117.327 61 103 46.6731 103 29V2.52766e-08M275 61H33C15.3269 61 1 46.6731 1 29V2.52766e-08" />
-
-              {/* Пульсуючі точки енергії */}
               <EnergyPulse
                 cx="306.5"
                 cy="122"
@@ -439,8 +416,6 @@ const Hero: React.FC = () => {
                 r="0"
                 style={{ animationDelay: '1.1s' }}
               />
-
-              {/* Додаткові точки для складнішого шляху */}
               <EnergyPulse
                 cx="409"
                 cy="20"
@@ -504,7 +479,8 @@ const Hero: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            Stock Logic <CardButtonText src={Package} alt="💰" />
+            {t('inventoryHero.title')}{' '}
+            <CardButtonText src={Package} alt="Package icon" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -513,10 +489,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
-          <HeroTitle>
-            Track ingredients and metrics from source to plate
-          </HeroTitle>
+          <HeroTitle>{t('inventoryHero.heading')}</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -524,21 +497,22 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.5, delay: 0.9 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {' '}
           <ButtonContainer>
             <a
               href="https://sabsus.app/registrcompany/web/PRO"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButton>{t('hero.buttons.tryFree')}</HeroButton>
+              <HeroButton>{t('inventoryHero.buttons.tryFree')}</HeroButton>
             </a>
             <a
               href="https://sabsus.app/login/demo@sabsus.com/demo2025"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>{t('hero.buttons.viewDemo')}</HeroButtonGrey>
+              <HeroButtonGrey>
+                {t('inventoryHero.buttons.viewDemo')}
+              </HeroButtonGrey>
             </a>
           </ButtonContainer>
         </motion.div>

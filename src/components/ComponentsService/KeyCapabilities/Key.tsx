@@ -9,13 +9,13 @@ import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import dvd from '../../../assets/icons/Costomer/Dvd.svg';
 import KeySwipper from './KeySwipper';
 import { styled } from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 export const KeyWrapper = styled(motion.div)`
   margin: 0 auto;
   margin-top: 100px;
   width: 100%;
   height: 100%;
-  // margin-bottom: 100px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,8 @@ export const KeyWrapper = styled(motion.div)`
 `;
 
 const Key: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <KeyWrapper>
       <motion.div
@@ -32,7 +34,7 @@ const Key: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <ResultMainText>
-          Key Capabilities <CardButtonText src={dvd} alt="" />
+          {t('keyCapabilitiesSection1.title')} <CardButtonText src={dvd} alt="" />
         </ResultMainText>
       </motion.div>
 
@@ -43,8 +45,7 @@ const Key: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <ResultMainTitle>
-          {' '}
-          Speed up orders, streamline every shift
+          {t('keyCapabilitiesSection1.heading')}
         </ResultMainTitle>
       </motion.div>
 
@@ -55,8 +56,7 @@ const Key: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <ResultMainTextDescription>
-          Instant processing, QR payments, team roles, shift tracking — designed
-          for smooth in-store flow.
+          {t('keyCapabilitiesSection1.description')}
         </ResultMainTextDescription>
       </motion.div>
       <KeySwipper />

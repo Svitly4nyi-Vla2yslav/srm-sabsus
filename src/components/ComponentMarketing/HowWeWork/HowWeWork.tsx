@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
+import { useTranslation } from 'react-i18next';
 
 export const HowWeWorkWrapper = styled.div`
   display: flex;
@@ -389,55 +390,49 @@ export const MobileDivider = styled.div`
 `;
 
 const HowWeWork: React.FC = () => {
+  const { t } = useTranslation();
+  
   const cards = [
     {
       id: '1',
-      text: 'White-label everything',
-      description:
-        'Customize the app, website, emails, and even receipts — your logo, your colors, your brand everywhere.',
+      text: t('marketingHowWeWork.cards.card1.title'),
+      description: t('marketingHowWeWork.cards.card1.description')
     },
     {
       id: '2',
-      text: 'Multilingual interface',
-      description:
-        'Handle dine-in, delivery, and pickup in one flow. Assign tables, print kitchen tickets, or send to the app with a tap.',
+      text: t('marketingHowWeWork.cards.card2.title'),
+      description: t('marketingHowWeWork.cards.card2.description')
     },
     {
       id: '3',
-      text: 'Smart discounts & coupons',
-      description:
-        'Create offers by time, audience segment, purchase history, or special events like birthdays — automatically applied.',
+      text: t('marketingHowWeWork.cards.card3.title'),
+      description: t('marketingHowWeWork.cards.card3.description')
     },
     {
       id: '4',
-      text: 'Loyalty programs',
-      description:
-        'Reward repeat customers with points, bonuses, or exclusive deals — fully automated and personalized.',
+      text: t('marketingHowWeWork.cards.card4.title'),
+      description: t('marketingHowWeWork.cards.card4.description')
     },
     {
       id: '5',
-      text: 'Targeted push & SMS',
-      description:
-        'Send messages based on user behavior, location, or preferences. Works for promos, reminders, and reactivation.',
+      text: t('marketingHowWeWork.cards.card5.title'),
+      description: t('marketingHowWeWork.cards.card5.description')
     },
     {
       id: '6',
-      text: 'Visual homepage editor',
-      description:
-        'Display banners and promos right in the app or website. Highlight new items or campaigns in real time.',
+      text: t('marketingHowWeWork.cards.card6.title'),
+      description: t('marketingHowWeWork.cards.card6.description')
     },
     {
       id: '7',
-      text: 'Segmentation & analytics',
-      description:
-        'Group customers by behavior, value, or custom tags. Track the effectiveness of every campaign.',
+      text: t('marketingHowWeWork.cards.card7.title'),
+      description: t('marketingHowWeWork.cards.card7.description')
     },
     {
       id: '8',
-      text: 'Promotional scheduling',
-      description:
-        'Plan future campaigns and set automatic activation times — run seasonal offers without lifting a finger.',
-    },
+      text: t('marketingHowWeWork.cards.card8.title'),
+      description: t('marketingHowWeWork.cards.card8.description')
+    }
   ];
 
   const getCardAnimation = (index: number) => {
@@ -484,7 +479,6 @@ const HowWeWork: React.FC = () => {
 
   return (
     <HowWeWorkWrapper>
-      {' '}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -492,7 +486,7 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainText>
-          How We Work <HowSpanIcon src={rocket} alt="Icon" />
+          {t('marketingHowWeWork.header.title')} <HowSpanIcon src={rocket} alt="Icon" />
         </HowWeWorkMainText>
       </motion.div>
       <HowWeWorkMainid
@@ -501,7 +495,7 @@ const HowWeWork: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        Grow your brand and reach the right audience
+        {t('marketingHowWeWork.header.mainHeading')}
       </HowWeWorkMainid>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -510,8 +504,7 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainTextDescription>
-          From branded interfaces to automated campaigns — marketing becomes
-          effortless when it’s built right into the system.
+          {t('marketingHowWeWork.header.description')}
         </HowWeWorkMainTextDescription>
       </motion.div>
       <HowWeWorkContainer>

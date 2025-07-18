@@ -71,16 +71,11 @@ const Header: React.FC = () => {
             </NavItem>
 
             <NavItem
-              // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-              style={{ pointerEvents: 'none', opacity: 0.5 }}
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
               onClick={toggleServicesMenu}
             >
-              <ServiceLink
-              //  style={{ pointerEvents: 'none', opacity: 0 }}
-              >
-                {' '}
+              <ServiceLink>
                 <StyledNavLink to="/service" style={{padding: "10px 0px"}}>
                   {t('header.nav.service')} <ArrowDown src={Down} alt="⬇️" />
                 </StyledNavLink>
@@ -88,37 +83,37 @@ const Header: React.FC = () => {
                   <DropdownMenu>
                     <DropdownItem>
                       <StyledNavLink to="/service/customer-experience">
-                        Customer Experience Suite
+                        {t('header.services.customerExperience')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
                       <StyledNavLink to="/service/pos-staff-operations">
-                        POS & Staff Operations
+                        {t('header.services.posStaff')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
                       <StyledNavLink to="/service/kitchen-fulfillment">
-                        Kitchen & Fulfillment
+                        {t('header.services.kitchen')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
                       <StyledNavLink to="/service/inventory-warehousing">
-                        Inventory & Warehousing
+                        {t('header.services.inventory')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
                       <StyledNavLink to="/service/analytics-management">
-                        Analytics & Management
+                        {t('header.services.analytics')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
                       <StyledNavLink to="/service/marketing-customization">
-                        Marketing & Customization
+                        {t('header.services.marketing')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
                       <StyledNavLink to="/service/integration-scaling">
-                        Integration & Scaling
+                        {t('header.services.integration')}
                       </StyledNavLink>
                     </DropdownItem>
                   </DropdownMenu>

@@ -4,17 +4,16 @@ import { styled } from 'styled-components';
 import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
 import LinieBackground from '../../../assets/icons/Integration&Scaling/GalaxyTabS8Ultra.png';
+import { useTranslation } from 'react-i18next';
 
 export const LifeWrapper = styled(motion.div)`
   display: flex;
-  padding: 0 16px; /* або 24px — на твій смак */
+  padding: 0 16px;
   max-width: 1440px;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
   position: relative;
-  @media screen and (min-width: 768px) {
-  }
 
   @media screen and (min-width: 1440px) {
     width: 1440px;
@@ -49,11 +48,6 @@ export const LifeMainText = styled(motion.p)`
   );
   align-items: center;
   will-change: transform, opacity;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const LifeMainTitle = styled(motion.h2)`
@@ -71,11 +65,12 @@ export const LifeMainTitle = styled(motion.h2)`
   }
 
   @media screen and (min-width: 1440px) {
-   max-width: 630px;
+    max-width: 630px;
     width: 100%;
     margin: 0 auto 26px;
     display: flex;
-text-align: start;
+    text-align: start;
+  }
 `;
 
 export const LifeMainTextDescription = styled(motion.p)`
@@ -135,7 +130,7 @@ export const LifeContainer = styled.div`
 
   @media screen and (min-width: 1440px) {
     margin-bottom: 609px;
-    width: 100%; // ✅ НЕ 100vw
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -150,6 +145,7 @@ export const ImageAnimationWrapp = styled.div`
   height: 354px;
   transform: translate(-50%, -50%);
   overflow: visible;
+
   @media screen and (min-width: 768px) {
     top: 60%;
     width: 700px;
@@ -170,11 +166,6 @@ export const Linie = styled(motion.img)`
   object-fit: contain;
   width: 100%;
   height: 100%;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const GlowEffect = styled(motion.div)`
@@ -191,15 +182,11 @@ export const GlowEffect = styled(motion.div)`
   opacity: 0;
   border-radius: 50%;
   pointer-events: none;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const LivePrepInsights: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <LifeWrapper>
       <LifeContainer>
@@ -210,8 +197,8 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainText>
-           Branded Growth Tools
-            <CardButtonText src={rocket} alt="🚀" />
+            {t('brandedGrowthTools.title')}{' '}
+            <CardButtonText src={rocket} alt="Rocket icon" />
           </LifeMainText>
         </motion.div>
         <motion.div
@@ -220,7 +207,7 @@ const LivePrepInsights: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <LifeMainTitle>Create campaigns. Customize UX.</LifeMainTitle>
+          <LifeMainTitle>{t('brandedGrowthTools.heading')}</LifeMainTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -229,18 +216,15 @@ const LivePrepInsights: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <LifeMainTextDescription>
-            Reach your customers via push, email, SMS, and in-app banners.
-            Localize every detail — from text to currency — and match the entire
-            UI to your brand identity.
+            {t('brandedGrowthTools.description')}
           </LifeMainTextDescription>
         </motion.div>
       </LifeContainer>
 
       <ImageAnimationWrapp>
-        {/* Фонові лінії */}
         <Linie
           src={LinieBackground}
-          alt="background lines"
+          alt="Background illustration"
           initial={{ y: 0, opacity: 0.5 }}
           animate={{ y: -10, opacity: 1 }}
           transition={{
@@ -252,9 +236,6 @@ const LivePrepInsights: React.FC = () => {
           }}
         />
 
-        {/* Перший телефон */}
-
-        {/* Додатковий ефект світіння */}
         <GlowEffect
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1.2, opacity: 0.3 }}
@@ -266,11 +247,6 @@ const LivePrepInsights: React.FC = () => {
           }}
         />
       </ImageAnimationWrapp>
-
-      {/* <LifeMainTextDescriptionDown>
-        Birthday rewards, promo automations, and banner editing boost retention
-        and brand consistency. One dashboard, full control.
-      </LifeMainTextDescriptionDown> */}
     </LifeWrapper>
   );
 };

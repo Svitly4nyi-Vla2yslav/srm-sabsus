@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
+import { useTranslation } from 'react-i18next';
 
 export const HowWeWorkWrapper = styled.div`
   display: flex;
@@ -389,55 +390,17 @@ export const MobileDivider = styled.div`
 `;
 
 const HowWeWork: React.FC = () => {
-  const cards = [
-    {
-      id: '1',
-      text: 'Instant order processing',
-      description:
-        'Take orders in seconds with smart presets, modifiers, and intuitive navigation. Works equally fast on tablets, terminals, or smartphones.',
-    },
-    {
-      id: '2',
-      text: 'Multi-mode order types',
-      description:
-        'Handle dine-in, delivery, and pickup in one flow. Assign tables, print kitchen tickets, or send to the app with a tap.',
-    },
-    {
-      id: '3',
-      text: 'Dynamic table management',
-      description:
-        'Visual map of your venue with live updates. Move, merge, split checks — all in real time.',
-    },
-    {
-      id: '4',
-      text: 'Shift & staff tracking',
-      description:
-        'Logins with PINs, auto time tracking, and per-role permissions. Built-in attendance, tips, and performance overview.',
-    },
-    {
-      id: '5',
-      text: 'QR payments & deposits',
-      description:
-        'Print QR codes for instant checkout or deposits. Customers scan, pay, and go — no hardware required.',
-    },
-    {
-      id: '6',
-      text: 'Kitchen & printer routing',
-      description:
-        'Orders are automatically sent to the right station — drinks to bar, mains to kitchen. Supports multilingual receipts and multiple printers.',
-    },
-    {
-      id: '7',
-      text: 'On-the-fly menu updates',
-      description:
-        'Add, disable, or edit products in seconds. Changes sync instantly across POS, kitchen, and app.',
-    },
-    {
-      id: '8',
-      text: 'End-of-shift reports',
-      description:
-        'Close shifts with full financial breakdowns. Track card, cash, and delivery payments, plus tips and staff bonuses.',
-    },
+  const { t } = useTranslation();
+
+  const cardKeys = [
+    'instantOrderProcessing',
+    'multiModeOrderTypes',
+    'dynamicTableManagement',
+    'shiftStaffTracking',
+    'qrPaymentsDeposits',
+    'kitchenPrinterRouting',
+    'onTheFlyMenuUpdates',
+    'endOfShiftReports',
   ];
 
   const getCardAnimation = (index: number) => {
@@ -446,37 +409,37 @@ const HowWeWork: React.FC = () => {
         return {
           initial: { x: -100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        };
       case 1:
         return {
           initial: { x: 100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        };
       case 2:
         return {
           initial: { x: -100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        };
       case 3:
         return {
           initial: { scale: 0.5, opacity: 0 },
           whileInView: { scale: 1, opacity: 1 },
-        }; // zoom-in
+        };
       case 4:
         return {
           initial: { x: 100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        };
       case 5:
         return {
           initial: { x: -100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        };
       case 6:
         return {
           initial: { x: 100, opacity: 0 },
           whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        };
       default:
         return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
@@ -484,7 +447,6 @@ const HowWeWork: React.FC = () => {
 
   return (
     <HowWeWorkWrapper>
-      {' '}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -492,17 +454,19 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainText>
-          How We Work <HowSpanIcon src={rocket} alt="Icon" />
+          {t('howWeWork1.title')} <HowSpanIcon src={rocket} alt="Icon" />
         </HowWeWorkMainText>
       </motion.div>
+
       <HowWeWorkMainid
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        Your staff’s new favorite tool
+        {t('howWeWork1.heading')}
       </HowWeWorkMainid>
+
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -510,21 +474,19 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainTextDescription>
-          From first tap to end-of-shift reporting — the POS & Staff system is
-          built for speed, clarity, and flexibility. Here’s how the workflow
-          runs:
+          {t('howWeWork1.description')}
         </HowWeWorkMainTextDescription>
       </motion.div>
+
       <HowWeWorkContainer>
-        {cards.map((card, index) => (
-          <React.Fragment key={index}>
+        {cardKeys.map((key, index) => (
+          <React.Fragment key={key}>
             <Card
               as={motion.div}
               {...getCardAnimation(index)}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              {' '}
               <MobileDivider />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -532,7 +494,7 @@ const HowWeWork: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.15 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <CardNumber>{card.id}</CardNumber>
+                <CardNumber>{index + 1}</CardNumber>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -540,7 +502,7 @@ const HowWeWork: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <CardText>{card.text}</CardText>
+                <CardText>{t(`howWeWork1.cards.${key}.title`)}</CardText>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -548,8 +510,10 @@ const HowWeWork: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.25 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <CardDescription>{card.description}</CardDescription>
-              </motion.div>{' '}
+                <CardDescription>
+                  {t(`howWeWork1.cards.${key}.desc`)}
+                </CardDescription>
+              </motion.div>
               <MobileDivider />
             </Card>
           </React.Fragment>

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import rocket from '../../../assets/icons/Costomer/Rocket.png';
+import { useTranslation } from 'react-i18next';
 
 export const HowWeWorkWrapper = styled.div`
   display: flex;
@@ -389,102 +390,34 @@ export const MobileDivider = styled.div`
 `;
 
 const HowWeWork: React.FC = () => {
+  const { t } = useTranslation();
+
   const cards = [
-    {
-      id: '1',
-      text: 'Real-time stock tracking',
-      description:
-        'Track ingredients, goods, and packaging across all storage locations. Get live counts as orders and supplies flow.',
-    },
-    {
-      id: '2',
-      text: 'Smart write-offs',
-      description:
-        'Auto-deduct ingredients based on dish recipes and portion sizes. Manual write-offs also supported for spoilage or breakage.',
-    },
-    {
-      id: '3',
-      text: 'Inventory by zones',
-      description:
-        'Organize warehouses by storage zones (freezer, dry, cold prep). Filter and search by category, SKU, or custom tag.',
-    },
-    {
-      id: '4',
-      text: 'Preps & semi-finished products',
-      description:
-        'Track bulk items like dough or sauces. Define their shelf life, consumption rate, and production dependencies',
-    },
-    {
-      id: '5',
-      text: 'Transfers & movement',
-      description:
-        'Move stock between locations in just a few taps. System records source, destination, and staff responsible.',
-    },
-    {
-      id: '6',
-      text: 'Deliveries & suppliers',
-      description:
-        'Add deliveries manually or via import. Link items to supplier profiles, invoices, and purchase histories.',
-    },
-    {
-      id: '7',
-      text: 'Inventory audits',
-      description:
-        'Run full or partial stock takes with mobile devices. Track discrepancies, expiration dates, and overstock warnings.',
-    },
-    {
-      id: '8',
-      text: 'Packaging & bundles',
-      description:
-        'Set rules for packaging by order type (e.g. delivery vs dine-in). Link items to box types, napkins, or utensils.',
-    },
+    { id: '1', key: 'realTimeTracking' },
+    { id: '2', key: 'smartWriteOffs' },
+    { id: '3', key: 'inventoryByZones' },
+    { id: '4', key: 'prepsProducts' },
+    { id: '5', key: 'transfersMovement' },
+    { id: '6', key: 'deliveriesSuppliers' },
+    { id: '7', key: 'inventoryAudits' },
+    { id: '8', key: 'packagingBundles' },
   ];
 
   const getCardAnimation = (index: number) => {
     switch (index) {
-      case 0:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 1:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 2:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 3:
-        return {
-          initial: { scale: 0.5, opacity: 0 },
-          whileInView: { scale: 1, opacity: 1 },
-        }; // zoom-in
-      case 4:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 5:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 6:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      default:
-        return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
+      case 0: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 1: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 2: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 3: return { initial: { scale: 0.5, opacity: 0 }, whileInView: { scale: 1, opacity: 1 } };
+      case 4: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 5: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 6: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      default: return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
   };
 
   return (
     <HowWeWorkWrapper>
-      {' '}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -492,7 +425,7 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainText>
-          How We Work <HowSpanIcon src={rocket} alt="Icon" />
+          {t('inventoryManagementSection.title')} <HowSpanIcon src={rocket} alt="Icon" />
         </HowWeWorkMainText>
       </motion.div>
       <HowWeWorkMainid
@@ -501,7 +434,7 @@ const HowWeWork: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        Total control over ingredients, stock, and supply chains
+        {t('inventoryManagementSection.heading')}
       </HowWeWorkMainid>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -510,8 +443,7 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainTextDescription>
-          Stay ahead of shortages, streamline logistics, and keep your
-          operations smooth — from kitchen to warehouse.
+          {t('inventoryManagementSection.description')}
         </HowWeWorkMainTextDescription>
       </motion.div>
       <HowWeWorkContainer>
@@ -523,7 +455,6 @@ const HowWeWork: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              {' '}
               <MobileDivider />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -539,7 +470,9 @@ const HowWeWork: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <CardText>{card.text}</CardText>
+                <CardText>
+                  {t(`inventoryManagementSection.cards.${card.key}.title`)}
+                </CardText>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -547,8 +480,10 @@ const HowWeWork: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.25 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <CardDescription>{card.description}</CardDescription>
-              </motion.div>{' '}
+                <CardDescription>
+                  {t(`inventoryManagementSection.cards.${card.key}.desc`)}
+                </CardDescription>
+              </motion.div>
               <MobileDivider />
             </Card>
           </React.Fragment>

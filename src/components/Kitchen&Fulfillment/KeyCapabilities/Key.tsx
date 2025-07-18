@@ -9,30 +9,27 @@ import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 import dvd from '../../../assets/icons/Costomer/Dvd.svg';
 import KeySwipper from './KeySwipper';
 import { styled } from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 export const KeyWrapper = styled(motion.div)`
   margin: 0 auto;
   margin-top: 300px;
   width: 100%;
   height: 100%;
-  // margin-bottom: 100px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media screen and (min-width: 768px) {
-    // width: 100vh;
-    // margin-top: 100px;
-    // margin-bottom: 100px;
   }
   @media screen and (min-width: 1440px) {
-    // margin-top: 100px;
-    // margin-bottom: 150px;
   }
 `;
 
 const Key: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <KeyWrapper>
       <motion.div
@@ -42,7 +39,7 @@ const Key: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <ResultMainText>
-          Key Capabilities <CardButtonText src={dvd} alt="" />
+          {t('kitchenManagement1.title')} <CardButtonText src={dvd} alt="" />
         </ResultMainText>
       </motion.div>
 
@@ -52,9 +49,7 @@ const Key: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        <ResultMainTitle>
-          Manage the kitchen in real time — without delays.
-        </ResultMainTitle>
+        <ResultMainTitle>{t('kitchenManagement1.heading')}</ResultMainTitle>
       </motion.div>
 
       <motion.div
@@ -64,9 +59,7 @@ const Key: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <ResultMainTextDescription>
-          Increase team efficiency: order statuses, step-by-step recipes,
-          timers, and task distribution — all synchronized from screen to
-          delivery.
+          {t('kitchenManagement1.description')}
         </ResultMainTextDescription>
       </motion.div>
       <KeySwipper />
