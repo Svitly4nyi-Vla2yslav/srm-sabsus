@@ -1,12 +1,21 @@
 {
   "header": {
-    "logoAlt": "Logo de la empresa",
+    "logoAlt": "Logo SRM",
     "nav": {
       "home": "Inicio",
-      "service": "Servicio",
-      "about": "Sobre nosotros",
+      "service": "Servicios",
+      "about": "Nosotros",
       "pricing": "Precios",
       "contacts": "Contactos"
+    },
+    "services": {
+      "customerExperience": "Suite de Experiencia del Cliente",
+      "posStaff": "POS y Operaciones del Personal",
+      "kitchen": "Cocina y Cumplimiento",
+      "inventory": "Inventario y Almacenamiento",
+      "analytics": "Análisis y Gestión",
+      "marketing": "Marketing y Personalización",
+      "integration": "Integración y Escalabilidad"
     }
   },
   "hero": {
@@ -516,5 +525,736 @@
     "russian": "Rus",
     "ukrainian": "Ucr",
     "selectLanguage": "🌎{{language}} ⌄"
+  },
+    "performanceHubHero": {
+    "innovativeText": "Centro de Rendimiento",
+    "title": "Toma decisiones seguras con información en tiempo real.",
+    "buttons": {
+      "tryFree": "Probar gratis",
+      "viewDemo": "Ver demo"
+    }
+  },
+   "howWeWorkSection": {
+    "header": {
+      "title": "Cómo Trabajamos",
+      "mainHeading": "De números crudos a ideas claras",
+      "description": "Monitorea el rendimiento, mejora las decisiones y alinea todo tu negocio con lo que realmente marca la diferencia."
+    },
+    "cards": {
+      "card1": {
+        "title": "Panel con métricas en tiempo real",
+        "description": "Seguimiento de ingresos, pedidos activos, recuento de clientes y rendimiento de empleados, todo en una vista personalizable."
+      },
+      "card2": {
+        "title": "Análisis basado en tiempo",
+        "description": "Desglosa resultados por hora, día, semana o rango de fechas personalizado. Identifica horas pico y tiempos muertos."
+      },
+      "card3": {
+        "title": "Información de pedidos",
+        "description": "Analiza el tamaño promedio de la cuenta, los artículos más vendidos, las tasas de conversión y el comportamiento de pedidos por plataforma o canal."
+      },
+      "card4": {
+        "title": "Estructura de costos e ingresos",
+        "description": "Compara ingresos vs gastos por fuente: comedor, delivery, autoservicio, etc. Agrega entradas manuales para el seguimiento del flujo de efectivo."
+      },
+      "card5": {
+        "title": "Productividad del personal",
+        "description": "Mide el rendimiento de los empleados: pedidos atendidos, horas trabajadas, velocidad de servicio y comentarios de los clientes."
+      },
+      "card6": {
+        "title": "Comparación de ubicaciones",
+        "description": "Compara el rendimiento en múltiples locales o cocinas. Identifica puntos débiles y replica el éxito."
+      },
+      "card7": {
+        "title": "Informes automatizados",
+        "description": "Recibe informes programados por correo electrónico o exporta datos en cualquier momento. Comparte con partes interesadas o equipos de contabilidad."
+      },
+      "card8": {
+        "title": "Pronósticos con IA",
+        "description": "Usa IA para predecir la demanda, recomendar ajustes de precios y detectar tendencias emergentes en el comportamiento del cliente."
+      }
+    }
+  },
+   "keyCapabilitiesSection": {
+    "header": {
+      "title": "Capacidades Clave",
+      "mainHeading": "Ver el panorama general<br/>Y los pequeños detalles",
+      "description": "Informes inteligentes por tiempo, personal, categoría o tipo de pedido. Estadísticas en tiempo real.<br/>Exportaciones listas para impuestos."
+    },
+    "cards": {
+      "card1": {
+        "title": "Resumen de Ventas",
+        "text": "Seguimiento diario del rendimiento de ventas por tipo de pedido. Compare delivery, comedor y recogida de un vistazo."
+      },
+      "card2": {
+        "title": "Rendimiento de Empleados",
+        "text": "Desglose visual de la productividad del personal. Filtrar por rol, período de tiempo o ubicación."
+      },
+      "card3": {
+        "title": "Información de Métodos de Pago",
+        "text": "Analice cómo pagan los clientes. Ayuda a optimizar las opciones de procesadores y reducir costos."
+      },
+      "card4": {
+        "title": "Informes de Turno",
+        "text": "Cada día termina con informes generados automáticamente. Incluye conteos de efectivo, propinas y conciliaciones."
+      },
+      "card5": {
+        "title": "Análisis de Flujo de Pedidos",
+        "text": "Vea cómo los pedidos se mueven por su sistema. Ayuda a detectar cuellos de botella en preparación o entrega."
+      },
+      "card6": {
+        "title": "Herramientas de Pronóstico",
+        "text": "Prediga la demanda futura usando datos históricos. Ajuste el personal y el inventario en consecuencia."
+      },
+      "card7": {
+        "title": "Impuestos y Legal",
+        "text": "Genere automáticamente informes para el cumplimiento fiscal. Configure IVA, propinas, cargos por servicio."
+      },
+      "card8": {
+        "title": "Sugerencias de IA",
+        "text": "Obtenga consejos de mejora basados en el comportamiento del cliente. Desde precios hasta tiempos de preparación."
+      }
+    }
+  },
+    "livePrepInsightsSection": {
+    "header": {
+      "title": "Información en Vivo",
+      "mainHeading": "Desde el almacén hasta la cocina — siempre sincronizado",
+      "description": "Evita faltantes y desperdicios con datos de inventario en vivo. Desde la logística trasera hasta la visibilidad en cocina — todo fluye sin problemas, ahorrando tiempo y reduciendo errores.",
+      "additionalDescription": "Temporizadores, alertas y asignaciones por zona aseguran que cada plato esté listo exactamente cuando debe. Diseñado para reducir el caos y maximizar el rendimiento."
+    }
+  },
+    "brandEngineHero": {
+    "innovativeText": "Motor de Marca",
+    "title": "Gestiona campañas y fidelización, controla la identidad",
+    "buttons": {
+      "tryFree": "Probar gratis",
+      "viewDemo": "Ver demo"
+    }
+  },
+    "marketingHowWeWork": {
+    "header": {
+      "title": "Cómo Trabajamos",
+      "mainHeading": "Haz crecer tu marca y llega al público correcto",
+      "description": "Desde interfaces personalizadas hasta campañas automatizadas — el marketing se vuelve sencillo cuando está integrado en el sistema."
+    },
+    "cards": {
+      "card1": {
+        "title": "Personalización total",
+        "description": "Personaliza la app, sitio web, emails e incluso recibos — tu logo, tus colores, tu marca en todas partes."
+      },
+      "card2": {
+        "title": "Interfaz multilingüe",
+        "description": "Gestiona pedidos en el local, delivery y recogida en un solo flujo. Asigna mesas, imprime tickets o envía a la app con un toque."
+      },
+      "card3": {
+        "title": "Descuentos inteligentes",
+        "description": "Crea ofertas por tiempo, segmento de audiencia, historial de compras o eventos especiales como cumpleaños — aplicadas automáticamente."
+      },
+      "card4": {
+        "title": "Programas de fidelidad",
+        "description": "Recompensa clientes frecuentes con puntos, bonos u ofertas exclusivas — completamente automatizado y personalizado."
+      },
+      "card5": {
+        "title": "Notificaciones dirigidas",
+        "description": "Envía mensajes basados en comportamiento, ubicación o preferencias. Funciona para promos, recordatorios y reactivación."
+      },
+      "card6": {
+        "title": "Editor visual",
+        "description": "Muestra banners y promociones directamente en la app o sitio web. Destaca nuevos ítems o campañas en tiempo real."
+      },
+      "card7": {
+        "title": "Segmentación y análisis",
+        "description": "Agrupa clientes por comportamiento, valor o etiquetas personalizadas. Mide la efectividad de cada campaña."
+      },
+      "card8": {
+        "title": "Programación de promos",
+        "description": "Planea campañas futuras y activación automática — ejecuta ofertas estacionales sin esfuerzo."
+      }
+    }
+  },
+  "marketingKeySection": {
+    "header": {
+      "title": "Capacidades Clave",
+      "mainHeading": "Promociona más inteligente<br/>Personaliza más profundo",
+      "description": "Descuentos automatizados, ofertas personalizadas, interfaz multilingüe y flexibilidad total de branding."
+    },
+    "cards": {
+      "card1": {
+        "title": "Campañas multicanal",
+        "text": "Lanza marketing mediante push, SMS, email y banners en la app. Programa campañas basadas en comportamiento."
+      },
+      "card2": {
+        "title": "Programas de fidelidad",
+        "text": "Crea experiencias gratificantes con puntos automáticos. Personaliza ofertas para grupos de clientes."
+      },
+      "card3": {
+        "title": "Interfaz personalizada",
+        "text": "Diseña la app y web con tu identidad visual. Desde logo hasta colores, todo a tu medida."
+      },
+      "card4": {
+        "title": "Automatización de promos",
+        "text": "Activa descuentos según tamaño de carrito o etiquetas de cliente. Configúralo una vez y olvídate."
+      },
+      "card5": {
+        "title": "Multilingüe y localización",
+        "text": "Experiencia de usuario en RU, EN, ES o UA. Formatos personalizados para fecha, moneda y dirección."
+      },
+      "card6": {
+        "title": "Ofertas personalizadas",
+        "text": "Usa IA para recomendar productos basados en preferencias. Haz que los clientes se sientan entendidos."
+      },
+      "card7": {
+        "title": "Diseñador de banners",
+        "text": "Crea gráficos para promociones desde tu panel. Sin necesidad de herramientas externas."
+      },
+      "card8": {
+        "title": "Analítica de campañas",
+        "text": "Mide qué campaña genera más clicks. Ajusta mensajes basado en datos reales."
+      }
+    }
+  },
+   "marketingLivePrep": {
+    "header": {
+      "title": "Información en Vivo",
+      "mainHeading": "Crea campañas. Personaliza UX.",
+      "description": "Llega a tus clientes mediante push, email, SMS y banners en la app. Localiza cada detalle — desde texto hasta moneda — y adapta toda la interfaz a tu identidad de marca.",
+      "additionalDescription": "Recompensas de cumpleaños, automatización de promos y editor de banners mejoran retención y consistencia de marca. Un panel, control total."
+    }
+  },
+   "faqSection": {
+    "title": "Preguntas frecuentes",
+    "subtitle": "Tienes preguntas. Tenemos respuestas honestas.",
+    "questions": {
+      "q1": {
+        "question": "¿Qué es SABSUS y qué incluye?",
+        "answer": "SABSUS es un ecosistema todo en uno para restaurantes, cafés, panaderías, dark kitchens y retail.\n\nIncluido en cada plan:\n\n• Sistema POS\n• CRM y fidelización\n• Gestión de almacén e ingredientes\n• Delivery con precios por zona\n• Finanzas, propinas, salarios\n• Análisis e informes en tiempo real\n• Seguimiento de pedidos y disposición de mesas\n• Infraestructura en la nube + soporte multilingüe\n• Aplicaciones web y móviles"
+      },
+      "q2": {
+        "question": "¿Necesito instalar algún hardware?",
+        "answer": "No. SABSUS funciona en cualquier navegador y dispositivo:\n\n• Tabletas (Android/iOS)\n• Ordenadores, terminales POS\n• Smartphones\n\nTodas las interfaces son responsive y optimizadas para touch."
+      },
+      "q3": {
+        "question": "¿En qué se diferencia SABSUS de otras soluciones POS/CRM?",
+        "answer": "La mayoría de sistemas ofrecen 1-2 módulos. Nosotros te damos todo:\n\n• Ciclo completo desde pedido hasta delivery\n• Fidelización, feedback, escáner de códigos\n• Promociones, salarios del personal, mapas de mesas\n• Interfaces multilingües + traducciones con IA\n• App + web bajo tu marca (opción white-label)\n• Sin comisiones ocultas"
+      },
+      "q4": {
+        "question": "¿Qué diferencia hay entre planes SaaS y White-label?",
+        "answer": "Suscripción SaaS vs White-label:\n\n• Funciona bajo marca SABSUS vs App y web con tu marca\n• $89–289/mes vs $249–899/mes\n• Sin presencia en app stores vs Publicado en App Store y Google Play\n• Servidor compartido vs Servidor y base de datos separados"
+      },
+      "q5": {
+        "question": "¿Puedo comprar la app en lugar de suscribirme?",
+        "answer": "Sí. Puedes comprar completamente la app white-label sin suscripción.\n\nIncluye:\n\n• Licencia perpetua\n• 1 año de actualizaciones y soporte\n• Control total de tu base de datos\n• $50/mes mantenimiento opcional tras 1 año\n\nPrecios desde:\n\n• $14,000 (1 local, 1 idioma)\n• $25,000 (hasta 3 locales, 2 idiomas)\n• $35,000 (hasta 10 locales, todos idiomas)"
+      },
+      "q6": {
+        "question": "¿Las actualizaciones futuras están incluidas en el modelo de compra?",
+        "answer": "Sí — el primer año está incluido.\n\nDespués, actualizaciones y soporte disponibles por $50/mes.\n\nNo estás obligado a actualizar si no quieres."
+      },
+      "q7": {
+        "question": "¿Puedo migrar mis datos de otros sistemas POS/CRM?",
+        "answer": "Sí. Ofrecemos herramientas de importación o ayudamos a migrar desde Square, Toast, Loyverse, Poster, iiko y otros."
+      },
+      "q8": {
+        "question": "¿Qué idiomas soporta?",
+        "answer": "Actualmente:\n\n• Inglés\n• Español\n• Ruso\n• Ucraniano\n\nEl sistema cambia automáticamente según preferencia. Apps white-label pueden bloquearse a 1-4 idiomas según plan."
+      },
+      "q9": {
+        "question": "¿Cómo gestiono múltiples locales o marcas?",
+        "answer": "SABSUS está diseñado para esto:\n\n• Paneles centralizados\n• Menú e impuestos por local\n• Análisis y personal por establecimiento\n• Sincronización de inventario\n\nPuedes gestionar fácilmente de 1 a 100+ locales."
+      },
+      "q10": {
+        "question": "¿Cuál es la política de reembolso?",
+        "answer": "Suscripciones mensuales cancelables en cualquier momento.\n\nCompra de app y branding no son reembolsables (incluyen desarrollo personalizado).\n\nRecomendamos comenzar con demo o suscripción de 1 mes."
+      },
+      "q11": {
+        "question": "¿Qué tan seguros son mis datos?",
+        "answer": "• Alojado en Google Cloud / Supabase\n• Copias encriptadas\n• Registros de acceso y permisos\n• Infraestructura GDPR/SOC2\n\nTú controlas tu base de datos (en modo white-label o compra)"
+      },
+      "q12": {
+        "question": "¿Qué pasa si se va mi internet?",
+        "answer": "SABSUS soporta modo offline para operaciones POS.\n\nPedidos y tickets se sincronizan automáticamente al recuperar conexión."
+      },
+      "q13": {
+        "question": "¿Ofrecen desarrollo personalizado o acceso API?",
+        "answer": "Sí:\n\n• API disponible en planes white-label y compra\n• Integración con Stripe, Telegram, Uber Eats, Google Maps, etc.\n\nPuedes solicitar features o pagar por módulos personalizados"
+      },
+      "q14": {
+        "question": "¿Puedo conectar impresoras, lectores de tarjetas o agregadores de delivery?",
+        "answer": "Sí.\n\nSoportado:\n\n• Star, Epson, Sunmi, Payoneer, Stripe Terminals\n• Uber Eats (listo), Doordash (próximamente)\n• Integraciones SMS, email y push incorporadas"
+      },
+      "q15": {
+        "question": "¿Cómo empiezo?",
+        "answer": "Elige tu modelo:\n\n• ¿SaaS? → Comienza tu suscripción ahora\n• ¿White-label? → Envía tu marca + logo\n• ¿Quieres comprarlo todo? → Contacta ventas para pago único\n\nNos encargamos de configuración, publicación y onboarding."
+      }
+    }
+  },
+    "howWeWorkSection1": {
+    "title": "Cómo trabajamos",
+    "heading": "Proporcionamos una guía paso a paso para ayudarte a entender nuestro proceso.",
+    "description": "Nuestro Customer Experience Suite crea interacciones fluidas y de marca a lo largo del viaje del cliente. Así es como funciona, desde el pedido hasta la retención:",
+    "cards": {
+      "fastOrdering": {
+        "title": "Pedido rápido e intuitivo",
+        "desc": "Los clientes exploran el menú, aplican promociones y realizan pedidos en segundos a través de una aplicación móvil elegante y de marca. Sin inicios de sesión, sin fricción, solo una experiencia de usuario fluida."
+      },
+      "loyaltyPrograms": {
+        "title": "Programas de fidelización personalizados",
+        "desc": "Bonificaciones automáticas, descuentos y regalos de cumpleaños se aplican en tiempo real. Cada compra fortalece la conexión con el cliente."
+      },
+      "deliveryFlow": {
+        "title": "Flujo inteligente de entrega y recogida",
+        "desc": "Opciones de entrega, recogida y servicio en mesa, todo gestionado a través de una interfaz. Los clientes pueden volver a pedir, rastrear repartidores y guardar direcciones de entrega."
+      },
+      "reservationSystem": {
+        "title": "Sistema de reservas y lista de espera",
+        "desc": "Reserva una mesa, únete a una lista de espera o reprograma, todo sin llamadas. Confirmación instantánea e integración con calendario incluida."
+      },
+      "notifications": {
+        "title": "Notificaciones en tiempo real",
+        "desc": "Los clientes se mantienen informados en cada paso, desde la aceptación del pedido hasta el repartidor en camino. Notificaciones push, correo electrónico o SMS, todo cubierto."
+      },
+      "feedback": {
+        "title": "Seguimiento de comentarios",
+        "desc": "Flujo de reseñas incorporado y memoria de gustos personales. Recopila información, identifica clientes habituales y ofrece experiencias personalizadas."
+      },
+      "selfService": {
+        "title": "Autoservicio y repetición de pedidos",
+        "desc": "Repite tu último pedido con un toque, ajusta artículos y salta la fila con códigos QR en la mesa o integración con la aplicación."
+      },
+      "customerProfile": {
+        "title": "Perfil centralizado del cliente",
+        "desc": "Cada interacción alimenta el CRM: historial de compras, preferencias de pedidos, bonificaciones, zonas de entrega, todo listo para soporte y ventas adicionales."
+      }
+    }
+  },
+  "keyCapabilitiesSection1": {
+    "title": "Capacidades clave",
+    "heading": "Acelera pedidos, optimiza cada turno",
+    "description": "Procesamiento instantáneo, pagos QR, roles del equipo, seguimiento de turnos — diseñado para un flujo de trabajo fluido.",
+    "cards": {
+      "orderManagement": {
+        "title": "Gestión de pedidos",
+        "desc": "Gestiona pedidos en tiempo real con una interfaz elegante. Mantén tu flujo de trabajo organizado."
+      },
+      "shiftTracking": {
+        "title": "Seguimiento de turnos",
+        "desc": "Controla horas de trabajo, descansos y rotación de empleados. Los datos del turno se registran y visualizan."
+      },
+      "tableLayout": {
+        "title": "Distribución de mesas",
+        "desc": "Edita mapas de asientos interactivos para un servicio eficiente. Las mesas se vinculan al estado del pedido y al número de invitados."
+      },
+      "qrPayments": {
+        "title": "Pagos QR",
+        "desc": "Los clientes pueden pagar rápida y seguramente con códigos QR vinculados a cada pedido."
+      },
+      "accessControl": {
+        "title": "Control de acceso",
+        "desc": "Asigna permisos por rol. El acceso por PIN garantiza la seguridad en cada punto."
+      },
+      "receiptPrinting": {
+        "title": "Impresión de recibos",
+        "desc": "Imprime recibos y pedidos al instante. Personaliza formatos e idiomas para tu marca."
+      },
+      "depositTips": {
+        "title": "Depósitos y propinas",
+        "desc": "Rastrea depósitos prepagos y propinas digitales con total transparencia. Vinculado directamente al perfil del cliente y al pedido."
+      },
+      "roleManagement": {
+        "title": "Gestión de roles",
+        "desc": "Controla la visibilidad en el sistema con plantillas de roles. Adecuado para cafés, panaderías, restaurantes y minoristas."
+      }
+    }
+  },
+    "livePrepInsights1": {
+    "title": "Información de preparación en vivo",
+    "heading": "Plataforma de interacción todo en uno",
+    "description": "Unifica todos los canales de interacción con el usuario en una experiencia perfecta. Desde pedidos móviles hasta recompensas de fidelidad, todo está diseñado para ser intuitivo y rápido.",
+    "footerText": "Tu marca, tu flujo. Personaliza los puntos de contacto con control total sobre los aspectos visuales, el comportamiento y la lógica de interacción, todo mientras brindas una experiencia encantadora en el recorrido del cliente."
+  },
+   "mobileUXSection1": {
+    "title": "UX móvil",
+    "heading": "Crea recorridos de clientes personalizados",
+    "buttons": {
+      "tryFree": "Probar gratis",
+      "viewDemo": "Ver demo"
+    }
+  },
+    "stepByStepGuidance1": {
+    "title": "Guía paso a paso",
+    "heading": "Domina tu CRM en minutos",
+    "description": "Mira un recorrido de nuestro sistema CRM, desde la configuración de perfiles hasta la gestión de tu pipeline. Esta guía muestra cómo maximizar cada función."
+  },
+    "integrationScalingHero": {
+    "title": "Infraestructura abierta",
+    "heading": "Escale sus operaciones — conéctese a cualquier cosa, en cualquier momento",
+    "buttons": {
+      "tryFree": "Probar gratis",
+      "viewDemo": "Ver demo"
+    }
+  },
+   "integrationScalingSection": {
+    "title": "Cómo trabajamos",
+    "heading": "Expande sin límites",
+    "description": "Conecta servicios, escala operaciones y adapta el sistema a cualquier tamaño o geografía — todo sin fricción.",
+    "cards": {
+      "oneClick": {
+        "title": "Integraciones con un clic",
+        "desc": "Conéctate sin problemas con pasarelas de pago, plataformas de entrega (como UberEats), impresoras y más — sin necesidad de programación."
+      },
+      "openApi": {
+        "title": "Acceso a API abierta",
+        "desc": "Crea funciones personalizadas, sincroniza con herramientas externas o crea nuevos flujos de trabajo — la plataforma está lista para desarrolladores."
+      },
+      "multivenue": {
+        "title": "Gestión multi-sede",
+        "desc": "Añade y gestiona múltiples tiendas, restaurantes o almacenes desde un solo panel — cada uno con configuraciones únicas."
+      },
+      "roleAccess": {
+        "title": "Acceso y permisos por roles",
+        "desc": "Crea roles para personal, repartidores, proveedores o marketers — cada uno con permisos y visibilidad personalizados."
+      },
+      "domainConfig": {
+        "title": "Configuración de dominio y SSL",
+        "desc": "Configura tu propio nombre de dominio y habilita HTTPS seguro fácilmente — ideal para portales web con marca."
+      },
+      "offlineMode": {
+        "title": "Modo offline",
+        "desc": "Opera sin internet — procesa pagos, imprime recibos y sincroniza datos cuando se restablezca la conexión."
+      },
+      "responsiveDesign": {
+        "title": "Diseño responsivo",
+        "desc": "Accede a todo desde escritorio, tableta o móvil — diseñado para funcionar perfectamente en todos los dispositivos."
+      },
+      "scalableInfra": {
+        "title": "Infraestructura escalable",
+        "desc": "Ya sea un local o cien, el sistema se adapta sin caídas de rendimiento ni complejidad adicional."
+      }
+    }
+  },
+    "integrationScalingCards": {
+    "apiFirst": {
+      "title": "Enfoque API-First",
+      "text": "Conecta tu ecosistema a herramientas externas con una API pública. Está abierta a socios y procesadores."
+    },
+    "scalableInfra": {
+      "title": "Infraestructura escalable",
+      "text": "Añade nuevos locales, roles o flujos de trabajo sin remodelaciones. Tu crecimiento no requiere rediseño."
+    },
+    "deviceFlexibility": {
+      "title": "Flexibilidad de dispositivos",
+      "text": "Usa el sistema en tabletas, teléfonos, escritorios o terminales POS. No se necesita hardware propietario."
+    },
+    "offlineMode": {
+      "title": "Modo offline",
+      "text": "Sigue procesando incluso si falla internet — los datos se sincronizan automáticamente cuando vuelves a estar en línea."
+    },
+    "multiFormat": {
+      "title": "Acceso multiformato",
+      "text": "Cambia entre modos de entrega, comida en el lugar o recogida en diferentes interfaces. Se adapta al instante."
+    },
+    "customDomains": {
+      "title": "Dominios personalizados y SSL",
+      "text": "Personaliza tu versión web con tu dominio y mantén los datos seguros. Certificados SSL incluidos por defecto."
+    },
+    "paymentIntegrations": {
+      "title": "Integraciones de pago",
+      "text": "Conecta fácilmente Stripe, Apple Pay o sistemas bancarios. Las transacciones se realizan sin fricción."
+    },
+    "deliveryAggregators": {
+      "title": "Agregadores de entrega",
+      "text": "Conéctate a UberEats, DoorDash y más — y gestiona pedidos desde un solo lugar."
+    }
+  },
+    "keyCapabilitiesSection2": {
+    "title": "Capacidades clave",
+    "heading": "Conecta, expande, repite",
+    "description": "Incluye acceso API, integraciones con terminales y entregas, escalado multi-sede y modo offline."
+  },
+    "brandedGrowthTools": {
+    "title": "Herramientas de crecimiento de marca",
+    "heading": "Crea campañas. Personaliza la UX.",
+    "description": "Llega a tus clientes mediante push, email, SMS y banners en la aplicación. Localiza cada detalle — desde el texto hasta la moneda — y adapta toda la interfaz a la identidad de tu marca.",
+    "footerText": "Recompensas de cumpleaños, automatizaciones de promociones y edición de banners mejoran la retención y la coherencia de marca. Un panel de control, control total."
+  },
+   "inventoryHero": {
+    "title": "Lógica de stock",
+    "heading": "Rastrea ingredientes y métricas desde la fuente hasta el plato",
+    "features": {
+      "inventorySync": "Sincronización de inventario",
+      "smartFlow": "Flujo inteligente"
+    },
+    "buttons": {
+      "tryFree": "Probar gratis",
+      "viewDemo": "Ver demo"
+    }
+  },
+   "inventoryManagementSection": {
+    "title": "Cómo trabajamos",
+    "heading": "Control total sobre ingredientes, stock y cadenas de suministro",
+    "description": "Prevenga escaseces, optimice logística y mantenga operaciones fluidas — desde cocina hasta almacén.",
+    "cards": {
+      "realTimeTracking": {
+        "title": "Seguimiento de stock en tiempo real",
+        "desc": "Rastree ingredientes, bienes y empaques en todas las ubicaciones. Obtenga conteos en vivo del flujo de pedidos."
+      },
+      "smartWriteOffs": {
+        "title": "Bajas inteligentes",
+        "desc": "Deducción automática de ingredientes según recetas. También se soportan bajas manuales por daños."
+      },
+      "inventoryByZones": {
+        "title": "Inventario por zonas",
+        "desc": "Organice almacenes por zonas (congelador, seco, prep fría). Filtre por categoría, SKU o etiquetas."
+      },
+      "prepsProducts": {
+        "title": "Preparaciones y semielaborados",
+        "desc": "Gestione productos como masas o salsas. Defina vida útil, tasa de consumo y dependencias de producción."
+      },
+      "transfersMovement": {
+        "title": "Transferencias y movimiento",
+        "desc": "Mueva stock entre ubicaciones con pocos toques. El sistema registra origen, destino y responsable."
+      },
+      "deliveriesSuppliers": {
+        "title": "Entregas y proveedores",
+        "desc": "Agregue entregas manualmente o por importación. Relacione ítems con perfiles de proveedores e historial."
+      },
+      "inventoryAudits": {
+        "title": "Auditorías de inventario",
+        "desc": "Realice conteos completos o parciales. Monitoree discrepancias, fechas de vencimiento y excesos."
+      },
+      "packagingBundles": {
+        "title": "Empaques y combos",
+        "desc": "Establezca reglas de empaque por tipo de pedido. Relacione ítems con cajas, servilletas o utensilios."
+      }
+    }
+  },
+    "inventoryKeyFeatures": {
+    "title": "Funciones clave",
+    "heading": "Siempre sepa qué hay en stock",
+    "description": "Rastree suministros, mueva existencias, descarte automáticamente ingredientes y simplifique la logística del almacén.",
+    "cards": {
+      "ingredientTracking": {
+        "title": "Seguimiento de ingredientes",
+        "text": "Monitoree productos desde el proveedor hasta el almacenamiento. Minimice el deterioro y los desechos con automatización."
+      },
+      "stockLevels": {
+        "title": "Niveles de stock",
+        "text": "Visión general del inventario en todas las ubicaciones para ingredientes, empaques y productos semiacabados."
+      },
+      "warehouseTransfers": {
+        "title": "Transferencias entre almacenes",
+        "text": "Mueva existencias con documentación digital completa. Mantenga el inventario equilibrado en todos los locales."
+      },
+      "smartCategorization": {
+        "title": "Categorización inteligente",
+        "text": "Etiquete artículos por categoría, proveedor, caducidad y más. Filtrado y búsqueda rápidos en cualquier momento."
+      },
+      "supplyDeliveries": {
+        "title": "Entregas de suministros",
+        "text": "Registre nuevas entregas, concilie facturas, actualice cantidades. Funciona perfectamente con órdenes de compra."
+      },
+      "wasteManagement": {
+        "title": "Gestión de residuos",
+        "text": "Marque artículos dañados o caducados con códigos de razón. Mejora los análisis y los hábitos de pedido."
+      },
+      "costCalculation": {
+        "title": "Cálculo de costos",
+        "text": "Actualizaciones automáticas de COGS basadas en precios de compra. Ayuda a determinar márgenes precisos por artículo."
+      },
+      "ingredientBundling": {
+        "title": "Agrupación de ingredientes",
+        "text": "Cree kits de preparación y componentes semiacabados. Ideal para masas de pizza, salsas, etc."
+      }
+    }
+  },
+    "inventoryHero1": {
+    "title": "Información de preparación",
+    "heading": "Del almacén a la cocina — siempre sincronizado",
+    "description": "Rastrea existencias, transferencias y suministros en un sistema inteligente. Monitorea ingredientes, empaques y kits de preparación con actualizaciones instantáneas en todos los locales.",
+    "footerText": "Temporizadores, alertas y asignaciones de zonas aseguran que cada plato esté listo exactamente cuando debe. Diseñado para reducir el caos y maximizar el rendimiento."
+  },
+   "kitchenHero1": {
+    "title": "Experiencia móvil",
+    "heading": "Crea recorridos de clientes personalizados",
+    "buttons": {
+      "tryFree": "Probar gratis",
+      "viewDemo": "Ver demo"
+    }
+  },
+  "howWeWorkSection2": {
+    "title": "Cómo trabajamos",
+    "heading": "Desde el pedido hasta la luz de listo — organizado, rápido y claro",
+    "description": "El sistema de cocina y cumplimiento trae precisión a tu flujo interno. Así es como tu equipo se mantiene sincronizado:",
+    "cards": {
+      "instantOrderProcessing": {
+        "title": "Procesamiento instantáneo de pedidos",
+        "desc": "Toma pedidos en segundos con ajustes preestablecidos inteligentes, modificadores y navegación intuitiva. Funciona igual de rápido en tabletas, terminales o smartphones."
+      },
+      "multiModeOrderTypes": {
+        "title": "Tipos de pedidos multimodo",
+        "desc": "Maneja pedidos para comer en el lugar, entregas y recogidas en un solo flujo. Asigna mesas, imprime tickets de cocina o envía a la aplicación con un toque."
+      },
+      "dynamicTableManagement": {
+        "title": "Gestión dinámica de mesas",
+        "desc": "Mapa visual de tu establecimiento con actualizaciones en vivo. Mueve, fusiona, divide cuentas — todo en tiempo real."
+      },
+      "shiftStaffTracking": {
+        "title": "Seguimiento de turnos y personal",
+        "desc": "Inicios de sesión con PINs, seguimiento automático del tiempo y permisos por roles. Asistencia incorporada, propinas y resumen de rendimiento."
+      },
+      "qrPaymentsDeposits": {
+        "title": "Pagos QR y depósitos",
+        "desc": "Imprime códigos QR para pago instantáneo o depósitos. Los clientes escanean, pagan y se van — no se requiere hardware adicional."
+      },
+      "kitchenPrinterRouting": {
+        "title": "Enrutamiento a cocina e impresoras",
+        "desc": "Los pedidos se envían automáticamente a la estación correcta — bebidas al bar, platos principales a cocina. Soporta recibos multilingües y múltiples impresoras."
+      },
+      "onTheFlyMenuUpdates": {
+        "title": "Actualizaciones de menú al instante",
+        "desc": "Añade, desactiva o edita productos en segundos. Los cambios se sincronizan al instante en POS, cocina y aplicación."
+      },
+      "endOfShiftReports": {
+        "title": "Informes de fin de turno",
+        "desc": "Cierra turnos con desgloses financieros completos. Rastrea pagos con tarjeta, efectivo y entregas, además de propinas y bonificaciones del personal."
+      }
+    }
+  },
+   "kitchenManagement1": {
+    "title": "Capacidades clave",
+    "heading": "Gestiona la cocina en tiempo real — sin demoras.",
+    "description": "Aumenta la eficiencia del equipo: estados de pedidos, recetas paso a paso, temporizadores y distribución de tareas — todo sincronizado desde la pantalla hasta la entrega.",
+    "cards": {
+      "realTimeStatus": {
+        "title": "Estado de preparación",
+        "desc": "Los pedidos llegan a la cocina con actualizaciones en cada etapa. El personal sabe qué se está cocinando."
+      },
+      "visualRecipes": {
+        "title": "Recetas visuales",
+        "desc": "Cada plato tiene una tarjeta digital con ingredientes y pasos de preparación, garantizando calidad."
+      },
+      "timersAlerts": {
+        "title": "Temporizadores y alertas",
+        "desc": "Configura temporizadores y alertas para cada artículo. La cocina permanece sincronizada con el salón y la entrega."
+      },
+      "zoneAssignment": {
+        "title": "Asignación de zonas",
+        "desc": "Los pedidos se dirigen a la zona correcta de la cocina. Esto optimiza la carga de trabajo y reduce los retrasos."
+      },
+      "frontNotifications": {
+        "title": "Notificaciones al salón",
+        "desc": "Cuando los platos están listos, se notifica al salón. Esto mejora la velocidad de entrega y el servicio."
+      },
+      "displayScreens": {
+        "title": "Pantallas",
+        "desc": "Sigue los pedidos en pantallas digitales. Los clientes ven cuándo su pedido está listo."
+      },
+      "ingredientVisibility": {
+        "title": "Visibilidad de ingredientes",
+        "desc": "Consulta todos los componentes de un plato de un vistazo. Desde alergias hasta conteo de calorías, todo está mapeado."
+      },
+      "stationAssignment": {
+        "title": "Asignación de estaciones",
+        "desc": "Cada miembro de la cocina ve solo sus tareas relevantes. Aumenta la velocidad, reduce errores."
+      }
+    }
+  },
+    "kitchenPrepInsights1": {
+    "title": "Información de preparación en cocina",
+    "heading": "Precisión y velocidad desde la preparación hasta el plato",
+    "description": "Sigue el progreso de cocción en tiempo real en todas las estaciones con pantallas de cocina sincronizadas. Cada pedido fluye a través de etapas claras: preparación, cocción, servicio, con indicadores luminosos.",
+    "footerText": "Los temporizadores, alertas y asignaciones de zonas aseguran que cada plato esté listo exactamente cuando debe. Diseñado para reducir el caos y maximizar el rendimiento."
+  },
+    "terminalControlSection": {
+    "title": "Control de terminal",
+    "heading": "Simplifica los turnos con herramientas POS más inteligentes",
+    "buttons": {
+      "tryFree": "Probar gratis",
+      "viewDemo": "Ver demo"
+    }
+  },
+    "howWeWork1": {
+    "title": "Cómo trabajamos",
+    "heading": "La nueva herramienta favorita de tu personal",
+    "description": "Desde el primer toque hasta los informes posteriores al turno, el sistema POS y Staff está diseñado para velocidad, claridad y flexibilidad. Así es como funciona el flujo de trabajo:",
+    "cards": {
+      "instantOrderProcessing": {
+        "title": "Procesamiento instantáneo de pedidos",
+        "desc": "Toma pedidos en segundos con ajustes preestablecidos inteligentes, modificadores y navegación intuitiva. Funciona igual de rápido en tabletas, terminales o teléfonos inteligentes."
+      },
+      "multiModeOrderTypes": {
+        "title": "Tipos de pedidos multimodo",
+        "desc": "Maneja pedidos para comer en el lugar, entregas y recogidas en un solo flujo. Asigna mesas, imprime tickets de cocina o envía a la aplicación con un toque."
+      },
+      "dynamicTableManagement": {
+        "title": "Gestión dinámica de mesas",
+        "desc": "Mapa visual de tu establecimiento con actualizaciones en vivo. Mueve, fusiona, divide cuentas, todo en tiempo real."
+      },
+      "shiftStaffTracking": {
+        "title": "Seguimiento de turnos y personal",
+        "desc": "Inicios de sesión con PINs, seguimiento automático del tiempo y permisos por roles. Asistencia incorporada, propinas y resumen de rendimiento."
+      },
+      "qrPaymentsDeposits": {
+        "title": "Pagos QR y depósitos",
+        "desc": "Imprime códigos QR para pago instantáneo o depósitos. Los clientes escanean, pagan y se van, sin necesidad de hardware adicional."
+      },
+      "kitchenPrinterRouting": {
+        "title": "Enrutamiento a cocina e impresoras",
+        "desc": "Los pedidos se envían automáticamente a la estación correcta: bebidas al bar, platos principales a la cocina. Soporta recibos multilingües y múltiples impresoras."
+      },
+      "onTheFlyMenuUpdates": {
+        "title": "Actualizaciones de menú al instante",
+        "desc": "Añade, desactiva o edita productos en segundos. Los cambios se sincronizan al instante en POS, cocina y aplicación."
+      },
+      "endOfShiftReports": {
+        "title": "Informes de fin de turno",
+        "desc": "Cierra turnos con desgloses financieros completos. Rastrea pagos con tarjeta, efectivo y entregas, además de propinas y bonificaciones del personal."
+      }
+    }
+  },
+    "keyCapabilitiesSection3": {
+    "title": "Capacidades clave",
+    "heading": "De la pantalla al servicio, sin demoras",
+    "description": "Estados de pedidos en vivo, desglose de recetas, temporizadores y coordinación de recogida diseñados para tu equipo de cocina.",
+    "cards": {
+      "brandedMobileApp": {
+        "title": "Aplicación móvil de marca",
+        "desc": "Obtén una aplicación personalizada con el logo y colores de tu marca. Ideal para el compromiso del usuario y pedidos repetidos."
+      },
+      "loyaltyPrograms": {
+        "title": "Programas de fidelización",
+        "desc": "Configura bonificaciones, cashback o descuentos basados en la actividad del usuario. Crea hábitos y retén a tus mejores clientes."
+      },
+      "smartDeliveryOptions": {
+        "title": "Opciones de entrega inteligentes",
+        "desc": "Elige entre entrega, recogida o servicio en mesa. Incluye ubicación automática y direcciones guardadas."
+      },
+      "pushNotifications": {
+        "title": "Notificaciones push",
+        "desc": "Envía actualizaciones oportunas sobre pedidos, promociones o novedades. Aumenta el compromiso y reduce las ausencias."
+      },
+      "orderHistoryRepeats": {
+        "title": "Historial y repetición de pedidos",
+        "desc": "Permite a los usuarios volver a pedir en segundos desde sus compras anteriores. Rastrea preferencias para personalizar."
+      },
+      "tableReservations": {
+        "title": "Reservas de mesas",
+        "desc": "Reserva mesas con antelación con franjas horarias y número de comensales. Reduce colas y optimiza el espacio."
+      },
+      "customerFeedback": {
+        "title": "Comentarios de clientes",
+        "desc": "Recoge reseñas y valoraciones por pedido. Demuestra que escuchas y genera confianza."
+      },
+      "personalAccountArea": {
+        "title": "Área de cuenta personal",
+        "desc": "Gestiona pedidos, estado de fidelización, datos guardados y preferencias. Una experiencia integral perfecta para usuarios."
+      }
+    }
+  },
+    "kitchenPrepInsights2": {
+    "title": "Información de preparación en cocina",
+    "heading": "Precisión y velocidad desde la preparación al plato",
+    "description": "Sigue el progreso de cocción en tiempo real en todas las estaciones con pantallas de cocina sincronizadas. Cada pedido fluye a través de etapas claras: preparación, cocción, servicio, con indicadores luminosos.",
+    "footerText": "Temporizadores, alertas y asignaciones de zonas aseguran que cada plato esté listo exactamente cuando debe. Diseñado para reducir el caos y maximizar el rendimiento."
   }
 }
