@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Cassette from '../../../assets/icons/Costomer/Videocassette.svg';
 import logo from '../../../assets/icons/logo-srm.svg';
@@ -296,25 +296,70 @@ const VideoHoverWrapper = styled.div`
 const StepByStepGuidance: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [showControls, setShowControls] = useState(false);
   const { t } = useTranslation();
+
+  // Таймер для автоматичного приховування контролів
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
+    if (showControls) {
+      timeoutId = setTimeout(() => {
+        setShowControls(false);
+      }, 3000);
+    }
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [showControls]);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
     if (videoRef.current.paused) {
       videoRef.current.play();
-      setIsPlaying(true);
     } else {
       videoRef.current.pause();
-      setIsPlaying(false);
     }
+    // Показуємо контроли при взаємодії
+    setShowControls(true);
   };
 
   const seek = (seconds: number) => {
     if (videoRef.current) {
       videoRef.current.currentTime += seconds;
+      setShowControls(true);
     }
   };
+
+  // Обробник подій відео
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handlePlay = () => {
+      setIsPlaying(true);
+      setShowControls(true);
+      // Автоматично приховуємо через 3 секунди після старту
+      setTimeout(() => setShowControls(false), 3000);
+    };
+
+    const handlePause = () => {
+      setIsPlaying(false);
+      setShowControls(true);
+      // Автоматично приховуємо через 3 секунди після паузи
+      setTimeout(() => setShowControls(false), 3000);
+    };
+
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
+
+    return () => {
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
+    };
+  }, []);
+
 
   return (
     <StepWrapp>
@@ -347,38 +392,53 @@ const StepByStepGuidance: React.FC = () => {
           {t('stepByStepGuidance1.description')}
         </StepMainTextDescription>
       </motion.div>
-      <HeaderContainer>
+               <HeaderContainer>
         <SlideHeader>
           <SlideLogo src={point} alt="Logo" />
           <LogoImage src={logo} alt="Logo" />
           <ToolGroup src={Tools} alt="Tools" />
         </SlideHeader>
         <VideoHoverWrapper
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onClick={togglePlay} // Додали клік на відео для play/pause
         >
           <VideoWrapper>
             <StyledVideo
               ref={videoRef}
               poster={BackgroundImage}
-              controls={true}
+              controls
             >
               <source src={video} type="video/mp4" />
               {t('videoNotSupported')}
             </StyledVideo>
 
-            {isHovered && (
+            {showControls && (
               <VideoControls>
-                <ControlButton onClick={() => seek(-15)}>
+                <ControlButton 
+                  onClick={(e) => {
+                    seek(-15);
+                    e.stopPropagation();
+                  }}
+                >
                   <ControlIcon src={ControlRewind} alt="Rewind" />
                 </ControlButton>
-                <ControlButtonPlay onClick={togglePlay}>
+                <ControlButtonPlay 
+                  onClick={(e) => {
+                    togglePlay();
+                    e.stopPropagation();
+                  }}
+                >
                   {isPlaying ? '⏸' : '▶'}
                 </ControlButtonPlay>
-                <ControlButton onClick={() => seek(15)}>
+                <ControlButton 
+                  onClick={(e) => {
+                    seek(15);
+                    e.stopPropagation();
+                  }}
+                >
                   <ControlIcon src={ControlFast} alt="Fast forward" />
                 </ControlButton>
               </VideoControls>
+
             )}
           </VideoWrapper>
         </VideoHoverWrapper>
