@@ -81,7 +81,7 @@ export const Card = styled.div`
   justify-content: center;
 
   @media screen and (min-width: 1440px) {
-    width: 280px;
+    width: 380px;
   }
 `;
 

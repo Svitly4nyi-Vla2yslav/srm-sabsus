@@ -80,7 +80,7 @@ export const Card = styled.div`
   margin: 0 auto;
 
   @media screen and (min-width: 1440px) {
-    width: 280px;
+    width: 380px;
   }
 `;
 
@@ -128,20 +128,20 @@ const KeySwipper: React.FC = () => {
   };
 
   const keyItems = [
-    { id: 1, imageUrl: keys, key: 'orderManagement' },
-    { id: 2, imageUrl: keys1, key: 'shiftTracking' },
-    { id: 3, imageUrl: keys2, key: 'tableLayout' },
-    { id: 4, imageUrl: keys3, key: 'qrPayments' },
-    { id: 5, imageUrl: keys4, key: 'accessControl' },
-    { id: 6, imageUrl: keys5, key: 'receiptPrinting' },
-    { id: 7, imageUrl: keys6, key: 'depositTips' },
-    { id: 8, imageUrl: keys7, key: 'roleManagement' },
+    { id: 1, imageUrl: keys, key: 'brandedMobileApp' },
+    { id: 2, imageUrl: keys1, key: 'loyaltyPrograms' },
+    { id: 3, imageUrl: keys2, key: 'smartDeliveryOptions' },
+    { id: 4, imageUrl: keys3, key: 'pushNotifications' },
+    { id: 5, imageUrl: keys4, key: 'orderHistoryRepeats' },
+    { id: 6, imageUrl: keys5, key: 'tableReservations' },
+    { id: 7, imageUrl: keys6, key: 'customerFeedback' },
+    { id: 8, imageUrl: keys7, key: 'personalAccountArea' },
   ];
 
   const shouldLoop = true;
   const slidesPerView = 1;
 
-  return (
+ return (
     <SwiperContainer
       as={motion.div}
       initial="hidden"
@@ -167,9 +167,9 @@ const KeySwipper: React.FC = () => {
             {keyItems.map(item => (
               <SwiperSlide key={item.id}>
                 <Card>
-                  <Icon src={item.imageUrl} alt={t(`keyCapabilitiesSection1.cards.${item.key}.title`)} />
-                  <TitleCard>{t(`keyCapabilitiesSection1.cards.${item.key}.title`)}</TitleCard>
-                  <TextCard>{t(`keyCapabilitiesSection1.cards.${item.key}.desc`)}</TextCard>
+                  <Icon src={item.imageUrl} alt={t(`keyCapabilitiesSection3.cards.${item.key}.title`)} />
+                  <TitleCard>{t(`keyCapabilitiesSection3.cards.${item.key}.title`)}</TitleCard>
+                  <TextCard>{t(`keyCapabilitiesSection3.cards.${item.key}.desc`)}</TextCard>
                 </Card>
               </SwiperSlide>
             ))}
@@ -191,7 +191,7 @@ const KeySwipper: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.25 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <Icon src={item.imageUrl} alt={t(`keyCapabilitiesSection1.cards.${item.key}.title`)} />
+                <Icon src={item.imageUrl} alt={t(`keyCapabilitiesSection3.cards.${item.key}.title`)} />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -199,9 +199,9 @@ const KeySwipper: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <TitleCard>{t(`keyCapabilitiesSection1.cards.${item.key}.title`)}</TitleCard>
+                <TitleCard>{t(`keyCapabilitiesSection3.cards.${item.key}.title`)}</TitleCard>
               </motion.div>
-              <TextCard>{t(`keyCapabilitiesSection1.cards.${item.key}.desc`)}</TextCard>
+              <TextCard>{t(`keyCapabilitiesSection3.cards.${item.key}.desc`)}</TextCard>
             </Card>
           ))}
         </CardContainer>
