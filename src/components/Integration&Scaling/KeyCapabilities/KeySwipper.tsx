@@ -86,14 +86,13 @@ export const Card = styled.div`
 `;
 
 export const Icon = styled.img`
-  filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.7));
+  filter: drop-shadow(0 0 20px rgba(43, 67, 226, 0.7));
   transition: filter 0.3s ease;
   width: 199px;
-  height: 199px;
-
+height: 199px;
+  
   &:hover {
-    filter: drop-shadow(0 0 30px rgba(138, 43, 226, 1.7));
-  }
+    filter: drop-shadow(0 0 30px rgba(35, 62, 236, 0.84));
 `;
 
 export const TitleCard = styled.h3`
