@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { 
-  Wrapper, 
-  BurgerButton, 
-  Line, 
-  MenuOverlay, 
+import {
+  Wrapper,
+  BurgerButton,
+  Line,
+  MenuOverlay,
   MenuLink,
   DropdownMenuMobile,
   DropdownItemMobile,
   ServiceLinkMobile,
   ArrowDownMobile,
+  ServiceTitleWrapper,
 } from './MobileMenu.styled';
 import { StyledNavLink, StyledNavLinkDrop } from '../Header/Header.styled';
 import { useTranslation } from 'react-i18next';
@@ -47,7 +48,9 @@ const BurgerMenu = () => {
     };
   }, [isOpen]);
 
-  const toggleServicesMenu = () => {
+  const toggleServicesMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setIsServicesOpen(!isServicesOpen);
   };
 
@@ -58,19 +61,39 @@ const BurgerMenu = () => {
 
   const navLinks = [
     { to: '/home', labelKey: 'header.nav.home' },
-    { 
-      to: '/service', 
+    {
       labelKey: 'header.nav.service',
       isDropdown: true,
       subItems: [
-        { to: '/service/customer-experience', labelKey: 'header.services.customerExperience' },
-        { to: '/service/pos-staff-operations', labelKey: 'header.services.posStaff' },
-        { to: '/service/kitchen-fulfillment', labelKey: 'header.services.kitchen' },
-        { to: '/service/inventory-warehousing', labelKey: 'header.services.inventory' },
-        { to: '/service/analytics-management', labelKey: 'header.services.analytics' },
-        { to: '/service/marketing-customization', labelKey: 'header.services.marketing' },
-        { to: '/service/integration-scaling', labelKey: 'header.services.integration' },
-      ]
+        {
+          to: '/service/customer-experience',
+          labelKey: 'header.services.customerExperience',
+        },
+        {
+          to: '/service/pos-staff-operations',
+          labelKey: 'header.services.posStaff',
+        },
+        {
+          to: '/service/kitchen-fulfillment',
+          labelKey: 'header.services.kitchen',
+        },
+        {
+          to: '/service/inventory-warehousing',
+          labelKey: 'header.services.inventory',
+        },
+        {
+          to: '/service/analytics-management',
+          labelKey: 'header.services.analytics',
+        },
+        {
+          to: '/service/marketing-customization',
+          labelKey: 'header.services.marketing',
+        },
+        {
+          to: '/service/integration-scaling',
+          labelKey: 'header.services.integration',
+        },
+      ],
     },
     { to: '/about', labelKey: 'header.nav.about' },
     { to: '/pricing', labelKey: 'header.nav.pricing' },
@@ -79,10 +102,19 @@ const BurgerMenu = () => {
 
   return (
     <Wrapper>
-      <BurgerButton onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? 'Close menu' : 'Open menu'}>
+      <BurgerButton
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+      >
         <Line animate={isOpen ? 'open' : 'closed'} variants={topLineVariants} />
-        <Line animate={isOpen ? 'open' : 'closed'} variants={middleLineVariants} />
-        <Line animate={isOpen ? 'open' : 'closed'} variants={bottomLineVariants} />
+        <Line
+          animate={isOpen ? 'open' : 'closed'}
+          variants={middleLineVariants}
+        />
+        <Line
+          animate={isOpen ? 'open' : 'closed'}
+          variants={bottomLineVariants}
+        />
       </BurgerButton>
 
       <AnimatePresence>
@@ -101,25 +133,27 @@ const BurgerMenu = () => {
                     onMouseEnter={() => setIsServicesOpen(true)}
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
-                    <MenuLink 
-                      onClick={toggleServicesMenu}
-                    >
-                      <StyledNavLink to={link.to}>
-                        {t(link.labelKey)} <ArrowDownMobile src={Down}
-                         alt="▼" $isOpen={isServicesOpen} />
-                      </StyledNavLink>
+                    <MenuLink onClick={toggleServicesMenu}>
+                      <ServiceTitleWrapper>
+                        <span>{t(link.labelKey)}</span>
+                        <ArrowDownMobile
+                          src={Down}
+                          alt="▼"
+                          $isOpen={isServicesOpen}
+                        />
+                      </ServiceTitleWrapper>
                     </MenuLink>
                     <AnimatePresence>
                       {isServicesOpen && (
                         <DropdownMenuMobile
                           initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
+                          animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
                         >
                           {link.subItems.map((subItem, subIndex) => (
                             <DropdownItemMobile key={subIndex}>
-                              <StyledNavLinkDrop 
+                              <StyledNavLinkDrop
                                 to={subItem.to}
                                 onClick={closeMenu}
                               >
@@ -131,13 +165,13 @@ const BurgerMenu = () => {
                       )}
                     </AnimatePresence>
                   </ServiceLinkMobile>
-                ) : (
+                ) : link.to ? (
                   <MenuLink onClick={closeMenu}>
                     <StyledNavLink to={link.to}>
                       {t(link.labelKey)}
                     </StyledNavLink>
                   </MenuLink>
-                )}
+                ) : null}
               </div>
             ))}
           </MenuOverlay>
