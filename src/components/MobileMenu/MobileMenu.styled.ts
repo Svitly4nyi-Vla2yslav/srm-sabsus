@@ -1,6 +1,49 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
+
+// export const ServiceLinkMobile = styled.div`
+//   position: relative;
+// `;
+
+// export const DropdownMenuMobile = styled(motion.div)`
+//   position: static;
+//   display: flex;
+//   flex-direction: column;
+//   padding-left: 20px;
+//   background: rgba(0, 0, 0, 0.1);
+//   margin-top: 5px;
+//   border-radius: 8px;
+// `;
+
+// export const DropdownItemMobile = styled.div`
+//   padding: 10px 0;
+// `;
+
+export const ServiceLinkMobile = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const DropdownMenuMobile = styled(motion.div)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  background: rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+`;
+
+export const DropdownItemMobile = styled.div`
+  padding: 12px 0;
+`;
+
+export const ArrowDownMobile = styled.img<{ $isOpen: boolean }>`
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  transform: ${({ $isOpen }) => $isOpen ? 'rotate(180deg)' : 'rotate(0)'};
+`;
 // Styled Components
 export const Wrapper = styled.div`
     display: flex;

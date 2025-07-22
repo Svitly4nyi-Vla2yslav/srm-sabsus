@@ -397,98 +397,30 @@ export const MobileDivider = styled.div`
   }
 `;
 
-const HowWeWork: React.FC = () => {
+export const HowWeWork: React.FC = () => {
   const { t } = useTranslation();
 
   const cards = [
-    {
-      id: '1',
-      text: 'Discovery first',
-      description:
-        'We immerse in your business — goals, audience, workflows, and pain points. This phase uncovers the real value your product should deliver. Together, we shape hypotheses, identify constraints, and define what’s important for launch or growth.',
-    },
-    {
-      id: '2',
-      text: 'Clear project scope',
-      description:
-        'We avoid vague promises. Instead, we outline a clear scope of work, define expected outcomes for each phase, and set transparent timelines. This reduces uncertainty, helps you plan confidently, and ensures alignment from the first screen to the final test.',
-    },
-    {
-      id: '3',
-      text: 'Collaborative prototyping',
-      description:
-        'We don’t hide behind final mockups. Fast, clickable prototypes let you evaluate structure, logic, and user flow early on — before design even starts. This saves time, sharpens the vision, and gives your team clarity before development begins.',
-    },
-    {
-      id: '4',
-      text: 'Weekly syncs',
-      description:
-        'Our process is built on transparency. We run regular check-ins, demos, and updates to keep you informed. You’ll always have access to current tasks, open questions, and next steps. You’re never guessing — you’re involved.',
-    },
-    {
-      id: '5',
-      text: 'Business-driven design',
-      description:
-        'Every design decision is backed by logic. We focus on real business goals, not just aesthetics. Whether it’s conversions, retention, or operational efficiency — we design with your KPIs in mind.',
-    },
-    {
-      id: '6',
-      text: 'Adaptive flexibility',
-      description:
-        'Plans change. Markets shift. We’ve built adaptability into our process. If your priorities evolve, we adjust quickly while maintaining focus and structure — without losing momentum.',
-    },
-    {
-      id: '7',
-      text: 'Quality first',
-      description:
-        'What we deliver isn’t a draft — it’s production-ready. Every component is checked against design systems, behavior logic, and visual consistency. We think about readability, handoff, micro-interactions, and defend decisions with reason.',
-    },
-    {
-      id: '8',
-      text: 'Long-term support',
-      description:
-        'We don’t disappear after launch. We stick around to refine the product, run A/B tests, track analytics, and support ongoing iterations. We’re in this not for a handoff — but for long-term growth.',
-    },
+    { id: '1', key: 'discovery' },
+    { id: '2', key: 'scope' },
+    { id: '3', key: 'prototyping' },
+    { id: '4', key: 'syncs' },
+    { id: '5', key: 'design' },
+    { id: '6', key: 'flexibility' },
+    { id: '7', key: 'quality' },
+    { id: '8', key: 'support' }
   ];
+
   const getCardAnimation = (index: number) => {
     switch (index) {
-      case 0:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 1:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 2:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 3:
-        return {
-          initial: { scale: 0.5, opacity: 0 },
-          whileInView: { scale: 1, opacity: 1 },
-        }; // zoom-in
-      case 4:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 5:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 6:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      default:
-        return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
+      case 0: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 1: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 2: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 3: return { initial: { scale: 0.5, opacity: 0 }, whileInView: { scale: 1, opacity: 1 } };
+      case 4: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 5: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 6: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      default: return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
   };
 
@@ -501,18 +433,19 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainText>
-          {t('howWeWorkSection.header.title')}{' '}
-          <HowSpanIcon src={rocket} alt="Icon" />
+          {t('howWeWorkSection3.header.title')} <HowSpanIcon src={rocket} alt="Icon" />
         </HowWeWorkMainText>
       </motion.div>
+      
       <HowWeWorkMainid
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        Our approach is built on transparency, speed, and care
+        {t('howWeWorkSection3.header.heading')}
       </HowWeWorkMainid>
+      
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -520,10 +453,10 @@ const HowWeWork: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <HowWeWorkMainTextDescription>
-          We deliver designs as part of your team, diving into goals, solving
-          problems, and building value. Here’s how our collaboration unfolds:
+          {t('howWeWorkSection3.header.description')}
         </HowWeWorkMainTextDescription>
       </motion.div>
+      
       <HowWeWorkContainer>
         {cards.map((card, index) => (
           <React.Fragment key={index}>
@@ -533,7 +466,6 @@ const HowWeWork: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              {' '}
               <MobileDivider />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -549,7 +481,9 @@ const HowWeWork: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <CardText>{card.text}</CardText>
+                <CardText>
+                  {t(`howWeWorkSection3.cards.${card.key}.title`)}
+                </CardText>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -557,8 +491,10 @@ const HowWeWork: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.25 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <CardDescription>{card.description}</CardDescription>
-              </motion.div>{' '}
+                <CardDescription>
+                  {t(`howWeWorkSection3.cards.${card.key}.desc`)}
+                </CardDescription>
+              </motion.div>
               <MobileDivider />
             </Card>
           </React.Fragment>
@@ -568,5 +504,3 @@ const HowWeWork: React.FC = () => {
     </HowWeWorkWrapper>
   );
 };
-
-export default HowWeWork;

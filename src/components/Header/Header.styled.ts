@@ -239,3 +239,47 @@ color: var(--white-50);
      color: var(--purple-400);
   }
 `;
+
+export const StyledNavLinkDrop = styled(NavLink)`
+display: flex;
+  text-decoration: none;
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 20px;
+line-height: 100%;
+color: var(--white-50);
+  transition: all 0.4s ease-in-out;
+  position: relative;
+
+    color: #808080;
+  cursor: pointer;
+
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  &:hover {
+     color: var(--purple-400);
+  }
+
+  &::bevore {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #808080;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &.active {
+   color:rgb(255, 255, 255);
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &:hover::after {
+    width: 100%;
+     color: var(--purple-400);
+  }
+`;

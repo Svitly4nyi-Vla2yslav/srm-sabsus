@@ -21,6 +21,7 @@ import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import Down from '../../assets/icons/chevron-down.svg';
+import BurgerMenu from '../MobileMenu/MobileMenu';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -152,6 +153,7 @@ const Header: React.FC = () => {
           <div style={{ display: 'flex' }}>
             <LanguageSwitcher />
             <ButtonTryForFree />
+          {isMobile && (<BurgerMenu/>)}  
           </div>
         </LangButtonContainer>
       </HeaderWrapper>

@@ -5,7 +5,7 @@ import { CardButtonText } from '../AllinOneSRM/AllinOneSRM.styled';
 import { HeroInnovative, HeroTitle } from '../Hero/Hero.styled';
 import book from '../../assets/icons/Books.svg';
 import { ResultMainTextDescription } from '../ResultsFromBusinesses/ResultsFromBusinesses.styled';
-
+import { useTranslation } from 'react-i18next';
 // Анімації
 const float = keyframes`
   0%, 100% { transform: translateY(0) rotateX(0deg) scale(1); }
@@ -193,6 +193,8 @@ export const NumberText = styled.p`
 `;
 
 const HeroAnimation: React.FC = () => {
+ const { t } = useTranslation();
+
   // Генеруємо частинки з урахуванням масштабу
   const generateParticles = () => {
     const isLargeScreen = window.innerWidth >= 1440;
@@ -315,7 +317,7 @@ const HeroAnimation: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            About us <CardButtonText src={book} alt="💰" />
+            {t('hero1.aboutUs')} <CardButtonText src={book} alt="💰" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -325,7 +327,7 @@ const HeroAnimation: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <HeroTitle>
-            We believe in clarity, innovation, and integrity
+           {t('hero1.title')}
           </HeroTitle>
         </motion.div>
         <motion.div
@@ -335,9 +337,7 @@ const HeroAnimation: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <ResultMainTextDescription>
-            Our mission is to empower businesses by simplifying operations and
-            enhancing customer experiences through cutting-edge technology and
-            solutions.
+           {t('hero1.description')}
           </ResultMainTextDescription>
         </motion.div>
       </CostomerWrapp>
@@ -350,7 +350,7 @@ const HeroAnimation: React.FC = () => {
         >
           <div>
             <Number>98%</Number>
-            <NumberText>Client satisfaction in all segments</NumberText>
+            <NumberText>{t('hero1.stats.satisfaction')}</NumberText>
           </div>
         </motion.div>
         <motion.div
@@ -361,7 +361,7 @@ const HeroAnimation: React.FC = () => {
         >
           <div>
             <Number>3x</Number>
-            <NumberText>Faster launch than traditional systems</NumberText>
+            <NumberText>{t('hero1.stats.launchSpeed')}</NumberText>
           </div>{' '}
         </motion.div>{' '}
         <motion.div
@@ -372,7 +372,7 @@ const HeroAnimation: React.FC = () => {
         >
           <div>
             <Number>70%</Number>
-            <NumberText>Customers say we help them scale</NumberText>
+            <NumberText>{t('hero1.stats.scaling')}</NumberText>
           </div>{' '}
         </motion.div>
       </NumberWrapp>

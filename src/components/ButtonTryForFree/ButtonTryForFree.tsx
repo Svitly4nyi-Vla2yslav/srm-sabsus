@@ -41,38 +41,47 @@ export const gradientFlow = keyframes`
 `;
 
 export const ButtonFree = styled.button`
-z-index: 10;
+  z-index: 1100;
   border-radius: 12px;
   width: 110px;
   height: 38px;
-  position: relative;
+  position: fixed;
   overflow: hidden;
-  
+  top: 65px;
+  right: 20px;
+
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 15px;
   color: var(--white-100);
-  
+
   box-shadow: inset 0 0 6px 0 rgba(255, 255, 255, 0.54);
   background: linear-gradient(139deg, #494bec, #6a6bff, #494bec, #3a3bc7);
   background-size: 300% 300%;
-  animation: ${pulse} 2s infinite, ${gradientFlow} 6s ease infinite;
-  
+  animation:
+    ${pulse} 2s infinite,
+    ${gradientFlow} 6s ease infinite;
+
   transition: all 0.4s ease;
-  
+
   &:hover {
-    box-shadow: inset 0 0 8px 0 rgba(255, 255, 255, 0.74), 
-                0 0 15px rgba(73, 75, 236, 0.5);
+    box-shadow:
+      inset 0 0 8px 0 rgba(255, 255, 255, 0.74),
+      0 0 15px rgba(73, 75, 236, 0.5);
     transform: perspective(500px) rotateX(10deg) translateY(-2px);
-    animation: ${pulse} 2s infinite, ${gradientFlow} 3s ease infinite;
+    animation:
+      ${pulse} 2s infinite,
+      ${gradientFlow} 3s ease infinite;
     background-size: 200% 200%;
   }
-  
+
   &:active {
-    animation: ${clickEffect} 0.3s ease, ${gradientFlow} 6s ease infinite;
+    animation:
+      ${clickEffect} 0.3s ease,
+      ${gradientFlow} 6s ease infinite;
     background: linear-gradient(139deg, #3a3bc7, #494bec, #3a3bc7);
   }
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -86,11 +95,11 @@ z-index: 10;
     transform: scale(1, 1) translate(-50%, -50%);
     transform-origin: 50% 50%;
   }
-  
+
   &:focus:not(:active)::after {
     animation: ripple 0.6s ease-out;
   }
-  
+
   @keyframes ripple {
     0% {
       transform: scale(0, 0);
@@ -101,13 +110,43 @@ z-index: 10;
       opacity: 0;
     }
   }
+  @media screen and (min-width: 500px) {
+    z-index: 110;
+    border-radius: 12px;
+    width: 110px;
+    height: 38px;
+    position: relative;
+    top: 0px;
+    right: 4px;
+    overflow: hidden;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--white-100);
+
+    box-shadow: inset 0 0 6px 0 rgba(255, 255, 255, 0.54);
+    background: linear-gradient(139deg, #494bec, #6a6bff, #494bec, #3a3bc7);
+    background-size: 300% 300%;
+    animation:
+      ${pulse} 2s infinite,
+      ${gradientFlow} 6s ease infinite;
+
+    transition: all 0.4s ease;
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 const ButtonTryForFree: React.FC = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <a href='https://sabsus.app/registrcompany/web/PRO'   target="_blank"
-                  rel="noopener noreferrer">
+    <a
+      href="https://sabsus.app/registrcompany/web/PRO"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <ButtonFree>{t('hero.buttons.tryFree')}</ButtonFree>
     </a>
   );

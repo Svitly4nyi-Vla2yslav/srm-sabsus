@@ -120,9 +120,7 @@ export const ButtonFree = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-   width: 518px;
-  }
-  @media screen and (min-width: 1440px) {
+    width: 518px;
   }
 `;
 
@@ -138,8 +136,6 @@ const Form = styled.form`
     max-width: 518px;
     width: 100%;
   }
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const Label = styled.label`
@@ -154,8 +150,6 @@ const Label = styled.label`
   @media screen and (min-width: 768px) {
     max-width: 518px;
     width: 100%;
-  }
-  @media screen and (min-width: 1440px) {
   }
 `;
 
@@ -192,8 +186,6 @@ const Input = styled.input<{ $error?: boolean }>`
   @media screen and (min-width: 768px) {
     max-width: 518px;
     width: 100%;
-  }
-  @media screen and (min-width: 1440px) {
   }
 `;
 
@@ -237,8 +229,6 @@ const Select = styled.select`
     max-width: 518px;
     width: 100%;
   }
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const ContactDescription = styled.p`
@@ -252,18 +242,12 @@ const ContactDescription = styled.p`
     max-width: 518px;
     width: 100%;
   }
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const ErrorMessage = styled.div`
   color: #ff4d4f;
   font-size: 12px;
   margin-top: 4px;
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const ContactUsWrapper = styled.div`
@@ -293,7 +277,6 @@ export const ContactEmail = styled.div`
   color: var(--white-100);
 `;
 
-// Add new styled component for the email link
 export const EmailLink = styled.a`
   color: #6a6bff;
   text-decoration: none;
@@ -378,25 +361,20 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Відправка даних на серверний ендпоінт
-      const response = await fetch(
-        'https://your-server-endpoint.com/send-email',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            email,
-            teammates,
-            to: 'svetli4nuyvla2islav@gmail.com',
-            subject: 'New Contact Form Submission',
-          }),
-        }
-      );
+      const response = await fetch('https://your-server-endpoint.com/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          teammates,
+          to: 'svetli4nuyvla2islav@gmail.com',
+          subject: 'New Contact Form Submission',
+        }),
+      });
 
       if (response.ok) {
-        // Після успішної відправки переходимо на посилання
         window.location.href = 'https://sabsus.app/registrcompany/web/PRO';
       } else {
         console.error('Помилка при відправці форми');
@@ -423,7 +401,7 @@ const ContactForm: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            Get started <CardButtonText src={star} alt="star" />
+            {t('contact.getStarted')} <CardButtonText src={star} alt="star" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -432,7 +410,7 @@ const ContactForm: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <HeroTitle>Get started with folk</HeroTitle>
+          <HeroTitle>{t('contact.title')}</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -441,40 +419,50 @@ const ContactForm: React.FC = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <ResultMainTextDescription>
-            Schedule a 30-minute product demo with our team
+            {t('contact.description')}
           </ResultMainTextDescription>
         </motion.div>
       </CostomerWrapp>
 
       <Form ref={formRef} onSubmit={handleSubmit}>
         <Label>
-          What's your professional email?
+          {t('contact.form.emailLabel')}
           <Input
             type="email"
-            placeholder="john21@gmail.com"
+            placeholder={t('contact.form.emailPlaceholder')}
             value={email}
             onChange={handleEmailChange}
             $error={emailError}
           />
           {emailError && (
-            <ErrorMessage>Please enter a valid email address</ErrorMessage>
+            <ErrorMessage>{t('contact.form.emailError')}</ErrorMessage>
           )}
         </Label>
 
         <Label htmlFor="teammates-select">
-          How many teammates will be using CRM?
+          {t('contact.form.teammatesLabel')}
           <Select
             id="teammates-select"
             name="teammates"
             value={teammates}
             onChange={e => setTeammates(e.target.value)}
           >
-            <option value="">Select option</option>
-            <option value="from-1-to-5">from 1 to 5</option>
-            <option value="from-5-to-15">from 5 to 15</option>
-            <option value="from-15-to-30">from 15 to 30</option>
-            <option value="from-30-to-50">from 30 to 50</option>
-            <option value="from-50-to-100">from 50 to 100</option>
+            <option value="">{t('contact.form.teammatesOptions.select')}</option>
+            <option value="from-1-to-5">
+              {t('contact.form.teammatesOptions.1-5')}
+            </option>
+            <option value="from-5-to-15">
+              {t('contact.form.teammatesOptions.5-15')}
+            </option>
+            <option value="from-15-to-30">
+              {t('contact.form.teammatesOptions.15-30')}
+            </option>
+            <option value="from-30-to-50">
+              {t('contact.form.teammatesOptions.30-50')}
+            </option>
+            <option value="from-50-to-100">
+              {t('contact.form.teammatesOptions.50-100')}
+            </option>
           </Select>
         </Label>
         <a
@@ -484,12 +472,14 @@ const ContactForm: React.FC = () => {
           rel="noopener noreferrer"
         >
           <ButtonFree type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Sending...' : t('hero.buttons.tryFree')}
-          </ButtonFree>{' '}
+            {isSubmitting
+              ? t('contact.form.submitting')
+              : t('contact.form.submit')}
+          </ButtonFree>
         </a>
 
         <ContactDescription>
-          By continuing, you agree to our Terms of Use and Privacy policy
+          {t('contact.form.terms')}
         </ContactDescription>
         <a
           ref={linkRef}
@@ -506,24 +496,21 @@ const ContactForm: React.FC = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <ContactUsTitle>
-            Need help or want to talk to our team?
-          </ContactUsTitle>
+          <ContactUsTitle>{t('contact.help.title')}</ContactUsTitle>
 
           <ContactEmail>
-            <span>Support:</span>
+            <span>{t('contact.help.support')}</span>
             <EmailLink href="mailto:support@sabsus.com">
-              support@sabsus.com
+              {t('contact.help.supportEmail')}
             </EmailLink>
-            <SupportBadge>24/7</SupportBadge>
+            <SupportBadge>{t('contact.help.supportBadge')}</SupportBadge>
           </ContactEmail>
           <a href="https://sabsus.info" target="_blank" rel="noopener">
-            <ButtonFree>Visit Help Center & Chat</ButtonFree>
+            <ButtonFree>{t('contact.help.helpCenter')}</ButtonFree>
           </a>
 
           <HelpCenterText>
-            Browse instructions, setup guides, and contact live support —
-            anytime.
+            {t('contact.help.helpText')}
           </HelpCenterText>
         </motion.div>
       </ContactUsWrapper>
