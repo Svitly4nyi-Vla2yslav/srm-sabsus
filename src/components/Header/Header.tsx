@@ -123,7 +123,7 @@ const Header: React.FC = () => {
 
             <NavItem>
               <StyledNavLink
-                style={{ pointerEvents: 'none', opacity: 0.5 }}
+                // style={{ pointerEvents: 'none', opacity: 0.5 }}
                 to="/about"
               >
                 {t('header.nav.about')}
@@ -131,7 +131,7 @@ const Header: React.FC = () => {
             </NavItem>
             <NavItem>
               <StyledNavLink
-                style={{ pointerEvents: 'none', opacity: 0.5 }}
+                // style={{ pointerEvents: 'none', opacity: 0.5 }}
                 to="/pricing"
               >
                 {t('header.nav.pricing')}
@@ -139,7 +139,7 @@ const Header: React.FC = () => {
             </NavItem>
             <NavItem>
               <StyledNavLink
-                style={{ pointerEvents: 'none', opacity: 0.5 }}
+                // style={{ pointerEvents: 'none', opacity: 0.5 }}
                 to="/contact"
               >
                 {t('header.nav.contacts')}

@@ -201,7 +201,7 @@ export const HeroTitle = styled.h1`
   @media screen and (min-width: 1440px) {
     font-size: 72px;
     line-height: 112%;
-    max-width: 835px;
+    max-width: 935px;
   }
 `;
 

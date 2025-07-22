@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from './components/Layout/Layout';
@@ -22,24 +22,36 @@ const StyledMotionDiv = styled(motion.div)`
   top: 0;
   position: relative;
 `;
-const AnimatedPage = ({ children }: { children: React.ReactNode }) => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  const topRef = useRef<HTMLDivElement>(null);
 
+  useLayoutEffect(() => {
+    // Два методи для максимальної сумісності
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: 'auto' });
+    }
+    window.scrollTo({ top: -950, behavior: 'smooth' });
+  }, [pathname]);
+
+  return <div ref={topRef} style={{ position: 'absolute', top: "-950px", height: 0 }} />;
+};
+
+const AnimatedPage = ({ children }: { children: React.ReactNode }) => {
   return (
-  <StyledMotionDiv
-    initial={{ opacity: 0, y: 100 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -100 }}
-    transition={{ 
-      duration: 0.4,
-      ease: [0.22, 1, 0.36, 1],
-    }}
-  >
-    {children}
-  </StyledMotionDiv>
-);
+    <StyledMotionDiv
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -100 }}
+      transition={{ 
+        duration: 0.4,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      <ScrollToTop />
+      {children}
+    </StyledMotionDiv>
+  );
 };
 
 export const App: React.FC = () => {
@@ -52,6 +64,7 @@ export const App: React.FC = () => {
   return (
     <AnimatePresence mode="wait">
       <ParticlesBackground />
+      <ScrollToTop key="global-scroll-top" />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route 

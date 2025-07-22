@@ -1,27 +1,13 @@
 import React from 'react';
-import {
-  ContactContainer,
-  ContactTitel,
-  WrapperInfo,
-  SocialContainerLink,
-  TextContact,
-  LocationContainer,
-} from './Contact.styled';
+import { ContactContainer } from './Contact.styled';
+import ContactForm from '../../components/ContactComponents/ContactForm';
+import Feedback from '../../components/Feedback/Feedback';
 
 const Contact: React.FC = () => {
   return (
     <ContactContainer>
-      <ContactTitel>Let’s Talk</ContactTitel>
-      <WrapperInfo>
-        <SocialContainerLink>
-          <TextContact>Contact</TextContact>
-        
-        </SocialContainerLink>
-        <LocationContainer>
-          <TextContact>Location</TextContact>
-       
-        </LocationContainer>
-      </WrapperInfo>
+      <ContactForm />
+      <Feedback/>
     </ContactContainer>
   );
 };

@@ -124,8 +124,9 @@ export const CostomerWrapp = styled.div`
   top: -202px;
   left: 50%;
   transform: translate(-50%, 0); // Змінив translateY на 0
-  width: 100%;
-  max-width: 1200px;
+ 
+  max-width: 1300px;
+   width: 100%;
   padding: 0 20px;
   text-align: center;
   display: flex;
@@ -133,7 +134,8 @@ export const CostomerWrapp = styled.div`
   align-items: center; // Додав для центрування вмісту
 
   @media screen and (min-width: 1440px) {
-    top: -200px; // Корегуємо положення для десктопу
+    top: -250px; // Корегуємо положення для десктопу
+      width: 1300px;
   }
 `;
 

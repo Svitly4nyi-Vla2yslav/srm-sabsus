@@ -124,7 +124,7 @@ export const NavList = styled.ul`
     padding: 12px 20px;
     width: auto;
     height: 42px;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.03), 
                 0 2px 4px -2px rgba(0, 0, 0, 0.08), 
                 inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), 
@@ -182,7 +182,7 @@ color:rgb(49, 46, 46);
 
   a {
     text-decoration: none;
-   color: #808080;
+   color: #ffffffff;
    font-family: var(--font-family);
 font-weight: 600;
 font-size: 14px;

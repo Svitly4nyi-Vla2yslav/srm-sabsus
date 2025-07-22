@@ -32,7 +32,7 @@ export const HeroWrapper = styled.div`
 
   @media screen and (min-width: 1440px) {
     margin-top: 100px;
-    margin-bottom: 150px;
+    margin-bottom: 250px;
   }
 `;
 
@@ -145,7 +145,6 @@ export const CostomerWrapp = styled.div`
 
   @media screen and (min-width: 1440px) {
     top: 557px;
-    margin-bottom: 150%;
   }
 `;
 
