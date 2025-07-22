@@ -1256,5 +1256,86 @@
     "heading": "Precision and speed from prep to plate",
     "description": "Track real-time cooking progress across all stations with synced kitchen displays. Each order flows through clear stages — prep, cook, serve — with glowing indicators.",
     "footerText": "Timers, alerts, and zone assignments make sure every dish is ready exactly when it should be. Designed to reduce chaos and maximize performance."
+  },
+   "howWeWorkSection3": {
+    "header": {
+      "title": "How We Work",
+      "heading": "Our approach is built on transparency, speed, and care",
+      "description": "We deliver designs as part of your team, diving into goals, solving problems, and building value. Here's how our collaboration unfolds:"
+    },
+    "cards": {
+      "discovery": {
+        "title": "Discovery first",
+        "desc": "We immerse in your business — goals, audience, workflows, and pain points. This phase uncovers the real value your product should deliver. Together, we shape hypotheses, identify constraints, and define what's important for launch or growth."
+      },
+      "scope": {
+        "title": "Clear project scope",
+        "desc": "We avoid vague promises. Instead, we outline a clear scope of work, define expected outcomes for each phase, and set transparent timelines. This reduces uncertainty, helps you plan confidently, and ensures alignment from the first screen to the final test."
+      },
+      "prototyping": {
+        "title": "Collaborative prototyping",
+        "desc": "We don't hide behind final mockups. Fast, clickable prototypes let you evaluate structure, logic, and user flow early on — before design even starts. This saves time, sharpens the vision, and gives your team clarity before development begins."
+      },
+      "syncs": {
+        "title": "Weekly syncs",
+        "desc": "Our process is built on transparency. We run regular check-ins, demos, and updates to keep you informed. You'll always have access to current tasks, open questions, and next steps. You're never guessing — you're involved."
+      },
+      "design": {
+        "title": "Business-driven design",
+        "desc": "Every design decision is backed by logic. We focus on real business goals, not just aesthetics. Whether it's conversions, retention, or operational efficiency — we design with your KPIs in mind."
+      },
+      "flexibility": {
+        "title": "Adaptive flexibility",
+        "desc": "Plans change. Markets shift. We've built adaptability into our process. If your priorities evolve, we adjust quickly while maintaining focus and structure — without losing momentum."
+      },
+      "quality": {
+        "title": "Quality first",
+        "desc": "What we deliver isn't a draft — it's production-ready. Every component is checked against design systems, behavior logic, and visual consistency. We think about readability, handoff, micro-interactions, and defend decisions with reason."
+      },
+      "support": {
+        "title": "Long-term support",
+        "desc": "We don't disappear after launch. We stick around to refine the product, run A/B tests, track analytics, and support ongoing iterations. We're in this not for a handoff — but for long-term growth."
+      }
+    }
+  },
+    "hero1": {
+    "aboutUs": "About us",
+    "title": "We believe in clarity, innovation, and integrity",
+    "description": "Our mission is to empower businesses by simplifying operations and enhancing customer experiences through cutting-edge technology and solutions.",
+    "stats": {
+      "satisfaction": "Client satisfaction in all segments",
+      "launchSpeed": "Faster launch than traditional systems",
+      "scaling": "Customers say we help them scale"
+    }
+  },
+    "contact": {
+    "getStarted": "Get started",
+    "title": "Get started with SABSUS",
+    "description": "Schedule a 30-minute product demo with our team",
+    "form": {
+      "emailLabel": "What's your professional email?",
+      "emailPlaceholder": "john21@gmail.com",
+      "emailError": "Please enter a valid email address",
+      "teammatesLabel": "How many teammates will be using CRM?",
+      "teammatesOptions": {
+        "select": "Select option",
+        "1-5": "from 1 to 5",
+        "5-15": "from 5 to 15",
+        "15-30": "from 15 to 30",
+        "30-50": "from 30 to 50",
+        "50-100": "from 50 to 100"
+      },
+      "terms": "By continuing, you agree to our Terms of Use and Privacy policy",
+      "submit": "Try for free",
+      "submitting": "Sending..."
+    },
+    "help": {
+      "title": "Need help or want to talk to our team?",
+      "support": "Support:",
+      "supportEmail": "support@sabsus.com",
+      "supportBadge": "24/7",
+      "helpCenter": "Visit Help Center & Chat",
+      "helpText": "Browse instructions, setup guides, and contact live support — anytime."
+    }
   }
 }

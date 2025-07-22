@@ -1256,5 +1256,86 @@
     "heading": "Precisión y velocidad desde la preparación al plato",
     "description": "Sigue el progreso de cocción en tiempo real en todas las estaciones con pantallas de cocina sincronizadas. Cada pedido fluye a través de etapas claras: preparación, cocción, servicio, con indicadores luminosos.",
     "footerText": "Temporizadores, alertas y asignaciones de zonas aseguran que cada plato esté listo exactamente cuando debe. Diseñado para reducir el caos y maximizar el rendimiento."
+  },
+   "howWeWorkSection3": {
+    "header": {
+      "title": "Cómo trabajamos",
+      "heading": "Nuestro enfoque se basa en transparencia, velocidad y cuidado",
+      "description": "Entregamos diseños como parte de tu equipo, sumergiéndonos en objetivos, resolviendo problemas y construyendo valor. Así es como se desarrolla nuestra colaboración:"
+    },
+    "cards": {
+      "discovery": {
+        "title": "Descubrimiento primero",
+        "desc": "Nos sumergimos en tu negocio: objetivos, audiencia, flujos de trabajo y puntos problemáticos. Esta fase revela el valor real que debe ofrecer tu producto. Juntos, formulamos hipótesis, identificamos limitaciones y definimos lo importante para el lanzamiento o crecimiento."
+      },
+      "scope": {
+        "title": "Alcance claro del proyecto",
+        "desc": "Evitamos promesas vagas. En su lugar, delineamos un alcance claro de trabajo, definimos resultados esperados para cada fase y establecemos plazos transparentes. Esto reduce la incertidumbre, te ayuda a planificar con confianza y asegura la alineación desde la primera pantalla hasta la prueba final."
+      },
+      "prototyping": {
+        "title": "Prototipado colaborativo",
+        "desc": "No nos escondemos detrás de maquetas finales. Los prototipos rápidos y cliqueables te permiten evaluar la estructura, lógica y flujo de usuario desde el principio, incluso antes de que comience el diseño. Esto ahorra tiempo, afina la visión y da claridad a tu equipo antes del desarrollo."
+      },
+      "syncs": {
+        "title": "Sincronizaciones semanales",
+        "desc": "Nuestro proceso se basa en la transparencia. Realizamos reuniones periódicas, demostraciones y actualizaciones para mantenerte informado. Siempre tendrás acceso a tareas actuales, preguntas abiertas y próximos pasos. Nunca adivinarás, estarás involucrado."
+      },
+      "design": {
+        "title": "Diseño orientado al negocio",
+        "desc": "Cada decisión de diseño está respaldada por lógica. Nos enfocamos en objetivos comerciales reales, no solo en estética. Ya sean conversiones, retención o eficiencia operativa, diseñamos con tus KPI en mente."
+      },
+      "flexibility": {
+        "title": "Flexibilidad adaptativa",
+        "desc": "Los planes cambian. Los mercados cambian. Hemos incorporado adaptabilidad en nuestro proceso. Si tus prioridades evolucionan, nos ajustamos rápidamente manteniendo el enfoque y la estructura, sin perder impulso."
+      },
+      "quality": {
+        "title": "Calidad primero",
+        "desc": "Lo que entregamos no es un borrador, está listo para producción. Cada componente se verifica contra sistemas de diseño, lógica de comportamiento y consistencia visual. Pensamos en legibilidad, entrega, microinteracciones y defendemos decisiones con razón."
+      },
+      "support": {
+        "title": "Soporte a largo plazo",
+        "desc": "No desaparecemos después del lanzamiento. Nos quedamos para refinar el producto, realizar pruebas A/B, rastrear análisis y apoyar iteraciones continuas. Estamos aquí no para una entrega, sino para un crecimiento a largo plazo."
+      }
+    }
+  },
+    "hero1": {
+    "aboutUs": "Sobre nosotros",
+    "title": "Creemos en la claridad, innovación e integridad",
+    "description": "Nuestra misión es empoderar a las empresas simplificando operaciones y mejorando experiencias de clientes mediante tecnología y soluciones vanguardistas.",
+    "stats": {
+      "satisfaction": "Satisfacción del cliente en todos los segmentos",
+      "launchSpeed": "Lanzamiento más rápido que los sistemas tradicionales",
+      "scaling": "Los clientes dicen que les ayudamos a escalar"
+    }
+  },
+   "contact": {
+    "getStarted": "Empezar",
+    "title": "Comienza con SABSUS",
+    "description": "Programa una demostración de producto de 30 minutos con nuestro equipo",
+    "form": {
+      "emailLabel": "¿Cuál es tu correo profesional?",
+      "emailPlaceholder": "juan21@gmail.com",
+      "emailError": "Por favor ingresa un correo electrónico válido",
+      "teammatesLabel": "¿Cuántos compañeros usarán el CRM?",
+      "teammatesOptions": {
+        "select": "Seleccionar opción",
+        "1-5": "de 1 a 5",
+        "5-15": "de 5 a 15",
+        "15-30": "de 15 a 30",
+        "30-50": "de 30 a 50",
+        "50-100": "de 50 a 100"
+      },
+      "terms": "Al continuar, aceptas nuestros Términos de uso y Política de privacidad",
+      "submit": "Probar gratis",
+      "submitting": "Enviando..."
+    },
+    "help": {
+      "title": "¿Necesitas ayuda o quieres hablar con nuestro equipo?",
+      "support": "Soporte:",
+      "supportEmail": "soporte@sabsus.com",
+      "supportBadge": "24/7",
+      "helpCenter": "Visitar el Centro de ayuda y chat",
+      "helpText": "Consulta instrucciones, guías de configuración y contacta con soporte en vivo en cualquier momento."
+    }
   }
 }
