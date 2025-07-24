@@ -1354,5 +1354,37 @@
       "submit": "Contactar ventas",
       "selectOption": "Selecciona una opción"
     }
+  },
+  "businessSwiper": {
+    "title": "Elija su formato de negocio",
+    "subtitle": "Todos los tipos de negocios que automatizamos",
+    "businessTypes": {
+      "restaurant": "Restaurante",
+      "bistro": "Bistró",
+      "veganRestaurant": "Restaurante vegano",
+      "sushi": "Sushi",
+      "fastFood": "Comida rápida",
+      "buffet": "Buffet",
+      "foodTruck": "Camión de comida",
+      "coffeeShop": "Cafetería",
+      "pizzeria": "Pizzería",
+      "bakery": "Panadería",
+      "iceCreamParlor": "Heladería",
+      "candyShop": "Tienda de dulces",
+      "darkKitchen": "Cocina fantasma",
+      "delivery": "Delivery",
+      "franchiseOwners": "Franquiciados",
+      "cateringServices": "Servicios de catering",
+      "eventFoodStands": "Puestos de comida para eventos",
+      "mealPrepBusiness": "Negocio de comidas preparadas",
+      "store": "Tienda",
+      "onlineShop": "Tienda en línea",
+      "giftShop": "Tienda de regalos",
+      "beautyShop": "Tienda de belleza",
+      "smokeShop": "Tienda de tabaco",
+      "healthStore": "Tienda de salud",
+      "florist": "Florería",
+      "petShop": "Tienda de mascotas"
+    }
   }
 }

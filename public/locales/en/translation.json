@@ -1354,5 +1354,37 @@
       "submit": "Contact Sales",
       "selectOption": "Select an option"
     }
+  },
+   "businessSwiper": {
+    "title": "Choose your business format",
+    "subtitle": "All types of businesses we automate",
+    "businessTypes": {
+      "restaurant": "Restaurant",
+      "bistro": "Bistro",
+      "veganRestaurant": "Vegan Restaurant",
+      "sushi": "Sushi",
+      "fastFood": "Fast Food",
+      "buffet": "Buffet",
+      "foodTruck": "Food Truck",
+      "coffeeShop": "Coffee Shop",
+      "pizzeria": "Pizzeria",
+      "bakery": "Bakery",
+      "iceCreamParlor": "Ice Cream Parlor",
+      "candyShop": "Candy Shop",
+      "darkKitchen": "Dark Kitchen",
+      "delivery": "Delivery",
+      "franchiseOwners": "Franchise Owners",
+      "cateringServices": "Catering Services",
+      "eventFoodStands": "Event Food Stands",
+      "mealPrepBusiness": "Meal Prep Business",
+      "store": "Store",
+      "onlineShop": "Online Shop",
+      "giftShop": "Gift Shop",
+      "beautyShop": "Beauty Shop",
+      "smokeShop": "Smoke Shop",
+      "healthStore": "Health Store",
+      "florist": "Florist",
+      "petShop": "Pet Shop"
+    }
   }
 }

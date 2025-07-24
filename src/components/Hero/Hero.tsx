@@ -27,14 +27,10 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import HeroIcon from '../../assets/icons/HeroSplayn.png';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import BusinessSwiper from './BusinessSwiper';
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
-const FallbackImage = () => (
-  <HeroImage
-    src={HeroIcon}
-    alt="3D Scene"
-  />
-);
+const FallbackImage = () => <HeroImage src={HeroIcon} alt="3D Scene" />;
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -137,6 +133,7 @@ const Hero: React.FC = () => {
         </HeroContainerContent>
       </HeroWrapper>
       <Swipper />
+      <BusinessSwiper />
     </>
   );
 };

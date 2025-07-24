@@ -1354,5 +1354,37 @@
       "submit": "Связаться с отделом продаж",
       "selectOption": "Выберите вариант"
     }
+  },
+   "businessSwiper": {
+    "title": "Выберите формат бизнеса",
+    "subtitle": "Все виды бизнеса, которые мы автоматизируем",
+    "businessTypes": {
+      "restaurant": "Ресторан",
+      "bistro": "Бистро",
+      "veganRestaurant": "Веганский ресторан",
+      "sushi": "Суши",
+      "fastFood": "Фастфуд",
+      "buffet": "Буфет",
+      "foodTruck": "Фудтрак",
+      "coffeeShop": "Кофейня",
+      "pizzeria": "Пиццерия",
+      "bakery": "Пекарня",
+      "iceCreamParlor": "Кафе-мороженое",
+      "candyShop": "Кондитерская",
+      "darkKitchen": "Темная кухня",
+      "delivery": "Доставка",
+      "franchiseOwners": "Франчайзи",
+      "cateringServices": "Кейтеринг",
+      "eventFoodStands": "Еда на мероприятия",
+      "mealPrepBusiness": "Приготовление еды",
+      "store": "Магазин",
+      "onlineShop": "Интернет-магазин",
+      "giftShop": "Магазин подарков",
+      "beautyShop": "Бьюти-магазин",
+      "smokeShop": "Табачный магазин",
+      "healthStore": "Магазин здоровья",
+      "florist": "Цветочный магазин",
+      "petShop": "Зоомагазин"
+    }
   }
 }
