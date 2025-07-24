@@ -27,7 +27,7 @@ import Image1 from '../../assets/icons/pizzario/image1(2).png';
 import Image2 from '../../assets/icons/pizzario/image2(10).png';
 import Image3 from '../../assets/icons/pizzario/image3().png';
 import Image4 from '../../assets/icons/pizzario/image4.png';
-import Iphone from '../../assets/icons/pizzario/iPhone16ProMax.png';
+import Iphone from '../../assets/icons/pizzario/iPhone16ProMaxNew.png';
 import burban from '../../assets/icons/pizzario/burbanBites.png';
 import image5 from '../../assets/icons/pizzario/image5.png';
 import sweets from '../../assets/icons/pizzario/sweetTreats.png';

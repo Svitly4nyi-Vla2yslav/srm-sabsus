@@ -1,4 +1,5 @@
 import AllinOneSRM from '../../components/AllinOneSRM/AllinOneSRM';
+import FeedbackFormComponent from '../../components/ContactComponents/FeedbackFormComponent';
 import Feedback from '../../components/Feedback/Feedback';
 import Hero from '../../components/Hero/Hero';
 import PartnersBanner from '../../components/PartnersBanner/PartnersBanner';
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
         <ResultsFromBusinesses />
         <Feedback />
         <PricingTable />
+        <FeedbackFormComponent/>
         <PartnersBanner />
         <StartSmall />
       </HomeContainer>

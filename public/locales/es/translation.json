@@ -21,7 +21,7 @@
   "hero": {
     "innovative": "Soluciones innovadoras",
     "title": "Estás construyendo tu propio sistema",
-    "description": "Un ecosistema completo de CRM, POS, aplicaciones móviles (iOS y Android) y web para gestionar cafés, restaurantes y tiendas minoristas en cualquier momento y lugar.",
+    "description": "Una potente plataforma white-label para gestionar tu restaurante o tienda. Lanza tu propia app móvil, POS, CRM y sistema de entregas — sin comisiones ocultas ni recortes de agregadores. Control total. Propiedad total.",
     "trustText": "Más de 1200 empresas ya confían en nosotros",
     "buttons": {
       "tryFree": "Probar gratis",
@@ -526,7 +526,7 @@
     "ukrainian": "Ucr",
     "selectLanguage": "🌎{{language}} ⌄"
   },
-    "performanceHubHero": {
+  "performanceHubHero": {
     "innovativeText": "Centro de Rendimiento",
     "title": "Toma decisiones seguras con información en tiempo real.",
     "buttons": {
@@ -534,7 +534,7 @@
       "viewDemo": "Ver demo"
     }
   },
-   "howWeWorkSection": {
+  "howWeWorkSection": {
     "header": {
       "title": "Cómo Trabajamos",
       "mainHeading": "De números crudos a ideas claras",
@@ -575,7 +575,7 @@
       }
     }
   },
-   "keyCapabilitiesSection": {
+  "keyCapabilitiesSection": {
     "header": {
       "title": "Capacidades Clave",
       "mainHeading": "Ver el panorama general<br/>Y los pequeños detalles",
@@ -616,7 +616,7 @@
       }
     }
   },
-    "livePrepInsightsSection": {
+  "livePrepInsightsSection": {
     "header": {
       "title": "Información en Vivo",
       "mainHeading": "Desde el almacén hasta la cocina — siempre sincronizado",
@@ -624,7 +624,7 @@
       "additionalDescription": "Temporizadores, alertas y asignaciones por zona aseguran que cada plato esté listo exactamente cuando debe. Diseñado para reducir el caos y maximizar el rendimiento."
     }
   },
-    "brandEngineHero": {
+  "brandEngineHero": {
     "innovativeText": "Motor de Marca",
     "title": "Gestiona campañas y fidelización, controla la identidad",
     "buttons": {
@@ -632,7 +632,7 @@
       "viewDemo": "Ver demo"
     }
   },
-    "marketingHowWeWork": {
+  "marketingHowWeWork": {
     "header": {
       "title": "Cómo Trabajamos",
       "mainHeading": "Haz crecer tu marca y llega al público correcto",
@@ -714,7 +714,7 @@
       }
     }
   },
-   "marketingLivePrep": {
+  "marketingLivePrep": {
     "header": {
       "title": "Información en Vivo",
       "mainHeading": "Crea campañas. Personaliza UX.",
@@ -722,7 +722,7 @@
       "additionalDescription": "Recompensas de cumpleaños, automatización de promos y editor de banners mejoran retención y consistencia de marca. Un panel, control total."
     }
   },
-   "faqSection": {
+  "faqSection": {
     "title": "Preguntas frecuentes",
     "subtitle": "Tienes preguntas. Tenemos respuestas honestas.",
     "questions": {
@@ -788,7 +788,7 @@
       }
     }
   },
-    "howWeWorkSection1": {
+  "howWeWorkSection1": {
     "title": "Cómo trabajamos",
     "heading": "Proporcionamos una guía paso a paso para ayudarte a entender nuestro proceso.",
     "description": "Nuestro Customer Experience Suite crea interacciones fluidas y de marca a lo largo del viaje del cliente. Así es como funciona, desde el pedido hasta la retención:",
@@ -866,13 +866,13 @@
       }
     }
   },
-    "livePrepInsights1": {
+  "livePrepInsights1": {
     "title": "Información de preparación en vivo",
     "heading": "Plataforma de interacción todo en uno",
     "description": "Unifica todos los canales de interacción con el usuario en una experiencia perfecta. Desde pedidos móviles hasta recompensas de fidelidad, todo está diseñado para ser intuitivo y rápido.",
     "footerText": "Tu marca, tu flujo. Personaliza los puntos de contacto con control total sobre los aspectos visuales, el comportamiento y la lógica de interacción, todo mientras brindas una experiencia encantadora en el recorrido del cliente."
   },
-   "mobileUXSection1": {
+  "mobileUXSection1": {
     "title": "UX móvil",
     "heading": "Crea recorridos de clientes personalizados",
     "buttons": {
@@ -880,12 +880,12 @@
       "viewDemo": "Ver demo"
     }
   },
-    "stepByStepGuidance1": {
+  "stepByStepGuidance1": {
     "title": "Guía paso a paso",
     "heading": "Domina tu CRM en minutos",
     "description": "Mira un recorrido de nuestro sistema CRM, desde la configuración de perfiles hasta la gestión de tu pipeline. Esta guía muestra cómo maximizar cada función."
   },
-    "integrationScalingHero": {
+  "integrationScalingHero": {
     "title": "Infraestructura abierta",
     "heading": "Escale sus operaciones — conéctese a cualquier cosa, en cualquier momento",
     "buttons": {
@@ -893,7 +893,7 @@
       "viewDemo": "Ver demo"
     }
   },
-   "integrationScalingSection": {
+  "integrationScalingSection": {
     "title": "Cómo trabajamos",
     "heading": "Expande sin límites",
     "description": "Conecta servicios, escala operaciones y adapta el sistema a cualquier tamaño o geografía — todo sin fricción.",
@@ -932,7 +932,7 @@
       }
     }
   },
-    "integrationScalingCards": {
+  "integrationScalingCards": {
     "apiFirst": {
       "title": "Enfoque API-First",
       "text": "Conecta tu ecosistema a herramientas externas con una API pública. Está abierta a socios y procesadores."
@@ -966,18 +966,18 @@
       "text": "Conéctate a UberEats, DoorDash y más — y gestiona pedidos desde un solo lugar."
     }
   },
-    "keyCapabilitiesSection2": {
+  "keyCapabilitiesSection2": {
     "title": "Capacidades clave",
     "heading": "Conecta, expande, repite",
     "description": "Incluye acceso API, integraciones con terminales y entregas, escalado multi-sede y modo offline."
   },
-    "brandedGrowthTools": {
+  "brandedGrowthTools": {
     "title": "Herramientas de crecimiento de marca",
     "heading": "Crea campañas. Personaliza la UX.",
     "description": "Llega a tus clientes mediante push, email, SMS y banners en la aplicación. Localiza cada detalle — desde el texto hasta la moneda — y adapta toda la interfaz a la identidad de tu marca.",
     "footerText": "Recompensas de cumpleaños, automatizaciones de promociones y edición de banners mejoran la retención y la coherencia de marca. Un panel de control, control total."
   },
-   "inventoryHero": {
+  "inventoryHero": {
     "title": "Lógica de stock",
     "heading": "Rastrea ingredientes y métricas desde la fuente hasta el plato",
     "features": {
@@ -989,7 +989,7 @@
       "viewDemo": "Ver demo"
     }
   },
-   "inventoryManagementSection": {
+  "inventoryManagementSection": {
     "title": "Cómo trabajamos",
     "heading": "Control total sobre ingredientes, stock y cadenas de suministro",
     "description": "Prevenga escaseces, optimice logística y mantenga operaciones fluidas — desde cocina hasta almacén.",
@@ -1028,7 +1028,7 @@
       }
     }
   },
-    "inventoryKeyFeatures": {
+  "inventoryKeyFeatures": {
     "title": "Funciones clave",
     "heading": "Siempre sepa qué hay en stock",
     "description": "Rastree suministros, mueva existencias, descarte automáticamente ingredientes y simplifique la logística del almacén.",
@@ -1067,13 +1067,13 @@
       }
     }
   },
-    "inventoryHero1": {
+  "inventoryHero1": {
     "title": "Información de preparación",
     "heading": "Del almacén a la cocina — siempre sincronizado",
     "description": "Rastrea existencias, transferencias y suministros en un sistema inteligente. Monitorea ingredientes, empaques y kits de preparación con actualizaciones instantáneas en todos los locales.",
     "footerText": "Temporizadores, alertas y asignaciones de zonas aseguran que cada plato esté listo exactamente cuando debe. Diseñado para reducir el caos y maximizar el rendimiento."
   },
-   "kitchenHero1": {
+  "kitchenHero1": {
     "title": "Experiencia móvil",
     "heading": "Crea recorridos de clientes personalizados",
     "buttons": {
@@ -1120,7 +1120,7 @@
       }
     }
   },
-   "kitchenManagement1": {
+  "kitchenManagement1": {
     "title": "Capacidades clave",
     "heading": "Gestiona la cocina en tiempo real — sin demoras.",
     "description": "Aumenta la eficiencia del equipo: estados de pedidos, recetas paso a paso, temporizadores y distribución de tareas — todo sincronizado desde la pantalla hasta la entrega.",
@@ -1159,13 +1159,13 @@
       }
     }
   },
-    "kitchenPrepInsights1": {
+  "kitchenPrepInsights1": {
     "title": "Información de preparación en cocina",
     "heading": "Precisión y velocidad desde la preparación hasta el plato",
     "description": "Sigue el progreso de cocción en tiempo real en todas las estaciones con pantallas de cocina sincronizadas. Cada pedido fluye a través de etapas claras: preparación, cocción, servicio, con indicadores luminosos.",
     "footerText": "Los temporizadores, alertas y asignaciones de zonas aseguran que cada plato esté listo exactamente cuando debe. Diseñado para reducir el caos y maximizar el rendimiento."
   },
-    "terminalControlSection": {
+  "terminalControlSection": {
     "title": "Control de terminal",
     "heading": "Simplifica los turnos con herramientas POS más inteligentes",
     "buttons": {
@@ -1173,7 +1173,7 @@
       "viewDemo": "Ver demo"
     }
   },
-    "howWeWork1": {
+  "howWeWork1": {
     "title": "Cómo trabajamos",
     "heading": "La nueva herramienta favorita de tu personal",
     "description": "Desde el primer toque hasta los informes posteriores al turno, el sistema POS y Staff está diseñado para velocidad, claridad y flexibilidad. Así es como funciona el flujo de trabajo:",
@@ -1212,7 +1212,7 @@
       }
     }
   },
-    "keyCapabilitiesSection3": {
+  "keyCapabilitiesSection3": {
     "title": "Capacidades clave",
     "heading": "De la pantalla al servicio, sin demoras",
     "description": "Estados de pedidos en vivo, desglose de recetas, temporizadores y coordinación de recogida diseñados para tu equipo de cocina.",
@@ -1251,13 +1251,13 @@
       }
     }
   },
-    "kitchenPrepInsights2": {
+  "kitchenPrepInsights2": {
     "title": "Información de preparación en cocina",
     "heading": "Precisión y velocidad desde la preparación al plato",
     "description": "Sigue el progreso de cocción en tiempo real en todas las estaciones con pantallas de cocina sincronizadas. Cada pedido fluye a través de etapas claras: preparación, cocción, servicio, con indicadores luminosos.",
     "footerText": "Temporizadores, alertas y asignaciones de zonas aseguran que cada plato esté listo exactamente cuando debe. Diseñado para reducir el caos y maximizar el rendimiento."
   },
-   "howWeWorkSection3": {
+  "howWeWorkSection3": {
     "header": {
       "title": "Cómo trabajamos",
       "heading": "Nuestro enfoque se basa en transparencia, velocidad y cuidado",
@@ -1298,7 +1298,7 @@
       }
     }
   },
-    "hero1": {
+  "hero1": {
     "aboutUs": "Sobre nosotros",
     "title": "Creemos en la claridad, innovación e integridad",
     "description": "Nuestra misión es empoderar a las empresas simplificando operaciones y mejorando experiencias de clientes mediante tecnología y soluciones vanguardistas.",
@@ -1308,7 +1308,7 @@
       "scaling": "Los clientes dicen que les ayudamos a escalar"
     }
   },
-   "contact": {
+  "contact": {
     "getStarted": "Empezar",
     "title": "Comienza con SABSUS",
     "description": "Programa una demostración de producto de 30 minutos con nuestro equipo",
@@ -1336,6 +1336,23 @@
       "supportBadge": "24/7",
       "helpCenter": "Visitar el Centro de ayuda y chat",
       "helpText": "Consulta instrucciones, guías de configuración y contacta con soporte en vivo en cualquier momento."
+    }
+  },
+  "feedback1": {
+    "title": "¿Tienes más de 10 ubicaciones o alguna pregunta?",
+    "subtitle": "Nuestro equipo te ayudará a crear un plan personalizado",
+    "description": "Desde escalamiento hasta integraciones, estamos aquí para ayudarte",
+    "form": {
+      "name": "Nombre (Nombre completo)",
+      "company": "Nombre de la empresa",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "optional": "opcional",
+      "locations": "Número de ubicaciones",
+      "message": "Mensaje / Preguntas",
+      "scheduleCall": "Me gustaría programar una llamada",
+      "submit": "Contactar ventas",
+      "selectOption": "Selecciona una opción"
     }
   }
 }

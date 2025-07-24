@@ -21,7 +21,7 @@
   "hero": {
     "innovative": "Innovative Solutions",
     "title": "You're building your own system",
-    "description": "A complete ecosystem of CRM, POS, mobile apps (iOS & Android) and web to manage cafés, restaurants, and retail stores — anytime, anywhere.",
+    "description": "A powerful, white-label platform to run your restaurant or retail business. Launch your own branded mobile app, POS, CRM, and delivery system — with no hidden fees or aggregator cuts. Full control. Full ownership.",
     "trustText": "Over 1200 businesses already trust us",
     "buttons": {
       "tryFree": "Try For Free",
@@ -345,17 +345,17 @@
           "discount": "-32%",
           "tiers": [
             {
-              "name": "1 Establishment",
+              "name": "1 Location",
               "discount": "-64%",
               "price": "$5,000"
             },
             {
-              "name": "Up to 3 Establishments",
+              "name": "Up to 3 Locations",
               "discount": "-60%",
               "price": "$10,000"
             },
             {
-              "name": "Up to 5–10 Establishments",
+              "name": "Up to 5–10 Locations",
               "discount": "-57%",
               "price": "$15,000"
             }
@@ -444,18 +444,18 @@
           "title": "White-label buyout",
           "discount": "-22%",
           "tiers": [
-            {
-              "name": "1 Establishment",
+             {
+              "name": "1 Location",
               "discount": "-64%",
               "price": "$5,000"
             },
             {
-              "name": "Up to 3 Establishments",
+              "name": "Up to 3 Locations",
               "discount": "-60%",
               "price": "$10,000"
             },
             {
-              "name": "Up to 5–10 Establishments",
+              "name": "Up to 5–10 Locations",
               "discount": "-57%",
               "price": "$15,000"
             }
@@ -1165,7 +1165,7 @@
     "description": "Track real-time cooking progress across all stations with synced kitchen displays. Each order flows through clear stages — prep, cook, serve — with glowing indicators.",
     "footerText": "Timers, alerts, and zone assignments make sure every dish is ready exactly when it should be. Designed to reduce chaos and maximize performance."
   },
-    "terminalControlSection": {
+  "terminalControlSection": {
     "title": "Terminal Control",
     "heading": "Simplify shifts with smarter POS and role tools",
     "buttons": {
@@ -1173,7 +1173,7 @@
       "viewDemo": "View demo"
     }
   },
-    "howWeWork1": {
+  "howWeWork1": {
     "title": "How We Work",
     "heading": "Your staff's new favorite tool",
     "description": "From first tap to end-of-shift reporting — the POS & Staff system is built for speed, clarity, and flexibility. Here's how the workflow runs:",
@@ -1212,7 +1212,7 @@
       }
     }
   },
-   "keyCapabilitiesSection3": {
+  "keyCapabilitiesSection3": {
     "title": "Key Capabilities",
     "heading": "From screen to service, without delays",
     "description": "Live order statuses, recipe breakdowns, timers and pickup coordination built for your kitchen crew.",
@@ -1251,13 +1251,13 @@
       }
     }
   },
-   "kitchenPrepInsights2": {
+  "kitchenPrepInsights2": {
     "title": "Live Prep Insights",
     "heading": "Precision and speed from prep to plate",
     "description": "Track real-time cooking progress across all stations with synced kitchen displays. Each order flows through clear stages — prep, cook, serve — with glowing indicators.",
     "footerText": "Timers, alerts, and zone assignments make sure every dish is ready exactly when it should be. Designed to reduce chaos and maximize performance."
   },
-   "howWeWorkSection3": {
+  "howWeWorkSection3": {
     "header": {
       "title": "How We Work",
       "heading": "Our approach is built on transparency, speed, and care",
@@ -1298,7 +1298,7 @@
       }
     }
   },
-    "hero1": {
+  "hero1": {
     "aboutUs": "About us",
     "title": "We believe in clarity, innovation, and integrity",
     "description": "Our mission is to empower businesses by simplifying operations and enhancing customer experiences through cutting-edge technology and solutions.",
@@ -1308,7 +1308,7 @@
       "scaling": "Customers say we help them scale"
     }
   },
-    "contact": {
+  "contact": {
     "getStarted": "Get started",
     "title": "Get started with SABSUS",
     "description": "Schedule a 30-minute product demo with our team",
@@ -1336,6 +1336,23 @@
       "supportBadge": "24/7",
       "helpCenter": "Visit Help Center & Chat",
       "helpText": "Browse instructions, setup guides, and contact live support — anytime."
+    }
+  },
+  "feedback1": {
+    "title": "Have more than 10 locations or any questions?",
+    "subtitle": "Our team will help you build a custom plan tailored to your needs",
+    "description": "From scaling to integrations, we've got you covered",
+    "form": {
+      "name": "Name (Full Name)",
+      "company": "Company Name",
+      "email": "Email",
+      "phone": "Phone",
+      "optional": "optional",
+      "locations": "Number of Locations",
+      "message": "Message / Questions",
+      "scheduleCall": "I'd like to schedule a call",
+      "submit": "Contact Sales",
+      "selectOption": "Select an option"
     }
   }
 }
