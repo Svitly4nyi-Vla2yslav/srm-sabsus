@@ -1354,5 +1354,37 @@
       "submit": "Зв'язатися з відділом продажів",
       "selectOption": "Виберіть опцію"
     }
+  },
+    "businessSwiper": {
+    "title": "Оберіть свій формат бізнесу",
+    "subtitle": "Всі види бізнесу, які ми автоматизуємо",
+    "businessTypes": {
+      "restaurant": "Ресторан",
+      "bistro": "Бістро",
+      "veganRestaurant": "Веганський ресторан",
+      "sushi": "Суші",
+      "fastFood": "Фастфуд",
+      "buffet": "Буфет",
+      "foodTruck": "Фудтрак",
+      "coffeeShop": "Кав'ярня",
+      "pizzeria": "Піцерія",
+      "bakery": "Пекарня",
+      "iceCreamParlor": "Кафе-морозиво",
+      "candyShop": "Кондитерська",
+      "darkKitchen": "Темна кухня",
+      "delivery": "Доставка",
+      "franchiseOwners": "Франчайзі",
+      "cateringServices": "Кейтеринг",
+      "eventFoodStands": "Їжа на події",
+      "mealPrepBusiness": "Приготування їжі",
+      "store": "Магазин",
+      "onlineShop": "Інтернет-магазин",
+      "giftShop": "Магазин подарунків",
+      "beautyShop": "Б'юті-магазин",
+      "smokeShop": "Тютюновий магазин",
+      "healthStore": "Магазин здоров'я",
+      "florist": "Квіткарня",
+      "petShop": "Зоомагазин"
+    }
   }
 }
