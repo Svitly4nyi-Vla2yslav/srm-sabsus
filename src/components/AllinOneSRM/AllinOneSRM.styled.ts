@@ -1,4 +1,10 @@
+import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
+
+export const StyledNavLink = styled(NavLink)`
+color: #808080;
+`;
 
 export const AllinOneSRMContainer = styled.div`
  margin: 0 auto;
@@ -157,7 +163,7 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   border: 1px solid #212121;
   border-radius: 24px;
   padding: 16px;
@@ -180,8 +186,20 @@ export const Card = styled.div`
   background: rgba(255, 255, 255, 0.03);
   
   /* Фікс для рендерингу тіней на iOS */
-  transform: translateZ(0);
+  transform: translateY(0);
+ transition: all 0.5s ease;
+  &:hover {
+    transform: translateY(-4px);
+     will-change: transform;
 
+            background: rgba(10, 10, 30, 0.6);
+          
+      
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
   @media screen and (min-width: 768px) {
     min-width: 343px;
     width: 100%;

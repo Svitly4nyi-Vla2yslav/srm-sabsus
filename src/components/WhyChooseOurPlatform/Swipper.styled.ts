@@ -117,7 +117,7 @@ export const BadgeContent = styled.div`
 
 export const IconWrapper = styled.div`
   position: absolute;
-  left: 80%;
+  left: 86%;
   top: 3px;
   display: flex;
   justify-content: center;
@@ -126,7 +126,7 @@ export const IconWrapper = styled.div`
   height: 22px;
 
   border-radius: 25px;
-  padding: 4px;
+  padding: 10px;
   font-size: 13px;
 
   box-shadow:
@@ -143,6 +143,7 @@ export const IconWrapper = styled.div`
     rgba(255, 255, 255, 0.03);
 
   -webkit-transform: translateZ(0);
+
 `;
 
 
@@ -181,8 +182,8 @@ export const BadgeButton = styled.button`
       transform: translateX(-50%);
       width: 0;
       height: 3px;
-      box-shadow: inset 0 0 20px 0 rgba(191, 123, 246, 0.7), inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15), inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1), 0 0 10px 6px rgba(191, 123, 246, 0.4), 0 15px 30px -10px rgba(0, 0, 0, 0.25), 0 5px 10px -5px rgba(0, 0, 0, 0.2);
-      background: linear-gradient(90deg, #BF7BF6 0%, #6A6BFF 100%);
+      box-shadow: inset 0 0 20px 0 rgba(123, 156, 246, 0.85), inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15), inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1), 0 0 10px 6px rgba(64, 141, 242, 0.68), 0 15px 30px -10px rgba(0, 0, 0, 0.25), 0 5px 10px -5px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(90deg, #7b92f6ff 0%, #6A6BFF 100%);
       transition: width 0.3s ease;
     }
 

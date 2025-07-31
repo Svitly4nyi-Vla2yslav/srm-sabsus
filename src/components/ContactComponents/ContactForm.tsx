@@ -6,6 +6,8 @@ import { CardButtonText } from '../AllinOneSRM/AllinOneSRM.styled';
 import star from '../../assets/icons/Star-copy.svg';
 import { ResultMainTextDescription } from '../ResultsFromBusinesses/ResultsFromBusinesses.styled';
 import { useTranslation } from 'react-i18next';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 export const ContactWrapper = styled.div`
   margin: 0 auto;
@@ -361,26 +363,22 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://your-server-endpoint.com/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          teammates,
-          to: 'svetli4nuyvla2islav@gmail.com',
-          subject: 'New Contact Form Submission',
-        }),
+      await addDoc(collection(db, 'contactMessages'), {
+        email,
+        teammates,
+        createdAt: serverTimestamp(),
       });
 
-      if (response.ok) {
-        window.location.href = 'https://sabsus.app/registrcompany/web/PRO';
-      } else {
-        console.error('Помилка при відправці форми');
-      }
+       setEmail('');
+    setTeammates('');
+      const link = document.createElement('a');
+      link.href = 'https://sabsus.app/registrcompany/web/PRO';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.click();
     } catch (error) {
-      console.error('Помилка:', error);
+      console.error('Помилка при відправці до Firestore:', error);
+      alert('Сталася помилка. Спробуйте пізніше.');
     } finally {
       setIsSubmitting(false);
     }
@@ -447,7 +445,9 @@ const ContactForm: React.FC = () => {
             value={teammates}
             onChange={e => setTeammates(e.target.value)}
           >
-            <option value="">{t('contact.form.teammatesOptions.select')}</option>
+            <option value="">
+              {t('contact.form.teammatesOptions.select')}
+            </option>
             <option value="from-1-to-5">
               {t('contact.form.teammatesOptions.1-5')}
             </option>
@@ -478,9 +478,7 @@ const ContactForm: React.FC = () => {
           </ButtonFree>
         </a>
 
-        <ContactDescription>
-          {t('contact.form.terms')}
-        </ContactDescription>
+        <ContactDescription>{t('contact.form.terms')}</ContactDescription>
         <a
           ref={linkRef}
           href="https://sabsus.app/registrcompany/web/PRO"
@@ -509,9 +507,7 @@ const ContactForm: React.FC = () => {
             <ButtonFree>{t('contact.help.helpCenter')}</ButtonFree>
           </a>
 
-          <HelpCenterText>
-            {t('contact.help.helpText')}
-          </HelpCenterText>
+          <HelpCenterText>{t('contact.help.helpText')}</HelpCenterText>
         </motion.div>
       </ContactUsWrapper>
     </ContactWrapper>

@@ -6,11 +6,15 @@ import PartnersBanner from '../../components/PartnersBanner/PartnersBanner';
 import PricingTable from '../../components/PricePlan/PricePlan';
 import ResultsFromBusinesses from '../../components/ResultsFromBusinesses/ResultsFromBusinesses';
 import StartSmall from '../../components/StartSmall/StartSmall';
+import ComparisonTable from '../../components/TableComparison/TableComparison';
 import WhyChooseOurPlatform from '../../components/WhyChooseOurPlatform/WhyChooseOurPlatform';
 import { HomeContainer } from './HomePage.styled';
 import React from 'react';
 
+
+
 const Home: React.FC = () => {
+  
   return (
     <>
       <HomeContainer>
@@ -23,6 +27,7 @@ const Home: React.FC = () => {
         <FeedbackFormComponent/>
         <PartnersBanner />
         <StartSmall />
+        <ComparisonTable/>
       </HomeContainer>
     </>
   );

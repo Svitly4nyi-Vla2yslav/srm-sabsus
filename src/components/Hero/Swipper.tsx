@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/bundle';
 import { useMediaQuery } from 'react-responsive';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import {
   ArrowIcon,
   CardContainer,
@@ -17,25 +17,30 @@ import {
   SwiperContainer,
 } from './Swipper.styled';
 import Arrow from '../../assets/icons/arrow-narrow-up-right.svg';
+import { useSwipperStats } from '../../firebase';
+
 
 const Swipper: React.FC = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 743px)' });
   const isTablet = useMediaQuery({
     query: '(min-width: 744px) and (max-width: 1439px)',
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+  const { stats } = useSwipperStats();
 
-  const stats = t('swipper.stats', { returnObjects: true }) as Array<{
-    value: string;
-    description: string;
-  }>;
-
+ 
   const partners = [...stats, ...stats.slice(0, 3)];
+  // const stats = t('swipper.stats', { returnObjects: true }) as Array<{
+  //   value: string;
+  //   description: string;
+  // }>;
 
-  useEffect(() => {
-    // getPartners().then(setPartners);
-  }, []);
+  // const partners = [...stats, ...stats.slice(0, 3)];
+
+  // useEffect(() => {
+  //   // getPartners().then(setPartners);
+  // }, []);
 
   const slidesPerView = isMobile ? 1 : isTablet ? 2 : isDesktop ? 4 : 4;
   const shouldLoop = partners.length > slidesPerView;

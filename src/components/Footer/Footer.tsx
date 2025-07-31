@@ -13,6 +13,7 @@ import {
   HeroButtonGrey,
   Licens,
   Link,
+  LinkSocial,
   Logo,
   Point,
   SocialIcon,
@@ -20,7 +21,6 @@ import {
   SocialWrapper,
   WraperLink,
 } from './Footer.styled';
-
 import 'aos/dist/aos.css';
 import logo from '../../assets/icons/logo-srm.svg';
 import In from '../../assets/icons/social/in.svg';
@@ -28,12 +28,14 @@ import Insta from '../../assets/icons/social/inst.svg';
 import Faceboock from '../../assets/icons/social/faceboock.svg';
 
 import { PoliciesContent } from './PoliciesContent';
+import { StyledNavLink } from '../AllinOneSRM/AllinOneSRM.styled';
+import { useSmoothScroll } from '../../utils/useSmoothScroll';
 
 const Footer: React.FC = () => {
+    const { scrollTo } = useSmoothScroll();
   const { t } = useTranslation();
   const [showPolicies, setShowPolicies] = useState(false);
   const [activePolicy, setActivePolicy] = useState<string | null>(null);
-
   useEffect(() => {
     if (showPolicies && activePolicy) {
       const timer = setTimeout(() => {
@@ -53,98 +55,72 @@ const Footer: React.FC = () => {
     setActivePolicy(policy);
     setShowPolicies(true);
   };
+  
 
   return (
     <>
       <FooterContainer>
         <FooterWrapp>
-          <Container>
-            <Logo style={{ marginBottom: 16 }}>
+          <Container> 
+            <Logo  onClick={() => scrollTo('hero', "home")} style={{ marginBottom: 16 }}>
               <img src={logo} alt="Logo" />
             </Logo>
           </Container>
           <Deckstop>
             <Container>
               <WraperLink>{t('footer.sections.home')}</WraperLink>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link  to="/home/#benefits" >
                 {t('footer.links.benefits')}
               </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link  to="/service">
                 {t('footer.links.service')}
               </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link  to="/pricing">
                 {t('footer.links.prices')}
               </Link>
             </Container>
             <Container>
               <WraperLink>{t('footer.sections.product')}</WraperLink>
-              <Link
-                href="https://srm-sabsus.netlify.app/service/customer-experience"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <StyledNavLink to="/service/customer-experience">
                 {t('footer.links.customerExperience')}
-              </Link>
-              <Link
-                href="https://srm-sabsus.netlify.app/service/pos-staff-operations"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </StyledNavLink>
+              <StyledNavLink to="/service/pos-staff-operations">
                 {t('footer.links.posStaff')}
-              </Link>
-              <Link
-                href="https://srm-sabsus.netlify.app/service/kitchen-fulfillment"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </StyledNavLink>
+              <StyledNavLink to="/service/kitchen-fulfillment">
                 {t('footer.links.kitchen')}
-              </Link>
-              <Link
-                href="https://srm-sabsus.netlify.app/service/inventory-warehousing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </StyledNavLink>
+              <StyledNavLink to="/service/inventory-warehousing">
                 {t('footer.links.inventory')}
-              </Link>
-              <Link
-                href="https://srm-sabsus.netlify.app/service/analytics-management"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </StyledNavLink>
+              <StyledNavLink to="/service/analytics-management">
                 {t('footer.links.analytics')}
-              </Link>
-              <Link
-                href="https://srm-sabsus.netlify.app/service/marketing-customization"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </StyledNavLink>
+              <StyledNavLink to="/service/marketing-customization">
                 {t('footer.links.marketing')}
-              </Link>
-              <Link
-                href="https://srm-sabsus.netlify.app/service/integration-scaling"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </StyledNavLink>
+              <StyledNavLink to="/service/integration-scaling">
                 {t('footer.links.integration')}
-              </Link>
+              </StyledNavLink>
             </Container>
 
             <Container>
               {' '}
               <WraperLink>{t('footer.sections.company')}</WraperLink>
-              <Link
-                href="https://srm-sabsus.netlify.app/service"
+              <LinkSocial
+                 href="https://sabsus.com/#service" 
+
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {t('footer.links.ourServices')}
-              </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              </LinkSocial>
+              <LinkSocial href="#" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.aboutUs')}
-              </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              </LinkSocial>
+              <LinkSocial href="#" target="_blank" rel="noopener noreferrer">
                 {t('footer.links.contactUs')}
-              </Link>
+              </LinkSocial>
             </Container>
           </Deckstop>
           <ContainerSocialDemo>

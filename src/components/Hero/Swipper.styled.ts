@@ -47,14 +47,11 @@ export const CardContainer = styled.a`
 
   &:hover {
     box-shadow: 
-      inset 0 0 20px 0 rgba(191, 123, 246, 0.7),
-      inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15),
-      inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1),
-      0 0 10px 6px rgba(191, 123, 246, 0.4),
-      0 15px 30px -10px rgba(0, 0, 0, 0.25),
-      0 5px 10px -5px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(191, 123, 246, 0.3);
+       0 0 5px 4px #494BEC, 
+      0 0 5px 0px #4F51ED, 
+      inset 0 0 16px 8px #6567EF;
+      background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(74, 131, 238, 0.86);
   }
 `;
 

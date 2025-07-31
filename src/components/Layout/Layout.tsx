@@ -6,10 +6,23 @@ import Footer from '../Footer/Footer';
 export const Layout: React.FC = () => {
   const location = useLocation();
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, behavior: 'auto' });
+  // }, [location.pathname]);
 
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 400);
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }, [location]);
   return (
     <>
       <Header />

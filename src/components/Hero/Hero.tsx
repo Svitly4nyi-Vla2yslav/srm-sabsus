@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import {
-  // AvatarContainer,
+  AvatarContainer,
   ButtonContainer,
   Container,
   HeroButton,
@@ -11,10 +11,10 @@ import {
   HeroText,
   HeroTitle,
   HeroWrapper,
-  // ImageAvatar,
-  // ImageContainer,
+  ImageAvatar,
+  ImageContainer,
   SpanUnicorn,
-  // TextImageAvatar,
+  TextImageAvatar,
 } from './Hero.styled';
 // import Avatar from '../../assets/icons/avatar/Image-36-1.svg';
 // import Avatar1 from '../../assets/icons/avatar/Image-36.svg';
@@ -28,17 +28,23 @@ import { motion } from 'framer-motion';
 import HeroIcon from '../../assets/icons/HeroSplayn.png';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import BusinessSwiper from './BusinessSwiper';
+import { useHeroContent } from '../../firebase';
+import ErrorScreen from '../ErrorScreen';
+import LoadingScreen from '../LoadingScreen';
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const FallbackImage = () => <HeroImage src={HeroIcon} alt="3D Scene" />;
 
 const Hero: React.FC = () => {
+  const { images, trustText, loading,
+    error} = useHeroContent();
   const { t } = useTranslation();
   const isMobile = useMediaQuery('(max-width: 768px)');
-
+  if (loading) return <LoadingScreen />;
+  if (error) return <ErrorScreen message={error} />;
   return (
     <>
-      <HeroWrapper>
+      <HeroWrapper  id="hero">
         <Container>
           {isMobile ? (
             <FallbackImage />
@@ -106,6 +112,23 @@ const Hero: React.FC = () => {
               <TextImageAvatar>{t('hero.trustText')}</TextImageAvatar>
             </AvatarContainer>
           </motion.div> */}
+          {!loading && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.0, delay: 0.7 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <AvatarContainer>
+                <ImageContainer>
+                  {images.map((src, i) => (
+                    <ImageAvatar key={i} src={src} alt={`Avatar ${i + 1}`} />
+                  ))}
+                </ImageContainer>
+                <TextImageAvatar>{trustText}</TextImageAvatar>
+              </AvatarContainer>
+            </motion.div>
+          )}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}

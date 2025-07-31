@@ -25,6 +25,9 @@ import {
 } from './PricePlan.styled';
 import price from '../../assets/icons/price/Money Bag.svg';
 import check from '../../assets/icons/price/IconCheck.svg';
+import { usePricingData } from '../../firebase';
+import LoadingScreen from '../LoadingScreen';
+import ErrorScreen from '../ErrorScreen';
 
 const PricePlan: React.FC = () => {
   const { t } = useTranslation();
@@ -35,7 +38,16 @@ const PricePlan: React.FC = () => {
   } | null>(null);
 
   const data = t('pricePlan', { returnObjects: true }) as any;
-  const currentData = isMonthly ? data.plans.monthly : data.plans.annually;
+  // const currentData = isMonthly ? data.plans.monthly : data.plans.annually;
+
+  const {
+    pricingData: currentData,
+    loading,
+    error,
+  } = usePricingData(isMonthly);
+  
+  if (loading) return <LoadingScreen />;
+  if (error) return <ErrorScreen message={error} />;
 
   const generateLink = (planIndex: number, tierIndex: number): string => {
     if (planIndex === 2)
@@ -70,7 +82,6 @@ const PricePlan: React.FC = () => {
       <motion.div>
         <PriceTitle>{data.title}</PriceTitle>
       </motion.div>
-
       <motion.div>
         <PriceText>{data.description}</PriceText>
       </motion.div>

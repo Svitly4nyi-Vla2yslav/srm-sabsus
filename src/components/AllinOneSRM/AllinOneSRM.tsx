@@ -12,6 +12,7 @@ import {
   MainText,
   MainTextDescription,
   MainTitle,
+  StyledNavLink,
 } from './AllinOneSRM.styled';
 import card1 from '../../assets/icons/cards/card1.png';
 import card2 from '../../assets/icons/cards/card2.png';
@@ -121,11 +122,21 @@ const AllinOneSRM: React.FC = () => {
     }
   };
 
+  const cardLinks = [
+    '/service/customer-experience',
+    '/service/pos-staff-operations',
+    '/service/kitchen-fulfillment',
+    '/service/inventory-warehousing',
+    '/service/analytics-management',
+    '/service/marketing-customization',
+    '/service/integration-scaling',
+  ];
+
   // Масиви зображень для карток
   const cardImages = [card1, card2, card3, card4, card5, card6, card7];
 
   return (
-    <AllinOneSRMContainer>
+    <AllinOneSRMContainer style={{ margin: '0 auto' }}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +144,7 @@ const AllinOneSRM: React.FC = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         {' '}
-        <MainText>
+        <MainText style={{ marginTop: 0, marginBottom: 50 }}>
           {data.mainText}
           <CardButtonText src={icon5} alt="Laptop" />
         </MainText>
@@ -144,7 +155,9 @@ const AllinOneSRM: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        <MainTitle>{data.mainTitle}</MainTitle>
+        <MainTitle style={{ marginTop: 0, marginBottom: 50 }}>
+          {data.mainTitle}
+        </MainTitle>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -157,94 +170,101 @@ const AllinOneSRM: React.FC = () => {
       </motion.div>
       <CardContainer>
         {data.cards.map((card, index) => (
-          <Card
-            as={motion.div}
-            {...getCardAnimation(index)}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            key={index}
-          >
+          <StyledNavLink to={cardLinks[index]} key={index}>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.15 }}
-              viewport={{ once: false, amount: 0.3 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
             >
-              <CardTitle>{card.title}</CardTitle>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.2 }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              <CardText
-                style={
-                  index === 4
-                    ? {
-                        marginBottom: 240,
-                      }
-                    : {}
-                }
+              <Card
+                as={motion.div}
+                {...getCardAnimation(index)}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                key={index}
               >
-                {card.text}
-              </CardText>
-            </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.15 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                >
+                  <CardTitle>{card.title}</CardTitle>
+                </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: index * 0.25 }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              <CardIcon
-                src={cardImages[index]}
-                alt={card.title}
-                style={
-                  index === 2
-                    ? {
-                        border: 'none',
-                        width: '100%',
-                        background: 'transparent',
-                        overflow: 'visible',
-                        backdropFilter: 'none',
-                      }
-                    : index === 4
-                    ? {
-                        position: 'absolute',
-                        top: '13%',
-                        left: '0',
-                        borderRadius: 24,
-                        height: '84%',
-                        width: '100%',
-                        objectFit: 'cover',
-                        overflow: 'hidden',
-                      }
-                    : {}
-                }
-              />
-            </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.2 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                >
+                  <CardText
+                    style={
+                      index === 4
+                        ? {
+                            marginBottom: 240,
+                          }
+                        : {}
+                    }
+                  >
+                    {card.text}
+                  </CardText>
+                </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.3 }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              <CardButtonContainer>
-                {card.buttons.map((button, btnIndex) => (
-                  <CardButton key={btnIndex}>
-                    {button}
-                    <CardButtonText
-                      src={buttonIcons[index][btnIndex]}
-                      alt={button}
-                    />
-                  </CardButton>
-                ))}
-              </CardButtonContainer>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.25 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                >
+                  <CardIcon
+                    src={cardImages[index]}
+                    alt={card.title}
+                    style={
+                      index === 2
+                        ? {
+                            border: 'none',
+                            width: '100%',
+                            background: 'transparent',
+                            overflow: 'visible',
+                            backdropFilter: 'none',
+                          }
+                        : index === 4
+                        ? {
+                            position: 'absolute',
+                            top: '13%',
+                            left: '0',
+                            borderRadius: 24,
+                            height: '84%',
+                            width: '100%',
+                            objectFit: 'cover',
+                            overflow: 'hidden',
+                          }
+                        : {}
+                    }
+                  />
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.3 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                >
+                  <CardButtonContainer>
+                    {card.buttons.map((button, btnIndex) => (
+                      <CardButton key={btnIndex}>
+                        {button}
+                        <CardButtonText
+                          src={buttonIcons[index][btnIndex]}
+                          alt={button}
+                        />
+                      </CardButton>
+                    ))}
+                  </CardButtonContainer>
+                </motion.div>
+              </Card>
             </motion.div>
-          </Card>
+          </StyledNavLink>
         ))}
       </CardContainer>
     </AllinOneSRMContainer>

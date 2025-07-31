@@ -6,6 +6,8 @@ import { HeroTitle, HeroInnovative } from '../Hero/Hero.styled';
 import { ResultMainTextDescription } from '../ResultsFromBusinesses/ResultsFromBusinesses.styled';
 import { CardButtonText } from '../AllinOneSRM/AllinOneSRM.styled';
 import star from '../../assets/icons/Bellhop.svg';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../firebase';
 const FeedbackWrapper = styled.div`
   margin: 80px auto;
   max-width: 1200px;
@@ -38,7 +40,7 @@ const FeedbackForm = styled.form`
 const FormRow = styled.div`
   display: flex;
   gap: 20px;
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 20px;
@@ -150,7 +152,9 @@ const SubmitButton = styled.button`
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   margin-top: 20px;
 
   &:hover {
@@ -179,23 +183,46 @@ const FeedbackFormComponent: React.FC = () => {
     phone: '',
     locations: '',
     message: '',
-    scheduleCall: false
+    scheduleCall: false,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value, type } = e.target;
-    const checked = type === 'checkbox' ? (e.target as HTMLInputElement).checked : undefined;
-    
+    const checked =
+      type === 'checkbox' ? (e.target as HTMLInputElement).checked : undefined;
+
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    await addDoc(collection(db, 'feedbackMessages'), {
+      ...formData,
+      createdAt: serverTimestamp(),
+    });
+    alert('Дані успішно надіслано!');
+    setFormData({
+      name: '',
+      company: '',
+      email: '',
+      phone: '',
+      locations: '',
+      message: '',
+      scheduleCall: false,
+    });
+  } catch (error: any) {
+    alert('Помилка при відправці: ' + error.message);
+  }
+};
   return (
     <FeedbackWrapper>
       <motion.div
@@ -204,7 +231,9 @@ const FeedbackFormComponent: React.FC = () => {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <HeroInnovative>{t('feedback1.title')} <CardButtonText src={star} alt="star" /></HeroInnovative>
+        <HeroInnovative>
+          {t('feedback1.title')} <CardButtonText src={star} alt="star" />
+        </HeroInnovative>
         <HeroTitle>{t('feedback1.subtitle')}</HeroTitle>
         <ResultMainTextDescription>
           {t('feedback1.description')}
@@ -247,7 +276,9 @@ const FeedbackFormComponent: React.FC = () => {
                 />
               </FormGroup>
               <FormGroup>
-                <FormLabel>{t('feedback1.form.phone')} ({t('feedback1.form.optional')})</FormLabel>
+                <FormLabel>
+                  {t('feedback1.form.phone')} ({t('feedback1.form.optional')})
+                </FormLabel>
                 <FormInput
                   type="tel"
                   name="phone"
@@ -282,16 +313,16 @@ const FeedbackFormComponent: React.FC = () => {
               />
             </FormGroup>
 
-             <CheckboxGroup>
-            <CheckboxInput
-              id="scheduleCall"
-              name="scheduleCall"
-              checked={formData.scheduleCall}
-              onChange={handleChange}
-            />
-            <CheckboxLabel htmlFor="scheduleCall">
-              {t('feedback1.form.scheduleCall')}
-            </CheckboxLabel>
+            <CheckboxGroup>
+              <CheckboxInput
+                id="scheduleCall"
+                name="scheduleCall"
+                checked={formData.scheduleCall}
+                onChange={handleChange}
+              />
+              <CheckboxLabel htmlFor="scheduleCall">
+                {t('feedback1.form.scheduleCall')}
+              </CheckboxLabel>
             </CheckboxGroup>
 
             <SubmitButton type="submit">

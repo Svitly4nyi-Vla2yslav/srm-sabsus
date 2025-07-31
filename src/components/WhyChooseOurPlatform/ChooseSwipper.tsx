@@ -87,7 +87,7 @@ const FeatureSwiper = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <HeaderContainer>
+      <HeaderContainer >
         {features.map((feature, index) => (
           <React.Fragment key={feature.id}>
             {index !== 0 && <Divider />}
@@ -106,7 +106,7 @@ const FeatureSwiper = () => {
                     aria-selected={feature.active}
                     style={{
                       boxShadow: feature.active
-                        ? 'inset 0 0 20px 0 rgba(191, 123, 246, 0.7), inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15), inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1), 0 0 10px 6px rgba(191, 123, 246, 0.4), 0 15px 30px -10px rgba(0, 0, 0, 0.25), 0 5px 10px -5px rgba(0, 0, 0, 0.2)'
+                        ? 'inset 0 0 20px 0 rgba(41, 111, 241, 0.88), inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15), inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1), 0 0 10px 6px rgba(38, 96, 166, 0.49), 0 15px 30px -10px rgba(0, 0, 0, 0.25), 0 5px 10px -5px rgba(0, 0, 0, 0.2)'
                         : 'none',
                     }}
                   >
@@ -128,7 +128,7 @@ const FeatureSwiper = () => {
       </HeaderContainer>
 
       <div style={{ width: '100%', margin: '40px auto' }}>
-        <Swiper
+        <Swiper  id='benefits'
           onSwiper={swiper => {
             swiperRef.current = swiper;
           }}

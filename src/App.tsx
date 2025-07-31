@@ -16,6 +16,7 @@ import MarketingCustomization from './pages/ServicePages/MarketingCustomization'
 import IntegrationScaling from './pages/ServicePages/IntegrationScaling';
 import ServicesMain from './pages/ServicePages/ServicesMain';
 import styled from 'styled-components';
+import { uploadPricingToFirestore } from './scripts/uploadPricing';
 
 const StyledMotionDiv = styled(motion.div)`
   width: 100%;
@@ -35,6 +36,14 @@ const ScrollToTop = () => {
   }, [pathname]);
 
   return <div ref={topRef} style={{ position: 'absolute', top: "-950px", height: 0 }} />;
+};
+
+export const UploadPricingButton = () => {
+  useEffect(() => {
+    uploadPricingToFirestore();
+  }, []);
+
+  return <div>Uploading pricing…</div>;
 };
 
 const AnimatedPage = ({ children }: { children: React.ReactNode }) => {
@@ -63,6 +72,7 @@ export const App: React.FC = () => {
 
   return (
     <AnimatePresence mode="wait">
+       {/* <UploadPricingButton /> */}
       <ParticlesBackground />
       <ScrollToTop key="global-scroll-top" />
       <Routes location={location} key={location.pathname}>

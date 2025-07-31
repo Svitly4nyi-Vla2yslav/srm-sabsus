@@ -83,7 +83,7 @@ const Back = styled.img`
 export const CostomerWrapp = styled.div`
   position: absolute;
   top: 127px;
-  
+
   @media screen and (min-width: 1440px) {
     margin-top: 100px;
   }
@@ -156,7 +156,7 @@ export const Container = styled.div`
 const Hero: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const { t } = useTranslation();
-  
+
   return (
     <HeroWrapper>
       <Container style={{ display: 'flex', justifyContent: 'center' }}>
@@ -202,7 +202,8 @@ const Hero: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            {t('mobileUXSection1.title')} <CardButtonText src={phone} alt="Phone icon" />
+            {t('mobileUXSection1.title')}{' '}
+            <CardButtonText src={phone} alt="Phone icon" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -232,7 +233,9 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>{t('mobileUXSection1.buttons.viewDemo')}</HeroButtonGrey>
+              <HeroButtonGrey>
+                {t('mobileUXSection1.buttons.viewDemo')}
+              </HeroButtonGrey>
             </a>
           </ButtonContainer>
         </motion.div>

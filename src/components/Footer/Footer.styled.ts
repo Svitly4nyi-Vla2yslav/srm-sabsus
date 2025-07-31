@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { gradientFlow, clickEffect } from '../ButtonTryForFree/ButtonTryForFree';
 import { pulseGrey } from '../Hero/Hero.styled';
+import { NavLink } from 'react-router-dom';
 
 export const FooterContainer = styled.footer`
 
@@ -89,6 +90,7 @@ export const Container = styled.div`
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-start;
+    gap: 5px;
 `;
 
 export const Logo = styled.a`
@@ -138,7 +140,23 @@ margin-top: 16px;
   }
 `;
 
-export const Link = styled.a`
+export const Link = styled(NavLink)`
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 15px;
+color: var(--white-50);
+margin-bottom: 10px;
+
+ @media screen and (min-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1440px) {
+  
+  }
+`;
+
+export const LinkSocial = styled.a`
 font-family: var(--font-family);
 font-weight: 400;
 font-size: 15px;
