@@ -1,19 +1,20 @@
 [
-    {
-        "origin": [
-            "http://localhost:5173",
-            "http://localhost:3000",
-            "https://srm-sabsus.netlify.app/",
-            "https://sabsusshop.web.app/",
-            "https://sabsusshop.firebaseapp.com/"
-        ],
-        "method": [
-            "GET",
-            "POST",
-            "PUT",
-            "HEAD",
-            "DELETE"
-        ],
-        "maxAgeSeconds": 3600
-    }
+  {
+    "origin": [
+      "http://localhost:5173",
+      "http://localhost:3000",
+      "https://srm-sabsus.netlify.app",
+      "https://sabsusshop.web.app",
+      "https://sabsusshop.firebaseapp.com"
+    ],
+    "method": [
+      "GET",
+      "POST",
+      "PUT",
+      "HEAD",
+      "DELETE"
+    ],
+    "maxAgeSeconds": 3600,
+    "responseHeader": ["Content-Type"]
+  }
 ]
