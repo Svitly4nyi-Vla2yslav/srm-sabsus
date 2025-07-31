@@ -1261,40 +1261,40 @@
     "header": {
       "title": "How We Work",
       "heading": "Our approach is built on transparency, speed, and care",
-      "description": "We deliver designs as part of your team, diving into goals, solving problems, and building value. Here's how our collaboration unfolds:"
+      "description": "Here’s How Collaboration with Sabsus Works:"
     },
     "cards": {
       "discovery": {
-        "title": "Discovery first",
-        "desc": "We immerse in your business — goals, audience, workflows, and pain points. This phase uncovers the real value your product should deliver. Together, we shape hypotheses, identify constraints, and define what's important for launch or growth."
+        "title": "Business Analysis First",
+        "desc": "We dive into how your business operates: workflows, audience, and pain points. We examine how orders are taken, inventory is tracked, and deliveries are managed. Then we form growth hypotheses: what modules to connect, where you're losing money, how to win back customers. We only launch what brings real value."
       },
       "scope": {
-        "title": "Clear project scope",
-        "desc": "We avoid vague promises. Instead, we outline a clear scope of work, define expected outcomes for each phase, and set transparent timelines. This reduces uncertainty, helps you plan confidently, and ensures alignment from the first screen to the final test."
+        "title": "Clear Scope and Plan",
+        "desc": "We don't sell 'the box.' Instead, we discuss the exact modules you need: POS, CRM, terminals, online orders, delivery. You know in advance what will be connected, how the interface will look, and what results to expect. We simplify decision-making and remove the fog around 'what will come out of this.'"
       },
       "prototyping": {
-        "title": "Collaborative prototyping",
-        "desc": "We don't hide behind final mockups. Fast, clickable prototypes let you evaluate structure, logic, and user flow early on — before design even starts. This saves time, sharpens the vision, and gives your team clarity before development begins."
+        "title": "Setup & Build — Together",
+        "desc": "You're never left with just instructions. Our team helps upload your menu, design your system, set up payments, couriers, inventory, and analytics. We test every step live — during setup. Your team is fully involved, as if it were their own product."
       },
       "syncs": {
-        "title": "Weekly syncs",
-        "desc": "Our process is built on transparency. We run regular check-ins, demos, and updates to keep you informed. You'll always have access to current tasks, open questions, and next steps. You're never guessing — you're involved."
+        "title": "Constant Feedback Loop",
+        "desc": "We conduct regular check-ins: what works, what can be improved. We stay in touch via WhatsApp/Telegram, Zoom, and in-app support. You're part of the process — not stuck waiting. We keep tasks visible, share demo reports, and develop new ideas together."
       },
       "design": {
-        "title": "Business-driven design",
-        "desc": "Every design decision is backed by logic. We focus on real business goals, not just aesthetics. Whether it's conversions, retention, or operational efficiency — we design with your KPIs in mind."
+        "title": "Branded Design and Real Results",
+        "desc": "All interfaces — from mobile apps to terminals — are tailored to your brand. Ease of use never compromises efficiency. Every decision is tested on real orders and customers. The focus is not just on looks, but on boosting your average check and speeding up service."
       },
       "flexibility": {
-        "title": "Adaptive flexibility",
-        "desc": "Plans change. Markets shift. We've built adaptability into our process. If your priorities evolve, we adjust quickly while maintaining focus and structure — without losing momentum."
+        "title": "Flexibility Without Chaos",
+        "desc": "Switched to a new format? Added deliveries or dine-in? Changed staff? Sabsus adapts seamlessly to your evolving needs — no technical headaches. We preserve your structure and progress, even if you switch from a competitor or scale up rapidly."
       },
       "quality": {
-        "title": "Quality first",
-        "desc": "What we deliver isn't a draft — it's production-ready. Every component is checked against design systems, behavior logic, and visual consistency. We think about readability, handoff, micro-interactions, and defend decisions with reason."
+        "title": "Quality in Every Detail",
+        "desc": "Every receipt, order, translation, and QR code is checked. Interfaces are built not 'as they turn out,' but for real-world use — by cashiers, waiters, chefs, and clients. Fonts, loading speed, autocomplete, multilingual support — every detail matters."
       },
       "support": {
-        "title": "Long-term support",
-        "desc": "We don't disappear after launch. We stick around to refine the product, run A/B tests, track analytics, and support ongoing iterations. We're in this not for a handoff — but for long-term growth."
+        "title": "Long-Term Partnership",
+        "desc": "Our goal isn't just to launch your POS — but to grow with you. You get updates, new modules, analytics, marketing tools, and team training. We don't just hand over a system. We walk with you toward profit and scale."
       }
     }
   },
@@ -1385,6 +1385,242 @@
       "healthStore": "Health Store",
       "florist": "Florist",
       "petShop": "Pet Shop"
+    }
+  },
+  "comparisonTable": {
+    "title": "Comparison of <highlight>Sabsus</highlight> with competitors",
+    "headers": {
+      "feature": "Feature / Costs",
+      "sabsus": "Sabsus",
+      "toast": "Toast",
+      "square": "Square",
+      "clover": "Clover",
+      "otter": "Otter",
+      "skytab": "SkyTab"
+    },
+    "rows": {
+      "annualCost": "Annual costs",
+      "savings": "Annual savings with Sabsus"
+    },
+    "features": [
+      {
+        "name": "Branded customer app",
+        "sabsus": "✔️ Included",
+        "toast": "❌ $349/month",
+        "square": "❌",
+        "clover": "❌",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "White-label entire system",
+        "sabsus": "✔️",
+        "toast": "❌",
+        "square": "❌",
+        "clover": "❌",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "Website + Online ordering",
+        "sabsus": "✔️ Included",
+        "toast": "✔️ $75/month",
+        "square": "✔️ Free / $29",
+        "clover": "✔️",
+        "otter": "💲 $55/month",
+        "skytab": "✔️"
+      },
+      {
+        "name": "Self-service kiosk",
+        "sabsus": "✔️ Included",
+        "toast": "💲 $3,499 + $69/month",
+        "square": "💲 $30/month",
+        "clover": "💲 $3,499 + $34.95/month",
+        "otter": "💲 $85/month",
+        "skytab": "💲 $29.99/month"
+      },
+      {
+        "name": "Kitchen display (KDS)",
+        "sabsus": "✔️ Included",
+        "toast": "💲 $25-100/month",
+        "square": "💲 $20/month",
+        "clover": "💲 $799 + $25/month",
+        "otter": "💲 $75/month",
+        "skytab": "💲 $29.99/month"
+      },
+      {
+        "name": "Customer display",
+        "sabsus": "✔️ Included",
+        "toast": "❌",
+        "square": "❌",
+        "clover": "💲 $25/month",
+        "otter": "💲 $30/month",
+        "skytab": "💲 $29.99/month"
+      },
+      {
+        "name": "Push notifications",
+        "sabsus": "✔️",
+        "toast": "💲 Only with Premium",
+        "square": "❌",
+        "clover": "❌",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "Inventory + recipes",
+        "sabsus": "✔️",
+        "toast": "💲 $35/month",
+        "square": "💲 $69/month",
+        "clover": "💲 $90/month",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "AI: GPT, photo invoices, translations",
+        "sabsus": "✔️",
+        "toast": "✔️ Invoices",
+        "square": "❌",
+        "clover": "❌",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "Time tracking & payroll",
+        "sabsus": "✔️",
+        "toast": "✔️ $69/month",
+        "square": "✔️ $69/month",
+        "clover": "✔️ App Market $20-40/month",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "Promos, banners, automation",
+        "sabsus": "✔️",
+        "toast": "💲 Premium",
+        "square": "💲 Partially",
+        "clover": "💲 App Market",
+        "otter": "❌",
+        "skytab": "💲 Partially"
+      },
+      {
+        "name": "In-app games",
+        "sabsus": "✔️",
+        "toast": "❌",
+        "square": "❌",
+        "clover": "❌",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "Custom payment gateways",
+        "sabsus": "✔️ North, Stripe, PayPal etc.",
+        "toast": "❌ Built-in only",
+        "square": "❌ Square only",
+        "clover": "❌ Clover only",
+        "otter": "Stripe / Adyen",
+        "skytab": "❌"
+      },
+      {
+        "name": "QR payments",
+        "sabsus": "✔️",
+        "toast": "💲 Premium",
+        "square": "✔️",
+        "clover": "✔️",
+        "otter": "💲 $30/month",
+        "skytab": "✔️"
+      },
+      {
+        "name": "Delivery + zones + pricing",
+        "sabsus": "✔️",
+        "toast": "💲 Separate",
+        "square": "💲 Partially",
+        "clover": "💲 from $99",
+        "otter": "💲 from $99",
+        "skytab": "💲 from $99"
+      },
+      {
+        "name": "Courier tracking, zones, packaging",
+        "sabsus": "✔️",
+        "toast": "💲 Partially",
+        "square": "💲 Partially",
+        "clover": "💲 from $89/month",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "Multilingual interface",
+        "sabsus": "✔️",
+        "toast": "❌",
+        "square": "✔️",
+        "clover": "❌",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "Uber Eats / DoorDash integration",
+        "sabsus": "✔️ (auto-import)",
+        "toast": "💲 via Chowly: from $99/month + % fees",
+        "square": "💲 via Zapier ($99-299/month)",
+        "clover": "💲 App Market ($99-150/month)",
+        "otter": "✔️",
+        "skytab": "💲 Checkmate / Otter ($99+)"
+      },
+      {
+        "name": "System buyout option",
+        "sabsus": "✔️",
+        "toast": "❌",
+        "square": "❌",
+        "clover": "❌",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "Works on any device",
+        "sabsus": "✔️",
+        "toast": "❌",
+        "square": "❌",
+        "clover": "❌",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "Employee scheduling",
+        "sabsus": "✔️",
+        "toast": "💲 Premium only",
+        "square": "💲 Partially",
+        "clover": "💲 via App Market",
+        "otter": "❌",
+        "skytab": "❌"
+      },
+      {
+        "name": "Contract obligations",
+        "sabsus": "❌",
+        "toast": "✔️",
+        "square": "✔️",
+        "clover": "✔️",
+        "otter": "✔️",
+        "skytab": "✔️"
+      }
+    ],
+    "costs": {
+      "sabsus": "$18,528",
+      "toast": "$28,692",
+      "square": "$23,496",
+      "clover": "$24,408",
+      "otter": "$24,288",
+      "skytab": "$22,955.64"
+    },
+    "savings": {
+      "toast": "$10,164",
+      "square": "$4,968",
+      "clover": "$5,880",
+      "otter": "$5,760",
+      "skytab": "$4,427.64"
+    },
+    "controls": {
+      "start": "Start",
+      "toggleAutoScroll": "Toggle auto-scroll",
+      "end": "End"
     }
   }
 }

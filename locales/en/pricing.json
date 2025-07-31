@@ -1,0 +1,30 @@
+{
+  "partnersBanner": {
+    "carousels": [
+      { "id": 1, "imageUrl": "https://yourdomain.com/banner1.svg", "link": "https://example.com/1" },
+      { "id": 2, "imageUrl": "https://yourdomain.com/banner2.svg", "link": "https://example.com/2" },
+      { "id": 3, "imageUrl": "https://yourdomain.com/banner3.svg", "link": "https://example.com/3" },
+      { "id": 4, "imageUrl": "https://yourdomain.com/banner4.svg", "link": "https://example.com/4" },
+      { "id": 5, "imageUrl": "https://yourdomain.com/banner5.svg", "link": "https://example.com/5" },
+      { "id": 6, "imageUrl": "https://yourdomain.com/banner6.svg", "link": "https://example.com/6" },
+      { "id": 7, "imageUrl": "https://yourdomain.com/banner7.svg", "link": "https://example.com/7" },
+      { "id": 8, "imageUrl": "https://yourdomain.com/banner8.svg", "link": "https://example.com/8" },
+      { "id": 9, "imageUrl": "https://yourdomain.com/banner9.svg", "link": "https://example.com/9" },
+      { "id": 10, "imageUrl": "https://yourdomain.com/banner10.svg", "link": "https://example.com/10" },
+      { "id": 11, "imageUrl": "https://yourdomain.com/banner11.svg", "link": "https://example.com/11" }
+    ],
+    "partners": [
+      "https://yourdomain.com/userpartner0.svg",
+      "https://yourdomain.com/userpartner1.svg",
+      "https://yourdomain.com/userpartner2.svg",
+      "https://yourdomain.com/userpartner3.svg",
+      "https://yourdomain.com/userpartner4.svg",
+      "https://yourdomain.com/userpartner5.svg",
+      "https://yourdomain.com/userpartner6.svg",
+      "https://yourdomain.com/userpartner7.svg",
+      "https://yourdomain.com/userpartner8.svg",
+      "https://yourdomain.com/userpartner9.svg",
+      "https://yourdomain.com/userpartner10.svg"
+    ]
+  }
+}
