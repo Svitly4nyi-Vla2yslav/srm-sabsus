@@ -246,7 +246,7 @@ export const usePartnersBannerData = () => {
         // Функція конвертації gs:// посилання у https://
         const convertGsUrlToHttps = async (gsUrl: string): Promise<string> => {
           // Видаляємо gs://, бо ref приймає шлях від кореня
-          const path = gsUrl.replace('gs://sabsusshop.firebasestorage.app/', '');
+          const path = gsUrl.replace('gs://sabsusshop.appspot.com/', '');
           const storageRef = ref(storage, path);
           return getDownloadURL(storageRef);
         };
