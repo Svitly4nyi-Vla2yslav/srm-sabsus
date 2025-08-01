@@ -13,7 +13,6 @@ import {
   HeroButtonGrey,
   Licens,
   Link,
-  LinkSocial,
   Logo,
   Point,
   SocialIcon,
@@ -107,20 +106,15 @@ const Footer: React.FC = () => {
             <Container>
               {' '}
               <WraperLink>{t('footer.sections.company')}</WraperLink>
-              <LinkSocial
-                 href="https://sabsus.com/#service" 
-
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link to="/service">
                 {t('footer.links.ourServices')}
-              </LinkSocial>
-              <LinkSocial href="#" target="_blank" rel="noopener noreferrer">
+              </Link>
+              <Link to="/about">
                 {t('footer.links.aboutUs')}
-              </LinkSocial>
-              <LinkSocial href="#" target="_blank" rel="noopener noreferrer">
+              </Link>
+              <Link to="/contact">
                 {t('footer.links.contactUs')}
-              </LinkSocial>
+              </Link>
             </Container>
           </Deckstop>
           <ContainerSocialDemo>
@@ -137,21 +131,21 @@ const Footer: React.FC = () => {
             </Container>
             <SocialWrapper>
               <SocialLink
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/profile.php?id=61578562106724&mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <SocialIcon src={In} alt="🔗" />
               </SocialLink>
               <SocialLink
-                href="https://www.instagram.com/sabsusapp"
+                href="https://www.instagram.com/sabsus.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <SocialIcon src={Insta} alt="🔗" />
               </SocialLink>
               <SocialLink
-                href="https://www.linkedin.com/in/aleksei-sabitov-507030245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                href="https://www.linkedin.com/company/sabsus/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -163,18 +157,18 @@ const Footer: React.FC = () => {
           <Border />
           <Licens>
             <CookieContainer>
-              <Cookie onClick={() => handlePolicyClick('privacy')}>
+              <Cookie to="#privacy" onClick={() => handlePolicyClick('privacy')}>
                 {t('footer.legal.cookiePolicy')} <Point />{' '}
               </Cookie>
-              <Cookie onClick={() => handlePolicyClick('cookie')}>
+              <Cookie to="#cookie"  onClick={() => handlePolicyClick('cookie')}>
                 {t('footer.legal.privacyStatement')} <Point />{' '}
               </Cookie>
-              <Cookie onClick={() => handlePolicyClick('terms')}>
+              <Cookie to="#terms"  onClick={() => handlePolicyClick('terms')}>
                 {t('footer.legal.termsOfUse')}
               </Cookie>
             </CookieContainer>
             <CookieContainer>
-              <Cookie>{t('footer.legal.copyright')}</Cookie>
+              <Cookie to="" >{t('footer.legal.copyright')}</Cookie>
             </CookieContainer>
           </Licens>
         </FooterWrapp>

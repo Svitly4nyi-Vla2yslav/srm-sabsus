@@ -2,7 +2,7 @@ import AllinOneSRM from '../../components/AllinOneSRM/AllinOneSRM';
 import FeedbackFormComponent from '../../components/ContactComponents/FeedbackFormComponent';
 import Feedback from '../../components/Feedback/Feedback';
 import Hero from '../../components/Hero/Hero';
-import PartnersBanner from '../../components/PartnersBanner/PartnersBanner';
+// import PartnersBanner from '../../components/PartnersBanner/PartnersBanner';
 import PricingTable from '../../components/PricePlan/PricePlan';
 import ResultsFromBusinesses from '../../components/ResultsFromBusinesses/ResultsFromBusinesses';
 import StartSmall from '../../components/StartSmall/StartSmall';
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         <Feedback />
         <PricingTable />
         <FeedbackFormComponent/>
-        <PartnersBanner />
+        {/* <PartnersBanner /> */}
         <StartSmall />
         <ComparisonTable/>
       </HomeContainer>

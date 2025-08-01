@@ -201,7 +201,7 @@ flex-wrap: wrap;
   }
 `;
 
-export const Cookie = styled.div`
+export const Cookie = styled(NavLink)`
 font-family: var(--font-family);
 font-weight: 400;
 font-size: 14px;

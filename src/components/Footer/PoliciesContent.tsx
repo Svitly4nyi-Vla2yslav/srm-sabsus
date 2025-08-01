@@ -31,7 +31,7 @@ export const PoliciesContent: React.FC<PoliciesContentProps> = ({
     }
   }, [activePolicy]);
   return (
-    <PoliciesContainer>
+    <PoliciesContainer id="privacy">
       <Element name="privacy" className="policy-section">
         <PolicySection>
           <PolicyTitle>
@@ -66,7 +66,7 @@ export const PoliciesContent: React.FC<PoliciesContentProps> = ({
         </PolicySection>
       </Element>
       <Border />
-      <Element name="cookie" className="policy-section">
+      <Element id="cookie" name="cookie" className="policy-section">
         <PolicySection>
           <PolicyTitle>1. Terms and Definitions</PolicyTitle>
           <PolicyTitle>Sabsus Platform (or Service)</PolicyTitle>
@@ -264,15 +264,14 @@ export const PoliciesContent: React.FC<PoliciesContentProps> = ({
               (e.g., by email, push notifications, or within the Service
               interface).
             </p>
-            
           </PolicyText>
         </PolicySection>
       </Element>
-<BorderLicens />
-      <Element name="terms" className="policy-section">
+      <BorderLicens />
+      <Element id="terms" name="terms" className="policy-section">
         <PolicySection>
-      <PolicyTitle>3. Using the Service: General Terms</PolicyTitle>
-            <PolicyTitle>3.1 Provision of Sabsus Services.</PolicyTitle>
+          <PolicyTitle>3. Using the Service: General Terms</PolicyTitle>
+          <PolicyTitle>3.1 Provision of Sabsus Services.</PolicyTitle>
           <PolicyText>
             <h3>{t('policies.terms.title')}</h3>
             {t('policies.terms.content', { joinArrays: '\n\n' })
