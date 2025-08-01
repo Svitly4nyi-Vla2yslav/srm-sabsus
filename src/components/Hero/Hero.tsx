@@ -55,6 +55,8 @@ const Hero: React.FC = () => {
                 style={{
                   transition: 'transform 0.5s ease-out',
                   filter: 'blur(0.5px)',
+                  maxWidth: "100%",
+                  overflow: "visible"
                 }}
               />
             </Suspense>

@@ -18,68 +18,122 @@ import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 export const HeroWrapper = styled.div`
   margin: 0 auto;
   width: 100%;
-  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  justify-content: center; /* Додаємо для вертикального центрування */
+  top: 584px;
+  overflow: visible;
   @media screen and (min-width: 768px) {
-    width: 100vh;
-    margin-top: 100px;
+    width: 100%;
+    // margin-top: 400px;
     margin-bottom: 100px;
+    height: auto;
   }
 
   @media screen and (min-width: 1440px) {
-    margin-top: 100px;
+    margin-top: 0px;
     margin-bottom: 150px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    margin: 0px auto ;
   }
 `;
 
 export const Container = styled.div`
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 140vw;
-  height: 340px;
-  max-width: 1440px;
-  overflow: visible;
+  position: relative; /* Змінюємо на relative */
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   z-index: -1;
+  overflow: visible;
+  top: -750px;
 
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    top: 100%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 900px;
-    max-width: 1440px;
-    overflow: visible;
-    z-index: -1;
+  // /* Тіні */
+  // &::before,
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   height: 100px;
+  //   z-index: 2;
+  //   pointer-events: none;
+  // }
 
-    iframe,
-    canvas {
-      width: 115% !important;
-      height: 100vh !important;
-      display: block;
-      position: relative;
-      z-index: 1;
-      object-fit: cover;
-      pointer-events: auto;
-      overflow: visible;
-    }
+  // &::before {
+  //   top: 0;
+  //   background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, transparent 100%);
+  // }
+
+  // &::after {
+  //   bottom: 0;
+  //   background: linear-gradient(to top, rgb(0, 0, 0) 0%, transparent 100%);
+  // }
+
+  iframe,
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    position: relative;
+    z-index: 1;
+    object-fit: contain; /* Змінюємо на contain для коректного відображення */
+    margin: 0 auto;
   }
-  @media screen and (min-width: 767px) {
-    z-index: -2;
+
+  @media screen and (max-width: 767px) {
+    height: 100vh;
+
+    // &::before,
+    // &::after {
+    //   height: 50px;
+    // }
 
     iframe,
     canvas {
+      height: 100% !important;
+      object-fit: cover;
       pointer-events: none;
-      z-index: -1;
       opacity: 0.7;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    iframe,
+    canvas {
+      width: 100vw !important; /* Дозволяємо розширення за межі екрану */
+      height: 100vh !important;
+      left: 50%;
+      top: 30px;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    iframe,
+    canvas {
+    top: 50px;
+      // max-width: 80vw;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    iframe,
+    canvas {
+    top: -140px;
+      // max-width: 80vw;
+    }
+  
+  }
+
 `;
 
 const Sparkle = styled(motion.div)`
@@ -105,7 +159,18 @@ const SparkleLayer = styled.div`
 
 export const CostomerWrapp = styled.div`
   position: absolute;
-  top: 107px;
+  top: -100px;
+  // top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media screen and (min-width: 768px) {
+    top: -0px;
+  }
+
+  @media (min-width: 1920px) {
+    top: 350px;
+  }
 `;
 
 const FallbackImage = () => {
@@ -153,7 +218,7 @@ const Hero: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <HeroWrapper style={{ marginTop: 250 }}>
+    <HeroWrapper style={{}}>
       <Container>
         {isMobile ? (
           <FallbackImage />
@@ -162,9 +227,10 @@ const Hero: React.FC = () => {
             <Spline
               scene="https://prod.spline.design/weK184EAiAKpQ3YI/scene.splinecode"
               style={{
-                width: '100%',
-                height: 'auto',
-                maxWidth: '1440px',
+                transition: 'transform 0.5s ease-out',
+                filter: 'blur(0.5px)',
+                maxWidth: '100%',
+                overflow: 'visible',
               }}
             />
           </Suspense>

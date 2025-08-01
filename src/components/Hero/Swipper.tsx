@@ -31,17 +31,7 @@ const Swipper: React.FC = () => {
 
  
   const partners = [...stats, ...stats.slice(0, 3)];
-  // const stats = t('swipper.stats', { returnObjects: true }) as Array<{
-  //   value: string;
-  //   description: string;
-  // }>;
-
-  // const partners = [...stats, ...stats.slice(0, 3)];
-
-  // useEffect(() => {
-  //   // getPartners().then(setPartners);
-  // }, []);
-
+  
   const slidesPerView = isMobile ? 1 : isTablet ? 2 : isDesktop ? 4 : 4;
   const shouldLoop = partners.length > slidesPerView;
 

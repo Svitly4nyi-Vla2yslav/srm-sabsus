@@ -42,9 +42,9 @@ export const HomeContainer = styled.div`
     padding: 0 64px;
   }
 
-  // /* Дуже великі екрани (1920px і більше) */
-  // @media (min-width: 1920px) {
-  //   max-width: 1920px;
-  //   padding: 0 120px;
-  // }
+  /* Дуже великі екрани (1920px і більше) */
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    padding: 0 120px;
+  }
 `;

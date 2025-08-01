@@ -6,7 +6,7 @@ export const Container = styled.div`
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 1400px;
+  max-width: 1920px;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -43,7 +43,7 @@ export const Container = styled.div`
     display: block;
     position: relative;
     z-index: 1;
-    object-fit: cover;
+    object-fit: contain;
     pointer-events: auto;
   }
 

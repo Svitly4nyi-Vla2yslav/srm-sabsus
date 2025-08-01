@@ -77,7 +77,7 @@ export const Card = styled.div`
     box-shadow 0.3s ease;
   gap: 10px;
   align-items: flex-start;
-  margin: 0 auto;
+  // margin: 0 auto;
   justify-content: center;
 
   @media screen and (min-width: 1440px) {

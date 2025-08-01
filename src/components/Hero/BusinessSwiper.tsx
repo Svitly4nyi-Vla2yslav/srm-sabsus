@@ -126,13 +126,12 @@ const BusinessSwiper: React.FC = () => {
           <Swiper
             loop={shouldLoop}
             slidesPerView={slidesPerView}
-            spaceBetween={20}
+            spaceBetween={1}
             autoplay={{
-              delay: 0,
+              delay: 2000,
               disableOnInteraction: false,
               waitForTransition: true,
               pauseOnMouseEnter: true,
-              reverseDirection: true,
             }}
             speed={4000}
             modules={[Autoplay]}
