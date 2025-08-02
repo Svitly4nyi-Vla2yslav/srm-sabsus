@@ -21,7 +21,7 @@ export const HeroWrapper = styled.div`
   margin-top: 450px;
   width: 100%;
   height: 100%;
-  margin-bottom: 200px;
+  margin-bottom: -450px;
   position: relative;
   display: flex;
   flex-direction: column;
