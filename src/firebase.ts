@@ -281,3 +281,47 @@ export const usePartnersBannerData = () => {
 
   return { data, loading, error };
 };
+
+
+export const useVideoContent = (deviceType: 'mobile' | 'tablet' | 'desktop' = 'desktop') => {
+  const [videoUrl, setVideoUrl] = useState<string>("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    const fetchVideoContent = async () => {
+      try {
+        const docRef = doc(db, "content", "7BChHRBrC6O4kAHjqnwH");
+        const docSnap = await getDoc(docRef);
+
+        if (!docSnap.exists()) throw new Error("Документ не знайдено");
+
+        const data = docSnap.data();
+        const videosSection = data.videos;
+
+        // Отримуємо посилання для поточного пристрою та мови
+        const currentLanguage = i18n.language || "en";
+        const videoPath = videosSection[`${currentLanguage}_${deviceType}`] || 
+                         videosSection[currentLanguage];
+
+        if (!videoPath) throw new Error(`Відео не знайдено`);
+
+        const path = videoPath.replace("gs://sabsusshop.appspot.com/", "");
+        const videoRef = ref(storage, path);
+        const url = await getDownloadURL(videoRef);
+
+        setVideoUrl(url);
+      } catch (err: any) {
+        console.error("Помилка отримання відео:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVideoContent();
+  }, [i18n.language, deviceType]);
+
+  return { videoUrl, loading, error };
+};

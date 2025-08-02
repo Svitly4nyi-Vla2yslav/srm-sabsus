@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
     { id: 3, src: big2, alt: 'Image 3' },
     { id: 4, src: big3, alt: 'Image 4' },
     { id: 5, src: big4, alt: 'Image 5' },
-    { id: 12, src: big, alt: 'Image 1' },
+    { id: 12, src: big2, alt: 'Image 1' },
   ];
 
   const small = [
@@ -109,8 +109,8 @@ const Hero: React.FC = () => {
     { id: 7, src: smoll1, alt: 'Image 7' },
     { id: 8, src: smoll2, alt: 'Image 8' },
     { id: 9, src: smoll3, alt: 'Image 9' },
-    { id: 10, src: smoll, alt: 'Image 10' },
-    { id: 11, src: smoll, alt: 'Image 6' },
+    { id: 10, src: smoll1, alt: 'Image 10' },
+    { id: 11, src: smoll2, alt: 'Image 6' },
   ];
 
   const randomizedSmallTop = useMemo(

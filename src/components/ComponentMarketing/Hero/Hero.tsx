@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import HeroIcon from '../../../assets/icons/HeroMarketing.png';
 import { styled } from 'styled-components';
@@ -16,86 +16,86 @@ import { useTranslation } from 'react-i18next';
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
 export const HeroWrapper = styled.div`
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
   position: relative;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media screen and (min-width: 768px) {
-    width: 100%;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    padding-top: 0;
-  }
-
+  justify-content: center;
+  overflow: hidden;
   @media screen and (min-width: 1440px) {
-    margin-top: 100px;
-    margin-bottom: 150px;
+   margin-bottom: -300px;
   }
+
+    @media (min-width: 1920px) {
+  margin-bottom: -600px;
+  margin-top: -300px;
+  } 
 `;
 
-export const Container = styled.div`
+export const FullScreenContainer = styled.div`
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 140vw;
-  max-width: 1440px;
-  overflow: visible;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
+`;
 
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    top: -100px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    // width: ;
-    height: 900px;
-    max-width: 1440px;
-    overflow: visible;
-    z-index: -1;
-
-    iframe,
-    canvas {
-      width: 100% !important;
-      height: 100vh !important;
-      display: block;
-      position: relative;
-      z-index: 1;
-      object-fit: cover;
-      pointer-events: auto;
-      // filter: blur(0.5px);
-      overflow: visible;
-    }
-  }
-  @media screen and (min-width: 767px) {
-    z-index: -2;
-
-    iframe,
-    canvas {
-      pointer-events: none;
-      z-index: -1;
-      opacity: 0.7;
-    }
-  }
-
+const SplineContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
   @media screen and (min-width: 1440px) {
-    top: -50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-
-    iframe,
-    canvas {
-      // pointer-events: none;
-      z-index: -1;
-      opacity: 0.7;
-      max-width: 1440px;
-      width: 100% !important;
-    }
+  margin-top: -70px;
   }
+
+  @media (min-width: 1920px) {
+  margin-top: -200px;
+  } 
+`;
+
+const SplinePlaceholder = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: opacity 0.5s ease-out;
+`;
+
+interface SplineWrapperProps {
+  $visible: boolean;
+}
+
+const SplineWrapper = styled.div<SplineWrapperProps>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+  transition: opacity 0.5s ease-out;
+`;
+
+const ImageBox = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const HeroImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const Sparkle = styled(motion.div)`
@@ -121,22 +121,22 @@ const SparkleLayer = styled.div`
 
 export const CostomerWrapp = styled.div`
   position: absolute;
-  top: -202px;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0); // Змінив translateY на 0
- 
+  transform: translate(-50%, -50%);
+  width: 100%;
   max-width: 1300px;
-   width: 100%;
   padding: 0 20px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center; // Додав для центрування вмісту
-
+  z-index: 10;
   @media screen and (min-width: 1440px) {
-    top: -250px; // Корегуємо положення для десктопу
-      width: 1300px;
+  top: 300px;
   }
+
+    @media (min-width: 1920px) {
+    top: 900px;
+  margin-top: -200px;
+  } 
 `;
 
 const FallbackImage = () => {
@@ -148,18 +148,8 @@ const FallbackImage = () => {
   }));
 
   return (
-    <div style={{ position: 'relative', width: '100%', bottom: '60%' }}>
-      <img
-        src={HeroIcon}
-        alt="3D Scene"
-        style={{
-          width: 'auto',
-          height: '664px',
-          filter: 'blur(0.5px)',
-          display: 'block',
-          margin: '0 auto',
-        }}
-      />
+    <ImageBox>
+      <HeroImage src={HeroIcon} alt="3D Scene" />
       <SparkleLayer>
         {sparkles.map((pos, index) => (
           <Sparkle
@@ -175,32 +165,62 @@ const FallbackImage = () => {
           />
         ))}
       </SparkleLayer>
-    </div>
+    </ImageBox>
   );
 };
 
 const Hero: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 767px)');
   const { t } = useTranslation();
+  const [splineLoaded, setSplineLoaded] = useState(false);
+  const [showPlaceholder, setShowPlaceholder] = useState(true);
+  const minLoadTimeRef = useRef<NodeJS.Timeout>();
+
+  useEffect(() => {
+    return () => {
+      if (minLoadTimeRef.current) {
+        clearTimeout(minLoadTimeRef.current);
+      }
+    };
+  }, []);
+
+  const handleSplineLoad = () => {
+    minLoadTimeRef.current = setTimeout(() => {
+      setSplineLoaded(true);
+      setShowPlaceholder(false);
+    }, 2000);
+  };
 
   return (
-    <HeroWrapper style={{ marginTop: 370 }}>
-      <Container>
+    <HeroWrapper>
+      <FullScreenContainer>
         {isMobile ? (
           <FallbackImage />
         ) : (
-          <Suspense fallback={<FallbackImage />}>
-            <Spline
-              scene="https://prod.spline.design/xuwX0qwENokWyrTw/scene.splinecode"
-              style={{
-                width: '100%',
-                transition: 'transform 0.5s ease-out',
-                transform: 'rotate(180deg)',
-              }}
-            />
-          </Suspense>
+          <SplineContainer>
+            {showPlaceholder && (
+              <SplinePlaceholder style={{ opacity: splineLoaded ? 0 : 1 }}>
+                <FallbackImage />
+              </SplinePlaceholder>
+            )}
+
+            <Suspense fallback={null}>
+              <SplineWrapper $visible={splineLoaded}>
+                <Spline
+                  scene="https://prod.spline.design/xuwX0qwENokWyrTw/scene.splinecode"
+                  onLoad={handleSplineLoad}
+                  style={{
+                    width: '100vw',
+                    height: '100vh',
+                    transform: "rotate(180deg)"
+                  }}
+                />
+              </SplineWrapper>
+            </Suspense>
+          </SplineContainer>
         )}
-      </Container>
+      </FullScreenContainer>
+
       <CostomerWrapp>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -245,7 +265,9 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>{t('brandEngineHero.buttons.viewDemo')}</HeroButtonGrey>
+              <HeroButtonGrey>
+                {t('brandEngineHero.buttons.viewDemo')}
+              </HeroButtonGrey>
             </a>
           </ButtonContainer>
         </motion.div>

@@ -10,6 +10,10 @@ import BackgroundImage from '../../../assets/icons/Costomer/VideoBackground.png'
 import ControlFast from '../../../assets/icons/Costomer/Seconadry Buttons copy.svg';
 import ControlRewind from '../../../assets/icons/Costomer/Seconadry Buttons.svg';
 import { useTranslation } from 'react-i18next';
+import { useVideoContent } from '../../../firebase';
+import ErrorScreen from '../../ErrorScreen';
+import LoadingScreen from '../../LoadingScreen';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export const StepWrapp = styled.div`
   margin: 0 auto;
@@ -202,16 +206,26 @@ export const ToolGroup = styled.img`
 const VideoWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
-  padding: 5px;
-  background: rgba(255, 255, 255, 0.03);
+  padding-bottom: 56.25%; /* 16:9 aspect ratio by default */
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(2, 0, 23, 1);
+  @media (max-width: 768px) {
+    padding-bottom: 75%; /* 4:3 для мобільних пристроїв */
+  }
+
+  @media (min-width: 1920px) {
+    padding-bottom: 50%; /* Широкоекранні монітори */
+  }
 `;
 
 const StyledVideo = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
+  object-fit: contain;
   background: rgba(255, 255, 255, 0.03);
 `;
 
@@ -298,11 +312,45 @@ const StepByStepGuidance: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showControls, setShowControls] = useState(false);
   const { t } = useTranslation();
+  const isMobile = useMediaQuery('(max-width:768px)');
+  const isTablet = useMediaQuery('(max-width:1024px)');
+
+  // Оптимізація: завантажуємо різні версії відео для різних пристроїв
+  const { videoUrl, loading, error } = useVideoContent(
+    isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop'
+  );
+
+  // Оптимізація: lazy loading для відео
+  const [, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting) {
+          setShouldLoadVideo(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Оптимізація: попереднє завантаження постеру
+  useEffect(() => {
+    const img = new Image();
+    img.src = BackgroundImage;
+  }, []);
 
   // Таймер для автоматичного приховування контролів
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
-    
+
     if (showControls) {
       timeoutId = setTimeout(() => {
         setShowControls(false);
@@ -316,13 +364,23 @@ const StepByStepGuidance: React.FC = () => {
 
   const togglePlay = () => {
     if (!videoRef.current) return;
+
     if (videoRef.current.paused) {
-      videoRef.current.play();
+      videoRef.current
+        .play()
+        .then(() => {
+          setIsPlaying(true); // Оновлюємо стан після успішного запуску
+          setShowControls(true);
+        })
+        .catch(e => {
+          console.error('Video play failed:', e);
+          setIsPlaying(false);
+        });
     } else {
       videoRef.current.pause();
+      setIsPlaying(false); // Оновлюємо стан при паузі
+      setShowControls(true);
     }
-    // Показуємо контроли при взаємодії
-    setShowControls(true);
   };
 
   const seek = (seconds: number) => {
@@ -332,7 +390,6 @@ const StepByStepGuidance: React.FC = () => {
     }
   };
 
-  // Обробник подій відео
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -340,27 +397,28 @@ const StepByStepGuidance: React.FC = () => {
     const handlePlay = () => {
       setIsPlaying(true);
       setShowControls(true);
-      // Автоматично приховуємо через 3 секунди після старту
       setTimeout(() => setShowControls(false), 3000);
     };
 
     const handlePause = () => {
       setIsPlaying(false);
       setShowControls(true);
-      // Автоматично приховуємо через 3 секунди після паузи
       setTimeout(() => setShowControls(false), 3000);
     };
 
     video.addEventListener('play', handlePlay);
     video.addEventListener('pause', handlePause);
+    video.addEventListener('ended', () => setIsPlaying(false));
 
     return () => {
       video.removeEventListener('play', handlePlay);
       video.removeEventListener('pause', handlePause);
+      video.removeEventListener('ended', () => setIsPlaying(false));
     };
   }, []);
 
-
+  if (loading) return <LoadingScreen />;
+  if (error) return <ErrorScreen message={error} />;
   return (
     <StepWrapp>
       <motion.div
@@ -392,7 +450,7 @@ const StepByStepGuidance: React.FC = () => {
           {t('stepByStepGuidance1.description')}
         </StepMainTextDescription>
       </motion.div>
-               <HeaderContainer>
+      <HeaderContainer>
         <SlideHeader>
           <SlideLogo src={point} alt="Logo" />
           <LogoImage src={logo} alt="Logo" />
@@ -402,35 +460,31 @@ const StepByStepGuidance: React.FC = () => {
           onClick={togglePlay} // Додали клік на відео для play/pause
         >
           <VideoWrapper>
-            <StyledVideo
-              ref={videoRef}
-              poster={BackgroundImage}
-              controls
-            >
-              <source src={video} type="video/mp4" />
+            <StyledVideo ref={videoRef} poster={BackgroundImage} controls>
+              <source src={videoUrl || video} type="video/mp4" />
               {t('videoNotSupported')}
             </StyledVideo>
 
             {showControls && (
               <VideoControls>
-                <ControlButton 
-                  onClick={(e) => {
+                <ControlButton
+                  onClick={e => {
                     seek(-15);
                     e.stopPropagation();
                   }}
                 >
                   <ControlIcon src={ControlRewind} alt="Rewind" />
                 </ControlButton>
-                <ControlButtonPlay 
-                  onClick={(e) => {
+                <ControlButtonPlay
+                  onClick={e => {
                     togglePlay();
                     e.stopPropagation();
                   }}
                 >
                   {isPlaying ? '⏸' : '▶'}
                 </ControlButtonPlay>
-                <ControlButton 
-                  onClick={(e) => {
+                <ControlButton
+                  onClick={e => {
                     seek(15);
                     e.stopPropagation();
                   }}
@@ -438,7 +492,6 @@ const StepByStepGuidance: React.FC = () => {
                   <ControlIcon src={ControlFast} alt="Fast forward" />
                 </ControlButton>
               </VideoControls>
-
             )}
           </VideoWrapper>
         </VideoHoverWrapper>

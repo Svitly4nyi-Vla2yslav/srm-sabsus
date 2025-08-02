@@ -28,8 +28,7 @@ export const KeyWrapper = styled(motion.div)`
     // margin-bottom: 100px;
   }
   @media screen and (min-width: 1440px) {
-    // margin-top: 100px;
-    // margin-bottom: 150px;
+      max-width: 1440px;
   }
 `;
 

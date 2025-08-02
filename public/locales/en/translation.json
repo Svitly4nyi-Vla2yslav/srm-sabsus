@@ -1399,13 +1399,13 @@
       "skytab": "SkyTab"
     },
     "rows": {
-      "annualCost": "Annual costs",
+      "annualCost": "Annual costs/1k orders",
       "savings": "Annual savings with Sabsus"
     },
     "features": [
       {
         "name": "Branded customer app",
-        "sabsus": "✔️ Included",
+        "sabsus": "✔️",
         "toast": "❌ $349/month",
         "square": "❌",
         "clover": "❌",
@@ -1423,7 +1423,7 @@
       },
       {
         "name": "Website + Online ordering",
-        "sabsus": "✔️ Included",
+        "sabsus": "✔️",
         "toast": "✔️ $75/month",
         "square": "✔️ Free / $29",
         "clover": "✔️",
@@ -1432,7 +1432,7 @@
       },
       {
         "name": "Self-service kiosk",
-        "sabsus": "✔️ Included",
+        "sabsus": "✔️",
         "toast": "💲 $3,499 + $69/month",
         "square": "💲 $30/month",
         "clover": "💲 $3,499 + $34.95/month",
@@ -1441,7 +1441,7 @@
       },
       {
         "name": "Kitchen display (KDS)",
-        "sabsus": "✔️ Included",
+        "sabsus": "✔️ ",
         "toast": "💲 $25-100/month",
         "square": "💲 $20/month",
         "clover": "💲 $799 + $25/month",
@@ -1450,7 +1450,7 @@
       },
       {
         "name": "Customer display",
-        "sabsus": "✔️ Included",
+        "sabsus": "✔️",
         "toast": "❌",
         "square": "❌",
         "clover": "💲 $25/month",

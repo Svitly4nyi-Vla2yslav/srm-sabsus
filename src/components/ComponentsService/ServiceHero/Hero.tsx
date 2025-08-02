@@ -172,6 +172,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
+    margin-bottom: 400px;
     iframe,
     canvas {
     top: 550px;

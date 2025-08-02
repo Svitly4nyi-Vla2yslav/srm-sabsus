@@ -194,7 +194,7 @@ const Input = styled.input<{ $error?: boolean }>`
 const Select = styled.select`
   border: 1px solid #212121;
   border-radius: 8px;
-  padding: 12px 16px;
+  padding: 12px 16px 12px 16px; /* Залишаємо стандартні падінги */
   width: 100%;
   height: 46px;
   margin-bottom: 32px;
@@ -211,11 +211,21 @@ const Select = styled.select`
     0 8px 16px -8px rgba(0, 0, 0, 0.03),
     0 2px 4px -2px rgba(0, 0, 0, 0.08);
   background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.12) 7%,
-    rgba(255, 255, 255, 0) 86%
-  );
+      180deg,
+      rgba(255, 255, 255, 0.12) 7%,
+      rgba(255, 255, 255, 0) 86%
+    )
+    no-repeat;
+  background-position: right 10px center; /* Відступ стрілки від правого краю */
   cursor: pointer;
+  appearance: none; /* Вимкнення стандартного вигляду */
+  -webkit-appearance: none; /* Для Safari */
+  -moz-appearance: none; /* Для Firefox */
+
+  /* Додаємо власну стрілку */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a1a1aa'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 26px;
 
   option {
     background-color: rgba(25, 24, 24, 1);
@@ -369,8 +379,8 @@ const ContactForm: React.FC = () => {
         createdAt: serverTimestamp(),
       });
 
-       setEmail('');
-    setTeammates('');
+      setEmail('');
+      setTeammates('');
       const link = document.createElement('a');
       link.href = 'https://sabsus.app/registrcompany/web/PRO';
       link.target = '_blank';

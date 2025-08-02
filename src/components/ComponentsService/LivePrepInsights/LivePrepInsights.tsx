@@ -194,7 +194,7 @@ export const LinieP = styled(motion.img)`
   left: 16%;
   width: 77%;
   height: 77%;
-  overflow: hidden;
+  overflow: visible;
 
   @media screen and (min-width: 768px) {
     left: 15%;
@@ -202,6 +202,7 @@ export const LinieP = styled(motion.img)`
 
   @media screen and (min-width: 1440px) {
     left: 16%;
+
   }
 `;
 

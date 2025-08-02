@@ -37,55 +37,68 @@ export const HeroWrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 140vw;
-  height: 340px;
-  max-width: 1440px;
-  overflow: visible;
+  position: relative; /* Змінюємо на relative */
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: -1;
+  overflow: visible;
+  top: -750px;
 
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    top: 100%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 900px;
-    max-width: 1440px;
+  iframe,
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    position: relative;
+    z-index: 1;
+    object-fit: contain; /* Змінюємо на contain для коректного відображення */
+    margin: 0 auto;
     overflow: visible;
-    z-index: -1;
-
-    iframe,
-    canvas {
-      width: 115% !important;
-      height: 100vh !important;
-      display: block;
-      position: relative;
-      z-index: 1;
-      object-fit: cover;
-      pointer-events: auto;
-      // filter: blur(0.5px);
-      overflow: visible;
-    }
   }
-  @media screen and (min-width: 767px) {
-    z-index: -2;
+
+  @media screen and (max-width: 767px) {
+    height: 100vh;
 
     iframe,
     canvas {
+      height: 100% !important;
+      object-fit: cover;
       pointer-events: none;
-      z-index: -1;
       opacity: 0.7;
     }
   }
 
-    @media screen and (min-width: 1440px) {
-   top: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+  @media screen and (min-width: 768px) {
+    iframe,
+    canvas {
+      width: 100vw !important; /* Дозволяємо розширення за межі екрану */
+      height: 100vh !important;
+      left: 50%;
+      top: 430px;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+  margin-top: 450px;
+  margin-bottom: -1800px;
+    iframe,
+    canvas {
+      top: 0px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    margin-bottom: -1800px;
+    iframe,
+    canvas {
+      top: -200px;
+      margin-top: 100px;
+    }
   }
 `;
 
@@ -119,8 +132,12 @@ export const CostomerWrapp = styled.div`
   max-width: 1200px;
   padding: 0 20px;
   text-align: center;
-    @media screen and (min-width: 1440px) {
-   top: 500px;
+  @media screen and (min-width: 1440px) {
+    top: 500px;
+  }
+
+  @media (min-width: 1920px) {
+    margin-top: 200px;
   }
 `;
 
@@ -228,7 +245,9 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButtonGrey>{t('performanceHubHero.buttons.viewDemo')}</HeroButtonGrey>
+              <HeroButtonGrey>
+                {t('performanceHubHero.buttons.viewDemo')}
+              </HeroButtonGrey>
             </a>
           </ButtonContainer>
         </motion.div>

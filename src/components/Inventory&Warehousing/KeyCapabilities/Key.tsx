@@ -24,6 +24,7 @@ export const KeyWrapper = styled(motion.div)`
   @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 1440px) {
+  max-width: 1440px;
   }
 `;
 

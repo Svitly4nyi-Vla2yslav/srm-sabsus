@@ -29,7 +29,8 @@ const Swipper: React.FC = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const { stats } = useSwipperStats();
 
- 
+   if (!stats || stats.length === 0) return null;
+   
   const partners = [...stats, ...stats.slice(0, 3)];
   
   const slidesPerView = isMobile ? 1 : isTablet ? 2 : isDesktop ? 4 : 4;
