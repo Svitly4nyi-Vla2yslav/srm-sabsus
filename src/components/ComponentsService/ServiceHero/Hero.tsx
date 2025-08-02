@@ -197,7 +197,7 @@ const Hero: React.FC = () => {
   const { t } = useTranslation();
   const [splineReady, setSplineReady] = useState(false);
   const [minLoadingTimePassed, setMinLoadingTimePassed] = useState(false);
-  const MIN_LOADING_TIME = 94000; // 3 секунди мінімального часу заставки
+  const MIN_LOADING_TIME = 4000; // 3 секунди мінімального часу заставки
   const startTimeRef = useRef(Date.now());
   const timerRef = useRef<NodeJS.Timeout>();
 
