@@ -1399,13 +1399,13 @@
       "skytab": "SkyTab"
     },
     "rows": {
-      "annualCost": "Costos anuales",
+      "annualCost": "Costos anuales/1k pedidos",
       "savings": "Ahorro anual con Sabsus"
     },
     "features": [
       {
         "name": "App de cliente con marca",
-        "sabsus": "✔️ Incluido",
+        "sabsus": "✔️",
         "toast": "❌ $349/mes",
         "square": "❌",
         "clover": "❌",
@@ -1423,7 +1423,7 @@
       },
       {
         "name": "Sitio web + Pedidos en línea",
-        "sabsus": "✔️ Incluido",
+        "sabsus": "✔️",
         "toast": "✔️ $75/mes",
         "square": "✔️ Gratis / $29",
         "clover": "✔️",
@@ -1432,7 +1432,7 @@
       },
       {
         "name": "Kiosco de autoservicio",
-        "sabsus": "✔️ Incluido",
+        "sabsus": "✔️",
         "toast": "💲 $3,499 + $69/mes",
         "square": "💲 $30/mes",
         "clover": "💲 $3,499 + $34.95/mes",
@@ -1441,7 +1441,7 @@
       },
       {
         "name": "Pantalla de cocina (KDS)",
-        "sabsus": "✔️ Incluido",
+        "sabsus": "✔️",
         "toast": "💲 $25-100/mes",
         "square": "💲 $20/mes",
         "clover": "💲 $799 + $25/mes",
@@ -1450,7 +1450,7 @@
       },
       {
         "name": "Pantalla para cliente",
-        "sabsus": "✔️ Incluido",
+        "sabsus": "✔️",
         "toast": "❌",
         "square": "❌",
         "clover": "💲 $25/mes",
