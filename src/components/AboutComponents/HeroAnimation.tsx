@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled, keyframes } from 'styled-components';
 import { CardButtonText } from '../AllinOneSRM/AllinOneSRM.styled';
 import { HeroInnovative, HeroTitle } from '../Hero/Hero.styled';
@@ -8,8 +8,14 @@ import { ResultMainTextDescription } from '../ResultsFromBusinesses/ResultsFromB
 import { useTranslation } from 'react-i18next';
 // Анімації
 const float = keyframes`
-  0%, 100% { transform: translateY(0) rotateX(0deg) scale(1); }
-  50% { transform: translateY(-30px) rotateX(10deg) scale(1.05); }
+  0%, 100% { 
+    -webkit-transform: translateY(0) rotateX(0deg) scale(1);
+    transform: translateY(0) rotateX(0deg) scale(1); 
+  }
+  50% { 
+    -webkit-transform: translateY(-30px) rotateX(10deg) scale(1.05);
+    transform: translateY(-30px) rotateX(10deg) scale(1.05); 
+  }
 `;
 
 const pulse = keyframes`
@@ -18,59 +24,89 @@ const pulse = keyframes`
 `;
 
 const wave = keyframes`
-  0% { transform: translateX(0) translateY(0); }
-  25% { transform: translateX(-5px) translateY(-5px); }
-  50% { transform: translateX(5px) translateY(0); }
-  75% { transform: translateX(0) translateY(5px); }
+  0% { 
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0); 
+  }
+  25% { 
+    -webkit-transform: translateX(-5px) translateY(-5px);
+    transform: translateX(-5px) translateY(-5px); 
+  }
+  50% { 
+    -webkit-transform: translateX(5px) translateY(0);
+    transform: translateX(5px) translateY(0); 
+  }
+  75% { 
+    -webkit-transform: translateX(0) translateY(5px);
+    transform: translateX(0) translateY(5px); 
+  }
 `;
 
 const fastParticlesMove = keyframes`
-  0% { transform: translateY(100px) translateX(0); opacity: 0; }
+  0% { 
+    -webkit-transform: translateY(100px) translateX(0);
+    transform: translateY(100px) translateX(0); 
+    opacity: 0; 
+  }
   10% { opacity: 1; }
   90% { opacity: 1; }
-  100% { transform: translateY(-150px) translateX(30px); opacity: 0; }
+  100% { 
+    -webkit-transform: translateY(-150px) translateX(30px);
+    transform: translateY(-150px) translateX(30px); 
+    opacity: 0; 
+  }
 `;
 
 const WaveWrapper = styled.g`
   animation: ${wave} 7s ease-in-out infinite;
 `;
 
-const FastParticle = styled.circle<{ cx: number; cy: number; delay: number }>`
-  animation: ${fastParticlesMove} ${props => 1 + props.delay * 0.9}s linear
-    infinite;
-  animation-delay: ${props => props.delay * 0.7}s;
+const FastParticle = styled.circle.attrs<{ delay: number }>(props => ({
+  style: {
+    animationDelay: `${props.delay * 0.7}s`
+  }
+}))<{ cx: number; cy: number; delay: number }>`
+  animation: ${fastParticlesMove} ${props => 1 + props.delay * 0.9}s linear infinite;
+  -webkit-animation: ${fastParticlesMove} ${props => 1 + props.delay * 0.9}s linear infinite;
+  -webkit-backface-visibility: hidden;
   will-change: transform, opacity;
   z-index: -5;
 `;
 
 const HeroWrapper = styled.div`
   position: relative;
+  
   width: 100%;
   height: 486px;
-  overflow: visible; /* Дозволяємо вихід за межі контейнера */
+  overflow: visible;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-bottom: 600px;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  
   @media screen and (min-width: 768px) {
     height: 704px;
   }
 
   @media screen and (min-width: 1440px) {
     height: 873px;
+    top: 40px;
   }
 `;
 
 const SvgContainer = styled.div`
   position: relative;
-  width: auto; /* Змінюємо на auto для адаптації до контенту */
+  width: auto;
   height: auto;
   display: flex;
   z-index: 1;
   justify-content: center;
-  overflow: visible; /* Вимкнути обрізання */
+  overflow: visible;
+  -webkit-transform: translate3d(0,0,0);
 `;
 
 const ParticlesBackground = styled.svg`
@@ -83,20 +119,30 @@ const ParticlesBackground = styled.svg`
 const AnimatedSvg = styled.svg`
   height: auto;
   min-width: 375px;
+  -webkit-animation:
+    ${float} 8s ease-in-out infinite,
+    ${pulse} 3s ease-in-out infinite;
   animation:
     ${float} 8s ease-in-out infinite,
     ${pulse} 3s ease-in-out infinite;
+  -webkit-filter: drop-shadow(0 0 90px rgba(94, 94, 243, 0.7))
+    drop-shadow(0 0 60px rgba(94, 94, 243, 0.3))
+    drop-shadow(0 0 120px rgba(94, 94, 243, 0.4));
   filter: drop-shadow(0 0 90px rgba(94, 94, 243, 0.7))
     drop-shadow(0 0 60px rgba(94, 94, 243, 0.3))
-    drop-shadow(0 0 120px rgba(94, 94, 243, 0.4)); /* Додаємо третій шар тіні */
+    drop-shadow(0 0 120px rgba(94, 94, 243, 0.4));
   position: relative;
   top: 300px;
   z-index: 551;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
 
   @media screen and (min-width: 768px) {
     top: 200px;
-
     min-width: 768px;
+    -webkit-filter: drop-shadow(0 0 100px rgba(94, 94, 243, 0.7))
+      drop-shadow(0 0 80px rgba(94, 94, 243, 0.4))
+      drop-shadow(0 0 150px rgba(94, 94, 243, 0.3));
     filter: drop-shadow(0 0 100px rgba(94, 94, 243, 0.7))
       drop-shadow(0 0 80px rgba(94, 94, 243, 0.4))
       drop-shadow(0 0 150px rgba(94, 94, 243, 0.3));
@@ -106,6 +152,9 @@ const AnimatedSvg = styled.svg`
     top: 230px;
     max-width: 1440px;
     height: 1000px;
+    -webkit-filter: drop-shadow(0 0 220px rgba(94, 94, 243, 0.7))
+      drop-shadow(0 0 200px rgba(94, 94, 243, 0.5))
+      drop-shadow(0 0 400px rgba(94, 94, 243, 0.3));
     filter: drop-shadow(0 0 220px rgba(94, 94, 243, 0.7))
       drop-shadow(0 0 200px rgba(94, 94, 243, 0.5))
       drop-shadow(0 0 400px rgba(94, 94, 243, 0.3));
@@ -148,6 +197,8 @@ export const NumberWrapp = styled.div`
   bottom: 500px;
   gap: 20px;
   width: 100%;
+  -webkit-overflow-scrolling: touch;
+  
   @media screen and (min-width: 768px) {
     bottom: 0;
     top: -300px;
@@ -155,6 +206,7 @@ export const NumberWrapp = styled.div`
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    -webkit-transform: translate3d(0,0,0);
   }
 
   @media screen and (min-width: 1440px) {
@@ -193,24 +245,40 @@ export const NumberText = styled.p`
 `;
 
 const HeroAnimation: React.FC = () => {
- const { t } = useTranslation();
+  const { t } = useTranslation();
+  const [particles, setParticles] = useState<Array<{
+    id: number;
+    cx: number;
+    cy: number;
+    r: number;
+    delay: number;
+  }>>([]);
 
-  // Генеруємо частинки з урахуванням масштабу
-  const generateParticles = () => {
-    const isLargeScreen = window.innerWidth >= 1440;
-    const count = isLargeScreen ? 100 : 50; // Більше частинок для фону
-
-    return Array.from({ length: count }).map((_, i) => ({
+  useEffect(() => {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const count = isIOS ? 20 : (window.innerWidth >= 1440 ? 100 : 50);
+    
+    setParticles(Array.from({ length: count }).map((_, i) => ({
       id: i,
       cx: Math.random() * window.innerWidth,
       cy: Math.random() * window.innerHeight,
       r: Math.random() * 1.2 + 0.2,
       delay: Math.random(),
-      opacity: Math.random() * 0.5 + 0.3, // Менша прозорість для фону
-    }));
-  };
+    })));
 
-  const particles = generateParticles();
+    const handleResize = () => {
+      setParticles(Array.from({ length: count }).map((_, i) => ({
+        id: i,
+        cx: Math.random() * window.innerWidth,
+        cy: Math.random() * window.innerHeight,
+        r: Math.random() * 1.2 + 0.2,
+        delay: Math.random(),
+      })));
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <HeroWrapper>
@@ -244,7 +312,7 @@ const HeroAnimation: React.FC = () => {
                 delay={particle.delay}
                 fill="#a6a6f5ff"
               />
-            ))}{' '}
+            ))}
           </ParticlesBackground>
 
           <defs>
