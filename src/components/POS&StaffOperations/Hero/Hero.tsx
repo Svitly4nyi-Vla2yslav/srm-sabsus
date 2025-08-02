@@ -56,27 +56,7 @@ export const Container = styled.div`
   overflow: visible;
   top: -750px;
 
-  // /* Тіні */
-  // &::before,
-  // &::after {
-  //   content: '';
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-  //   height: 100px;
-  //   z-index: 2;
-  //   pointer-events: none;
-  // }
-
-  // &::before {
-  //   top: 0;
-  //   background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, transparent 100%);
-  // }
-
-  // &::after {
-  //   bottom: 0;
-  //   background: linear-gradient(to top, rgb(0, 0, 0) 0%, transparent 100%);
-  // }
+ 
 
   iframe,
   canvas {
@@ -92,10 +72,7 @@ export const Container = styled.div`
   @media screen and (max-width: 767px) {
     height: 100vh;
 
-    // &::before,
-    // &::after {
-    //   height: 50px;
-    // }
+
 
     iframe,
     canvas {
@@ -129,7 +106,7 @@ export const Container = styled.div`
     iframe,
     canvas {
     top: -140px;
-      // max-width: 80vw;
+     
     }
   
   }

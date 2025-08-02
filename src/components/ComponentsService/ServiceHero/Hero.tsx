@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   ButtonContainer,
   HeroButton,
@@ -29,13 +29,17 @@ export const HeroWrapper = styled.div`
   overflow: visible;
 
   @media screen and (min-width: 768px) {
-    margin-top: 100px;
+    margin-top: 400px;
     margin-bottom: 100px;
   }
 
   @media screen and (min-width: 1440px) {
     margin-top: 370px;
-    margin-bottom: 450px;
+    
+  }
+
+    @media (min-width: 1920px) {
+   margin-top: 400px;
   }
 `;
 
@@ -55,30 +59,53 @@ const PerspectiveWrapper = styled.div`
 `;
 
 const Image3DBox = styled.div`
-  width: 100vh;
-  height: 100vh;
+  width: 94vh;
+  height: 100vw;
+margin-bottom: -400px;
   position: relative;
   transform-style: preserve-3d;
-  animation: ${rotateY} 15s linear infinite;
+  // animation: ${rotateY} 15s linear infinite;
   backface-visibility: hidden;
+
+    @media screen and (min-width: 768px) {
+    top: 400px;
+    left: 20%;
+   width: 100vh;
+  height: 100vh;
+
+  }
+
+  @media screen and (min-width: 1440px) {
+   top: 500px;
+  }
 `;
 
 const Front = styled.img`
-  position: absolute;
-  left: 17%;
-  width: 70%;
-  height: 70%;
+  // position: absolute;
+  // left: 0%;
+  // width: 70%;
+  // height: 70%;
+  transform: rotate(347deg);
   backface-visibility: hidden;
+      @media screen and (min-width: 768px) {
+   width: 60vh;
+  height: 60vh;
+
+  }
+
+  @media screen and (min-width: 1440px) {
+  
+  }
 `;
 
-const Back = styled.img`
-  position: absolute;
-  left: 11%;
-  width: 70%;
-  height: 70%;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-`;
+// const Back = styled.img`
+//   position: absolute;
+//   left: 11%;
+//   width: 70%;
+//   height: 70%;
+//   transform: rotateY(180deg);
+//   backface-visibility: hidden;
+// `;
 
 export const CostomerWrapp = styled.div`
   position: absolute;
@@ -87,75 +114,115 @@ export const CostomerWrapp = styled.div`
   @media screen and (min-width: 1440px) {
     margin-top: 100px;
   }
+
+  @media (min-width: 1920px) {
+   margin-top: 500px;
+  }
 `;
 
 export const Container = styled.div`
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 1400px;
+  position: relative; /* Змінюємо на relative */
   width: 100%;
-  height: 100vh;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   z-index: -1;
+  overflow: visible;
+  top: -750px;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, transparent 100%);
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to top, rgb(0, 0, 0) 0%, transparent 100%);
-    z-index: 2;
-    pointer-events: none;
-  }
+ 
 
   iframe,
   canvas {
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
     display: block;
     position: relative;
     z-index: 1;
-    object-fit: cover;
-    pointer-events: auto;
+    object-fit: contain; /* Змінюємо на contain для коректного відображення */
+    margin: 0 auto;
   }
 
   @media screen and (max-width: 767px) {
     height: 100vh;
-    z-index: -2;
 
-    &::before,
-    &::after {
-      height: 50px;
-    }
+
 
     iframe,
     canvas {
+      height: 100% !important;
+      object-fit: cover;
       pointer-events: none;
-      z-index: -1;
       opacity: 0.7;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    iframe,
+    canvas {
+      width: 100vw !important; /* Дозволяємо розширення за межі екрану */
+      height: 100vh !important;
+      left: 50%;
+      top: 430px;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    iframe,
+    canvas {
+    top: 550px;
+      // max-width: 80vw;
+    }
+  }
+
+  @media (min-width: 1920px) {
+  margin-bottom: 800px;
+    iframe,
+    canvas {
+    top: -140px;
+    margin-top: 300px;
+     
+    }
+  
+  }
+
 `;
 
 const Hero: React.FC = () => {
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 767px)');
   const { t } = useTranslation();
+  const [splineReady, setSplineReady] = useState(false);
+  const [minLoadingTimePassed, setMinLoadingTimePassed] = useState(false);
+  const MIN_LOADING_TIME = 94000; // 3 секунди мінімального часу заставки
+  const startTimeRef = useRef(Date.now());
+  const timerRef = useRef<NodeJS.Timeout>();
+
+  useEffect(() => {
+    // Встановлюємо таймер для мінімального часу завантаження
+    timerRef.current = setTimeout(() => {
+      setMinLoadingTimePassed(true);
+    }, MIN_LOADING_TIME);
+
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, []);
+
+  const handleSplineLoad = () => {
+    const elapsed = Date.now() - startTimeRef.current;
+    const remainingTime = Math.max(0, MIN_LOADING_TIME - elapsed);
+    
+    // Встановлюємо таймер для оновлення стану після залишкового часу
+    timerRef.current = setTimeout(() => {
+      setSplineReady(true);
+    }, remainingTime);
+  };
 
   return (
     <HeroWrapper>
@@ -164,11 +231,32 @@ const Hero: React.FC = () => {
           <PerspectiveWrapper>
             <Image3DBox>
               <Front src={costomer} alt="Customer illustration" />
-              <Back src={costomer} alt="Customer illustration back" />
             </Image3DBox>
           </PerspectiveWrapper>
         ) : (
           <>
+            <div style={{
+             
+              display: (minLoadingTimePassed && splineReady) ? 'none' : 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              zIndex: 10,
+              transition: 'opacity 0.5s ease-out',
+              opacity: (minLoadingTimePassed && splineReady) ? 0 : 1
+            }}>
+              <PerspectiveWrapper>
+                <Image3DBox>
+                  <Front 
+                    src={costomer} 
+                    alt="Loading illustration" 
+                    style={{ 
+                
+                    }}
+                  />
+                </Image3DBox>
+              </PerspectiveWrapper>
+            </div>
+
             <Spline
               scene="https://prod.spline.design/IkvUuAcfU3TUW6Zw/scene.splinecode"
               style={{
@@ -179,11 +267,13 @@ const Hero: React.FC = () => {
                 height: '100vh',
                 transform: 'scale(0.6)',
                 transformOrigin: 'center',
-                transition: 'transform 0.5s ease-out',
+                transition: 'opacity 0.5s ease-out',
                 filter: 'blur(0.5px)',
                 overflow: 'visible',
                 zIndex: 0,
+                opacity: (minLoadingTimePassed && splineReady) ? 1 : 0
               }}
+              onLoad={handleSplineLoad}
             />
             <ShadowRight style={{ width: 400, backgroundColor: 'black' }} />
           </>

@@ -16,6 +16,7 @@ export const KeyWrapper = styled(motion.div)`
   margin-top: 100px;
   width: 100%;
   height: 100%;
+  max-width: 1440px;
   position: relative;
   display: flex;
   flex-direction: column;

@@ -44,11 +44,11 @@ export const SwiperContainer = styled(motion.div)`
 
 export const CardContainer = styled(motion.div)`
   @media (min-width: 768px) {
-    display: flex;
+      display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
+    gap: 22px;
     margin: 0 auto;
     justify-content: center;
   }
@@ -77,7 +77,7 @@ export const Card = styled.div`
     box-shadow 0.3s ease;
   gap: 10px;
   align-items: flex-start;
-  margin: 0 auto;
+  // margin: 0 auto;
 
   @media screen and (min-width: 1440px) {
     width: 380px;
