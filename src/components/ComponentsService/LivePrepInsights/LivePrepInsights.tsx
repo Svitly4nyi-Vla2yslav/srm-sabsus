@@ -9,7 +9,21 @@ import Phone1 from '../../../assets/icons/Costomer/Iphone/black titanium2-iphon.
 import Linie1 from '../../../assets/icons/Costomer/Iphone/Lightpered-linie.png';
 import { useTranslation } from 'react-i18next';
 
-export const LifeWrapper = styled(motion.div)`
+
+// Глобальні стилі для iOS оптимізації
+const IOSOptimizedContainer = styled.div`
+  @supports (-webkit-touch-callout: none) {
+    /* Специфічні стилі для Safari/iOS */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+`;
+
+export const LifeWrapper = styled(IOSOptimizedContainer).attrs({
+  as: motion.div
+})`
   display: flex;
   padding: 0 16px;
   max-width: 1440px;
@@ -17,12 +31,16 @@ export const LifeWrapper = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   position: relative;
+  overflow: visible; /* Додано */
+  z-index: 1; /* Додано для контексту накладання */
+
   @media screen and (min-width: 768px) {
+    padding: 0 24px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 1440px;
-    margin: 0 auto;
+    padding: 0 32px;
   }
 `;
 
@@ -128,7 +146,7 @@ export const LifeMainTextDescriptionDown = styled(motion.p)`
 
 export const LifeContainer = styled.div`
   margin-bottom: 374px;
-
+ overflow: visible;
   @media screen and (min-width: 768px) {
     margin-bottom: 700px;
   }
@@ -142,14 +160,16 @@ export const LifeContainer = styled.div`
   }
 `;
 
-export const ImageAnimationWrapp = styled.div`
+export const ImageAnimationWrapp = styled(IOSOptimizedContainer)`
   position: absolute;
   top: 60%;
   left: 50%;
   width: 365px;
   height: 354px;
   transform: translate(-50%, -50%);
-  overflow: visible;
+  overflow: visible; /* Вже було */
+  z-index: 2; /* Додано */
+  perspective: 1000px; /* Для апаратного прискорення */
 
   @media screen and (min-width: 768px) {
     top: 60%;
@@ -161,15 +181,21 @@ export const ImageAnimationWrapp = styled.div`
     left: 70%;
     top: 50%;
     height: 660px;
+    transform-style: preserve-3d; /* Для кращої продуктивності на iOS */
   }
 `;
 
-export const PhoneImage = styled(motion.img)`
+export const PhoneImage = styled(motion.img).attrs({
+  loading: 'lazy',
+  decoding: 'async'
+})`
   position: absolute;
   bottom: 22%;
   left: 0;
   width: 100%;
   height: 100%;
+  transform: translateZ(0); /* Апаратне прискорення */
+  backface-visibility: hidden;
 `;
 
 export const PhoneImage1 = styled(motion.img)`
@@ -186,6 +212,7 @@ export const Linie = styled(motion.img)`
   left: 0;
   width: 100%;
   height: 100%;
+   overflow: visible;
 `;
 
 export const LinieP = styled(motion.img)`
@@ -220,6 +247,8 @@ export const GlowEffect = styled(motion.div)`
   opacity: 0;
   border-radius: 50%;
   pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform, opacity;
 `;
 
 const LivePrepInsights: React.FC = () => {
@@ -261,11 +290,16 @@ const LivePrepInsights: React.FC = () => {
 
       <ImageAnimationWrapp>
         <Linie
-          src={LinieBackground}
+        src={LinieBackground}
           alt="background lines"
           initial={{ opacity: 0.8 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
+          transition={{ 
+            duration: 2, 
+            repeat: Infinity, 
+            repeatType: 'reverse',
+            ease: 'easeInOut'
+          }}
         />
 
         <PhoneImage
