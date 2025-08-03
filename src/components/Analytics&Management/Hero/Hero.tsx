@@ -23,8 +23,10 @@ export const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+margin-bottom: -700px;
+ overflow: visible;
   @media screen and (min-width: 768px) {
+
     width: 100vh;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -46,7 +48,7 @@ export const Container = styled.div`
   align-items: center;
   z-index: -1;
   overflow: visible;
-  top: -750px;
+  top: -100px;
 
   iframe,
   canvas {
@@ -73,18 +75,19 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 768px) {
+  margin-top: -100px;
     iframe,
     canvas {
       width: 100vw !important; /* Дозволяємо розширення за межі екрану */
       height: 100vh !important;
       left: 50%;
-      top: 430px;
+      top: -60px;
       transform: translateX(-50%);
     }
   }
 
   @media screen and (min-width: 1440px) {
-  margin-top: 450px;
+  margin-top: -180px;
   margin-bottom: -1800px;
     iframe,
     canvas {
@@ -93,11 +96,11 @@ export const Container = styled.div`
   }
 
   @media (min-width: 1920px) {
-    margin-bottom: -1800px;
+    margin-bottom: -1200px;
     iframe,
     canvas {
-      top: -200px;
-      margin-top: 100px;
+      top: -250px;
+      margin-top: 0px;
     }
   }
 `;
