@@ -1,4 +1,3 @@
-// ОПТИМІЗОВАНИЙ КОД HeroAnimation.tsx для iOS / Android / Windows
 
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
@@ -60,6 +59,7 @@ const HeroWrapper = styled.div`
   flex-direction: column;
   will-change: transform;
   top: -50px;
+  overflow: visible; 
 
   @media screen and (min-width: 768px) {
     height: 704px;
@@ -78,6 +78,7 @@ const SvgContainer = styled.div`
   z-index: 1;
   justify-content: center;
   will-change: transform;
+   overflow: visible; 
 `;
 
 const ParticlesBackground = styled.svg`
@@ -96,7 +97,7 @@ const AnimatedSvg = styled.svg`
   top: 300px;
   z-index: 551;
   will-change: transform, opacity;
-
+ overflow: visible; 
   @media screen and (min-width: 768px) {
     top: 200px;
     min-width: 768px;
