@@ -13,7 +13,7 @@ import StepByStepGuidance from '../../components/ComponentsService/StepByStepGui
 
 const PosStaffOperations: React.FC = () => {
   return (
-    <HomeContainer>
+    <HomeContainer  id='ap'>
       <Hero />
       <Key />
       <LivePrepInsights />
