@@ -74,7 +74,7 @@ const PricePlan: React.FC = () => {
       viewport={{ once: false, amount: 0.2 }}
     >
       <motion.div>
-        <MainTextPrice>
+        <MainTextPrice >
           {data.mainText} <CardButtonText src={price} alt="💰" />
         </MainTextPrice>
       </motion.div>

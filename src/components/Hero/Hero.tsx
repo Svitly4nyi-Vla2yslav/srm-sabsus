@@ -44,12 +44,12 @@ const Hero: React.FC = () => {
   if (error) return <ErrorScreen message={error} />;
   return (
     <>
-      <HeroWrapper  id="hero">
+      <HeroWrapper >
         <Container>
           {isMobile ? (
             <FallbackImage />
           ) : (
-            <Suspense fallback={<FallbackImage />}>
+            <Suspense fallback={<LoadingScreen />}>
               <Spline
                 scene="https://prod.spline.design/xDMwKEPv7aTOBHEg/scene.splinecode"
                 style={{
@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
             width: '100%',
           }}
         >
-          <HeroInnovative>
+          <HeroInnovative >
             {t('hero.innovative')} <SpanUnicorn> 🦄</SpanUnicorn>
           </HeroInnovative>
         </motion.div>

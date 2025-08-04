@@ -109,9 +109,14 @@ const Front = styled.img`
 
 export const CostomerWrapp = styled.div`
   position: absolute;
-  top: 127px;
+  top: 227px;
+
+   @media screen and (min-width: 768px) {
+     top: 100px;
+   }
 
   @media screen and (min-width: 1440px) {
+    top: 227px;
     margin-top: 100px;
   }
 

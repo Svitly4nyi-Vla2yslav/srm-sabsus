@@ -4,8 +4,8 @@ import PricePlan from '../../components/PricePlan/PricePlan';
 import Feedback from '../../components/Feedback/Feedback';
 
 const Info: React.FC = () => {
-  return <InfoContainer>
-    <PricePlan/>
+  return <InfoContainer   id='app' >
+    <PricePlan />
     <Feedback/>
   </InfoContainer>;
 };

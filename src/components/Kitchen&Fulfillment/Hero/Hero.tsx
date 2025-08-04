@@ -135,7 +135,7 @@ const Hero: React.FC = () => {
 
   return (
     <HeroWrapper>
-      <SwiperLayer
+      <SwiperLayer 
         $position="top"
         slidesPerView={slidesPerView}
         loop
@@ -145,8 +145,8 @@ const Hero: React.FC = () => {
       >
         {randomizedSmallTop.map(i => (
           <SwiperSlide key={i.id} style={{ width: 'auto' }}>
-            <ImageWrapper $small>
-              <FloatingImage
+            <ImageWrapper   $small>
+              <FloatingImage 
                 src={i.src}
                 alt={i.alt}
                 $small

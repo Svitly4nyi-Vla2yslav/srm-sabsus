@@ -207,7 +207,7 @@ const HeroAnimation: React.FC = () => {
   }, []);
 
   return (
-    <HeroWrapper>
+    <HeroWrapper id='ap'>
       <SvgContainer>
         <AnimatedSvg viewBox="0 0 375 486" ref={svgRef} xmlns="http://www.w3.org/2000/svg">
           <WaveWrapper>

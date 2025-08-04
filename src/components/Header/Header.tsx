@@ -61,14 +61,14 @@ const Header: React.FC = () => {
   return (
     <NavbarContainer $isScrolled={isScrolled}>
       <HeaderWrapper id="header">
-        <Logo to="/home" onClick={handleLogoClick}>
+        <Logo to="/home#hero" onClick={handleLogoClick}>
           <img src={logo} alt={t('header.logoAlt')} />
         </Logo>
 
         {!isMobile && (
           <NavList>
             <NavItem>
-              <StyledNavLink to="/home">{t('header.nav.home')}</StyledNavLink>
+              <StyledNavLink to="/home#hero">{t('header.nav.home')}</StyledNavLink>
             </NavItem>
 
             <NavItem
@@ -77,43 +77,43 @@ const Header: React.FC = () => {
               onClick={toggleServicesMenu}
             >
               <ServiceLink>
-                <StyledNavLink to="/service" style={{padding: "10px 0px"}}>
+                <StyledNavLink to="/service#all" style={{padding: "10px 0px"}}>
                   {t('header.nav.service')} <ArrowDown src={Down} alt="⬇️" />
                 </StyledNavLink>
                 {isServicesOpen && (
                   <DropdownMenu>
                     <DropdownItem>
-                      <StyledNavLink to="/service/customer-experience">
+                      <StyledNavLink to="/service/customer-experience#ap">
                         {t('header.services.customerExperience')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <StyledNavLink to="/service/pos-staff-operations">
+                      <StyledNavLink to="/service/pos-staff-operations#ap">
                         {t('header.services.posStaff')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <StyledNavLink to="/service/kitchen-fulfillment">
+                      <StyledNavLink to="/service/kitchen-fulfillment#ap">
                         {t('header.services.kitchen')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <StyledNavLink to="/service/inventory-warehousing">
+                      <StyledNavLink to="/service/inventory-warehousing#ap">
                         {t('header.services.inventory')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <StyledNavLink to="/service/analytics-management">
+                      <StyledNavLink to="/service/analytics-management#ap">
                         {t('header.services.analytics')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <StyledNavLink to="/service/marketing-customization">
+                      <StyledNavLink to="/service/marketing-customization#ap">
                         {t('header.services.marketing')}
                       </StyledNavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <StyledNavLink to="/service/integration-scaling">
+                      <StyledNavLink to="/service/integration-scaling#ap">
                         {t('header.services.integration')}
                       </StyledNavLink>
                     </DropdownItem>
@@ -125,7 +125,7 @@ const Header: React.FC = () => {
             <NavItem>
               <StyledNavLink
                 // style={{ pointerEvents: 'none', opacity: 0.5 }}
-                to="/about"
+                to="/about#ap"
               >
                 {t('header.nav.about')}
               </StyledNavLink>
@@ -133,7 +133,7 @@ const Header: React.FC = () => {
             <NavItem>
               <StyledNavLink
                 // style={{ pointerEvents: 'none', opacity: 0.5 }}
-                to="/pricing"
+                to="/pricing#app"
               >
                 {t('header.nav.pricing')}
               </StyledNavLink>
@@ -141,7 +141,7 @@ const Header: React.FC = () => {
             <NavItem>
               <StyledNavLink
                 // style={{ pointerEvents: 'none', opacity: 0.5 }}
-                to="/contact"
+                to="/contact#ap"
               >
                 {t('header.nav.contacts')}
               </StyledNavLink>

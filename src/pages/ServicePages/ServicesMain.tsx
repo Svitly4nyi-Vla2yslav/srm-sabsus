@@ -8,7 +8,7 @@ import StartSmall from '../../components/StartSmall/StartSmall';
 
 const Work: React.FC = () => {
   return (
-    <HomeContainer>
+    <HomeContainer id='all' style={{ marginTop: '120px' }}>
       <AllinOneSRM />
       <Frequently />
       <Feedback />

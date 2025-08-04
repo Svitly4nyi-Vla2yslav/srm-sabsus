@@ -201,7 +201,7 @@ const Hero: React.FC = () => {
           <FallbackImage />
         ) : (
           <Suspense fallback={<FallbackImage />}>
-            <Spline
+            <Spline  id='ap' 
               scene="https://prod.spline.design/weK184EAiAKpQ3YI/scene.splinecode"
               style={{
                 transition: 'transform 0.5s ease-out',

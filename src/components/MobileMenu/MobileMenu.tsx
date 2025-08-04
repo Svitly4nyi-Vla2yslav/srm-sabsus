@@ -60,44 +60,44 @@ const BurgerMenu = () => {
   };
 
   const navLinks = [
-    { to: '/home', labelKey: 'header.nav.home' },
+    { to: '/home#hero', labelKey: 'header.nav.home' },
     {
       labelKey: 'header.nav.service',
       isDropdown: true,
       subItems: [
         {
-          to: '/service/customer-experience',
+          to: '/service/customer-experience#ap',
           labelKey: 'header.services.customerExperience',
         },
         {
-          to: '/service/pos-staff-operations',
+          to: '/service/pos-staff-operations#ap',
           labelKey: 'header.services.posStaff',
         },
         {
-          to: '/service/kitchen-fulfillment',
+          to: '/service/kitchen-fulfillment#ap',
           labelKey: 'header.services.kitchen',
         },
         {
-          to: '/service/inventory-warehousing',
+          to: '/service/inventory-warehousing#ap',
           labelKey: 'header.services.inventory',
         },
         {
-          to: '/service/analytics-management',
+          to: '/service/analytics-management#ap',
           labelKey: 'header.services.analytics',
         },
         {
-          to: '/service/marketing-customization',
+          to: '/service/marketing-customization#ap',
           labelKey: 'header.services.marketing',
         },
         {
-          to: '/service/integration-scaling',
+          to: '/service/integration-scaling#ap',
           labelKey: 'header.services.integration',
         },
       ],
     },
-    { to: '/about', labelKey: 'header.nav.about' },
-    { to: '/pricing', labelKey: 'header.nav.pricing' },
-    { to: '/contact', labelKey: 'header.nav.contacts' },
+    { to: '/about#ap', labelKey: 'header.nav.about' },
+    { to: '/pricing#app', labelKey: 'header.nav.pricing' },
+    { to: '/contact#ap', labelKey: 'header.nav.contacts' },
   ];
 
   return (

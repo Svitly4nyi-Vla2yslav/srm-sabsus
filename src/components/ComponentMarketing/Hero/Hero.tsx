@@ -24,6 +24,7 @@ export const HeroWrapper = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+     margin-bottom: -250px;
   @media screen and (min-width: 1440px) {
    margin-bottom: -300px;
   }
@@ -192,7 +193,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <HeroWrapper>
+    <HeroWrapper  id='ap'>
       <FullScreenContainer>
         {isMobile ? (
           <FallbackImage />

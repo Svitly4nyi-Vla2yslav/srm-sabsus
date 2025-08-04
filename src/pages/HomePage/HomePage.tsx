@@ -17,7 +17,7 @@ const Home: React.FC = () => {
   
   return (
     <>
-      <HomeContainer>
+      <HomeContainer   id="hero">
         <Hero />
         <AllinOneSRM />
         <WhyChooseOurPlatform />

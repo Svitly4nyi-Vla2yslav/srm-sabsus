@@ -71,34 +71,34 @@ const Footer: React.FC = () => {
               <Link  to="/home/#benefits" >
                 {t('footer.links.benefits')}
               </Link>
-              <Link  to="/service">
+              <Link  to="/service/all">
                 {t('footer.links.service')}
               </Link>
-              <Link  to="/pricing">
+              <Link  to="/pricing#app">
                 {t('footer.links.prices')}
               </Link>
             </Container>
             <Container>
               <WraperLink>{t('footer.sections.product')}</WraperLink>
-              <StyledNavLink to="/service/customer-experience">
+              <StyledNavLink to="/service/customer-experience#ap">
                 {t('footer.links.customerExperience')}
               </StyledNavLink>
-              <StyledNavLink to="/service/pos-staff-operations">
+              <StyledNavLink to="/service/pos-staff-operations#ap">
                 {t('footer.links.posStaff')}
               </StyledNavLink>
-              <StyledNavLink to="/service/kitchen-fulfillment">
+              <StyledNavLink to="/service/kitchen-fulfillment#ap">
                 {t('footer.links.kitchen')}
               </StyledNavLink>
-              <StyledNavLink to="/service/inventory-warehousing">
+              <StyledNavLink to="/service/inventory-warehousing#ap">
                 {t('footer.links.inventory')}
               </StyledNavLink>
-              <StyledNavLink to="/service/analytics-management">
+              <StyledNavLink to="/service/analytics-management#ap">
                 {t('footer.links.analytics')}
               </StyledNavLink>
-              <StyledNavLink to="/service/marketing-customization">
+              <StyledNavLink to="/service/marketing-customization#ap">
                 {t('footer.links.marketing')}
               </StyledNavLink>
-              <StyledNavLink to="/service/integration-scaling">
+              <StyledNavLink to="/service/integration-scaling#ap">
                 {t('footer.links.integration')}
               </StyledNavLink>
             </Container>
@@ -106,13 +106,13 @@ const Footer: React.FC = () => {
             <Container>
               {' '}
               <WraperLink>{t('footer.sections.company')}</WraperLink>
-              <Link to="/service">
+              <Link to="/service#all">
                 {t('footer.links.ourServices')}
               </Link>
-              <Link to="/about">
+              <Link to="/about#ap">
                 {t('footer.links.aboutUs')}
               </Link>
-              <Link to="/contact">
+              <Link to="/contact#ap">
                 {t('footer.links.contactUs')}
               </Link>
             </Container>

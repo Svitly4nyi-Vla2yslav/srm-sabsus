@@ -188,7 +188,7 @@ const Hero: React.FC = () => {
   const { t } = useTranslation();
   return (
     <HeroWrapper style={{ marginTop: 250 }}>
-      <Container>
+      <Container id='ap' >
         {isMobile ? (
           <FallbackImage />
         ) : (
