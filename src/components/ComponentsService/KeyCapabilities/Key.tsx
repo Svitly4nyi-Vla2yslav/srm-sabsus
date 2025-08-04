@@ -21,6 +21,10 @@ export const KeyWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 180px;
+  }
 `;
 
 const Key: React.FC = () => {

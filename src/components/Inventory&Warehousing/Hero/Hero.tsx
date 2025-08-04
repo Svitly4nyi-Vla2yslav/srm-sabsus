@@ -269,7 +269,7 @@ const Hero: React.FC = () => {
       {isMobile && (
         <CostomerWrapp>
           <TextContainer>
-            <TextIcon   id='ap'>{t('inventoryHero.features.inventorySync')}</TextIcon>
+            <TextIcon  >{t('inventoryHero.features.inventorySync')}</TextIcon>
             <TextIcon>{t('inventoryHero.features.smartFlow')}</TextIcon>
           </TextContainer>
 

@@ -23,6 +23,7 @@ export const ContactWrapper = styled.div`
     width: 100%;
   }
   @media screen and (min-width: 1440px) {
+  
   }
 `;
 
@@ -37,11 +38,13 @@ export const CostomerWrapp = styled.div`
   text-align: center;
   z-index: 3;
 
+
   @media screen and (min-width: 768px) {
     max-width: 518px;
     width: 100%;
   }
   @media screen and (min-width: 1440px) {
+  
   }
 `;
 
@@ -137,6 +140,7 @@ const Form = styled.form`
   @media screen and (min-width: 768px) {
     max-width: 518px;
     width: 100%;
+    margin-top: 62px;
   }
 `;
 

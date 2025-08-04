@@ -13,7 +13,7 @@ import StartSmall from '../../components/StartSmall/StartSmall';
 
 const InventoryWarehousing: React.FC = () => {
   return (
-    <HomeContainer>
+    <HomeContainer id='ap'>
       <Hero />
       <Key />
       <LivePrepInsights />
