@@ -17,6 +17,7 @@ import IntegrationScaling from './pages/ServicePages/IntegrationScaling';
 import ServicesMain from './pages/ServicePages/ServicesMain';
 import styled from 'styled-components';
 import { uploadPricingToFirestore } from './scripts/uploadPricing';
+import { Time } from './components/ScrollToTop';
 
 const StyledMotionDiv = styled(motion.div)`
   width: 100%;
@@ -109,6 +110,7 @@ export const App: React.FC = () => {
           <Route path="*" element={<AnimatedPage><Home /></AnimatedPage>} />
         </Route>
       </Routes>
+      <Time/>
     </AnimatePresence>
   );
 };
