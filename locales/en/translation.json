@@ -1622,5 +1622,782 @@
       "toggleAutoScroll": "Toggle auto-scroll",
       "end": "End"
     }
+  },
+   "policies": {
+    "privacy": {
+      "title": "USER AGREEMENT AND PRIVACY POLICY of the Sabsus Platform: 16 May 2025",
+      "text": [
+        "Welcome to the Sabsus Platform. This document constitutes a unified User Agreement and Privacy Policy applicable to the website, mobile application and other Sabsus services (together, the \"Sabsus Platform\" or \"Service\"). By using or registering on the Sabsus Platform, you (the \"User,\" \"you\") agree to the terms of this Agreement and confirm that you have read our personal-data processing policy. If you do not agree with any provision, please do not use the Service.",
+        "We recommend that you read the following terms carefully. The document sets out the rules for using the Sabsus Platform, the rights and obligations of Users, and the conditions for processing and protecting personal data in accordance with global requirements (GDPR, CCPA/CPRA, PIPEDA, UK GDPR, etc.), as well as regional clauses for different jurisdictions. This Agreement is written in Russian but is intended to apply to all users worldwide (in the relevant parts, taking regional specifics into account). If any local law conflicts with the provisions of this Agreement, the mandatory rules of your jurisdiction prevail to the extent of the conflict."
+      ]
+    },
+    "terms": {
+      "1": {
+        "title": "1. Terms and Definitions",
+        "SabsusPlatform": {
+          "title": "Sabsus Platform (or Service)",
+          "text": "The combination of software and hardware that powers the Sabsus website, mobile app and other digital tools designed for interaction between partner restaurants and their customers. The Platform allows Users to register, order restaurant goods and services, pay online, participate in loyalty programs, use gift cards, leave reviews, etc."
+        },
+        "SabsusCompany": {
+          "title": "Sabsus Company (or we/our)",
+          "text": "The owner of the Sabsus Platform responsible for its operation. It is assumed to be a legal entity incorporated under the laws of the State of California, USA (e.g., Sabsus, Inc.), acting as the personal-data controller of Users"
+        },
+        "User": {
+          "title": "User (or you)",
+          "text": "Any natural person who is a customer of restaurants and uses the Sabsus Platform to order goods/services, participate in loyalty programs, submit reviews and other interactions. The User must have reached the age allowing them to enter into legally binding agreements (normally 18 years) or use the Service with the consent of a legal guardian."
+        },
+        "Restaurant": {
+          "title": "Restaurant",
+          "text": "A business entity or entrepreneur, partner of Sabsus, offering its goods and services (e.g., dishes, drinks, gift certificates) to Users through the Platform. Each purchase transaction via the Service is concluded between the User and the relevant Restaurant."
+        },
+        "Account": {
+          "title": "Account",
+          "text": "The User's account on the Sabsus Platform created during registration and used to access the Service's features. Registration requires providing current and accurate information (e.g., name, phone number, email address) and creating a strong password"
+        },
+        "PersonalData": {
+          "title": "Personal data",
+          "text": "Any information relating to an identified or identifiable natural person. Such data may include: name, contact details, payment information, order data, reviews, as well as technical data about the device and network used to access the Service, and other information that directly or indirectly identifies the User. See examples at opentable.comopentable.com."
+        },
+        "PrivacyPolicy": {
+          "title": "Privacy Policy",
+          "text": "The section of this document that describes how Sabsus collects, uses, discloses and protects Users' Personal Data, and explains Users' privacy rights and how to exercise them."
+        },
+        "PaymentProviders": {
+          "title": "Payment providers",
+          "text": "Third-party electronic-payment services integrated with the Sabsus Platform. In particular, we use Stripe and PayPal to process payments. These providers may request and process a User's financial data (e.g., card details) under their own rules and privacy policies"
+        },
+        "BonusProgram": {
+          "title": "Bonus program",
+          "text": "A loyalty program implemented through the Sabsus Platform under which the User may accumulate bonus points or receive other rewards for orders and certain actions, and redeem them for discounts or prizes under established terms."
+        },
+        "GiftCard": {
+          "title": "Gift card",
+          "text": "A digital or physical certificate (voucher) granting the right to receive Restaurant goods/services for a specific amount or volume. Gift cards may be purchased or issued in promotions and are subject to special terms (see Section 5 below)."
+        },
+        "UserContent": {
+          "title": "User Content",
+          "text": "Materials that the User posts on the Sabsus Platform, including reviews, ratings, comments, photos and other content. The User retains rights to their Content but grants Sabsus a non-exclusive right to use, reproduce, publish and display such Content within the Service's operation (see Section 7 for details)."
+        },
+        "Cookie": {
+          "title": "Cookie",
+          "text": "A small data fragment placed by the Service (or third parties on our behalf) on the User's device when visiting the website. Cookies remember User actions and preferences (e.g., interface language, cart contents) and collect usage statistics to personalise the Service."
+        },
+        "Pixel": {
+          "title": "Pixel (tracking pixel)",
+          "text": "A snippet of code or invisible image on a webpage or email used to track User activity (e.g., page view or email open). Marketing and analytics services may use pixels on our Platform to gather information on User interaction with content."
+        },
+        "SDK": {
+          "title": "SDK",
+          "text": "A set of development tools integrated into our mobile app and provided by third parties for additional functions. In particular, the Service may include Firebase SDK (Google Firebase platform) and Supabase SDK (Supabase platform) for authentication, data storage, analytics, push notifications, etc. These SDKs may automatically collect certain device data (e.g., identifiers, technical info) and use cookies or similar technologies."
+        },
+        "GDPR": {
+          "title": "GDPR",
+          "text": "Regulation (EU) 2016/679, the General Data Protection Regulation—see privacyaffairs.com."
+        },
+        "CCPA": {
+          "title": "CCPA",
+          "text": "California Consumer Privacy Act 2018, as amended (including CPRA 2020); see prioritypass.comprioritypass.com."
+        },
+        "PIPEDA": {
+          "title": "PIPEDA",
+          "text": "Canada's Personal Information Protection and Electronic Documents Act; see myemail-api.constantcontact.com."
+        },
+        "UKGDPR": {
+          "title": "UK GDPR",
+          "text": "UK data-protection law equivalent to EU GDPR; see ico.org.uk."
+        }
+      },
+      "2": {
+        "title": "2. Account Registration",
+        "2.1": {
+          "title": "2.1 Creating an account.",
+          "text": "To access the main features of the Sabsus Platform (placing orders, receiving bonuses, etc.), you must create an account. During registration you must provide accurate and complete information, including at least your full name, valid email address and phone number, and set a strong password. Choosing a unique password and keeping it secret is recommended. Registering an account confirms your agreement with this User Agreement and Privacy Policy."
+        },
+        "2.2": {
+          "title": "2.2 User requirements.",
+          "text": "The Service is intended for persons aged 18 years or the age of majority in your country. Persons under 18 must not register or use the Platform for monetary transactions on their own. If you are under the age of majority, you may register and use the Service only under the supervision and with the consent of a parent or legal guardian. By registering, you confirm that you have the legal capacity to enter into a binding agreement, or that you act with the appropriate permission of a legal representative."
+        },
+        "2.3": {
+          "title": "2.3 One user – one account.",
+          "text": "Each User may have no more than one active account unless Sabsus permits otherwise. Accounts are personal: you may not transfer login credentials to others, nor sell, gift or otherwise dispose of the account. You are personally responsible for all actions performed under your account."
+        },
+        "2.4": {
+          "title": "2.4 Data accuracy.",
+          "text": "The User agrees to keep their registration and profile data up to date. If your address, phone number, payment details or other essential information changes, please update it in your account settings. Sabsus is not liable for negative consequences arising from the User providing inaccurate or outdated data (e.g., failure to receive an important notice, delivery issues)."
+        },
+        "2.5": {
+          "title": "2.5 Account security.",
+          "text": "You are responsible for keeping your password confidential and for restricting access to devices on which your account is logged in. If you suspect your password has been compromised or that there is unauthorised access to your account, change your password immediately and contact us. We may request additional information to verify your identity when restoring access or changing security settings."
+        },
+        "2.6": {
+          "title": "2.6 Completion of registration and electronic consent",
+          "text": "By completing the registration process (e.g., clicking a \"Register\" button) and/or ticking a checkbox indicating consent to the terms, you give your electronic consent to enter into this Agreement. Electronic consent has the same legal force as a written signature under applicable law. You also agree to receive notifications and other information from Sabsus in electronic form (e.g., by email, push notifications, or within the Service interface)."
+        }
+      },
+      "3": {
+        "title": "3. Using the Service: General Terms",
+        "3.1": {
+          "title": "3.1 Provision of Sabsus Services.",
+          "text": "By completing the registration process (e.g., clicking a \"Register\" button) and/or ticking a checkbox indicating consent to the terms, you give your electronic consent to enter into this Agreement. Electronic consent has the same legal force as a written signature under applicable law. You also agree to receive notifications and other information from Sabsus in electronic form (e.g., by email, push notifications, or within the Service interface)."
+        },
+        "3.2": {
+          "title": "3.2 Applicability to Website and Mobile App.",
+          "text": "These terms apply to your use of both our website and the Sabsus mobile application. Regardless of the method of access, you must comply with this Agreement. Use of the mobile app may also be governed by the rules of app stores (App Store, Google Play, etc.); you must comply with those third-party terms. Sabsus is not responsible for the policies or actions of external application-distribution platforms."
+        },
+        "3.3": {
+          "title": "3.3 Updates and Availability.",
+          "text": "We constantly improve the Service and reserve the right to change functionality, interface or content of the Platform without prior notice. We may release updates to the mobile app that are mandatory for continued proper use. You acknowledge that technical failures and interruptions may occasionally occur, although we strive to minimise inconvenience. Sabsus does not warrant uninterrupted, error-free operation of the Service (see the disclaimer of warranties in Section 8)."
+        },
+        "3.4": {
+          "title": "3.4 Device Compatibility and Internet Access.",
+          "text": "To use the Sabsus Platform you must have a compatible device (computer, smartphone, etc.), internet access and necessary software (including a current operating system, web browser or app version). Sabsus is not liable if the Service is partly or wholly unavailable on outdated or incompatible devices or software. You are responsible for any ISP or mobile-network fees required to access the Service"
+        },
+        "3.5": {
+          "title": "3.5 Restrictions and Prohibitions.",
+          "text": "When using the Service, it is strictly prohibited to: \n- impersonate another person or organisation, or otherwise mislead as to your identity; \n- hack, interfere with, or disrupt the Platform, distribute viruses or malicious code, run automated scripts or actions that impair normal Service operation; \n- bypass technical limitations, attempt unauthorised access to other accounts, restricted areas or other Users' data; \n- use the Platform for illegal activity, including fraud, money-laundering, financing prohibited organisations or any violation of law; \n- post prohibited content, including extremist or pornographic material, insults, threats, false information, spam advertising, or materials infringing intellectual-property or privacy rights; \n- harvest data about other Users or the Platform automatically (e.g., bots, scraping) without our written permission. \n\nViolation may result in measures up to suspension or blocking of the account without notice, removal of illegal content and notification of competent authorities."
+        },
+        "3.6": {
+          "title": "3.6 User Rights and Obligations.",
+          "text": "User rights: You may use the Sabsus Platform's features as intended: browse restaurant menus and offers, place orders, pay using authorised methods, earn and redeem bonuses per loyalty-programme terms, purchase and use gift certificates, and leave reviews. You have a right to proper quality of electronic services, to contact Sabsus support and receive timely professional responses, and—regarding your personal data—to the rights set out in the Privacy Policy (Section 9), including access, deletion and other jurisdiction-specific rights. \n\nUser obligations: You must comply with this Agreement and applicable law, provide truthful information, pay for orders on time, and respect the rights and dignity of others (restaurant staff, other Users). When participating in bonus programmes, you must follow their rules; abuse of promotions, coupons or bonuses (e.g., fake orders, multiple accounts) is forbidden. You are responsible for safeguarding account access and all actions taken under your credentials. Suspected security breaches must be reported to Sabsus immediately. You also agree to respect Sabsus' and partners' intellectual property: do not reproduce, distribute, copy or extract software code, databases or Service content without permission."
+        }
+      },
+      "4": {
+        "title": "4. Placing Orders and Payment",
+        "4.1": {
+          "title": "4.1 Role of Sabsus and the Restaurant.",
+          "text": "Sabsus is a technology platform connecting Users with Restaurants. When you place an order (e.g., food delivery, pickup, table booking, gift certificate purchase), you enter into a transaction directly with the relevant Restaurant. Sabsus is not the seller or provider of the goods/services ordered; it merely facilitates the transaction and interaction. We are not responsible for quality, safety, description accuracy or availability of Restaurant goods/services, but we make reasonable efforts to collaborate only with reliable partners."
+        },
+        "4.2": {
+          "title": "4.2 Order Process.",
+          "text": "Select items from a Restaurant menu or catalogue, specify quantity and options, add to cart and proceed to checkout. Before confirming, you will see a summary: items, price, taxes, delivery fee (if applicable) and total payable, plus estimated fulfilment time. Check the information carefully before confirming. Once confirmed, the order is sent to the Restaurant. Ability to cancel or change an order after confirmation may be limited (see 4.6)."
+        },
+        "4.3": {
+          "title": "4.3 Price and Payment.",
+          "text": "Prices are set by Restaurants and shown in the User's local currency unless stated otherwise. We strive to keep prices current, but rare delays in updates may occur; the final price is confirmed at checkout. Payment is usually online through our Platform using integrated payment systems. Sabsus receives payments on behalf of the Restaurant as its payment agent; your obligation to pay is fulfilled when funds are successfully charged via the Service."
+        },
+        "4.4": {
+          "title": "4.4 Payment Methods.",
+          "text": "Currently, Sabsus supports card and e-wallet payments processed by Stripe and PayPal. You may be redirected to a secure page of the provider or an embedded interface. Card details are transmitted directly to the provider and are not stored on our servers, except for a token allowing transaction confirmation. By completing payment you agree to the provider's terms (including any fees, refund rules and security policies set by Stripe or PayPal) paypal.com. A payment may be declined by your card-issuing bank for various reasons; in that case the order is not considered paid, and you must choose another method or contact the bank."
+        },
+        "4.5": {
+          "title": "4.5 Taxes and Tips.",
+          "text": "Depending on the Restaurant's and User's jurisdictions, applicable taxes (e.g., VAT, sales tax) may be added and shown separately at checkout. If the Platform allows tipping, you can specify a tip amount before payment. The final amount, including taxes and tips, is displayed before charging. Tips are optional and may be changed by you until payment confirmation."
+        },
+        "4.6": {
+          "title": "4.6 Cancellation and Refunds.",
+          "text": "Food/drink orders: Once a Restaurant has accepted an order, cancellation without charge is usually impossible. If you request cancellation immediately after ordering, contact Sabsus support—we will try to help but cannot guarantee cancellation if the Restaurant has confirmed it.\n\nTable bookings: If a deposit is taken, refund rules depend on the Restaurant's policy (e.g., free cancellation 24 hours in advance). \n\nGift cards/coupons: Purchased gift certificates are non-refundable except as required by law. \n\nOther services: Terms are agreed individually. If service quality is unsatisfactory or an order is not fulfilled, contact Sabsus support with a claim. If confirmed, we will process a refund or other compensation. Refunds, if approved, are made via the original payment method. Posting times depend on bank/payment-system procedures (usually 5–10 business days)."
+        },
+        "4.7": {
+          "title": "4.7 Electronic Receipts",
+          "text": "After successful payment you receive an electronic receipt at your account email or within the app. Keep these receipts for warranty service, refunds or accounting."
+        },
+        "4.8": {
+          "title": "4.8 Payment Disputes.",
+          "text": "Report double charges, incorrect amounts or other payment issues to Sabsus as soon as possible. We will investigate with the provider and, if an error is confirmed, correct it. Also contact your bank if disputing a transaction. Notifications received more than 30 days after the transaction may be harder to investigate."
+        },
+        "4.9": {
+          "title": "4.9 Promotions and Promo Codes.",
+          "text": "Sabsus or Restaurants may offer promo codes or discounts. Terms are communicated separately. Generally: one promo code per User (unless stated otherwise); codes are not cash-redeemable and cannot be applied retroactively. Abuse (e.g., multiple registrations for repeated bonuses) may lead to denial of the discount and account blocking."
+        }
+      },
+      "5": {
+        "title": "5. Bonus Programmes and Gift Cards",
+        "5.1": {
+          "title": "5.1 Loyalty Programme.",
+          "text": "Sabsus may operate a loyalty programme (e.g., earning points per purchase). Participation is voluntary and automatic for registered Users: qualifying actions credit points to your loyalty account (e.g., 1 point per 10 currency units spent). Current accrual structure and redemption rules are available in the \"Bonus Programme\" section of the Platform or our website."
+        },
+        "5.2": {
+          "title": "5.2 Earning and Using Points",
+          "text": "Points are not electronic money; they have no cash value. They cannot be cashed out or transferred (unless the programme explicitly allows, e.g., a family account). You may redeem points for rewards according to the reward catalogue (e.g., order discount, free item). When applying points, the corresponding amount is deducted and the order total reduced."
+        },
+        "5.3": {
+          "title": "5.3 Programme Limitations.",
+          "text": "Each promotion may impose point expiry (e.g., valid for one year), maximum account balance, monthly redemption limits, etc. Sabsus may change the programme terms, notifying Users (e.g., via site update or email). Continued participation after changes constitutes acceptance. If unacceptable, you may stop participating; previously earned points remain valid until expiry or programme termination."
+        },
+        "5.4": {
+          "title": "5.4 Programme Termination or Suspension.",
+          "text": "Sabsus may end or replace the loyalty programme at any time. Users will have a reasonable period (e.g., 30 days) to use remaining points. After that, unused points are cancelled without compensation. We will notify Users in advance through electronic channels."
+        },
+        "5.5": {
+          "title": "5.5 Gift Cards.",
+          "text": "The Platform supports issuance and use of electronic Restaurant gift cards. Purchase: Users can buy cards of specified denominations (e.g., 1 000 RUB, 5 000 RUB) for themselves or as gifts. Payment is processed via the Service. After payment, a unique gift-card code is generated and sent to your email or printable. Use: The holder enters the code in the \"Gift card / promo code\" field at checkout. If the order exceeds the card value, the balance is paid by another method; if lower, unused balance remains on the card."
+        },
+        "5.6": {
+          "title": "5.6 Gift-Card Terms.",
+          "text": "The card is not personalised and can be used by anyone who knows the code—treat it like cash. Protect the code; we are not liable for unauthorised use of lost/stolen codes. Non-refundability: purchase is final unless required by law. Validity: unless stated otherwise, cards are valid indefinitely (or the maximum term allowed by local law). Some regions require expiry or dormancy fees—if so, we will disclose this at purchase. No cash exchange: cards cannot be redeemed for cash except where mandated (certain US states allow cash-out of small remaining balances). Use restriction: a card pays only for goods/services of the specified Restaurant (or group). It cannot buy another gift card. Fraud suspicion: Sabsus may suspend a card and request additional information if fraud is suspected."
+        },
+        "5.7": {
+          "title": "5.7 Additional Promotional Conditions.",
+          "text": "During marketing campaigns a Restaurant or Sabsus may issue promo cards or codes equivalent to gift cards (e.g., \"electronic voucher for a free dessert\"). Such offers follow the campaign terms (e.g., single use, date limits). Unless stated otherwise, promo cards are subject to rules similar to regular gift cards."
+        }
+      },
+      "6": {
+        "title": "6. Reviews and User-Generated Content",
+        "6.1": {
+          "title": "6.1 Posting reviews.",
+          "text": "After completing an order, you may leave a review of your experience (e.g., food quality, service, delivery). The review feature exists to encourage honest feedback—helping other Users make informed choices and helping Restaurants improve. We welcome constructive, well-reasoned reviews."
+        },
+        "6.2": {
+          "title": "6.2 Review content requirements.",
+          "text": "A review must reflect your own opinion and experience with a specific order or Restaurant. It is prohibited to post knowingly false statements, defamation, insults, obscene language, or content unrelated to the Restaurant's service. Do not disclose third-party personal data (e.g., staff names, phone numbers, addresses) without consent. Reviews may not contain advertising or links to external resources. Extortion is also forbidden—for example, demanding bonuses or compensation from a Restaurant under threat of a negative review."
+        },
+        "6.3": {
+          "title": "6.3 Content moderation",
+          "text": "Sabsus reserves the right to review and moderate reviews or any user content posted via the Platform. We do not edit subjective opinions, but we may reject or remove a review (in whole or in part) if it violates § 6.2 or any other provision of this Agreement. Grounds for moderation include: profanity, extremism, manifestly false statements, plagiarism (copying another review), personal data, spam. If your review is removed or rejected, you may receive a notice stating the reason. Users who systematically post prohibited content may lose the right to post reviews or have their accounts blocked."
+        },
+        "6.4": {
+          "title": "6.4 Sabsus' right to use reviews.",
+          "text": "By posting a review or other content on the Sabsus Platform you retain ownership of your material, but you grant Sabsus a non-exclusive, worldwide, perpetual, royalty-free licence to use, reproduce, publicly display, adapt and distribute your content in connection with operation of the Service. We may show your review on our site/app, share it with the Restaurant, or quote it in marketing materials (e.g., social-media posts, newsletters) without further approval. We will not distort your opinion—reviews are reproduced as posted (save minor spelling/typography edits). The licence terminates when you delete the content from the Service, except where it has already been used (e.g., in a promotional asset). You represent and warrant that you hold all rights necessary to grant this licence."
+        },
+        "6.5": {
+          "title": "6.5 Review authenticity.",
+          "text": "Sabsus takes measures to ensure reviews come from real Users who placed the relevant orders (e.g., only Users who ordered through the Platform can review that Restaurant). Nevertheless, Sabsus cannot absolutely guarantee the truthfulness of every review. A review expresses the author's subjective opinion and may not reflect Sabsus' or other Users' views. We are not liable for Users' statements, but upon justified complaints (e.g., a Restaurant claiming defamation) we may act accordingly."
+        },
+        "6.6": {
+          "title": "6.6 Other user content.",
+          "text": "Besides reviews, you may post other content—e.g., food photos, comments, support-chat messages. All such content is subject to the same rules: legality, no unacceptable material, no infringement of third-party rights. By uploading any content you warrant it does not violate copyright, trademarks or other rights. If you upload a photo, ensure you own it (took it yourself) or have permission. We may remove infringing material upon a rights-holder notice or our own findings."
+        },
+        "6.7": {
+          "title": "6.7 Takedown requests.",
+          "text": "If your copyrighted material has been posted without permission, or you find other unlawful content, notify us via the feedback form or the contacts in the Privacy Policy. We will promptly investigate and, if appropriate, remove the content."
+        }
+      },
+      "7": {
+        "title": "7. Intellectual Property and Licence",
+        "7.1": {
+          "title": "7.1 Sabsus intellectual property.",
+          "text": "All software, source and object code, design, Sabsus trademarks and logos, trade dress, databases, and text/graphics on the Platform (except content uploaded by Users or Restaurants) are the intellectual property of Sabsus and/or its licensors and are protected by law. Using the Service does not grant you ownership of any Service elements."
+        },
+        "7.2": {
+          "title": "7.2 Use of our content.",
+          "text": "You receive a limited right to use the Service interface and functionality solely for personal purposes as allowed by this Agreement. You may not copy, modify, distribute or publicly display Service materials without Sabsus' prior written consent, except as permitted by law (e.g., quotation with attribution). Unauthorised use constitutes a breach and may lead to legal liability."
+        },
+        "7.3": {
+          "title": "7.3 Feedback.",
+          "text": "If you voluntarily provide ideas, suggestions or feedback for improving Sabsus (e.g., bug reports, feature requests), you agree such feedback is non-confidential and non-proprietary to you. Sabsus may freely use and implement the feedback without obligation to compensate you. We value your input but are not bound to implement specific suggestions."
+        },
+        "7.4": {
+          "title": "7.4 Trademarks.",
+          "text": "The names, logos and slogans of Sabsus, as well as those of our partners (Restaurants), may be registered trademarks. You may not use them except as necessary for legitimate use of the Service, without the owner's express permission (e.g., printing our logo on third-party materials is forbidden)."
+        },
+        "7.5": {
+          "title": "7.5 Restaurant rights.",
+          "text": "Content supplied by Restaurants (menus, descriptions, photos, logos) remains the property of those Restaurants or their suppliers. Sabsus displays such content under licence. Users may view it only for information and ordering. Any other use (e.g., commercial copying of a menu) is prohibited unless you obtain permission directly from the content owner."
+        },
+        "7.6": {
+          "title": "7.6 IP-rights violations.",
+          "text": "We respect intellectual property and expect Users to do the same. If a User repeatedly infringes copyright or other IP rights (e.g., uploads third-party text/photos without permission), the User may be blocked and infringing materials removed. Rights-holders may use the DMCA procedure (where applicable) or similar local mechanisms to notify us of infringements—we review all proper notices."
+        }
+      },
+      "8": {
+        "title": "8. Disclaimer and Limitation of Liability",
+        "8.1": {
+          "title": "8.1 Service \"as is\"",
+          "text": "The Sabsus Platform is provided \"as is\" and \"as available\". We make no express warranties or promises regarding the Service. Specifically, we do not guarantee that: (a) the Service will meet all your expectations or requirements; (b) operation will be uninterrupted, error-free, secure or virus-free; (c) information obtained through the Service is always accurate or reliable; (d) the quality of any goods, services or information (especially from Restaurants) will meet your expectations."
+        },
+        "8.2": {
+          "title": "8.2 No implied warranties.",
+          "text": "To the fullest extent permitted by law, Sabsus disclaims all implied warranties or conditions, including merchantability, fitness for a particular purpose, non-infringement, and warranties arising from course of dealing or trade usage. You bear the risk associated with using the Service."
+        },
+        "8.3": {
+          "title": "8.3 Third-party actions.",
+          "text": "As Sabsus acts as an intermediary between Users and Restaurants, we are not liable for acts or omissions of third parties involved (Restaurants, couriers, payment systems, hosting providers, etc.). In disputes over order quality or content, the Restaurant bears final legal responsibility; Sabsus may mediate but is not the seller. Likewise, we cannot guarantee resolution of issues caused by external partners (e.g., payment-system failures), though we will assist where possible."
+        },
+        "8.4": {
+          "title": "8.4 Liability cap.",
+          "text": "To the maximum extent allowed by law, Sabsus and its affiliates, officers, employees and agents shall not be liable for any indirect, incidental, consequential, punitive or special damages—such as lost profits, data loss, reputational harm, business interruption, or cost of substitute goods/services—arising from or related to use (or inability to use) the Sabsus Platform, even if advised of the possibility. The maximum aggregate liability of Sabsus to you for all claims relating to the Service or this Agreement is limited to USD 100 (or local-currency equivalent) or the total Sabsus fees actually paid by you in the last six months, whichever is less. Some jurisdictions do not allow exclusion or limitation of liability for certain damages (e.g., personal injury, wilful misconduct); nothing in this section limits liability beyond what applicable law permits."
+        },
+        "8.5": {
+          "title": "8.5 Content responsibility.",
+          "text": "You understand that, while using the Service, you may encounter content (e.g., Restaurant descriptions, reviews) that seems inaccurate, incomplete or questionable. Sabsus is not responsible for the legality or accuracy of third-party content. Opinions in reviews belong solely to their authors. Although we may moderate content, ultimate responsibility rests with the person who posted it."
+        },
+        "8.6": {
+          "title": "8.6 Force majeure.",
+          "text": "Sabsus is not liable for delays or failures caused by events beyond our reasonable control, including natural disasters, power outages, internet/telecom failures, hacking attacks, epidemics, war, civil unrest, or government actions that render service provision illegal or impossible. During such force-majeure events our obligations are suspended for the duration."
+        },
+        "8.7": {
+          "title": "8.7 Your indemnification.",
+          "text": "You agree to indemnify and hold harmless Sabsus, its affiliates, officers, employees and agents from any claims, losses, expenses (including reasonable attorneys' fees) arising out of: (a) your breach of this Agreement; (b) your misuse of the Service; or (c) your violation of law or third-party rights. If your actions lead to a complaint or legal proceeding against Sabsus, you will cover our related costs and damages."
+        },
+        "8.8": {
+          "title": "8.8 Statutory rights.",
+          "text": "Nothing in this section limits or excludes consumer rights that cannot be limited or excluded under applicable law. If your jurisdiction does not allow certain exclusions or limitations, the relevant provision applies only to the extent permitted, and the remainder of this Agreement remains in effect."
+        }
+      },
+      "9": {
+        "title": "9. Privacy Policy",
+        "intro": {
+          "text": "This Privacy Policy explains which data Sabsus collects about Users, the purposes of processing, how we protect that data, and the privacy rights available to Users. We strive to comply with all applicable data-protection laws, including the GDPR for EU/EEA Users, the CCPA/CPRA for California residents, U.S. state privacy statutes, Canada's PIPEDA, the UK GDPR, and others. Additional regional disclosures appear in Appendices A–E below. By using the Sabsus Platform you entrust us with certain information about yourself. We value that trust and take steps to process your data securely. Your continued use of the Service constitutes consent to the collection and use of personal data as described in this Policy."
+        },
+        "9.1": {
+          "title": "9.1 Data we collect",
+          "text": [
+            "● Data you provide. Information you supply when registering or using the Service—e.g., name, e-mail address, phone number, delivery address (if required), partial payment details, profile information (avatar, saved preferences), messages to support, survey answers, reviews, etc.",
+            "● Payment data. When you pay via Stripe/PayPal we receive status information, a masked card number or transaction ID. We do not store full card numbers or CVV codes—only the certified payment provider processes that sensitive data.",
+            "● Usage data (collected automatically). \n○ Device details (model, OS version, browser type, system language, mobile carrier). \n○ Identifiers: IP address, cookie IDs, mobile-device or advertising IDs (e.g., IDFA). \n○ Activity logs: timestamps, search queries, pages/screens viewed, interface clicks. \n○ Order data: order history (items, amounts, dates, Restaurant selected), promo codes, bonuses, reviews. \n○ Geolocation (if you grant permission) for nearby Restaurant search; accuracy depends on device settings (GPS/Wi-Fi). You may disable location sharing in device settings—some features may then be unavailable.",
+            "● Data from third parties. Examples: basic profile from a social-network login (Facebook, Google); external reviews supplied by a Restaurant; payment-status callbacks from Stripe/PayPal; delivery updates from carriers. Such data are linked to your account. We minimise collection to what is necessary; some fields are optional, but certain data are required for core functions (e.g., no delivery order without a phone number)."
+          ]
+        },
+        "9.2": {
+          "title": "9.2 How and why we use data",
+          "text": [
+            "Service delivery. Create/maintain your account, communicate about orders, transmit orders to Restaurants, process payments, show local offers, publish your reviews.",
+            "Support. Use account/order data to resolve issues; retain support chats to improve service.",
+            "Service improvement. Aggregate/anonymous analytics to enhance functionality and UI; analyse feedback to improve Restaurant offerings.",
+            "Personalisation & marketing (with consent). Recommend Restaurants/dishes based on order history; send marketing e-mails or push notifications. You may opt out at any time.",
+            "Loyalty programme. Maintain balance of bonus points and inform you about rewards.",
+            "Security & fraud prevention. Log/IP data detect suspicious activity (multiple sign-ups, hacking attempts); we may consult anti-fraud services (e.g., Stripe Radar).",
+            "Legal obligations. Retain or disclose data when required—for example, tax records of transactions, or lawful requests from authorities. We also use contact data for legally required notices."
+          ]
+        },
+        "9.3": {
+          "title": "9.3 Legal bases (EU/EEA Users)",
+          "text": [
+            "● Contract necessity. Most processing (orders, payments, account maintenance) is required to perform our contract with you.",
+            "● Consent. Marketing e-mails, push notifications with personalised offers, geolocation, and certain cookies are processed only with your prior consent, which you may withdraw at any time.",
+            "● Legitimate interests. Analytics, fraud prevention, non-marketing service communications—balanced against your rights.",
+            "● Legal obligations. E.g., retention of tax data, compliance with court orders.",
+            "● Vital interests / public tasks rarely apply to this Service."
+          ]
+        },
+        "9.4": {
+          "title": "9.4 Cookies and similar technologies",
+          "text": [
+            "Our website and app use cookies, pixels and SDKs (including Firebase and Supabase).",
+            "● Necessary cookies – essential for log-in sessions, basket contents, etc.; set by default.",
+            "● Analytics cookies – e.g., Google Analytics for Firebase, collecting aggregated usage statistics termsfeed.com (consent banner shown where required).",
+            "● Advertising / functional cookies – used only with your consent; may include social-media pixels for remarketing.",
+            "● Firebase SDKs – Authentication, Cloud Messaging, Crashlytics, Analytics (device IDs, event data). Session cookies may be set termsfeed.com.",
+            "● Supabase SDK – stores session tokens for authentication.",
+            "● Social-network pixels – Facebook Pixel, Twitter Pixel, etc., activated only if you consent to advertising cookies.",
+            "You can manage cookies through your browser's settings, our cookie banner, in-app privacy settings, or via \"Do Not Track\"/Global Privacy Control signals where supported."
+          ]
+        },
+        "9.5": {
+          "title": "9.5 Storage and security",
+          "text": [
+            "● Security. HTTPS encryption in transit; encrypted storage of sensitive data; hashed passwords; least-privilege employee access; firewalls and intrusion-detection. No method is 100 % secure, but we employ commercially reasonable safeguards.",
+            "● Retention. We keep data only as long as necessary for stated purposes or as required by law (e.g., transaction records ≥ 5 years dlapiperdataprotection.com). Back-ups are purged on schedule. Reviews already public may remain (anonymised) after account deletion unless you request removal.",
+            "● Hosting locations. Our infrastructure may reside in the United States or Europe (AWS, GCP). Partners (Stripe, Firebase, Supabase) may store data outside your country—see § 9.6.",
+            "● Children. The Service is not directed to children under 13. We do not knowingly collect their data without parental consent; if discovered, such data will be deleted."
+          ]
+        },
+        "9.6": {
+          "title": "9.6 Data sharing with third parties",
+          "text": [
+            "We do not sell personal data for money prioritypass.com. Data may be shared with:",
+            "Restaurant partners Order details (name, items, amount, phone, delivery address). Contractual restriction to fulfil the order only.",
+            "Delivery services Name, delivery address, phone, order number. Use limited to delivery execution.",
+            "Payment providers (Stripe, PayPal) Transaction amount, order ID, e-mail; receive masked card info & status. Providers act as independent controllers; see their privacy policies.",
+            "Infrastructure providers (AWS, GCP, CDN) Hosting/storage of Service data. SCCs or equivalent safeguards.",
+            "Analytics / support tools (e.g., Firebase, Intercom) Cookie IDs, technical data, support chat content. NDAs; data-processing agreements.",
+            "Advertising / social media (with consent) Hashed identifiers, pixel events for remarketing. Consent mechanism; platform privacy rules.",
+            "Legal / governmental requests Disclose data when legally required. Notify you where lawful.",
+            "Business transfers Data may transfer to successor entity in a merger or acquisition. Prior notice and equivalent protection assured.",
+            "All processors are bound by contracts to protect data and act only on our instructions (unless they are independent controllers, e.g., banks, authorities). Transfers outside your jurisdiction are protected via SCCs, EU-U.S. Data Privacy Framework participation, or other recognised mechanisms."
+          ]
+        },
+        "9.7": {
+          "title": "9.7 Your privacy rights",
+          "text": [
+            "Depending on your jurisdiction you may have:",
+            "Access Obtain confirmation and a copy of your data (GDPR Art. 15, CCPA \"right to know\").",
+            "Correction Request rectification of inaccurate data (GDPR Art. 16; CPRA).",
+            "Deletion \"Right to be forgotten\" / delete personal data (GDPR Art. 17; CCPA).",
+            "Restriction Temporarily pause processing (GDPR Art. 18).",
+            "Objection Object to processing based on legitimate interests, incl. direct marketing (GDPR Art. 21).",
+            "Portability Receive data in a structured, machine-readable format (GDPR Art. 20).",
+            "No automated decisions We do not make solely automated decisions with legal effect.",
+            "Withdraw consent Withdraw marketing / geolocation / cookie consent at any time.",
+            "CCPA/CPRA specific Opt-out of \"sale\" or \"sharing\"; non-discrimination; correction; limit sensitive PI.",
+            "U.S. state laws Similar rights in CO, CT, VA, UT, OR, etc.—including opt-out of targeted ads."
+          ]
+        },
+        "9.8": {
+          "title": "9.8 Regional appendices",
+          "text": [
+            "● Appendix A – California residents (USA)",
+            "● Appendix B – Other U.S. states",
+            "● Appendix C – Canada",
+            "● Appendix D – EU/EEA",
+            "● Appendix E – United Kingdom",
+            "Each appendix contains region-specific disclosures (e.g., \"Do Not Sell or Share\" mechanism for California, cross-border transfer notice for Canada dlapiperdataprotection.com, our DPO contact, local representative, etc.). They form an integral part of this Policy."
+          ]
+        },
+        "9.9": {
+          "title": "9.9 Processing public-sector restaurant data",
+          "text": "(Not applicable: the Service targets private consumers; corporate public-entity data processing is therefore omitted.)"
+        },
+        "9.10": {
+          "title": "9.10 Contacting us about privacy",
+          "text": "If you have questions or complaints regarding this Policy or our data practices, please contact our Data Protection Officer (DPO) or privacy team using the details in How to contact us. We will respond promptly. If you remain unsatisfied, you may contact your local data-protection authority (ICO in the UK, your national EU DPA, the OPC in Canada, or your state Attorney General in the U.S.)."
+        },
+        "9.11": {
+          "title": "9.11 Policy updates",
+          "text": "We may update this Policy periodically to reflect changes in the Service or law. Material changes (e.g., new processing purposes, new data categories) will be announced clearly—via website notice, in-app pop-up, or e-mail—and, where required, we will seek renewed consent. The header shows the latest revision date. Continued use of the Service after changes take effect signifies acceptance of the updated Policy. If you disagree with material changes, you may stop using the Service and delete your account."
+        }
+      },
+      "10": {
+        "title": "10. Miscellaneous Provisions",
+        "10.1": {
+          "title": "10.1 Amendments to the Terms of Use",
+          "text": "Sabsus reserves the right to modify these Terms of Use from time to time. Reasons may include: adding new Service features, security updates, or bringing the Terms into line with changes in law. We will notify Users of any material changes—typically by (i) posting the revised Terms on our website and in-app, and (ii) sending an information notice to registered Users (e.g., by e-mail or an in-app pop-up). The effective date of the amendments will appear at the top of the document. Continued use of the Service after that date constitutes acceptance of the updated Terms. If you do not agree, you must stop using the Platform before the changes take effect and, if desired, delete your account. For significant revisions that affect Users' rights or obligations, we may request your explicit consent (e.g., by ticking a box) on next sign-in."
+        },
+        "10.2": {
+          "title": "10.2 Assignment of Rights and Obligations",
+          "text": "Sabsus may assign its rights and obligations under these Terms to a third party in the event of a business reorganisation, merger, or asset sale. Such assignment will not diminish your rights, and we will inform you of the transfer. You may not assign or otherwise transfer your rights under this Agreement to any third party without Sabsus' written consent; any unauthorised transfer is void."
+        },
+        "10.3": {
+          "title": "10.3 Severability",
+          "text": "If any provision of these Terms is held by a competent court to be unlawful, invalid, or unenforceable, the remaining provisions shall remain in full force. The invalid provision will be deemed severed and replaced by a valid one that most closely reflects the original intent of the parties."
+        },
+        "10.4": {
+          "title": "10.4 No Waiver",
+          "text": "Sabsus' failure to insist on strict performance of any provision or to exercise a right shall not be deemed a waiver of that provision or right in the future."
+        },
+        "10.5": {
+          "title": "10.5 Entire Agreement",
+          "text": "These Terms of Use, together with the incorporated policies (Privacy Policy, regional appendices, promotion rules, etc.), constitute the entire agreement between you and Sabsus regarding the Platform and supersede all prior agreements, written or oral. Any additional arrangements are binding only if made in writing and signed by both parties (except unilateral amendments by Sabsus pursuant to § 10.1)."
+        },
+        "10.6": {
+          "title": "10.6 Language",
+          "text": "This document is drafted in Russian. Translations may be supplied for convenience, but in the event of discrepancies the Russian version prevails (unless contrary to mandatory law in your jurisdiction). Notices and communications may be provided in Russian or in a preferred language you select (where a translation of the Terms exists)."
+        },
+        "10.7": {
+          "title": "10.7 Governing Law",
+          "text": "These Terms and any disputes arising out of or relating to them are governed by the substantive law of the State of California, USA, without regard to conflict-of-law principles. If you are a consumer residing outside the USA, you also retain the protection of mandatory rules of the law of your residence"
+        },
+        "10.8": {
+          "title": "10.8 Dispute Resolution and Arbitration",
+          "text": [
+            "Mandatory Arbitration. Except as expressly provided below, all disputes, controversies, or claims arising out of or relating to these Terms or your use of the Sabsus Platform shall be settled by binding, final arbitration instead of court litigation. By agreeing to arbitration, both you and Sabsus waive the right to a jury trial and to participate in class actions (details below). Arbitration will be conducted on an individual basis only.",
+            "Arbitration Rules. The arbitration shall be administered by the American Arbitration Association (AAA) under its Commercial (or Consumer, where applicable) Arbitration Rules. If the AAA is unwilling or unable to administer, the parties shall select another reputable arbitral organisation or arbitrator. California law shall apply. The arbitrator may award the same damages or relief that a court could, but may not award remedies inconsistent with these Terms.",
+            "Venue and Format. Arbitration may proceed on written submissions, by telephone/video, or in person, as the parties agree. If an in-person hearing is required, it will take place in San Francisco County, California, unless you and Sabsus agree otherwise. Consumers in the USA may request a hearing in their home state if Sabsus consents (we will consider reasonable requests). Proceedings will be in English unless otherwise agreed.",
+            "Exceptions. Either party may: (a) pursue a claim in small-claims court within its jurisdictional limits; (b) seek injunctive relief in court pending arbitration to prevent irreparable harm (e.g., misuse of IP, data breaches); (c) rely on mandatory local laws that prohibit compulsory arbitration of consumer disputes (e.g., certain EU countries)—in that event, disputes may be brought before competent courts.",
+            "Class-Action Waiver. You and Sabsus agree that all proceedings shall be conducted only on an individual basis, not in a class, consolidated, or representative action zenimax.com tos.ea.com. The arbitrator may not consolidate claims or preside over any representative proceeding. If this clause is held unenforceable as to a particular dispute, the arbitration agreement is void as to that dispute, which shall then proceed in court; other disputes remain subject to arbitration.",
+            "Pre-Arbitration Notice & Limitations Period. Before commencing arbitration, a party must send a written notice of the dispute and engage in informal negotiations for 30 days tos.ea.com. Claims must be filed within one (1) year after they arise, otherwise they are permanently barred, unless a longer period is mandated in your jurisdiction (e.g., standard EU consumer limitation periods)."
+          ]
+        },
+        "10.9": {
+          "title": "10.9 Courts of Exclusive Jurisdiction",
+          "text": "Subject to the arbitration provisions, any permitted court proceedings shall be brought exclusively in the state or federal courts located in San Francisco County, California. You consent to personal jurisdiction and waive objections to inconvenient forum. Consumers outside the USA may still initiate actions in their home jurisdictions where mandatory law allows, but the substantive law chosen remains California law."
+        },
+        "10.10": {
+          "title": "10.10 EU Online Dispute Resolution",
+          "text": "For EU consumers: the European Commission's Online Dispute Resolution platform is available at https://ec.europa.eu/consumers/odr. Sabsus is currently not obliged to and does not undertake to participate in ODR proceedings, preferring to resolve issues directly with Users."
+        },
+        "10.11": {
+          "title": "10.11 Electronic Communications",
+          "text": "You agree to receive communications from Sabsus in electronic form (e-mail, in-app, SMS). Electronic communications satisfy any legal requirement that such communications be in writing."
+        },
+        "10.12": {
+          "title": "10.12 Contact Information",
+          "text": [
+            "Company: Sabsus, Inc.",
+            "Postal address: 1234 Market St., Suite 100, San Francisco, CA 94111, USA",
+            "General e-mail: support@sabsus.com",
+            "Privacy / DPO e-mail: info@sabsus.com",
+            "Electronic correspondence is preferred for a documented trail of inquiries."
+          ]
+        }
+      },
+      "appendixA": {
+        "title": "Appendix A – Additional Terms for Residents of the State of California (USA)",
+        "intro": "The following provisions apply only to Users who reside in California and supplement all other sections of the Privacy Policy and the Terms of Use.",
+        "A1": {
+          "title": "A1. Categories of Personal Information Collected",
+          "text": [
+            "During the past 12 months we have collected the following categories of personal information from California consumers (as those categories are defined in the CCPA):",
+            "Identifiers Real name, alias (nickname), street address, e-mail address, telephone number, user ID, IP address, device identifier, cookie IDs.",
+            "Personal information described in Cal. Civ. Code §1798.80(e) Name, contact details, tokenised bank-card number (we do not store the full PAN), other financial information you voluntarily provide (e.g., via PayPal).",
+            "Characteristics protected under California / federal law Gender or age if you choose to provide them (e.g., in a profile or support message); we do not request birth dates by default.",
+            "Commercial information Records of orders (purchases) and use of services, applied discounts, redeemed gift cards.",
+            "Internet / electronic-network activity Browsing history within our website or app, interactions with pages, search queries, login timestamps.",
+            "Geolocation data Approximate location or the precise delivery address you enter.",
+            "Inferences E.g., your likely preferred cuisine based on order history (for personalised recommendations)."
+          ]
+        },
+        "A2": {
+          "title": "A2. Sources of Personal Information",
+          "text": [
+            "We obtain this information:",
+            "1. Directly from you (registration, checkout, support correspondence);",
+            "2. Automatically from your device (cookies, log files);",
+            "3. From third parties (payment processors, social-login providers, partner Restaurants)."
+          ]
+        },
+        "A3": {
+          "title": "A3. Purposes of Collection and Use",
+          "text": "All categories above are collected and used for the business purposes set out in § 9.2 of our Privacy Policy: delivering the requested services (registration, ordering), customer support, payment processing, analytics and service improvement, marketing with your consent, legal compliance, fraud prevention, etc. We do not collect or use \"sensitive personal information\" (as defined by the CPRA) for inferring characteristics—except login credentials and limited payment data strictly for authentication and transaction purposes."
+        },
+        "A4": {
+          "title": "A4. Disclosure of Personal Information (Business Purposes)",
+          "text": [
+            "In the past 12 months we have disclosed certain categories of personal information to the following third-party recipients solely for business purposes:",
+            "Identifiers (name, phone, address) Partner Restaurants (order fulfilment); delivery services (shipping); IT service-providers (hosting, analytics); e-mail platforms (transactional & marketing e-mails).",
+            "Financial / transaction data Payment processors Stripe and PayPal (payment execution).",
+            "Internet activity (logs, cookies) Analytics providers (e.g., Google Analytics) and, if consented, advertising networks (retargeting); security services (anomaly detection).",
+            "Geolocation Mapping services (Google Maps API) when embedding maps; Restaurants / couriers (delivery address).",
+            "Support communications Support platforms such as Intercom or Zendesk (ticket processing).",
+            "All such disclosures are covered by contracts that prohibit the recipients from using the information for any purpose other than those stated."
+          ]
+        },
+        "A5": {
+          "title": "A5. Sale of Personal Information",
+          "text": "Sabsus has not sold California consumers' personal information for monetary or other valuable consideration in the past 12 months [prioritypass.com]. Nor have we \"shared\" personal information for cross-context behavioural advertising. Should we ever plan to \"sell\" or \"share\" data in the future, we will notify you in advance and provide a clear opt-out mechanism."
+        },
+        "A6": {
+          "title": "A6. Your Rights under the CCPA / CPRA",
+          "text": [
+            "Know / Access Request the categories or specific pieces of personal information we have collected, the sources, business purposes, categories of third-party disclosures, and whether data was sold acasom.com acasom.com.",
+            "Deletion Request deletion of personal information (subject to statutory exceptions) acasom.com acasom.com.",
+            "Correction Request correction of inaccurate personal information.",
+            "Opt-out of Sale / Sharing Exercise the right to direct us not to sell or share personal information. (Currently not applicable, as we do not sell or share.)",
+            "Limit Use of Sensitive PI Not applicable—Sabsus does not use sensitive personal information for purposes beyond those allowed by the CPRA.",
+            "Non-discrimination We will not discriminate against you for exercising CCPA rights prioritypass.com."
+          ]
+        },
+        "A7": {
+          "title": "A7. Submitting CCPA Requests",
+          "text": [
+            "To exercise your rights, you may:",
+            "● E-mail us at privacy@sabsus.com with the subject \"CCPA Request\", providing your name and the e-mail linked to your account; or",
+            "● Use the in-app Privacy settings (if available) to submit a request.",
+            "We must verify your identity (requests sent from your registered e-mail usually suffice; we may ask additional questions, e.g., recent order details). You may authorise an agent to act on your behalf—please supply proof of agent authorisation (e.g., notarised power of attorney) plus your written confirmation. We will confirm receipt within 10 days and respond within 45 days (extendable once by 45 days with notice). Statistics: during the past 12 months Sabsus has received zero verifiable CCPA requests for access, correction, or deletion."
+          ]
+        },
+        "A8": {
+          "title": "A8. \"Shine the Light\" (Cal. Civ. Code §1798.83)",
+          "text": "We do not disclose personal information to third parties for their direct marketing without your consent. You may nonetheless submit inquiries to privacy@sabsus.com and we will confirm this practice"
+        },
+        "A9": {
+          "title": "A9. California Children's Privacy",
+          "text": "Our Service is not directed to children under 13. We do not sell or knowingly collect their data. If you are a California resident under 18 who has posted content on the Service, you may request its removal (Cal. Bus. & Prof. Code §22581). We will delete or anonymise such content, subject to statutory exceptions (e.g., where content has been re-posted by others)."
+        },
+        "A10": {
+          "title": "A10. Future Regulations & Global Privacy Control",
+          "text": "If new California regulations require automatic honouring of signals such as Global Privacy Control (GPC), Sabsus will comply. When your browser sends a GPC signal, we will treat it as an opt-out from sale/share for that browser or user, as mandated by the CPRA."
+        }
+      },
+      "appendixB": {
+        "title": "Appendix B – Additional Terms for Other U.S. States (Outside California)",
+        "intro": "Several U.S. states (e.g., Colorado, Connecticut, Utah, Virginia) have enacted consumer privacy laws. If you reside in such a state, the following terms apply in addition to our main Privacy Policy.",
+        "B1": {
+          "title": "B1. Consumer Rights",
+          "text": [
+            "Generally, these state laws grant rights similar to the CCPA/GDPR:",
+            "● Confirm / Access personal data processed about you.",
+            "● Correction of inaccuracies.",
+            "● Deletion of personal data (subject to statutory exceptions).",
+            "● Data Portability in a usable format.",
+            "● Opt-out of (i) targeted advertising, (ii) sale of personal data, and (iii) automated profiling with legal / significant effects."
+          ]
+        },
+        "B2": {
+          "title": "B2. Targeted Advertising",
+          "text": "Sabsus currently does not serve third-party ads inside the Service. If we engage advertising networks to display Sabsus promotions elsewhere, you will be able to opt-out of such personalised ads."
+        },
+        "B3": {
+          "title": "B3. Sale of Data",
+          "text": "Sabsus does not sell personal data for monetary consideration. Should broader state definitions deem certain exchanges a \"sale\", we affirm we do not engage in such practices. If that changes, you will have the right to opt-out."
+        },
+        "B4": {
+          "title": "B4. Right to Appeal",
+          "text": "If we deny your request regarding personal data, you may appeal the decision. We will review and respond within statutory deadlines (typically 45 days). If you remain unsatisfied, you may escalate to your state Attorney General or relevant authority."
+        },
+        "B5": {
+          "title": "B5. State-Specific Disclosures",
+          "text": "Where a state law imposes additional disclosures, we will update this section. E.g., Colorado requires us to state how to submit requests—see privacy@sabsus.com or the in-app privacy settings."
+        },
+        "B6": {
+          "title": "B6. Automated Opt-Out Signals",
+          "text": "From 2024-2025 certain states (e.g., Colorado) require businesses to honour universal opt-out mechanisms (such as Global Privacy Control). Sabsus intends to respect such signals for all U.S. users whenever technically feasible."
+        },
+        "B7": {
+          "title": "B7. Data Security",
+          "text": "State laws mandate \"reasonable security.\" See § 9.5 of our main Policy: we implement encryption, access controls, and other industry-standard safeguards. We will notify affected users and authorities of any data breach as required by state breach-notification statutes."
+        },
+        "B8": {
+          "title": "B8. Minors",
+          "text": "If your state grants special rights to minors (similar to California's right to delete posted content), Sabsus extends equivalent protections nationwide."
+        },
+        "B9": {
+          "title": "B9. Contact",
+          "text": "In addition to e-mail, U.S. residents may mail written requests to our California address (see § 10.12 of the Terms). The date of submission will be the date we receive the letter. Sabsus strives to uniformly respect the privacy rights of all U.S. users, even where a particular state law has yet to take effect. If you have questions about how your specific state law applies, please contact us—we will provide the relevant details."
+        }
+      },
+      "appendixC": {
+        "title": "Appendix C – Additional Terms for Users in Canada",
+        "intro": "hese provisions take into account Canadian privacy legislation, including the federal PIPEDA and substantially-similar provincial acts (e.g., Alberta PIPA, British Columbia PIPA, Québec Act 25), as they apply to Sabsus' commercial activities with Canadian residents.",
+        "C1": {
+          "title": "C1. Consent to Collection & Processing",
+          "text": [
+            "Canadian law requires an informed consent for the collection, use and disclosure of personal information, with limited exceptions.",
+            "● Implied consent. When you voluntarily provide information in order to use the Sabsus Platform—e.g., you enter a phone number so we can confirm your order—we treat this as implied consent for obvious purposes.",
+            "● Express consent. For any use beyond the obvious (or for sensitive information) we will ask for explicit opt-in. Example: receiving marketing e-mails—unless you actively subscribe, we will not send them.",
+            "● You may withdraw consent at any time by contacting us, but this may limit our ability to deliver the Service (e.g., without your contact data we cannot fulfil an order)."
+          ]
+        },
+        "C2": {
+          "title": "C2. Your Rights (Canada)",
+          "text": [
+            "Under Canadian privacy principles you have the right to:",
+            "1. Access / transparency – request details about the existence, use and disclosure of your personal information and obtain a copy (PIPEDA requires a reply within ~30 days).",
+            "2. Correction – have inaccurate or incomplete information amended; we will also notify third parties to whom we disclosed it, where appropriate.",
+            "3. Complaint – lodge a complaint with us; if unresolved, you may bring it to the Office of the Privacy Commissioner of Canada (OPC)."
+          ]
+        },
+        "C3": {
+          "title": "C3. Restrictions on Third-Party Transfer",
+          "text": "We remain accountable for personal information transferred to service-providers and contractually require them to afford comparable protection. Data may be disclosed only for the purposes set out in § 9.6 of the Privacy Policy."
+        },
+        "C4": {
+          "title": "C4. Cross-Border Transfers & Storage outside Canada",
+          "text": "Your information may be stored or processed outside Canada, including in the United States. While abroad, data may be subject to the laws of that country (e.g., U.S. Patriot Act). PIPEDA permits such transfers provided users are notified – this notice fulfils that obligation. We employ safeguards (encryption, contractual clauses, etc.) regardless of location. If you require data to remain solely in Canada, unfortunately Sabsus cannot guarantee this; by continuing to use the Service you consent to cross-border processing."
+        },
+        "C5": {
+          "title": "C5. Language",
+          "text": "This agreement is provided in Russian at your request. Upon demand we can provide an English or French version (notably for francophone Québec residents). Please indicate your preferred language for privacy communications."
+        },
+        "C6": {
+          "title": "C6. Délégué à la protection des renseignements personnels (Québec)",
+          "text": "Our Data Protection Officer (DPO) acts as the personal-information officer under Québec Act 25. Contact: privacy@sabsus.com. Ultimate accountability remains with Sabsus' CEO, but authority is delegated to the DPO."
+        },
+        "C7": {
+          "title": "C7. Privacy Impact Assessments (Québec)",
+          "text": "We conduct internal PIAs when implementing new technologies that may affect sensitive information or involve cross-border transfers, as required by Québec law."
+        },
+        "C8": {
+          "title": "C8. Policy Updates",
+          "text": "Material changes will be announced in advance (see § 9.11 of the main Policy). Canadian users will receive clear notice."
+        },
+        "C9": {
+          "title": "C9. Marketing & CASL Compliance",
+          "text": "All commercial electronic messages to Canadian recipients comply with CASL: sent only with express consent or an existing business relationship, clearly identify Sabsus, and include an easy unsubscribe link."
+        },
+        "C10": {
+          "title": "C10. Questions",
+          "text": [
+            "E-mail: privacy@sabsus.com",
+            "OPC website: www.priv.gc.ca | Toll-free: 1-800-282-1376"
+          ]
+        }
+      },
+      "appendixD": {
+        "title": "Appendix D – Additional Terms for Users in the EU / EEA",
+        "intro": "These provisions ensure compliance with the EU General Data Protection Regulation (GDPR) for Users located in the European Union or European Economic Area.",
+        "D1": {
+          "title": "D1. Data Controller",
+          "text": "Controller: Sabsus, Inc., 2560 N Buena Vista St., Burbank CA 91504, USA (see § 10.12)."
+        },
+        "D2": {
+          "title": "D2. EU Representative (Art. 27 GDPR)",
+          "text": [
+            "We have appointed an EU representative: GDPR-Rep.eu [Full address of representative in an EU Member State]",
+            "E-mail: eu-rep@sabsus.com",
+            "You may contact them on matters related to EU data processing."
+          ]
+        },
+        "D3": {
+          "title": "D3. Data Protection Officer",
+          "text": "Voluntarily appointed DPO: privacy@sabsus.com (also indicated in the main Policy)."
+        },
+        "D4": {
+          "title": "D4. Legal Bases for Processing (Art. 6 GDPR)",
+          "text": [
+            "● Performance of a contract – registration, order processing.",
+            "● Consent – marketing e-mails / push notifications, optional geolocation, non-essential cookies.",
+            "● Legitimate interests – analytics, fraud prevention, product improvement (Art. 6 (1)(f); balancing tests performed).",
+            "● Legal obligation – fiscal retention, lawful disclosure.",
+            "● Vital interests / public interest – unlikely, but may apply in emergencies."
+          ]
+        },
+        "D5": {
+          "title": "D5. Data Subject Rights",
+          "text": [
+            "Rights of access, rectification, erasure, restriction, objection, portability, withdrawal of consent, and complaint (Art. 15-23 GDPR).",
+            "Requests: privacy@sabsus.com.",
+            "We reply within 1 month (extendable by two months). Free of charge unless manifestly unfounded / excessive"
+          ]
+        },
+        "D6": {
+          "title": "D6. Right to Lodge a Complaint",
+          "text": "You may complain to your national Data Protection Authority (contact list available on edpb.europa.eu)."
+        },
+        "D7": {
+          "title": "D7. International Data Transfers",
+          "text": [
+            "Personal data are transferred to the USA:",
+            "● Standard Contractual Clauses (SCC) approved by the European Commission are incorporated into all relevant contracts .",
+            "● Additional safeguards (encryption, access controls) are applied.",
+            "● Sabsus is evaluating certification under the EU-U.S. Data Privacy Framework; we will update this Appendix upon certification."
+          ]
+        },
+        "D8": {
+          "title": "D8. Mandatory / Optional Data",
+          "text": "Compulsory fields are marked during collection; refusing to provide them may prevent us from delivering the Service. Optional fields (e.g., profile photo) can be left blank without functional loss."
+        },
+        "D9": {
+          "title": "D9. Automated Decision-Making",
+          "text": "Sabsus does not engage in solely automated decision-making with legal or similarly significant effects as per Art. 22 GDPR. Automated filters (e.g., fraud flags) are subject to human review."
+        },
+        "D10": {
+          "title": "D10. Independent Controllers (Restaurants)",
+          "text": "Partner Restaurants become independent controllers for the order data they receive; they are responsible for any further processing (e.g., their own record-keeping or marketing). Please contact a Restaurant directly about its subsequent use of your data."
+        }
+      },
+      "appendixE": {
+        "title": "Appendix E – Additional Terms for Users in the United Kingdom",
+        "intro": "Post-Brexit, personal data of UK residents is governed by the UK GDPR and the Data Protection Act 2018.",
+        "E1": {
+          "title": "E1. Controller & UK Representative",
+          "text": [
+            "Controller: Sabsus, Inc.",
+            "UK Representative (per Art. 27 UK GDPR): DataRep UK Ltd [London address]",
+            "E-mail: uk-rep@sabsus.com"
+          ]
+        },
+        "E2": {
+          "title": "E2. DPO",
+          "text": "Our DPO covers UK queries as well: privacy@sabsus.com"
+        },
+        "E3": {
+          "title": "E3. Your Rights",
+          "text": "Equivalent to EU rights (see Appendix D5). Requests via the same channels."
+        },
+        "E4": {
+          "title": "E4. Complaints",
+          "text": [
+            "Supervisory authority: Information Commissioner's Office (ICO)",
+            "Website: ico.org.uk | Tel.: +44 303 123 1113 | Address: Wycliffe House, Water Lane, Wilmslow, Cheshire SK9 5AF."
+          ]
+        },
+        "E5": {
+          "title": "E5. International Transfers",
+          "text": "Transfers to the USA rely on the UK Standard Contractual Clauses / International Data Transfer Addendum (IDTA) until an adequacy decision or UK-U.S. framework is adopted"
+        },
+        "E6": {
+          "title": "E6. Age-Appropriate Design",
+          "text": "Although Sabsus targets adults, default privacy-protective settings comply with the UK Age-Appropriate Design Code (e.g., no precise geolocation or marketing without opt-in)."
+        },
+        "E7": {
+          "title": "E7. Marketing (UK PECR)",
+          "text": "Marketing e-mails or SMS to UK users are sent only with prior consent or under a soft opt-in, always providing an unsubscribe option."
+        },
+        "E8": {
+          "title": "E8. Jurisdiction",
+          "text": "If mandatory UK consumer law overrides the California forum clause (§ 10.9), UK consumers may bring proceedings in the courts of England & Wales. We nevertheless aim to resolve disputes amicably."
+        }
+      },
+      "contact": {
+        "title": "How to Contact Us",
+        "text": [
+          "General enquiries: support@sabsus.com",
+          "Privacy / DPO: info@sabsus.com",
+          "Postal address: Sabsus, Inc. 2560 N Buena Vista St. Burbank, CA 91504 USA",
+          "We appreciate your attention to our terms and our commitment to transparency. Thank you for being a Sabsus User!"
+        ]
+      }
+    }
   }
 }
