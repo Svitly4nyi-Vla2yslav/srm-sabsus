@@ -2399,5 +2399,21 @@
         ]
       }
     }
+  },
+    "alert": {
+    "success": "¡Éxito! Su solicitud ha sido enviada.",
+    "error": "¡Error! Por favor, inténtelo más tarde."
+  },
+  "contact2": {
+    "form": {
+      "success": "¡Gracias! Nos pondremos en contacto con usted pronto.",
+      "error": "Error al enviar. Por favor, inténtelo de nuevo."
+    }
+  },
+  "feedback2": {
+    "form": {
+      "success": "¡Gracias por sus comentarios!",
+      "error": "Error al enviar comentarios. Por favor, inténtelo de nuevo."
+    }
   }
 }
