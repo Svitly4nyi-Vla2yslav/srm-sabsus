@@ -36,15 +36,15 @@ const Spline = lazy(() => import('@splinetool/react-spline'));
 const FallbackImage = () => <HeroImage src={HeroIcon} alt="3D Scene" />;
 
 const Hero: React.FC = () => {
-  const { images, trustText, loading,
-    error} = useHeroContent();
+  const { images, trustText, loading, error } = useHeroContent();
+
   const { t } = useTranslation();
   const isMobile = useMediaQuery('(max-width: 768px)');
   if (loading) return <LoadingScreen />;
   if (error) return <ErrorScreen message={error} />;
   return (
     <>
-      <HeroWrapper >
+      <HeroWrapper>
         <Container>
           {isMobile ? (
             <FallbackImage />
@@ -55,8 +55,8 @@ const Hero: React.FC = () => {
                 style={{
                   transition: 'transform 0.5s ease-out',
                   filter: 'blur(0.5px)',
-                  maxWidth: "100%",
-                  overflow: "visible"
+                  maxWidth: '100%',
+                  overflow: 'visible',
                 }}
               />
             </Suspense>
@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
             width: '100%',
           }}
         >
-          <HeroInnovative >
+          <HeroInnovative>
             {t('hero.innovative')} <SpanUnicorn> 🦄</SpanUnicorn>
           </HeroInnovative>
         </motion.div>
@@ -127,7 +127,7 @@ const Hero: React.FC = () => {
                     <ImageAvatar key={i} src={src} alt={`Avatar ${i + 1}`} />
                   ))}
                 </ImageContainer>
-                <TextImageAvatar>{trustText}</TextImageAvatar>
+                {trustText && <TextImageAvatar>{trustText}</TextImageAvatar>}
               </AvatarContainer>
             </motion.div>
           )}

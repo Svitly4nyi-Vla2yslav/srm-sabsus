@@ -127,10 +127,12 @@ const Feedback: React.FC = () => {
     transition: { duration: 0.5, delay: index * 0.1 },
   });
 
-  const { items, loading, error } = useFeedback();
-  const slides = items;
-  if (loading) return <LoadingScreen />;
-  if (error) return <ErrorScreen message={error} />;
+ const { items: slides, loading, error } = useFeedback();
+
+if (loading) return <LoadingScreen />;
+if (error) return <ErrorScreen message={error} />;
+if (!slides || slides.length === 0) return null;
+
   return (
     <MotionWrapper
       initial="hidden"

@@ -7,7 +7,7 @@ const ErrorContainer = styled(motion.div)`
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background: #ff4d4f;
+  background: #000000;
   color: white;
   font-weight: 700;
   font-size: 1.4rem;

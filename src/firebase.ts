@@ -25,34 +25,51 @@ export const useHeroContent = () => {
   const [trustText, setTrustText] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
     const fetchHeroContent = async () => {
       try {
         const docRef = doc(db, 'content', '7BChHRBrC6O4kAHjqnwH');
         const docSnap = await getDoc(docRef);
 
-        if (docSnap.exists()) {
-          const data = docSnap.data();
-          const hero = data.heroSection;
-
-          // Отримуємо зображення
-          const keys = ['image', 'image1', 'image2', 'image3', 'image4'];
-          const imgUrls = await Promise.all(
-            keys.map(k => {
-              const path = hero.images[k];
-              const imgRef = ref(storage, path.replace('gs://sabsusshop.appspot.com/', 'HomePageHeroSection/'));
-              return getDownloadURL(imgRef);
-            })
-          );
-          setImages(imgUrls);
-
-          // Отримуємо текст довіри для поточної мови
-          const lng = localStorage.getItem('i18nextLng') || 'en';
-          const translation = hero.translations?.[lng]?.trustText || '';
-          setTrustText(translation);
+        if (!docSnap.exists()) {
+          setError('Документ не знайдено');
+          return;
         }
+
+        const data = docSnap.data();
+        const hero = data?.heroSection;
+        const imageKeys = ['image', 'image1', 'image2', 'image3', 'image4'];
+
+        if (!hero || !hero.images) {
+          console.warn('hero або hero.images відсутні');
+          return;
+        }
+
+        const imgUrls = await Promise.all(
+          imageKeys.map(async (k) => {
+            const path = hero.images[k];
+            if (!path) return null;
+
+            try {
+              const imgRef = ref(storage, path.replace('gs://sabsusshop.appspot.com/', 'HomePageHeroSection/'));
+              return await getDownloadURL(imgRef);
+            } catch (e) {
+              console.warn(`Не вдалося завантажити зображення ${k}:`, e);
+              return null;
+            }
+          })
+        );
+
+        const filtered = imgUrls.filter(Boolean) as string[];
+        setImages(filtered);
+
+        const lng = localStorage.getItem('i18nextLng') || 'en';
+        const translation = hero.translations?.[lng]?.trustText || '';
+        setTrustText(translation);
+
       } catch (err: any) {
-        console.error("Помилка отримання даних з Firebase:", error);
+        console.error("Помилка отримання даних з Firebase:", err);
         setError(err.message || 'Помилка при завантаженні');
       } finally {
         setLoading(false);
@@ -213,12 +230,14 @@ type CarouselItem = {
 type PartnersBannerData = {
   carousels: CarouselItem[];
   partners: string[]; // масив gs:// посилань
+  trustedText: string; // текст з перекладами
 };
 
 export const usePartnersBannerData = () => {
   const [data, setData] = useState<PartnersBannerData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { i18n } = useTranslation(); // Додаємо хук для мультимовності
 
   useEffect(() => {
     const fetchPartnersBanner = async () => {
@@ -227,61 +246,77 @@ export const usePartnersBannerData = () => {
         const docSnap = await getDoc(docRef);
 
         if (!docSnap.exists()) {
-          setError("Документ не знайдено");
+          setError("Document not found");
           setLoading(false);
           return;
         }
 
         const partnersBanner = docSnap.data().partnersBanner;
-        if (
-          !partnersBanner ||
-          !Array.isArray(partnersBanner.carousels) ||
-          !Array.isArray(partnersBanner.partners)
-        ) {
-          setError("Структура partnersBanner не відповідає очікуваній");
+        if (!partnersBanner) {
+          setError("Invalid partners banner structure");
           setLoading(false);
           return;
         }
 
-        // Функція конвертації gs:// посилання у https://
-        const convertGsUrlToHttps = async (gsUrl: string): Promise<string> => {
-          // Видаляємо gs://, бо ref приймає шлях від кореня
-          const path = gsUrl.replace('gs://sabsusshop.appspot.com/', '');
-          const storageRef = ref(storage, path);
-          return getDownloadURL(storageRef);
+        // Отримуємо поточну мову
+        const currentLanguage = i18n.language || 'en';
+
+        // Функція для безпечного отримання URL
+        const getValidImageUrl = async (gsUrl: string): Promise<string | null> => {
+          if (!gsUrl || !gsUrl.startsWith('gs://')) return null;
+          
+          try {
+            const path = gsUrl.replace('gs://sabsusshop.appspot.com/', '');
+            if (!path) return null;
+            
+            const storageRef = ref(storage, path);
+            return await getDownloadURL(storageRef);
+          } catch (err) {
+            console.error('Error converting image URL:', gsUrl, err);
+            return null;
+          }
         };
 
-        // Конвертуємо всі carousels imageUrl
-        const carouselsHttps: CarouselItem[] = await Promise.all(
-          partnersBanner.carousels.map(async (item: CarouselItem) => ({
-            id: item.id,
-            link: item.link,
-            imageUrl: await convertGsUrlToHttps(item.imageUrl),
-          }))
-        );
+        // Обробка каруселі
+        const carouselsPromises = partnersBanner.carousels?.map(async (item: any) => {
+          const imageUrl = await getValidImageUrl(item.imageUrl);
+          return imageUrl ? { ...item, imageUrl } : null;
+        }) || [];
 
-        // Конвертуємо partners масив (gs:// strings) в https:// масив
-        const partnersHttps: string[] = await Promise.all(
-          partnersBanner.partners.map((gsUrl: string) => convertGsUrlToHttps(gsUrl))
-        );
+        // Обробка партнерів
+        const partnersPromises = partnersBanner.partners?.map(getValidImageUrl) || [];
+
+        const [carouselsResults, partnersResults] = await Promise.all([
+          Promise.all(carouselsPromises),
+          Promise.all(partnersPromises)
+        ]);
+
+        // Фільтруємо null значення
+        const carousels = carouselsResults.filter(Boolean) as CarouselItem[];
+        const partners = partnersResults.filter(Boolean) as string[];
+
+        // Отримуємо текст для поточної мови
+        const trustedText = partnersBanner.trustedText?.[currentLanguage] || 
+                          partnersBanner.trustedText?.en || 
+                          null;
 
         setData({
-          carousels: carouselsHttps,
-          partners: partnersHttps,
+          carousels,
+          partners,
+          trustedText
         });
       } catch (err: any) {
-        setError("Помилка при завантаженні: " + err.message);
+        setError(err.message || "Failed to load data");
       } finally {
         setLoading(false);
       }
     };
 
     fetchPartnersBanner();
-  }, []);
+  }, [i18n.language]); // Додаємо залежність від мови
 
   return { data, loading, error };
 };
-
 
 export const useVideoContent = (deviceType: 'mobile' | 'tablet' | 'desktop' = 'desktop') => {
   const [videoUrl, setVideoUrl] = useState<string>("");

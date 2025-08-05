@@ -6,7 +6,7 @@ import logo from '../../../assets/icons/logo-srm.svg';
 import Tools from '../../../assets/icons/Toolbar Group.svg';
 import point from '../../../assets/icons/Traffic Lights (Big Sur).svg';
 import video from '../../../assets/video/GloryToUkraine.webm';
-import BackgroundImage from '../../../assets/icons/Costomer/VideoBackground.png';
+import BackgroundImage from '../../../assets/icons/video-prev.png';
 import ControlFast from '../../../assets/icons/Costomer/Seconadry Buttons copy.svg';
 import ControlRewind from '../../../assets/icons/Costomer/Seconadry Buttons.svg';
 import { useTranslation } from 'react-i18next';
