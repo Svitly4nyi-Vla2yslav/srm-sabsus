@@ -125,19 +125,29 @@ export interface FeedbackItem {
   id: string;
   name: string;
   position: string;
+  feedbackTitle: string;
   text: string;
   avatarUrl: string;
   iconUrl: string;
 }
 
+export interface RatingItem {
+  value: string;
+  source: string;
+}
+
 export const useFeedback = () => {
   const [items, setItems] = useState<FeedbackItem[]>([]);
+  const [ratings, setRatings] = useState<RatingItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { i18n } = useTranslation();
+  const [feedbackTitle, setFeedbackTitle] = useState<string>('');
 
   useEffect(() => {
     const fetchFeedback = async () => {
       try {
+        setLoading(true);
         const docRef = doc(db, 'content', '7BChHRBrC6O4kAHjqnwH');
         const snap = await getDoc(docRef);
 
@@ -147,24 +157,47 @@ export const useFeedback = () => {
         }
 
         const data = snap.data();
-        const section = data.feedbackSection;
+
+        // Отримуємо рейтинги
+        const ratingsData = data?.feedbackSection?.ratings || [];
+        setRatings(ratingsData.map((rating: any) => ({
+          value: rating.value || '',
+          source: rating.source || ''
+        })));
+
+        // Отримуємо заголовок
         const lng = localStorage.getItem('i18nextLng') || 'en';
+        const title = data?.feedbackSection?.ratingsFeedback?.[lng]?.title || '';
+        setFeedbackTitle(title);
+
+        // Отримуємо відгуки з перевіркою шляхів
+        const section = data.feedbackSection || {};
         const arr = section.translations?.[lng] || [];
 
-        const full = await Promise.all(
-          arr.map(async (it: any) => {
-            const { avatar, icon, text, name, position, id } = it;
-            const aRef = ref(storage, avatar);
-            const iRef = ref(storage, icon);
-            const [avatarUrl, iconUrl] = await Promise.all([
-              getDownloadURL(aRef),
-              getDownloadURL(iRef),
-            ]);
-            return { id, name, position, text, avatarUrl, iconUrl };
-          })
-        );
+        if (arr.length > 0) {
+          const full = await Promise.all(
+            arr.map(async (it: any) => {
+              try {
+                const { avatar, icon, text, name, position, id } = it;
 
-        setItems(full);
+                // Перевіряємо, чи шляхи не є кореневими
+                if (!avatar || !icon) return null;
+
+                const aRef = ref(storage, avatar);
+                const iRef = ref(storage, icon);
+                const [avatarUrl, iconUrl] = await Promise.all([
+                  getDownloadURL(aRef),
+                  getDownloadURL(iRef),
+                ]);
+                return { id, name, position, text, avatarUrl, iconUrl };
+              } catch (err) {
+                console.error('Error loading media:', err);
+                return null;
+              }
+            })
+          );
+          setItems(full.filter(Boolean) as FeedbackItem[]);
+        }
       } catch (err: any) {
         console.error('Помилка fetchFeedback:', err);
         setError(err.message || 'Помилка при завантаженні');
@@ -174,9 +207,16 @@ export const useFeedback = () => {
     };
 
     fetchFeedback();
-  }, []);
+  }, [i18n.language]);
 
-  return { items, loading, error };
+  return {
+    items,
+    ratings,
+    feedbackTitle,
+    hasData: items.length > 0 || ratings.length > 0 || !!feedbackTitle,
+    loading,
+    error
+  };
 };
 
 
@@ -264,11 +304,11 @@ export const usePartnersBannerData = () => {
         // Функція для безпечного отримання URL
         const getValidImageUrl = async (gsUrl: string): Promise<string | null> => {
           if (!gsUrl || !gsUrl.startsWith('gs://')) return null;
-          
+
           try {
             const path = gsUrl.replace('gs://sabsusshop.appspot.com/', '');
             if (!path) return null;
-            
+
             const storageRef = ref(storage, path);
             return await getDownloadURL(storageRef);
           } catch (err) {
@@ -296,9 +336,9 @@ export const usePartnersBannerData = () => {
         const partners = partnersResults.filter(Boolean) as string[];
 
         // Отримуємо текст для поточної мови
-        const trustedText = partnersBanner.trustedText?.[currentLanguage] || 
-                          partnersBanner.trustedText?.en || 
-                          null;
+        const trustedText = partnersBanner.trustedText?.[currentLanguage] ||
+          partnersBanner.trustedText?.en ||
+          null;
 
         setData({
           carousels,
@@ -337,8 +377,8 @@ export const useVideoContent = (deviceType: 'mobile' | 'tablet' | 'desktop' = 'd
 
         // Отримуємо посилання для поточного пристрою та мови
         const currentLanguage = i18n.language || "en";
-        const videoPath = videosSection[`${currentLanguage}_${deviceType}`] || 
-                         videosSection[currentLanguage];
+        const videoPath = videosSection[`${currentLanguage}_${deviceType}`] ||
+          videosSection[currentLanguage];
 
         if (!videoPath) throw new Error(`Відео не знайдено`);
 

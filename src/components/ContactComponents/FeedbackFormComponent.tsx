@@ -8,6 +8,7 @@ import { CardButtonText } from '../AllinOneSRM/AllinOneSRM.styled';
 import star from '../../assets/icons/Bellhop.svg';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
+import { Alert, AlertType } from './Alert';
 const FeedbackWrapper = styled.div`
   margin: 80px auto;
   max-width: 1200px;
@@ -186,6 +187,13 @@ const FeedbackFormComponent: React.FC = () => {
     scheduleCall: false,
   });
 
+  const [alert, setAlert] = useState<{
+    type: AlertType;
+    message: string;
+    show: boolean;
+  }>({ type: 'success', message: '', show: false });
+
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -201,28 +209,36 @@ const FeedbackFormComponent: React.FC = () => {
     }));
   };
 
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  try {
-    await addDoc(collection(db, 'feedbackMessages'), {
-      ...formData,
-      createdAt: serverTimestamp(),
-    });
-    alert('Дані успішно надіслано!');
-    setFormData({
-      name: '',
-      company: '',
-      email: '',
-      phone: '',
-      locations: '',
-      message: '',
-      scheduleCall: false,
-    });
-  } catch (error: any) {
-    alert('Помилка при відправці: ' + error.message);
-  }
-};
+    try {
+      await addDoc(collection(db, 'feedbackMessages'), {
+        ...formData,
+        createdAt: serverTimestamp(),
+      });
+      setAlert({
+        type: 'success',
+        message: t('feedback2.form.success'),
+        show: true,
+      });
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        locations: '',
+        message: '',
+        scheduleCall: false,
+      });
+    } catch (error: any) {
+       setAlert({
+        type: 'error',
+        message: t('feedback2.form.error'),
+        show: true,
+      });
+    }
+  };
   return (
     <FeedbackWrapper>
       <motion.div
@@ -331,6 +347,13 @@ const FeedbackFormComponent: React.FC = () => {
           </FeedbackForm>
         </FeedbackContainer>
       </motion.div>
+       {alert.show && (
+        <Alert
+          type={alert.type}
+          message={alert.message}
+          onClose={() => setAlert(prev => ({ ...prev, show: false }))}
+        />
+      )}
     </FeedbackWrapper>
   );
 };

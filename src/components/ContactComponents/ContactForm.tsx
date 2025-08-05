@@ -8,6 +8,7 @@ import { ResultMainTextDescription } from '../ResultsFromBusinesses/ResultsFromB
 import { useTranslation } from 'react-i18next';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
+import { Alert, AlertType } from './Alert';
 
 export const ContactWrapper = styled.div`
   margin: 0 auto;
@@ -350,7 +351,11 @@ const ContactForm: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const linkRef = useRef<HTMLAnchorElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+ const [alert, setAlert] = useState<{
+    type: AlertType;
+    message: string;
+    show: boolean;
+  }>({ type: 'success', message: '', show: false });
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -385,14 +390,25 @@ const ContactForm: React.FC = () => {
 
       setEmail('');
       setTeammates('');
+
+        setAlert({
+        type: 'success',
+        message: t('contact2.form.success'),
+        show: true,
+      }); 
+
       const link = document.createElement('a');
       link.href = 'https://sabsus.app/registrcompany/web/PRO';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.click();
     } catch (error) {
-      console.error('Помилка при відправці до Firestore:', error);
-      alert('Сталася помилка. Спробуйте пізніше.');
+      console.error('Error:', error);
+      setAlert({
+        type: 'error',
+        message: t('contact2.form.error'),
+        show: true,
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -524,6 +540,13 @@ const ContactForm: React.FC = () => {
           <HelpCenterText>{t('contact.help.helpText')}</HelpCenterText>
         </motion.div>
       </ContactUsWrapper>
+       {alert.show && (
+        <Alert
+          type={alert.type}
+          message={alert.message}
+          onClose={() => setAlert(prev => ({ ...prev, show: false }))}
+        />
+      )}
     </ContactWrapper>
   );
 };
