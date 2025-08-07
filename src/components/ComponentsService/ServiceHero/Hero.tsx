@@ -7,7 +7,7 @@ import {
   HeroTitle,
 } from '../../Hero/Hero.styled';
 import phone from '../../../assets/icons/cards/Mobile Phone.svg';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import costomer from '../../../assets/icons/costomer.png';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
