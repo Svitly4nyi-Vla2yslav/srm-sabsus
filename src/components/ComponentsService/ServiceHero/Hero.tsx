@@ -14,14 +14,13 @@ import { useTranslation } from 'react-i18next';
 import { CardButtonText } from '../../PricePlan/PricePlan.styled';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Spline from '@splinetool/react-spline';
-import { ShadowRight } from '../../Feedback/Feedback.styled';
 
 export const HeroWrapper = styled.div`
   margin: 0 auto;
-  margin-top: 450px;
+  margin-top: 100px;
   width: 100%;
   height: 100%;
-  margin-bottom: -450px;
+  margin-bottom: 0px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -29,73 +28,60 @@ export const HeroWrapper = styled.div`
   overflow: visible;
 
   @media screen and (min-width: 768px) {
-    margin-top: 400px;
+    padding-top: 120px;
     margin-bottom: 100px;
   }
 
   @media screen and (min-width: 1440px) {
-    margin-top: 370px;
-    
+    padding-top: 0%;
+    margin-top: 0;
+    margin-bottom: 0px;
+    margin-top: 0px !important;
   }
 
-    @media (min-width: 1920px) {
-   margin-top: 400px;
+  @media (min-width: 1920px) {
   }
 `;
 
-const rotateY = keyframes`
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-`;
 
 const PerspectiveWrapper = styled.div`
   perspective: 1900px;
   display: flex;
   justify-content: center;
+   margin: 0 auto;
 `;
 
 const Image3DBox = styled.div`
-  width: 94vh;
-  height: 100vw;
-margin-bottom: -400px;
+  width: 100vh; /* Змінюємо на 100% ширини батьківського контейнера */
+  max-width: 600px; /* Максимальна ширина для більших екранів */
+  aspect-ratio: 1/1; /* Зберігаємо квадратні пропорції */
   position: relative;
   transform-style: preserve-3d;
-  // animation: ${rotateY} 15s linear infinite;
   backface-visibility: hidden;
+  margin: 0 auto; /* Центруємо по горизонталі */
 
-    @media screen and (min-width: 768px) {
-    top: 400px;
-    left: 20%;
-   width: 100vh;
-  height: 100vh;
-
+  @media screen and (min-width: 768px) {
+    max-width: 800px;
+    margin-left: 10%;
+    margin-top: 0;
   }
 
   @media screen and (min-width: 1440px) {
-   top: 500px;
+    max-width: 1900px;
+      width: 100% !important;
+    height: 100% !important;
+   left: 40%;
+    margin-top: 10%;
   }
 `;
 
 const Front = styled.img`
-  // position: absolute;
-  // left: 0%;
-  // width: 70%;
-  // height: 70%;
+  width: 100%; /* Займає всю ширину контейнера */
+  height: auto; /* Автоматична висота для збереження пропорцій */
   transform: rotate(347deg);
-  backface-visibility: hidden;
-      @media screen and (min-width: 768px) {
-   width: 60vh;
-  height: 60vh;
-
-  }
-
-  @media screen and (min-width: 1440px) {
-  
-  }
+  z-index: 1;
+  backface-visibility: visible;
+  object-fit: contain; /* Забезпечує повне відображення зображення */
 `;
 
 // const Back = styled.img`
@@ -108,58 +94,45 @@ const Front = styled.img`
 // `;
 
 export const CostomerWrapp = styled.div`
-  position: absolute;
-  top: 227px;
+  position: relative; /* Змінюємо absolute на relative */
+  width: 100%;
+  max-width: 1200px; /* Фіксуємо максимальну ширину контенту */
+  margin: 0 auto; /* Центруємо контент */
+  padding: 327px 20px 0; /* Відступи: зверху, з боків */
+  box-sizing: border-box;
+  z-index: 2;
 
-   @media screen and (min-width: 768px) {
-     top: 100px;
-   }
+  @media screen and (min-width: 768px) {
+    padding-top: 400px;
+  }
 
   @media screen and (min-width: 1440px) {
-    top: 227px;
-    margin-top: 100px;
+    padding-top: 527px;
   }
 
   @media (min-width: 1920px) {
-   margin-top: 500px;
+    padding-top: 650px; /* Замість 500px для кращої адаптації */
   }
 `;
 
 export const Container = styled.div`
-  position: relative; /* Змінюємо на relative */
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  z-index: -1;
-  overflow: visible;
-  top: -750px;
-
- 
+  height: 100vw;
+  z-index: 0;
 
   iframe,
   canvas {
     width: 100% !important;
-    height: auto !important;
-    display: block;
-    position: relative;
-    z-index: 1;
-    object-fit: contain; /* Змінюємо на contain для коректного відображення */
-    margin: 0 auto;
+    height: 100% !important;
+    object-fit: cover;
   }
 
   @media screen and (max-width: 767px) {
-    height: 100vh;
-
-
-
     iframe,
     canvas {
-      height: 100% !important;
-      object-fit: cover;
       pointer-events: none;
       opacity: 0.7;
     }
@@ -168,34 +141,25 @@ export const Container = styled.div`
   @media screen and (min-width: 768px) {
     iframe,
     canvas {
-      width: 100vw !important; /* Дозволяємо розширення за межі екрану */
-      height: 100vh !important;
-      left: 50%;
-      top: 430px;
-      transform: translateX(-50%);
+      position: relative;
+      top: 0;
+      z-index: 69;
+      bottom: 100px;
+      transform: none;
     }
   }
 
   @media screen and (min-width: 1440px) {
-    margin-bottom: 400px;
     iframe,
     canvas {
-    top: 550px;
-      // max-width: 80vw;
+     width: 40% !important;
+    height: 40% !important;
+    object-fit: cover;
+    left: 30% !important; /* Центруємо по горизонталі */
+    top: 0 !important; /* Перевизначаємо будь-які інші стилі */
+      transform: none !important; 
     }
   }
-
-  @media (min-width: 1920px) {
-  margin-bottom: 800px;
-    iframe,
-    canvas {
-    top: -140px;
-    margin-top: 300px;
-     
-    }
-  
-  }
-
 `;
 
 const Hero: React.FC = () => {
@@ -223,7 +187,7 @@ const Hero: React.FC = () => {
   const handleSplineLoad = () => {
     const elapsed = Date.now() - startTimeRef.current;
     const remainingTime = Math.max(0, MIN_LOADING_TIME - elapsed);
-    
+
     // Встановлюємо таймер для оновлення стану після залишкового часу
     timerRef.current = setTimeout(() => {
       setSplineReady(true);
@@ -241,24 +205,20 @@ const Hero: React.FC = () => {
           </PerspectiveWrapper>
         ) : (
           <>
-            <div style={{
-             
-              display: (minLoadingTimePassed && splineReady) ? 'none' : 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              zIndex: 10,
-              transition: 'opacity 0.5s ease-out',
-              opacity: (minLoadingTimePassed && splineReady) ? 0 : 1
-            }}>
+            <div
+              style={{
+                display: minLoadingTimePassed && splineReady ? 'none' : 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start', // Змінено з 'center' на 'flex-start'
+                zIndex: 60,
+                transition: 'opacity 0.5s ease-out',
+                opacity: minLoadingTimePassed && splineReady ? 0 : 1,
+                marginTop: 0, // Додано для чіткого позиціонування
+              }}
+            >
               <PerspectiveWrapper>
                 <Image3DBox>
-                  <Front 
-                    src={costomer} 
-                    alt="Loading illustration" 
-                    style={{ 
-                
-                    }}
-                  />
+                  <Front src={costomer} alt="Loading illustration" />
                 </Image3DBox>
               </PerspectiveWrapper>
             </div>
@@ -266,22 +226,11 @@ const Hero: React.FC = () => {
             <Spline
               scene="https://prod.spline.design/IkvUuAcfU3TUW6Zw/scene.splinecode"
               style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100vh',
-                transform: 'scale(0.6)',
-                transformOrigin: 'center',
-                transition: 'opacity 0.5s ease-out',
-                filter: 'blur(0.5px)',
-                overflow: 'visible',
-                zIndex: 0,
-                opacity: (minLoadingTimePassed && splineReady) ? 1 : 0
+    
+                opacity: minLoadingTimePassed && splineReady ? 1 : 0,
               }}
               onLoad={handleSplineLoad}
             />
-            <ShadowRight style={{ width: 400, backgroundColor: 'black' }} />
           </>
         )}
       </Container>
