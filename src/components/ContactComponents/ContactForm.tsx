@@ -24,7 +24,6 @@ export const ContactWrapper = styled.div`
     width: 100%;
   }
   @media screen and (min-width: 1440px) {
-  
   }
 `;
 
@@ -39,13 +38,11 @@ export const CostomerWrapp = styled.div`
   text-align: center;
   z-index: 3;
 
-
   @media screen and (min-width: 768px) {
     max-width: 518px;
     width: 100%;
   }
   @media screen and (min-width: 1440px) {
-  
   }
 `;
 
@@ -351,7 +348,7 @@ const ContactForm: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const linkRef = useRef<HTMLAnchorElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
- const [alert, setAlert] = useState<{
+  const [alert, setAlert] = useState<{
     type: AlertType;
     message: string;
     show: boolean;
@@ -391,14 +388,15 @@ const ContactForm: React.FC = () => {
       setEmail('');
       setTeammates('');
 
-        setAlert({
+      setAlert({
         type: 'success',
         message: t('contact2.form.success'),
         show: true,
-      }); 
+      });
 
       const link = document.createElement('a');
-      link.href = 'https://sabsus.app/registrcompany/web/PRO';
+      link.href =
+        'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0ECvny1g7NCJmXnJvrxrsWKg2y5eT86f1mR9n1l9UrYrnw-7NiuMqc4TMfcRIFUTVGIyVyufmB?gv=true';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.click();
@@ -497,7 +495,7 @@ const ContactForm: React.FC = () => {
         </Label>
         <a
           ref={linkRef}
-          href="https://sabsus.app/registrcompany/web/PRO"
+          href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0ECvny1g7NCJmXnJvrxrsWKg2y5eT86f1mR9n1l9UrYrnw-7NiuMqc4TMfcRIFUTVGIyVyufmB?gv=true"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -540,7 +538,7 @@ const ContactForm: React.FC = () => {
           <HelpCenterText>{t('contact.help.helpText')}</HelpCenterText>
         </motion.div>
       </ContactUsWrapper>
-       {alert.show && (
+      {alert.show && (
         <Alert
           type={alert.type}
           message={alert.message}
