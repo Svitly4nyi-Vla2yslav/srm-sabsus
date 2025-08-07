@@ -23,17 +23,15 @@ export const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-margin-bottom: -700px;
- overflow: visible;
-  @media screen and (min-width: 768px) {
 
-    width: 100vh;
-    margin-top: 100px;
-    margin-bottom: 100px;
+  overflow: visible;
+  @media screen and (min-width: 768px) {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   @media screen and (min-width: 1440px) {
-    margin-top: 100px;
+    margin-top: 0px;
     margin-bottom: 150px;
   }
 `;
@@ -48,7 +46,7 @@ export const Container = styled.div`
   align-items: center;
   z-index: -1;
   overflow: visible;
-  top: -100px;
+  top: 0%;
 
   iframe,
   canvas {
@@ -56,6 +54,7 @@ export const Container = styled.div`
     height: auto !important;
     display: block;
     position: relative;
+    top: 0;
     z-index: 1;
     object-fit: contain; /* Змінюємо на contain для коректного відображення */
     margin: 0 auto;
@@ -75,32 +74,33 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-  margin-top: -100px;
+    margin-top: 0px;
     iframe,
     canvas {
+      position: relative;
       width: 100vw !important; /* Дозволяємо розширення за межі екрану */
       height: 100vh !important;
       left: 50%;
-      top: -60px;
+      top: 0px;
       transform: translateX(-50%);
     }
   }
 
   @media screen and (min-width: 1440px) {
-  margin-top: -180px;
-  margin-bottom: -1800px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     iframe,
     canvas {
+      width: 100vw !important; /* Дозволяємо розширення за межі екрану */
+      height: 100vh !important;
       top: 0px;
+      bottom: 0px;
     }
   }
 
   @media (min-width: 1920px) {
-    margin-bottom: -1200px;
     iframe,
     canvas {
-      top: -250px;
-      margin-top: 0px;
     }
   }
 `;
@@ -128,19 +128,21 @@ const SparkleLayer = styled.div`
 
 export const CostomerWrapp = styled.div`
   position: absolute;
-  top: 400px;
+  padding-top: 150vh;
+  top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
+  max-width: 760px;
   text-align: center;
   @media screen and (min-width: 1440px) {
-    top: 500px;
+    max-width: 1440px;
+    top: 5px;
+    padding-top: 180vh;
   }
 
   @media (min-width: 1920px) {
-    margin-top: 200px;
+ 
   }
 `;
 
@@ -153,13 +155,14 @@ const FallbackImage = () => {
   }));
 
   return (
-    <div style={{ position: 'relative', width: '100%', top: '-20%' }}>
+    <div style={{ position: 'relative', width: '100%' }}>
       <img
         src={HeroIcon}
         alt="3D Scene"
         style={{
           width: 'auto',
-          height: '778px',
+          position: 'relative',
+          // height: '778px',
           filter: 'blur(0.5px)',
           display: 'block',
           margin: '0 auto',
@@ -187,8 +190,8 @@ const Hero: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 767px)');
   const { t } = useTranslation();
   return (
-    <HeroWrapper style={{ marginTop: 250 }}>
-      <Container id='ap' >
+    <HeroWrapper style={{}}>
+      <Container id="ap">
         {isMobile ? (
           <FallbackImage />
         ) : (

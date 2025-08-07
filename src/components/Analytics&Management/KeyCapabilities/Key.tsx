@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 
 export const KeyWrapper = styled(motion.div)`
   margin: 0 auto;
-  margin-top: 500px;
+  // margin-top: 500px;
   width: 100%;
   height: 100%;
   // margin-bottom: 100px;
@@ -29,7 +29,7 @@ export const KeyWrapper = styled(motion.div)`
   }
   @media screen and (min-width: 1440px) {
       max-width: 1440px;
-      margin-top: 580px;
+      // margin-top: 580px;
   }
 `;
 
