@@ -23,6 +23,7 @@ export const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 50px;
 
   @media screen and (min-width: 768px) {
     width: 100%;
@@ -97,8 +98,8 @@ export const Container = styled.div`
   }
   margin-top: 250px;
   @media screen and (min-width: 1440px) {
-    margin-top: 350px;
-    margin-bottom: 150px;
+    padding-top: 50px;
+  padding-bottom: 150px;
 
     iframe,
     canvas {
@@ -144,6 +145,8 @@ export const CostomerWrapp = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+    width: 100%;
     top: 557px;
   }
 `;

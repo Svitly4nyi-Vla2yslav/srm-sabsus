@@ -24,14 +24,14 @@ export const HeroWrapper = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-     margin-bottom: -250px;
+     margin-bottom: 0px;
   @media screen and (min-width: 1440px) {
-   margin-bottom: -300px;
+   margin-bottom: 0px;
+   
   }
 
     @media (min-width: 1920px) {
-  margin-bottom: -600px;
-  margin-top: -300px;
+
   } 
 `;
 
@@ -42,6 +42,20 @@ export const FullScreenContainer = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: -1;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0px;
+    iframe,
+    canvas {
+      position: relative;
+      width: 100vw !important; /* Дозволяємо розширення за межі екрану */
+      height: 120vh !important;
+      left: 50%;
+      top: 0px;
+      bottom: 90vh;
+      transform: translateX(-50%);
+    }
+  }
 `;
 
 const SplineContainer = styled.div`
@@ -49,11 +63,11 @@ const SplineContainer = styled.div`
   width: 100%;
   height: 100%;
   @media screen and (min-width: 1440px) {
-  margin-top: -70px;
+  margin-top: 0px;
   }
 
   @media (min-width: 1920px) {
-  margin-top: -200px;
+
   } 
 `;
 
@@ -131,12 +145,12 @@ export const CostomerWrapp = styled.div`
   text-align: center;
   z-index: 10;
   @media screen and (min-width: 1440px) {
-  top: 300px;
+  margin-top: 0px;
+  padding-bottom: 120px;
+  
   }
-
     @media (min-width: 1920px) {
-    top: 900px;
-  margin-top: -200px;
+
   } 
 `;
 
