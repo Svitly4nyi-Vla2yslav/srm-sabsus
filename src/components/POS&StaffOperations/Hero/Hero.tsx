@@ -17,29 +17,29 @@ import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 
 export const HeroWrapper = styled.div`
   margin: 0 auto;
+  margin-top: 100px;
   width: 100%;
+  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Додаємо для вертикального центрування */
-  top: 584px;
   overflow: visible;
+  margin-bottom: 100px;
   @media screen and (min-width: 768px) {
-    width: 100%;
-    // margin-top: 400px;
+    padding-top: 0px;
     margin-bottom: 100px;
-    height: auto;
+    margin-top: 0px;
   }
 
   @media screen and (min-width: 1440px) {
-    margin-top: 0px;
-    margin-bottom: 150px;
+    padding-top: 0%;
+    margin-top: 0%;
+    margin-bottom: 450px;
+    margin-top: 0px !important;
   }
 
   @media (min-width: 1920px) {
-    max-width: 1920px;
-    margin: 0px auto ;
   }
 `;
 
@@ -54,9 +54,7 @@ export const Container = styled.div`
   overflow: hidden;
   z-index: -1;
   overflow: visible;
-  top: -750px;
-
- 
+  top: 0px;
 
   iframe,
   canvas {
@@ -70,14 +68,8 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 767px) {
-    height: 100vh;
-
-
-
     iframe,
     canvas {
-      height: 100% !important;
-      object-fit: cover;
       pointer-events: none;
       opacity: 0.7;
     }
@@ -86,10 +78,10 @@ export const Container = styled.div`
   @media screen and (min-width: 768px) {
     iframe,
     canvas {
-      width: 100vw !important; /* Дозволяємо розширення за межі екрану */
-      height: 100vh !important;
+      width: 100vh !important; /* Дозволяємо розширення за межі екрану */
+      height: 100% !important;
       left: 50%;
-      top: 30px;
+      top: 0px;
       transform: translateX(-50%);
     }
   }
@@ -97,20 +89,13 @@ export const Container = styled.div`
   @media screen and (min-width: 1440px) {
     iframe,
     canvas {
-    top: 50px;
-      // max-width: 80vw;
+    top: -70px !important; 
+      width: 100% !important; /* Дозволяємо розширення за межі екрану */
+      height: 100% !important;
+      left: 0;
+      transform: none !important;
     }
   }
-
-  @media (min-width: 1920px) {
-    iframe,
-    canvas {
-    top: -140px;
-     
-    }
-  
-  }
-
 `;
 
 const Sparkle = styled(motion.div)`
@@ -135,18 +120,30 @@ const SparkleLayer = styled.div`
 `;
 
 export const CostomerWrapp = styled.div`
-  position: absolute;
-  top: -100px;
-  // top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative; /* Змінюємо absolute на relative */
+  width: 100%;
+  max-width: 1920px; /* Фіксуємо максимальну ширину контенту */
+  margin: 0 auto; /* Центруємо контент */
+  padding: 27px 20px 0; /* Відступи: зверху, з боків */
+  box-sizing: border-box;
+  z-index: 2;
 
   @media screen and (min-width: 768px) {
-    top: -0px;
+    padding-top: 0px;
+  }
+
+  @media screen and (min-width: 1440px) {
+     position: absolute; /* Тільки для 1440px+ */
+    top: 0; /* Піднімаємо до верху */
+    left: 50%;
+    transform: translateX(-50%); /* Точне центрування */
+    padding-top: 0;
+    margin-top: 550px;
+    width: 100%;
+    max-width: 1440px; /* Оптимальна ширина для великих екранів */
   }
 
   @media (min-width: 1920px) {
-    top: 350px;
   }
 `;
 
@@ -201,7 +198,7 @@ const Hero: React.FC = () => {
           <FallbackImage />
         ) : (
           <Suspense fallback={<FallbackImage />}>
-            <Spline  
+            <Spline
               scene="https://prod.spline.design/weK184EAiAKpQ3YI/scene.splinecode"
               style={{
                 transition: 'transform 0.5s ease-out',
