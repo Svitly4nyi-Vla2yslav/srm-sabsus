@@ -14,6 +14,7 @@ const FeedbackWrapper = styled.div`
   max-width: 1200px;
   padding: 0 20px;
   text-align: center;
+  z-index:500;
 `;
 
 const FeedbackContainer = styled.div`
