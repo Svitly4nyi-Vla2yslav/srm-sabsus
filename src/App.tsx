@@ -18,7 +18,7 @@ import AnalyticsManagement from './pages/ServicePages/AnalyticsManagement';
 import MarketingCustomization from './pages/ServicePages/MarketingCustomization';
 import IntegrationScaling from './pages/ServicePages/IntegrationScaling';
 import ServicesMain from './pages/ServicePages/ServicesMain';
-import { Time } from './components/ScrollToTop';
+// import { Time } from './components/ScrollToTop';
 import { useEffect } from 'react';
 // import { useEffect } from 'react';
 
@@ -166,7 +166,7 @@ export const App: React.FC = () => {
           />
         </Route>
       </Routes>
-      <Time />
+      {/* <Time /> */}
     </>
   );
 };
