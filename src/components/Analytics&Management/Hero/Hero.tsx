@@ -23,8 +23,8 @@ export const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   overflow: visible;
+
   @media screen and (min-width: 768px) {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -37,7 +37,7 @@ export const HeroWrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  position: relative; /* Змінюємо на relative */
+  position: relative;
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
@@ -56,7 +56,7 @@ export const Container = styled.div`
     position: relative;
     top: 0;
     z-index: 1;
-    object-fit: contain; /* Змінюємо на contain для коректного відображення */
+    object-fit: contain;
     margin: 0 auto;
     overflow: visible;
   }
@@ -75,10 +75,11 @@ export const Container = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-top: 0px;
+
     iframe,
     canvas {
       position: relative;
-      width: 100vw !important; /* Дозволяємо розширення за межі екрану */
+      width: 100vw !important;
       height: 100vh !important;
       left: 50%;
       top: 0px;
@@ -89,18 +90,13 @@ export const Container = styled.div`
   @media screen and (min-width: 1440px) {
     margin-top: 0px;
     margin-bottom: 0px;
+
     iframe,
     canvas {
-      width: 100vw !important; /* Дозволяємо розширення за межі екрану */
+      width: 100vw !important;
       height: 100vh !important;
       top: 0px;
       bottom: 0px;
-    }
-  }
-
-  @media (min-width: 1920px) {
-    iframe,
-    canvas {
     }
   }
 `;
@@ -135,14 +131,11 @@ export const CostomerWrapp = styled.div`
   width: 100%;
   max-width: 760px;
   text-align: center;
+
   @media screen and (min-width: 1440px) {
     max-width: 1440px;
     top: 5px;
     padding-top: 180vh;
-  }
-
-  @media (min-width: 1920px) {
- 
   }
 `;
 
@@ -162,7 +155,6 @@ const FallbackImage = () => {
         style={{
           width: 'auto',
           position: 'relative',
-          // height: '778px',
           filter: 'blur(0.5px)',
           display: 'block',
           margin: '0 auto',
@@ -186,11 +178,13 @@ const FallbackImage = () => {
     </div>
   );
 };
+
 const Hero: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 767px)');
   const { t } = useTranslation();
+
   return (
-    <HeroWrapper style={{}}>
+    <HeroWrapper>
       <Container id="ap">
         {isMobile ? (
           <FallbackImage />
@@ -198,45 +192,40 @@ const Hero: React.FC = () => {
           <Suspense fallback={<FallbackImage />}>
             <Spline
               scene="https://prod.spline.design/IIeYQXryqhaB5TjD/scene.splinecode"
-              style={{
-                width: '100%',
-                height: 'auto',
-                maxWidth: '1440px',
-              }}
+              style={{ width: '100%', height: 'auto', maxWidth: '1440px' }}
             />
           </Suspense>
         )}
       </Container>
+
       <CostomerWrapp>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: false, amount: 0.3 }}
-          style={{
-            position: 'relative',
-            zIndex: 1,
-            width: '100%',
-          }}
+          viewport={{ once: true, amount: 0.3 }}
+          style={{ position: 'relative', zIndex: 1, width: '100%' }}
         >
           <HeroInnovative>
             {t('performanceHubHero.innovativeText')}
             <CardButtonText src={Control} alt="💰" />
           </HeroInnovative>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <HeroTitle>{t('performanceHubHero.title')}</HeroTitle>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 0.9 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <ButtonContainer>
             <a

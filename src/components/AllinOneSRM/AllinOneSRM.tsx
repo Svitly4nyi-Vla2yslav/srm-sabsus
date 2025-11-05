@@ -83,40 +83,19 @@ const AllinOneSRM: React.FC = () => {
   const getCardAnimation = (index: number) => {
     switch (index) {
       case 0:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       case 1:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       case 2:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       case 3:
-        return {
-          initial: { scale: 0.5, opacity: 0 },
-          whileInView: { scale: 1, opacity: 1 },
-        }; // zoom-in
+        return { initial: { scale: 0.5, opacity: 0 }, whileInView: { scale: 1, opacity: 1 } };
       case 4:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       case 5:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
+        return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       case 6:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
+        return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       default:
         return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
@@ -141,33 +120,34 @@ const AllinOneSRM: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
-        {' '}
         <MainText style={{ marginTop: 0, marginBottom: 50 }}>
           {data.mainText}
           <CardButtonText src={icon5} alt="Laptop" />
         </MainText>
       </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <MainTitle style={{ marginTop: 0, marginBottom: 50 }}>
           {data.mainTitle}
         </MainTitle>
       </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
-        {' '}
         <MainTextDescription>{data.description}</MainTextDescription>
       </motion.div>
+
       <CardContainer>
         {data.cards.map((card, index) => (
           <StyledNavLink to={cardLinks[index]} key={index}>
@@ -179,14 +159,13 @@ const AllinOneSRM: React.FC = () => {
                 as={motion.div}
                 {...getCardAnimation(index)}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                key={index}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.15 }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   <CardTitle>{card.title}</CardTitle>
                 </motion.div>
@@ -195,14 +174,12 @@ const AllinOneSRM: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.2 }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   <CardText
                     style={
                       index === 4
-                        ? {
-                            marginBottom: 240,
-                          }
+                        ? { marginBottom: 240 }
                         : {}
                     }
                   >
@@ -214,7 +191,7 @@ const AllinOneSRM: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: index * 0.25 }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   <CardIcon
                     src={cardImages[index]}
@@ -248,7 +225,7 @@ const AllinOneSRM: React.FC = () => {
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.3 }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   <CardButtonContainer>
                     {card.buttons.map((button, btnIndex) => (

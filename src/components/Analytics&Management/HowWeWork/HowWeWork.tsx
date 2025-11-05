@@ -7,12 +7,10 @@ import { useTranslation } from 'react-i18next';
 export const HowWeWorkWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-  // margin-top: 100px;
   width: 100%;
   height: 100%;
   margin-bottom: 100px;
   position: relative;
-  display: flex;
   flex-direction: column;
   align-items: center;
 `;
@@ -43,15 +41,7 @@ export const HowWeWorkMainText = styled(motion.p)`
     rgba(255, 255, 255, 0) 86%
   );
   align-items: center;
-  will-change: transform, opacity; /* Оптимізація анімації */
-
-  @media screen and (min-width: 768px) {
-    /* Додаткові стилі для планшетів */
-  }
-
-  @media screen and (min-width: 1440px) {
-    /* Додаткові стилі для десктопів */
-  }
+  will-change: transform, opacity;
 `;
 
 export const HowWeWorkMainid = styled(motion.h2)`
@@ -103,38 +93,32 @@ export const HowSpanIcon = styled.img`
   font-size: 13px;
   width: 20px;
   margin-left: 6px;
-
   box-shadow:
     inset 0 -8px 24px 0 rgba(255, 255, 255, 0.18),
     inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
     0 4px 8px rgba(0, 0, 0, 0.08),
     0 1px 2px rgba(0, 0, 0, 0.06);
-
   background: linear-gradient(
       315deg,
       rgba(122, 121, 122, 0) 7%,
       rgba(172, 172, 172, 0) 86%
     )
     rgba(255, 255, 255, 0.03);
-
   -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 `;
 
 export const HowWeWorkContainer = styled.div`
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
 
   @media screen and (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100vw;
-    // gap: 24px;
     padding: 0 24px;
     position: relative;
 
-    /* Вертикальні бордери між картками */
     &::before {
       content: '';
       position: absolute;
@@ -142,11 +126,9 @@ export const HowWeWorkContainer = styled.div`
       bottom: 0;
       left: 50%;
       width: 1px;
-      // background-color: rgba(255, 255, 255, 0.25);
       transform: translateX(-50%);
     }
 
-    /* Горизонтальні бордери між рядами */
     &::after {
       content: '';
       position: absolute;
@@ -158,100 +140,36 @@ export const HowWeWorkContainer = styled.div`
       background-color: rgba(255, 255, 255, 0.25);
     }
 
-    /* Індивідуальні ширини для карток на планшеті */
-    & > :nth-child(1) {
-      width: 80%; /* Перша картка менша на 20% */
-    }
-    & > :nth-child(2) {
-      width: 120%; /* Друга картка більша */
-      margin-left: -20%; /* Зсуваємо для вирівнювання */
-    }
-    & > :nth-child(3) {
-      width: 120%; /* Третя картка більша */
-    }
-    & > :nth-child(4) {
-      width: 80%; /* Четверта картка менша */
-      margin-left: 20%; /* Зсуваємо для вирівнювання */
-    }
-    /* Продовжуємо шаблон для решти карток */
-    & > :nth-child(5) {
-      width: 80%;
-    }
-    & > :nth-child(6) {
-      width: 120%;
-      margin-left: -20%;
-    }
-    & > :nth-child(7) {
-      width: 120%;
-    }
-    & > :nth-child(8) {
-      width: 80%;
-      margin-left: 20%;
-    }
+    & > :nth-child(1) { width: 80%; }
+    & > :nth-child(2) { width: 120%; margin-left: -20%; }
+    & > :nth-child(3) { width: 120%; }
+    & > :nth-child(4) { width: 80%; margin-left: 20%; }
+    & > :nth-child(5) { width: 80%; }
+    & > :nth-child(6) { width: 120%; margin-left: -20%; }
+    & > :nth-child(7) { width: 120%; }
+    & > :nth-child(8) { width: 80%; margin-left: 20%; }
   }
 
   @media screen and (min-width: 1440px) {
     display: grid;
-    grid-template-columns: repeat(
-      3,
-      minmax(0, 1fr)
-    ); /* Додано minmax для правильного розподілу простору */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: auto auto auto;
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px; /* Додаємо падінги по боках */
-    box-sizing: border-box; /* Щоб падінги враховувались у загальній ширині */
+    padding: 0 20px;
+    box-sizing: border-box;
 
-    /* Прибираємо бордери для десктопу */
-    &::before,
-    &::after {
-      // display: none;
-    }
+    & > * { width: auto !important; margin-left: 0 !important; }
 
-    /* Скидаємо ширини для десктопу */
-    & > * {
-      width: auto !important;
-      margin-left: 0 !important;
-    }
-
-    /* Розміщення карток для десктопу з бордерами */
-    & > :nth-child(1) {
-      grid-column: 1;
-      border-right: 1px solid rgba(255, 255, 255, 0.25) !important; /* Бордер праворуч */
-    }
-    & > :nth-child(2) {
-      grid-column: 2;
-      border-right: 1px solid rgba(255, 255, 255, 0.25); /* Бордер праворуч */
-    }
-    & > :nth-child(3) {
-      grid-column: 3;
-      /* Без бордера праворуч (остання в рядку) */
-    }
-    & > :nth-child(4) {
-      grid-column: 1;
-      width: 151% !important; /* Широка картка */
-      //?  margin-left: 53%!important; /* Зсуваємо для вирівнювання */
-      border-right: 1px solid rgba(255, 255, 255, 0.25) !important; /* Прибираємо бордер для широкої картки */
-    }
-    & > :nth-child(5) {
-      grid-column: 2;
-      width: 151% !important; /* Широка картка */
-      margin-left: 51% !important; /* Зсуваємо для вирівнювання */
-      border: none; /* Бордер праворуч */
-    }
-    & > :nth-child(6) {
-      grid-column: 1;
-      border-right: 1px solid rgba(255, 255, 255, 0.25); /* Бордер праворуч */
-    }
-    & > :nth-child(7) {
-      grid-column: 2;
-      border-right: 1px solid rgba(255, 255, 255, 0.25) !important; /* Бордер праворуч */
-    }
-    & > :nth-child(8) {
-      grid-column: 3;
-      /* Без бордера */
-    }
+    & > :nth-child(1) { grid-column: 1; border-right: 1px solid rgba(255,255,255,0.25) !important; }
+    & > :nth-child(2) { grid-column: 2; border-right: 1px solid rgba(255,255,255,0.25); }
+    & > :nth-child(3) { grid-column: 3; }
+    & > :nth-child(4) { grid-column: 1; width: 151% !important; border-right: 1px solid rgba(255,255,255,0.25) !important; }
+    & > :nth-child(5) { grid-column: 2; width: 151% !important; margin-left: 51% !important; border: none; }
+    & > :nth-child(6) { grid-column: 1; border-right: 1px solid rgba(255,255,255,0.25); }
+    & > :nth-child(7) { grid-column: 2; border-right: 1px solid rgba(255,255,255,0.25) !important; }
+    & > :nth-child(8) { grid-column: 3; }
   }
 `;
 
@@ -264,7 +182,6 @@ export const Card = styled(motion.div)`
   flex-direction: column;
   position: relative;
 
-  /* Бордер для мобільної версії */
   &:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -279,28 +196,15 @@ export const Card = styled(motion.div)`
     padding: 32px;
     height: 100%;
 
-    /* Прибираємо бордери між картками для планшета */
-    &::after {
-      top: 0%;
-      // display: none;
-    }
+    &::after { top: 0%; }
 
-    /* Додаткові бордери для окремих карток */
-    &:nth-child(odd) {
-      border-right: 1px solid rgba(255, 255, 255, 0.25);
-    }
-    &:nth-child(even) {
-      border-left: 1px solid rgba(255, 255, 255, 0.25);
-    }
+    &:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.25); }
+    &:nth-child(even) { border-left: 1px solid rgba(255,255,255,0.25); }
   }
 
   @media screen and (min-width: 1440px) {
-    &:nth-child(odd) {
-      border-right: none;
-    }
-    &:nth-child(even) {
-      border-left: none;
-    }
+    &:nth-child(odd) { border-right: none; }
+    &:nth-child(even) { border-left: none; }
   }
 `;
 
@@ -322,18 +226,11 @@ export const CardNumber = styled(motion.p)`
       rgba(255, 255, 255, 0) 86%
     ),
     rgba(255, 255, 255, 0.03);
-
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
   color: var(--white-100);
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const CardText = styled(motion.p)`
@@ -342,11 +239,6 @@ export const CardText = styled(motion.p)`
   font-size: 18px;
   line-height: 130%;
   color: var(--white-100);
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const CardDescription = styled(motion.p)`
@@ -354,12 +246,7 @@ export const CardDescription = styled(motion.p)`
   font-weight: 400;
   font-size: 16px;
   color: var(--white-80);
-  @media screen and (min-width: 768px) {
-    font-size: 17px;
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
+  @media screen and (min-width: 768px) { font-size: 17px; }
 `;
 
 export const VerticalDivider = styled.div`
@@ -377,10 +264,8 @@ export const MobileDivider = styled.div`
   position: absolute;
   width: 100vw;
   height: 1px;
-  // background-color: rgba(255, 255, 255, 0.25);
 
   @media screen and (min-width: 768px) {
-    // display: none;
     width: 100vw;
     height: 1px;
     margin: 0 auto;
@@ -393,86 +278,26 @@ const HowWeWork: React.FC = () => {
   const { t } = useTranslation();
 
   const cards = [
-    {
-      id: '1',
-      text: t('howWeWorkSection.cards.card1.title'),
-      description: t('howWeWorkSection.cards.card1.description'),
-    },
-    {
-      id: '2',
-      text: t('howWeWorkSection.cards.card2.title'),
-      description: t('howWeWorkSection.cards.card2.description'),
-    },
-    {
-      id: '3',
-      text: t('howWeWorkSection.cards.card3.title'),
-      description: t('howWeWorkSection.cards.card3.description'),
-    },
-    {
-      id: '4',
-      text: t('howWeWorkSection.cards.card4.title'),
-      description: t('howWeWorkSection.cards.card4.description'),
-    },
-    {
-      id: '5',
-      text: t('howWeWorkSection.cards.card5.title'),
-      description: t('howWeWorkSection.cards.card5.description'),
-    },
-    {
-      id: '6',
-      text: t('howWeWorkSection.cards.card6.title'),
-      description: t('howWeWorkSection.cards.card6.description'),
-    },
-    {
-      id: '7',
-      text: t('howWeWorkSection.cards.card7.title'),
-      description: t('howWeWorkSection.cards.card7.description'),
-    },
-    {
-      id: '8',
-      text: t('howWeWorkSection.cards.card8.title'),
-      description: t('howWeWorkSection.cards.card8.description'),
-    },
+    { id: '1', text: t('howWeWorkSection.cards.card1.title'), description: t('howWeWorkSection.cards.card1.description') },
+    { id: '2', text: t('howWeWorkSection.cards.card2.title'), description: t('howWeWorkSection.cards.card2.description') },
+    { id: '3', text: t('howWeWorkSection.cards.card3.title'), description: t('howWeWorkSection.cards.card3.description') },
+    { id: '4', text: t('howWeWorkSection.cards.card4.title'), description: t('howWeWorkSection.cards.card4.description') },
+    { id: '5', text: t('howWeWorkSection.cards.card5.title'), description: t('howWeWorkSection.cards.card5.description') },
+    { id: '6', text: t('howWeWorkSection.cards.card6.title'), description: t('howWeWorkSection.cards.card6.description') },
+    { id: '7', text: t('howWeWorkSection.cards.card7.title'), description: t('howWeWorkSection.cards.card7.description') },
+    { id: '8', text: t('howWeWorkSection.cards.card8.title'), description: t('howWeWorkSection.cards.card8.description') },
   ];
+
   const getCardAnimation = (index: number) => {
     switch (index) {
-      case 0:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 1:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 2:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 3:
-        return {
-          initial: { scale: 0.5, opacity: 0 },
-          whileInView: { scale: 1, opacity: 1 },
-        }; // zoom-in
-      case 4:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      case 5:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // зліва
-      case 6:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        }; // справа
-      default:
-        return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
+      case 0: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 1: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 2: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 3: return { initial: { scale: 0.5, opacity: 0 }, whileInView: { scale: 1, opacity: 1 } };
+      case 4: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 5: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      case 6: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
+      default: return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
   };
 
@@ -482,31 +307,42 @@ const HowWeWork: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <HowWeWorkMainText>
+        <HowWeWorkMainText
+          initial={false}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           {t('howWeWorkSection.header.title')}{' '}
           <HowSpanIcon src={rocket} alt="Icon" />
         </HowWeWorkMainText>
       </motion.div>
+
       <HowWeWorkMainid
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         {t('howWeWorkSection.header.mainHeading')}
       </HowWeWorkMainid>
+
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <HowWeWorkMainTextDescription>
+        <HowWeWorkMainTextDescription
+          initial={false}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           {t('howWeWorkSection.header.description')}
         </HowWeWorkMainTextDescription>
       </motion.div>
+
       <HowWeWorkContainer>
         {cards.map((card, index) => (
           <React.Fragment key={index}>
@@ -514,34 +350,35 @@ const HowWeWork: React.FC = () => {
               as={motion.div}
               {...getCardAnimation(index)}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
-              {' '}
               <MobileDivider />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.15 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <CardNumber>{card.id}</CardNumber>
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <CardText>{card.text}</CardText>
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.25 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <CardDescription>{card.description}</CardDescription>
-              </motion.div>{' '}
+              </motion.div>
               <MobileDivider />
             </Card>
           </React.Fragment>
