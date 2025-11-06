@@ -9,11 +9,9 @@ import Phone1 from '../../../assets/icons/Costomer/Iphone/black titanium2-iphon.
 import Linie1 from '../../../assets/icons/Costomer/Iphone/Lightpered-linie.png';
 import { useTranslation } from 'react-i18next';
 
-
 // Глобальні стилі для iOS оптимізації
 const IOSOptimizedContainer = styled.div`
   @supports (-webkit-touch-callout: none) {
-    /* Специфічні стилі для Safari/iOS */
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
@@ -22,7 +20,7 @@ const IOSOptimizedContainer = styled.div`
 `;
 
 export const LifeWrapper = styled(IOSOptimizedContainer).attrs({
-  as: motion.div
+  as: motion.div,
 })`
   display: flex;
   padding: 0 16px;
@@ -31,8 +29,8 @@ export const LifeWrapper = styled(IOSOptimizedContainer).attrs({
   flex-direction: column;
   align-items: center;
   position: relative;
-  overflow: visible; /* Додано */
-  z-index: 1; /* Додано для контексту накладання */
+  overflow: visible;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     padding: 0 24px;
@@ -146,7 +144,8 @@ export const LifeMainTextDescriptionDown = styled(motion.p)`
 
 export const LifeContainer = styled.div`
   margin-bottom: 374px;
- overflow: visible;
+  overflow: visible;
+
   @media screen and (min-width: 768px) {
     margin-bottom: 700px;
   }
@@ -167,9 +166,9 @@ export const ImageAnimationWrapp = styled(IOSOptimizedContainer)`
   width: 365px;
   height: 354px;
   transform: translate(-50%, -50%);
-  overflow: visible; /* Вже було */
-  z-index: 2; /* Додано */
-  perspective: 1000px; /* Для апаратного прискорення */
+  overflow: visible;
+  z-index: 2;
+  perspective: 1000px;
 
   @media screen and (min-width: 768px) {
     top: 60%;
@@ -181,20 +180,20 @@ export const ImageAnimationWrapp = styled(IOSOptimizedContainer)`
     left: 70%;
     top: 50%;
     height: 660px;
-    transform-style: preserve-3d; /* Для кращої продуктивності на iOS */
+    transform-style: preserve-3d;
   }
 `;
 
 export const PhoneImage = styled(motion.img).attrs({
   loading: 'lazy',
-  decoding: 'async'
+  decoding: 'async',
 })`
   position: absolute;
   bottom: 22%;
   left: 0;
   width: 100%;
   height: 100%;
-  transform: translateZ(0); /* Апаратне прискорення */
+  transform: translateZ(0);
   backface-visibility: hidden;
 `;
 
@@ -212,7 +211,7 @@ export const Linie = styled(motion.img)`
   left: 0;
   width: 100%;
   height: 100%;
-   overflow: visible;
+  overflow: visible;
 `;
 
 export const LinieP = styled(motion.img)`
@@ -229,7 +228,6 @@ export const LinieP = styled(motion.img)`
 
   @media screen and (min-width: 1440px) {
     left: 16%;
-
   }
 `;
 
@@ -261,26 +259,28 @@ const LivePrepInsights: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <LifeMainText>
             {t('livePrepInsights1.title')}
             <CardButtonText src={rocket} alt="🚀" />
           </LifeMainText>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <LifeMainTitle>{t('livePrepInsights1.heading')}</LifeMainTitle>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <LifeMainTextDescription>
             {t('livePrepInsights1.description')}
@@ -290,15 +290,15 @@ const LivePrepInsights: React.FC = () => {
 
       <ImageAnimationWrapp>
         <Linie
-        src={LinieBackground}
+          src={LinieBackground}
           alt="background lines"
           initial={{ opacity: 0.8 }}
           animate={{ opacity: 1 }}
-          transition={{ 
-            duration: 2, 
-            repeat: Infinity, 
+          transition={{
+            duration: 2,
+            repeat: Infinity,
             repeatType: 'reverse',
-            ease: 'easeInOut'
+            ease: 'easeInOut',
           }}
         />
 
@@ -353,7 +353,12 @@ const LivePrepInsights: React.FC = () => {
         />
       </ImageAnimationWrapp>
 
-      <LifeMainTextDescriptionDown>
+      <LifeMainTextDescriptionDown
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {t('livePrepInsights1.footerText')}
       </LifeMainTextDescriptionDown>
     </LifeWrapper>

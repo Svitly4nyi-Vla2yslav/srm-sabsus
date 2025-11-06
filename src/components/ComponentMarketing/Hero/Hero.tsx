@@ -13,6 +13,7 @@ import {
   HeroButtonGrey,
 } from '../../Hero/Hero.styled';
 import { useTranslation } from 'react-i18next';
+
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
 export const HeroWrapper = styled.div`
@@ -24,15 +25,11 @@ export const HeroWrapper = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-     margin-bottom: 0px;
+  margin-bottom: 0px;
+
   @media screen and (min-width: 1440px) {
-   margin-bottom: 0px;
-   
+    margin-bottom: 0px;
   }
-
-    @media (min-width: 1920px) {
-
-  } 
 `;
 
 export const FullScreenContainer = styled.div`
@@ -45,10 +42,11 @@ export const FullScreenContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-top: 0px;
+
     iframe,
     canvas {
       position: relative;
-      width: 100vw !important; /* Дозволяємо розширення за межі екрану */
+      width: 100vw !important;
       height: 120vh !important;
       left: 50%;
       top: 0px;
@@ -62,13 +60,10 @@ const SplineContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+
   @media screen and (min-width: 1440px) {
-  margin-top: 0px;
+    margin-top: 0px;
   }
-
-  @media (min-width: 1920px) {
-
-  } 
 `;
 
 const SplinePlaceholder = styled.div`
@@ -144,14 +139,11 @@ export const CostomerWrapp = styled.div`
   padding: 0 20px;
   text-align: center;
   z-index: 10;
-  @media screen and (min-width: 1440px) {
-  margin-top: 0px;
-  padding-bottom: 120px;
-  
-  }
-    @media (min-width: 1920px) {
 
-  } 
+  @media screen and (min-width: 1440px) {
+    margin-top: 0px;
+    padding-bottom: 120px;
+  }
 `;
 
 const FallbackImage = () => {
@@ -189,7 +181,7 @@ const Hero: React.FC = () => {
   const { t } = useTranslation();
   const [splineLoaded, setSplineLoaded] = useState(false);
   const [showPlaceholder, setShowPlaceholder] = useState(true);
-  const minLoadTimeRef = useRef<NodeJS.Timeout>();
+  const minLoadTimeRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     return () => {
@@ -207,7 +199,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <HeroWrapper  id='ap'>
+    <HeroWrapper id="ap">
       <FullScreenContainer>
         {isMobile ? (
           <FallbackImage />
@@ -227,7 +219,7 @@ const Hero: React.FC = () => {
                   style={{
                     width: '100vw',
                     height: '100vh',
-                    transform: "rotate(180deg)"
+                    transform: 'rotate(180deg)',
                   }}
                 />
               </SplineWrapper>
@@ -241,7 +233,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           style={{
             position: 'relative',
             zIndex: 1,
@@ -250,22 +242,24 @@ const Hero: React.FC = () => {
         >
           <HeroInnovative>
             {t('brandEngineHero.innovativeText')}
-            <CardButtonText src={Control} alt="💰" />
+            <CardButtonText src={Control} alt="🎨" />
           </HeroInnovative>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <HeroTitle>{t('brandEngineHero.title')}</HeroTitle>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 0.9 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <ButtonContainer>
             <a

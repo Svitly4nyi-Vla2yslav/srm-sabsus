@@ -5,7 +5,7 @@ import Cassette from '../../../assets/icons/Costomer/Videocassette.svg';
 import logo from '../../../assets/icons/logo-srm.svg';
 import Tools from '../../../assets/icons/Toolbar Group.svg';
 import point from '../../../assets/icons/Traffic Lights (Big Sur).svg';
-import video from '../../../assets/video/GloryToUkraine.webm';
+import videoFallback from '../../../assets/video/GloryToUkraine.webm';
 import BackgroundImage from '../../../assets/icons/video-prev.png';
 import ControlFast from '../../../assets/icons/Costomer/Seconadry Buttons copy.svg';
 import ControlRewind from '../../../assets/icons/Costomer/Seconadry Buttons.svg';
@@ -116,6 +116,7 @@ export const StepSpanIcon = styled.img`
     )
     rgba(255, 255, 255, 0.03);
   -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 `;
 
 export const HeaderContainer = styled.div`
@@ -139,7 +140,6 @@ export const HeaderContainer = styled.div`
   @media screen and (min-width: 768px) {
     max-width: 740px;
     width: 100%;
-    margin: 0 auto;
   }
 
   @media screen and (min-width: 1440px) {
@@ -178,7 +178,6 @@ export const SlideHeader = styled.div`
   @media screen and (min-width: 768px) {
     max-width: 740px;
     width: 100%;
-    margin: 0 auto;
     padding: 16px 24px;
   }
 
@@ -206,16 +205,17 @@ export const ToolGroup = styled.img`
 const VideoWrapper = styled.div`
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio by default */
+  padding-bottom: 56.25%;
   overflow: hidden;
   border-radius: 10px;
   background: rgba(2, 0, 23, 1);
+
   @media (max-width: 768px) {
-    padding-bottom: 75%; /* 4:3 для мобільних пристроїв */
+    padding-bottom: 75%;
   }
 
   @media (min-width: 1920px) {
-    padding-bottom: 50%; /* Широкоекранні монітори */
+    padding-bottom: 50%;
   }
 `;
 
@@ -315,81 +315,24 @@ const StepByStepGuidance: React.FC = () => {
   const isMobile = useMediaQuery('(max-width:768px)');
   const isTablet = useMediaQuery('(max-width:1024px)');
 
-  // Оптимізація: завантажуємо різні версії відео для різних пристроїв
   const { videoUrl, loading, error } = useVideoContent(
     isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop'
   );
 
-  // Оптимізація: lazy loading для відео
-  const [, setShouldLoadVideo] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        if (entries[0].isIntersecting) {
-          setShouldLoadVideo(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Оптимізація: попереднє завантаження постеру
+  // Preload poster
   useEffect(() => {
     const img = new Image();
     img.src = BackgroundImage;
   }, []);
 
-  // Таймер для автоматичного приховування контролів
+  // Auto-hide controls
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
-
-    if (showControls) {
-      timeoutId = setTimeout(() => {
-        setShowControls(false);
-      }, 3000);
-    }
-
-    return () => {
-      if (timeoutId) clearTimeout(timeoutId);
-    };
+    if (!showControls) return;
+    const timeoutId = setTimeout(() => setShowControls(false), 3000);
+    return () => clearTimeout(timeoutId);
   }, [showControls]);
 
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-
-    if (videoRef.current.paused) {
-      videoRef.current
-        .play()
-        .then(() => {
-          setIsPlaying(true); // Оновлюємо стан після успішного запуску
-          setShowControls(true);
-        })
-        .catch(e => {
-          console.error('Video play failed:', e);
-          setIsPlaying(false);
-        });
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false); // Оновлюємо стан при паузі
-      setShowControls(true);
-    }
-  };
-
-  const seek = (seconds: number) => {
-    if (videoRef.current) {
-      videoRef.current.currentTime += seconds;
-      setShowControls(true);
-    }
-  };
-
+  // Sync state with native events (if щось піде не по плану)
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -397,71 +340,113 @@ const StepByStepGuidance: React.FC = () => {
     const handlePlay = () => {
       setIsPlaying(true);
       setShowControls(true);
-      setTimeout(() => setShowControls(false), 3000);
     };
 
     const handlePause = () => {
       setIsPlaying(false);
       setShowControls(true);
-      setTimeout(() => setShowControls(false), 3000);
+    };
+
+    const handleEnded = () => {
+      setIsPlaying(false);
+      setShowControls(true);
     };
 
     video.addEventListener('play', handlePlay);
     video.addEventListener('pause', handlePause);
-    video.addEventListener('ended', () => setIsPlaying(false));
+    video.addEventListener('ended', handleEnded);
 
     return () => {
       video.removeEventListener('play', handlePlay);
       video.removeEventListener('pause', handlePause);
-      video.removeEventListener('ended', () => setIsPlaying(false));
+      video.removeEventListener('ended', handleEnded);
     };
   }, []);
 
+  const togglePlay = () => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    if (el.paused) {
+      el.play()
+        .then(() => {
+          setIsPlaying(true);
+          setShowControls(true);
+        })
+        .catch(e => {
+          console.error('Video play failed:', e);
+          setIsPlaying(false);
+          setShowControls(true);
+        });
+    } else {
+      el.pause();
+      setIsPlaying(false);
+      setShowControls(true);
+    }
+  };
+
+  const seek = (seconds: number) => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.currentTime = Math.max(
+      0,
+      Math.min(el.duration || Infinity, el.currentTime + seconds)
+    );
+    setShowControls(true);
+  };
+
   if (loading) return <LoadingScreen />;
   if (error) return <ErrorScreen message={error} />;
+
   return (
     <StepWrapp>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <StepMainText>
           {t('stepByStepGuidance1.title')}{' '}
           <StepSpanIcon src={Cassette} alt="⏺️" />
         </StepMainText>
       </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <StepMainTitle>{t('stepByStepGuidance1.heading')}</StepMainTitle>
       </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <StepMainTextDescription>
           {t('stepByStepGuidance1.description')}
         </StepMainTextDescription>
       </motion.div>
+
       <HeaderContainer>
         <SlideHeader>
-          <SlideLogo src={point} alt="Logo" />
+          <SlideLogo src={point} alt="Status" />
           <LogoImage src={logo} alt="Logo" />
           <ToolGroup src={Tools} alt="Tools" />
         </SlideHeader>
-        <VideoHoverWrapper
-          onClick={togglePlay} // Додали клік на відео для play/pause
-        >
+
+        <VideoHoverWrapper onClick={togglePlay}>
           <VideoWrapper>
-            <StyledVideo ref={videoRef} poster={BackgroundImage} controls>
-              <source src={videoUrl || video} type="video/mp4" />
+            <StyledVideo
+              ref={videoRef}
+              poster={BackgroundImage}
+              preload="metadata"
+            >
+              <source src={videoUrl || videoFallback} type="video/webm" />
               {t('videoNotSupported')}
             </StyledVideo>
 
@@ -469,24 +454,26 @@ const StepByStepGuidance: React.FC = () => {
               <VideoControls>
                 <ControlButton
                   onClick={e => {
-                    seek(-15);
                     e.stopPropagation();
+                    seek(-15);
                   }}
                 >
                   <ControlIcon src={ControlRewind} alt="Rewind" />
                 </ControlButton>
+
                 <ControlButtonPlay
                   onClick={e => {
-                    togglePlay();
                     e.stopPropagation();
+                    togglePlay();
                   }}
                 >
                   {isPlaying ? '⏸' : '▶'}
                 </ControlButtonPlay>
+
                 <ControlButton
                   onClick={e => {
-                    seek(15);
                     e.stopPropagation();
+                    seek(15);
                   }}
                 >
                   <ControlIcon src={ControlFast} alt="Fast forward" />

@@ -11,7 +11,6 @@ export const HowWeWorkWrapper = styled.div`
   height: 100%;
   margin-bottom: 100px;
   position: relative;
-  display: flex;
   flex-direction: column;
   align-items: center;
 `;
@@ -43,12 +42,6 @@ export const HowWeWorkMainText = styled(motion.p)`
   );
   align-items: center;
   will-change: transform, opacity;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const HowWeWorkMainid = styled(motion.h2)`
@@ -112,13 +105,12 @@ export const HowSpanIcon = styled.img`
     )
     rgba(255, 255, 255, 0.03);
   -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 `;
 
 export const HowWeWorkContainer = styled.div`
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
 
   @media screen and (min-width: 768px) {
     display: grid;
@@ -317,6 +309,7 @@ export const CardDescription = styled(motion.p)`
   font-weight: 400;
   font-size: 16px;
   color: var(--white-80);
+
   @media screen and (min-width: 768px) {
     font-size: 17px;
   }
@@ -351,77 +344,32 @@ const HowWeWork: React.FC = () => {
   const { t } = useTranslation();
 
   const cards = [
-    {
-      id: '1',
-      key: 'fastOrdering',
-    },
-    {
-      id: '2',
-      key: 'loyaltyPrograms',
-    },
-    {
-      id: '3',
-      key: 'deliveryFlow',
-    },
-    {
-      id: '4',
-      key: 'reservationSystem',
-    },
-    {
-      id: '5',
-      key: 'notifications',
-    },
-    {
-      id: '6',
-      key: 'feedback',
-    },
-    {
-      id: '7',
-      key: 'selfService',
-    },
-    {
-      id: '8',
-      key: 'customerProfile',
-    },
+    { id: '1', key: 'fastOrdering' },
+    { id: '2', key: 'loyaltyPrograms' },
+    { id: '3', key: 'deliveryFlow' },
+    { id: '4', key: 'reservationSystem' },
+    { id: '5', key: 'notifications' },
+    { id: '6', key: 'feedback' },
+    { id: '7', key: 'selfService' },
+    { id: '8', key: 'customerProfile' },
   ];
 
   const getCardAnimation = (index: number) => {
     switch (index) {
       case 0:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        };
+        return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       case 1:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        };
+        return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       case 2:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        };
+        return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       case 3:
-        return {
-          initial: { scale: 0.5, opacity: 0 },
-          whileInView: { scale: 1, opacity: 1 },
-        };
+        return { initial: { scale: 0.5, opacity: 0 }, whileInView: { scale: 1, opacity: 1 } };
       case 4:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        };
+        return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       case 5:
-        return {
-          initial: { x: -100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        };
+        return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       case 6:
-        return {
-          initial: { x: 100, opacity: 0 },
-          whileInView: { x: 0, opacity: 1 },
-        };
+        return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
       default:
         return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
@@ -433,68 +381,74 @@ const HowWeWork: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <HowWeWorkMainText>
           {t('howWeWorkSection1.title')} <HowSpanIcon src={rocket} alt="Icon" />
         </HowWeWorkMainText>
       </motion.div>
+
       <HowWeWorkMainid
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         {t('howWeWorkSection1.heading')}
       </HowWeWorkMainid>
+
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <HowWeWorkMainTextDescription>
           {t('howWeWorkSection1.description')}
         </HowWeWorkMainTextDescription>
       </motion.div>
+
       <HowWeWorkContainer>
         {cards.map((card, index) => (
-          <React.Fragment key={index}>
+          <React.Fragment key={card.id}>
             <Card
-              as={motion.div}
               {...getCardAnimation(index)}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <MobileDivider />
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.15 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <CardNumber>{card.id}</CardNumber>
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <CardText>
                   {t(`howWeWorkSection1.cards.${card.key}.title`)}
                 </CardText>
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.25 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <CardDescription>
                   {t(`howWeWorkSection1.cards.${card.key}.desc`)}
                 </CardDescription>
               </motion.div>
+
               <MobileDivider />
             </Card>
           </React.Fragment>

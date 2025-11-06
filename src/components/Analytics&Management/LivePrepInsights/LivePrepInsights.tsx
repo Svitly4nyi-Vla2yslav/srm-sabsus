@@ -8,14 +8,12 @@ import { useTranslation } from 'react-i18next';
 
 export const LifeWrapper = styled(motion.div)`
   display: flex;
-  padding: 0 16px; /* або 24px — на твій смак */
+  padding: 0 16px;
   max-width: 1440px;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
   position: relative;
-  @media screen and (min-width: 768px) {
-  }
 
   @media screen and (min-width: 1440px) {
     width: 1440px;
@@ -50,11 +48,6 @@ export const LifeMainText = styled(motion.p)`
   );
   align-items: center;
   will-change: transform, opacity;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const LifeMainTitle = styled(motion.h2)`
@@ -72,11 +65,12 @@ export const LifeMainTitle = styled(motion.h2)`
   }
 
   @media screen and (min-width: 1440px) {
-   max-width: 630px;
+    max-width: 630px;
     width: 100%;
     margin: 0 auto 26px;
     display: flex;
-text-align: start;
+    text-align: start;
+  }
 `;
 
 export const LifeMainTextDescription = styled(motion.p)`
@@ -136,7 +130,7 @@ export const LifeContainer = styled.div`
 
   @media screen and (min-width: 1440px) {
     margin-bottom: 609px;
-    width: 100%; // ✅ НЕ 100vw
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -151,6 +145,7 @@ export const ImageAnimationWrapp = styled.div`
   height: 354px;
   transform: translate(-50%, -50%);
   overflow: visible;
+
   @media screen and (min-width: 768px) {
     top: 60%;
     width: 700px;
@@ -171,11 +166,6 @@ export const Linie = styled(motion.img)`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const GlowEffect = styled(motion.div)`
@@ -192,12 +182,6 @@ export const GlowEffect = styled(motion.div)`
   opacity: 0;
   border-radius: 50%;
   pointer-events: none;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 const LivePrepInsights: React.FC = () => {
@@ -210,28 +194,30 @@ const LivePrepInsights: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <LifeMainText>
             {t('livePrepInsightsSection.header.title')}
             <CardButtonText src={rocket} alt="🚀" />
           </LifeMainText>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <LifeMainTitle>
             {t('livePrepInsightsSection.header.mainHeading')}
           </LifeMainTitle>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <LifeMainTextDescription>
             {t('livePrepInsightsSection.header.description')}
@@ -266,7 +252,12 @@ const LivePrepInsights: React.FC = () => {
         />
       </ImageAnimationWrapp>
 
-      <LifeMainTextDescriptionDown>
+      <LifeMainTextDescriptionDown
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {t('livePrepInsightsSection.header.additionalDescription')}
       </LifeMainTextDescriptionDown>
     </LifeWrapper>

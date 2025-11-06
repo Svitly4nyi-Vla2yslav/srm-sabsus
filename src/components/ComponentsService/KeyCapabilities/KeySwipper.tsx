@@ -28,12 +28,12 @@ export const SwiperContainer = styled(motion.div)`
 
   .swiper {
     width: 100vw;
-    padding: 0 0;
+    padding: 0;
     margin: 0 auto;
   }
 
   .swiper-slide {
-    padding: 0 0;
+    padding: 0;
     margin: 0 auto;
     width: 100vw !important;
     display: flex;
@@ -44,7 +44,7 @@ export const SwiperContainer = styled(motion.div)`
 
 export const CardContainer = styled(motion.div)`
   @media (min-width: 768px) {
-      display: flex;
+    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
@@ -77,7 +77,6 @@ export const Card = styled.div`
     box-shadow 0.3s ease;
   gap: 10px;
   align-items: flex-start;
-  // margin: 0 auto;
 
   @media screen and (min-width: 1440px) {
     width: 380px;
@@ -88,10 +87,11 @@ export const Icon = styled.img`
   filter: drop-shadow(0 0 20px rgba(43, 67, 226, 0.7));
   transition: filter 0.3s ease;
   width: 199px;
-height: 199px;
-  
+  height: 199px;
+
   &:hover {
     filter: drop-shadow(0 0 30px rgba(35, 62, 236, 0.84));
+  }
 `;
 
 export const TitleCard = styled.h3`
@@ -116,14 +116,43 @@ const KeySwipper: React.FC = () => {
 
   const getCardAnimation = (index: number) => {
     switch (index) {
-      case 0: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      case 1: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      case 2: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      case 3: return { initial: { scale: 0.5, opacity: 0 }, whileInView: { scale: 1, opacity: 1 } };
-      case 4: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      case 5: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      case 6: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      default: return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
+      case 0:
+        return {
+          initial: { x: -100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      case 1:
+        return {
+          initial: { x: 100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      case 2:
+        return {
+          initial: { x: -100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      case 3:
+        return {
+          initial: { scale: 0.5, opacity: 0 },
+          whileInView: { scale: 1, opacity: 1 },
+        };
+      case 4:
+        return {
+          initial: { x: 100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      case 5:
+        return {
+          initial: { x: -100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      case 6:
+        return {
+          initial: { x: 100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      default:
+        return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
   };
 
@@ -141,12 +170,12 @@ const KeySwipper: React.FC = () => {
   const shouldLoop = true;
   const slidesPerView = 1;
 
- return (
+  return (
     <SwiperContainer
-      as={motion.div}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.2 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       {isMobile ? (
         <motion.div>
@@ -167,9 +196,16 @@ const KeySwipper: React.FC = () => {
             {keyItems.map(item => (
               <SwiperSlide key={item.id}>
                 <Card>
-                  <Icon src={item.imageUrl} alt={t(`keyCapabilitiesSection3.cards.${item.key}.title`)} />
-                  <TitleCard>{t(`keyCapabilitiesSection3.cards.${item.key}.title`)}</TitleCard>
-                  <TextCard>{t(`keyCapabilitiesSection3.cards.${item.key}.desc`)}</TextCard>
+                  <Icon
+                    src={item.imageUrl}
+                    alt={t(`keyCapabilitiesSection3.cards.${item.key}.title`)}
+                  />
+                  <TitleCard>
+                    {t(`keyCapabilitiesSection3.cards.${item.key}.title`)}
+                  </TitleCard>
+                  <TextCard>
+                    {t(`keyCapabilitiesSection3.cards.${item.key}.desc`)}
+                  </TextCard>
                 </Card>
               </SwiperSlide>
             ))}
@@ -183,25 +219,34 @@ const KeySwipper: React.FC = () => {
               as={motion.div}
               {...getCardAnimation(index)}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.25 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.2 }}
               >
-                <Icon src={item.imageUrl} alt={t(`keyCapabilitiesSection3.cards.${item.key}.title`)} />
+                <Icon
+                  src={item.imageUrl}
+                  alt={t(`keyCapabilitiesSection3.cards.${item.key}.title`)}
+                />
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.2 }}
               >
-                <TitleCard>{t(`keyCapabilitiesSection3.cards.${item.key}.title`)}</TitleCard>
+                <TitleCard>
+                  {t(`keyCapabilitiesSection3.cards.${item.key}.title`)}
+                </TitleCard>
               </motion.div>
-              <TextCard>{t(`keyCapabilitiesSection3.cards.${item.key}.desc`)}</TextCard>
+
+              <TextCard>
+                {t(`keyCapabilitiesSection3.cards.${item.key}.desc`)}
+              </TextCard>
             </Card>
           ))}
         </CardContainer>

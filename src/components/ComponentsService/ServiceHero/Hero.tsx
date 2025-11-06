@@ -38,27 +38,23 @@ export const HeroWrapper = styled.div`
     margin-bottom: 0px;
     margin-top: 0px !important;
   }
-
-  @media (min-width: 1920px) {
-  }
 `;
-
 
 const PerspectiveWrapper = styled.div`
   perspective: 1900px;
   display: flex;
   justify-content: center;
-   margin: 0 auto;
+  margin: 0 auto;
 `;
 
 const Image3DBox = styled.div`
-  width: 100vh; /* Змінюємо на 100% ширини батьківського контейнера */
-  max-width: 600px; /* Максимальна ширина для більших екранів */
-  aspect-ratio: 1/1; /* Зберігаємо квадратні пропорції */
+  width: 100vh;
+  max-width: 600px;
+  aspect-ratio: 1/1;
   position: relative;
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  margin: 0 auto; /* Центруємо по горизонталі */
+  margin: 0 auto;
 
   @media screen and (min-width: 768px) {
     max-width: 800px;
@@ -68,37 +64,28 @@ const Image3DBox = styled.div`
 
   @media screen and (min-width: 1440px) {
     max-width: 1900px;
-      width: 100% !important;
+    width: 100% !important;
     height: 100% !important;
-   left: 40%;
+    left: 40%;
     margin-top: 10%;
   }
 `;
 
 const Front = styled.img`
-  width: 100%; /* Займає всю ширину контейнера */
-  height: auto; /* Автоматична висота для збереження пропорцій */
+  width: 100%;
+  height: auto;
   transform: rotate(347deg);
   z-index: 1;
   backface-visibility: visible;
-  object-fit: contain; /* Забезпечує повне відображення зображення */
+  object-fit: contain;
 `;
 
-// const Back = styled.img`
-//   position: absolute;
-//   left: 11%;
-//   width: 70%;
-//   height: 70%;
-//   transform: rotateY(180deg);
-//   backface-visibility: hidden;
-// `;
-
 export const CostomerWrapp = styled.div`
-  position: relative; /* Змінюємо absolute на relative */
+  position: relative;
   width: 100%;
-  max-width: 1200px; /* Фіксуємо максимальну ширину контенту */
-  margin: 0 auto; /* Центруємо контент */
-  padding: 327px 20px 0; /* Відступи: зверху, з боків */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 327px 20px 0;
   box-sizing: border-box;
   z-index: 2;
 
@@ -111,7 +98,7 @@ export const CostomerWrapp = styled.div`
   }
 
   @media (min-width: 1920px) {
-    padding-top: 650px; /* Замість 500px для кращої адаптації */
+    padding-top: 650px;
   }
 `;
 
@@ -152,12 +139,12 @@ export const Container = styled.div`
   @media screen and (min-width: 1440px) {
     iframe,
     canvas {
-     width: 40% !important;
-    height: 40% !important;
-    object-fit: cover;
-    left: 30% !important; /* Центруємо по горизонталі */
-    top: 0 !important; /* Перевизначаємо будь-які інші стилі */
-      transform: none !important; 
+      width: 40% !important;
+      height: 40% !important;
+      object-fit: cover;
+      left: 30% !important;
+      top: 0 !important;
+      transform: none !important;
     }
   }
 `;
@@ -167,12 +154,11 @@ const Hero: React.FC = () => {
   const { t } = useTranslation();
   const [splineReady, setSplineReady] = useState(false);
   const [minLoadingTimePassed, setMinLoadingTimePassed] = useState(false);
-  const MIN_LOADING_TIME = 4000; // 3 секунди мінімального часу заставки
+  const MIN_LOADING_TIME = 4000;
   const startTimeRef = useRef(Date.now());
   const timerRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
-    // Встановлюємо таймер для мінімального часу завантаження
     timerRef.current = setTimeout(() => {
       setMinLoadingTimePassed(true);
     }, MIN_LOADING_TIME);
@@ -188,7 +174,6 @@ const Hero: React.FC = () => {
     const elapsed = Date.now() - startTimeRef.current;
     const remainingTime = Math.max(0, MIN_LOADING_TIME - elapsed);
 
-    // Встановлюємо таймер для оновлення стану після залишкового часу
     timerRef.current = setTimeout(() => {
       setSplineReady(true);
     }, remainingTime);
@@ -209,11 +194,11 @@ const Hero: React.FC = () => {
               style={{
                 display: minLoadingTimePassed && splineReady ? 'none' : 'flex',
                 justifyContent: 'center',
-                alignItems: 'flex-start', // Змінено з 'center' на 'flex-start'
+                alignItems: 'flex-start',
                 zIndex: 60,
                 transition: 'opacity 0.5s ease-out',
                 opacity: minLoadingTimePassed && splineReady ? 0 : 1,
-                marginTop: 0, // Додано для чіткого позиціонування
+                marginTop: 0,
               }}
             >
               <PerspectiveWrapper>
@@ -226,7 +211,6 @@ const Hero: React.FC = () => {
             <Spline
               scene="https://prod.spline.design/IkvUuAcfU3TUW6Zw/scene.splinecode"
               style={{
-    
                 opacity: minLoadingTimePassed && splineReady ? 1 : 0,
               }}
               onLoad={handleSplineLoad}
@@ -234,12 +218,13 @@ const Hero: React.FC = () => {
           </>
         )}
       </Container>
+
       <CostomerWrapp>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           style={{
             position: 'relative',
             zIndex: 1,
@@ -251,19 +236,21 @@ const Hero: React.FC = () => {
             <CardButtonText src={phone} alt="Phone icon" />
           </HeroInnovative>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <HeroTitle>{t('mobileUXSection1.heading')}</HeroTitle>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 0.9 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <ButtonContainer>
             <a
@@ -271,7 +258,9 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HeroButton>{t('mobileUXSection1.buttons.tryFree')}</HeroButton>
+              <HeroButton>
+                {t('mobileUXSection1.buttons.tryFree')}
+              </HeroButton>
             </a>
             <a
               href="https://sabsus.app/login/demo@sabsus.com/demo2025"

@@ -196,7 +196,7 @@ const Input = styled.input<{ $error?: boolean }>`
 const Select = styled.select`
   border: 1px solid #212121;
   border-radius: 8px;
-  padding: 12px 16px 12px 16px; /* Залишаємо стандартні падінги */
+  padding: 12px 16px 12px 16px;
   width: 100%;
   height: 46px;
   margin-bottom: 32px;
@@ -218,13 +218,12 @@ const Select = styled.select`
       rgba(255, 255, 255, 0) 86%
     )
     no-repeat;
-  background-position: right 10px center; /* Відступ стрілки від правого краю */
+  background-position: right 10px center;
   cursor: pointer;
-  appearance: none; /* Вимкнення стандартного вигляду */
-  -webkit-appearance: none; /* Для Safari */
-  -moz-appearance: none; /* Для Firefox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
-  /* Додаємо власну стрілку */
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a1a1aa'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-size: 26px;
@@ -353,6 +352,7 @@ const ContactForm: React.FC = () => {
     message: string;
     show: boolean;
   }>({ type: 'success', message: '', show: false });
+
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -419,7 +419,7 @@ const ContactForm: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           style={{
             position: 'relative',
             zIndex: 1,
@@ -427,22 +427,23 @@ const ContactForm: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            {t('contact.getStarted')} <CardButtonText src={star} alt="star" />
+            {t('contact.getStarted')}{' '}
+            <CardButtonText src={star} alt="star" />
           </HeroInnovative>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <HeroTitle>{t('contact.title')}</HeroTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <ResultMainTextDescription>
             {t('contact.description')}
@@ -450,8 +451,22 @@ const ContactForm: React.FC = () => {
         </motion.div>
       </CostomerWrapp>
 
-      <Form ref={formRef} onSubmit={handleSubmit}>
-        <Label>
+      <Form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        as={motion.form}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <Label
+          as={motion.label}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           {t('contact.form.emailLabel')}
           <Input
             type="email"
@@ -465,7 +480,14 @@ const ContactForm: React.FC = () => {
           )}
         </Label>
 
-        <Label htmlFor="teammates-select">
+        <Label
+          as={motion.label}
+          htmlFor="teammates-select"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           {t('contact.form.teammatesLabel')}
           <Select
             id="teammates-select"
@@ -493,20 +515,35 @@ const ContactForm: React.FC = () => {
             </option>
           </Select>
         </Label>
+
         <a
           ref={linkRef}
           href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0ECvny1g7NCJmXnJvrxrsWKg2y5eT86f1mR9n1l9UrYrnw-7NiuMqc4TMfcRIFUTVGIyVyufmB?gv=true"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ButtonFree type="submit" disabled={isSubmitting}>
+          <ButtonFree
+            as={motion.button}
+            type="submit"
+            disabled={isSubmitting}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
+          >
             {isSubmitting
               ? t('contact.form.submitting')
               : t('contact.form.submit')}
           </ButtonFree>
         </a>
 
-        <ContactDescription>{t('contact.form.terms')}</ContactDescription>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.7 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <ContactDescription>{t('contact.form.terms')}</ContactDescription>
+        </motion.div>
+
         <a
           ref={linkRef}
           href="https://sabsus.app/registrcompany/web/PRO"
@@ -515,12 +552,13 @@ const ContactForm: React.FC = () => {
           style={{ display: 'none' }}
         />
       </Form>
+
       <ContactUsWrapper>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <ContactUsTitle>{t('contact.help.title')}</ContactUsTitle>
 
@@ -531,13 +569,25 @@ const ContactForm: React.FC = () => {
             </EmailLink>
             <SupportBadge>{t('contact.help.supportBadge')}</SupportBadge>
           </ContactEmail>
-          <a href="https://sabsus.info" target="_blank" rel="noopener">
-            <ButtonFree>{t('contact.help.helpCenter')}</ButtonFree>
+
+          <a
+            href="https://sabsus.info"
+            target="_blank"
+            rel="noopener"
+          >
+            <ButtonFree
+              as={motion.button}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              {t('contact.help.helpCenter')}
+            </ButtonFree>
           </a>
 
           <HelpCenterText>{t('contact.help.helpText')}</HelpCenterText>
         </motion.div>
       </ContactUsWrapper>
+
       {alert.show && (
         <Alert
           type={alert.type}

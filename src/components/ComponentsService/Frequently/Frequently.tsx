@@ -7,19 +7,16 @@ import { useTranslation } from 'react-i18next';
 const FrequentlyWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-  // margin-top: 100px;
   width: 100%;
   height: 100%;
   margin-bottom: 100px;
   position: relative;
-  display: flex;
   flex-direction: column;
   align-items: center;
+
   @media screen and (min-width: 1440px) {
     width: 100%;
     max-width: 1400px;
-
-    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -54,8 +51,6 @@ const QuestionItem = styled.div`
   width: 343px;
   display: flex;
   flex-direction: column;
-  gap: none;
-  // height: 271px;
   overflow: hidden;
   box-shadow:
     0 0 0 0 var(--white),
@@ -69,7 +64,6 @@ const QuestionItem = styled.div`
 
   &:hover {
     border-bottom: 1px solid var(--white-25);
-    // border-radius: 16px;
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
   }
 
@@ -86,10 +80,8 @@ const QuestionItem = styled.div`
 export const QuestionButton = styled.button`
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-
   border: none;
   border-radius: 16px;
   padding: 14px;
@@ -102,18 +94,11 @@ export const QuestionButton = styled.button`
   color: var(--white-100);
   text-align: left;
   background: transparent;
-
   transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-2px);
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
-  }
-
-  @media screen and (min-width: 744px) {
-  }
-
-  @media screen and (min-width: 1440px) {
   }
 `;
 
@@ -128,7 +113,6 @@ export const AnswerText = styled.div<AnswerTextProps>`
   color: var(--white-80);
   transform: scaleY(${({ $isOpen }) => ($isOpen ? 1 : 0)});
   transform-origin: top;
-  height: auto;
   max-height: ${({ $isOpen }) => ($isOpen ? '1000px' : '0')};
   opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
   overflow: hidden;
@@ -138,21 +122,13 @@ export const AnswerText = styled.div<AnswerTextProps>`
     max-height 0.4s ease;
   margin-top: ${({ $isOpen }) => ($isOpen ? '12px' : '0')};
   will-change: transform, opacity, max-height;
-
-  @media screen and (min-width: 744px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 interface XIconStyledProps {
   $rotate?: boolean;
 }
 
-export const XIcon = styled.img.attrs<XIconStyledProps>(
-  () => ({})
-)<XIconStyledProps>`
+export const XIcon = styled.img.attrs<XIconStyledProps>(() => ({}))<XIconStyledProps>`
   width: 14px;
   height: 15px;
   transition: transform 0.6s ease;
@@ -160,14 +136,8 @@ export const XIcon = styled.img.attrs<XIconStyledProps>(
   ${({ $rotate }) =>
     $rotate &&
     `
-        transform: rotate(136deg);
-      `}
-
-  @media screen and (min-width: 744px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
+      transform: rotate(136deg);
+    `}
 `;
 
 const Container = styled.div`
@@ -185,8 +155,7 @@ const ContentContainer = styled.div`
   @media screen and (min-width: 1440px) {
     width: 100%;
     max-width: 650px;
-
-    flex-shrink: 0; /* Забороняємо звуження */
+    flex-shrink: 0;
   }
 `;
 
@@ -199,66 +168,21 @@ const Frequently: React.FC = () => {
   };
 
   const frequentlyQuestions = [
-    {
-      question: t('faqSection.questions.q1.question'),
-      answer: t('faqSection.questions.q1.answer'),
-    },
-    {
-      question: t('faqSection.questions.q2.question'),
-      answer: t('faqSection.questions.q2.answer'),
-    },
-    {
-      question: t('faqSection.questions.q3.question'),
-      answer: t('faqSection.questions.q3.answer'),
-    },
-    {
-      question: t('faqSection.questions.q4.question'),
-      answer: t('faqSection.questions.q4.answer'),
-    },
-    {
-      question: t('faqSection.questions.q5.question'),
-      answer: t('faqSection.questions.q5.answer'),
-    },
-    {
-      question: t('faqSection.questions.q6.question'),
-      answer: t('faqSection.questions.q6.answer'),
-    },
-    {
-      question: t('faqSection.questions.q7.question'),
-      answer: t('faqSection.questions.q7.answer'),
-    },
-    {
-      question: t('faqSection.questions.q8.question'),
-      answer: t('faqSection.questions.q8.answer'),
-    },
-    {
-      question: t('faqSection.questions.q9.question'),
-      answer: t('faqSection.questions.q9.answer'),
-    },
-    {
-      question: t('faqSection.questions.q10.question'),
-      answer: t('faqSection.questions.q10.answer'),
-    },
-    {
-      question: t('faqSection.questions.q11.question'),
-      answer: t('faqSection.questions.q11.answer'),
-    },
-    {
-      question: t('faqSection.questions.q12.question'),
-      answer: t('faqSection.questions.q12.answer'),
-    },
-    {
-      question: t('faqSection.questions.q13.question'),
-      answer: t('faqSection.questions.q13.answer'),
-    },
-    {
-      question: t('faqSection.questions.q14.question'),
-      answer: t('faqSection.questions.q14.answer'),
-    },
-    {
-      question: t('faqSection.questions.q15.question'),
-      answer: t('faqSection.questions.q15.answer'),
-    },
+    { question: t('faqSection.questions.q1.question'), answer: t('faqSection.questions.q1.answer') },
+    { question: t('faqSection.questions.q2.question'), answer: t('faqSection.questions.q2.answer') },
+    { question: t('faqSection.questions.q3.question'), answer: t('faqSection.questions.q3.answer') },
+    { question: t('faqSection.questions.q4.question'), answer: t('faqSection.questions.q4.answer') },
+    { question: t('faqSection.questions.q5.question'), answer: t('faqSection.questions.q5.answer') },
+    { question: t('faqSection.questions.q6.question'), answer: t('faqSection.questions.q6.answer') },
+    { question: t('faqSection.questions.q7.question'), answer: t('faqSection.questions.q7.answer') },
+    { question: t('faqSection.questions.q8.question'), answer: t('faqSection.questions.q8.answer') },
+    { question: t('faqSection.questions.q9.question'), answer: t('faqSection.questions.q9.answer') },
+    { question: t('faqSection.questions.q10.question'), answer: t('faqSection.questions.q10.answer') },
+    { question: t('faqSection.questions.q11.question'), answer: t('faqSection.questions.q11.answer') },
+    { question: t('faqSection.questions.q12.question'), answer: t('faqSection.questions.q12.answer') },
+    { question: t('faqSection.questions.q13.question'), answer: t('faqSection.questions.q13.answer') },
+    { question: t('faqSection.questions.q14.question'), answer: t('faqSection.questions.q14.answer') },
+    { question: t('faqSection.questions.q15.question'), answer: t('faqSection.questions.q15.answer') },
   ];
 
   return (
@@ -268,7 +192,7 @@ const Frequently: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <FrequentlyTitle>{t('faqSection.title')}</FrequentlyTitle>
         </motion.div>
@@ -289,8 +213,8 @@ const Frequently: React.FC = () => {
             key={index}
             initial={{ opacity: 0, y: index % 2 === 0 ? 40 : -40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <QuestionItem>
               <QuestionButton onClick={() => toggleAnswer(index)}>
@@ -309,7 +233,7 @@ const Frequently: React.FC = () => {
                     ? { opacity: 1, scale: 1 }
                     : { opacity: 0, scale: 0.9 }
                 }
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.3 }}
                 style={{ overflow: 'hidden' }}
               >
                 <AnswerText $isOpen={activeIndex === index}>

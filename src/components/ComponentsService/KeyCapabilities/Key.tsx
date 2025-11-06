@@ -36,10 +36,11 @@ const Key: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <ResultMainText>
-          {t('keyCapabilitiesSection1.title')} <CardButtonText src={dvd} alt="" />
+          {t('keyCapabilitiesSection1.title')}{' '}
+          <CardButtonText src={dvd} alt="" />
         </ResultMainText>
       </motion.div>
 
@@ -47,7 +48,7 @@ const Key: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <ResultMainTitle>
           {t('keyCapabilitiesSection1.heading')}
@@ -58,12 +59,13 @@ const Key: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <ResultMainTextDescription>
           {t('keyCapabilitiesSection1.description')}
         </ResultMainTextDescription>
       </motion.div>
+
       <KeySwipper />
     </KeyWrapper>
   );

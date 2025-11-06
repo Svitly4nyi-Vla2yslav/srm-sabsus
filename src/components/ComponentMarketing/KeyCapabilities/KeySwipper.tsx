@@ -28,12 +28,12 @@ export const SwiperContainer = styled(motion.div)`
 
   .swiper {
     width: 100vw;
-    padding: 0 0;
+    padding: 0;
     margin: 0 auto;
   }
 
   .swiper-slide {
-    padding: 0 0;
+    padding: 0;
     margin: 0 auto;
     width: 100vw !important;
     display: flex;
@@ -54,7 +54,7 @@ export const CardContainer = styled(motion.div)`
   }
 `;
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -81,7 +81,7 @@ export const Card = styled.div`
   justify-content: center;
 
   @media screen and (min-width: 1440px) {
-     width: 380px;
+    width: 380px;
   }
 `;
 
@@ -89,10 +89,11 @@ export const Icon = styled.img`
   filter: drop-shadow(0 0 20px rgba(43, 67, 226, 0.7));
   transition: filter 0.3s ease;
   width: 199px;
-height: 199px;
-  
+  height: 199px;
+
   &:hover {
     filter: drop-shadow(0 0 30px rgba(35, 62, 236, 0.84));
+  }
 `;
 
 export const TitleCard = styled.h3`
@@ -117,14 +118,43 @@ const KeySwipper: React.FC = () => {
 
   const getCardAnimation = (index: number) => {
     switch (index) {
-      case 0: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      case 1: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      case 2: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      case 3: return { initial: { scale: 0.5, opacity: 0 }, whileInView: { scale: 1, opacity: 1 } };
-      case 4: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      case 5: return { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      case 6: return { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1 } };
-      default: return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
+      case 0:
+        return {
+          initial: { x: -100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      case 1:
+        return {
+          initial: { x: 100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      case 2:
+        return {
+          initial: { x: -100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      case 3:
+        return {
+          initial: { scale: 0.5, opacity: 0 },
+          whileInView: { scale: 1, opacity: 1 },
+        };
+      case 4:
+        return {
+          initial: { x: 100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      case 5:
+        return {
+          initial: { x: -100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      case 6:
+        return {
+          initial: { x: 100, opacity: 0 },
+          whileInView: { x: 0, opacity: 1 },
+        };
+      default:
+        return { initial: { opacity: 0 }, whileInView: { opacity: 1 } };
     }
   };
 
@@ -133,50 +163,50 @@ const KeySwipper: React.FC = () => {
       id: 1,
       imageUrl: keys,
       title: t('marketingKeySection.cards.card1.title'),
-      text: t('marketingKeySection.cards.card1.text')
+      text: t('marketingKeySection.cards.card1.text'),
     },
     {
       id: 2,
       imageUrl: keys1,
       title: t('marketingKeySection.cards.card2.title'),
-      text: t('marketingKeySection.cards.card2.text')
+      text: t('marketingKeySection.cards.card2.text'),
     },
     {
       id: 3,
       imageUrl: keys2,
       title: t('marketingKeySection.cards.card3.title'),
-      text: t('marketingKeySection.cards.card3.text')
+      text: t('marketingKeySection.cards.card3.text'),
     },
     {
       id: 4,
       imageUrl: keys3,
       title: t('marketingKeySection.cards.card4.title'),
-      text: t('marketingKeySection.cards.card4.text')
+      text: t('marketingKeySection.cards.card4.text'),
     },
     {
       id: 5,
       imageUrl: keys4,
       title: t('marketingKeySection.cards.card5.title'),
-      text: t('marketingKeySection.cards.card5.text')
+      text: t('marketingKeySection.cards.card5.text'),
     },
     {
       id: 6,
       imageUrl: keys5,
       title: t('marketingKeySection.cards.card6.title'),
-      text: t('marketingKeySection.cards.card6.text')
+      text: t('marketingKeySection.cards.card6.text'),
     },
     {
       id: 7,
       imageUrl: keys6,
       title: t('marketingKeySection.cards.card7.title'),
-      text: t('marketingKeySection.cards.card7.text')
+      text: t('marketingKeySection.cards.card7.text'),
     },
     {
       id: 8,
       imageUrl: keys7,
       title: t('marketingKeySection.cards.card8.title'),
-      text: t('marketingKeySection.cards.card8.text')
-    }
+      text: t('marketingKeySection.cards.card8.text'),
+    },
   ];
 
   const shouldLoop = true;
@@ -184,64 +214,63 @@ const KeySwipper: React.FC = () => {
 
   return (
     <SwiperContainer
-      as={motion.div}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.2 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       {isMobile ? (
-        <motion.div>
-          <Swiper
-            loop={shouldLoop}
-            slidesPerView={slidesPerView}
-            spaceBetween={6}
-            centeredSlides={false}
-            autoplay={{
-              delay: 1000,
-              disableOnInteraction: false,
-              reverseDirection: false,
-            }}
-            speed={4000}
-            modules={[Autoplay]}
-            className="mySwiper"
-          >
-            {keyItems.map(item => (
-              <SwiperSlide key={item.id}>
-                <Card>
-                  <Icon src={item.imageUrl} alt={item.title} />
-                  <TitleCard>{item.title}</TitleCard>
-                  <TextCard>{item.text}</TextCard>
-                </Card>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
+        <Swiper
+          loop={shouldLoop}
+          slidesPerView={slidesPerView}
+          spaceBetween={6}
+          centeredSlides={false}
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+            reverseDirection: false,
+          }}
+          speed={4000}
+          modules={[Autoplay]}
+          className="mySwiper"
+        >
+          {keyItems.map(item => (
+            <SwiperSlide key={item.id}>
+              <Card>
+                <Icon src={item.imageUrl} alt={item.title} />
+                <TitleCard>{item.title}</TitleCard>
+                <TextCard>{item.text}</TextCard>
+              </Card>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       ) : (
         <CardContainer>
           {keyItems.map((item, index) => (
             <Card
               key={item.id}
-              as={motion.div}
               {...getCardAnimation(index)}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.25 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <Icon src={item.imageUrl} alt={item.title} />
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <TitleCard>{item.title}</TitleCard>
               </motion.div>
+
               <TextCard>{item.text}</TextCard>
             </Card>
           ))}
