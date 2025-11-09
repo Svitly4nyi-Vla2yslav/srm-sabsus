@@ -20,7 +20,7 @@ const WhyChooseOurPlatform: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         {' '}
         <WhyText>
@@ -31,7 +31,7 @@ const WhyChooseOurPlatform: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <MainTitel
           dangerouslySetInnerHTML={{ __html: t('whyChoosePlatform.mainTitle') }}
@@ -41,7 +41,7 @@ const WhyChooseOurPlatform: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <MainText>{t('whyChoosePlatform.description')}</MainText>
       </motion.div>
@@ -49,7 +49,7 @@ const WhyChooseOurPlatform: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.5 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <FeatureSwiper />
       </motion.div>

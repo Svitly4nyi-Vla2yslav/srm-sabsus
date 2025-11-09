@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           style={{
             position: 'relative',
             zIndex: 1,
@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           {' '}
           <HeroTitle>{t('hero.title')}</HeroTitle>
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           {' '}
           <HeroText>{t('hero.description')}</HeroText>
@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.7 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             {' '}
             <AvatarContainer>
@@ -119,7 +119,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.0, delay: 0.7 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <AvatarContainer>
                 <ImageContainer>
@@ -135,7 +135,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 0.9 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             {' '}
             <ButtonContainer>

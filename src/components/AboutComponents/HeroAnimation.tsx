@@ -237,20 +237,20 @@ const HeroAnimation: React.FC = () => {
       </SvgContainer>
 
       <CostomerWrapp>
-        <motion.div initial={false} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.3 }}>
+        <motion.div initial={false} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.3 }}>
           <HeroInnovative>{t('hero1.aboutUs')} <CardButtonText src={book} alt="book" /></HeroInnovative>
         </motion.div>
-        <motion.div initial={false} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: false, amount: 0.3 }}>
+        <motion.div initial={false} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true, amount: 0.3 }}>
           <HeroTitle>{t('hero1.title')}</HeroTitle>
         </motion.div>
-        <motion.div initial={false} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.3 }}>
+        <motion.div initial={false} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.3 }}>
           <ResultMainTextDescription>{t('hero1.description')}</ResultMainTextDescription>
         </motion.div>
       </CostomerWrapp>
 
       <NumberWrapp>
         {[{ value: '98%', text: 'satisfaction', delay: 0.45 }, { value: '3x', text: 'launchSpeed', delay: 0.35 }, { value: '70%', text: 'scaling', delay: 0.25 }].map(({ value, text, delay }, i) => (
-          <motion.div key={i} initial={false} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay }} viewport={{ once: false, amount: 0.3 }}>
+          <motion.div key={i} initial={false} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay }} viewport={{ once: true, amount: 0.3 }}>
             <div>
               <Number>{value}</Number>
               <NumberText>{t(`hero1.stats.${text}`)}</NumberText>

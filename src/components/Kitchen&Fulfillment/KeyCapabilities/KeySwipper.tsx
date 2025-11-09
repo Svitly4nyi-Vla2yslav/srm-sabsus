@@ -147,7 +147,7 @@ const KeySwipper: React.FC = () => {
       as={motion.div}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       {isMobile ? (
         <motion.div>
@@ -184,13 +184,13 @@ const KeySwipper: React.FC = () => {
               as={motion.div}
               {...getCardAnimation(index)}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.25 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <Icon src={item.imageUrl} alt={t(`kitchenManagement1.cards.${item.key}.title`)} />
               </motion.div>
@@ -198,7 +198,7 @@ const KeySwipper: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <TitleCard>{t(`kitchenManagement1.cards.${item.key}.title`)}</TitleCard>
               </motion.div>

@@ -95,7 +95,7 @@ const BusinessSwiper: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           style={{
             position: 'relative',
             zIndex: 1,
@@ -111,7 +111,7 @@ const BusinessSwiper: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <HeroTitle>{t('businessSwiper.subtitle')}</HeroTitle>
         </motion.div>
@@ -121,7 +121,7 @@ const BusinessSwiper: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <Swiper
             loop={shouldLoop}
@@ -152,14 +152,14 @@ const BusinessSwiper: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.1 * index }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   <CardContainer>
                     <motion.div
                       initial={{ opacity: 0, rotate: -45 }}
                       whileInView={{ opacity: 1, rotate: 0 }}
                       transition={{ duration: 0.7, delay: 0.2 + 0.1 * index }}
-                      viewport={{ once: false, amount: 0.3 }}
+                      viewport={{ once: true, amount: 0.3 }}
                     >
                       <ArrowIcon src={Arrow} alt="↗️" />
                     </motion.div>
@@ -173,7 +173,7 @@ const BusinessSwiper: React.FC = () => {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 + 0.1 * index }}
-                        viewport={{ once: false, amount: 0.3 }}
+                        viewport={{ once: true, amount: 0.3 }}
                       >
                         <BusinessName>
                           {t(`businessSwiper.businessTypes.${business.key}`)}
@@ -185,7 +185,7 @@ const BusinessSwiper: React.FC = () => {
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
                       transition={{ duration: 0.6, delay: 0.5 + 0.1 * index }}
-                      viewport={{ once: false, amount: 0.3 }}
+                      viewport={{ once: true, amount: 0.3 }}
                     >
                       <GradientLine />
                     </motion.div>
@@ -194,7 +194,7 @@ const BusinessSwiper: React.FC = () => {
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
                       transition={{ duration: 0.6, delay: 0.6 + 0.1 * index }}
-                      viewport={{ once: false, amount: 0.3 }}
+                      viewport={{ once: true, amount: 0.3 }}
                     >
                       <SmallLine />
                     </motion.div>

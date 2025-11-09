@@ -367,7 +367,7 @@ const StepByStepGuidance: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <StepMainText>
           {t('stepByStepGuidance1.title')}{' '}
@@ -378,7 +378,7 @@ const StepByStepGuidance: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <StepMainTitle>{t('stepByStepGuidance1.heading')}</StepMainTitle>
       </motion.div>
@@ -386,7 +386,7 @@ const StepByStepGuidance: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <StepMainTextDescription>
           {t('stepByStepGuidance1.description')}

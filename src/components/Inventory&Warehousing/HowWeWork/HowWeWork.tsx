@@ -422,7 +422,7 @@ const HowWeWork: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <HowWeWorkMainText>
           {t('inventoryManagementSection.title')} <HowSpanIcon src={rocket} alt="Icon" />
@@ -432,7 +432,7 @@ const HowWeWork: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         {t('inventoryManagementSection.heading')}
       </HowWeWorkMainid>
@@ -440,7 +440,7 @@ const HowWeWork: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <HowWeWorkMainTextDescription>
           {t('inventoryManagementSection.description')}
@@ -453,14 +453,14 @@ const HowWeWork: React.FC = () => {
               as={motion.div}
               {...getCardAnimation(index)}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <MobileDivider />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.15 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <CardNumber>{card.id}</CardNumber>
               </motion.div>
@@ -468,7 +468,7 @@ const HowWeWork: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <CardText>
                   {t(`inventoryManagementSection.cards.${card.key}.title`)}
@@ -478,7 +478,7 @@ const HowWeWork: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.25 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <CardDescription>
                   {t(`inventoryManagementSection.cards.${card.key}.desc`)}

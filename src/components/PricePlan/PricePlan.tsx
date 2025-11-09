@@ -71,7 +71,7 @@ const PricePlan: React.FC = () => {
       as={motion.div}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       <motion.div>
         <MainTextPrice >

@@ -76,7 +76,7 @@ const ResultsFromBusinesses: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <ResultMainText>
           {data.mainText} <CardButtonText src={icon18} alt="💹" />
@@ -87,7 +87,7 @@ const ResultsFromBusinesses: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <ResultMainTitle>{data.mainTitle}</ResultMainTitle>
       </motion.div>
@@ -96,7 +96,7 @@ const ResultsFromBusinesses: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
       >
         <ResultMainTextDescription>{data.description}</ResultMainTextDescription>
       </motion.div>
@@ -106,7 +106,7 @@ const ResultsFromBusinesses: React.FC = () => {
         variants={containerAnimation}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <ResultMasterImage 
           as={motion.img}
@@ -115,14 +115,14 @@ const ResultsFromBusinesses: React.FC = () => {
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         />
         
         <ResultCard 
           as={motion.div}
           {...cardAnimation(0)}
           transition={{ duration: 0.5, delay: 0.3 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div variants={itemAnimation}>
             <ResultIconCard src={IconPazzario} alt="Icon" />
@@ -142,7 +142,7 @@ const ResultsFromBusinesses: React.FC = () => {
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-         viewport={{ once: false, amount: 0.3 }}
+         viewport={{ once: true, amount: 0.3 }}
         />
         
         <ResultImage4 
@@ -152,14 +152,14 @@ const ResultsFromBusinesses: React.FC = () => {
           initial={{ x: 50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-       viewport={{ once: false, amount: 0.3 }}
+       viewport={{ once: true, amount: 0.3 }}
         />
         
         <ResultCard2
           as={motion.div}
           {...cardAnimation(1)}
           transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div variants={itemAnimation}>
             <ResultIconCard src={sweets} alt="Icon" />
@@ -186,7 +186,7 @@ const ResultsFromBusinesses: React.FC = () => {
           as={motion.div}
           {...cardAnimation(2)}
           transition={{ duration: 0.5, delay: 0.8 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div variants={itemAnimation}>
             <ResultIconCard src={burban} alt="Icon" />
@@ -206,7 +206,7 @@ const ResultsFromBusinesses: React.FC = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.9 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
         />
         
         <ResultImage2 
@@ -216,7 +216,7 @@ const ResultsFromBusinesses: React.FC = () => {
           initial={{ rotate: 10, opacity: 0 }}
           whileInView={{ rotate: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.0 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         />
       </ResultDisplayGrid>
     </ResultsFromBusinessesWrapper>
