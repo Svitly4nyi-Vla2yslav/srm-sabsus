@@ -91,7 +91,7 @@ const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const languages = [
-    { code: 'en', label: t('languageSwitcher.english'), flag: '🇬🇧' },
+    { code: 'en', label: t('languageSwitcher.english'), flag: '🇺🇸' },
     { code: 'es', label: t('languageSwitcher.spanish'), flag: '🇪🇸' },
     { code: 'ru', label: t('languageSwitcher.russian'), flag: '🇷🇺' },
     { code: 'uk', label: t('languageSwitcher.ukrainian'), flag: '🇺🇦' }
