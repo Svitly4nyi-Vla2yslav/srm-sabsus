@@ -85,7 +85,8 @@ export const gradientFlow = keyframes`
 export const ButtonFree = styled.button`
   z-index: 10;
   border-radius: 12px;
-  min-width: 343px;
+  /* max-width: 518px; */
+    width: 100%;
   height: 46px;
   margin-bottom: 32px;
   position: relative;
@@ -123,7 +124,53 @@ export const ButtonFree = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    width: 518px;
+  width: 100%;
+  }
+`;
+
+export const ButtonFreeSupport = styled.button`
+  z-index: 10;
+  border-radius: 12px;
+  max-width: 343px;
+  height: 46px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--white-100);
+  box-shadow: inset 0 0 6px 0 rgba(255, 255, 255, 0.54);
+  background: linear-gradient(139deg, #494bec, #6a6bff, #494bec, #3a3bc7);
+  background-size: 300% 300%;
+  animation:
+    ${pulse} 2s infinite,
+    ${gradientFlow} 6s ease infinite;
+  transition: all 0.4s ease;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+
+  &:hover {
+    box-shadow:
+      inset 0 0 8px 0 rgba(255, 255, 255, 0.74),
+      0 0 15px rgba(73, 75, 236, 0.5);
+    transform: perspective(500px) rotateX(10deg) translateY(-2px);
+    animation:
+      ${pulse} 2s infinite,
+      ${gradientFlow} 3s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  &:active {
+    animation:
+      ${clickEffect} 0.3s ease,
+      ${gradientFlow} 6s ease infinite;
+    background: linear-gradient(139deg, #3a3bc7, #494bec, #3a3bc7);
+  }
+
+  @media screen and (min-width: 768px) {
+    /* width: 518px; */
   }
 `;
 
@@ -134,6 +181,17 @@ const Form = styled.form`
   position: relative;
   top: 300px;
   width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 40px;
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 8px 16px -8px rgba(0, 0, 0, 0.03),
+    0 2px 4px -2px rgba(0, 0, 0, 0.08),
+    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03);
+  border: 1px solid #212121;
+  max-width: 800px;
 
   @media screen and (min-width: 768px) {
     max-width: 518px;
@@ -427,8 +485,7 @@ const ContactForm: React.FC = () => {
           }}
         >
           <HeroInnovative>
-            {t('contact.getStarted')}{' '}
-            <CardButtonText src={star} alt="star" />
+            {t('contact.getStarted')} <CardButtonText src={star} alt="star" />
           </HeroInnovative>
         </motion.div>
         <motion.div
@@ -570,18 +627,14 @@ const ContactForm: React.FC = () => {
             <SupportBadge>{t('contact.help.supportBadge')}</SupportBadge>
           </ContactEmail>
 
-          <a
-            href="https://sabsus.info"
-            target="_blank"
-            rel="noopener"
-          >
-            <ButtonFree
+          <a href="https://sabsus.info" target="_blank" rel="noopener">
+            <ButtonFreeSupport
               as={motion.button}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
             >
               {t('contact.help.helpCenter')}
-            </ButtonFree>
+            </ButtonFreeSupport>
           </a>
 
           <HelpCenterText>{t('contact.help.helpText')}</HelpCenterText>
