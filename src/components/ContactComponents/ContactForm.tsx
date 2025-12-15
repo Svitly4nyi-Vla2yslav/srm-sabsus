@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useState, useRef } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { HeroInnovative, HeroTitle } from '../Hero/Hero.styled';
 import { CardButtonText } from '../AllinOneSRM/AllinOneSRM.styled';
 import star from '../../assets/icons/Star-copy.svg';
@@ -9,6 +9,42 @@ import { useTranslation } from 'react-i18next';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { Alert, AlertType } from './Alert';
+
+const fieldStyles = css`
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+
+  border: 1px solid #212121;
+  border-radius: 8px;
+
+  padding: 12px 16px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+
+  color: rgba(161, 161, 170, 0.8);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12) 7%,
+    rgba(255, 255, 255, 0) 86%
+  );
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
+    0 8px 16px -8px rgba(0, 0, 0, 0.03),
+    0 2px 4px -2px rgba(0, 0, 0, 0.08);
+
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #494bec;
+  }
+`;
 
 export const ContactWrapper = styled.div`
   margin: 0 auto;
@@ -85,8 +121,8 @@ export const gradientFlow = keyframes`
 export const ButtonFree = styled.button`
   z-index: 10;
   border-radius: 12px;
-  /* max-width: 518px; */
-    width: 100%;
+  /* max-width: 435px; */
+  width: 100%;
   height: 46px;
   margin-bottom: 32px;
   position: relative;
@@ -104,6 +140,9 @@ export const ButtonFree = styled.button`
   transition: all 0.4s ease;
   border: none;
   cursor: pointer;
+  display: block;
+  width: 100%;
+  align-self: stretch;
 
   &:hover {
     box-shadow:
@@ -124,7 +163,6 @@ export const ButtonFree = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-  width: 100%;
   }
 `;
 
@@ -177,13 +215,14 @@ export const ButtonFreeSupport = styled.button`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* було center */
   position: relative;
   top: 300px;
   width: 100%;
+  min-width: 350px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 24px;
-  padding: 40px;
+  padding: 24px 16px; /* ✅ для 375px */
   backdrop-filter: blur(16px);
   box-shadow:
     0 8px 16px -8px rgba(0, 0, 0, 0.03),
@@ -191,12 +230,13 @@ const Form = styled.form`
     inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03),
     inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03);
   border: 1px solid #212121;
-  max-width: 800px;
+  /* max-width: 800px; */
 
   @media screen and (min-width: 768px) {
     max-width: 518px;
     width: 100%;
     margin-top: 62px;
+    padding: 40px;
   }
 `;
 
@@ -208,7 +248,6 @@ const Label = styled.label`
   color: var(--white-100);
   margin-bottom: 20px;
   padding-bottom: 8px;
-  width: 343px;
   @media screen and (min-width: 768px) {
     max-width: 518px;
     width: 100%;
@@ -271,24 +310,25 @@ const Select = styled.select`
     0 8px 16px -8px rgba(0, 0, 0, 0.03),
     0 2px 4px -2px rgba(0, 0, 0, 0.08);
   background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.12) 7%,
-      rgba(255, 255, 255, 0) 86%
-    )
-    no-repeat;
-  background-position: right 10px center;
+    180deg,
+    rgba(255, 255, 255, 0.12) 7%,
+    rgba(255, 255, 255, 0) 86%
+  );
+
+  transition: border-color 0.3s ease;
+
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a1a1aa'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-size: 26px;
+  ${fieldStyles};
 
+  background-position: right 10px center;
   option {
     background-color: rgba(25, 24, 24, 1);
     color: rgba(161, 161, 170, 0.8);
+    border-radius: 8px;
   }
 
   &:focus {
@@ -574,6 +614,7 @@ const ContactForm: React.FC = () => {
         </Label>
 
         <a
+          style={{ display: 'block', width: '100%' }}
           ref={linkRef}
           href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0ECvny1g7NCJmXnJvrxrsWKg2y5eT86f1mR9n1l9UrYrnw-7NiuMqc4TMfcRIFUTVGIyVyufmB?gv=true"
           target="_blank"
