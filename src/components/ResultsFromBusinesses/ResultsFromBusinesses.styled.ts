@@ -28,7 +28,7 @@ export const ResultMainText = styled(motion.p)`
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 12px;

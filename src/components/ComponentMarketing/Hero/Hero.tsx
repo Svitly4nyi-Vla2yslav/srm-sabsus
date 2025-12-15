@@ -47,7 +47,7 @@ export const FullScreenContainer = styled.div`
     canvas {
       position: relative;
       width: 100vw !important;
-      height: 120vh !important;
+      height: 130vh !important;
       left: 50%;
       top: 0px;
       bottom: 90vh;
@@ -106,6 +106,14 @@ const HeroImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @media screen and (min-width: 1068px) {
+    width: 84%;
+    max-width: 1200px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 130px;
+  }
 `;
 
 const Sparkle = styled(motion.div)`
@@ -201,6 +209,7 @@ const Hero: React.FC = () => {
   return (
     <HeroWrapper id="ap">
       <FullScreenContainer>
+        {' '}
         {isMobile ? (
           <FallbackImage />
         ) : (
