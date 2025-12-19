@@ -93,7 +93,7 @@ height: 199px;
   
   &:hover {
     filter: drop-shadow(0 0 30px rgba(35, 62, 236, 0.84));
-`;
+  }`;
 
 export const TitleCard = styled.h3`
   font-family: var(--font-family);

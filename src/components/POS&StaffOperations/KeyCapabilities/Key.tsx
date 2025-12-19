@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 
 export const KeyWrapper = styled(motion.div)`
   margin: 0 auto;
-  margin-top: -100px;
+  margin-top: 0px;
   width: 100%;
   height: 100%;
   position: relative;
@@ -25,6 +25,7 @@ export const KeyWrapper = styled(motion.div)`
   @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 1440px) {
+    margin-top: -100px;
       max-width: 1440px;
   }
 
