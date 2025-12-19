@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { styled } from 'styled-components';
 import {
   ButtonContainer,
@@ -89,7 +89,7 @@ export const Container = styled.div`
   @media screen and (min-width: 1440px) {
     iframe,
     canvas {
-    top: -70px !important; 
+      top: -70px !important;
       width: 100% !important; /* Дозволяємо розширення за межі екрану */
       height: 100% !important;
       left: 0;
@@ -133,7 +133,7 @@ export const CostomerWrapp = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-     position: absolute; /* Тільки для 1440px+ */
+    position: absolute; /* Тільки для 1440px+ */
     top: 0; /* Піднімаємо до верху */
     left: 50%;
     transform: translateX(-50%); /* Точне центрування */
@@ -147,7 +147,15 @@ export const CostomerWrapp = styled.div`
   }
 `;
 
-const FallbackImage = () => {
+const SplineStage = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+const FallbackImage: React.FC<{
+  mode?: 'static' | 'overlay';
+  visible?: boolean;
+}> = ({ mode = 'static', visible = true }) => {
   const sparkles = Array.from({ length: 100 }, () => ({
     top: `${Math.random() * 100}%`,
     left: `${Math.random() * 100}%`,
@@ -156,7 +164,17 @@ const FallbackImage = () => {
   }));
 
   return (
-    <div style={{ position: 'relative', width: '100%' }}>
+    <div
+      style={{
+        position: mode === 'overlay' ? 'absolute' : 'relative',
+        inset: mode === 'overlay' ? 0 : undefined,
+        width: '100%',
+        opacity: visible ? 1 : 0,
+        transition: 'opacity 0.35s ease',
+        pointerEvents: 'none', // це і є “стиль заглушки”
+        zIndex: mode === 'overlay' ? 3 : 1,
+      }}
+    >
       <img
         src={HeroIcon}
         alt="3D Scene"
@@ -166,6 +184,7 @@ const FallbackImage = () => {
           filter: 'blur(0.5px)',
           transform: 'rotate(-10deg)',
           display: 'block',
+          opacity: 0.7, // як у тебе на мобілці для canvas/iframe
         }}
       />
       <SparkleLayer>
@@ -188,28 +207,65 @@ const FallbackImage = () => {
 };
 
 const Hero: React.FC = () => {
-  const isMobile = useMediaQuery('(max-width: 767px)');
+  const isDesktopSpline = useMediaQuery('(min-width: 1440px)', { noSsr: true });
   const { t } = useTranslation();
+
+  const [showFallback, setShowFallback] = useState(true);
+  const stageRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!isDesktopSpline) return;
+
+    setShowFallback(true);
+
+    const el = stageRef.current;
+    if (!el) return;
+
+    // 1) як тільки Spline домалює canvas/iframe, ховаємо заглушку
+    const check = () => {
+      const hasCanvasOrIframe = el.querySelector('canvas, iframe');
+      if (hasCanvasOrIframe) setShowFallback(false);
+    };
+
+    check();
+
+    const obs = new MutationObserver(check);
+    obs.observe(el, { childList: true, subtree: true });
+
+    // 2) фейлсейф, щоб не висіло вічно (на випадок багів/блокувань)
+    const t = window.setTimeout(() => setShowFallback(false), 6000);
+
+    return () => {
+      obs.disconnect();
+      window.clearTimeout(t);
+    };
+  }, [isDesktopSpline]);
 
   return (
     <HeroWrapper style={{}}>
       <Container>
-        {isMobile ? (
-          <FallbackImage />
+        {!isDesktopSpline ? (
+          <FallbackImage mode="static" />
         ) : (
-          <Suspense fallback={<FallbackImage />}>
-            <Spline
-              scene="https://prod.spline.design/weK184EAiAKpQ3YI/scene.splinecode"
-              style={{
-                transition: 'transform 0.5s ease-out',
-                filter: 'blur(0.5px)',
-                maxWidth: '100%',
-                overflow: 'visible',
-              }}
-            />
-          </Suspense>
+          <SplineStage ref={stageRef}>
+            <FallbackImage mode="overlay" visible={showFallback} />
+
+            {/* Suspense можеш лишити, але головне вже не він */}
+            <Suspense fallback={<FallbackImage mode="overlay" visible />}>
+              <Spline
+                scene="https://prod.spline.design/weK184EAiAKpQ3YI/scene.splinecode"
+                style={{
+                  transition: 'transform 0.5s ease-out',
+                  filter: 'blur(0.5px)',
+                  maxWidth: '100%',
+                  overflow: 'visible',
+                }}
+              />
+            </Suspense>
+          </SplineStage>
         )}
       </Container>
+
       <CostomerWrapp>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
