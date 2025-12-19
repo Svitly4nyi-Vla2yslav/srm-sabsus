@@ -9,7 +9,7 @@ export const HeaderContainer = styled.div`
   justify-content: center;
   gap: 40px;
 
-    @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     border-top: 1px solid var(--white-60);
     padding-top: 40px;
     display: flex;
@@ -18,7 +18,7 @@ export const HeaderContainer = styled.div`
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: baseline;
-    margin: 0 auto: 
+    margin: 0 auto;
     max-width: 740px;
     width: 100%;
   }
@@ -143,6 +143,7 @@ export const IconWrapper = styled.div`
     rgba(255, 255, 255, 0.03);
 
   -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 
 `;
 

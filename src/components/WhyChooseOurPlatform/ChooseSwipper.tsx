@@ -3,8 +3,9 @@ import { Swiper as SwiperCore } from 'swiper/types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 import point from '../../assets/icons/Traffic Lights (Big Sur).svg';
 import slide1 from '../../assets/icons/Frame 3479.png';
 import slide2 from '../../assets/icons/Frame 3479-1.png';
