@@ -416,7 +416,7 @@ export const ContentOverlay = styled.div`
   bottom: 0%;
   left: 0;
   right: 0;
-  height: 74%;
+  height: 54%;
   padding: 20px;
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(10px);

@@ -12,11 +12,11 @@ import slide4 from '../../assets/icons/Frame 3479-3.png';
 import logo from '../../assets/icons/logo-srm.svg';
 import Tools from '../../assets/icons/Toolbar Group.svg';
 
-// import {
-//   ButtonContainer,
-//   HeroButton,
-//   HeroButtonGrey,
-// } from '../Hero/Hero.styled';
+import {
+  ButtonContainer,
+  HeroButton,
+  HeroButtonGrey,
+} from '../Hero/Hero.styled';
 
 import {
   HeaderContainer,
@@ -38,10 +38,10 @@ import {
   ToolGroup,
   SlideContent,
   SlideImage,
-  // ContentOverlay,
-  // OverlayTitle,
-  // OverlayText,
-  // Overlay,
+  ContentOverlay,
+  OverlayTitle,
+  OverlayText,
+  Overlay,
 } from './Swipper.styled';
 
 import { useTranslation } from 'react-i18next';
@@ -251,7 +251,7 @@ const FeatureSwiper = () => {
                     <SlideImage $image={feature.image} />
                   </div>
 
-                  {/* Overlay section (commented in your code)
+                  {/* Overlay section (commented in your code) */}
                   <ContentOverlay>
                     <Overlay>
                       <OverlayTitle>{feature.overlay.title}</OverlayTitle>
@@ -278,7 +278,7 @@ const FeatureSwiper = () => {
                       </ButtonContainer>
                     </Overlay>
                   </ContentOverlay>
-                  */}
+                 
                 </SlideContent>
               </SlideContainer>
             </SwiperSlide>
