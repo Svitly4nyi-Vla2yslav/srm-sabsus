@@ -7,7 +7,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: ['@typescript-eslint/parser', "espree"],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020, // Підтримка сучасного JavaScript
     sourceType: "module",
@@ -18,9 +18,10 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.js"],
+      files: ['*.js', '*.cjs', '*.mjs'],
+      parser: 'espree',
       rules: {
-        "@typescript-eslint/no-var-requires": "off",
+        '@typescript-eslint/no-var-requires': 'off',
       },
     },
   ],

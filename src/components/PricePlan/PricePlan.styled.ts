@@ -1,4 +1,4 @@
-import { css, styled } from "styled-components";
+import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const MasterContainer = styled(motion.div)`
@@ -6,20 +6,20 @@ export const MasterContainer = styled(motion.div)`
   width: 100%;
   width: 343px;
   padding: 0 16px;
- @media screen and (min-width: 768px) {
-  width: 710px;
+  @media screen and (min-width: 768px) {
+    width: 710px;
   }
-  
+
   @media screen and (min-width: 1440px) {
-  max-width: 1440px;
+    max-width: 1440px;
   }
 `;
 
 export const MainTextPrice = styled(motion.p)`
   margin: 0 auto;
   border-radius: 24px;
-    padding: 4px 1px 4px 14px;
-    width: max-content;
+  padding: 4px 1px 4px 14px;
+  width: max-content;
   height: 28px;
   display: flex;
   justify-content: space-between;
@@ -30,11 +30,16 @@ export const MainTextPrice = styled(motion.p)`
   font-size: 12px;
   color: var(--white-100);
   backdrop-filter: blur(16px);
-  box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), 
-              inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 
-              0 8px 16px -8px rgba(0, 0, 0, 0.03), 
-              0 2px 4px -2px rgba(0, 0, 0, 0.08);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%);
+  box-shadow:
+    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
+    0 8px 16px -8px rgba(0, 0, 0, 0.03),
+    0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12) 7%,
+    rgba(255, 255, 255, 0) 86%
+  );
   align-items: center;
   will-change: transform, opacity;
 `;
@@ -48,7 +53,7 @@ export const CardButtonText = styled(motion.img)`
   font-size: 13px;
   overflow: visible;
 
-  box-shadow: 
+  box-shadow:
     inset 0 -8px 24px rgba(255, 255, 255, 0.18),
     inset 0 -5px 6px rgba(255, 255, 255, 0.03),
     0 4px 8px rgba(0, 0, 0, 0.04),
@@ -61,9 +66,9 @@ export const CardButtonText = styled(motion.img)`
   );
 
   -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   will-change: transform;
 `;
-
 
 export const PriceTitle = styled(motion.h2)`
   font-family: var(--font-family);
@@ -103,10 +108,10 @@ export const SwitchContainer = styled(motion.div)<{ $isMonthly: boolean }>`
   max-width: 350px;
   min-height: 64px;
   backdrop-filter: blur(16px);
-  box-shadow: 
-    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), 
-    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 
-    0 8px 16px -8px rgba(0, 0, 0, 0.03), 
+  box-shadow:
+    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
+    0 8px 16px -8px rgba(0, 0, 0, 0.03),
     0 2px 4px -2px rgba(0, 0, 0, 0.08);
   background: rgba(255, 255, 255, 0.03);
   margin-bottom: 24px;
@@ -119,7 +124,7 @@ export const SwitchContainer = styled(motion.div)<{ $isMonthly: boolean }>`
   border: 1px solid #212121;
   padding: 8px;
   will-change: transform, opacity;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -131,7 +136,9 @@ export const SwitchContainer = styled(motion.div)<{ $isMonthly: boolean }>`
     border-radius: 16px;
     z-index: 0;
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transform: translateX(${({ $isMonthly }) => $isMonthly ? '0' : 'calc(100% + 8px)'});
+    transform: translateX(
+      ${({ $isMonthly }) => ($isMonthly ? '0' : 'calc(100% + 8px)')}
+    );
   }
 
   button {
@@ -180,7 +187,7 @@ export const CardsContainer = styled(motion.div)`
   @media screen and (min-width: 768px) {
     width: 656px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -188,7 +195,7 @@ export const CardsContainer = styled(motion.div)`
 `;
 
 export const Card = styled(motion.div).withConfig({
-  shouldForwardProp: (prop) => prop !== 'highlight',
+  shouldForwardProp: prop => prop !== 'highlight',
 })<{ highlight?: boolean }>`
   padding: 20px;
   margin: 0 auto;
@@ -211,7 +218,7 @@ export const Card = styled(motion.div).withConfig({
       background: rgba(10, 10, 30, 0.5);
       border: 2px solid transparent;
       background-clip: padding-box;
-      
+
       /* Градієнтна обводка (як у SVG) */
       &::before {
         content: '';
@@ -225,12 +232,12 @@ export const Card = styled(motion.div).withConfig({
         background: linear-gradient(
           135deg,
           white 0%,
-          #6567EF 30%,
-          #4F51ED 50%,
-          #E4E5FC 100%
+          #6567ef 30%,
+          #4f51ed 50%,
+          #e4e5fc 100%
         );
-        -webkit-mask: 
-          linear-gradient(#fff 0 0) content-box, 
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
           linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
@@ -247,7 +254,7 @@ export const Card = styled(motion.div).withConfig({
 
   &:hover {
     transform: translateY(-4px);
-    
+
     ${({ highlight }) =>
       highlight
         ? css`
@@ -258,7 +265,7 @@ export const Card = styled(motion.div).withConfig({
             background: rgba(10, 10, 30, 0.6);
           `
         : css`
-            box-shadow: 
+            box-shadow:
               0 4px 20px rgba(0, 0, 0, 0.15),
               0 2px 8px rgba(0, 0, 0, 0.1);
             background: rgba(255, 255, 255, 0.06);
@@ -272,7 +279,7 @@ export const Card = styled(motion.div).withConfig({
   @media screen and (min-width: 768px) {
     width: 656px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 440px;
   }
@@ -296,28 +303,33 @@ export const CardH3 = styled(motion.h3)`
 `;
 
 export const CardSpan = styled(motion.span)`
- font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 130%;
-    color: rgba(146, 147, 240, 0.8);
-    text-shadow: 0 0 8px rgba(101, 103, 239, 0.8);
-    padding: 1px 5px;
-    border-radius: 12.5px;
-    border: 1px solid transparent;
-    background: linear-gradient(rgba(10, 10, 30, 0.5), rgba(10, 10, 30, 0.5)) padding-box, linear-gradient(135deg, white 0%, #6567EF 30%, #4F51ED 50%, #E4E5FC 100%) border-box;
-    box-shadow: 0 0 15px 5px rgba(101, 103, 239, 0.2), 0 0 30px 10px rgba(101, 103, 239, 0.15), inset 0 0 10px 2px rgba(101, 103, 239, 0.3);
-    backdrop-filter: blur(4px);
-    will-change: transform;
-    position: absolute;
-     left: 12%;
-    bottom: 100%;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: rgba(146, 147, 240, 0.8);
+  text-shadow: 0 0 8px rgba(101, 103, 239, 0.8);
+  padding: 1px 5px;
+  border-radius: 12.5px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(rgba(10, 10, 30, 0.5), rgba(10, 10, 30, 0.5)) padding-box,
+    linear-gradient(135deg, white 0%, #6567ef 30%, #4f51ed 50%, #e4e5fc 100%)
+      border-box;
+  box-shadow:
+    0 0 15px 5px rgba(101, 103, 239, 0.2),
+    0 0 30px 10px rgba(101, 103, 239, 0.15),
+    inset 0 0 10px 2px rgba(101, 103, 239, 0.3);
+  backdrop-filter: blur(4px);
+  will-change: transform;
+  position: absolute;
+  left: 12%;
+  bottom: 100%;
 `;
 
-
 export const Price = styled(motion.div).withConfig({
-  shouldForwardProp: (prop) => prop !== '$isSelected',
-}) <{ $isSelected?: boolean }>`
+  shouldForwardProp: prop => prop !== '$isSelected',
+})<{ $isSelected?: boolean }>`
   font-size: 24px;
   font-weight: bold;
   margin: 16px 0;
@@ -338,13 +350,13 @@ export const Price = styled(motion.div).withConfig({
   will-change: transform, background;
 
   ${({ $isSelected }) =>
-    $isSelected && `
+    $isSelected &&
+    `
       background: rgba(73, 75, 236, 0.1);
       border-radius: 8px;
       padding: 12px;
       border-bottom: 1px solid #494BEC;
-    `
-  }
+    `}
 
   &:hover {
     background: rgba(73, 75, 236, 0.05);
@@ -380,12 +392,11 @@ export const Span = styled(motion.div)`
   color: var(--white-100);
   will-change: transform;
   position: relative;
-
 `;
 
 export const Button = styled(motion.button).withConfig({
-  shouldForwardProp: (prop) => prop !== 'highlight',
-}) <{ highlight?: boolean }>`
+  shouldForwardProp: prop => prop !== 'highlight',
+})<{ highlight?: boolean }>`
   border-radius: 12px;
   padding: 12px 20px;
   width: 303px;
@@ -393,15 +404,15 @@ export const Button = styled(motion.button).withConfig({
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
-  color: ${({ highlight }) => highlight ? '#E4E5FC' : 'var(--white-100)'};
+  color: ${({ highlight }) => (highlight ? '#E4E5FC' : 'var(--white-100)')};
   backdrop-filter: blur(16px);
   background: ${({ highlight }) =>
     highlight
-      ? `linear-gradient(180deg, rgb(72, 27, 179) 0%, rgba(255, 255, 255, 0.03) 100%)`
+      ? `linear-gradient(139deg, #494bec, #6a6bff, #494bec, #3a3bc7)`
       : `linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%)`};
   box-shadow: ${({ highlight }) =>
     highlight
-      ? `0 0 20px rgba(101, 103, 239, 0.5), inset 0 0 10px rgba(73, 75, 236, 0.4)`
+      ? `inset 0 0 6px 0 rgba(255, 255, 255, 0.54)`
       : `inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03),
          inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
          0 8px 16px -8px rgba(0, 0, 0, 0.03),
@@ -433,17 +444,18 @@ export const Button = styled(motion.button).withConfig({
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   will-change: transform, box-shadow, background;
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: ${({ highlight }) =>
-    highlight
-      ? `0 0 30px rgba(101, 103, 239, 0.7), inset 0 0 15px rgba(73, 75, 236, 0.6)`
-      : `0 4px 12px rgba(0, 0, 0, 0.1), inset 0 -4px 8px rgba(255, 255, 255, 0.05)`};
+      highlight
+        ? `inset 0 0 8px 0 rgba(255, 255, 255, 0.74),
+      0 0 15px rgba(73, 75, 236, 0.5)`
+        : `0 4px 12px rgba(0, 0, 0, 0.1), inset 0 -4px 8px rgba(255, 255, 255, 0.05)`};
     background: ${({ highlight }) =>
-    highlight
-      ? `linear-gradient(180deg, rgb(82, 37, 189) 0%, rgba(255, 255, 255, 0.05) 100%)`
-      : `linear-gradient(180deg, rgba(255, 255, 255, 0.16) 7%, rgba(255, 255, 255, 0.02) 86%)`};
+      highlight
+        ? `linear-gradient(139deg, #5d5ff8ff, #7676edff, #494bec, #4d4decff)`
+        : `linear-gradient(180deg, rgba(255, 255, 255, 0.16) 7%, rgba(255, 255, 255, 0.02) 86%)`};
   }
 
   &:active {

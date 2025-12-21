@@ -214,7 +214,7 @@ const FeatureSwiper = () => {
       <div style={{ width: '100%', margin: '40px auto' }}>
         <Swiper
           id="benefits"
-          onSwiper={(swiper) => {
+          onSwiper={swiper => {
             swiperRef.current = swiper;
           }}
           spaceBetween={0}
@@ -288,8 +288,12 @@ const FeatureSwiper = () => {
 
       {/* Lightbox */}
       {openedImage && (
-        <LightboxOverlay onClick={closeLightbox} role="dialog" aria-modal="true">
-          <LightboxContent onClick={(e) => e.stopPropagation()}>
+        <LightboxOverlay
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+        >
+          <LightboxContent onClick={e => e.stopPropagation()}>
             <CloseButton onClick={closeLightbox} aria-label="Close image">
               ×
             </CloseButton>

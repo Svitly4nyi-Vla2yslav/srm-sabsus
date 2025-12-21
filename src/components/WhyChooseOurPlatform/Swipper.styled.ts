@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
 
 export const HeaderContainer = styled.div`
   display: flex;
@@ -24,8 +24,8 @@ export const HeaderContainer = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-max-width: 1130px;
-margin: 0 auto;
+    max-width: 1130px;
+    margin: 0 auto;
   }
 `;
 
@@ -37,12 +37,10 @@ export const FeatureCard = styled.div`
   gap: 12px;
   width: 100%;
 
-    @media screen and (min-width: 768px) {
-
+  @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1440px) {
-
   }
 `;
 
@@ -54,12 +52,10 @@ export const BadgeWrapper = styled.div`
   align-items: center;
   margin: 0 auto;
 
-    @media screen and (min-width: 768px) {
-
+  @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1440px) {
-
   }
 `;
 
@@ -68,13 +64,11 @@ export const AbsoluteBadge = styled.div`
   max-width: 127px;
   height: 28px;
 
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export interface BadgeOutlineProps {
@@ -89,13 +83,11 @@ export const BadgeOutline = styled.div<BadgeOutlineProps>`
   display: flex;
   opacity: ${props => props.opacity || 0};
 
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const BadgeContent = styled.div`
@@ -103,16 +95,14 @@ export const BadgeContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-   width: fit-content;
-   gap: 6px;
+  width: fit-content;
+  gap: 6px;
 
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const IconWrapper = styled.div`
@@ -144,9 +134,7 @@ export const IconWrapper = styled.div`
 
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-
 `;
-
 
 export const BadgeButton = styled.button`
   cursor: pointer;
@@ -183,20 +171,26 @@ export const BadgeButton = styled.button`
       transform: translateX(-50%);
       width: 0;
       height: 3px;
-      box-shadow: inset 0 0 20px 0 rgba(123, 156, 246, 0.85), inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15), inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1), 0 0 10px 6px rgba(64, 141, 242, 0.68), 0 15px 30px -10px rgba(0, 0, 0, 0.25), 0 5px 10px -5px rgba(0, 0, 0, 0.2);
-      background: linear-gradient(90deg, #7b92f6ff 0%, #6A6BFF 100%);
+      box-shadow:
+        inset 0 0 20px 0 rgba(123, 156, 246, 0.85),
+        inset 0 -10px 25px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -5px 10px 0 rgba(255, 255, 255, 0.1),
+        0 0 10px 6px rgba(64, 141, 242, 0.68),
+        0 15px 30px -10px rgba(0, 0, 0, 0.25),
+        0 5px 10px -5px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(90deg, #7b92f6ff 0%, #6a6bff 100%);
       transition: width 0.3s ease;
     }
 
     &.active::after,
-    &[aria-selected="true"]::after {
+    &[aria-selected='true']::after {
       width: 100%;
     }
   }
 
   @media screen and (min-width: 1440px) {
     &::after {
-    // bottom: 67px;
+      // bottom: 67px;
     }
   }
 `;
@@ -207,15 +201,13 @@ export const BadgeText = styled.p`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.2em;
- padding-right: 10px;
-width: max-content;
- @media screen and (min-width: 768px) {
+  padding-right: 10px;
+  width: max-content;
+  @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const Title = styled.p`
@@ -227,13 +219,11 @@ export const Title = styled.p`
   text-align: center;
   width: 100%;
 
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -244,13 +234,11 @@ export const Subtitle = styled.p`
   color: var(--white-60);
   text-align: center;
   width: 100%;
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const Divider = styled.div`
@@ -260,18 +248,17 @@ export const Divider = styled.div`
   transform: rotate(90deg);
 
   @media screen and (min-width: 768px) {
-width: 501px;
+    width: 501px;
     height: 2px;
-}
+  }
 
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 // Styled Components for the Swiper Slides
 export const SlideContainer = styled.div`
-margin: 0 auto;
+  margin: 0 auto;
   width: 343px;
   height: 545px;
   position: relative;
@@ -283,7 +270,7 @@ margin: 0 auto;
     inset 0 -6px 17px 0 rgba(255, 255, 255, 0.03),
     inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.03);
-  border-radius: 28px ;
+  border-radius: 28px;
   &::after {
     content: '';
     position: absolute;
@@ -298,16 +285,15 @@ margin: 0 auto;
     pointer-events: none;
   }
 
- @media screen and (min-width: 768px) {
-max-width: 740px;
-width: 100%;
-margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    max-width: 740px;
+    width: 100%;
+    margin: 0 auto;
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-max-width: 1130px;
-} 
+  @media screen and (min-width: 1440px) {
+    max-width: 1130px;
+  }
 `;
 
 export const SlideHeader = styled.div`
@@ -323,14 +309,14 @@ export const SlideHeader = styled.div`
   /* Оптимізовані стилі для iOS */
   -webkit-backdrop-filter: blur(11px); /* Префікс для Safari */
   backdrop-filter: blur(11px);
-  
+
   /* Оптимізовані тіні для iOS */
   box-shadow:
     0 6px 11px -6px rgba(0, 0, 0, 0.03),
     0 1px 3px -1px rgba(0, 0, 0, 0.08),
     inset 0 -6px 17px 0 rgba(255, 255, 255, 0.03),
     inset 0 -3px 4px 0 rgba(255, 255, 255, 0.03);
-  
+
   /* Оптимізований фон для iOS */
   background-color: rgba(255, 255, 255, 0.03);
   background-image: linear-gradient(
@@ -338,7 +324,7 @@ export const SlideHeader = styled.div`
     rgba(255, 255, 255, 0.03),
     rgba(255, 255, 255, 0.01)
   );
-  
+
   margin-bottom: 6px;
 
   /* Виправлення для Safari */
@@ -365,12 +351,10 @@ export const SlideLogo = styled.img`
   height: 9px;
 
   @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const SlideContent = styled.div`
@@ -381,17 +365,15 @@ export const SlideContent = styled.div`
   overflow: hidden; /* Щоб обрізати картинку за межами контейнера */
   border-radius: 0 0 28px 0; /* Закруглення лише знизу */
 
+  @media screen and (min-width: 768px) {
+    max-width: 740px;
+    width: 100%;
+    margin: 0 auto;
+  }
 
- @media screen and (min-width: 768px) {
-max-width: 740px;
-width: 100%;
-margin: 0 auto;
-
-}
-
-@media screen and (min-width: 1440px) {
-max-width: 1130px;
-} 
+  @media screen and (min-width: 1440px) {
+    max-width: 1130px;
+  }
 `;
 export const SlideImage = styled.div<{ $image: string }>`
   position: absolute;
@@ -404,34 +386,29 @@ export const SlideImage = styled.div<{ $image: string }>`
   background-position: start;
   background-repeat: no-repeat;
 
- @media screen and (min-width: 768px) {
-max-width: 740px;
-width: 100%;
-margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    max-width: 740px;
+    width: 100%;
+    margin: 0 auto;
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-max-width: 1130px;
-} 
+  @media screen and (min-width: 1440px) {
+    max-width: 1130px;
+  }
 `;
 
 export const LogoImage = styled.img`
   width: 82px;
   height: 11px;
-
-
 `;
 export const ToolGroup = styled.img`
   width: 79px;
   height: 19px;
   @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const ContentOverlay = styled.div`
@@ -442,25 +419,25 @@ export const ContentOverlay = styled.div`
   height: 74%;
   padding: 20px;
   backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(10px);
-    background: linear-gradient(360deg, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.2) 100%);
+  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.9) 10%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
   background: linear-gradient(360deg, #000 10%, rgba(0, 0, 0, 0.1) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
   @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
-export const Overlay = styled.div`
-
-`;
+export const Overlay = styled.div``;
 
 export const OverlayTitle = styled.h3`
   font-family: var(--font-family);
@@ -470,13 +447,11 @@ export const OverlayTitle = styled.h3`
   text-align: center;
   color: var(--white-100);
   margin-bottom: 12px;
- @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const OverlayText = styled.p`
@@ -486,11 +461,9 @@ export const OverlayText = styled.p`
   text-align: center;
   color: var(--white-80);
   margin-bottom: 20px;
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+  }
 
-}
-
-@media screen and (min-width: 1440px) {
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;

@@ -29,6 +29,35 @@ import { usePricingData } from '../../firebase';
 import LoadingScreen from '../LoadingScreen';
 import ErrorScreen from '../ErrorScreen';
 
+interface PriceTier {
+  name: string;
+  price: string;
+  discount: string;
+}
+
+interface PricingPlan {
+  title: string;
+  highlight: boolean;
+  tiers: PriceTier[];
+  button: string;
+  note: string;
+  noteList: string[];
+}
+
+interface PricePlanData {
+  mainText: string;
+  title: string;
+  description: string;
+  switch: {
+    monthly: string;
+    annually: string;
+  };
+  plans: {
+    monthly: PricingPlan[];
+    annually: PricingPlan[];
+  };
+}
+
 const PricePlan: React.FC = () => {
   const { t } = useTranslation();
   const [isMonthly, setIsMonthly] = useState(false); // за замовчуванням річна підписка
@@ -37,7 +66,7 @@ const PricePlan: React.FC = () => {
     tierIndex: number;
   } | null>(null);
 
-  const data = t('pricePlan', { returnObjects: true }) as any;
+  const data = t('pricePlan', { returnObjects: true }) as PricePlanData;
   // const currentData = isMonthly ? data.plans.monthly : data.plans.annually;
 
   const {
@@ -45,7 +74,7 @@ const PricePlan: React.FC = () => {
     loading,
     error,
   } = usePricingData(isMonthly);
-  
+
   if (loading) return <LoadingScreen />;
   if (error) return <ErrorScreen message={error} />;
 
@@ -74,7 +103,7 @@ const PricePlan: React.FC = () => {
       viewport={{ once: true, amount: 0.2 }}
     >
       <motion.div>
-        <MainTextPrice >
+        <MainTextPrice>
           {data.mainText} <CardButtonText src={price} alt="💰" />
         </MainTextPrice>
       </motion.div>
@@ -103,7 +132,7 @@ const PricePlan: React.FC = () => {
         </SwitchContainer>
 
         <CardsContainer>
-          {currentData.map((plan: any, planIndex: number) => (
+          {currentData.map((plan: PricingPlan, planIndex: number) => (
             <motion.div
               key={planIndex}
               whileHover={{ scale: 1.02 }}
@@ -114,7 +143,7 @@ const PricePlan: React.FC = () => {
                   <CardH3>{plan.title}</CardH3>
                 </CardDiv>
 
-                {plan.tiers.map((tier: any, tierIndex: number) => (
+                {plan.tiers.map((tier: PriceTier, tierIndex: number) => (
                   <Price
                     key={tierIndex}
                     as={motion.div}

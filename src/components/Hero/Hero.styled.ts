@@ -1,5 +1,9 @@
-import styled, { keyframes } from "styled-components";
-import { clickEffect, gradientFlow, pulse } from "../ButtonTryForFree/ButtonTryForFree";
+import styled, { keyframes } from 'styled-components';
+import {
+  clickEffect,
+  gradientFlow,
+  pulse,
+} from '../ButtonTryForFree/ButtonTryForFree';
 
 export const Container = styled.div`
   position: absolute;
@@ -24,7 +28,7 @@ export const Container = styled.div`
     z-index: 2;
     pointer-events: none;
   }
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -37,7 +41,8 @@ export const Container = styled.div`
     pointer-events: none;
   }
 
-  iframe, canvas {
+  iframe,
+  canvas {
     width: 100% !important;
     height: 100% !important;
     display: block;
@@ -51,13 +56,14 @@ export const Container = styled.div`
   @media screen and (max-width: 767px) {
     height: 100vh;
     z-index: -2; /* Поміщаємо під інші елементи */
-    
+
     &::before,
     &::after {
       height: 50px;
     }
 
-    iframe, canvas {
+    iframe,
+    canvas {
       pointer-events: none; /* Вимкнення клікабельності */
       z-index: -1; /* Нижчий z-index для iframe/canvas */
       opacity: 0.7; /* Додаткове затемнення для мобільних */
@@ -76,7 +82,7 @@ export const HeroImage = styled.img`
   overflow: hidden;
   z-index: 100;
 
-    /* Тіні */
+  /* Тіні */
   &::before {
     content: '';
     position: absolute;
@@ -88,7 +94,7 @@ export const HeroImage = styled.img`
     z-index: 2;
     pointer-events: none;
   }
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -101,10 +107,10 @@ export const HeroImage = styled.img`
     pointer-events: none;
   }
 
-    @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     height: 100vh;
     z-index: -2; /* Поміщаємо під інші елементи */
-    
+
     &::before,
     &::after {
       height: 50px;
@@ -135,31 +141,34 @@ export const HeroWrapper = styled.div`
 `;
 
 export const HeroInnovative = styled.p`
-display: flex;
-justify-content: space-around;
-border-radius: 24px;
-    padding: 4px 1px 4px 14px;
-    width: max-content;
-height: auto;
-align-items: center;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 24px;
+  padding: 4px 1px 4px 14px;
+  width: max-content;
+  height: auto;
+  align-items: center;
 
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--white-100);
+  margin: 0 auto;
+  margin-bottom: 8px;
+  backdrop-filter: blur(16px);
+  box-shadow:
+    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
+    0 8px 16px -8px rgba(0, 0, 0, 0.03),
+    0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12) 7%,
+    rgba(255, 255, 255, 0) 86%
+  );
 
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 12px;
-color: var(--white-100);
-    margin: 0 auto;
-margin-bottom: 8px;
-backdrop-filter: blur(16px);
-box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
-background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%) backdrop-filter: blur(16px);
-box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
-background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%);;
-
-@media screen and (min-width: 1440px) {
-
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const SpanUnicorn = styled.span`
@@ -184,7 +193,6 @@ export const SpanUnicorn = styled.span`
   );
 `;
 
-
 export const HeroTitle = styled.h1`
   margin: 0 auto;
   font-family: var(--font-family);
@@ -192,7 +200,13 @@ export const HeroTitle = styled.h1`
   font-size: 36px;
   line-height: 110%;
   text-align: center;
-  background: linear-gradient(142deg, #fff 0%, #f7f8fd 28.77%, #b6b8ee 86.41%, #6a82fc 100%);
+  background: linear-gradient(
+    142deg,
+    #fff 0%,
+    #f7f8fd 28.77%,
+    #b6b8ee 86.41%,
+    #6a82fc 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -206,23 +220,23 @@ export const HeroTitle = styled.h1`
 `;
 
 export const HeroText = styled.p`
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 16px;
-text-align: center;
-color: var(--white-80);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: var(--white-80);
 
-@media screen and (min-width: 1440px) {
-width: 100%;
-width: 835px;
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 17px;
-line-height: 130%;
-text-align: center;
-color: var(--white-75);
-margin-bottom: 36px;
-}
+  @media screen and (min-width: 1440px) {
+    width: 100%;
+    width: 835px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    text-align: center;
+    color: var(--white-75);
+    margin-bottom: 36px;
+  }
 `;
 
 export const HeroContainerContent = styled.div`
@@ -235,15 +249,14 @@ export const HeroContainerContent = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 768px) {
-  margin: 0 auto;
+    margin: 0 auto;
     padding: 0 16px;
-     display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 36px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 36px;
   }
 `;
-
 
 export const AvatarContainer = styled.div`
   width: 100%;
@@ -274,39 +287,37 @@ export const ImageContainer = styled.div`
 `;
 
 export const ImageAvatar = styled.img`
-border-radius: 18px;
-border: 1px solid var(--black);
-width: 36px;
-height: 36px;
-margin-left: -20px;
+  border-radius: 18px;
+  border: 1px solid var(--black);
+  width: 36px;
+  height: 36px;
+  margin-left: -20px;
 `;
 
 export const TextImageAvatar = styled.p`
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 12px;
-color: var(--white-100);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--white-100);
 `;
 
 export const ButtonContainer = styled.div`
-margin: 0 auto;
-width: 285px;
-// height: 43px;
-margin-top: 20px;
-display: flex;
-gap: 16px;
-justify-content: center;
+  margin: 0 auto;
+  width: 285px;
+  // height: 43px;
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
 
-@media screen and (min-width: 1440px) {
-
-
-}
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const HeroButton = styled.button`
-z-index: 10;
+  z-index: 10;
   border-radius: 12px;
-width: 100%;
+  width: 100%;
   position: relative;
   overflow: hidden;
 
@@ -316,26 +327,31 @@ width: 100%;
   font-weight: 400;
   font-size: 16px;
   color: var(--white-100);
-  
+
   box-shadow: inset 0 0 6px 0 rgba(255, 255, 255, 0.54);
   background: linear-gradient(139deg, #494bec, #6a6bff, #494bec, #3a3bc7);
   background-size: 300% 300%;
-  
+
   transition: all 0.4s ease;
-  
+
   &:hover {
-    box-shadow: inset 0 0 8px 0 rgba(255, 255, 255, 0.74), 
-                0 0 15px rgba(73, 75, 236, 0.5);
+    box-shadow:
+      inset 0 0 8px 0 rgba(255, 255, 255, 0.74),
+      0 0 15px rgba(73, 75, 236, 0.5);
     transform: perspective(500px) rotateX(10deg) translateY(-2px);
-    animation: ${pulse} 2s infinite, ${gradientFlow} 3s ease infinite;
+    animation:
+      ${pulse} 2s infinite,
+      ${gradientFlow} 3s ease infinite;
     background-size: 200% 200%;
   }
-  
+
   &:active {
-    animation: ${clickEffect} 0.3s ease, ${gradientFlow} 6s ease infinite;
+    animation:
+      ${clickEffect} 0.3s ease,
+      ${gradientFlow} 6s ease infinite;
     background: linear-gradient(139deg, #3a3bc7, #494bec, #3a3bc7);
   }
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -349,11 +365,11 @@ width: 100%;
     transform: scale(1, 1) translate(-50%, -50%);
     transform-origin: 50% 50%;
   }
-  
+
   &:focus:not(:active)::after {
     animation: ripple 0.6s ease-out;
   }
-  
+
   @keyframes ripple {
     0% {
       transform: scale(0, 0);
@@ -364,10 +380,10 @@ width: 100%;
       opacity: 0;
     }
   }
-border-radius: 12px;
-padding: 12px 12px;
-width: 100%;
-height: auto;
+  border-radius: 12px;
+  padding: 12px 12px;
+  width: 100%;
+  height: auto;
 `;
 
 export const pulseGrey = keyframes`
@@ -383,42 +399,50 @@ export const pulseGrey = keyframes`
 `;
 
 export const HeroButtonGrey = styled.button`
-z-index: 10;
+  z-index: 10;
   border-radius: 12px;
   width: 110px;
   position: relative;
   overflow: hidden;
-  
+
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   color: var(--white-100);
-  
+
   box-shadow: inset 0 0 6px 0 rgba(255, 255, 255, 0.54);
-  background: linear-gradient(180deg, rgb(255, 255, 255) 7%, rgba(255, 255, 255, 0) 86%), rgba(255, 255, 255, 0.03) ;
+  background: linear-gradient(
+      180deg,
+      rgb(255, 255, 255) 7%,
+      rgba(255, 255, 255, 0) 86%
+    ),
+    rgba(255, 255, 255, 0.03);
   background-size: 300% 300%;
-  
+
   transition: all 0.4s ease;
-  
+
   &:hover {
-    box-shadow: inset 0 0 8px 0 rgba(255, 255, 255, 0.74), 
-                0 0 15px rgba(115, 115, 115, 0.5);
+    box-shadow:
+      inset 0 0 8px 0 rgba(255, 255, 255, 0.74),
+      0 0 15px rgba(115, 115, 115, 0.5);
     transform: perspective(500px) rotateX(10deg) translateY(-2px);
-    animation: ${pulseGrey} 2s infinite, ${gradientFlow} 3s ease infinite;
+    animation:
+      ${pulseGrey} 2s infinite,
+      ${gradientFlow} 3s ease infinite;
     background-size: 200% 200%;
   }
-  
+
   &:active {
-    animation: ${clickEffect} 0.3s ease, ${gradientFlow} 6s ease infinite;
+    animation:
+      ${clickEffect} 0.3s ease,
+      ${gradientFlow} 6s ease infinite;
     background: linear-gradient(139deg, #3a3bc7, #494bec, #3a3bc7);
   }
-  
 
-  
   &:focus:not(:active)::after {
     animation: ripple 0.6s ease-out;
   }
-  
+
   @keyframes ripple {
     0% {
       transform: scale(0, 0);
@@ -429,13 +453,21 @@ z-index: 10;
       opacity: 0;
     }
   }
-border: 1px solid #212121;
-border-radius: 12px;
-padding: 12px 12px;
-width: 100%;
+  border: 1px solid #212121;
+  border-radius: 12px;
+  padding: 12px 12px;
+  width: 100%;
 
-backdrop-filter: blur(168px);
-box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 0 8px 16px -8px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
-background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%) , rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(168px);
+  box-shadow:
+    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
+    0 8px 16px -8px rgba(0, 0, 0, 0.03),
+    0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 7%,
+      rgba(255, 255, 255, 0) 86%
+    ),
+    rgba(255, 255, 255, 0.03);
 `;
-
