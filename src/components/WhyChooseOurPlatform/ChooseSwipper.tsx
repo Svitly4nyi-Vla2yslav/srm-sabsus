@@ -278,7 +278,6 @@ const FeatureSwiper = () => {
                       </ButtonContainer>
                     </Overlay>
                   </ContentOverlay>
-                 
                 </SlideContent>
               </SlideContainer>
             </SwiperSlide>
