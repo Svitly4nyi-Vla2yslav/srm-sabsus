@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const ResultsFromBusinessesWrapper = styled.div`
@@ -6,13 +6,15 @@ export const ResultsFromBusinessesWrapper = styled.div`
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 88px;
+
+  z-index: -2;
   overflow: hidden; /* Запобігає артефактам анімації */
-  
+
   @media screen and (min-width: 768px) {
     max-width: 768px;
     width: 100%;
   }
-  
+
   @media screen and (min-width: 1440px) {
     max-width: 1440px;
     width: 100%;
@@ -34,18 +36,23 @@ export const ResultMainText = styled(motion.p)`
   font-size: 12px;
   color: var(--white-100);
   backdrop-filter: blur(16px);
-  box-shadow: inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03), 
-              inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03), 
-              0 8px 16px -8px rgba(0, 0, 0, 0.03), 
-              0 2px 4px -2px rgba(0, 0, 0, 0.08);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 7%, rgba(255, 255, 255, 0) 86%);
+  box-shadow:
+    inset 0 -8px 24px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -5px 6px 0 rgba(255, 255, 255, 0.03),
+    0 8px 16px -8px rgba(0, 0, 0, 0.03),
+    0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12) 7%,
+    rgba(255, 255, 255, 0) 86%
+  );
   align-items: center;
   will-change: transform, opacity; /* Оптимізація анімації */
-  
+
   @media screen and (min-width: 768px) {
     /* Додаткові стилі для планшетів */
   }
-  
+
   @media screen and (min-width: 1440px) {
     /* Додаткові стилі для десктопів */
   }
@@ -60,11 +67,11 @@ export const ResultMainTitle = styled(motion.h2)`
   color: var(--white-100);
   margin-bottom: 16px;
   will-change: transform, opacity;
-  
+
   @media screen and (min-width: 768px) {
     font-size: 44px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     max-width: 800px;
     width: 100%;
@@ -80,12 +87,12 @@ export const ResultMainTextDescription = styled(motion.p)`
   color: var(--white-80);
   margin-bottom: 56px;
   will-change: transform, opacity;
-  
+
   @media screen and (min-width: 768px) {
     font-size: 17px;
     line-height: 130%;
   }
-  
+
   @media screen and (min-width: 1440px) {
     max-width: 800px;
     width: 100%;
@@ -106,14 +113,14 @@ export const ResultDisplayGrid = styled(motion.div)`
   align-content: center;
   justify-content: space-between;
   perspective: 1000px; /* Для 3D ефектів */
-  
+
   @media screen and (min-width: 768px) {
     column-gap: 4px;
     max-width: 740px;
     justify-content: space-evenly;
     margin-top: 100px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     max-width: 1440px;
   }
@@ -130,28 +137,31 @@ export const ResultCard = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
   backdrop-filter: blur(9.247057914733887px);
-  box-shadow: 0 5px 9px -5px rgba(0, 0, 0, 0.03), 
-              0 1px 2px -1px rgba(0, 0, 0, 0.08), 
-              inset 0 -5px 14px 0 rgba(255, 255, 255, 0.03), 
-              inset 0 -3px 3px 0 rgba(255, 255, 255, 0.03);
+  box-shadow:
+    0 5px 9px -5px rgba(0, 0, 0, 0.03),
+    0 1px 2px -1px rgba(0, 0, 0, 0.08),
+    inset 0 -5px 14px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -3px 3px 0 rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.03);
   overflow: hidden;
   transform-origin: center left;
   will-change: transform, opacity;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
   &:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     z-index: 1;
   }
-  
+
   @media screen and (min-width: 768px) {
     width: 176px;
     height: 176px;
     min-height: 176px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 323px;
     height: 322px;
@@ -171,28 +181,31 @@ export const ResultCard1 = styled(motion.div)`
   justify-content: space-between;
   overflow: hidden;
   backdrop-filter: blur(9.247057914733887px);
-  box-shadow: 0 5px 9px -5px rgba(0, 0, 0, 0.03), 
-              0 1px 2px -1px rgba(0, 0, 0, 0.08), 
-              inset 0 -5px 14px 0 rgba(255, 255, 255, 0.03), 
-              inset 0 -3px 3px 0 rgba(255, 255, 255, 0.03);
+  box-shadow:
+    0 5px 9px -5px rgba(0, 0, 0, 0.03),
+    0 1px 2px -1px rgba(0, 0, 0, 0.08),
+    inset 0 -5px 14px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -3px 3px 0 rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.03);
   transform-origin: center top;
   will-change: transform, opacity;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
   &:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     z-index: 1;
   }
-  
+
   @media screen and (min-width: 768px) {
     width: 176px;
     height: 176px;
     min-height: 176px;
     margin-top: -20px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 323px;
     height: 322px;
@@ -204,14 +217,16 @@ export const ResultCard2 = styled(motion.div)`
   display: none;
   transform-origin: center right;
   will-change: transform, opacity;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
   &:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     z-index: 1;
   }
-  
+
   @media screen and (min-width: 768px) {
     border: 0.58px solid #212121;
     border-radius: 14px;
@@ -224,13 +239,14 @@ export const ResultCard2 = styled(motion.div)`
     justify-content: space-between;
     overflow: hidden;
     backdrop-filter: blur(9.247057914733887px);
-    box-shadow: 0 5px 9px -5px rgba(0, 0, 0, 0.03), 
-                0 1px 2px -1px rgba(0, 0, 0, 0.08), 
-                inset 0 -5px 14px 0 rgba(255, 255, 255, 0.03), 
-                inset 0 -3px 3px 0 rgba(255, 255, 255, 0.03);
+    box-shadow:
+      0 5px 9px -5px rgba(0, 0, 0, 0.03),
+      0 1px 2px -1px rgba(0, 0, 0, 0.08),
+      inset 0 -5px 14px 0 rgba(255, 255, 255, 0.03),
+      inset 0 -3px 3px 0 rgba(255, 255, 255, 0.03);
     background: rgba(255, 255, 255, 0.03);
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 323px;
     height: 322px;
@@ -242,7 +258,7 @@ export const ResultIconCard = styled(motion.img)`
   width: 115px;
   height: 60px;
   will-change: transform, opacity;
-  
+
   @media screen and (min-width: 1440px) {
     width: 200px;
     height: 104px;
@@ -262,7 +278,7 @@ export const ResultTitle = styled(motion.p)`
   line-height: 100%;
   color: var(--white-100);
   will-change: transform, opacity;
-  
+
   @media screen and (min-width: 1440px) {
     font-size: 80px;
     width: max-content;
@@ -276,12 +292,12 @@ export const ResultText = styled(motion.p)`
   line-height: 130%;
   color: var(--white-60);
   will-change: transform, opacity;
-     width: fit-content;
-    height: max-content;
+  width: fit-content;
+  height: max-content;
   @media screen and (min-width: 1440px) {
     font-size: 14px;
-            height: max-content;
-        width: max-content;
+    height: max-content;
+    width: max-content;
   }
 `;
 
@@ -293,17 +309,17 @@ export const ResultImage = styled(motion.img)`
   transform-origin: center;
   will-change: transform, opacity;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.03);
   }
-  
+
   @media screen and (min-width: 768px) {
     width: 176px;
     height: 176px;
     margin-top: -20px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 323px;
     height: 322px;
@@ -317,16 +333,16 @@ export const ResultImage1 = styled(motion.img)`
   transform-origin: bottom center;
   will-change: transform, opacity;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.03);
   }
-  
+
   @media screen and (min-width: 768px) {
     width: 176px;
     height: 176px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 323px;
     height: 322px;
@@ -341,17 +357,17 @@ export const ResultImage2 = styled(motion.img)`
   transform-origin: left top;
   will-change: transform, opacity;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.03);
   }
-  
+
   @media screen and (min-width: 768px) {
     width: 176px;
     height: 176px;
     margin-top: 0;
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 323px;
     height: 322px;
@@ -365,17 +381,17 @@ export const ResultImage3 = styled(motion.img)`
   transform-origin: right bottom;
   will-change: transform, opacity;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.03);
   }
-  
+
   @media screen and (min-width: 768px) {
     width: 176px;
     height: 176px;
     margin-top: -40px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 323px;
     height: 322px;
@@ -392,14 +408,14 @@ export const ResultMasterImage = styled(motion.img)`
   height: 429px;
   pointer-events: none;
   will-change: transform, opacity;
-  
+
   @media screen and (min-width: 768px) {
     width: 152px;
     height: 322px;
-            left: 40%;
-        top: 0%;
+    left: 40%;
+    top: 0%;
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 264px;
     height: 558px;
@@ -411,11 +427,11 @@ export const ResultImage4 = styled(motion.img)`
   transform-origin: center;
   will-change: transform, opacity;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.03);
   }
-  
+
   @media screen and (min-width: 768px) {
     display: flex;
     border-radius: 14px;
@@ -424,7 +440,7 @@ export const ResultImage4 = styled(motion.img)`
     min-height: 176px;
     margin-top: -40px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 323px;
     height: 322px;
