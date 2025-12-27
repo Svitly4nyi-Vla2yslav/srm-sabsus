@@ -74,9 +74,9 @@
         }
       },
       {
-        "id": "Ofertas",
-        "title": "IA y automatización",
-        "subtitle": "Ofertas dinámicas y ventas adicionales",
+        "id": "Productos",
+        "title": "Análisis de ventas",
+        "subtitle": "Stock, margen y riesgos",
         "overlay": {
           "title": "¡Explora nuestro sistema CRM!",
           "text": "Acceso disponible para cajeros y chefs por igual."
