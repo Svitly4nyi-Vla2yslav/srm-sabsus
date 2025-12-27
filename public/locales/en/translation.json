@@ -74,9 +74,9 @@
         }
       },
       {
-        "id": "Dynamic Offers",
-        "title": "AI & Automation",
-        "subtitle": "Dynamic offers & upsells",
+        "id": "Products",
+        "title": "Sales Analytics",
+        "subtitle": "Stock, margin, risks",
         "overlay": {
           "title": "Explore our CRM system!",
           "text": "Access available for cashiers and chefs alike."
