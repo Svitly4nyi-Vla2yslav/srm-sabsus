@@ -5,7 +5,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 
 import point from '../../assets/icons/Traffic Lights (Big Sur).svg';
-import slide1 from '../../assets/icons/Frame 3479.png';
+import slide1 from '../../assets/icons/Sales Dashboard.png';
 import slide2 from '../../assets/icons/Frame 3479-1.png';
 import slide3 from '../../assets/icons/Frame 3479-2.png';
 import slide4 from '../../assets/icons/Frame 3479-3.png';
@@ -78,8 +78,8 @@ const LightboxImg = styled.img`
 
 const CloseButton = styled.button`
   position: absolute;
-  top: -40px;
-  right: -40px;
+  top: 1%;
+  right: -8%;
   width: 40px;
   height: 40px;
   border-radius: 999px;
