@@ -7,7 +7,7 @@ import 'swiper/css';
 import point from '../../assets/icons/Traffic Lights (Big Sur).svg';
 import slide1 from '../../assets/icons/Sales Dashboard.png';
 import slide2 from '../../assets/icons/RestaurantDashboard.png';
-import slide3 from '../../assets/icons/Frame 3479-2.png';
+import slide3 from '../../assets/icons/ProductDashboard.png';
 import slide4 from '../../assets/icons/Frame 3479-3.png';
 import logo from '../../assets/icons/logo-srm.svg';
 import Tools from '../../assets/icons/Toolbar Group.svg';
