@@ -83,9 +83,9 @@
         }
       },
       {
-        "id": "Expansión",
-        "title": "Integración API abierta",
-        "subtitle": "Conecta herramientas, terminales y más",
+        "id": "Llamada",
+        "title": "Guion de ventas",
+        "subtitle": "Conversación y avance del trato",
         "overlay": {
           "title": "¡Explora nuestro sistema CRM!",
           "text": "Acceso disponible para cajeros y chefs por igual."
