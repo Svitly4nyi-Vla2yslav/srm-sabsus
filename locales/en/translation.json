@@ -83,9 +83,9 @@
         }
       },
       {
-        "id": "Expandability",
-        "title": "Open API Integration",
-        "subtitle": "Connect tools, terminals & more",
+        "id": "Call",
+        "title": "Sales Script",
+        "subtitle": "Conversation and deal progress",
         "overlay": {
           "title": "Explore our CRM system!",
           "text": "Access available for cashiers and chefs alike."
