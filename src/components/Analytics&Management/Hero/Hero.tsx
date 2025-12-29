@@ -15,15 +15,23 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 
-export const HeroWrapper = styled.div`
+export const HeroWrapper = styled.section`
   margin: 0 auto;
   width: 100%;
-  height: 100%;
+
+  /* ключ: резервуємо висоту одразу, без стрибків */
+  min-height: 100vh;
+
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: visible;
+
+  /* щоб нічого "чужого" не малювалось поверх через стек */
+  isolation: isolate;
+
+  /* не треба overflow: visible, воно часто дає "наїзди" */
+  overflow: hidden;
 
   @media screen and (min-width: 768px) {
     margin-top: 0px;
@@ -41,24 +49,29 @@ export const Container = styled.div`
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: -1;
-  overflow: visible;
-  top: 0%;
+
+  /* ключ: ніяких -1 */
+  z-index: 0;
+
+  /* ключ: стабільна висота секції */
+  height: 100vh;
+  min-height: 100vh;
+
+  overflow: hidden;
 
   iframe,
   canvas {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important; /* ключ: не auto */
     display: block;
     position: relative;
-    top: 0;
     z-index: 1;
-    object-fit: contain;
+    object-fit: cover;
     margin: 0 auto;
-    overflow: visible;
   }
 
   @media screen and (max-width: 767px) {
@@ -74,8 +87,6 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    margin-top: 0px;
-
     iframe,
     canvas {
       position: relative;
@@ -88,9 +99,6 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    margin-top: 0px;
-    margin-bottom: 0px;
-
     iframe,
     canvas {
       width: 100vw !important;
@@ -100,6 +108,15 @@ export const Container = styled.div`
     }
   }
 `;
+
+/* ключ: SplineStage теж має займати всю висоту */
+// const SplineStage = styled.div`
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   min-height: 100vh;
+// `;
+
 
 const Sparkle = styled(motion.div)`
   position: absolute;
