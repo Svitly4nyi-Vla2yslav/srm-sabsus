@@ -15,55 +15,72 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CardButtonText } from '../../AllinOneSRM/AllinOneSRM.styled';
 
-export const HeroWrapper = styled.div`
+export const HeroWrapper = styled.section`
   margin: 0 auto;
   margin-top: 100px;
   width: 100%;
-  height: 100%;
   position: relative;
+
+  /* ключ: резервуємо висоту одразу */
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: visible;
+
+  /* ключ: відсікаємо “наїзди” по стеку */
+  isolation: isolate;
+
+  /* ключ: щоб не було дивних накладань під час завантаження */
+  overflow: hidden;
+
   margin-bottom: 100px;
+
   @media screen and (min-width: 768px) {
-    padding-top: 0px;
-    margin-bottom: 100px;
     margin-top: 0px;
+    margin-bottom: 100px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding-top: 0%;
-    margin-top: 0%;
-    margin-bottom: 450px;
     margin-top: 0px !important;
-  }
-
-  @media (min-width: 1920px) {
+    margin-bottom: 450px;
   }
 `;
 
 export const Container = styled.div`
-  position: relative; /* Змінюємо на relative */
+  position: relative;
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* ключ: НІЯКОГО -1 */
+  z-index: 0;
+
+  /* ключ: стабільна висота секції */
+  height: 100vh;
+  min-height: 100vh;
+
   overflow: hidden;
-  z-index: -1;
-  overflow: visible;
   top: 0px;
 
   iframe,
   canvas {
     width: 100% !important;
-    height: auto !important;
+
+    /* ключ: не auto, інакше Hero “стискається” */
+    height: 100% !important;
+
     display: block;
     position: relative;
     z-index: 1;
-    object-fit: contain; /* Змінюємо на contain для коректного відображення */
+
+    /* лишаємо як у тебе: без жорсткого кропу */
+    object-fit: contain;
+
     margin: 0 auto;
   }
 
@@ -78,8 +95,8 @@ export const Container = styled.div`
   @media screen and (min-width: 768px) {
     iframe,
     canvas {
-      width: 100vh !important; /* Дозволяємо розширення за межі екрану */
-      height: 100% !important;
+      width: 100vw !important;
+      height: 100vh !important;
       left: 50%;
       top: 0px;
       transform: translateX(-50%);
@@ -89,11 +106,13 @@ export const Container = styled.div`
   @media screen and (min-width: 1440px) {
     iframe,
     canvas {
-      top: -70px !important;
-      width: 100% !important; /* Дозволяємо розширення за межі екрану */
-      height: 100% !important;
-      left: 0;
-      transform: none !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      left: 50%;
+      top: 0px;
+
+      /* якщо тобі треба було підняти сцену, роби так, але без зламу layout */
+      transform: translate(-50%, -70px);
     }
   }
 `;
@@ -111,20 +130,17 @@ const Sparkle = styled(motion.div)`
 
 const SparkleLayer = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
   z-index: 2;
 `;
 
 export const CostomerWrapp = styled.div`
-  position: relative; /* Змінюємо absolute на relative */
+  position: relative;
   width: 100%;
-  max-width: 1920px; /* Фіксуємо максимальну ширину контенту */
-  margin: 0 auto; /* Центруємо контент */
-  padding: 27px 20px 0; /* Відступи: зверху, з боків */
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 27px 20px 0;
   box-sizing: border-box;
   z-index: 2;
 
@@ -133,29 +149,43 @@ export const CostomerWrapp = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    position: absolute; /* Тільки для 1440px+ */
-    top: 0; /* Піднімаємо до верху */
+    position: absolute;
+    top: 0;
     left: 50%;
-    transform: translateX(-50%); /* Точне центрування */
+    transform: translateX(-50%);
     padding-top: 0;
     margin-top: 550px;
     width: 100%;
-    max-width: 1440px; /* Оптимальна ширина для великих екранів */
-  }
-
-  @media (min-width: 1920px) {
+    max-width: 1440px;
   }
 `;
+
+/* ========= стабільний stage (як у минулому фіксі) ========= */
 
 const SplineStage = styled.div`
   position: relative;
   width: 100%;
+  height: 100%;
+  min-height: 100vh;
 `;
 
-const FallbackImage: React.FC<{
-  mode?: 'static' | 'overlay';
-  visible?: boolean;
-}> = ({ mode = 'static', visible = true }) => {
+const FallbackLayer = styled.div<{ $hidden: boolean }>`
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  opacity: ${p => (p.$hidden ? 0 : 1)};
+  transition: opacity 320ms ease;
+
+  /* ключ: поки видима заглушка, вона блокує кліки “крізь себе” */
+  pointer-events: ${p => (p.$hidden ? 'none' : 'auto')};
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const FallbackImage: React.FC = () => {
   const sparkles = Array.from({ length: 100 }, () => ({
     top: `${Math.random() * 100}%`,
     left: `${Math.random() * 100}%`,
@@ -164,17 +194,7 @@ const FallbackImage: React.FC<{
   }));
 
   return (
-    <div
-      style={{
-        position: mode === 'overlay' ? 'absolute' : 'relative',
-        inset: mode === 'overlay' ? 0 : undefined,
-        width: '100%',
-        opacity: visible ? 1 : 0,
-        transition: 'opacity 0.35s ease',
-        pointerEvents: 'none', // це і є “стиль заглушки”
-        zIndex: mode === 'overlay' ? 3 : 1,
-      }}
-    >
+    <div style={{ position: 'relative', width: '100%' }}>
       <img
         src={HeroIcon}
         alt="3D Scene"
@@ -184,7 +204,7 @@ const FallbackImage: React.FC<{
           filter: 'blur(0.5px)',
           transform: 'rotate(-10deg)',
           display: 'block',
-          opacity: 0.7, // як у тебе на мобілці для canvas/iframe
+          opacity: 0.7,
         }}
       />
       <SparkleLayer>
@@ -210,21 +230,22 @@ const Hero: React.FC = () => {
   const isDesktopSpline = useMediaQuery('(min-width: 1440px)', { noSsr: true });
   const { t } = useTranslation();
 
-  const [showFallback, setShowFallback] = useState(true);
+  const [splineLoaded, setSplineLoaded] = useState(false);
+  const [, setTimeoutDone] = useState(false);
   const stageRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!isDesktopSpline) return;
 
-    setShowFallback(true);
+    setSplineLoaded(false);
+    setTimeoutDone(false);
 
     const el = stageRef.current;
     if (!el) return;
 
-    // 1) як тільки Spline домалює canvas/iframe, ховаємо заглушку
     const check = () => {
       const hasCanvasOrIframe = el.querySelector('canvas, iframe');
-      if (hasCanvasOrIframe) setShowFallback(false);
+      if (hasCanvasOrIframe) setSplineLoaded(true);
     };
 
     check();
@@ -232,33 +253,39 @@ const Hero: React.FC = () => {
     const obs = new MutationObserver(check);
     obs.observe(el, { childList: true, subtree: true });
 
-    // 2) фейлсейф, щоб не висіло вічно (на випадок багів/блокувань)
-    const t = window.setTimeout(() => setShowFallback(false), 6000);
+    const timer = window.setTimeout(() => setTimeoutDone(true), 6000);
 
     return () => {
       obs.disconnect();
-      window.clearTimeout(t);
+      window.clearTimeout(timer);
     };
   }, [isDesktopSpline]);
 
+  const showFallback = !splineLoaded;
+
   return (
-    <HeroWrapper style={{}}>
+    <HeroWrapper>
       <Container>
         {!isDesktopSpline ? (
-          <FallbackImage mode="static" />
+          <FallbackImage />
         ) : (
           <SplineStage ref={stageRef}>
-            <FallbackImage mode="overlay" visible={showFallback} />
-
-            {/* Suspense можеш лишити, але головне вже не він */}
-            <Suspense fallback={<FallbackImage mode="overlay" visible />}>
+            const showFallback = !splineLoaded;
+            <FallbackLayer $hidden={!showFallback}>
+              <FallbackImage />
+            </FallbackLayer>
+            <Suspense fallback={null}>
               <Spline
                 scene="https://prod.spline.design/weK184EAiAKpQ3YI/scene.splinecode"
+                onLoad={() => setSplineLoaded(true)}
                 style={{
-                  transition: 'transform 0.5s ease-out',
-                  filter: 'blur(0.5px)',
+                  width: '100%',
+                  height: '100%',
                   maxWidth: '100%',
-                  overflow: 'visible',
+                  overflow: 'hidden',
+                  filter: 'blur(0.5px)',
+                  opacity: splineLoaded ? 1 : 0,
+                  transition: 'opacity 320ms ease',
                 }}
               />
             </Suspense>
@@ -272,17 +299,14 @@ const Hero: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true, amount: 0.3 }}
-          style={{
-            position: 'relative',
-            zIndex: 1,
-            width: '100%',
-          }}
+          style={{ position: 'relative', zIndex: 1, width: '100%' }}
         >
           <HeroInnovative>
             {t('terminalControlSection.title')}{' '}
             <CardButtonText src={Control} alt="💰" />
           </HeroInnovative>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -291,6 +315,7 @@ const Hero: React.FC = () => {
         >
           <HeroTitle>{t('terminalControlSection.heading')}</HeroTitle>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
