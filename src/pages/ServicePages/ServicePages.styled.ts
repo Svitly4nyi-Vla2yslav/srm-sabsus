@@ -251,7 +251,7 @@ export const WorkItem = styled.div`
 height: 200px;
 width: 100%;
 @media screen and (min-width: 744px){
-height: 270px
+height: 270px;
 position: relative;
 
 }

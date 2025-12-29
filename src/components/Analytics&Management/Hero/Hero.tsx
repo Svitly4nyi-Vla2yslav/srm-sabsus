@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import {
   ButtonContainer,
@@ -139,6 +139,52 @@ export const CostomerWrapp = styled.div`
   }
 `;
 
+/* ===================== */
+/*  Fallback overlay UX   */
+/* ===================== */
+
+const SplineStage = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
+const FallbackLayer = styled.div<{ $hidden: boolean }>`
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  opacity: ${p => (p.$hidden ? 0 : 1)};
+  transition: opacity 320ms ease;
+  pointer-events: ${p => (p.$hidden ? 'none' : 'auto')};
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
+export const HeroIconImg = styled.img`
+  width: auto;
+  /* max-width: 100%; */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  filter: blur(0.5px);
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    width: 60%;
+    object-fit: contain;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+    width: 30%;
+    object-fit: contain;
+  }
+`;
+
 const FallbackImage = () => {
   const sparkles = Array.from({ length: 100 }, () => ({
     top: `${Math.random() * 100}%`,
@@ -149,17 +195,7 @@ const FallbackImage = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%' }}>
-      <img
-        src={HeroIcon}
-        alt="3D Scene"
-        style={{
-          width: 'auto',
-          position: 'relative',
-          filter: 'blur(0.5px)',
-          display: 'block',
-          margin: '0 auto',
-        }}
-      />
+      <HeroIconImg src={HeroIcon} alt="3D Scene" />
       <SparkleLayer>
         {sparkles.map((pos, index) => (
           <Sparkle
@@ -183,18 +219,44 @@ const Hero: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 767px)');
   const { t } = useTranslation();
 
+  // Spline loading control (desktop only)
+  const [splineLoaded, setSplineLoaded] = useState(false);
+  const [splineTimeout, setSplineTimeout] = useState(false);
+
+  useEffect(() => {
+    if (isMobile) return;
+    if (splineLoaded) return;
+
+    const timer = window.setTimeout(() => {
+      setSplineTimeout(true);
+    }, 12000);
+
+    return () => window.clearTimeout(timer);
+  }, [isMobile, splineLoaded]);
+
   return (
     <HeroWrapper>
       <Container id="ap">
         {isMobile ? (
           <FallbackImage />
         ) : (
-          <Suspense fallback={<FallbackImage />}>
-            <Spline
-              scene="https://prod.spline.design/IIeYQXryqhaB5TjD/scene.splinecode"
-              style={{ width: '100%', height: 'auto', maxWidth: '1440px' }}
-            />
-          </Suspense>
+          <SplineStage>
+            {/* Заглушка поверх Spline, поки він не завантажився */}
+            <FallbackLayer $hidden={splineLoaded && !splineTimeout}>
+              <FallbackImage />
+            </FallbackLayer>
+
+            <Suspense fallback={<FallbackImage />}>
+              <Spline
+                scene="https://prod.spline.design/IIeYQXryqhaB5TjD/scene.splinecode"
+                onLoad={() => {
+                  setSplineLoaded(true);
+                  setSplineTimeout(false);
+                }}
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </Suspense>
+          </SplineStage>
         )}
       </Container>
 
