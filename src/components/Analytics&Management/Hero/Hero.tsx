@@ -152,7 +152,14 @@ export const CostomerWrapp = styled.div`
   @media screen and (min-width: 1440px) {
     max-width: 1440px;
     top: 5px;
-    padding-top: 180vh;
+    padding-top: 160vh;
+    margin: 0 auto;
+    overflow: visible;
+
+    h1{
+      font-size: 58px;
+      line-height: 56px;
+    }
   }
 `;
 
