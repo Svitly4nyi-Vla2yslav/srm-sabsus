@@ -34,16 +34,16 @@ export const HeroWrapper = styled.section`
   /* ключ: щоб не було дивних накладань під час завантаження */
   overflow: hidden;
 
-  margin-bottom: 100px;
+  margin-bottom: -200px;
 
   @media screen and (min-width: 768px) {
     margin-top: 0px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
   }
 
   @media screen and (min-width: 1440px) {
     margin-top: 0px !important;
-    margin-bottom: 450px;
+    margin-bottom: 150px;
   }
 `;
 
@@ -61,8 +61,9 @@ export const Container = styled.div`
   z-index: 0;
 
   /* ключ: стабільна висота секції */
-  height: 100vh;
-  min-height: 100vh;
+  /* height: 100vh; */
+  max-height: 100vh;
+  padding-top: 20px;
 
   overflow: hidden;
   top: 0px;
