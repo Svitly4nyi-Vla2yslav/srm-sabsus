@@ -113,7 +113,7 @@ const HeroImage = styled.img`
     max-width: 1200px;
     height: auto;
     object-fit: contain;
-    margin-bottom: 130px;
+    margin-bottom: 240px;
   }
 `;
 
