@@ -158,7 +158,7 @@ export const CostomerWrapp = styled.div`
 
     h1{
       font-size: 58px;
-      line-height: 56px;
+      line-height: 122%;
     }
   }
 `;

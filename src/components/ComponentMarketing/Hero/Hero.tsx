@@ -29,6 +29,7 @@ export const HeroWrapper = styled.div`
 
   @media screen and (min-width: 1440px) {
     margin-bottom: 0px;
+     height: 80vh;
   }
 `;
 
