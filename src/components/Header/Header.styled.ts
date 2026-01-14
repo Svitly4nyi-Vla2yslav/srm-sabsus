@@ -145,7 +145,7 @@ export const Logo = styled(NavLink)`
   img {
  width: 142px;
 height: auto;
-  overflov: hidden;
+  overflow: hidden;
 
   
   &:hover,
