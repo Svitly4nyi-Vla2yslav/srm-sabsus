@@ -3,31 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>SABSUS — POS System for Restaurants, Cafes, Dark Kitchens</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="/assets/logo-black-BNRglQ3N.svg" type="image/svg+xml" />
+  <!-- Було: /src/assets/... (може ламатися у білді). Краще: файл в /public -->
+  <link rel="icon" href="/logo-black.svg" type="image/svg+xml" />
 
-  <!-- SEO Meta -->
+  <!-- SEO Meta (дефолт для SSR/перших мілісекунд).
+       Далі ми перекриємо на сторінках через React Helmet. -->
   <meta name="description" content="SABSUS is a next-generation POS system for restaurants, cafes, bakeries, dark kitchens, and retail. All-in-one platform with CRM, delivery, loyalty, payroll, white-label app and more." />
+
+  <!-- meta keywords Google майже не використовує. Лишаю, але він не рятує SEO -->
   <meta name="keywords" content="POS system, SaaS POS, restaurant software, CRM for cafes, delivery system, loyalty program, white-label app, restaurant automation" />
   <meta name="author" content="SABSUS Technologies" />
 
-  <!-- Open Graph Meta -->
+  <!-- Open Graph (дефолт). Перекриємо на сторінках через Helmet -->
   <meta property="og:title" content="SABSUS — All-in-One POS Platform" />
   <meta property="og:description" content="Automate your restaurant with POS, CRM, delivery, kitchen, staff, analytics, and branded mobile app — all in one platform." />
-  <meta property="og:image" content="https://sabsus.com/images/og-preview.jpg" />
-  <meta property="og:url" content="https://sabsus.com" />
+  <meta property="og:image" content="https://sabsus.shop/logo-black.svg" />
+  <meta property="og:url" content="https://sabsus.shop/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SABSUS" />
 
-  <!-- Twitter Meta -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="SABSUS — POS System for Restaurants" />
   <meta name="twitter:description" content="SaaS and White-label POS platform. Run your restaurant, bakery, or delivery business from any device." />
-  <meta name="twitter:image" content="https://sabsus.com/images/twitter-preview.jpg" />
+  <meta name="twitter:image" content="https://sabsus.shop/logo-black.svg" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://sabsus.com" />
+  <!-- Canonical (дефолт). Далі на сторінках зробимо точний canonical без hash) -->
+  <link rel="canonical" href="https://sabsus.shop/" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,13 +42,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/inter.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/plus-jakarta-display.min.css" />
 
-  <!-- Structured Data -->
+  <!-- Structured Data (дефолт для home). Домен виправив на .shop -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "SABSUS POS",
-    "url": "https://sabsus.com",
+    "url": "https://sabsus.shop",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "All",
     "offers": [
@@ -62,7 +68,7 @@
     "creator": {
       "@type": "Organization",
       "name": "SABSUS Technologies",
-      "url": "https://sabsus.com"
+      "url": "https://sabsus.shop"
     },
     "description": "SABSUS is an all-in-one cloud POS platform for cafes, restaurants, dark kitchens, and retail. Includes CRM, inventory, delivery, staff payroll, loyalty, analytics, and branded apps."
   }

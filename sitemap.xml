@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://sabsus.shop/</loc></url>
+  <url><loc>https://sabsus.shop/home</loc></url>
+
+  <url><loc>https://sabsus.shop/service</loc></url>
+  <url><loc>https://sabsus.shop/service/customer-experience</loc></url>
+  <url><loc>https://sabsus.shop/service/pos-staff-operations</loc></url>
+  <url><loc>https://sabsus.shop/service/kitchen-fulfillment</loc></url>
+  <url><loc>https://sabsus.shop/service/inventory-warehousing</loc></url>
+  <url><loc>https://sabsus.shop/service/analytics-management</loc></url>
+  <url><loc>https://sabsus.shop/service/marketing-customization</loc></url>
+  <url><loc>https://sabsus.shop/service/integration-scaling</loc></url>
+
+  <url><loc>https://sabsus.shop/about</loc></url>
+  <url><loc>https://sabsus.shop/pricing</loc></url>
+  <url><loc>https://sabsus.shop/contact</loc></url>
+</urlset>
