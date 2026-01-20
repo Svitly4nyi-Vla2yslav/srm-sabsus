@@ -5,7 +5,7 @@ import Cassette from '../../../assets/icons/Costomer/Videocassette.svg';
 import logo from '../../../assets/icons/logo-srm.svg';
 import Tools from '../../../assets/icons/Toolbar Group.svg';
 import point from '../../../assets/icons/Traffic Lights (Big Sur).svg';
-import videoFallback from '../../../assets/video/GloryToUkraine.webm';
+import videoFallback from '../../../assets/video/video_sabsus.mp4';
 import BackgroundImage from '../../../assets/icons/video-prev.png';
 import ControlFast from '../../../assets/icons/Costomer/Seconadry Buttons copy.svg';
 import ControlRewind from '../../../assets/icons/Costomer/Seconadry Buttons.svg';
