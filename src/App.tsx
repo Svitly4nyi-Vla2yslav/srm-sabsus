@@ -18,9 +18,10 @@ import AnalyticsManagement from './pages/ServicePages/AnalyticsManagement';
 import MarketingCustomization from './pages/ServicePages/MarketingCustomization';
 import IntegrationScaling from './pages/ServicePages/IntegrationScaling';
 import ServicesMain from './pages/ServicePages/ServicesMain';
-// import { Time } from './components/ScrollToTop';
 import { useEffect } from 'react';
-// import { useEffect } from 'react';
+import { SeoRouter } from './components/Seo/SeoRouter';
+
+// ✅ NEW
 
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   return <div style={{ width: '100%', position: 'relative' }}>{children}</div>;
@@ -30,7 +31,6 @@ export const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Гарантовано після DOM оновлення
     requestAnimationFrame(() => {
       window.scrollTo({ top: 0, behavior: 'auto' });
     });
@@ -44,8 +44,12 @@ export const App: React.FC = () => {
 
   return (
     <>
+      {/* ✅ SEO tags per route (SPA) */}
+      <SeoRouter />
+
       <ParticlesBackground />
-    {/* <ScrollToTop /> */}
+      {/* <ScrollToTop /> */}
+
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/" element={<Layout />}>
@@ -166,7 +170,6 @@ export const App: React.FC = () => {
           />
         </Route>
       </Routes>
-      {/* <Time /> */}
     </>
   );
 };
