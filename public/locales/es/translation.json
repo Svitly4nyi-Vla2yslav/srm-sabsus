@@ -1257,7 +1257,7 @@
     "description": "Sigue el progreso de cocción en tiempo real en todas las estaciones con pantallas de cocina sincronizadas. Cada pedido fluye a través de etapas claras: preparación, cocción, servicio, con indicadores luminosos.",
     "footerText": "Temporizadores, alertas y asignaciones de zonas aseguran que cada plato esté listo exactamente cuando debe. Diseñado para reducir el caos y maximizar el rendimiento."
   },
- "howWeWorkSection3": {
+  "howWeWorkSection3": {
     "header": {
       "title": "Cómo trabajamos",
       "heading": "Nuestro enfoque se basa en transparencia, velocidad y cuidado",
@@ -1387,7 +1387,7 @@
       "petShop": "Tienda de mascotas"
     }
   },
-   "comparisonTable": {
+  "comparisonTable": {
     "title": "Comparación de <highlight>Sabsus</highlight> con competidores",
     "headers": {
       "feature": "Función / Costos",
@@ -1623,7 +1623,7 @@
       "end": "Fin"
     }
   },
-   "policies": {
+  "policies": {
     "privacy": {
       "title": "ACUERDO DE USUARIO Y POLÍTICA DE PRIVACIDAD de la Plataforma Sabsus: 16 de mayo de 2025",
       "text": [
@@ -2400,7 +2400,7 @@
       }
     }
   },
-    "alert": {
+  "alert": {
     "success": "¡Éxito! Su solicitud ha sido enviada.",
     "error": "¡Error! Por favor, inténtelo más tarde."
   },
@@ -2414,6 +2414,60 @@
     "form": {
       "success": "¡Gracias por sus comentarios!",
       "error": "Error al enviar comentarios. Por favor, inténtelo de nuevo."
+    }
+  },
+  "seo": {
+    "default": {
+      "title": "SABSUS — Plataforma POS",
+      "desc": "Todo en uno: POS, CRM, delivery y analítica para negocios modernos de comida."
+    },
+    "home": {
+      "title": "SABSUS — Sistema POS para restaurantes, cafés y dark kitchens",
+      "desc": "Gestiona POS, CRM, delivery, inventario, personal y analítica en una sola plataforma."
+    },
+    "service": {
+      "title": "Módulos y servicios — SABSUS",
+      "desc": "Explora los módulos de SABSUS: experiencia del cliente, POS, cocina, inventario, analítica e integraciones.",
+      "customerExperience": {
+        "title": "Experiencia del cliente — SABSUS",
+        "desc": "CRM, fidelización y herramientas para aumentar la retención y las visitas recurrentes."
+      },
+      "posStaff": {
+        "title": "POS y operaciones de personal — SABSUS",
+        "desc": "Flujos POS rápidos, roles del personal y control operativo en cada turno."
+      },
+      "kitchen": {
+        "title": "Cocina y preparación — SABSUS",
+        "desc": "Flujo de pedidos en cocina para reducir errores, acelerar la preparación y mejorar la precisión."
+      },
+      "inventory": {
+        "title": "Inventario y almacén — SABSUS",
+        "desc": "Controla stock, compras, mermas y márgenes con visibilidad en tiempo real."
+      },
+      "analytics": {
+        "title": "Analítica y gestión — SABSUS",
+        "desc": "Paneles y KPI para tomar decisiones basadas en datos en todas tus ubicaciones."
+      },
+      "marketing": {
+        "title": "Marketing y personalización — SABSUS",
+        "desc": "Promociones, branding y opciones de personalización para adaptarse a tu negocio."
+      },
+      "integration": {
+        "title": "Integraciones y escalado — SABSUS",
+        "desc": "Integraciones y herramientas para escalar de una ubicación a muchas."
+      }
+    },
+    "about": {
+      "title": "Acerca de — SABSUS",
+      "desc": "Descubre lo que SABSUS está construyendo para restaurantes, cafés y delivery."
+    },
+    "pricing": {
+      "title": "Precios — SABSUS",
+      "desc": "Planes transparentes para SaaS y white-label. Solicita una demo."
+    },
+    "contact": {
+      "title": "Contacto — SABSUS",
+      "desc": "Contacta con ventas o solicita una demo. Respondemos rápido."
     }
   }
 }

@@ -444,7 +444,7 @@
           "title": "White-label buyout",
           "discount": "-22%",
           "tiers": [
-             {
+            {
               "name": "1 Location",
               "discount": "-64%",
               "price": "$5,000"
@@ -1326,7 +1326,7 @@
         "50-100": "from 50 to 100"
       },
       "terms": "By continuing, you agree to our Terms of Use and Privacy policy",
-        "submit": "Book an appointment",
+      "submit": "Book an appointment",
       "submitting": "Sending..."
     },
     "help": {
@@ -1355,7 +1355,7 @@
       "selectOption": "Select an option"
     }
   },
-   "businessSwiper": {
+  "businessSwiper": {
     "title": "Choose your business format",
     "subtitle": "All types of businesses we automate",
     "businessTypes": {
@@ -1623,7 +1623,7 @@
       "end": "End"
     }
   },
-   "policies": {
+  "policies": {
     "privacy": {
       "title": "USER AGREEMENT AND PRIVACY POLICY of the Sabsus Platform: 16 May 2025",
       "text": [
@@ -2400,7 +2400,7 @@
       }
     }
   },
-    "alert": {
+  "alert": {
     "success": "Success! Your request has been submitted.",
     "error": "Error! Please try again later."
   },
@@ -2414,6 +2414,60 @@
     "form": {
       "success": "Thank you for your feedback!",
       "error": "Failed to send feedback. Please try again."
+    }
+  },
+  "seo": {
+    "default": {
+      "title": "SABSUS — POS Platform",
+      "desc": "All-in-one POS, CRM, delivery and analytics for modern food businesses."
+    },
+    "home": {
+      "title": "SABSUS — POS System for Restaurants, Cafes, Dark Kitchens",
+      "desc": "Run POS, CRM, delivery, inventory, staff and analytics in one platform."
+    },
+    "service": {
+      "title": "Modules & Services — SABSUS",
+      "desc": "Explore SABSUS modules: customer experience, POS, kitchen, inventory, analytics and integrations.",
+      "customerExperience": {
+        "title": "Customer Experience — SABSUS",
+        "desc": "CRM, loyalty and customer tools to boost retention and repeat visits."
+      },
+      "posStaff": {
+        "title": "POS & Staff Operations — SABSUS",
+        "desc": "Fast POS workflows, staff roles and operational control for every shift."
+      },
+      "kitchen": {
+        "title": "Kitchen Fulfillment — SABSUS",
+        "desc": "Kitchen order flow to reduce errors, speed up prep and improve accuracy."
+      },
+      "inventory": {
+        "title": "Inventory & Warehousing — SABSUS",
+        "desc": "Track stock, purchases, waste and margins with real-time visibility."
+      },
+      "analytics": {
+        "title": "Analytics & Management — SABSUS",
+        "desc": "Dashboards and KPIs to make data-driven decisions across locations."
+      },
+      "marketing": {
+        "title": "Marketing & Customization — SABSUS",
+        "desc": "Promotions, branding and customization options to match your business."
+      },
+      "integration": {
+        "title": "Integration & Scaling — SABSUS",
+        "desc": "Integrations and scaling tools to grow from one location to many."
+      }
+    },
+    "about": {
+      "title": "About — SABSUS",
+      "desc": "Learn what SABSUS is building for restaurants, cafes and food delivery."
+    },
+    "pricing": {
+      "title": "Pricing — SABSUS",
+      "desc": "Transparent plans for SaaS and white-label deployments. Request a demo."
+    },
+    "contact": {
+      "title": "Contact — SABSUS",
+      "desc": "Contact sales or request a demo. We respond quickly."
     }
   }
 }

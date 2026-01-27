@@ -1,15 +1,13 @@
-import {
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
-} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+
 import { Layout } from './components/Layout/Layout';
 import Home from './pages/HomePage/HomePage';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Contact from './pages/Contact/Contact';
 import Info from './pages/Info/Info';
 import ParticlesBackground from './components/Background/StarrySky';
+
 import CustomerExperience from './pages/ServicePages/CustomerExperience';
 import PosStaffOperations from './pages/ServicePages/PosStaffOperations';
 import KitchenFulfillment from './pages/ServicePages/KitchenFulfillment';
@@ -18,10 +16,9 @@ import AnalyticsManagement from './pages/ServicePages/AnalyticsManagement';
 import MarketingCustomization from './pages/ServicePages/MarketingCustomization';
 import IntegrationScaling from './pages/ServicePages/IntegrationScaling';
 import ServicesMain from './pages/ServicePages/ServicesMain';
-import { useEffect } from 'react';
-import { SeoRouter } from './components/Seo/SeoRouter';
 
-// ✅ NEW
+// ✅ NEW: SEO per route
+import { SeoRouter } from './components/Seo/SeoRouter';
 
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   return <div style={{ width: '100%', position: 'relative' }}>{children}</div>;
@@ -52,6 +49,7 @@ export const App: React.FC = () => {
 
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Navigate to="/home" />} />
+
         <Route path="/" element={<Layout />}>
           <Route
             index
@@ -61,6 +59,7 @@ export const App: React.FC = () => {
               </PageWrapper>
             }
           />
+
           <Route
             path="/home"
             element={
@@ -143,6 +142,7 @@ export const App: React.FC = () => {
               </PageWrapper>
             }
           />
+
           <Route
             path="/pricing"
             element={
@@ -151,6 +151,7 @@ export const App: React.FC = () => {
               </PageWrapper>
             }
           />
+
           <Route
             path="/contact"
             element={
