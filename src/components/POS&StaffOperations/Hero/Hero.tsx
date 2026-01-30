@@ -43,7 +43,7 @@ export const HeroWrapper = styled.section`
 
   @media screen and (min-width: 1440px) {
     margin-top: 0px !important;
-    margin-bottom: 150px;
+    margin-bottom: 250px;
   }
 `;
 
