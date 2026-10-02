@@ -8,10 +8,16 @@ const OG_IMAGE = 'https://sabsus.shop/og/image.png?v=4'; // bump v when needed
 
 type Entry = { titleKey: string; descKey: string; canonicalPath?: string };
 
+/**
+ * Перетворює поточний pathname на локалізовану SEO-конфігурацію для компонента Seo.
+ * Відомі маршрути використовують власні ключі перекладу, кореневий URL канонізується
+ * як `/home`, а невідомі адреси отримують заголовок і опис за замовчуванням.
+ */
 export const SeoRouter: React.FC = () => {
   const { pathname } = useLocation();
   const { t, i18n } = useTranslation();
 
+  // Мемоізація не повторює побудову конфігурації без зміни шляху або мови.
   const data = useMemo(() => {
     const map: Record<string, Entry> = {
       '/': { titleKey: 'seo.home.title', descKey: 'seo.home.desc', canonicalPath: '/home' }, // бо ти редіректиш / -> /home
