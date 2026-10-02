@@ -9,6 +9,11 @@ type SeoProps = {
   lang?: string;
 };
 
+/**
+ * Синхронізує SEO-дані поточного маршруту з `<head>` документа.
+ * Приймає локалізовані title/description, абсолютні canonical та OG URL і код мови;
+ * візуального вмісту не рендерить, а побічним ефектом оновлює meta/link/html-атрибути.
+ */
 const Seo: React.FC<SeoProps> = ({
   title,
   description,
@@ -16,6 +21,7 @@ const Seo: React.FC<SeoProps> = ({
   ogImageUrl,
   lang = 'en',
 }) => {
+  // Перераховує масив meta-тегів лише коли змінюються залежні SEO-значення.
   const meta = useMemo(
     () => [
       { name: 'description', content: description },
