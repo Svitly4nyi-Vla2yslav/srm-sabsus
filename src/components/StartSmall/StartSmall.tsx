@@ -13,12 +13,14 @@ import {
   HeroButtonGrey,
 } from '../Hero/Hero.styled';
 
+// Компонент без пропсів повертає завершальний CTA з локалізованим текстом і двома зовнішніми посиланнями.
+// Поява секції анімується один раз після входу щонайменше 20% блока у viewport.
 const StartSmall: React.FC = () => {
   const { t } = useTranslation();
   const buttonDemo = 'https://sabsus.app/login/demo@sabsus.com/demo2025';
   const buttonStarted = 'https://sabsus.app/registrcompany/web/PRO';
 
-  // Анімації
+  // Контейнер послідовно запускає дочірні варіанти з інтервалом 0,1 секунди.
   const containerAnimation = {
     hidden: { opacity: 0 },
     show: {
@@ -29,6 +31,7 @@ const StartSmall: React.FC = () => {
     },
   };
 
+  // Кожен дочірній елемент переходить із прозорого зміщеного стану у своє звичайне положення.
   const itemAnimation = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
