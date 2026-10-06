@@ -16,11 +16,12 @@ const ErrorContainer = styled(motion.div)`
   user-select: none;
 `;
 
+// shakeAnimation задає одноразове горизонтальне похитування контейнера після появи помилки.
 const shakeAnimation = {
   x: [0, -10, 10, -10, 10, 0],
   transition: { 
     duration: 0.6, 
-    ease: "easeInOut" as const // Додаємо 'as const' для коректного типу
+    ease: "easeInOut" as const // Літеральний тип потрібен Framer Motion для перевірки easing.
   }
 };
 
@@ -28,6 +29,7 @@ interface ErrorScreenProps {
   message: string;
 }
 
+// ErrorScreen приймає текст помилки, оголошує його терміновим повідомленням для скринридера та не змінює зовнішній стан.
 const ErrorScreen: React.FC<ErrorScreenProps> = ({ message }) => (
   <ErrorContainer {...shakeAnimation} role="alert" aria-live="assertive">
     Помилка: {message}
