@@ -33,6 +33,7 @@ const LoadingText = styled(motion.div)`
   letter-spacing: 0.05em;
 `;
 
+// textAnimation описує циклічне згасання індикатора; об’єкт передається безпосередньо у Framer Motion.
 const textAnimation = {
   animate: {
     opacity: [0.3, 1, 0.3],
@@ -43,6 +44,7 @@ const textAnimation = {
   },
 };
 
+// LoadingScreen показує повноекранний індикатор на час підготовки застосунку; компонент не приймає аргументів і не має побічних ефектів.
 const LoadingScreen = () => {
   return (
     <LoaderContainer>
