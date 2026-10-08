@@ -31,15 +31,21 @@ const menuVariants = {
   closed: { opacity: 0, x: '-100%' },
 };
 
+/**
+ * Керує мобільною навігацією та вкладеним списком послуг.
+ * Під час відкриття блокує прокручування сторінки, а після переходу, Escape чи вибору пункту
+ * закриває обидва рівні меню.
+ */
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
 
-  // ✅ Запам’ятовуємо попереднє значення overflow, щоб повернути точно як було
+  // Зберігає попередній inline overflow, щоб не перезаписати стан, заданий іншим компонентом.
   const prevOverflowRef = useRef<string>('');
 
+  // Синхронізує блокування прокручування з видимістю меню та відновлює його під час демонтажу.
   useEffect(() => {
     if (isOpen) {
       prevOverflowRef.current = document.body.style.overflow;
@@ -49,29 +55,30 @@ const BurgerMenu = () => {
     }
 
     return () => {
-      // cleanup на unmount
       document.body.style.overflow = prevOverflowRef.current || '';
     };
   }, [isOpen]);
 
+  // Перемикає підменю послуг, не запускаючи навігацію або обробник батьківського елемента.
   const toggleServicesMenu = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setIsServicesOpen(!isServicesOpen);
   };
 
+  // Повертає меню та підменю до закритого стану.
   const closeMenu = () => {
     setIsOpen(false);
     setIsServicesOpen(false);
   };
 
-  // ✅ Закриваємо меню при зміні роуту/хеша
+  // Навігація на інший шлях або якір не повинна залишати оверлей відкритим.
   useEffect(() => {
     closeMenu();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname, location.hash]);
 
-  // ✅ Закриваємо меню по ESC
+  // Глобальний обробник Escape забезпечує клавіатурний спосіб закриття; cleanup прибирає слухача.
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeMenu();
@@ -146,7 +153,7 @@ const BurgerMenu = () => {
             exit="closed"
             variants={menuVariants}
             transition={{ duration: 0.3 }}
-            // ✅ клік по фону закриває меню
+            // Закриває оверлей лише коли натиснуто сам фон, а не його дочірній пункт.
             onClick={e => {
               if (e.target === e.currentTarget) closeMenu();
             }}
@@ -155,7 +162,7 @@ const BurgerMenu = () => {
               <div key={index}>
                 {link.isDropdown ? (
                   <ServiceLinkMobile
-                    // було hover-open. На touch це майже без сенсу, але залишаю як було:
+                    // Hover підтримує мишу, а натискання на заголовок окремо обслуговує touch-пристрої.
                     onMouseEnter={() => setIsServicesOpen(true)}
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
