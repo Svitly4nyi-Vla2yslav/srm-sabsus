@@ -178,6 +178,11 @@ const CheckboxLabel = styled.label`
   cursor: pointer;
 `;
 
+/**
+ * Керує локальним станом форми зворотного зв’язку та повідомленням про результат.
+ * Після надсилання записує поля у Firestore-колекцію `feedbackMessages` із серверною міткою часу;
+ * у разі успіху очищає форму, а помилку збереження показує через alert-компонент.
+ */
 const FeedbackFormComponent: React.FC = () => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
@@ -196,6 +201,7 @@ const FeedbackFormComponent: React.FC = () => {
     show: boolean;
   }>({ type: 'success', message: '', show: false });
 
+  /** Оновлює поле за його `name`; для checkbox бере `checked`, для решти елементів — `value`. */
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -211,6 +217,7 @@ const FeedbackFormComponent: React.FC = () => {
     }));
   };
 
+  /** Скасовує стандартне надсилання, асинхронно зберігає дані у Firestore й оновлює стан сповіщення. */
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
