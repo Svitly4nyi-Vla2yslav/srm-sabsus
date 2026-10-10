@@ -24,6 +24,10 @@ import { useLocation, useNavigate } from 'react-router-dom'; // ✅ add useLocat
 import Down from '../../assets/icons/chevron-down.svg';
 import BurgerMenu from '../MobileMenu/MobileMenu';
 
+/**
+ * Формує адаптивну шапку, відстежує прокручування та керує desktop-підменю послуг.
+ * На мобільній ширині передає навігацію BurgerMenu; глобальні слухачі завжди очищуються.
+ */
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -33,6 +37,7 @@ const Header: React.FC = () => {
 
   const servicesRef = useRef<HTMLLIElement | null>(null);
 
+  // Повертає сторінку вгору та переходить на /home, якщо логотип натиснули з іншого маршруту.
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
     window.scrollTo({
@@ -45,23 +50,23 @@ const Header: React.FC = () => {
     }
   };
 
+  // Інвертує видимість desktop-підменю послуг.
   const toggleServicesMenu = () => {
     setIsServicesOpen(prev => !prev);
   };
 
+  // Уніфіковано закриває підменю після навігації або зовнішньої взаємодії.
   const closeServicesMenu = () => {
     setIsServicesOpen(false);
   };
 
+  // Ініціалізує AOS і синхронізує компактний вигляд шапки з порогом прокручування 50 px.
   useEffect(() => {
     AOS.init({ duration: 3000 });
     AOS.refresh();
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      // ✅ На всякий: якщо юзер почав скролити, dropdown не має “висіти”
-      // (це не must-have, але допомагає не перекривати контент)
-      // closeServicesMenu();
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -70,13 +75,13 @@ const Header: React.FC = () => {
 
   const isMobile = useMediaQuery({ query: '(max-width: 1439px)' });
 
-  // ✅ Закриваємо dropdown при зміні роуту/хеша (щоб не “залипало”)
+  // Зміна шляху або hash закриває підменю, щоб воно не залишалося над новим контентом.
   useEffect(() => {
     closeServicesMenu();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname, location.hash]);
 
-  // ✅ Закриття dropdown при кліку поза ним
+  // Pointer-слухач закриває відкрите підменю лише після натискання поза його контейнером.
   useEffect(() => {
     const handlePointerDown = (e: PointerEvent) => {
       if (!isServicesOpen) return;
@@ -90,7 +95,7 @@ const Header: React.FC = () => {
     return () => document.removeEventListener('pointerdown', handlePointerDown);
   }, [isServicesOpen]);
 
-  // ✅ Закриття dropdown по ESC
+  // Escape забезпечує клавіатурний спосіб закрити підменю.
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeServicesMenu();
@@ -116,11 +121,7 @@ const Header: React.FC = () => {
 
             <NavItem
               ref={servicesRef}
-              // ❌ було hover-open (аудит каже: меню не повинно відкриватися автоматично)
-              // onMouseEnter={() => setIsServicesOpen(true)}
-              // onMouseLeave={() => setIsServicesOpen(false)}
-              // ❌ було onClick на весь item (клік по лінках всередині міг “мигати” станом)
-              // onClick={toggleServicesMenu}
+              // Підменю відкривається окремою кнопкою, тому посилання на розділ не перемикає його стан.
             >
               <ServiceLink>
                 <StyledNavLink
@@ -131,7 +132,7 @@ const Header: React.FC = () => {
                   {t('header.nav.service')}
                 </StyledNavLink>
 
-                {/* ✅ Тепер відкриття dropdown тільки по кліку на кнопку-стрілку */}
+                {/* Окрема кнопка з aria-expanded повідомляє допоміжним технологіям стан підменю. */}
                 <ServicesToggleButton
                   type="button"
                   aria-label="Toggle services menu"
