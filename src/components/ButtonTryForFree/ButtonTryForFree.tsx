@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useTranslation } from 'react-i18next';
-// Анімація пульсації
+// Розширює зовнішню тінь і повертає її до нуля, створюючи постійний pulse-акцент.
 export const pulse = keyframes`
   0% {
     box-shadow: 0 0 0 0 rgba(73, 75, 236, 0.7);
@@ -14,7 +14,7 @@ export const pulse = keyframes`
   }
 `;
 
-// Анімація натискання
+// На мить зменшує кнопку під час натискання та повертає початковий масштаб.
 export const clickEffect = keyframes`
   0% {
     transform: scale(1);
@@ -27,7 +27,7 @@ export const clickEffect = keyframes`
   }
 `;
 
-// Анімація градієнта
+// Пересуває збільшений градієнт туди й назад без зміни геометрії кнопки.
 export const gradientFlow = keyframes`
   0% {
     background-position: 0% 50%;
@@ -139,6 +139,10 @@ export const ButtonFree = styled.button`
   }
 `;
 
+/**
+ * Рендерить локалізовану CTA-кнопку й відкриває зовнішню PRO-реєстрацію в новій вкладці.
+ * `noopener noreferrer` ізолює сторінку від відкритого застосунку; локального стану та callback немає.
+ */
 const ButtonTryForFree: React.FC = () => {
   const { t } = useTranslation();
   return (
