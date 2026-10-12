@@ -15,6 +15,11 @@ import { usePartnersBannerData } from '../../firebase';
 import ErrorScreen from '../ErrorScreen';
 import LoadingScreen from '../LoadingScreen';
 
+/**
+ * Завантажує партнерські дані з Firebase й рендерить дві безперервні каруселі та ряд аватарів.
+ * Невалідні URL відкидаються, кількість елементів і `slidesPerView` залежать від viewport;
+ * під час помилки показується ErrorScreen, а зображення, що не завантажилося, приховується після логування.
+ */
 const PartnersBanner: React.FC = () => {
   const { data, loading, error } = usePartnersBannerData();
   const isMobile = useMediaQuery({ query: '(max-width: 743px)' });
@@ -32,17 +37,17 @@ const PartnersBanner: React.FC = () => {
     return null;
   }
 
-  // Фільтруємо карусельні елементи з валідними зображеннями
+  // До каруселей допускаються лише записи з непорожнім абсолютним HTTP(S)-подібним URL.
   const validCarousels = data.carousels.filter(
     partner => partner?.imageUrl && partner.imageUrl.startsWith('http')
   );
 
-  // Фільтруємо партнерів з валідними зображеннями
+  // Аватарний список також відкидає порожні та не-HTTP значення.
   const validPartners = data.partners.filter(
     image => image && image.startsWith('http')
   );
 
-  // Якщо після фільтрації немає даних - не рендеримо компонент
+  // Обидві групи потрібні для повного банера; за відсутності будь-якої компонент нічого не рендерить.
   if (!validCarousels.length || !validPartners.length) {
     return null;
   }
@@ -52,7 +57,7 @@ const PartnersBanner: React.FC = () => {
   const slidesToShow = isMobile ? 3 : isTablet ? 6 : isDesktop ? 15 : 15;
   const partnersList = validPartners.slice(0, slidesToShow);
 
-  // Анімації
+  // Контейнер поступово відкриває дочірні елементи, а кожен item входить знизу.
   const containerAnimation = {
     hidden: { opacity: 0 },
     show: {
