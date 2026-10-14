@@ -56,6 +56,11 @@ const MotionWrapper = styled(motion.div)`
   width: 100vw;
 `;
 
+/**
+ * Завантажує агреговані оцінки й відгуки з Firebase та показує їх адаптивною каруселлю.
+ * Компонент не приймає аргументів; повертає екран завантаження/помилки, null без даних
+ * або секцію відгуків. Кількість видимих слайдів і loop залежать від ширини екрана.
+ */
 const Feedback: React.FC = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 743px)' });
   const isTablet = useMediaQuery({
@@ -89,6 +94,7 @@ const Feedback: React.FC = () => {
     show: { opacity: 1, y: 0 },
   };
 
+  /** Повертає параметри появи рейтингу з невеликою затримкою за його індексом. */
   const ratingAnimation = (index: number) => ({
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -198,3 +204,4 @@ const Feedback: React.FC = () => {
   );
 };
 export default Feedback;
+
