@@ -159,10 +159,16 @@ const ContentContainer = styled.div`
   }
 `;
 
+/**
+ * Формує локалізований FAQ-акордеон і зберігає індекс єдиного відкритого питання.
+ * Компонент не приймає аргументів; повторний вибір активного пункту закриває його,
+ * а Framer Motion анімує появу заголовків, питань і відповідей.
+ */
 const Frequently: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { t } = useTranslation();
 
+  /** Відкриває вибране питання або скидає стан у null, якщо воно вже активне. */
   const toggleAnswer = (index: number) => {
     setActiveIndex(prev => (prev === index ? null : index));
   };
@@ -249,3 +255,4 @@ const Frequently: React.FC = () => {
 };
 
 export default Frequently;
+
