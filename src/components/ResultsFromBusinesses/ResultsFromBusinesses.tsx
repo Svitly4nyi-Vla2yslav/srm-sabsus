@@ -33,6 +33,10 @@ import image5 from '../../assets/icons/pizzario/image5.png';
 import sweets from '../../assets/icons/pizzario/sweetTreats.png';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Формує локалізований блок результатів бізнесів із картками, зображеннями та анімаціями появи.
+ * Дані бере з ключа i18n `results`; зовнішній стан і мережеві ресурси компонент не змінює.
+ */
 const ResultsFromBusinesses: React.FC = () => {
   const { t } = useTranslation();
   const data = t('results', { returnObjects: true }) as {
@@ -61,6 +65,10 @@ const ResultsFromBusinesses: React.FC = () => {
     show: { opacity: 1, y: 0 },
   };
 
+  /**
+   * Повертає початкову та кінцеву анімацію картки за її індексом.
+   * Перші три картки в'їжджають із різних боків, а невідомий індекс лише змінює прозорість.
+   */
   const cardAnimation = (index: number) => {
     switch(index) {
       case 0: return { initial: { x: -100, opacity: 0 }, animate: { x: 0, opacity: 1 } };
