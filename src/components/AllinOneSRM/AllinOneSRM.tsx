@@ -56,6 +56,10 @@ import icon31 from '../../assets/icons/cards6/MobilePhoneOff.svg';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
+/**
+ * Відображає локалізований каталог можливостей SABSUS як сім навігаційних карток.
+ * Індекс картки узгоджує текст i18n із маршрутом, основним зображенням та набором іконок кнопок.
+ */
 const AllinOneSRM: React.FC = () => {
   const { t } = useTranslation();
   const data = t('allInOne', { returnObjects: true }) as {
@@ -80,6 +84,10 @@ const AllinOneSRM: React.FC = () => {
     [icon27, icon28, icon29, icon30, icon31],
   ];
 
+  /**
+   * Добирає напрям або масштаб анімації появи за індексом картки.
+   * Повертає props для Framer Motion; для індексів поза каталогом застосовує fade-in.
+   */
   const getCardAnimation = (index: number) => {
     switch (index) {
       case 0:
@@ -249,3 +257,4 @@ const AllinOneSRM: React.FC = () => {
 };
 
 export default AllinOneSRM;
+
