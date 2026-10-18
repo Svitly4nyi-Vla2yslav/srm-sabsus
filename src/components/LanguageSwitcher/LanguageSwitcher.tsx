@@ -86,6 +86,11 @@ const FlagIcon = styled.span`
   font-size: 16px;
 `;
 
+/**
+ * Показує поточну мову i18next та анімований список доступних локалей.
+ * Компонент не приймає аргументів; після вибору змінює глобальну мову, закриває меню
+ * і перезавантажує сторінку, щоб усі залежні від локалі ресурси застосувалися повторно.
+ */
 const LanguageSwitcher = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -99,8 +104,13 @@ const LanguageSwitcher = () => {
 
   const selectedLang = languages.find(lang => lang.code === i18n.language) || languages[0];
 
+  /** Інвертує лише локальний стан відкриття випадаючого меню. */
   const toggleMenu = () => setIsOpen(prev => !prev);
 
+  /**
+   * Приймає код локалі, очікує завершення changeLanguage і перезавантажує документ.
+   * Побічні ефекти: змінює конфігурацію i18next, стан меню та window.location.
+   */
   const handleLanguageChange = async (langCode: string) => {
     await i18n.changeLanguage(langCode);
     setIsOpen(false);
