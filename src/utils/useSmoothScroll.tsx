@@ -1,10 +1,19 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+/**
+ * Повертає функцію переходу до секції з урахуванням поточного маршруту й фіксованого хедера.
+ * На цільовій сторінці виконує плавну прокрутку, а для іншого маршруту спочатку додає hash до URL.
+ * Ефект також обробляє hash після навігації з короткою затримкою для завершення рендерингу DOM.
+ */
 export const useSmoothScroll = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  /**
+   * Приймає id секції та необов'язковий шлях; нічого не повертає.
+   * Побічний ефект — прокрутка window або навігація через React Router.
+   */
   const scrollTo = (id: string, path: string = location.pathname) => {
     // Якщо ми вже на потрібній сторінці
     if (location.pathname === path) {
