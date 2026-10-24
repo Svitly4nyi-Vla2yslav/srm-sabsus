@@ -12,8 +12,12 @@ import { LanguageProvider } from './components/LanguageSwitcher/LanguageContext'
 // ✅ NEW: Unhead for React 19
 import { createHead, UnheadProvider } from '@unhead/react/client';
 
+// Єдиний менеджер метаданих обслуговує всі сторінки, змонтовані нижче
+// UnheadProvider; компоненти SEO оновлюють через нього вміст document.head.
 const head = createHead();
 
+// Кореневе дерево вмикає діагностику StrictMode, глобальні стилі,
+// маршрутизацію та мовний контекст. Монтування змінює DOM елемента #root.
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <UnheadProvider head={head}>
