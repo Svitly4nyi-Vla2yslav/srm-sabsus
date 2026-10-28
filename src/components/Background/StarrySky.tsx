@@ -3,10 +3,17 @@ import Particles from 'react-tsparticles';
 import type { Engine, IShapeDrawer } from 'tsparticles-engine';
 import { loadSlim } from 'tsparticles-slim';
 
-// Компонент без вхідних параметрів монтує повноекранний фон tsParticles.
- // Під час ініціалізації він підвантажує полегшений рушій і реєструє власну форму зірки.
+/**
+ * Монтує повноекранний фон tsParticles без вхідних параметрів.
+ * Повертає React-елемент із конфігурацією частинок; під час ініціалізації асинхронно
+ * доповнює переданий рушій полегшеним набором можливостей і власною формою зірки.
+ */
 const ParticlesBackground = () => {
-  // Колбек отримує рушій tsParticles і повертає Promise після завантаження плагінів та форми.
+  /**
+   * Готує переданий рушій до першого рендеру частинок.
+   * Повертає Promise після завантаження slim-модуля й реєстрації 'four-point-star';
+   * побічний ефект — зміна доступного рушію набору фігур.
+   */
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
 
@@ -58,10 +65,12 @@ const ParticlesBackground = () => {
   );
 };
 
-// Малювальник описує геометрію чотирипроменевої зірки для кожної частинки.
+/** Описує геометрію чотирипроменевої зірки відповідно до контракту IShapeDrawer. */
 class FourPointStarDrawer implements IShapeDrawer {
-  // Метод отримує canvas-контекст і радіус, будує замкнений контур та одразу його заповнює.
-  // Дані конкретної частинки не використовуються, тому параметр має префікс "_".
+  /**
+   * Будує в переданому canvas-контексті замкнений контур із заданим радіусом і заповнює його.
+   * Нічого не повертає; дані конкретної частинки не використовуються, тому параметр має префікс '_'.
+   */
   draw(context: CanvasRenderingContext2D, _particle: any, radius: number) {
     context.beginPath();
     context.moveTo(0, -radius);
@@ -72,7 +81,7 @@ class FourPointStarDrawer implements IShapeDrawer {
     context.fill();
   }
 
-  // Повертає кількість опорних сторін, потрібну контракту IShapeDrawer.
+  /** Повертає чотири опорні сторони, потрібні рушію для цієї форми. */
   getSidesCount(): number {
     return 4;
   }
