@@ -6,12 +6,14 @@ import Seo from './Seo';
 const SITE_URL = 'https://sabsus.shop';
 const OG_IMAGE = 'https://sabsus.shop/og/image.png?v=4'; // bump v when needed
 
+// Описує ключі перекладу для одного маршруту та, за потреби, окремий канонічний шлях.
 type Entry = { titleKey: string; descKey: string; canonicalPath?: string };
 
 /**
  * Перетворює поточний pathname на локалізовану SEO-конфігурацію для компонента Seo.
  * Відомі маршрути використовують власні ключі перекладу, кореневий URL канонізується
  * як `/home`, а невідомі адреси отримують заголовок і опис за замовчуванням.
+ * Повертає Seo, який синхронізує title, description, canonical, Open Graph і lang документа.
  */
 export const SeoRouter: React.FC = () => {
   const { pathname } = useLocation();
@@ -37,6 +39,7 @@ export const SeoRouter: React.FC = () => {
       '/contact': { titleKey: 'seo.contact.title', descKey: 'seo.contact.desc' },
     };
 
+    // Fallback не змінює pathname у canonical URL, але використовує безпечні загальні тексти.
     const entry = map[pathname] || { titleKey: 'seo.default.title', descKey: 'seo.default.desc' };
     const canonicalPath = entry.canonicalPath || pathname;
 
