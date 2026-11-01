@@ -4,14 +4,17 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 /**
- * Формує спільний каркас сторінок і керує позицією прокручування після зміни маршруту.
+ * Формує спільний каркас сторінок із Header, дочірнім Outlet і Footer.
+ * Після зміни pathname керує позицією прокручування:
  * Якщо URL містить hash, ефект після короткої затримки шукає відповідний елемент у DOM;
- * без hash сторінка повертається на початок. Дочірній маршрут показується через Outlet.
+ * без hash сторінка повертається на початок. Побічні ефекти обмежені window.scrollTo,
+ * scrollIntoView і відкладеним таймером; локального стану компонент не має.
  */
 export const Layout: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Hash читається під час зміни pathname; окрема зміна hash на тому самому шляху ефект не перезапускає.
     if (location.hash) {
       const id = location.hash.replace('#', '');
       const element = document.getElementById(id);
