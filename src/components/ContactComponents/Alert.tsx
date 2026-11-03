@@ -1,4 +1,3 @@
-// Alert.tsx
 import { motion } from 'framer-motion';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
@@ -44,6 +43,11 @@ const CloseButton = styled.button`
   margin-left: 12px;
 `;
 
+/**
+ * Показує анімоване сповіщення `success` або `error` із власним чи локалізованим текстом.
+ * `onClose` викликається кнопкою або таймером; `autoClose=false` вимикає таймер, а
+ * `autoCloseDuration` задає затримку в мілісекундах. Компонент сам не видаляє повідомлення зі стану батька.
+ */
 export const Alert: React.FC<AlertProps> = ({
   type,
   message,
@@ -53,6 +57,7 @@ export const Alert: React.FC<AlertProps> = ({
 }) => {
   const { t } = useTranslation();
 
+  // Створює таймер лише для автоматичного режиму й очищає його при зміні параметрів або демонтуванні.
   useEffect(() => {
     if (autoClose) {
       const timer = setTimeout(() => {
@@ -62,6 +67,7 @@ export const Alert: React.FC<AlertProps> = ({
     }
   }, [autoClose, autoCloseDuration, onClose]);
 
+  // Резервний текст обирається за типом лише тоді, коли `message` порожній або не переданий.
   const defaultMessages = {
     success: t('alert.success'),
     error: t('alert.error'),
