@@ -437,6 +437,14 @@ export const HelpCenterText = styled.p`
   margin: 0 auto;
 `;
 
+/**
+ * Керує контактною формою, перевіряє email і зберігає заявку в колекції
+ * `contactMessages` Firestore.
+ *
+ * Після успішного запису очищає поля, показує сповіщення та відкриває сторінку
+ * запису Google Calendar у новій вкладці. У разі помилки залишає введені дані
+ * доступними для повторної спроби.
+ */
 const ContactForm: React.FC = () => {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
@@ -451,11 +459,22 @@ const ContactForm: React.FC = () => {
     show: boolean;
   }>({ type: 'success', message: '', show: false });
 
+  /**
+   * Перевіряє непорожню локальну частину, символ @ і домен із крапкою.
+   *
+   * @param email — введене користувачем значення.
+   * @returns true, якщо рядок відповідає базовому шаблону email.
+   */
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
   };
 
+  /**
+   * Синхронізує поле email зі станом і повторно перевіряє вже позначену помилку.
+   *
+   * @param e — подія зміни текстового поля.
+   */
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setEmail(value);
@@ -466,6 +485,13 @@ const ContactForm: React.FC = () => {
     }
   };
 
+  /**
+   * Зупиняє стандартне надсилання, перевіряє email і записує заявку у Firestore.
+   *
+   * @param e — подія надсилання форми.
+   * @sideEffects Керує станом завантаження й alert, очищає форму та після успіху
+   * відкриває зовнішнє посилання на календар.
+   */
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
