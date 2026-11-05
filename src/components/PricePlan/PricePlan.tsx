@@ -58,6 +58,12 @@ interface PricePlanData {
   };
 }
 
+/**
+ * Завантажує тарифні плани для місячного або річного режиму й дає вибрати рівень.
+ *
+ * Дані інтерфейсу беруться з i18n, а масив тарифів — через usePricingData.
+ * Компонент не оформлює покупку: кнопка лише відкриває сформоване зовнішнє посилання.
+ */
 const PricePlan: React.FC = () => {
   const { t } = useTranslation();
   const [isMonthly, setIsMonthly] = useState(false); // за замовчуванням річна підписка
@@ -78,6 +84,13 @@ const PricePlan: React.FC = () => {
   if (loading) return <LoadingScreen />;
   if (error) return <ErrorScreen message={error} />;
 
+  /**
+   * Формує адресу реєстрації для вибраного плану та рівня.
+   *
+   * @param planIndex — позиція плану в отриманому масиві.
+   * @param tierIndex — позиція цінового рівня.
+   * @returns Demo URL для третього плану або URL реєстрації white/SaaS.
+   */
   const generateLink = (planIndex: number, tierIndex: number): string => {
     if (planIndex === 2)
       return 'https://sabsus.app/login/demo@sabsus.com/demo2025';
@@ -91,6 +104,12 @@ const PricePlan: React.FC = () => {
     return base + nameArray[tierIndex];
   };
 
+  /**
+   * Запам’ятовує вибраний рівень, щоб підсвітити картку й оновити адресу кнопки.
+   *
+   * @param planIndex — індекс плану.
+   * @param tierIndex — індекс рівня всередині плану.
+   */
   const handleTierClick = (planIndex: number, tierIndex: number) => {
     setSelectedTier({ planIndex, tierIndex });
   };
