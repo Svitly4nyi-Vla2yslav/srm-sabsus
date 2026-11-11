@@ -58,7 +58,9 @@ import { motion } from 'framer-motion';
 
 /**
  * Відображає локалізований каталог можливостей SABSUS як сім навігаційних карток.
- * Індекс картки узгоджує текст i18n із маршрутом, основним зображенням та набором іконок кнопок.
+ * Індекс картки є спільним ключем для data.cards, cardLinks, cardImages і buttonIcons;
+ * тому порядок цих масивів має залишатися синхронним із перекладами allInOne.cards.
+ * Компонент не приймає аргументів і не виконує мережевих чи сховищних операцій.
  */
 const AllinOneSRM: React.FC = () => {
   const { t } = useTranslation();
@@ -73,7 +75,7 @@ const AllinOneSRM: React.FC = () => {
     }>;
   };
 
-  // Масиви іконок для кнопок
+  // Кожен внутрішній масив відповідає кнопкам картки з тим самим індексом у data.cards.
   const buttonIcons = [
     [icon, icon1, icon3, icon2, icon4],
     [icon6, icon7, icon8, icon9, icon0],
@@ -119,7 +121,7 @@ const AllinOneSRM: React.FC = () => {
     '/service/integration-scaling',
   ];
 
-  // Масиви зображень для карток
+  // Зображення розташовані в тому самому порядку, що й локалізовані картки та маршрути.
   const cardImages = [card1, card2, card3, card4, card5, card6, card7];
 
   return (
