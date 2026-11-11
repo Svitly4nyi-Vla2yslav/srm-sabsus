@@ -48,6 +48,10 @@ import { SwiperContainer } from './Swipper.styled';
 import { HeroInnovative, HeroTitle } from './Hero.styled';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Відображає локалізовану автоматичну карусель типів бізнесу без вхідних параметрів.
+ * Кількість одночасних карток залежить від media query; взаємодія не зупиняє autoplay назавжди.
+ */
 const BusinessSwiper: React.FC = () => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 743px)' });
@@ -56,6 +60,7 @@ const BusinessSwiper: React.FC = () => {
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
+  // Ключ кожного елемента одночасно визначає переклад підпису, а image — статичну ілюстрацію.
   const businessTypes = [
     { key: 'restaurant', image: restaurant },
     { key: 'bistro', image: bistro },
@@ -85,6 +90,7 @@ const BusinessSwiper: React.FC = () => {
     { key: 'petShop', image: petshop },
   ];
 
+  // Мобільний екран показує одну картку, планшет — дві, решта ширин — чотири.
   const slidesPerView = isMobile ? 1 : isTablet ? 2 : isDesktop ? 4 : 4;
   const shouldLoop = businessTypes.length > slidesPerView;
 
@@ -127,6 +133,7 @@ const BusinessSwiper: React.FC = () => {
             loop={shouldLoop}
             slidesPerView={slidesPerView}
             spaceBetween={1}
+            {/* Пауза під час наведення не вимикає подальше автоматичне прокручування. */}
             autoplay={{
               delay: 2000,
               disableOnInteraction: false,
