@@ -183,6 +183,11 @@ interface Particle {
   delay: number;
 }
 
+/**
+ * Рендерить hero-сцену сторінки «Про нас» із локалізованим текстом, SVG-хвилями та частинками.
+ * Не приймає props; під час монтування створює набір частинок відповідно до пристрою й viewport,
+ * а побічним ефектом підписується на resize та прибирає слухач під час демонтування.
+ */
 const HeroAnimation: React.FC = () => {
   const { t } = useTranslation();
  const [particles, setParticles] = useState<Particle[]>([]);
@@ -192,6 +197,7 @@ const HeroAnimation: React.FC = () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const count = isIOS ? 10 : (window.innerWidth >= 1440 ? 100 : 50);
 
+    // Повертає новий набір випадкових координат і параметрів у межах поточного viewport.
     const generateParticles = () => Array.from({ length: count }).map((_, i) => ({
       id: i,
       cx: Math.random() * window.innerWidth,
@@ -201,6 +207,7 @@ const HeroAnimation: React.FC = () => {
     }));
 
     setParticles(generateParticles());
+    // На resize повністю перегенеровує координати, щоб частинки відповідали новим розмірам вікна.
     const resize = () => setParticles(generateParticles());
     window.addEventListener('resize', resize);
     return () => window.removeEventListener('resize', resize);
