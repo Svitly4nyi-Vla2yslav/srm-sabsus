@@ -521,6 +521,11 @@ type Savings = {
   skytab: string;
 };
 
+/**
+ * Рендерить локалізоване порівняння SABSUS із конкурентами та керованим горизонтальним автоскролом.
+ * Не приймає props; читає переклади, стежить за viewport і resize, керує станами прокручування.
+ * Побічні ефекти — DOM-скрол, таймер, requestAnimationFrame і слухачі, які прибираються cleanup-функціями.
+ */
 const ComparisonTable: React.FC = () => {
   const { t } = useTranslation();
   const [ref, inView] = useInView({
@@ -535,6 +540,7 @@ const ComparisonTable: React.FC = () => {
   const [isAutoScrollEnabled, setIsAutoScrollEnabled] = useState(true);
 
   useEffect(() => {
+    // Синхронізує режим автоскролу з межею 1280 px; нічого не повертає.
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1280);
     };
@@ -553,6 +559,7 @@ const ComparisonTable: React.FC = () => {
     const scrollSpeed = 0.5;
     let scrollDirection = 1;
 
+    // Зсуває таблицю на один кадр і змінює напрям на обох межах прокручування.
     const autoScroll = () => {
       if (!isAutoScrollEnabled) return;
 
@@ -575,10 +582,12 @@ const ComparisonTable: React.FC = () => {
       }
     };
 
+    // Призупиняє автоматичний рух, поки вказівник перебуває над таблицею.
     const handleMouseEnter = () => {
       setIsScrolling(false);
     };
 
+    // Відновлює цикл requestAnimationFrame після виходу вказівника, якщо режим увімкнено.
     const handleMouseLeave = () => {
       if (isAutoScrollEnabled) {
         setIsScrolling(true);
@@ -604,10 +613,12 @@ const ComparisonTable: React.FC = () => {
     };
   }, [isMobile, inView, isAutoScrollEnabled]);
 
+  // Перемикає дозвіл автоскролу; наступний effect перезапускає або зупиняє цикл.
   const toggleAutoScroll = () => {
     setIsAutoScrollEnabled(!isAutoScrollEnabled);
   };
 
+  // Плавно переводить горизонтальний контейнер до першого стовпця.
   const scrollToStart = () => {
     if (tableWrapperRef.current) {
       tableWrapperRef.current.scrollTo({
@@ -617,6 +628,7 @@ const ComparisonTable: React.FC = () => {
     }
   };
 
+  // Плавно переводить контейнер до правого краю за фактичною шириною таблиці.
   const scrollToEnd = () => {
     if (tableWrapperRef.current && tableRef.current) {
       tableWrapperRef.current.scrollTo({
