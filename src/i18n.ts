@@ -13,9 +13,11 @@ i18n
     supportedLngs: ["en", "ru", "es", "uk"],
     // Англійська є резервною мовою; завантажуються лише явно підтримувані локалі.
     fallbackLng: "en",
+    // Діагностичні повідомлення i18next вмикаються лише у development-збірці.
     debug: process.env.NODE_ENV === 'development',
-    interpolation: { 
-      escapeValue: false 
+    interpolation: {
+      // React сам екранує текстові значення, тому повторне HTML-екранування i18next не потрібне.
+      escapeValue: false
     },
     backend: {
       loadPath: "/locales/{{lng}}/translation.json",
