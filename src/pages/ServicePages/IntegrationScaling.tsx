@@ -11,6 +11,11 @@ import Feedback from '../../components/Feedback/Feedback';
 import ResultsFromBusinesses from '../../components/ResultsFromBusinesses/ResultsFromBusinesses';
 import StartSmall from '../../components/StartSmall/StartSmall';
 
+/**
+ * Збирає сторінку Integration & Scaling з готових секцій у фіксованому порядку:
+ * від hero й можливостей до доказів, FAQ та фінального CTA.
+ * Компонент не приймає аргументів, не зберігає стан і не запускає побічних ефектів.
+ */
 const IntegrationScaling: React.FC = () => {
   return (
     <HomeContainer>
